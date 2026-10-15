@@ -53,6 +53,16 @@ jobs:
           path: android/build.log
           if-no-files-found: ignore
 
+      - name: Publish build log on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view ci-logs >/dev/null 2>&1 || \
+            gh release create ci-logs --title "CI logs" --notes "Служебный релиз с логами сборки" --prerelease --latest=false
+          cp build.log android-build.log
+          gh release upload ci-logs android-build.log --clobber
+
       - name: Prepare APK
         run: |
           cp app/build/outputs/apk/release/app-release.apk Habits.apk
