@@ -2,6 +2,8 @@ package com.personal.habits.widget
 
 import android.content.Context
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
@@ -64,8 +66,9 @@ class HabitsWidget : GlanceAppWidget() {
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
         HabitRepository.init(context)
-        val data = HabitRepository.data.value
         provideContent {
+            // Подписка на данные: виджет перерисуется сразу после отметки.
+            val data by HabitRepository.data.collectAsState()
             GlanceTheme {
                 WidgetContent(data)
             }

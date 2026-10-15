@@ -6,3 +6,7 @@
 }
 -keepattributes *Annotation*, InnerClasses, Signature
 -dontnote kotlinx.serialization.**
+
+# Glance создаёт обработчики нажатий виджета по имени класса.
+-keep class * implements androidx.glance.appwidget.action.ActionCallback { <init>(); }
+-keep class com.personal.habits.widget.** { *; }

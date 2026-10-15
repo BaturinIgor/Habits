@@ -16,6 +16,9 @@ import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.BarChart
@@ -109,6 +112,7 @@ fun HabitsAppUi() {
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
+        contentWindowInsets = WindowInsets(0, 0, 0, 0),
         bottomBar = {
             if (showBar) {
                 NavigationBar(containerColor = MaterialTheme.colorScheme.surfaceContainer) {
@@ -132,7 +136,9 @@ fun HabitsAppUi() {
         NavHost(
             navController = navController,
             startDestination = TopTab.Today.route,
-            modifier = Modifier.padding(bottom = padding.calculateBottomPadding()),
+            modifier = Modifier
+                .padding(bottom = padding.calculateBottomPadding())
+                .consumeWindowInsets(PaddingValues(bottom = padding.calculateBottomPadding())),
             enterTransition = {
                 if (isTabSwitch()) fadeIn(tween(220))
                 else slideIntoContainer(AnimatedContentTransitionScope.SlideDirection.Start, tween(320)) + fadeIn(tween(320))
