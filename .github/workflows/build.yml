@@ -3,6 +3,10 @@ name: Build IPA
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - "android/**"
+      - ".github/workflows/android.yml"
+      - "README.md"
   workflow_dispatch:
 
 permissions:

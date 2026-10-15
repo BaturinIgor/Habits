@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Привычки</string>
+    <string name="widget_name">Привычки на сегодня</string>
+    <string name="widget_description">Прогресс дня и отметка привычек прямо с рабочего стола</string>
+    <string name="channel_name">Напоминания о привычках</string>
+</resources>

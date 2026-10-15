@@ -1,0 +1,75 @@
+name: Build APK
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "android/**"
+      - ".github/workflows/android.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-apk
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: android
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.11.1"
+
+      - name: Build
+        run: |
+          set +e
+          gradle assembleRelease --no-daemon --stacktrace > build.log 2>&1
+          status=$?
+          echo "---- errors ----"
+          grep -E "^e: |error:|FAILURE|What went wrong" -A 3 build.log | head -150
+          echo "---- tail ----"
+          tail -60 build.log
+          exit $status
+
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-build-log
+          path: android/build.log
+          if-no-files-found: ignore
+
+      - name: Prepare APK
+        run: |
+          cp app/build/outputs/apk/release/app-release.apk Habits.apk
+          ls -lh Habits.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Habits-apk
+          path: android/Habits.apk
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="android-${{ github.run_number }}"
+          gh release create "$TAG" Habits.apk \
+            --title "Привычки для Android, сборка ${{ github.run_number }}" \
+            --notes "Скачай Habits.apk на телефон и установи." \
+            --latest=false
