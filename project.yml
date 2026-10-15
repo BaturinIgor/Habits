@@ -1,0 +1,94 @@
+name: Habits
+options:
+  bundleIdPrefix: com.personal
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+  developmentLanguage: ru
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    TARGETED_DEVICE_FAMILY: "1"
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGNING_ALLOWED: "NO"
+    CODE_SIGNING_REQUIRED: "NO"
+    CODE_SIGN_IDENTITY: ""
+    DEVELOPMENT_TEAM: ""
+    ENABLE_USER_SCRIPT_SANDBOXING: "NO"
+
+targets:
+  Habits:
+    type: application
+    platform: iOS
+    sources:
+      - path: Habits
+      - path: Shared
+    entitlements:
+      path: Habits/Habits.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.personal.habits
+    info:
+      path: Habits/Info.plist
+      properties:
+        CFBundleDisplayName: Привычки
+        CFBundleDevelopmentRegion: ru
+        CFBundleLocalizations: [ru]
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSRequiresIPhoneOS: true
+        UILaunchScreen: {}
+        UIApplicationSupportsIndirectInputEvents: true
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UIBackgroundModes: [fetch]
+        BGTaskSchedulerPermittedIdentifiers: [com.personal.habits.refresh]
+        ITSAppUsesNonExemptEncryption: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.personal.habits
+        PRODUCT_NAME: Habits
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    dependencies:
+      - target: HabitsWidget
+        embed: true
+
+  HabitsWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: HabitsWidget
+      - path: Shared
+    entitlements:
+      path: HabitsWidget/HabitsWidget.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.personal.habits
+    info:
+      path: HabitsWidget/Info.plist
+      properties:
+        CFBundleDisplayName: Привычки
+        CFBundleDevelopmentRegion: ru
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.personal.habits.widget
+        PRODUCT_NAME: HabitsWidget
+        SKIP_INSTALL: "YES"
+
+schemes:
+  Habits:
+    build:
+      targets:
+        Habits: all
+        HabitsWidget: all
+    run:
+      config: Debug
+    archive:
+      config: Release
