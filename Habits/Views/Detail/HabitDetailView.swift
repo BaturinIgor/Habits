@@ -299,7 +299,7 @@ struct WeeklyChartCard: View {
                 .foregroundStyle(color.gradient)
                 .cornerRadius(6)
             }
-            .chartYScale(domain: 0...100)
+            .chartYScale(domain: 0.0...100.0)
             .chartYAxis {
                 AxisMarks(position: .leading, values: [0.0, 50.0, 100.0]) { value in
                     AxisGridLine()
