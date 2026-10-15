@@ -31,6 +31,8 @@ struct TodayView: View {
     @State private var editingHabit: Habit?
     @State private var noteTarget: NoteTarget?
     @State private var habitToDelete: Habit?
+    @State private var anchorToday: Date = Calendar.app.startOfDay(for: Date())
+    @Environment(\.scenePhase) private var scenePhase
     @Namespace private var zoom
 
     private var calendar: Calendar { .app }
@@ -56,6 +58,17 @@ struct TodayView: View {
             }
             .scrollIndicators(.hidden)
             .background(AppBackground())
+            .onChange(of: scenePhase) { _, phase in
+                // Если приложение висело в памяти после полуночи, переключаемся на новый день.
+                guard phase == .active else { return }
+                let today = calendar.startOfDay(for: Date())
+                if today != anchorToday {
+                    if calendar.isDate(selectedDay, inSameDayAs: anchorToday) {
+                        selectedDay = today
+                    }
+                    anchorToday = today
+                }
+            }
             .navigationTitle(isToday ? "Сегодня" : RuFormat.relativeDay(selectedDay))
             .toolbar {
                 if !isToday {

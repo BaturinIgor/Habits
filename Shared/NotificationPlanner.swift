@@ -83,10 +83,11 @@ enum NotificationPlanner {
         // Пока ждали ответа, мог начаться более свежий пересчёт.
         guard token == generation else { return }
 
-        let center = UNUserNotificationCenter.current()
-        center.removeAllPendingNotificationRequests()
+        // Без разрешения ничего не трогаем: очередь всё равно не будет показана.
         guard status == .authorized || status == .provisional || status == .ephemeral else { return }
 
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
         for event in plan(data: data, now: now) {
             center.add(makeRequest(event, settings: data.settings), withCompletionHandler: nil)
         }
