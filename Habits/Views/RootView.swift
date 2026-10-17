@@ -12,16 +12,16 @@ struct RootView: View {
 
     var body: some View {
         TabView(selection: $selection) {
-            Tab("Сегодня", systemImage: "checkmark.circle.fill", value: AppTab.today) {
+            Tab("Today", systemImage: "checkmark.circle.fill", value: AppTab.today) {
                 TodayView()
             }
-            Tab("Привычки", systemImage: "square.stack.fill", value: AppTab.habits) {
+            Tab("Habits", systemImage: "square.stack.fill", value: AppTab.habits) {
                 HabitsListView()
             }
-            Tab("Статистика", systemImage: "chart.bar.fill", value: AppTab.stats) {
+            Tab("Statistics", systemImage: "chart.bar.fill", value: AppTab.stats) {
                 StatsView()
             }
-            Tab("Настройки", systemImage: "gearshape.fill", value: AppTab.settings) {
+            Tab("Settings", systemImage: "gearshape.fill", value: AppTab.settings) {
                 SettingsView()
             }
         }

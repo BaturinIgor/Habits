@@ -82,7 +82,7 @@ final class HabitStore {
     func addGroup(name: String) -> HabitGroup {
         let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
         let group = HabitGroup(
-            name: trimmed.isEmpty ? "Новая группа" : trimmed,
+            name: trimmed.isEmpty ? String(localized: "New group") : trimmed,
             sortOrder: (data.groups.map(\.sortOrder).max() ?? -1) + 1
         )
         data.groups.append(group)
@@ -146,9 +146,17 @@ final class HabitStore {
 
     // MARK: Настройки
 
-    func setRepeatCount(_ count: Int) {
-        data.settings.repeatCount = max(0, count)
+    func setPro(_ enabled: Bool) {
+        data.settings.proUnlocked = enabled
         commit()
+    }
+
+    /// Возвращает false, если вернуть из архива нельзя из-за лимита бесплатной версии.
+    @discardableResult
+    func unarchive(_ id: UUID) -> Bool {
+        guard data.canAddHabit else { return false }
+        setArchived(id, false)
+        return true
     }
 
     // MARK: Ответ на уведомление

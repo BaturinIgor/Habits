@@ -17,7 +17,7 @@ struct NoteEditorView: View {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(habit.name)
                                 .font(.headline)
-                            Text(DayKey.date(target.day).map { RuFormat.relativeDay($0) } ?? target.day)
+                            Text(DayKey.date(target.day).map { Fmt.relativeDay($0) } ?? target.day)
                                 .font(.subheadline)
                                 .foregroundStyle(.secondary)
                         }
@@ -32,14 +32,14 @@ struct NoteEditorView: View {
                 Spacer(minLength: 0)
             }
             .padding(16)
-            .navigationTitle("Заметка")
+            .navigationTitle("Note")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Отмена") { dismiss() }
+                    Button("Cancel") { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Готово") {
+                    Button("Done") {
                         store.setNote(text, for: target.habitID, dayKey: target.day)
                         dismiss()
                     }

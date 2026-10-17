@@ -29,7 +29,7 @@ struct HabitOrderView: View {
             }
             .environment(\.editMode, .constant(.active))
             .safeAreaInset(edge: .top) {
-                Text("Привычки с напоминанием идут по времени. Остальные стоят после них, их можно перетащить.")
+                Text("Habits with reminders are sorted by time. The rest come after them and can be dragged.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -37,11 +37,11 @@ struct HabitOrderView: View {
                     .padding(.vertical, 8)
                     .background(.bar)
             }
-            .navigationTitle("Порядок")
+            .navigationTitle("Order")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Готово") { dismiss() }
+                    Button("Done") { dismiss() }
                         .fontWeight(.semibold)
                 }
             }

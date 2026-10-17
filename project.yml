@@ -4,7 +4,7 @@ options:
   deploymentTarget:
     iOS: "26.0"
   createIntermediateGroups: true
-  developmentLanguage: ru
+  developmentLanguage: en
 
 settings:
   base:
@@ -26,6 +26,7 @@ targets:
     sources:
       - path: Habits
       - path: Shared
+      - path: Localization
     entitlements:
       path: Habits/Habits.entitlements
       properties:
@@ -34,9 +35,10 @@ targets:
     info:
       path: Habits/Info.plist
       properties:
-        CFBundleDisplayName: Привычки
-        CFBundleDevelopmentRegion: ru
-        CFBundleLocalizations: [ru]
+        CFBundleDisplayName: Habits
+        CFBundleDevelopmentRegion: en
+        CFBundleLocalizations: [en, ru, de, fr, es, zh-Hans, ja, ko, hi]
+        CFBundleAllowMixedLocalizations: true
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         LSRequiresIPhoneOS: true
@@ -62,6 +64,7 @@ targets:
     sources:
       - path: HabitsWidget
       - path: Shared
+      - path: Localization
     entitlements:
       path: HabitsWidget/HabitsWidget.entitlements
       properties:
@@ -70,8 +73,8 @@ targets:
     info:
       path: HabitsWidget/Info.plist
       properties:
-        CFBundleDisplayName: Привычки
-        CFBundleDevelopmentRegion: ru
+        CFBundleDisplayName: Habits
+        CFBundleDevelopmentRegion: en
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         NSExtension:

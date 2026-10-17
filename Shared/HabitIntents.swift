@@ -4,13 +4,13 @@ import WidgetKit
 
 /// Отметка привычки прямо из виджета.
 struct ToggleHabitIntent: AppIntent {
-    static let title: LocalizedStringResource = "Отметить привычку"
+    static let title: LocalizedStringResource = "Mark habit"
     static let isDiscoverable: Bool = false
 
-    @Parameter(title: "Привычка")
+    @Parameter(title: "Habit")
     var habitID: String
 
-    @Parameter(title: "День")
+    @Parameter(title: "Day")
     var day: String
 
     init() {}

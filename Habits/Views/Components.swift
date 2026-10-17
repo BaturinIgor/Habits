@@ -55,7 +55,7 @@ struct CompactLabelStyle: LabelStyle {
 // MARK: - Плитка статистики
 
 struct StatTile: View {
-    let title: String
+    let title: LocalizedStringKey
     let value: String
     let systemImage: String
     let color: Color
@@ -88,9 +88,9 @@ struct StatTile: View {
 
 struct EmptyStateView: View {
     let systemImage: String
-    let title: String
-    let message: String
-    var buttonTitle: String?
+    let title: LocalizedStringKey
+    let message: LocalizedStringKey
+    var buttonTitle: LocalizedStringKey?
     var action: (() -> Void)?
 
     var body: some View {

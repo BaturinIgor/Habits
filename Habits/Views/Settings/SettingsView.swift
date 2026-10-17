@@ -8,32 +8,18 @@ struct SettingsView: View {
     @Environment(\.scenePhase) private var scenePhase
     @State private var authorization: UNAuthorizationStatus = .notDetermined
     @State private var pendingCount = 0
+    @State private var showingPaywall = false
 
-    private var repeatBinding: Binding<Int> {
-        Binding(
-            get: { store.data.settings.repeatCount },
-            set: { store.setRepeatCount($0) }
-        )
+    private var proBinding: Binding<Bool> {
+        Binding(get: { store.data.isPro }, set: { store.setPro($0) })
     }
 
-    private var repeatDescription: String {
-        let n = store.data.settings.repeatCount
-        if n == 0 { return "Без повторов" }
-        let minutes = n * store.data.settings.repeatIntervalMinutes
-        let hours = minutes / 60
-        let rest = minutes % 60
-        var duration = ""
-        if hours > 0 { duration += "\(hours) ч" }
-        if rest > 0 { duration += (duration.isEmpty ? "" : " ") + "\(rest) мин" }
-        return RuPlural.times(n) + ", в течение " + duration
-    }
-
-    private var statusText: String {
+    private var statusText: LocalizedStringKey {
         switch authorization {
-        case .authorized, .provisional, .ephemeral: return "Включены"
-        case .denied: return "Выключены"
-        case .notDetermined: return "Не настроены"
-        @unknown default: return "Неизвестно"
+        case .authorized, .provisional, .ephemeral: return "On"
+        case .denied: return "Off"
+        case .notDetermined: return "Not set up"
+        @unknown default: return "Unknown"
         }
     }
 
@@ -43,6 +29,11 @@ struct SettingsView: View {
         return "\(short) (\(build))"
     }
 
+    private var repeatsFooter: String {
+        let standard = Fmt.repeats(RepeatRule.standard.count, every: RepeatRule.standard.interval)
+        return String(localized: "Until a habit is checked off, its reminder repeats: \(standard). Done and Skip in the notification stop the repeats for that day.")
+    }
+
     var body: some View {
         NavigationStack {
             Form {
@@ -50,10 +41,10 @@ struct SettingsView: View {
                     LabeledContent {
                         Text(statusText)
                     } label: {
-                        Label("Уведомления", systemImage: "bell.badge.fill")
+                        Label("Notifications", systemImage: "bell.badge.fill")
                     }
                     if authorization == .notDetermined {
-                        Button("Разрешить уведомления") {
+                        Button("Allow notifications") {
                             Task {
                                 await NotificationPlanner.requestAuthorization()
                                 await refresh()
@@ -61,7 +52,7 @@ struct SettingsView: View {
                             }
                         }
                     } else if authorization == .denied {
-                        Button("Открыть настройки iOS") {
+                        Button("Open iOS Settings") {
                             if let url = URL(string: UIApplication.openSettingsURLString) {
                                 openURL(url)
                             }
@@ -69,56 +60,65 @@ struct SettingsView: View {
                     }
                 } footer: {
                     if authorization == .denied {
-                        Text("Уведомления выключены в настройках iOS, поэтому напоминания не придут.")
+                        Text("Notifications are turned off in iOS Settings, so reminders won't arrive.")
+                    } else {
+                        Text(repeatsFooter)
                     }
                 }
 
                 Section {
-                    Stepper(value: repeatBinding, in: 0...16) {
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text("Повторы напоминания")
-                            Text(repeatDescription)
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
+                    Button {
+                        showingPaywall = true
+                    } label: {
+                        LabeledContent {
+                            Text(store.data.isPro ? String(localized: "Active") : String(localized: "Free version"))
+                        } label: {
+                            Label {
+                                Text("Habits Pro").foregroundStyle(Color.primary)
+                            } icon: {
+                                Image(systemName: "crown.fill").foregroundStyle(.orange)
+                            }
                         }
                     }
-                } header: {
-                    Text("Если не отметить")
+                    Toggle("Pro test mode", isOn: proBinding)
                 } footer: {
-                    Text("Пока привычка не отмечена, напоминание повторяется каждые \(store.data.settings.repeatIntervalMinutes) минут. Кнопки \"Готово\" и \"Пропустить\" в уведомлении останавливают повторы на этот день.")
+                    Text("There are no purchases yet: this switch turns Pro features on for testing.")
                 }
 
-                Section("Организация") {
+                Section("Organization") {
                     NavigationLink {
                         GroupsView()
                     } label: {
                         LabeledContent {
                             Text("\(store.data.groups.count)")
                         } label: {
-                            Label("Группы", systemImage: "folder.fill")
+                            Label("Groups", systemImage: "folder.fill")
                         }
                     }
                 }
 
                 Section {
-                    LabeledContent("Запланировано уведомлений", value: "\(pendingCount)")
-                    LabeledContent("Версия", value: version)
+                    LabeledContent("Scheduled notifications", value: "\(pendingCount)")
+                    LabeledContent("Version", value: version)
                 } footer: {
-                    Text("Все данные хранятся только на этом iPhone.")
+                    Text("All data is stored only on this iPhone.")
                 }
             }
-            .navigationTitle("Настройки")
+            .navigationTitle("Settings")
             .task { await refresh() }
             .onChange(of: scenePhase) { _, phase in
                 if phase == .active {
                     Task { await refresh() }
                 }
             }
-            .onChange(of: store.data.settings.repeatCount) { _, _ in
+            .onChange(of: store.data.isPro) { _, _ in
                 Task {
                     try? await Task.sleep(for: .milliseconds(400))
                     await refresh()
                 }
+            }
+            .sheet(isPresented: $showingPaywall) {
+                PaywallView()
             }
         }
     }
@@ -141,7 +141,7 @@ struct GroupsView: View {
     var body: some View {
         List {
             if store.data.groups.isEmpty {
-                Text("Группы помогают разложить привычки по темам: утро, здоровье, работа.")
+                Text("Groups help sort habits by topic: morning, health, work.")
                     .foregroundStyle(.secondary)
             }
             ForEach(store.data.sortedGroups) { group in
@@ -168,7 +168,7 @@ struct GroupsView: View {
                 store.moveGroups(from: source, to: destination)
             }
         }
-        .navigationTitle("Группы")
+        .navigationTitle("Groups")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
@@ -182,22 +182,22 @@ struct GroupsView: View {
                 EditButton()
             }
         }
-        .alert("Новая группа", isPresented: $showingNew) {
-            TextField("Название", text: $newName)
-            Button("Отмена", role: .cancel) {}
-            Button("Создать") { store.addGroup(name: newName) }
+        .alert("New group", isPresented: $showingNew) {
+            TextField("Name", text: $newName)
+            Button("Cancel", role: .cancel) {}
+            Button("Create") { store.addGroup(name: newName) }
         }
         .alert(
-            "Переименовать",
+            "Rename",
             isPresented: Binding(
                 get: { renaming != nil },
                 set: { if !$0 { renaming = nil } }
             ),
             presenting: renaming
         ) { group in
-            TextField("Название", text: $renameText)
-            Button("Отмена", role: .cancel) {}
-            Button("Сохранить") { store.renameGroup(group.id, to: renameText) }
+            TextField("Name", text: $renameText)
+            Button("Cancel", role: .cancel) {}
+            Button("Save") { store.renameGroup(group.id, to: renameText) }
         }
     }
 }

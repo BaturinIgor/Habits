@@ -6,8 +6,8 @@ extension Calendar {
     /// Календарь приложения: григорианский, неделя начинается с понедельника.
     static var app: Calendar {
         var calendar = Calendar(identifier: .gregorian)
-        calendar.locale = Locale(identifier: "ru_RU")
-        calendar.firstWeekday = 2
+        calendar.locale = .autoupdatingCurrent
+        calendar.firstWeekday = Calendar.current.firstWeekday
         calendar.timeZone = .current
         return calendar
     }
@@ -53,7 +53,7 @@ struct ReminderTime: Codable, Hashable {
 
     var minutesOfDay: Int { hour * 60 + minute }
 
-    var text: String { String(format: "%02d:%02d", hour, minute) }
+    var text: String { Fmt.time(self) }
 
     func date(on day: Date, calendar: Calendar = .app) -> Date? {
         calendar.date(bySettingHour: hour, minute: minute, second: 0, of: day)
@@ -119,6 +119,9 @@ struct Habit: Identifiable, Hashable, Codable {
     var createdAt: Date
     var isArchived: Bool
     var sortOrder: Int
+    /// Свои повторы напоминания (Pro). nil - стандартные.
+    var repeatCount: Int?
+    var repeatInterval: Int?
 
     init(id: UUID = UUID(),
          name: String = "",
@@ -146,6 +149,7 @@ struct Habit: Identifiable, Hashable, Codable {
 
     enum CodingKeys: String, CodingKey {
         case id, name, details, icon, colorIndex, groupID, schedule, reminder, createdAt, isArchived, sortOrder
+        case repeatCount, repeatInterval
     }
 
     init(from decoder: Decoder) throws {
@@ -161,7 +165,26 @@ struct Habit: Identifiable, Hashable, Codable {
         createdAt = try c.decodeIfPresent(Date.self, forKey: .createdAt) ?? Date()
         isArchived = try c.decodeIfPresent(Bool.self, forKey: .isArchived) ?? false
         sortOrder = try c.decodeIfPresent(Int.self, forKey: .sortOrder) ?? 0
+        repeatCount = try c.decodeIfPresent(Int.self, forKey: .repeatCount)
+        repeatInterval = try c.decodeIfPresent(Int.self, forKey: .repeatInterval)
     }
+
+    /// Повторы напоминания с учётом Pro: без Pro всегда стандартные.
+    func repeatRule(isPro: Bool) -> RepeatRule {
+        if isPro, let count = repeatCount, let interval = repeatInterval {
+            return RepeatRule(count: count, interval: interval)
+        }
+        return .standard
+    }
+}
+
+struct RepeatRule: Hashable {
+    var count: Int
+    var interval: Int
+
+    /// Бесплатная версия: 3 повтора каждые 15 минут.
+    static let standard = RepeatRule(count: 3, interval: 15)
+    static let intervals = [5, 10, 15, 30, 60]
 }
 
 // MARK: - Группа
@@ -194,22 +217,28 @@ struct NoteEntry: Identifiable, Hashable {
 // MARK: - Настройки
 
 struct AppSettings: Codable, Hashable {
-    /// Сколько раз повторить напоминание, если привычка не отмечена.
-    var repeatCount: Int = 8
-    /// Интервал между повторами, в минутах.
-    var repeatIntervalMinutes: Int = 15
+    /// Pro включён. Пока покупок нет, это тестовый переключатель в настройках.
+    var proUnlocked: Bool = true
 
     init() {}
 
     enum CodingKeys: String, CodingKey {
-        case repeatCount, repeatIntervalMinutes
+        case proUnlocked
     }
 
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
-        repeatCount = try c.decodeIfPresent(Int.self, forKey: .repeatCount) ?? 8
-        repeatIntervalMinutes = try c.decodeIfPresent(Int.self, forKey: .repeatIntervalMinutes) ?? 15
+        proUnlocked = try c.decodeIfPresent(Bool.self, forKey: .proUnlocked) ?? true
     }
+}
+
+extension AppData {
+    static let freeHabitLimit = 5
+
+    var isPro: Bool { settings.proUnlocked }
+
+    /// Можно ли добавить ещё одну активную привычку. Архивные не считаются.
+    var canAddHabit: Bool { isPro || activeHabits.count < Self.freeHabitLimit }
 }
 
 // MARK: - Все данные приложения

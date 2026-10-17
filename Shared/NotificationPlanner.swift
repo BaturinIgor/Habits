@@ -35,13 +35,13 @@ enum NotificationPlanner {
     static func registerCategories() {
         let done = UNNotificationAction(
             identifier: doneAction,
-            title: "Готово",
+            title: String(localized: "Done"),
             options: [],
             icon: UNNotificationActionIcon(systemImageName: "checkmark.circle.fill")
         )
         let skip = UNNotificationAction(
             identifier: skipAction,
-            title: "Пропустить",
+            title: String(localized: "Skip"),
             options: [],
             icon: UNNotificationActionIcon(systemImageName: "forward.fill")
         )
@@ -89,7 +89,7 @@ enum NotificationPlanner {
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
         for event in plan(data: data, now: now) {
-            center.add(makeRequest(event, settings: data.settings), withCompletionHandler: nil)
+            center.add(makeRequest(event), withCompletionHandler: nil)
         }
     }
 
@@ -112,14 +112,15 @@ enum NotificationPlanner {
         let calendar = Calendar.app
         let today = calendar.startOfDay(for: now)
         let nearLimit = now.addingTimeInterval(nearWindow)
-        let repeatCount = max(0, min(data.settings.repeatCount, 40))
-        let interval = TimeInterval(max(1, data.settings.repeatIntervalMinutes) * 60)
 
         var near: [Event] = []
         var far: [Event] = []
 
         for habit in data.habits where !habit.isArchived {
             guard let reminder = habit.reminder else { continue }
+            let rule = habit.repeatRule(isPro: data.isPro)
+            let repeatCount = max(0, min(rule.count, 40))
+            let interval = TimeInterval(max(1, rule.interval) * 60)
             // Начинаем со вчерашнего дня: повторы позднего напоминания могут перейти через полночь.
             for offset in -1...horizonDays {
                 guard let day = calendar.date(byAdding: .day, value: offset, to: today),
@@ -152,7 +153,7 @@ enum NotificationPlanner {
         return Array((near + far).prefix(maxPending))
     }
 
-    private static func makeRequest(_ event: Event, settings: AppSettings) -> UNNotificationRequest {
+    private static func makeRequest(_ event: Event) -> UNNotificationRequest {
         let content = UNMutableNotificationContent()
         let habit = event.habit
         if case .emoji(let emoji) = habit.icon {
@@ -161,9 +162,9 @@ enum NotificationPlanner {
             content.title = habit.name
         }
         if event.index == 0 {
-            content.body = habit.details.isEmpty ? "Пора выполнить привычку" : habit.details
+            content.body = habit.details.isEmpty ? String(localized: "Time for your habit") : habit.details
         } else {
-            content.body = "Напоминаю ещё раз. Отметь, когда сделаешь"
+            content.body = String(localized: "Reminder again. Check it off when you're done.")
         }
         content.sound = .default
         content.categoryIdentifier = categoryID

@@ -11,7 +11,6 @@ struct HabitsApp: App {
         WindowGroup {
             RootView()
                 .environment(store)
-                .environment(\.locale, Locale(identifier: "ru_RU"))
                 .task {
                     await NotificationPlanner.requestAuthorizationIfNeeded()
                     await store.reschedule()

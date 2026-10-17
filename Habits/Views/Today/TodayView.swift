@@ -19,7 +19,7 @@ func makeSections(_ habits: [Habit], data: AppData) -> [HabitSection] {
     }
     let rest = habits.filter { !used.contains($0.id) }.sortedForDisplay()
     if !rest.isEmpty {
-        result.append(HabitSection(id: "ungrouped", title: "Без группы", habits: rest))
+        result.append(HabitSection(id: "ungrouped", title: String(localized: "No group"), habits: rest))
     }
     return result
 }
@@ -33,6 +33,7 @@ struct TodayView: View {
     @State private var habitToDelete: Habit?
     @State private var anchorToday: Date = Calendar.app.startOfDay(for: Date())
     @State private var showingOrder = false
+    @State private var showingPaywall = false
     @Environment(\.scenePhase) private var scenePhase
     @Namespace private var zoom
 
@@ -70,11 +71,11 @@ struct TodayView: View {
                     anchorToday = today
                 }
             }
-            .navigationTitle(isToday ? "Сегодня" : RuFormat.relativeDay(selectedDay))
+            .navigationTitle(isToday ? String(localized: "Today") : Fmt.relativeDay(selectedDay))
             .toolbar {
                 if !isToday {
                     ToolbarItem(placement: .topBarLeading) {
-                        Button("Сегодня") {
+                        Button("Today") {
                             withAnimation(.snappy) {
                                 selectedDay = calendar.startOfDay(for: Date())
                             }
@@ -88,16 +89,16 @@ struct TodayView: View {
                         } label: {
                             Image(systemName: "arrow.up.arrow.down")
                         }
-                        .accessibilityLabel("Порядок привычек")
+                        .accessibilityLabel("Habit order")
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        showingNewHabit = true
+                        addHabit()
                     } label: {
                         Image(systemName: "plus")
                     }
-                    .accessibilityLabel("Новая привычка")
+                    .accessibilityLabel("New habit")
                 }
             }
             .navigationDestination(for: UUID.self) { id in
@@ -110,6 +111,9 @@ struct TodayView: View {
             .sheet(isPresented: $showingOrder) {
                 HabitOrderView()
             }
+            .sheet(isPresented: $showingPaywall) {
+                PaywallView()
+            }
             .sheet(item: $editingHabit) { habit in
                 HabitEditorView(habit: habit)
             }
@@ -117,7 +121,7 @@ struct TodayView: View {
                 NoteEditorView(target: target)
             }
             .confirmationDialog(
-                "Удалить привычку?",
+                "Delete habit?",
                 isPresented: Binding(
                     get: { habitToDelete != nil },
                     set: { if !$0 { habitToDelete = nil } }
@@ -125,12 +129,21 @@ struct TodayView: View {
                 titleVisibility: .visible,
                 presenting: habitToDelete
             ) { habit in
-                Button("Удалить", role: .destructive) {
+                Button("Delete", role: .destructive) {
                     withAnimation { store.deleteHabit(habit.id) }
                 }
             } message: { _ in
-                Text("История отметок тоже будет удалена.")
+                Text("Its check-in history will be deleted too.")
             }
+        }
+    }
+
+    /// Добавление привычки с учётом лимита бесплатной версии.
+    private func addHabit() {
+        if store.data.canAddHabit {
+            showingNewHabit = true
+        } else {
+            showingPaywall = true
         }
     }
 
@@ -141,16 +154,16 @@ struct TodayView: View {
             if store.data.activeHabits.isEmpty {
                 EmptyStateView(
                     systemImage: "sparkles",
-                    title: "Начнём с первой привычки",
-                    message: "Добавь привычку, выбери дни и время, и я напомню о ней.",
-                    buttonTitle: "Добавить привычку",
-                    action: { showingNewHabit = true }
+                    title: "Let's start with your first habit",
+                    message: "Add a habit, pick days and a time, and I'll remind you.",
+                    buttonTitle: "Add habit",
+                    action: addHabit
                 )
             } else {
                 EmptyStateView(
                     systemImage: "sun.max.fill",
-                    title: "Свободный день",
-                    message: "На этот день привычек не запланировано."
+                    title: "Free day",
+                    message: "No habits are planned for this day."
                 )
             }
         } else {
@@ -215,17 +228,17 @@ struct DayProgressCard: View {
     private var allDone: Bool { progress.total > 0 && progress.done == progress.total }
 
     private var headline: String {
-        if progress.total == 0 { return "Свободный день" }
-        if allDone { return "Всё выполнено!" }
-        return "\(progress.done) из \(progress.total)"
+        if progress.total == 0 { return String(localized: "Free day") }
+        if allDone { return String(localized: "All done!") }
+        return String(localized: "\(progress.done) of \(progress.total)")
     }
 
     private var subtitle: String {
-        if progress.total == 0 { return "Можно отдохнуть" }
-        if allDone { return "Отличная работа, так держать" }
-        if isFuture { return "Запланировано " + RuPlural.habits(progress.total) }
+        if progress.total == 0 { return String(localized: "Time to rest") }
+        if allDone { return String(localized: "Great job, keep it up") }
+        if isFuture { return Fmt.habitsPlanned(progress.total) }
         let left = progress.total - progress.done
-        return "Осталось " + RuPlural.habits(left)
+        return Fmt.habitsLeft(left)
     }
 
     var body: some View {
@@ -312,7 +325,7 @@ struct HabitCard: View {
             .sensoryFeedback(trigger: status) { _, new in
                 new == .done ? .success : .selection
             }
-            .accessibilityLabel(isDone ? "Снять отметку" : "Отметить выполненной")
+            .accessibilityLabel(isDone ? String(localized: "Uncheck") : String(localized: "Mark as done"))
         }
         .padding(14)
         .background {
@@ -327,21 +340,21 @@ struct HabitCard: View {
         .contextMenu {
             if canToggle {
                 Button(action: onToggle) {
-                    Label(isDone ? "Снять отметку" : "Выполнено", systemImage: isDone ? "arrow.uturn.backward" : "checkmark.circle")
+                    Label(isDone ? String(localized: "Uncheck") : String(localized: "Mark as done"), systemImage: isDone ? "arrow.uturn.backward" : "checkmark.circle")
                 }
                 Button(action: onSkip) {
-                    Label(status == .skipped ? "Отменить пропуск" : "Пропустить", systemImage: "forward")
+                    Label(status == .skipped ? String(localized: "Undo skip") : String(localized: "Skip"), systemImage: "forward")
                 }
                 Button(action: onNote) {
-                    Label(hasNote ? "Изменить заметку" : "Добавить заметку", systemImage: "note.text")
+                    Label(hasNote ? String(localized: "Edit note") : String(localized: "Add note"), systemImage: "note.text")
                 }
                 Divider()
             }
             Button(action: onEdit) {
-                Label("Изменить привычку", systemImage: "pencil")
+                Label("Edit habit", systemImage: "pencil")
             }
             Button(role: .destructive, action: onDelete) {
-                Label("Удалить", systemImage: "trash")
+                Label("Delete", systemImage: "trash")
             }
         }
         .animation(.spring(response: 0.35, dampingFraction: 0.75), value: status)
@@ -353,7 +366,7 @@ struct HabitCard: View {
         if hasAny {
             HStack(spacing: 10) {
                 if status == .skipped {
-                    Text("Пропущено")
+                    Text("Skipped")
                 }
                 if let reminder = habit.reminder {
                     Label(reminder.text, systemImage: "bell.fill")

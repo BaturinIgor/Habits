@@ -3,96 +3,79 @@ import Foundation
 // MARK: - Дни недели
 
 enum Weekdays {
-    /// Порядок с понедельника, значения как у Calendar (1 = воскресенье).
-    static let ordered: [Int] = [2, 3, 4, 5, 6, 7, 1]
+    /// Порядок с первого дня недели по региону пользователя, значения как у Calendar (1 = воскресенье).
+    static var ordered: [Int] {
+        let first = Calendar.app.firstWeekday
+        return (0..<7).map { (first - 1 + $0) % 7 + 1 }
+    }
     static let workdays: Set<Int> = [2, 3, 4, 5, 6]
     static let weekend: Set<Int> = [7, 1]
     static let all: Set<Int> = Set(1...7)
 
     static func short(_ weekday: Int) -> String {
-        switch weekday {
-        case 1: return "Вс"
-        case 2: return "Пн"
-        case 3: return "Вт"
-        case 4: return "Ср"
-        case 5: return "Чт"
-        case 6: return "Пт"
-        case 7: return "Сб"
-        default: return ""
-        }
+        let symbols = Calendar.app.shortStandaloneWeekdaySymbols
+        guard (1...symbols.count).contains(weekday) else { return "" }
+        return symbols[weekday - 1].replacingOccurrences(of: ".", with: "").capitalizedFirst
     }
 }
 
-// MARK: - Форматирование на русском
+// MARK: - Форматирование по языку системы
 
-enum RuFormat {
-    static let locale = Locale(identifier: "ru_RU")
-
-    private static func formatter(_ format: String) -> DateFormatter {
+enum Fmt {
+    private static func formatter(_ template: String) -> DateFormatter {
         let f = DateFormatter()
-        f.locale = locale
+        f.locale = .autoupdatingCurrent
         f.calendar = Calendar.app
-        f.dateFormat = format
+        f.timeZone = .current
+        f.setLocalizedDateFormatFromTemplate(template)
         return f
     }
 
-    private static let dayMonthFormatter = formatter("d MMMM")
-    private static let dayMonthYearFormatter = formatter("d MMMM yyyy")
-    private static let weekdayDayMonthFormatter = formatter("EEEE, d MMMM")
-    private static let monthYearFormatter = formatter("LLLL yyyy")
-    private static let shortDateFormatter = formatter("d MMM")
-
     static func dayMonth(_ date: Date) -> String {
         let cal = Calendar.app
-        if cal.component(.year, from: date) != cal.component(.year, from: Date()) {
-            dayMonthYearFormatter.timeZone = .current
-            return dayMonthYearFormatter.string(from: date)
-        }
-        dayMonthFormatter.timeZone = .current
-        return dayMonthFormatter.string(from: date)
+        let otherYear = cal.component(.year, from: date) != cal.component(.year, from: Date())
+        return formatter(otherYear ? "dMMMMyyyy" : "dMMMM").string(from: date)
     }
 
     static func weekdayDayMonth(_ date: Date) -> String {
-        weekdayDayMonthFormatter.timeZone = .current
-        return weekdayDayMonthFormatter.string(from: date).capitalizedFirst
+        formatter("EEEEdMMMM").string(from: date).capitalizedFirst
     }
 
     static func monthYear(_ date: Date) -> String {
-        monthYearFormatter.timeZone = .current
-        return monthYearFormatter.string(from: date).capitalizedFirst
+        formatter("LLLLyyyy").string(from: date).capitalizedFirst
     }
 
     static func shortDate(_ date: Date) -> String {
-        shortDateFormatter.timeZone = .current
-        return shortDateFormatter.string(from: date).replacingOccurrences(of: ".", with: "")
+        formatter("dMMM").string(from: date)
     }
 
     static func weekdayShort(_ date: Date) -> String {
         Weekdays.short(Calendar.app.component(.weekday, from: date))
     }
 
-    /// Человеческое описание дня: "Сегодня", "Вчера", "Завтра" или дата.
+    static func time(_ time: ReminderTime) -> String {
+        let f = DateFormatter()
+        f.locale = .autoupdatingCurrent
+        f.timeStyle = .short
+        f.dateStyle = .none
+        return f.string(from: time.dateToday)
+    }
+
+    /// "Сегодня", "Вчера", "Завтра" или дата.
     static func relativeDay(_ date: Date) -> String {
         let cal = Calendar.app
-        if cal.isDateInToday(date) { return "Сегодня" }
-        if cal.isDateInYesterday(date) { return "Вчера" }
-        if cal.isDateInTomorrow(date) { return "Завтра" }
+        if cal.isDateInToday(date) { return String(localized: "Today") }
+        if cal.isDateInYesterday(date) { return String(localized: "Yesterday") }
+        if cal.isDateInTomorrow(date) { return String(localized: "Tomorrow") }
         return weekdayDayMonth(date)
     }
-}
 
-enum RuPlural {
-    static func form(_ n: Int, _ one: String, _ few: String, _ many: String) -> String {
-        let n10 = abs(n) % 10
-        let n100 = abs(n) % 100
-        if n10 == 1 && n100 != 11 { return one }
-        if (2...4).contains(n10) && !(12...14).contains(n100) { return few }
-        return many
+    static func days(_ n: Int) -> String { String(localized: "\(n) days") }
+    static func habitsLeft(_ n: Int) -> String { String(localized: "\(n) habits left") }
+    static func habitsPlanned(_ n: Int) -> String { String(localized: "\(n) habits planned") }
+    static func repeats(_ count: Int, every minutes: Int) -> String {
+        String(localized: "\(count) repeats every \(minutes) min")
     }
-
-    static func days(_ n: Int) -> String { "\(n) " + form(n, "день", "дня", "дней") }
-    static func habits(_ n: Int) -> String { "\(n) " + form(n, "привычка", "привычки", "привычек") }
-    static func times(_ n: Int) -> String { "\(n) " + form(n, "раз", "раза", "раз") }
 }
 
 extension String {
@@ -164,26 +147,26 @@ extension Habit {
     var scheduleSummary: String {
         switch schedule.kind {
         case .once:
-            return "Один раз, " + RuFormat.dayMonth(schedule.onceDate)
+            return String(localized: "Once, \(Fmt.dayMonth(schedule.onceDate))")
         case .repeating:
             var text: String
             let days = schedule.weekdays
             if days == Weekdays.all {
-                text = "Каждый день"
+                text = String(localized: "Every day")
             } else if days == Weekdays.workdays {
-                text = "По будням"
+                text = String(localized: "On weekdays")
             } else if days == Weekdays.weekend {
-                text = "По выходным"
+                text = String(localized: "On weekends")
             } else {
                 text = Weekdays.ordered.filter { days.contains($0) }.map(Weekdays.short).joined(separator: ", ")
             }
             let cal = Calendar.app
             let today = cal.startOfDay(for: Date())
             if cal.startOfDay(for: schedule.startDate) > today {
-                text += ", с " + RuFormat.dayMonth(schedule.startDate)
+                text += ", " + String(localized: "from \(Fmt.dayMonth(schedule.startDate))")
             }
             if let end = schedule.endDate {
-                text += ", до " + RuFormat.dayMonth(end)
+                text += ", " + String(localized: "until \(Fmt.dayMonth(end))")
             }
             return text
         }

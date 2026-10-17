@@ -70,7 +70,7 @@ struct DayChip: View {
 
     var body: some View {
         VStack(spacing: 6) {
-            Text(RuFormat.weekdayShort(day))
+            Text(Fmt.weekdayShort(day))
                 .font(.caption2.weight(.semibold))
                 .foregroundStyle(isSelected ? Color.white.opacity(0.85) : Color.secondary)
             ZStack {

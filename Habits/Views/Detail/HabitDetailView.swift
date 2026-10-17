@@ -16,7 +16,7 @@ struct HabitDetailView: View {
             if let habit = store.habit(habitID) {
                 content(habit)
             } else {
-                ContentUnavailableView("Привычка удалена", systemImage: "trash")
+                ContentUnavailableView("Habit deleted", systemImage: "trash")
             }
         }
         .background(AppBackground())
@@ -33,10 +33,10 @@ struct HabitDetailView: View {
                 header(habit, color: color)
 
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
-                    StatTile(title: "Текущая серия", value: RuPlural.days(stats.currentStreak), systemImage: "flame.fill", color: .orange)
-                    StatTile(title: "Лучшая серия", value: RuPlural.days(stats.bestStreak), systemImage: "trophy.fill", color: .yellow)
-                    StatTile(title: "Выполнение", value: "\(Int((stats.completionRate * 100).rounded()))%", systemImage: "chart.pie.fill", color: color)
-                    StatTile(title: "Всего отметок", value: "\(stats.totalDone)", systemImage: "checkmark.circle.fill", color: .green)
+                    StatTile(title: "Current streak", value: Fmt.days(stats.currentStreak), systemImage: "flame.fill", color: .orange)
+                    StatTile(title: "Best streak", value: Fmt.days(stats.bestStreak), systemImage: "trophy.fill", color: .yellow)
+                    StatTile(title: "Completion", value: "\(Int((stats.completionRate * 100).rounded()))%", systemImage: "chart.pie.fill", color: color)
+                    StatTile(title: "Total check-ins", value: "\(stats.totalDone)", systemImage: "checkmark.circle.fill", color: .green)
                 }
 
                 MonthCalendarCard(habit: habit, month: $month) { day in
@@ -59,7 +59,7 @@ struct HabitDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button("Изменить") { editingHabit = habit }
+                Button("Edit") { editingHabit = habit }
             }
         }
         .sheet(item: $editingHabit) { habit in
@@ -91,7 +91,7 @@ struct HabitDetailView: View {
                     chip(reminder.text, systemImage: "bell.fill")
                 }
                 if habit.isArchived {
-                    chip("В архиве", systemImage: "archivebox.fill")
+                    chip(String(localized: "Archived"), systemImage: "archivebox.fill")
                 }
             }
         }
@@ -143,7 +143,7 @@ struct MonthCalendarCard: View {
         let color = Palette.color(habit.colorIndex)
         VStack(spacing: 14) {
             HStack {
-                Text(RuFormat.monthYear(month))
+                Text(Fmt.monthYear(month))
                     .font(.headline)
                     .contentTransition(.numericText())
                 Spacer()
@@ -183,14 +183,14 @@ struct MonthCalendarCard: View {
             }
 
             HStack(spacing: 14) {
-                legend(color: color, title: "Выполнено", filled: true)
-                legend(color: .secondary, title: "Пропущено", filled: false)
-                legend(color: .red.opacity(0.5), title: "Не сделано", filled: true)
+                legend(color: color, title: "Completed", filled: true)
+                legend(color: .secondary, title: "Skipped", filled: false)
+                legend(color: .red.opacity(0.5), title: "Missed", filled: true)
             }
             .font(.caption2)
             .foregroundStyle(.secondary)
 
-            Text("Нажми на день, чтобы отметить. Удерживай, чтобы пропустить или добавить заметку.")
+            Text("Tap a day to check it off. Press and hold to skip it or add a note.")
                 .font(.caption2)
                 .foregroundStyle(.tertiary)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -251,23 +251,23 @@ struct MonthCalendarCard: View {
             if canEdit {
                 Button {
                     store.setStatus(.done, for: habit.id, on: date)
-                } label: { Label("Выполнено", systemImage: "checkmark.circle") }
+                } label: { Label("Mark as done", systemImage: "checkmark.circle") }
                 Button {
                     store.setStatus(.skipped, for: habit.id, on: date)
-                } label: { Label("Пропущено", systemImage: "forward") }
+                } label: { Label("Skipped", systemImage: "forward") }
                 Button {
                     store.setStatus(nil, for: habit.id, on: date)
-                } label: { Label("Сбросить", systemImage: "arrow.uturn.backward") }
+                } label: { Label("Reset", systemImage: "arrow.uturn.backward") }
                 Divider()
                 Button {
                     onNote(date)
-                } label: { Label(hasNote ? "Изменить заметку" : "Заметка", systemImage: "note.text") }
+                } label: { Label(hasNote ? String(localized: "Edit note") : String(localized: "Note"), systemImage: "note.text") }
             }
         }
         .sensoryFeedback(.selection, trigger: status)
     }
 
-    private func legend(color: Color, title: String, filled: Bool) -> some View {
+    private func legend(color: Color, title: LocalizedStringKey, filled: Bool) -> some View {
         HStack(spacing: 5) {
             if filled {
                 Circle().fill(color).frame(width: 8, height: 8)
@@ -289,12 +289,12 @@ struct WeeklyChartCard: View {
         let color = Palette.color(habit.colorIndex)
         let points = Stats.weeklyRates(habit, in: data, weeks: 12)
         VStack(alignment: .leading, spacing: 12) {
-            Text("Последние 12 недель")
+            Text("Last 12 weeks")
                 .font(.headline)
             Chart(points) { point in
                 BarMark(
-                    x: .value("Неделя", point.weekStart, unit: .weekOfYear, calendar: Calendar.app),
-                    y: .value("Выполнение", point.hasData ? point.rate * 100 : 0)
+                    x: .value("Week", point.weekStart, unit: .weekOfYear, calendar: Calendar.app),
+                    y: .value("Completion", point.hasData ? point.rate * 100 : 0)
                 )
                 .foregroundStyle(color.gradient)
                 .cornerRadius(6)
@@ -314,7 +314,7 @@ struct WeeklyChartCard: View {
                 AxisMarks(values: .stride(by: .weekOfYear, count: 3)) { value in
                     AxisValueLabel {
                         if let date = value.as(Date.self) {
-                            Text(RuFormat.shortDate(date))
+                            Text(Fmt.shortDate(date))
                         }
                     }
                 }
@@ -335,10 +335,10 @@ struct NotesCard: View {
     var body: some View {
         let notes = data.notes(for: habit.id)
         VStack(alignment: .leading, spacing: 12) {
-            Text("Заметки")
+            Text("Notes")
                 .font(.headline)
             if notes.isEmpty {
-                Text("Пока пусто. Заметку можно добавить, удерживая карточку на главном экране или день в календаре.")
+                Text("Nothing yet. Add a note by pressing and holding a habit on the Today screen or a day in the calendar.")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             } else {
@@ -347,7 +347,7 @@ struct NotesCard: View {
                         onOpen(item.day)
                     } label: {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(DayKey.date(item.day).map { RuFormat.relativeDay($0) } ?? item.day)
+                            Text(DayKey.date(item.day).map { Fmt.relativeDay($0) } ?? item.day)
                                 .font(.caption.weight(.semibold))
                                 .foregroundStyle(.secondary)
                             Text(item.note)

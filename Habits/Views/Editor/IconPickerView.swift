@@ -39,7 +39,7 @@ struct IconPickerView: View {
                     .animation(.spring(response: 0.35, dampingFraction: 0.65), value: icon)
 
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Символы")
+                    Text("Symbols")
                         .font(.headline)
                     LazyVGrid(columns: columns, spacing: 10) {
                         ForEach(SymbolCatalog.symbols, id: \.self) { name in
@@ -53,9 +53,9 @@ struct IconPickerView: View {
                 }
 
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Эмодзи")
+                    Text("Emoji")
                         .font(.headline)
-                    TextField("Свой эмодзи с клавиатуры", text: $customEmoji)
+                    TextField("Your own emoji from the keyboard", text: $customEmoji)
                         .padding(12)
                         .background(RoundedRectangle(cornerRadius: 14, style: .continuous).fill(.fill.tertiary))
                         .onChange(of: customEmoji) { _, newValue in
@@ -79,7 +79,7 @@ struct IconPickerView: View {
             .padding(16)
         }
         .background(AppBackground())
-        .navigationTitle("Иконка")
+        .navigationTitle("Icon")
         .navigationBarTitleDisplayMode(.inline)
         .sensoryFeedback(.selection, trigger: icon)
     }

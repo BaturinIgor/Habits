@@ -15,6 +15,10 @@ struct HabitEditorView: View {
     @State private var confirmDelete = false
     @State private var frequency: Frequency
     @State private var customDays: Set<Int>
+    @State private var customRepeat: Bool
+    @State private var repeatCount: Int
+    @State private var repeatInterval: Int
+    @State private var showingPaywall = false
     @FocusState private var nameFocused: Bool
 
     private enum Frequency: Hashable {
@@ -42,6 +46,9 @@ struct HabitEditorView: View {
         _frequency = State(initialValue: base.schedule.kind == .once ? .once : (everyDay ? .daily : .days))
         // В режиме "По дням" выбор начинается с пустого: нажимаешь дни, когда привычка нужна.
         _customDays = State(initialValue: everyDay ? [] : base.schedule.weekdays)
+        _customRepeat = State(initialValue: base.repeatCount != nil)
+        _repeatCount = State(initialValue: base.repeatCount ?? RepeatRule.standard.count)
+        _repeatInterval = State(initialValue: base.repeatInterval ?? RepeatRule.standard.interval)
     }
 
     private var color: Color { Palette.color(draft.colorIndex) }
@@ -53,11 +60,15 @@ struct HabitEditorView: View {
         return true
     }
 
+    private var effectiveRepeat: RepeatRule {
+        store.data.isPro && customRepeat ? RepeatRule(count: repeatCount, interval: repeatInterval) : .standard
+    }
+
     private var repeatFooter: String {
-        let n = store.data.settings.repeatCount
-        if n == 0 { return "Одно уведомление в выбранное время." }
-        let interval = store.data.settings.repeatIntervalMinutes
-        return "Если не отметить, напомню ещё \(RuPlural.times(n)) каждые \(interval) минут. Кнопка \"Готово\" в уведомлении остановит повторы."
+        let rule = effectiveRepeat
+        if rule.count == 0 { return String(localized: "One notification at the chosen time.") }
+        let repeats = Fmt.repeats(rule.count, every: rule.interval)
+        return String(localized: "If not checked off: \(repeats). Done in the notification stops the repeats.")
     }
 
     var body: some View {
@@ -72,39 +83,42 @@ struct HabitEditorView: View {
                     dangerSection
                 }
             }
-            .navigationTitle(original == nil ? "Новая привычка" : "Изменить привычку")
+            .navigationTitle(original == nil ? String(localized: "New habit") : String(localized: "Edit habit"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Отмена") { dismiss() }
+                    Button("Cancel") { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Готово") { save() }
+                    Button("Done") { save() }
                         .fontWeight(.semibold)
                         .disabled(!canSave)
                 }
             }
-            .alert("Новая группа", isPresented: $showingNewGroup) {
-                TextField("Название", text: $newGroupName)
-                Button("Отмена", role: .cancel) { newGroupName = "" }
-                Button("Создать") {
+            .alert("New group", isPresented: $showingNewGroup) {
+                TextField("Name", text: $newGroupName)
+                Button("Cancel", role: .cancel) { newGroupName = "" }
+                Button("Create") {
                     let group = store.addGroup(name: newGroupName)
                     draft.groupID = group.id
                     newGroupName = ""
                 }
             }
-            .confirmationDialog("Удалить привычку?", isPresented: $confirmDelete, titleVisibility: .visible) {
-                Button("Удалить", role: .destructive) {
+            .confirmationDialog("Delete habit?", isPresented: $confirmDelete, titleVisibility: .visible) {
+                Button("Delete", role: .destructive) {
                     if let original {
                         store.deleteHabit(original.id)
                     }
                     dismiss()
                 }
             } message: {
-                Text("История отметок тоже будет удалена.")
+                Text("Its check-in history will be deleted too.")
             }
             .onAppear {
                 if original == nil { nameFocused = true }
+            }
+            .sheet(isPresented: $showingPaywall) {
+                PaywallView()
             }
         }
     }
@@ -116,27 +130,27 @@ struct HabitEditorView: View {
             HStack(spacing: 14) {
                 HabitIconView(icon: draft.icon, color: color, size: 58)
                     .animation(.spring(response: 0.35, dampingFraction: 0.7), value: draft.colorIndex)
-                TextField("Название привычки", text: $draft.name, axis: .vertical)
+                TextField("Habit name", text: $draft.name, axis: .vertical)
                     .font(.title3.weight(.semibold))
                     .lineLimit(1...3)
                     .focused($nameFocused)
                     .submitLabel(.done)
             }
             .padding(.vertical, 6)
-            TextField("Описание или мотивация (необязательно)", text: $draft.details, axis: .vertical)
+            TextField("Description or motivation (optional)", text: $draft.details, axis: .vertical)
                 .lineLimit(1...4)
         }
     }
 
     private var appearanceSection: some View {
-        Section("Оформление") {
+        Section("Appearance") {
             ColorRow(selection: $draft.colorIndex)
                 .listRowInsets(EdgeInsets(top: 12, leading: 0, bottom: 12, trailing: 0))
             NavigationLink {
                 IconPickerView(icon: $draft.icon, color: color)
             } label: {
                 HStack {
-                    Text("Иконка")
+                    Text("Icon")
                     Spacer()
                     HabitIconView(icon: draft.icon, color: color, size: 30)
                 }
@@ -145,26 +159,26 @@ struct HabitEditorView: View {
     }
 
     private var scheduleSection: some View {
-        Section("Расписание") {
-            Picker("Как часто", selection: $frequency.animation(.snappy)) {
-                Text("Каждый день").tag(Frequency.daily)
-                Text("По дням").tag(Frequency.days)
-                Text("Один раз").tag(Frequency.once)
+        Section("Schedule") {
+            Picker("How often", selection: $frequency.animation(.snappy)) {
+                Text("Every day").tag(Frequency.daily)
+                Text("Some days").tag(Frequency.days)
+                Text("Once").tag(Frequency.once)
             }
             .pickerStyle(.segmented)
             .listRowSeparator(.hidden)
 
             if frequency == .once {
-                DatePicker("Дата", selection: $draft.schedule.onceDate, displayedComponents: .date)
+                DatePicker("Date", selection: $draft.schedule.onceDate, displayedComponents: .date)
             } else {
                 if frequency == .days {
                     WeekdayPicker(selection: $customDays)
                 }
-                DatePicker("Начало", selection: $draft.schedule.startDate, displayedComponents: .date)
-                Toggle("Дата окончания", isOn: $hasEndDate.animation(.snappy))
+                DatePicker("Start", selection: $draft.schedule.startDate, displayedComponents: .date)
+                Toggle("End date", isOn: $hasEndDate.animation(.snappy))
                 if hasEndDate {
                     DatePicker(
-                        "Окончание",
+                        "End",
                         selection: $endDate,
                         in: calendar.startOfDay(for: draft.schedule.startDate)...,
                         displayedComponents: .date
@@ -177,13 +191,44 @@ struct HabitEditorView: View {
     private var reminderSection: some View {
         Section {
             Toggle(isOn: $hasReminder.animation(.snappy)) {
-                Label("Напоминание", systemImage: "bell.badge.fill")
+                Label("Reminder", systemImage: "bell.badge.fill")
             }
             if hasReminder {
-                DatePicker("Время", selection: $reminderDate, displayedComponents: .hourAndMinute)
+                DatePicker("Time", selection: $reminderDate, displayedComponents: .hourAndMinute)
+                if store.data.isPro {
+                    Toggle(isOn: $customRepeat.animation(.snappy)) {
+                        HStack(spacing: 8) {
+                            Text("Custom repeats")
+                            ProBadge()
+                        }
+                    }
+                    if customRepeat {
+                        Stepper(value: $repeatCount, in: 0...10) {
+                            LabeledContent("Repeats", value: "\(repeatCount)")
+                        }
+                        Picker("Interval", selection: $repeatInterval) {
+                            ForEach(RepeatRule.intervals, id: \.self) { minutes in
+                                Text("\(minutes) min").tag(minutes)
+                            }
+                        }
+                    }
+                } else {
+                    Button {
+                        showingPaywall = true
+                    } label: {
+                        HStack(spacing: 8) {
+                            Text("Custom repeats")
+                                .foregroundStyle(Color.primary)
+                            ProBadge()
+                            Spacer()
+                            Image(systemName: "lock.fill")
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
             }
         } header: {
-            Text("Уведомление")
+            Text("Notification")
         } footer: {
             if hasReminder {
                 Text(repeatFooter)
@@ -192,9 +237,9 @@ struct HabitEditorView: View {
     }
 
     private var groupSection: some View {
-        Section("Группа") {
-            Picker("Группа", selection: $draft.groupID) {
-                Text("Без группы").tag(UUID?.none)
+        Section("Group") {
+            Picker("Group", selection: $draft.groupID) {
+                Text("No group").tag(UUID?.none)
                 ForEach(store.data.sortedGroups) { group in
                     Text(group.name).tag(Optional(group.id))
                 }
@@ -202,7 +247,7 @@ struct HabitEditorView: View {
             Button {
                 showingNewGroup = true
             } label: {
-                Label("Новая группа", systemImage: "folder.badge.plus")
+                Label("New group", systemImage: "folder.badge.plus")
             }
         }
     }
@@ -211,20 +256,27 @@ struct HabitEditorView: View {
         Section {
             Button {
                 if let original {
-                    store.setArchived(original.id, !original.isArchived)
+                    if original.isArchived {
+                        guard store.unarchive(original.id) else {
+                            showingPaywall = true
+                            return
+                        }
+                    } else {
+                        store.setArchived(original.id, true)
+                    }
                 }
                 dismiss()
             } label: {
-                Label(draft.isArchived ? "Вернуть из архива" : "Переместить в архив", systemImage: "archivebox")
+                Label(draft.isArchived ? String(localized: "Restore from archive") : String(localized: "Move to archive"), systemImage: "archivebox")
             }
             Button(role: .destructive) {
                 confirmDelete = true
             } label: {
-                Label("Удалить привычку", systemImage: "trash")
+                Label("Delete habit", systemImage: "trash")
                     .foregroundStyle(.red)
             }
         } footer: {
-            Text("Архивная привычка не показывается на главном экране и не присылает уведомления, но её история сохраняется.")
+            Text("An archived habit is hidden from the Today screen and sends no notifications, but its history is kept.")
         }
     }
 
@@ -252,6 +304,10 @@ struct HabitEditorView: View {
             habit.schedule.endDate = nil
         }
         habit.reminder = hasReminder ? ReminderTime(date: reminderDate) : nil
+        if store.data.isPro {
+            habit.repeatCount = customRepeat ? repeatCount : nil
+            habit.repeatInterval = customRepeat ? repeatInterval : nil
+        }
         store.upsert(habit)
         if habit.reminder != nil {
             Task {
@@ -269,9 +325,9 @@ struct WeekdayPicker: View {
     @Binding var selection: Set<Int>
 
     private var summary: String {
-        if selection.isEmpty { return "Нажми на дни, в которые нужно выполнять привычку" }
+        if selection.isEmpty { return String(localized: "Tap the days when the habit should be done") }
         let days = Weekdays.ordered.filter { selection.contains($0) }.map(Weekdays.short).joined(separator: ", ")
-        return "Привычка по дням: " + days
+        return String(localized: "Days: \(days)")
     }
 
     var body: some View {
@@ -297,8 +353,8 @@ struct WeekdayPicker: View {
                 }
             }
             HStack(spacing: 8) {
-                preset("Будни", Weekdays.workdays)
-                preset("Выходные", Weekdays.weekend)
+                preset("Weekdays", Weekdays.workdays)
+                preset("Weekends", Weekdays.weekend)
                 Spacer(minLength: 0)
             }
             Text(summary)
@@ -309,7 +365,7 @@ struct WeekdayPicker: View {
         .padding(.vertical, 4)
     }
 
-    private func preset(_ title: String, _ days: Set<Int>) -> some View {
+    private func preset(_ title: LocalizedStringKey, _ days: Set<Int>) -> some View {
         let active = selection == days
         return Text(title)
             .font(.caption.weight(.semibold))

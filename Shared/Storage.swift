@@ -80,7 +80,7 @@ enum DataFile {
             )
             try raw.write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
         } catch {
-            print("Не удалось сохранить данные: \(error)")
+            print("Failed to save data: \(error)")
         }
     }
 }

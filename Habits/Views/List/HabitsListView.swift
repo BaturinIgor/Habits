@@ -6,6 +6,7 @@ struct HabitsListView: View {
     @State private var showArchive = false
     @State private var habitToDelete: Habit?
     @State private var showingOrder = false
+    @State private var showingPaywall = false
 
     var body: some View {
         NavigationStack {
@@ -14,10 +15,10 @@ struct HabitsListView: View {
                 if active.isEmpty {
                     EmptyStateView(
                         systemImage: "square.stack.fill",
-                        title: "Привычек пока нет",
-                        message: "Создай первую, и она появится здесь.",
-                        buttonTitle: "Добавить привычку",
-                        action: { showingNewHabit = true }
+                        title: "No habits yet",
+                        message: "Create your first one and it will appear here.",
+                        buttonTitle: "Add habit",
+                        action: addHabit
                     )
                     .listRowBackground(Color.clear)
                 }
@@ -32,12 +33,12 @@ struct HabitsListView: View {
                                 Button(role: .destructive) {
                                     habitToDelete = habit
                                 } label: {
-                                    Label("Удалить", systemImage: "trash")
+                                    Label("Delete", systemImage: "trash")
                                 }
                                 Button {
                                     withAnimation { store.setArchived(habit.id, true) }
                                 } label: {
-                                    Label("В архив", systemImage: "archivebox")
+                                    Label("Archive", systemImage: "archivebox")
                                 }
                                 .tint(.orange)
                             }
@@ -58,41 +59,43 @@ struct HabitsListView: View {
                                     Button(role: .destructive) {
                                         habitToDelete = habit
                                     } label: {
-                                        Label("Удалить", systemImage: "trash")
+                                        Label("Delete", systemImage: "trash")
                                     }
                                     Button {
-                                        withAnimation { store.setArchived(habit.id, false) }
+                                        withAnimation {
+                                            if !store.unarchive(habit.id) { showingPaywall = true }
+                                        }
                                     } label: {
-                                        Label("Вернуть", systemImage: "arrow.uturn.backward")
+                                        Label("Restore", systemImage: "arrow.uturn.backward")
                                     }
                                     .tint(.green)
                                 }
                             }
                         } label: {
-                            Label("Архив (\(archived.count))", systemImage: "archivebox.fill")
+                            Label("Archive (\(archived.count))", systemImage: "archivebox.fill")
                         }
                     }
                 }
             }
             .listStyle(.insetGrouped)
-            .navigationTitle("Привычки")
+            .navigationTitle("Habits")
             .toolbar {
                 if store.data.activeHabits.count > 1 {
                     ToolbarItem(placement: .topBarLeading) {
                         Button {
                             showingOrder = true
                         } label: {
-                            Label("Порядок", systemImage: "arrow.up.arrow.down")
+                            Label("Order", systemImage: "arrow.up.arrow.down")
                         }
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        showingNewHabit = true
+                        addHabit()
                     } label: {
                         Image(systemName: "plus")
                     }
-                    .accessibilityLabel("Новая привычка")
+                    .accessibilityLabel("New habit")
                 }
             }
             .navigationDestination(for: UUID.self) { id in
@@ -104,8 +107,11 @@ struct HabitsListView: View {
             .sheet(isPresented: $showingOrder) {
                 HabitOrderView()
             }
+            .sheet(isPresented: $showingPaywall) {
+                PaywallView()
+            }
             .confirmationDialog(
-                "Удалить привычку?",
+                "Delete habit?",
                 isPresented: Binding(
                     get: { habitToDelete != nil },
                     set: { if !$0 { habitToDelete = nil } }
@@ -113,12 +119,21 @@ struct HabitsListView: View {
                 titleVisibility: .visible,
                 presenting: habitToDelete
             ) { habit in
-                Button("Удалить", role: .destructive) {
+                Button("Delete", role: .destructive) {
                     withAnimation { store.deleteHabit(habit.id) }
                 }
             } message: { _ in
-                Text("История отметок тоже будет удалена. Если хочешь сохранить историю, перемести привычку в архив.")
+                Text("Its check-in history will be deleted too. To keep the history, archive the habit instead.")
             }
+        }
+    }
+
+    /// Добавление привычки с учётом лимита бесплатной версии.
+    private func addHabit() {
+        if store.data.canAddHabit {
+            showingNewHabit = true
+        } else {
+            showingPaywall = true
         }
     }
 }
@@ -141,7 +156,7 @@ struct HabitListRow: View {
                             .labelStyle(CompactLabelStyle())
                     }
                     if habit.hasEnded() {
-                        Text("Завершена")
+                        Text("Ended")
                     }
                 }
                 .font(.caption)

@@ -28,9 +28,9 @@ struct HabitsEntry: TimelineEntry {
             date: Date(),
             dayKey: DayKey.make(Date()),
             items: [
-                WidgetHabit(id: UUID(), name: "Выпить воду", icon: .symbol("drop.fill"), colorIndex: 5, status: .done, time: "09:00"),
-                WidgetHabit(id: UUID(), name: "Прогулка", icon: .symbol("figure.walk"), colorIndex: 3, status: nil, time: "13:00"),
-                WidgetHabit(id: UUID(), name: "Чтение", icon: .symbol("book.fill"), colorIndex: 7, status: nil, time: "21:00")
+                WidgetHabit(id: UUID(), name: String(localized: "Drink water"), icon: .symbol("drop.fill"), colorIndex: 5, status: .done, time: "09:00"),
+                WidgetHabit(id: UUID(), name: String(localized: "Walk"), icon: .symbol("figure.walk"), colorIndex: 3, status: nil, time: "13:00"),
+                WidgetHabit(id: UUID(), name: String(localized: "Reading"), icon: .symbol("book.fill"), colorIndex: 7, status: nil, time: "21:00")
             ]
         )
     }
@@ -106,8 +106,8 @@ struct TodayWidget: Widget {
             TodayWidgetView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
-        .configurationDisplayName("Привычки на сегодня")
-        .description("Прогресс дня и отметка привычек прямо с экрана Домой.")
+        .configurationDisplayName("Today's habits")
+        .description("Today's progress and quick check-off right from the Home Screen.")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
@@ -120,8 +120,8 @@ struct ProgressWidget: Widget {
             LockScreenView(entry: entry)
                 .containerBackground(Color.clear, for: .widget)
         }
-        .configurationDisplayName("Прогресс привычек")
-        .description("Сколько привычек выполнено сегодня.")
+        .configurationDisplayName("Habit progress")
+        .description("How many habits are done today.")
         .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline])
     }
 }
@@ -160,7 +160,7 @@ private struct RingSummary: View {
                 VStack(spacing: 0) {
                     Text("\(entry.done)")
                         .font(.system(size: size * 0.3, weight: .bold, design: .rounded))
-                    Text("из \(entry.total)")
+                    Text("of \(entry.total)")
                         .font(.system(size: size * 0.13, weight: .semibold))
                         .foregroundStyle(.secondary)
                 }
@@ -187,17 +187,17 @@ private struct SmallView: View {
             }
             Spacer(minLength: 0)
             if entry.items.isEmpty {
-                Text("Сегодня свободно")
+                Text("Free day today")
                     .font(.subheadline.weight(.semibold))
             } else if let next = entry.pending.first {
-                Text("Дальше")
+                Text("Next")
                     .font(.caption2.weight(.semibold))
                     .foregroundStyle(.secondary)
                 Text(next.name)
                     .font(.subheadline.weight(.semibold))
                     .lineLimit(2)
             } else {
-                Text("Всё выполнено")
+                Text("All done")
                     .font(.subheadline.weight(.semibold))
             }
         }
@@ -211,7 +211,7 @@ private struct MediumView: View {
         HStack(spacing: 16) {
             VStack(alignment: .leading, spacing: 6) {
                 RingSummary(entry: entry, size: 70, lineWidth: 9)
-                Text("Сегодня")
+                Text("Today")
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
             }
@@ -231,9 +231,9 @@ private struct ListWidgetView: View {
                 HStack(spacing: 12) {
                     RingSummary(entry: entry, size: 48, lineWidth: 6)
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Сегодня")
+                        Text("Today")
                             .font(.headline)
-                        Text(entry.total == 0 ? "Привычек нет" : "\(entry.done) из \(entry.total) выполнено")
+                        Text(entry.total == 0 ? String(localized: "No habits") : String(localized: "\(entry.done) of \(entry.total) done"))
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -243,7 +243,7 @@ private struct ListWidgetView: View {
             }
             if entry.items.isEmpty {
                 Spacer(minLength: 0)
-                Text("На сегодня привычек нет")
+                Text("No habits today")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Spacer(minLength: 0)
@@ -252,7 +252,7 @@ private struct ListWidgetView: View {
                     WidgetHabitRow(item: item, dayKey: entry.dayKey)
                 }
                 if entry.items.count > limit {
-                    Text("И ещё \(entry.items.count - limit)")
+                    Text("And \(entry.items.count - limit) more")
                         .font(.caption2.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
@@ -308,19 +308,19 @@ struct LockScreenView: View {
             }
             .gaugeStyle(.accessoryCircularCapacity)
         case .accessoryInline:
-            Label("\(entry.done) из \(entry.total) привычек", systemImage: "checkmark.circle")
+            Label("\(entry.done) of \(entry.total) habits", systemImage: "checkmark.circle")
         default:
             VStack(alignment: .leading, spacing: 2) {
                 HStack(spacing: 4) {
                     Image(systemName: "checkmark.circle.fill")
-                    Text("Привычки \(entry.done)/\(entry.total)")
+                    Text("Habits \(entry.done)/\(entry.total)")
                         .font(.headline)
                 }
                 if let next = entry.pending.first {
                     Text(next.time.map { "\($0) \(next.name)" } ?? next.name)
                         .lineLimit(1)
                 } else {
-                    Text(entry.total == 0 ? "Сегодня свободно" : "Всё выполнено")
+                    Text(entry.total == 0 ? String(localized: "Free day today") : String(localized: "All done"))
                 }
                 ProgressView(value: entry.progress)
             }
