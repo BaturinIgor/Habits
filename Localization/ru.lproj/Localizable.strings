@@ -90,6 +90,7 @@
 "Habits %lld/%lld" = "Привычки %lld/%lld";
 "Habits Pro" = "Привычки Pro";
 "Habits with reminders are sorted by time. The rest come after them and can be dragged." = "Привычки с напоминанием идут по времени. Остальные стоят после них, их можно перетащить.";
+"Hide keyboard" = "Скрыть клавиатуру";
 "How many habits are done today." = "Сколько привычек выполнено сегодня.";
 "How often" = "Как часто";
 "Icon" = "Иконка";

@@ -218,3 +218,4 @@ Until||До||Bis||Jusqu'au||Hasta||截止||終了日||종료일||तक
 Workout||Тренировка||Training||Entraînement||Entrenamiento||锻炼||運動||운동||कसरत
 glasses||стаканов||Gläser||verres||vasos||杯||杯||잔||गिलास
 iPhone permission||Разрешение iPhone||iPhone-Berechtigung||Autorisation iPhone||Permiso del iPhone||iPhone 权限||iPhoneの許可||iPhone 권한||iPhone अनुमति
+Hide keyboard||Скрыть клавиатуру||Tastatur ausblenden||Masquer le clavier||Ocultar teclado||隐藏键盘||キーボードを隠す||키보드 숨기기||कीबोर्ड छिपाएँ

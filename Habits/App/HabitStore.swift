@@ -62,14 +62,17 @@ final class HabitStore {
         commit()
     }
 
-    /// Задаёт новый ручной порядок для переданных привычек: они обмениваются своими местами.
-    /// Уведомления от порядка не зависят, поэтому их не пересчитываем.
+    /// Задаёт новый ручной порядок: переданные привычки встают на свои места в этом порядке,
+    /// а все привычки получают уникальные номера, чтобы порядок не "залипал".
     func applyManualOrder(_ ids: [UUID]) {
-        let orders = ids.compactMap { id in data.habits.first { $0.id == id }?.sortOrder }.sorted()
-        guard orders.count == ids.count else { return }
-        for (position, id) in ids.enumerated() {
+        var global = data.habits.sorted { $0.sortOrder < $1.sortOrder }.map(\.id)
+        let moved = Set(ids)
+        let slots = global.indices.filter { moved.contains(global[$0]) }
+        guard slots.count == ids.count else { return }
+        for (slot, id) in zip(slots, ids) { global[slot] = id }
+        for (position, id) in global.enumerated() {
             if let index = data.habits.firstIndex(where: { $0.id == id }) {
-                data.habits[index].sortOrder = orders[position]
+                data.habits[index].sortOrder = position
             }
         }
         DataFile.save(data)

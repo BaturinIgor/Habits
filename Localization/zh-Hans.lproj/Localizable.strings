@@ -90,6 +90,7 @@
 "Habits %lld/%lld" = "习惯 %lld/%lld";
 "Habits Pro" = "习惯 Pro";
 "Habits with reminders are sorted by time. The rest come after them and can be dragged." = "有提醒的习惯按时间排序，其余的排在后面，可以拖动调整。";
+"Hide keyboard" = "隐藏键盘";
 "How many habits are done today." = "今天完成了多少习惯。";
 "How often" = "频率";
 "Icon" = "图标";

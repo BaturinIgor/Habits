@@ -205,7 +205,7 @@ struct TodayView: View {
         let movable = store.data.settings.homeLayout == .byTime
             ? ids.filter { id in habits.first { $0.id == id }?.reminder == nil }
             : ids
-        withAnimation(.snappy) { store.applyManualOrder(movable) }
+        store.applyManualOrder(movable)
     }
 
     private func row(for habit: Habit) -> some View {

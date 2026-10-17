@@ -90,6 +90,7 @@
 "Habits %lld/%lld" = "습관 %lld/%lld";
 "Habits Pro" = "습관 Pro";
 "Habits with reminders are sorted by time. The rest come after them and can be dragged." = "알림이 있는 습관은 시간순으로 정렬돼요. 나머지는 그 뒤에 오며 끌어서 옮길 수 있어요.";
+"Hide keyboard" = "키보드 숨기기";
 "How many habits are done today." = "오늘 완료한 습관 수.";
 "How often" = "빈도";
 "Icon" = "아이콘";

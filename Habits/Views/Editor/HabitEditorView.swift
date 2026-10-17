@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct HabitEditorView: View {
     @Environment(HabitStore.self) private var store
@@ -116,11 +117,22 @@ struct HabitEditorView: View {
                     dangerSection
                 }
             }
+            .scrollDismissesKeyboard(.interactively)
             .navigationTitle(original == nil ? String(localized: "New habit") : String(localized: "Edit habit"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                }
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button {
+                        nameFocused = false
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    } label: {
+                        Image(systemName: "keyboard.chevron.compact.down")
+                    }
+                    .accessibilityLabel("Hide keyboard")
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { save() }
@@ -164,9 +176,8 @@ struct HabitEditorView: View {
             HStack(spacing: 14) {
                 HabitIconView(icon: draft.icon, color: color, size: 58)
                     .animation(.spring(response: 0.35, dampingFraction: 0.7), value: draft.colorIndex)
-                TextField("Habit name", text: $draft.name, axis: .vertical)
+                TextField("Habit name", text: $draft.name)
                     .font(.title3.weight(.semibold))
-                    .lineLimit(1...3)
                     .focused($nameFocused)
                     .submitLabel(.done)
             }

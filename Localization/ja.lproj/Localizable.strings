@@ -90,6 +90,7 @@
 "Habits %lld/%lld" = "習慣 %lld/%lld";
 "Habits Pro" = "習慣 Pro";
 "Habits with reminders are sorted by time. The rest come after them and can be dragged." = "リマインダー付きの習慣は時刻順に並びます。それ以外は後に続き、ドラッグで並べ替えられます。";
+"Hide keyboard" = "キーボードを隠す";
 "How many habits are done today." = "今日完了した習慣の数。";
 "How often" = "頻度";
 "Icon" = "アイコン";
