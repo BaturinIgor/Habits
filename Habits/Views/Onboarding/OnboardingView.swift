@@ -61,7 +61,7 @@ struct OnboardingView: View {
                         finish()
                     }
                 } label: {
-                    Text(page < pages.count - 1 ? String(localized: "Continue") : String(localized: "Start"))
+                    Text(page < pages.count - 1 ? String(localized: "Continue") : String(localized: "Let's go"))
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 8)

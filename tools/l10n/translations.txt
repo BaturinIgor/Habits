@@ -219,3 +219,73 @@ Workout||Тренировка||Training||Entraînement||Entrenamiento||锻炼||�
 glasses||стаканов||Gläser||verres||vasos||杯||杯||잔||गिलास
 iPhone permission||Разрешение iPhone||iPhone-Berechtigung||Autorisation iPhone||Permiso del iPhone||iPhone 权限||iPhoneの許可||iPhone 권한||iPhone अनुमति
 Hide keyboard||Скрыть клавиатуру||Tastatur ausblenden||Masquer le clavier||Ocultar teclado||隐藏键盘||キーボードを隠す||키보드 숨기기||कीबोर्ड छिपाएँ
+7 perfect days in a row||7 идеальных дней подряд||7 perfekte Tage in Folge||7 journées parfaites d'affilée||7 días perfectos seguidos||连续 7 个完美日||7日連続でパーフェクト||7일 연속 완벽한 하루||लगातार 7 परफ़ेक्ट दिन
+A week strong||Неделя силы||Eine starke Woche||Une semaine solide||Una semana firme||坚持一周||1週間達成||일주일 달성||एक मज़बूत हफ़्ता
+A whole year||Целый год||Ein ganzes Jahr||Une année entière||Un año entero||整整一年||まる1年||꼬박 1년||पूरा एक साल
+Achievements||Ачивки||Erfolge||Succès||Logros||成就||実績||업적||उपलब्धियाँ
+Achievements and rewards||Ачивки и награды||Erfolge und Belohnungen||Succès et récompenses||Logros y recompensas||成就与奖励||実績とごほうび||업적과 보상||उपलब्धियाँ और इनाम
+After habit||После привычки||Nach Gewohnheit||Après l'habitude||Después del hábito||在此习惯之后||この習慣の後||다음 습관 뒤에||इस आदत के बाद
+After: %@||После: %@||Nach: %@||Après : %@||Después de: %@||之后：%@||次の後：%@||다음 뒤: %@||इसके बाद: %@
+Avatars||Аватарки||Avatare||Avatars||Avatares||头像||アバター||아바타||अवतार
+Backgrounds||Фоны||Hintergründe||Fonds||Fondos||背景||背景||배경||पृष्ठभूमि
+Better than nothing||Лучше, чем ничего||Besser als nichts||Mieux que rien||Mejor que nada||聊胜于无||何もしないよりいい||안 하는 것보다 낫다||कुछ न करने से बेहतर
+Check off 10 habits after 10 pm||Отметь 10 привычек после 22:00||Hake 10 Gewohnheiten nach 22 Uhr ab||Valide 10 habitudes après 22 h||Marca 10 hábitos después de las 22:00||在 22 点后打卡 10 次||22時以降に10回チェック||밤 10시 이후 10번 체크||रात 10 बजे के बाद 10 आदतें पूरी करें
+Check off 10 habits before 8 am||Отметь 10 привычек до 8:00||Hake 10 Gewohnheiten vor 8 Uhr ab||Valide 10 habitudes avant 8 h||Marca 10 hábitos antes de las 8:00||在 8 点前打卡 10 次||8時前に10回チェック||오전 8시 전에 10번 체크||सुबह 8 बजे से पहले 10 आदतें पूरी करें
+Check off a habit for the first time||Впервые отметь привычку||Hake zum ersten Mal eine Gewohnheit ab||Valide une habitude pour la première fois||Marca un hábito por primera vez||第一次打卡||初めて習慣をチェック||처음으로 습관 체크||पहली बार कोई आदत पूरी करें
+Check off habits 100 times||Отметь привычки 100 раз||Hake 100-mal Gewohnheiten ab||Valide des habitudes 100 fois||Marca hábitos 100 veces||打卡 100 次||100回チェック||습관을 100번 체크||100 बार आदतें पूरी करें
+Check off habits 1000 times||Отметь привычки 1000 раз||Hake 1000-mal Gewohnheiten ab||Valide des habitudes 1000 fois||Marca hábitos 1000 veces||打卡 1000 次||1000回チェック||습관을 1000번 체크||1000 बार आदतें पूरी करें
+Collector||Коллекционер||Sammler||Collectionneur||Coleccionista||收藏家||コレクター||수집가||संग्रहकर्ता
+Come back after a miss 10 times||Вернись после пропуска 10 раз||Komm 10-mal nach einer Lücke zurück||Reviens 10 fois après un raté||Vuelve 10 veces tras un fallo||中断后重新开始 10 次||休んだ後に10回復帰||놓친 뒤 10번 복귀||चूकने के बाद 10 बार लौटें
+Comeback||Возвращение||Comeback||Retour en force||Regreso||重新出发||カムバック||복귀||वापसी
+Complete every habit in a day||Выполни все привычки за день||Erledige an einem Tag alle Gewohnheiten||Fais toutes tes habitudes en une journée||Completa todos los hábitos en un día||一天内完成所有习惯||1日ですべての習慣を達成||하루에 모든 습관 완료||एक दिन में सारी आदतें पूरी करें
+Continue||Дальше||Weiter||Continuer||Continuar||继续||次へ||계속||आगे
+Create 5 habits||Создай 5 привычек||Erstelle 5 Gewohnheiten||Crée 5 habitudes||Crea 5 hábitos||创建 5 个习惯||習慣を5つ作成||습관 5개 만들기||5 आदतें बनाएँ
+Diarist||Летописец||Tagebuchschreiber||Chroniqueur||Cronista||记录者||日記家||기록가||डायरी लेखक
+Do the minimum version 10 times||Выполни минимальную версию 10 раз||Mach 10-mal die Minimalversion||Fais la version minimale 10 fois||Haz la versión mínima 10 veces||完成 10 次最低版本||ミニマム版を10回達成||최소 버전 10번 하기||न्यूनतम रूप 10 बार करें
+Early bird||Ранняя пташка||Frühaufsteher||Lève-tôt||Madrugador||早起鸟||早起き||얼리버드||जल्दी उठने वाला
+Earn achievements to unlock avatars and backgrounds, and level up with every check-in.||Получай ачивки, открывай аватарки и фоны, а с каждой отметкой расти в уровне.||Sammle Erfolge, schalte Avatare und Hintergründe frei und steige mit jedem Abhaken im Level auf.||Gagne des succès pour débloquer avatars et fonds, et monte de niveau à chaque validation.||Consigue logros para desbloquear avatares y fondos, y sube de nivel con cada marca.||获得成就解锁头像和背景，每次打卡都会升级。||実績でアバターや背景を解放し、チェックするたびにレベルアップ。||업적으로 아바타와 배경을 열고, 체크할 때마다 레벨업하세요.||उपलब्धियाँ पाएँ, अवतार और पृष्ठभूमि खोलें, और हर बार पूरा करने पर लेवल बढ़ाएँ।
+Exclusive avatars and backgrounds||Эксклюзивные аватарки и фоны||Exklusive Avatare und Hintergründe||Avatars et fonds exclusifs||Avatares y fondos exclusivos||专属头像和背景||限定アバターと背景||전용 아바타와 배경||ख़ास अवतार और पृष्ठभूमि
+First step||Первый шаг||Erster Schritt||Premier pas||Primer paso||第一步||最初の一歩||첫걸음||पहला कदम
+Freeze||Заморозка||Freeze||Gel||Congelación||冻结||フリーズ||프리즈||फ़्रीज़
+Freezes this month||Заморозки в этом месяце||Freezes diesen Monat||Gels ce mois-ci||Congelaciones este mes||本月冻结||今月のフリーズ||이번 달 프리즈||इस महीने फ़्रीज़
+Hard days and chains||Тяжёлые дни и связки||Schwere Tage und Ketten||Jours difficiles et enchaînements||Días difíciles y cadenas||艰难日子与习惯链||つらい日と連鎖||힘든 날과 연결||मुश्किल दिन और जोड़
+Hundred||Сотня||Hundert||Centaine||Centenar||百日||100日||백일||सौ
+Hundred check-ins||Сто отметок||Hundert Haken||Cent validations||Cien marcas||百次打卡||100回チェック||100번 체크||सौ बार पूरा
+Ice cold||Хладнокровие||Eiskalt||De glace||A sangre fría||冷静如冰||クール||냉정함||बर्फ़ जैसा ठंडा
+Keep a 100-day streak||Держи серию 100 дней||Halte eine Serie von 100 Tagen||Tiens une série de 100 jours||Mantén una racha de 100 días||连续 100 天||100日連続||100일 연속||100 दिन लगातार
+Keep a 3-day streak||Держи серию 3 дня||Halte eine Serie von 3 Tagen||Tiens une série de 3 jours||Mantén una racha de 3 días||连续 3 天||3日連続||3일 연속||3 दिन लगातार
+Keep a 30-day streak||Держи серию 30 дней||Halte eine Serie von 30 Tagen||Tiens une série de 30 jours||Mantén una racha de 30 días||连续 30 天||30日連続||30일 연속||30 दिन लगातार
+Keep a 365-day streak||Держи серию 365 дней||Halte eine Serie von 365 Tagen||Tiens une série de 365 jours||Mantén una racha de 365 días||连续 365 天||365日連続||365일 연속||365 दिन लगातार
+Keep a 7-day streak||Держи серию 7 дней||Halte eine Serie von 7 Tagen||Tiens une série de 7 jours||Mantén una racha de 7 días||连续 7 天||7日連続||7일 연속||7 दिन लगातार
+Legend||Легенда||Legende||Légende||Leyenda||传奇||レジェンド||전설||दिग्गज
+Level %lld||Уровень %lld||Level %lld||Niveau %lld||Nivel %lld||等级 %lld||レベル %lld||레벨 %lld||लेवल %lld
+Let's go||Начать||Los geht's||C'est parti||Empezar||开始||はじめる||시작하기||शुरू करें
+Minimum||Минимум||Minimum||Minimum||Mínimo||最低版||ミニマム||최소||न्यूनतम
+Minimum version, for example 5 squats||Минимальная версия, например 5 приседаний||Minimalversion, z. B. 5 Kniebeugen||Version minimale, par exemple 5 squats||Versión mínima, por ejemplo 5 sentadillas||最低版本，例如 5 个深蹲||ミニマム版（例：スクワット5回）||최소 버전, 예: 스쿼트 5회||न्यूनतम रूप, जैसे 5 स्क्वॉट
+Misses are okay||Пропуски - это нормально||Lücken sind okay||Rater, c'est normal||Fallar está bien||偶尔错过也没关系||休んでも大丈夫||놓쳐도 괜찮아요||चूक जाना ठीक है
+Month of power||Месяц силы||Monat der Stärke||Mois de force||Mes de poder||力量之月||パワーの1か月||힘의 한 달||ताक़त का महीना
+New achievement!||Новая ачивка!||Neuer Erfolg!||Nouveau succès !||¡Nuevo logro!||新成就！||新しい実績！||새 업적!||नई उपलब्धि!
+Next up in your chain||Следующая в твоей связке||Als Nächstes in deiner Kette||Suivante dans ton enchaînement||Siguiente en tu cadena||习惯链的下一个||連鎖の次の習慣||연결된 다음 습관||आपकी कड़ी में अगली
+Night owl||Сова||Nachteule||Oiseau de nuit||Ave nocturna||夜猫子||夜型||올빼미||रात का उल्लू
+None||Нет||Keine||Aucune||Ninguno||无||なし||없음||कोई नहीं
+Perfect day||Идеальный день||Perfekter Tag||Journée parfaite||Día perfecto||完美的一天||パーフェクトな日||완벽한 하루||परफ़ेक्ट दिन
+Perfect week||Идеальная неделя||Perfekte Woche||Semaine parfaite||Semana perfecta||完美的一周||パーフェクトな週||완벽한 한 주||परफ़ेक्ट हफ़्ता
+Profile||Профиль||Profil||Profil||Perfil||个人资料||プロフィール||프로필||प्रोफ़ाइल
+Profile and achievements||Профиль и ачивки||Profil und Erfolge||Profil et succès||Perfil y logros||个人资料与成就||プロフィールと実績||프로필 및 업적||प्रोफ़ाइल और उपलब्धियाँ
+Reach a weekly goal 4 times||Выполни недельную цель 4 раза||Erreiche 4-mal ein Wochenziel||Atteins un objectif hebdo 4 fois||Cumple una meta semanal 4 veces||完成 4 次每周目标||週の目標を4回達成||주간 목표 4번 달성||4 बार साप्ताहिक लक्ष्य पूरा करें
+Resilient||Несгибаемый||Unerschütterlich||Résilient||Resiliente||坚韧不拔||不屈||불굴||अटल
+Return to a habit after a miss||Вернись к привычке после пропуска||Kehre nach einer Lücke zur Gewohnheit zurück||Reviens à une habitude après un raté||Vuelve a un hábito tras un fallo||中断后重新坚持||休んだ後に習慣に復帰||놓친 뒤 습관으로 복귀||चूकने के बाद आदत पर लौटें
+Save a streak with a freeze||Спаси серию заморозкой||Rette eine Serie mit einem Freeze||Sauve une série avec un gel||Salva una racha con una congelación||用冻结保住连续记录||フリーズで連続記録を守る||프리즈로 연속 기록 지키기||फ़्रीज़ से लगातार गिनती बचाएँ
+Show introduction||Показать знакомство||Einführung zeigen||Revoir l'introduction||Ver la introducción||查看引导||紹介を表示||소개 다시 보기||परिचय दिखाएँ
+Simple gestures||Простые жесты||Einfache Gesten||Gestes simples||Gestos sencillos||简单手势||かんたん操作||간단한 제스처||आसान इशारे
+Small steps every day||Маленькие шаги каждый день||Kleine Schritte jeden Tag||Des petits pas chaque jour||Pequeños pasos cada día||每天一小步||毎日の小さな一歩||매일 작은 한 걸음||हर दिन छोटे कदम
+Swipe a card right to check it off, left for more actions. Press and hold to reorder.||Смахни карточку вправо, чтобы отметить, и влево, чтобы открыть действия. Удерживай, чтобы перетащить.||Wische eine Karte nach rechts zum Abhaken, nach links für mehr Aktionen. Halte gedrückt zum Verschieben.||Balaie une carte vers la droite pour valider, vers la gauche pour plus d'actions. Maintiens pour déplacer.||Desliza una tarjeta a la derecha para marcarla y a la izquierda para más acciones. Mantén pulsado para reordenar.||向右滑动卡片打卡，向左滑动查看更多操作，长按可调整顺序。||カードを右へスワイプでチェック、左でその他の操作。長押しで並べ替え。||카드를 오른쪽으로 밀면 체크, 왼쪽은 더 보기. 길게 눌러 순서 변경.||कार्ड को दाएँ स्वाइप करें पूरा करने के लिए, बाएँ और विकल्पों के लिए। क्रम बदलने के लिए दबाकर रखें।
+Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder.||Нажми на кружок или смахни вправо, чтобы отметить. Смахни влево, чтобы пропустить, добавить заметку или изменить. Удерживай, чтобы поменять порядок.||Tippe auf den Kreis oder wische nach rechts zum Abhaken. Wische nach links zum Überspringen, für Notizen oder zum Bearbeiten. Halte gedrückt zum Verschieben.||Touche le cercle ou balaie vers la droite pour valider. Balaie vers la gauche pour passer, noter ou modifier. Maintiens pour réordonner.||Toca el círculo o desliza a la derecha para marcar. Desliza a la izquierda para omitir, anotar o editar. Mantén pulsado para reordenar.||点圆圈或向右滑动即可打卡。向左滑动可跳过、写备注或编辑。长按可调整顺序。||丸をタップか右スワイプでチェック。左スワイプでスキップ、メモ、編集。長押しで並べ替え。||원을 탭하거나 오른쪽으로 밀어 체크하세요. 왼쪽으로 밀면 건너뛰기, 메모, 편집. 길게 눌러 순서 변경.||पूरा करने के लिए गोले पर टैप करें या दाएँ स्वाइप करें। छोड़ने, नोट या बदलाव के लिए बाएँ स्वाइप करें। क्रम बदलने के लिए दबाकर रखें।
+The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it.||Минимальная версия засчитывается как выполнение и сохраняет серию. Привычка в связке напомнит о себе сразу после отметки предыдущей.||Die Minimalversion zählt als erledigt und hält deine Serie. Eine verkettete Gewohnheit erinnert dich direkt nach dem Abhaken der vorherigen.||La version minimale compte comme faite et garde ta série. Une habitude enchaînée te le rappelle juste après la précédente.||La versión mínima cuenta como hecha y mantiene tu racha. Un hábito encadenado te avisa justo después de marcar el anterior.||最低版本也算完成，并保持连续记录。链中的习惯会在你完成上一个后立即提醒。||ミニマム版も達成扱いで連続記録が続きます。連鎖した習慣は前の習慣をチェックした直後に通知します。||최소 버전도 완료로 인정돼 연속 기록이 유지돼요. 연결된 습관은 앞 습관을 체크하면 바로 알려 드려요.||न्यूनतम रूप भी पूरा माना जाता है और लगातार गिनती बचाता है। जुड़ी आदत पिछली पूरी होते ही याद दिलाती है।
+Track habits, get gentle reminders and watch your streaks grow.||Отмечай привычки, получай мягкие напоминания и смотри, как растут серии.||Verfolge Gewohnheiten, erhalte sanfte Erinnerungen und sieh deine Serien wachsen.||Suis tes habitudes, reçois des rappels doux et regarde tes séries grandir.||Registra hábitos, recibe recordatorios suaves y mira crecer tus rachas.||记录习惯，接收温和提醒，看着连续记录不断增长。||習慣を記録し、やさしい通知を受け取り、連続記録を伸ばしましょう。||습관을 기록하고, 부드러운 알림을 받고, 연속 기록이 늘어나는 걸 보세요.||आदतें दर्ज करें, हल्के रिमाइंडर पाएँ और अपनी लगातार गिनती बढ़ते देखें।
+Two misses a month won't break your streak, and a minimum version still counts on hard days.||Два пропуска в месяц не обнулят серию, а в тяжёлый день засчитается и минимальная версия.||Zwei Lücken im Monat brechen deine Serie nicht, und an schweren Tagen zählt auch die Minimalversion.||Deux ratés par mois ne cassent pas ta série, et les jours difficiles la version minimale compte aussi.||Dos fallos al mes no rompen tu racha, y en días difíciles también cuenta la versión mínima.||每月两次错过不会中断连续记录，艰难的日子里最低版本也算数。||月2回までは休んでも連続記録は途切れず、つらい日はミニマム版でもOK。||한 달에 두 번 놓쳐도 연속 기록은 이어지고, 힘든 날엔 최소 버전도 인정돼요.||महीने में दो चूक से लगातार गिनती नहीं टूटेगी, और मुश्किल दिन न्यूनतम रूप भी गिना जाएगा।
+Unlock the full collection and Pro-only designs.||Вся коллекция и дизайны только для Pro.||Die ganze Sammlung und Pro-exklusive Designs.||Toute la collection et des designs réservés à Pro.||Toda la colección y diseños exclusivos de Pro.||解锁全部收藏和 Pro 专属设计。||全コレクションとPro限定デザイン。||전체 컬렉션과 Pro 전용 디자인.||पूरा संग्रह और केवल Pro डिज़ाइन।
+Unlock: %@||Как открыть: %@||Freischalten: %@||Pour débloquer : %@||Para desbloquear: %@||解锁条件：%@||解放条件：%@||해제 조건: %@||खोलने के लिए: %@
+Warming up||Разминка||Aufwärmen||Échauffement||Calentando||热身||ウォームアップ||워밍업||वार्म-अप
+Weekly hero||Герой недели||Wochenheld||Héros de la semaine||Héroe semanal||每周英雄||週間ヒーロー||주간 영웅||साप्ताहिक हीरो
+Write 10 notes||Напиши 10 заметок||Schreibe 10 Notizen||Écris 10 notes||Escribe 10 notas||写 10 条备注||メモを10件書く||메모 10개 쓰기||10 नोट लिखें
