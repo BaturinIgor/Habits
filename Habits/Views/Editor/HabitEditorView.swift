@@ -27,6 +27,8 @@ struct HabitEditorView: View {
     @State private var unit: String
     @State private var isPaused: Bool
     @State private var pausedUntil: Date
+    @State private var minimumVersion: String
+    @State private var chainAfter: UUID?
     @FocusState private var nameFocused: Bool
 
     private enum Frequency: Hashable {
@@ -78,6 +80,8 @@ struct HabitEditorView: View {
         _unit = State(initialValue: base.unit ?? "")
         let today = Calendar.app.startOfDay(for: Date())
         let pauseActive = (base.pausedUntil.map { $0 >= today }) ?? false
+        _minimumVersion = State(initialValue: base.minimumVersion ?? "")
+        _chainAfter = State(initialValue: base.chainAfter)
         _isPaused = State(initialValue: pauseActive)
         _pausedUntil = State(initialValue: pauseActive ? (base.pausedUntil ?? today)
                              : (Calendar.app.date(byAdding: .day, value: 7, to: today) ?? today))
@@ -111,6 +115,7 @@ struct HabitEditorView: View {
                 scheduleSection
                 reminderSection
                 goalSection
+                flexibilitySection
                 groupSection
                 pauseSection
                 if original != nil {
@@ -304,6 +309,22 @@ struct HabitEditorView: View {
         }
     }
 
+    private var flexibilitySection: some View {
+        Section {
+            TextField("Minimum version, for example 5 squats", text: $minimumVersion)
+            Picker("After habit", selection: $chainAfter) {
+                Text("None").tag(UUID?.none)
+                ForEach(store.data.activeHabits.filter { $0.id != draft.id }) { habit in
+                    Text(habit.name).tag(Optional(habit.id))
+                }
+            }
+        } header: {
+            Text("Hard days and chains")
+        } footer: {
+            Text("The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it.")
+        }
+    }
+
     private var pauseSection: some View {
         Section {
             if store.data.isPro {
@@ -401,6 +422,9 @@ struct HabitEditorView: View {
             habit.schedule.kind = .once
         }
         habit.schedule.timesPerWeek = timesPerWeek
+        let cleanMinimum = minimumVersion.trimmingCharacters(in: .whitespacesAndNewlines)
+        habit.minimumVersion = cleanMinimum.isEmpty ? nil : cleanMinimum
+        habit.chainAfter = chainAfter
         habit.partOfDay = partOfDay
         if store.data.isPro {
             let cleanUnit = unit.trimmingCharacters(in: .whitespacesAndNewlines)

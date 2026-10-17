@@ -22,6 +22,8 @@ struct PaywallView: View {
                 text: "Count glasses of water, pages or minutes toward a goal."),
         Feature(icon: "pause.circle.fill", title: "Pause",
                 text: "Take a break for a trip or illness without losing your streak."),
+        Feature(icon: "paintpalette.fill", title: "Exclusive avatars and backgrounds",
+                text: "Unlock the full collection and Pro-only designs."),
         Feature(icon: "person.2.fill", title: "Family",
                 text: "Coming soon: follow your child's progress."),
         Feature(icon: "icloud.fill", title: "Sync and backup",

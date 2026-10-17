@@ -14,6 +14,7 @@ struct SettingsView: View {
     @State private var pendingImport: URL?
     @State private var importResult: Bool?
     @State private var showingRestartHint = false
+    @State private var showingProfile = false
     @AppStorage("appLanguage") private var appLanguage = "system"
 
     private static let languages: [(code: String, name: String)] = [
@@ -150,6 +151,24 @@ struct SettingsView: View {
                 }
 
                 Section("Organization") {
+                    Button {
+                        showingProfile = true
+                    } label: {
+                        Label {
+                            Text("Profile and achievements").foregroundStyle(Color.primary)
+                        } icon: {
+                            Image(systemName: "trophy.fill").foregroundStyle(.yellow)
+                        }
+                    }
+                    Button {
+                        store.updateSettings { $0.onboardingDone = false; $0.gestureHintShown = false }
+                    } label: {
+                        Label {
+                            Text("Show introduction").foregroundStyle(Color.primary)
+                        } icon: {
+                            Image(systemName: "questionmark.circle.fill")
+                        }
+                    }
                     NavigationLink {
                         GroupsView()
                     } label: {
@@ -198,6 +217,9 @@ struct SettingsView: View {
             }
             .sheet(isPresented: $showingPaywall) {
                 PaywallView()
+            }
+            .sheet(isPresented: $showingProfile) {
+                ProfileView()
             }
             .fileImporter(isPresented: $showingImporter, allowedContentTypes: [.json]) { result in
                 if case .success(let url) = result {

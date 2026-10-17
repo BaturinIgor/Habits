@@ -12,7 +12,9 @@ struct HabitsApp: App {
             RootView()
                 .environment(store)
                 .task {
-                    await NotificationPlanner.requestAuthorizationIfNeeded()
+                    if store.data.settings.onboardingDone {
+                        await NotificationPlanner.requestAuthorizationIfNeeded()
+                    }
                     await store.reschedule()
                 }
         }

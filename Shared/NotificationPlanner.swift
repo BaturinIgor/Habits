@@ -108,6 +108,24 @@ enum NotificationPlanner {
         }
     }
 
+    /// Напоминание о следующей привычке в связке, через несколько секунд.
+    static func notifyChained(_ habit: Habit, day: String) {
+        let content = UNMutableNotificationContent()
+        if case .emoji(let emoji) = habit.icon {
+            content.title = "\(emoji) \(habit.name)"
+        } else {
+            content.title = habit.name
+        }
+        content.body = String(localized: "Next up in your chain")
+        content.sound = .default
+        content.categoryIdentifier = categoryID
+        content.threadIdentifier = habit.id.uuidString
+        content.userInfo = ["habitID": habit.id.uuidString, "day": day]
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+        let id = identifier(habitID: habit.id, day: day, index: 99)
+        UNUserNotificationCenter.current().add(UNNotificationRequest(identifier: id, content: content, trigger: trigger))
+    }
+
     static func pendingCount() async -> Int {
         await UNUserNotificationCenter.current().pendingNotificationRequests().count
     }

@@ -130,6 +130,26 @@ final class HabitStore {
         data.tap(habitID: id, day: key)
         commit()
         Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
+        notifyChain(after: id, day: day)
+    }
+
+    func markMinimum(_ id: UUID, on day: Date) {
+        let key = DayKey.make(day)
+        data.markMinimum(habitID: id, day: key)
+        commit()
+        Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
+        notifyChain(after: id, day: day)
+    }
+
+    /// Связка привычек: после отметки напоминаем о следующих.
+    private func notifyChain(after id: UUID, day: Date) {
+        let key = DayKey.make(day)
+        guard data.status(id, day: key) == .done, Calendar.app.isDateInToday(day),
+              data.settings.remindersEnabled else { return }
+        let next = data.habits(on: day).filter { $0.chainAfter == id && data.status($0.id, day: key) == nil }
+        for habit in next {
+            NotificationPlanner.notifyChained(habit, day: key)
+        }
     }
 
     func setStatus(_ status: CheckStatus?, for id: UUID, on day: Date) {
@@ -139,6 +159,7 @@ final class HabitStore {
         if status != nil {
             Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
         }
+        if status == .done { notifyChain(after: id, day: day) }
     }
 
     func setNote(_ note: String, for id: UUID, dayKey: String) {
@@ -207,5 +228,8 @@ final class HabitStore {
         WidgetCenter.shared.reloadAllTimelines()
         await NotificationPlanner.clearDelivered(habitID: habitID, day: day)
         await NotificationPlanner.reschedule(data: data)
+        if action == NotificationPlanner.doneAction, let date = DayKey.date(day) {
+            notifyChain(after: habitID, day: date)
+        }
     }
 }

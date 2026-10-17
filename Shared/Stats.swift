@@ -8,6 +8,20 @@ struct HabitStats: Hashable {
     var totalDone = 0
     /// Серии считаются в неделях.
     var isWeekly = false
+    /// Пропуски, которые не прервали серию (до 2 в месяц).
+    var frozenDays: Set<String> = []
+    /// Недель с выполненной целью (для "N раз в неделю").
+    var goalsMet = 0
+    /// Выполнено за последние 30 дней и сколько дней было нужно.
+    var last30Done = 0
+    var last30Total = 0
+    /// Сколько раз привычку выполнили после пропуска.
+    var comebacks = 0
+}
+
+enum Freeze {
+    /// Сколько пропусков в месяц не прерывают серию.
+    static let perMonth = 2
 }
 
 struct DayProgress: Identifiable, Hashable {
@@ -44,20 +58,37 @@ enum Stats {
 
         var run = 0
         var counted = 0
+        var freezesUsed: [Int: Int] = [:]
+        var missedBefore = false
+        let window = calendar.date(byAdding: .day, value: -29, to: today) ?? today
         while day <= last {
             if habit.isScheduled(on: day, calendar: calendar) {
-                switch data.status(habit.id, day: DayKey.make(day, calendar: calendar)) {
+                let key = DayKey.make(day, calendar: calendar)
+                let inWindow = day >= window
+                switch data.status(habit.id, day: key) {
                 case .some(.done):
                     run += 1
                     result.totalDone += 1
                     counted += 1
                     result.bestStreak = max(result.bestStreak, run)
+                    if missedBefore { result.comebacks += 1 }
+                    missedBefore = false
+                    if inWindow { result.last30Done += 1; result.last30Total += 1 }
                 case .some(.skipped):
                     break
                 case .none:
                     if day < today {
-                        run = 0
                         counted += 1
+                        missedBefore = true
+                        if inWindow { result.last30Total += 1 }
+                        let c = calendar.dateComponents([.year, .month], from: day)
+                        let month = (c.year ?? 0) * 12 + (c.month ?? 0)
+                        if run > 0 && freezesUsed[month, default: 0] < Freeze.perMonth {
+                            freezesUsed[month, default: 0] += 1
+                            result.frozenDays.insert(key)
+                        } else {
+                            run = 0
+                        }
                     }
                 }
             }
@@ -92,6 +123,7 @@ enum Stats {
                 if done >= goal {
                     run += 1
                     met += 1
+                    result.goalsMet += 1
                     counted += 1
                     result.bestStreak = max(result.bestStreak, run)
                 } else if week < thisWeek {

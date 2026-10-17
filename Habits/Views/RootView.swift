@@ -8,7 +8,14 @@ enum AppTab: Hashable {
 }
 
 struct RootView: View {
+    @Environment(HabitStore.self) private var store
     @State private var selection: AppTab = .today
+    @State private var banner: (achievement: Achievement, more: Int)?
+
+    private var onboardingBinding: Binding<Bool> {
+        Binding(get: { !store.data.settings.onboardingDone },
+                set: { if !$0 { store.updateSettings { $0.onboardingDone = true } } })
+    }
 
     var body: some View {
         TabView(selection: $selection) {
@@ -26,5 +33,36 @@ struct RootView: View {
             }
         }
         .tabBarMinimizeBehavior(.onScrollDown)
+        .overlay(alignment: .top) {
+            if let banner {
+                AchievementBanner(achievement: banner.achievement, more: banner.more)
+                    .transition(.move(edge: .top).combined(with: .opacity))
+                    .onTapGesture { withAnimation { self.banner = nil } }
+            }
+        }
+        .sensoryFeedback(.success, trigger: banner?.achievement.id)
+        .fullScreenCover(isPresented: onboardingBinding) {
+            OnboardingView()
+        }
+        .task(id: store.data.checkIns.count + store.data.habits.count) {
+            checkAchievements()
+        }
+    }
+
+    /// Показывает баннер, если появились новые ачивки.
+    private func checkAchievements() {
+        guard store.data.settings.onboardingDone else { return }
+        let unlocked = Achievements.unlockedIDs(store.data)
+        let seen = Set(store.data.settings.seenAchievements)
+        let fresh = Achievements.all.filter { unlocked.contains($0.id) && !seen.contains($0.id) }
+        guard let first = fresh.first else { return }
+        store.updateSettings { $0.seenAchievements = Array(seen.union(unlocked)).sorted() }
+        withAnimation(.spring(response: 0.45, dampingFraction: 0.8)) {
+            banner = (first, fresh.count - 1)
+        }
+        Task {
+            try? await Task.sleep(for: .seconds(3.5))
+            withAnimation { banner = nil }
+        }
     }
 }

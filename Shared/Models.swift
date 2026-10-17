@@ -165,6 +165,10 @@ struct Habit: Identifiable, Hashable, Codable {
     /// Цель на день для количественной привычки (Pro), например 8 стаканов.
     var target: Int?
     var unit: String?
+    /// Минимальная версия, например "хотя бы 5 приседаний". Засчитывается как выполнение.
+    var minimumVersion: String?
+    /// Привычка, после отметки которой напомнить об этой.
+    var chainAfter: UUID?
 
     init(id: UUID = UUID(),
          name: String = "",
@@ -198,7 +202,7 @@ struct Habit: Identifiable, Hashable, Codable {
 
     enum CodingKeys: String, CodingKey {
         case id, name, details, icon, colorIndex, groupID, schedule, reminder, createdAt, isArchived, sortOrder
-        case repeatCount, repeatInterval, partOfDay, pausedFrom, pausedUntil, target, unit
+        case repeatCount, repeatInterval, partOfDay, pausedFrom, pausedUntil, target, unit, minimumVersion, chainAfter
     }
 
     init(from decoder: Decoder) throws {
@@ -221,6 +225,8 @@ struct Habit: Identifiable, Hashable, Codable {
         pausedUntil = try c.decodeIfPresent(Date.self, forKey: .pausedUntil)
         target = try c.decodeIfPresent(Int.self, forKey: .target)
         unit = try c.decodeIfPresent(String.self, forKey: .unit)
+        minimumVersion = try c.decodeIfPresent(String.self, forKey: .minimumVersion)
+        chainAfter = try c.decodeIfPresent(UUID.self, forKey: .chainAfter)
     }
 
     /// Повторы напоминания с учётом Pro: без Pro всегда стандартные.
@@ -274,6 +280,8 @@ struct CheckIn: Codable, Hashable {
     var updatedAt: Date
     /// Сколько уже сделано у количественной привычки.
     var count: Int?
+    /// Выполнена минимальная версия.
+    var isMinimum: Bool?
 }
 
 struct NoteEntry: Identifiable, Hashable {
@@ -300,11 +308,18 @@ struct AppSettings: Codable, Hashable {
     var doneToBottom: Bool = false
     var summaryEnabled: Bool = true
     var summaryTime = ReminderTime(hour: 21, minute: 0)
+    var onboardingDone = false
+    var gestureHintShown = false
+    var backgroundID = "default"
+    var avatarID = "sprout"
+    /// Ачивки, о которых уже показали поздравление.
+    var seenAchievements: [String] = []
 
     init() {}
 
     enum CodingKeys: String, CodingKey {
         case proUnlocked, remindersEnabled, homeLayout, doneToBottom, summaryEnabled, summaryTime
+        case onboardingDone, gestureHintShown, backgroundID, avatarID, seenAchievements
     }
 
     init(from decoder: Decoder) throws {
@@ -315,6 +330,11 @@ struct AppSettings: Codable, Hashable {
         doneToBottom = try c.decodeIfPresent(Bool.self, forKey: .doneToBottom) ?? false
         summaryEnabled = try c.decodeIfPresent(Bool.self, forKey: .summaryEnabled) ?? true
         summaryTime = try c.decodeIfPresent(ReminderTime.self, forKey: .summaryTime) ?? ReminderTime(hour: 21, minute: 0)
+        onboardingDone = try c.decodeIfPresent(Bool.self, forKey: .onboardingDone) ?? false
+        gestureHintShown = try c.decodeIfPresent(Bool.self, forKey: .gestureHintShown) ?? false
+        backgroundID = try c.decodeIfPresent(String.self, forKey: .backgroundID) ?? "default"
+        avatarID = try c.decodeIfPresent(String.self, forKey: .avatarID) ?? "sprout"
+        seenAchievements = try c.decodeIfPresent([String].self, forKey: .seenAchievements) ?? []
     }
 }
 
@@ -379,6 +399,7 @@ extension AppData {
         let k = Self.key(habitID, day)
         var entry = checkIns[k] ?? CheckIn(status: nil, note: nil, updatedAt: Date())
         entry.status = status
+        entry.isMinimum = nil
         if status == nil { entry.count = nil }
         entry.updatedAt = Date()
         store(entry, key: k)
@@ -400,6 +421,7 @@ extension AppData {
         let target = habit.dailyTarget(isPro: isPro)
         let k = Self.key(habitID, day)
         var entry = checkIns[k] ?? CheckIn(status: nil, note: nil, updatedAt: Date())
+        entry.isMinimum = nil
         if target <= 1 {
             entry.status = entry.status == .done ? nil : .done
             entry.count = nil
@@ -411,6 +433,16 @@ extension AppData {
             entry.count = next
             entry.status = next >= target ? .done : nil
         }
+        entry.updatedAt = Date()
+        store(entry, key: k)
+    }
+
+    /// Отмечает выполнение минимальной версии.
+    mutating func markMinimum(habitID: UUID, day: String) {
+        let k = Self.key(habitID, day)
+        var entry = checkIns[k] ?? CheckIn(status: nil, note: nil, updatedAt: Date())
+        entry.status = .done
+        entry.isMinimum = true
         entry.updatedAt = Date()
         store(entry, key: k)
     }

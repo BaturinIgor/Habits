@@ -23,6 +23,7 @@ struct TodayView: View {
     @State private var templateHabit: Habit?
     @State private var noteTarget: NoteTarget?
     @State private var habitToDelete: Habit?
+    @State private var showingProfile = false
     @Namespace private var zoom
 
     private var calendar: Calendar { .app }
@@ -50,12 +51,19 @@ struct TodayView: View {
                         .plainRow(top: 4, bottom: 4, horizontal: 0)
                 }
 
+                if !store.data.settings.gestureHintShown && !visibleHabits.isEmpty && !isFuture {
+                    GestureHint {
+                        withAnimation { store.updateSettings { $0.gestureHintShown = true } }
+                    }
+                    .plainRow(top: 2, bottom: 2)
+                }
+
                 content
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
             .scrollIndicators(.hidden)
-            .background(AppBackground())
+            .background(RewardBackground(reward: Rewards.background(store.data.settings.backgroundID)))
             .onChange(of: scenePhase) { _, phase in
                 // Если приложение висело в памяти после полуночи, переключаемся на новый день.
                 guard phase == .active else { return }
@@ -69,6 +77,15 @@ struct TodayView: View {
             }
             .navigationTitle(isToday ? String(localized: "Today") : Fmt.relativeDay(selectedDay))
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        showingProfile = true
+                    } label: {
+                        Text(Rewards.avatar(store.data.settings.avatarID).emoji)
+                            .font(.title3)
+                    }
+                    .accessibilityLabel("Profile")
+                }
                 if !isToday {
                     ToolbarItem(placement: .topBarLeading) {
                         Button("Today") {
@@ -96,6 +113,9 @@ struct TodayView: View {
             }
             .sheet(isPresented: $showingPaywall) {
                 PaywallView()
+            }
+            .sheet(isPresented: $showingProfile) {
+                ProfileView()
             }
             .sheet(item: $editingHabit) { habit in
                 HabitEditorView(habit: habit)
@@ -225,6 +245,8 @@ struct TodayView: View {
             target: target,
             count: count,
             weekDone: habit.schedule.kind == .weekly ? data.weekDoneCount(habit, weekOf: selectedDay) : nil,
+            isMinimum: data.checkIn(habit.id, day: dayKey)?.isMinimum == true,
+            chainName: habit.chainAfter.flatMap { id in data.habits.first { $0.id == id }?.name },
             canToggle: canToggle,
             zoom: zoom,
             onOpen: { path.append(habit.id) },
@@ -272,6 +294,14 @@ struct TodayView: View {
                           systemImage: isDone ? "arrow.uturn.backward" : "checkmark")
                 }
                 .tint(isDone ? .gray : color)
+                if !isDone, let minimum = habit.minimumVersion, !minimum.isEmpty {
+                    Button {
+                        withAnimation { store.markMinimum(habit.id, on: selectedDay) }
+                    } label: {
+                        Label(String(localized: "Minimum"), systemImage: "tortoise.fill")
+                    }
+                    .tint(.mint)
+                }
                 if target > 1 && count > 0 && !isDone {
                     Button {
                         withAnimation { store.decrement(habit.id, on: selectedDay) }
@@ -282,6 +312,32 @@ struct TodayView: View {
                 }
             }
         }
+    }
+}
+
+// MARK: - Подсказка про жесты
+
+struct GestureHint: View {
+    var onClose: () -> Void
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: "hand.draw.fill")
+                .font(.title3)
+                .foregroundStyle(Color.accentColor)
+            Text("Swipe a card right to check it off, left for more actions. Press and hold to reorder.")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            Spacer(minLength: 0)
+            Button(action: onClose) {
+                Image(systemName: "xmark.circle.fill")
+                    .font(.title3)
+                    .foregroundStyle(.tertiary)
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Close")
+        }
+        .card(padding: 14, cornerRadius: 20)
     }
 }
 
@@ -489,6 +545,8 @@ struct HabitCard: View {
     let target: Int
     let count: Int
     let weekDone: Int?
+    var isMinimum: Bool = false
+    var chainName: String? = nil
     let canToggle: Bool
     let zoom: Namespace.ID
     var onOpen: () -> Void
@@ -554,6 +612,12 @@ struct HabitCard: View {
         HStack(spacing: 10) {
             if status == .skipped {
                 Text("Skipped")
+            }
+            if isMinimum && isDone {
+                Label(String(localized: "Minimum"), systemImage: "tortoise.fill")
+            }
+            if let chainName, status == nil {
+                Label(String(localized: "After: \(chainName)"), systemImage: "link")
             }
             if let reminder = habit.reminder {
                 Label(reminder.text, systemImage: "bell.fill")

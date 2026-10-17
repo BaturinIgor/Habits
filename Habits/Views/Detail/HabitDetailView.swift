@@ -37,6 +37,10 @@ struct HabitDetailView: View {
                     StatTile(title: "Best streak", value: stats.isWeekly ? Fmt.weeks(stats.bestStreak) : Fmt.days(stats.bestStreak), systemImage: "trophy.fill", color: .yellow)
                     StatTile(title: "Completion", value: "\(Int((stats.completionRate * 100).rounded()))%", systemImage: "chart.pie.fill", color: color)
                     StatTile(title: "Total check-ins", value: "\(stats.totalDone)", systemImage: "checkmark.circle.fill", color: .green)
+                    if !stats.isWeekly {
+                        StatTile(title: "Last 30 days", value: "\(stats.last30Done)/\(stats.last30Total)", systemImage: "calendar", color: .blue)
+                        StatTile(title: "Freezes this month", value: "\(freezesThisMonth(stats))/\(Freeze.perMonth)", systemImage: "snowflake", color: .cyan)
+                    }
                 }
 
                 MonthCalendarCard(habit: habit, month: $month) { day in
@@ -68,6 +72,11 @@ struct HabitDetailView: View {
         .sheet(item: $noteTarget) { target in
             NoteEditorView(target: target)
         }
+    }
+
+    private func freezesThisMonth(_ stats: HabitStats) -> Int {
+        let prefix = String(DayKey.make(Date()).prefix(7))
+        return stats.frozenDays.filter { $0.hasPrefix(prefix) }.count
     }
 
     private func header(_ habit: Habit, color: Color) -> some View {
@@ -140,6 +149,7 @@ struct MonthCalendarCard: View {
     }
 
     var body: some View {
+        let frozen = Stats.habit(habit, in: store.data).frozenDays
         let color = Palette.color(habit.colorIndex)
         VStack(spacing: 14) {
             HStack {
@@ -175,7 +185,7 @@ struct MonthCalendarCard: View {
             LazyVGrid(columns: columns, spacing: 6) {
                 ForEach(cells) { cell in
                     if let date = cell.date {
-                        dayCell(date, color: color)
+                        dayCell(date, color: color, frozen: frozen)
                     } else {
                         Color.clear.frame(height: 38)
                     }
@@ -186,6 +196,7 @@ struct MonthCalendarCard: View {
                 legend(color: color, title: "Completed", filled: true)
                 legend(color: .secondary, title: "Skipped", filled: false)
                 legend(color: .red.opacity(0.5), title: "Missed", filled: true)
+                legend(color: .cyan.opacity(0.6), title: "Freeze", filled: true)
             }
             .font(.caption2)
             .foregroundStyle(.secondary)
@@ -205,7 +216,7 @@ struct MonthCalendarCard: View {
     }
 
     @ViewBuilder
-    private func dayCell(_ date: Date, color: Color) -> some View {
+    private func dayCell(_ date: Date, color: Color, frozen: Set<String>) -> some View {
         let key = DayKey.make(date, calendar: calendar)
         let today = calendar.startOfDay(for: Date())
         let scheduled = habit.isScheduled(on: date, calendar: calendar)
@@ -213,7 +224,8 @@ struct MonthCalendarCard: View {
         let isToday = calendar.isDate(date, inSameDayAs: today)
         let status = store.data.status(habit.id, day: key)
         let hasNote = !store.data.note(habit.id, day: key).isEmpty
-        let isMissed = scheduled && status == nil && date < today && habit.schedule.kind != .weekly
+        let isFrozen = frozen.contains(key) && status == nil
+        let isMissed = scheduled && status == nil && date < today && habit.schedule.kind != .weekly && !isFrozen
         let canEdit = scheduled && !isFuture
 
         ZStack {
@@ -221,6 +233,8 @@ struct MonthCalendarCard: View {
                 Circle().fill(color.gradient)
             } else if status == .skipped {
                 Circle().strokeBorder(Color.secondary.opacity(0.6), style: StrokeStyle(lineWidth: 1.5, dash: [3, 3]))
+            } else if isFrozen {
+                Circle().fill(Color.cyan.opacity(0.22))
             } else if isMissed {
                 Circle().fill(Color.red.opacity(0.12))
             } else if scheduled {
