@@ -197,7 +197,7 @@ struct HabitEditorView: View {
             Picker("How often", selection: $frequency.animation(.snappy)) {
                 Text("Every day").tag(Frequency.daily)
                 Text("Some days").tag(Frequency.days)
-                Text("Times a week").tag(Frequency.weekly)
+                Text("N times a week").tag(Frequency.weekly)
                 Text("Once").tag(Frequency.once)
             }
 
@@ -209,7 +209,7 @@ struct HabitEditorView: View {
                 }
                 if frequency == .weekly {
                     Stepper(value: $timesPerWeek, in: 1...6) {
-                        LabeledContent("Times a week", value: "\(timesPerWeek)")
+                        LabeledContent("Per week", value: "\(timesPerWeek)")
                     }
                 }
                 DatePicker("Start", selection: $draft.schedule.startDate, displayedComponents: .date)

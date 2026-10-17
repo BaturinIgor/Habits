@@ -66,5 +66,37 @@
 			<string>हर %2$lld मिनट में %1$lld बार</string>
 		</dict>
 	</dict>
+	<key>%lld weeks</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld हफ़्ता</string>
+			<key>other</key>
+			<string>%lld हफ़्ते</string>
+		</dict>
+	</dict>
+	<key>%lld times a week</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>हफ़्ते में %lld बार</string>
+			<key>other</key>
+			<string>हफ़्ते में %lld बार</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

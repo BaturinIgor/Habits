@@ -52,9 +52,28 @@ P = {
   'zh-Hans': {'other': '每 %2$lld 分钟重复 %1$lld 次'}, 'ja': {'other': '%2$lld分ごとに%1$lld回'},
   'ko': {'other': '%2$lld분마다 %1$lld회'}, 'hi': {'one': 'हर %2$lld मिनट में %1$lld बार', 'other': 'हर %2$lld मिनट में %1$lld बार'},
  },
+
+ '%lld weeks': {
+  'en': {'one': '%lld week', 'other': '%lld weeks'},
+  'ru': {'one': '%lld неделя', 'few': '%lld недели', 'many': '%lld недель', 'other': '%lld недели'},
+  'de': {'one': '%lld Woche', 'other': '%lld Wochen'},
+  'fr': {'one': '%lld semaine', 'other': '%lld semaines'},
+  'es': {'one': '%lld semana', 'other': '%lld semanas'},
+  'zh-Hans': {'other': '%lld 周'}, 'ja': {'other': '%lld週'}, 'ko': {'other': '%lld주'},
+  'hi': {'one': '%lld हफ़्ता', 'other': '%lld हफ़्ते'},
+ },
+ '%lld times a week': {
+  'en': {'one': '%lld time a week', 'other': '%lld times a week'},
+  'ru': {'one': '%lld раз в неделю', 'few': '%lld раза в неделю', 'many': '%lld раз в неделю', 'other': '%lld раза в неделю'},
+  'de': {'one': '%lld-mal pro Woche', 'other': '%lld-mal pro Woche'},
+  'fr': {'one': '%lld fois par semaine', 'other': '%lld fois par semaine'},
+  'es': {'one': '%lld vez por semana', 'other': '%lld veces por semana'},
+  'zh-Hans': {'other': '每周 %lld 次'}, 'ja': {'other': '週%lld回'}, 'ko': {'other': '주 %lld회'},
+  'hi': {'one': 'हफ़्ते में %lld बार', 'other': 'हफ़्ते में %lld बार'},
+ },
 }
-NAMES = {'en': 'Habits', 'ru': 'Привычки', 'de': 'Gewohnheiten', 'fr': 'Habitudes', 'es': 'Hábitos',
-         'zh-Hans': '习惯', 'ja': '習慣', 'ko': '습관', 'hi': 'आदतें'}
+NAMES = {'en': 'Habit Tracker', 'ru': 'Трекер привычек', 'de': 'Gewohnheitstracker', 'fr': "Suivi d'habitudes",
+         'es': 'Rastreador de hábitos', 'zh-Hans': '习惯追踪', 'ja': '習慣トラッカー', 'ko': '습관 트래커', 'hi': 'आदत ट्रैकर'}
 
 def esc(s):
     return s.replace('\\', '\\\\').replace('"', '\\"')
@@ -89,7 +108,7 @@ for lang in ['en'] + LANGS:
     open(d + 'Localizable.stringsdict', 'w', encoding='utf-8').write('\n'.join(parts))
 
 # Check that every UI string in code has a translation
-STRING_ARGS = {'days', 'repeats', 'standard'}
+STRING_ARGS = {'days', 'repeats', 'standard', 'event.summary ?? ""'}
 lit = re.compile(r'"((?:[^"\\]|\\.|\\\([^)]*\))*)"')
 def to_key(v):
     def r(m):
@@ -98,7 +117,9 @@ def to_key(v):
     return re.sub(r'\\\(([^)]*\)?)\)', r, v)
 ignore = {'ALTAppGroups', 'CFBundleShortVersionString', 'CFBundleVersion', 'EEEEdMMMM', 'HABIT_DONE', 'HABIT_REMINDER',
           'HABIT_SKIP', 'LLLLyyyy', 'PRO', 'ProgressWidget', 'TodayWidget', 'appex', 'dMMM', 'dMMMM', 'dMMMMyyyy',
-          'habitID', 'habits-data.json', 'ungrouped', 'day', 'Habits Pro'}
+          'habitID', 'habits-data.json', 'ungrouped', 'day', 'Habits Pro', 'AppleLanguages', 'all', 'appLanguage',
+          'checkmark', 'de', 'en', 'es', 'fr', 'hi', 'ja', 'ko', 'ru', 'zh-Hans', 'system', 'summary', 'summary|%lld',
+          'habits-backup-%lld.json', 'English', 'Deutsch', 'Español', 'Français', 'Not checked off yet: \\(event.summary ?? '}
 known = set(rows) | set(P) | ignore
 missing = set()
 files = glob.glob(ROOT + 'Habits/**/*.swift', recursive=True) + glob.glob(ROOT + 'HabitsWidget/*.swift') + glob.glob(ROOT + 'Shared/*.swift')

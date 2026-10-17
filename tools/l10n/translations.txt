@@ -164,3 +164,57 @@ Your own emoji from the keyboard||Свой эмодзи с клавиатуры|
 of %lld||из %lld||von %lld||sur %lld||de %lld||共 %lld||/ %lld||/ %lld||%lld में से
 from %@||с %@||ab %@||à partir du %@||desde el %@||%@起||%@から||%@부터||%@ से
 until %@||до %@||bis %@||jusqu'au %@||hasta el %@||至%@||%@まで||%@까지||%@ तक
+%lld of %lld this week||%lld из %lld за неделю||%lld von %lld diese Woche||%lld sur %lld cette semaine||%lld de %lld esta semana||本周 %lld/%lld||今週 %lld/%lld||이번 주 %lld/%lld||इस हफ़्ते %2$lld में से %1$lld
+Afternoon||День||Nachmittag||Après-midi||Tarde||下午||午後||오후||दोपहर
+All||Все||Alle||Toutes||Todos||全部||すべて||전체||सभी
+Allowed||Разрешены||Erlaubt||Autorisées||Permitidas||已允许||許可済み||허용됨||अनुमति है
+Anytime||В любое время||Jederzeit||À tout moment||En cualquier momento||随时||いつでも||언제든지||कभी भी
+Backup||Резервная копия||Backup||Sauvegarde||Copia de seguridad||备份||バックアップ||백업||बैकअप
+By time||По времени||Nach Uhrzeit||Par heure||Por hora||按时间||時刻順||시간순||समय के अनुसार
+Couldn't read the file||Не удалось прочитать файл||Datei konnte nicht gelesen werden||Impossible de lire le fichier||No se pudo leer el archivo||无法读取文件||ファイルを読み込めませんでした||파일을 읽을 수 없어요||फ़ाइल पढ़ी नहीं जा सकी
+Count glasses of water, pages or minutes toward a goal.||Считай стаканы воды, страницы или минуты до цели.||Zähle Gläser Wasser, Seiten oder Minuten bis zum Ziel.||Compte les verres d'eau, les pages ou les minutes jusqu'à l'objectif.||Cuenta vasos de agua, páginas o minutos hasta la meta.||记录喝水杯数、阅读页数或分钟数，直到达成目标。||水の杯数やページ数、分数を目標まで数えます。||물 잔 수, 페이지, 시간을 목표까지 세어 보세요.||पानी के गिलास, पन्ने या मिनट लक्ष्य तक गिनें।
+Current habits and history will be replaced with the data from the file.||Текущие привычки и история будут заменены данными из файла.||Aktuelle Gewohnheiten und Verlauf werden durch die Daten aus der Datei ersetzt.||Les habitudes et l'historique actuels seront remplacés par les données du fichier.||Los hábitos y el historial actuales se sustituirán por los datos del archivo.||当前的习惯和记录将被文件中的数据替换。||現在の習慣と記録はファイルのデータに置き換えられます。||현재 습관과 기록이 파일의 데이터로 바뀌어요.||मौजूदा आदतें और इतिहास फ़ाइल के डेटा से बदल दिए जाएँगे।
+Daily goal||Цель на день||Tagesziel||Objectif du jour||Meta diaria||每日目标||1日の目標||하루 목표||दैनिक लक्ष्य
+Daily goals||Цели на день||Tagesziele||Objectifs du jour||Metas diarias||每日目标||1日の目標||하루 목표||दैनिक लक्ष्य
+Data imported||Данные загружены||Daten importiert||Données importées||Datos importados||数据已导入||データを読み込みました||데이터를 가져왔어요||डेटा आयात हो गया
+Day summary||Итоги дня||Tagesbilanz||Bilan du jour||Resumen del día||今日小结||今日のまとめ||오늘의 요약||दिन का सारांश
+Done habits at the bottom||Выполненные вниз||Erledigte nach unten||Habitudes faites en bas||Hechos al final||已完成的放到底部||完了した習慣を下へ||완료한 습관은 아래로||पूरी आदतें नीचे
+During a pause the habit is hidden and sends no reminders, and your streak is kept.||Во время паузы привычка скрыта и не напоминает о себе, а серия сохраняется.||Während einer Pause ist die Gewohnheit ausgeblendet, sendet keine Erinnerungen, und deine Serie bleibt erhalten.||Pendant une pause, l'habitude est masquée et n'envoie pas de rappels, et ta série est conservée.||Durante una pausa, el hábito se oculta y no envía recordatorios, y tu racha se mantiene.||暂停期间习惯会隐藏且不提醒，连续记录会保留。||一時停止中は習慣が非表示になり通知も届かず、連続記録は保たれます。||일시 정지 중에는 습관이 숨겨지고 알림이 오지 않으며 연속 기록은 유지돼요.||विराम के दौरान आदत छिपी रहती है, रिमाइंडर नहीं आते और आपकी लगातार गिनती बनी रहती है।
+Evening||Вечер||Abend||Soir||Noche||晚上||夜||저녁||शाम
+Evening summary||Вечерняя сводка||Abendbilanz||Bilan du soir||Resumen nocturno||晚间小结||夜のまとめ||저녁 요약||शाम का सारांश
+Export data||Экспорт данных||Daten exportieren||Exporter les données||Exportar datos||导出数据||データを書き出す||데이터 내보내기||डेटा निर्यात करें
+For example, 8 glasses of water. Each tap on the circle adds one.||Например, 8 стаканов воды. Каждое нажатие на кружок добавляет один.||Zum Beispiel 8 Gläser Wasser. Jedes Tippen auf den Kreis zählt eins dazu.||Par exemple, 8 verres d'eau. Chaque appui sur le cercle en ajoute un.||Por ejemplo, 8 vasos de agua. Cada toque en el círculo suma uno.||例如每天 8 杯水。每点一下圆圈加一。||例：水8杯。丸をタップするたびに1つ増えます。||예: 물 8잔. 원을 탭할 때마다 1씩 늘어요.||जैसे, 8 गिलास पानी। गोले पर हर टैप से एक जुड़ता है।
+Go to bed on time||Лечь спать вовремя||Pünktlich ins Bett||Se coucher à l'heure||Acostarse a tiempo||按时睡觉||時間通りに寝る||제시간에 자기||समय पर सोएँ
+Goal||Цель||Ziel||Objectif||Meta||目标||目標||목표||लक्ष्य
+Habit Tracker Pro||Трекер привычек Pro||Gewohnheitstracker Pro||Suivi d'habitudes Pro||Rastreador de hábitos Pro||习惯追踪 Pro||習慣トラッカー Pro||습관 트래커 Pro||आदत ट्रैकर Pro
+Import||Загрузить||Importieren||Importer||Importar||导入||読み込む||가져오기||आयात करें
+Import data||Загрузить данные||Daten importieren||Importer des données||Importar datos||导入数据||データを読み込む||데이터 가져오기||डेटा आयात करें
+Language||Язык||Sprache||Langue||Idioma||语言||言語||언어||भाषा
+Meditate||Медитация||Meditieren||Méditer||Meditar||冥想||瞑想||명상||ध्यान
+Minus one||Минус один||Minus eins||Moins un||Menos uno||减一||1つ減らす||하나 빼기||एक कम
+Morning||Утро||Morgen||Matin||Mañana||早上||朝||아침||सुबह
+N times a week||N раз в неделю||N-mal pro Woche||N fois par semaine||N veces por semana||每周 N 次||週N回||주 N회||हफ़्ते में N बार
+Not checked off yet: %@||Ещё не отмечено: %@||Noch nicht abgehakt: %@||Pas encore validé : %@||Aún sin marcar: %@||尚未打卡：%@||まだチェックしていません：%@||아직 체크하지 않음: %@||अभी बाकी: %@
+OK||OK||OK||OK||OK||好||OK||확인||ठीक है
+Off in iPhone Settings||Выключены в настройках iPhone||In den iPhone-Einstellungen aus||Désactivées dans les réglages||Desactivadas en Ajustes||已在 iPhone 设置中关闭||iPhoneの設定でオフ||iPhone 설정에서 꺼짐||iPhone सेटिंग्स में बंद
+One notification listing the habits not checked off yet.||Одно уведомление со списком привычек, которые ещё не отмечены.||Eine Mitteilung mit den Gewohnheiten, die noch offen sind.||Une notification qui liste les habitudes pas encore validées.||Una notificación con los hábitos que aún no has marcado.||一条通知，列出尚未打卡的习惯。||まだチェックしていない習慣を1件の通知でお知らせします。||아직 체크하지 않은 습관을 알림 하나로 알려 드려요.||एक सूचना, जिसमें अभी बाकी आदतें होंगी।
+Part of day||Время дня||Tageszeit||Moment de la journée||Momento del día||时段||時間帯||시간대||दिन का समय
+Parts of day||По времени дня||Nach Tageszeit||Par moment de la journée||Por momento del día||按时段||時間帯別||시간대별||दिन के हिस्सों में
+Pause||Пауза||Pause||Pause||Pausa||暂停||一時停止||일시 정지||विराम
+Paused until %@||На паузе до %@||Pausiert bis %@||En pause jusqu'au %@||En pausa hasta el %@||暂停至%@||%@まで一時停止||%@까지 일시 정지||%@ तक विराम
+Per week||Раз в неделю||Pro Woche||Par semaine||Por semana||每周||週あたり||주당||प्रति हफ़्ता
+Pick a template or create your own.||Выбери шаблон или создай свою.||Wähle eine Vorlage oder erstelle eine eigene.||Choisis un modèle ou crée la tienne.||Elige una plantilla o crea el tuyo.||选择模板或自己创建。||テンプレートを選ぶか、自分で作成しましょう。||템플릿을 고르거나 직접 만드세요.||टेम्पलेट चुनें या अपनी बनाएँ।
+Read||Чтение||Lesen||Lire||Leer||阅读||読書||독서||पढ़ना
+Reminders||Напоминания||Erinnerungen||Rappels||Recordatorios||提醒||リマインダー||알림||रिमाइंडर
+Replace all data?||Заменить все данные?||Alle Daten ersetzen?||Remplacer toutes les données ?||¿Sustituir todos los datos?||替换所有数据？||すべてのデータを置き換えますか？||모든 데이터를 바꿀까요?||सारा डेटा बदलें?
+Restart the app||Перезапусти приложение||App neu starten||Redémarre l'app||Reinicia la app||请重新启动应用||アプリを再起動してください||앱을 다시 시작하세요||ऐप फिर से शुरू करें
+Save a copy to Files or iCloud Drive. Importing replaces all current data.||Сохрани копию в Файлы или iCloud Drive. Загрузка заменяет все текущие данные.||Sichere eine Kopie in Dateien oder iCloud Drive. Beim Import werden alle aktuellen Daten ersetzt.||Enregistre une copie dans Fichiers ou iCloud Drive. L'import remplace toutes les données actuelles.||Guarda una copia en Archivos o iCloud Drive. Importar sustituye todos los datos actuales.||将副本保存到“文件”或 iCloud 云盘。导入会替换当前所有数据。||コピーを「ファイル」やiCloud Driveに保存できます。読み込むと現在のデータはすべて置き換わります。||파일 앱이나 iCloud Drive에 사본을 저장하세요. 가져오면 현재 데이터가 모두 바뀌어요.||एक कॉपी Files या iCloud Drive में सहेजें। आयात करने से मौजूदा सारा डेटा बदल जाता है।
+System||Как в системе||System||Système||Sistema||跟随系统||システム||시스템||सिस्टम
+Take a break for a trip or illness without losing your streak.||Перерыв на отпуск или болезнь без потери серии.||Mach eine Pause für Urlaub oder Krankheit, ohne deine Serie zu verlieren.||Fais une pause pendant un voyage ou une maladie sans perdre ta série.||Tómate un descanso por viaje o enfermedad sin perder tu racha.||旅行或生病时暂停，不会中断连续记录。||旅行や体調不良の時も連続記録を失わずに休めます。||여행이나 아플 때 연속 기록을 잃지 않고 쉬어 가세요.||यात्रा या बीमारी में लगातार गिनती खोए बिना विराम लें।
+The new language will apply after you close the app and open it again.||Новый язык включится, когда ты закроешь приложение и откроешь его снова.||Die neue Sprache gilt, sobald du die App schließt und wieder öffnest.||La nouvelle langue s'appliquera quand tu fermeras et rouvriras l'app.||El nuevo idioma se aplicará cuando cierres la app y la vuelvas a abrir.||关闭并重新打开应用后，新语言才会生效。||アプリを閉じて開き直すと新しい言語になります。||앱을 닫았다가 다시 열면 새 언어가 적용돼요.||ऐप बंद करके फिर खोलने पर नई भाषा लागू होगी।
+Today screen||Главный экран||Heute-Bildschirm||Écran Aujourd'hui||Pantalla Hoy||“今天”页面||「今日」画面||오늘 화면||'आज' स्क्रीन
+Unit, for example glasses||Единица, например стаканы||Einheit, z. B. Gläser||Unité, par exemple verres||Unidad, por ejemplo vasos||单位，例如杯||単位（例：杯）||단위 (예: 잔)||इकाई, जैसे गिलास
+Until||До||Bis||Jusqu'au||Hasta||截止||終了日||종료일||तक
+Workout||Тренировка||Training||Entraînement||Entrenamiento||锻炼||運動||운동||कसरत
+glasses||стаканов||Gläser||verres||vasos||杯||杯||잔||गिलास
+iPhone permission||Разрешение iPhone||iPhone-Berechtigung||Autorisation iPhone||Permiso del iPhone||iPhone 权限||iPhoneの許可||iPhone 권한||iPhone अनुमति
