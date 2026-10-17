@@ -3,7 +3,7 @@ import Foundation
 // MARK: - Календарь и ключи дней
 
 extension Calendar {
-    /// Календарь приложения: григорианский, неделя начинается с понедельника.
+    /// Календарь приложения: григорианский, язык и первый день недели по настройкам пользователя.
     static var app: Calendar {
         var calendar = Calendar(identifier: .gregorian)
         calendar.locale = .autoupdatingCurrent
@@ -63,11 +63,41 @@ struct ReminderTime: Codable, Hashable {
     var dateToday: Date { date(on: Date()) ?? Date() }
 }
 
+// MARK: - Часть дня
+
+enum PartOfDay: String, Codable, Hashable, CaseIterable, Identifiable {
+    case morning
+    case afternoon
+    case evening
+    case anytime
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .morning: return String(localized: "Morning")
+        case .afternoon: return String(localized: "Afternoon")
+        case .evening: return String(localized: "Evening")
+        case .anytime: return String(localized: "Anytime")
+        }
+    }
+
+    /// Часть дня по времени напоминания: утро до 12, день до 17, дальше вечер.
+    init(time: ReminderTime) {
+        switch time.hour {
+        case 4..<12: self = .morning
+        case 12..<17: self = .afternoon
+        default: self = .evening
+        }
+    }
+}
+
 // MARK: - Расписание
 
 struct HabitSchedule: Codable, Hashable {
     enum Kind: String, Codable, Hashable {
         case repeating
+        case weekly
         case once
     }
 
@@ -77,31 +107,36 @@ struct HabitSchedule: Codable, Hashable {
     var startDate: Date
     var endDate: Date?
     var onceDate: Date
+    /// Для вида "N раз в неделю".
+    var timesPerWeek: Int
 
     init(kind: Kind = .repeating,
          weekdays: Set<Int> = Set(1...7),
          startDate: Date = Calendar.app.startOfDay(for: Date()),
          endDate: Date? = nil,
-         onceDate: Date = Calendar.app.startOfDay(for: Date())) {
+         onceDate: Date = Calendar.app.startOfDay(for: Date()),
+         timesPerWeek: Int = 3) {
         self.kind = kind
         self.weekdays = weekdays
         self.startDate = startDate
         self.endDate = endDate
         self.onceDate = onceDate
+        self.timesPerWeek = timesPerWeek
     }
 
     enum CodingKeys: String, CodingKey {
-        case kind, weekdays, startDate, endDate, onceDate
+        case kind, weekdays, startDate, endDate, onceDate, timesPerWeek
     }
 
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         let today = Calendar.app.startOfDay(for: Date())
-        kind = try c.decodeIfPresent(Kind.self, forKey: .kind) ?? .repeating
+        kind = (try? c.decodeIfPresent(Kind.self, forKey: .kind)) ?? .repeating
         weekdays = try c.decodeIfPresent(Set<Int>.self, forKey: .weekdays) ?? Set(1...7)
         startDate = try c.decodeIfPresent(Date.self, forKey: .startDate) ?? today
         endDate = try c.decodeIfPresent(Date.self, forKey: .endDate)
         onceDate = try c.decodeIfPresent(Date.self, forKey: .onceDate) ?? today
+        timesPerWeek = try c.decodeIfPresent(Int.self, forKey: .timesPerWeek) ?? 3
     }
 }
 
@@ -122,6 +157,14 @@ struct Habit: Identifiable, Hashable, Codable {
     /// Свои повторы напоминания (Pro). nil - стандартные.
     var repeatCount: Int?
     var repeatInterval: Int?
+    /// Часть дня для привычки без напоминания.
+    var partOfDay: PartOfDay?
+    /// Пауза (Pro): в эти дни привычка не нужна и серия не прерывается.
+    var pausedFrom: Date?
+    var pausedUntil: Date?
+    /// Цель на день для количественной привычки (Pro), например 8 стаканов.
+    var target: Int?
+    var unit: String?
 
     init(id: UUID = UUID(),
          name: String = "",
@@ -133,7 +176,10 @@ struct Habit: Identifiable, Hashable, Codable {
          reminder: ReminderTime? = ReminderTime(hour: 9, minute: 0),
          createdAt: Date = Date(),
          isArchived: Bool = false,
-         sortOrder: Int = 0) {
+         sortOrder: Int = 0,
+         partOfDay: PartOfDay? = nil,
+         target: Int? = nil,
+         unit: String? = nil) {
         self.id = id
         self.name = name
         self.details = details
@@ -145,11 +191,14 @@ struct Habit: Identifiable, Hashable, Codable {
         self.createdAt = createdAt
         self.isArchived = isArchived
         self.sortOrder = sortOrder
+        self.partOfDay = partOfDay
+        self.target = target
+        self.unit = unit
     }
 
     enum CodingKeys: String, CodingKey {
         case id, name, details, icon, colorIndex, groupID, schedule, reminder, createdAt, isArchived, sortOrder
-        case repeatCount, repeatInterval
+        case repeatCount, repeatInterval, partOfDay, pausedFrom, pausedUntil, target, unit
     }
 
     init(from decoder: Decoder) throws {
@@ -167,6 +216,11 @@ struct Habit: Identifiable, Hashable, Codable {
         sortOrder = try c.decodeIfPresent(Int.self, forKey: .sortOrder) ?? 0
         repeatCount = try c.decodeIfPresent(Int.self, forKey: .repeatCount)
         repeatInterval = try c.decodeIfPresent(Int.self, forKey: .repeatInterval)
+        partOfDay = try? c.decodeIfPresent(PartOfDay.self, forKey: .partOfDay)
+        pausedFrom = try c.decodeIfPresent(Date.self, forKey: .pausedFrom)
+        pausedUntil = try c.decodeIfPresent(Date.self, forKey: .pausedUntil)
+        target = try c.decodeIfPresent(Int.self, forKey: .target)
+        unit = try c.decodeIfPresent(String.self, forKey: .unit)
     }
 
     /// Повторы напоминания с учётом Pro: без Pro всегда стандартные.
@@ -175,6 +229,18 @@ struct Habit: Identifiable, Hashable, Codable {
             return RepeatRule(count: count, interval: interval)
         }
         return .standard
+    }
+
+    /// Цель на день: больше 1 только у количественных привычек с Pro.
+    func dailyTarget(isPro: Bool) -> Int {
+        guard isPro, let target, target > 1 else { return 1 }
+        return target
+    }
+
+    /// Часть дня: по времени напоминания или выбранная вручную.
+    var effectivePartOfDay: PartOfDay {
+        if let reminder { return PartOfDay(time: reminder) }
+        return partOfDay ?? .anytime
     }
 }
 
@@ -206,6 +272,8 @@ struct CheckIn: Codable, Hashable {
     var status: CheckStatus?
     var note: String?
     var updatedAt: Date
+    /// Сколько уже сделано у количественной привычки.
+    var count: Int?
 }
 
 struct NoteEntry: Identifiable, Hashable {
@@ -216,29 +284,38 @@ struct NoteEntry: Identifiable, Hashable {
 
 // MARK: - Настройки
 
+enum HomeLayout: String, Codable, Hashable, CaseIterable {
+    /// Секции "Утро", "День", "Вечер", "В любое время".
+    case partsOfDay
+    /// Один список: с напоминанием по времени, остальные после.
+    case byTime
+}
+
 struct AppSettings: Codable, Hashable {
     /// Pro включён. Пока покупок нет, это тестовый переключатель в настройках.
     var proUnlocked: Bool = true
+    /// Общий выключатель напоминаний приложения.
+    var remindersEnabled: Bool = true
+    var homeLayout: HomeLayout = .partsOfDay
+    var doneToBottom: Bool = false
+    var summaryEnabled: Bool = true
+    var summaryTime = ReminderTime(hour: 21, minute: 0)
 
     init() {}
 
     enum CodingKeys: String, CodingKey {
-        case proUnlocked
+        case proUnlocked, remindersEnabled, homeLayout, doneToBottom, summaryEnabled, summaryTime
     }
 
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         proUnlocked = try c.decodeIfPresent(Bool.self, forKey: .proUnlocked) ?? true
+        remindersEnabled = try c.decodeIfPresent(Bool.self, forKey: .remindersEnabled) ?? true
+        homeLayout = (try? c.decodeIfPresent(HomeLayout.self, forKey: .homeLayout)) ?? .partsOfDay
+        doneToBottom = try c.decodeIfPresent(Bool.self, forKey: .doneToBottom) ?? false
+        summaryEnabled = try c.decodeIfPresent(Bool.self, forKey: .summaryEnabled) ?? true
+        summaryTime = try c.decodeIfPresent(ReminderTime.self, forKey: .summaryTime) ?? ReminderTime(hour: 21, minute: 0)
     }
-}
-
-extension AppData {
-    static let freeHabitLimit = 5
-
-    var isPro: Bool { settings.proUnlocked }
-
-    /// Можно ли добавить ещё одну активную привычку. Архивные не считаются.
-    var canAddHabit: Bool { isPro || activeHabits.count < Self.freeHabitLimit }
 }
 
 // MARK: - Все данные приложения
@@ -268,6 +345,13 @@ struct AppData: Codable {
 }
 
 extension AppData {
+    static let freeHabitLimit = 5
+
+    var isPro: Bool { settings.proUnlocked }
+
+    /// Можно ли добавить ещё одну активную привычку. Архивные не считаются.
+    var canAddHabit: Bool { isPro || activeHabits.count < Self.freeHabitLimit }
+
     static func key(_ habitID: UUID, _ day: String) -> String {
         habitID.uuidString + "|" + day
     }
@@ -284,10 +368,18 @@ extension AppData {
         checkIn(habitID, day: day)?.note ?? ""
     }
 
+    /// Сколько сделано у количественной привычки (выполненная считается полной).
+    func count(of habit: Habit, day: String) -> Int {
+        let target = habit.dailyTarget(isPro: isPro)
+        if status(habit.id, day: day) == .done { return target }
+        return min(checkIn(habit.id, day: day)?.count ?? 0, target)
+    }
+
     mutating func setStatus(_ status: CheckStatus?, habitID: UUID, day: String) {
         let k = Self.key(habitID, day)
         var entry = checkIns[k] ?? CheckIn(status: nil, note: nil, updatedAt: Date())
         entry.status = status
+        if status == nil { entry.count = nil }
         entry.updatedAt = Date()
         store(entry, key: k)
     }
@@ -301,17 +393,44 @@ extension AppData {
         store(entry, key: k)
     }
 
-    /// Переключает отметку "выполнено". Возвращает true, если привычка стала выполненной.
-    @discardableResult
-    mutating func toggleDone(habitID: UUID, day: String) -> Bool {
-        let wasDone = status(habitID, day: day) == .done
-        setStatus(wasDone ? nil : .done, habitID: habitID, day: day)
-        return !wasDone
+    /// Нажатие на отметку: обычная привычка переключается,
+    /// количественная прибавляет 1, а после цели сбрасывается.
+    mutating func tap(habitID: UUID, day: String) {
+        guard let habit = habits.first(where: { $0.id == habitID }) else { return }
+        let target = habit.dailyTarget(isPro: isPro)
+        let k = Self.key(habitID, day)
+        var entry = checkIns[k] ?? CheckIn(status: nil, note: nil, updatedAt: Date())
+        if target <= 1 {
+            entry.status = entry.status == .done ? nil : .done
+            entry.count = nil
+        } else if entry.status == .done {
+            entry.status = nil
+            entry.count = nil
+        } else {
+            let next = (entry.count ?? 0) + 1
+            entry.count = next
+            entry.status = next >= target ? .done : nil
+        }
+        entry.updatedAt = Date()
+        store(entry, key: k)
+    }
+
+    /// Уменьшает счётчик количественной привычки на 1.
+    mutating func decrement(habitID: UUID, day: String) {
+        guard let habit = habits.first(where: { $0.id == habitID }) else { return }
+        let current = count(of: habit, day: day)
+        guard current > 0 else { return }
+        let k = Self.key(habitID, day)
+        var entry = checkIns[k] ?? CheckIn(status: nil, note: nil, updatedAt: Date())
+        entry.status = nil
+        entry.count = current - 1 > 0 ? current - 1 : nil
+        entry.updatedAt = Date()
+        store(entry, key: k)
     }
 
     private mutating func store(_ entry: CheckIn, key: String) {
         let hasNote = !(entry.note ?? "").isEmpty
-        if entry.status == nil && !hasNote {
+        if entry.status == nil && !hasNote && (entry.count ?? 0) == 0 {
             checkIns[key] = nil
         } else {
             checkIns[key] = entry
@@ -351,5 +470,29 @@ extension AppData {
     func group(_ id: UUID?) -> HabitGroup? {
         guard let id else { return nil }
         return groups.first { $0.id == id }
+    }
+
+    // MARK: N раз в неделю
+
+    /// Сколько раз привычка выполнена за неделю, в которую входит день.
+    func weekDoneCount(_ habit: Habit, weekOf date: Date, excluding excluded: Date? = nil, calendar: Calendar = .app) -> Int {
+        guard let week = calendar.dateInterval(of: .weekOfYear, for: date) else { return 0 }
+        var count = 0
+        var day = week.start
+        while day < week.end {
+            if excluded.map({ !calendar.isDate($0, inSameDayAs: day) }) ?? true,
+               status(habit.id, day: DayKey.make(day, calendar: calendar)) == .done {
+                count += 1
+            }
+            guard let next = calendar.date(byAdding: .day, value: 1, to: day) else { break }
+            day = next
+        }
+        return count
+    }
+
+    /// Недельная цель уже выполнена без учёта этого дня.
+    func weeklyGoalMet(_ habit: Habit, before date: Date, calendar: Calendar = .app) -> Bool {
+        guard habit.schedule.kind == .weekly else { return false }
+        return weekDoneCount(habit, weekOf: date, excluding: date, calendar: calendar) >= habit.schedule.timesPerWeek
     }
 }

@@ -18,6 +18,10 @@ struct PaywallView: View {
                 text: "The free version has up to 5 active habits."),
         Feature(icon: "bell.badge.fill", title: "Custom reminder repeats",
                 text: "Choose how many times and how often each reminder repeats."),
+        Feature(icon: "drop.fill", title: "Daily goals",
+                text: "Count glasses of water, pages or minutes toward a goal."),
+        Feature(icon: "pause.circle.fill", title: "Pause",
+                text: "Take a break for a trip or illness without losing your streak."),
         Feature(icon: "person.2.fill", title: "Family",
                 text: "Coming soon: follow your child's progress."),
         Feature(icon: "icloud.fill", title: "Sync and backup",
@@ -40,7 +44,7 @@ struct PaywallView: View {
                         .padding(.top, 12)
 
                     VStack(spacing: 6) {
-                        Text("Habits Pro")
+                        Text("Habit Tracker Pro")
                             .font(.largeTitle.weight(.bold))
                         Text("More freedom for the habits that matter.")
                             .font(.body)

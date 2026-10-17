@@ -25,7 +25,7 @@ struct ToggleHabitIntent: AppIntent {
               var data = DataFile.loadIfAvailable() else {
             return .result()
         }
-        data.toggleDone(habitID: uuid, day: day)
+        data.tap(habitID: uuid, day: day)
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()
         await NotificationPlanner.clearDelivered(habitID: uuid, day: day)

@@ -5,7 +5,6 @@ struct HabitsListView: View {
     @State private var showingNewHabit = false
     @State private var showArchive = false
     @State private var habitToDelete: Habit?
-    @State private var showingOrder = false
     @State private var showingPaywall = false
 
     var body: some View {
@@ -80,15 +79,6 @@ struct HabitsListView: View {
             .listStyle(.insetGrouped)
             .navigationTitle("Habits")
             .toolbar {
-                if store.data.activeHabits.count > 1 {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button {
-                            showingOrder = true
-                        } label: {
-                            Label("Order", systemImage: "arrow.up.arrow.down")
-                        }
-                    }
-                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         addHabit()
@@ -104,24 +94,21 @@ struct HabitsListView: View {
             .sheet(isPresented: $showingNewHabit) {
                 HabitEditorView(habit: nil)
             }
-            .sheet(isPresented: $showingOrder) {
-                HabitOrderView()
-            }
             .sheet(isPresented: $showingPaywall) {
                 PaywallView()
             }
-            .confirmationDialog(
+            .alert(
                 "Delete habit?",
                 isPresented: Binding(
                     get: { habitToDelete != nil },
                     set: { if !$0 { habitToDelete = nil } }
                 ),
-                titleVisibility: .visible,
                 presenting: habitToDelete
             ) { habit in
                 Button("Delete", role: .destructive) {
                     withAnimation { store.deleteHabit(habit.id) }
                 }
+                Button("Cancel", role: .cancel) {}
             } message: { _ in
                 Text("Its check-in history will be deleted too. To keep the history, archive the habit instead.")
             }
@@ -153,6 +140,10 @@ struct HabitListRow: View {
                         .lineLimit(1)
                     if let reminder = habit.reminder {
                         Label(reminder.text, systemImage: "bell.fill")
+                            .labelStyle(CompactLabelStyle())
+                    }
+                    if let until = habit.pausedUntil, until >= Calendar.app.startOfDay(for: Date()) {
+                        Label(String(localized: "Paused until \(Fmt.dayMonth(until))"), systemImage: "pause.fill")
                             .labelStyle(CompactLabelStyle())
                     }
                     if habit.hasEnded() {

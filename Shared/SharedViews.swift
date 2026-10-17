@@ -55,6 +55,9 @@ struct CheckMark: View {
     var status: CheckStatus?
     var color: Color
     var size: CGFloat = 32
+    /// Частичный прогресс количественной привычки (0...1) и подпись внутри.
+    var progress: Double = 0
+    var countText: String? = nil
 
     var body: some View {
         ZStack {
@@ -70,8 +73,24 @@ struct CheckMark: View {
                     .font(.system(size: size * 0.32, weight: .bold))
                     .foregroundStyle(.secondary)
             case .none:
+                let line = max(2, size * 0.085)
                 Circle()
-                    .strokeBorder(color.opacity(0.6), lineWidth: max(2, size * 0.085))
+                    .strokeBorder(color.opacity(progress > 0 ? 0.25 : 0.6), lineWidth: line)
+                if progress > 0 {
+                    Circle()
+                        .trim(from: 0, to: min(progress, 1))
+                        .stroke(color, style: StrokeStyle(lineWidth: line, lineCap: .round))
+                        .rotationEffect(.degrees(-90))
+                        .padding(line / 2)
+                }
+                if let countText {
+                    Text(countText)
+                        .font(.system(size: size * 0.34, weight: .bold, design: .rounded))
+                        .foregroundStyle(color)
+                        .minimumScaleFactor(0.6)
+                        .lineLimit(1)
+                        .padding(size * 0.12)
+                }
             }
         }
         .frame(width: size, height: size)

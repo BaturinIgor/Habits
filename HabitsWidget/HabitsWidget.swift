@@ -11,6 +11,10 @@ struct WidgetHabit: Identifiable, Hashable {
     let colorIndex: Int
     let status: CheckStatus?
     let time: String?
+    var progress: Double = 0
+    var countText: String? = nil
+    /// Привычки "N раз в неделю" входят в итог дня, только если их сделали.
+    var countsInTotal: Bool = true
 }
 
 struct HabitsEntry: TimelineEntry {
@@ -19,7 +23,7 @@ struct HabitsEntry: TimelineEntry {
     let items: [WidgetHabit]
 
     var done: Int { items.filter { $0.status == .done }.count }
-    var total: Int { items.filter { $0.status != .skipped }.count }
+    var total: Int { items.filter { $0.status != .skipped && ($0.countsInTotal || $0.status == .done) }.count }
     var progress: Double { total == 0 ? 0 : Double(done) / Double(total) }
     var pending: [WidgetHabit] { items.filter { $0.status == nil } }
 
@@ -64,7 +68,7 @@ struct HabitsProvider: TimelineProvider {
     static func entry(for date: Date, data: AppData) -> HabitsEntry {
         let calendar = Calendar.app
         let key = DayKey.make(date, calendar: calendar)
-        let ordered = data.habits(on: date, calendar: calendar).sortedForDisplay()
+        let ordered = todaySections(data.habits(on: date, calendar: calendar), data: data, day: key).flatMap(\.habits)
         let position = Dictionary(uniqueKeysWithValues: ordered.enumerated().map { ($1.id, $0) })
         let items = ordered
             .map { habit in
@@ -74,7 +78,10 @@ struct HabitsProvider: TimelineProvider {
                     icon: habit.icon,
                     colorIndex: habit.colorIndex,
                     status: data.status(habit.id, day: key),
-                    time: habit.reminder?.text
+                    time: habit.reminder?.text,
+                    progress: widgetProgress(habit, data: data, key: key),
+                    countText: widgetCount(habit, data: data, key: key),
+                    countsInTotal: habit.schedule.kind != .weekly
                 )
             }
             .sorted { lhs, rhs in
@@ -85,6 +92,19 @@ struct HabitsProvider: TimelineProvider {
                 return (position[lhs.id] ?? 0) < (position[rhs.id] ?? 0)
             }
         return HabitsEntry(date: date, dayKey: key, items: items)
+    }
+
+    private static func widgetProgress(_ habit: Habit, data: AppData, key: String) -> Double {
+        let target = habit.dailyTarget(isPro: data.isPro)
+        guard target > 1 else { return 0 }
+        return Double(data.count(of: habit, day: key)) / Double(target)
+    }
+
+    private static func widgetCount(_ habit: Habit, data: AppData, key: String) -> String? {
+        let target = habit.dailyTarget(isPro: data.isPro)
+        let count = data.count(of: habit, day: key)
+        guard target > 1, count > 0, count < target else { return nil }
+        return "\(count)"
     }
 }
 
@@ -285,7 +305,7 @@ private struct WidgetHabitRow: View {
             }
             Spacer(minLength: 4)
             Button(intent: ToggleHabitIntent(habitID: item.id, day: dayKey)) {
-                CheckMark(status: item.status, color: color, size: 26)
+                CheckMark(status: item.status, color: color, size: 26, progress: item.progress, countText: item.countText)
             }
             .buttonStyle(.plain)
         }

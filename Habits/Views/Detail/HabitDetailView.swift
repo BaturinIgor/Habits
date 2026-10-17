@@ -33,8 +33,8 @@ struct HabitDetailView: View {
                 header(habit, color: color)
 
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
-                    StatTile(title: "Current streak", value: Fmt.days(stats.currentStreak), systemImage: "flame.fill", color: .orange)
-                    StatTile(title: "Best streak", value: Fmt.days(stats.bestStreak), systemImage: "trophy.fill", color: .yellow)
+                    StatTile(title: "Current streak", value: stats.isWeekly ? Fmt.weeks(stats.currentStreak) : Fmt.days(stats.currentStreak), systemImage: "flame.fill", color: .orange)
+                    StatTile(title: "Best streak", value: stats.isWeekly ? Fmt.weeks(stats.bestStreak) : Fmt.days(stats.bestStreak), systemImage: "trophy.fill", color: .yellow)
                     StatTile(title: "Completion", value: "\(Int((stats.completionRate * 100).rounded()))%", systemImage: "chart.pie.fill", color: color)
                     StatTile(title: "Total check-ins", value: "\(stats.totalDone)", systemImage: "checkmark.circle.fill", color: .green)
                 }
@@ -43,7 +43,7 @@ struct HabitDetailView: View {
                     noteTarget = NoteTarget(habitID: habit.id, day: DayKey.make(day))
                 }
 
-                if habit.schedule.kind == .repeating {
+                if habit.schedule.kind != .once {
                     WeeklyChartCard(habit: habit, data: store.data)
                 }
 
@@ -213,7 +213,7 @@ struct MonthCalendarCard: View {
         let isToday = calendar.isDate(date, inSameDayAs: today)
         let status = store.data.status(habit.id, day: key)
         let hasNote = !store.data.note(habit.id, day: key).isEmpty
-        let isMissed = scheduled && status == nil && date < today
+        let isMissed = scheduled && status == nil && date < today && habit.schedule.kind != .weekly
         let canEdit = scheduled && !isFuture
 
         ZStack {

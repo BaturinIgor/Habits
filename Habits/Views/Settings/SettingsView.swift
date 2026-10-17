@@ -1,5 +1,6 @@
 import SwiftUI
 import UIKit
+import UniformTypeIdentifiers
 import UserNotifications
 
 struct SettingsView: View {
@@ -9,15 +10,43 @@ struct SettingsView: View {
     @State private var authorization: UNAuthorizationStatus = .notDetermined
     @State private var pendingCount = 0
     @State private var showingPaywall = false
+    @State private var showingImporter = false
+    @State private var pendingImport: URL?
+    @State private var importResult: Bool?
+    @State private var showingRestartHint = false
+    @AppStorage("appLanguage") private var appLanguage = "system"
 
-    private var proBinding: Binding<Bool> {
-        Binding(get: { store.data.isPro }, set: { store.setPro($0) })
+    private static let languages: [(code: String, name: String)] = [
+        ("en", "English"), ("ru", "Русский"), ("de", "Deutsch"), ("fr", "Français"), ("es", "Español"),
+        ("zh-Hans", "简体中文"), ("ja", "日本語"), ("ko", "한국어"), ("hi", "हिन्दी"),
+    ]
+
+    private func binding<T>(_ keyPath: WritableKeyPath<AppSettings, T>) -> Binding<T> {
+        Binding(get: { store.data.settings[keyPath: keyPath] },
+                set: { value in store.updateSettings { $0[keyPath: keyPath] = value } })
     }
 
-    private var statusText: LocalizedStringKey {
+    private var summaryTime: Binding<Date> {
+        Binding(get: { store.data.settings.summaryTime.dateToday },
+                set: { date in store.updateSettings { $0.summaryTime = ReminderTime(date: date) } })
+    }
+
+    private var languageBinding: Binding<String> {
+        Binding(get: { appLanguage }, set: { code in
+            appLanguage = code
+            if code == "system" {
+                UserDefaults.standard.removeObject(forKey: "AppleLanguages")
+            } else {
+                UserDefaults.standard.set([code], forKey: "AppleLanguages")
+            }
+            showingRestartHint = true
+        })
+    }
+
+    private var permissionText: LocalizedStringKey {
         switch authorization {
-        case .authorized, .provisional, .ephemeral: return "On"
-        case .denied: return "Off"
+        case .authorized, .provisional, .ephemeral: return "Allowed"
+        case .denied: return "Off in iPhone Settings"
         case .notDetermined: return "Not set up"
         @unknown default: return "Unknown"
         }
@@ -34,14 +63,23 @@ struct SettingsView: View {
         return String(localized: "Until a habit is checked off, its reminder repeats: \(standard). Done and Skip in the notification stop the repeats for that day.")
     }
 
+    /// Файл с копией всех данных для экспорта.
+    private var exportURL: URL {
+        let stamp = DayKey.make(Date())
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("habits-backup-\(stamp).json")
+        try? store.exportData().write(to: url, options: .atomic)
+        return url
+    }
+
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    LabeledContent {
-                        Text(statusText)
-                    } label: {
-                        Label("Notifications", systemImage: "bell.badge.fill")
+                    Toggle(isOn: binding(\.remindersEnabled)) {
+                        Label("Reminders", systemImage: "bell.badge.fill")
+                    }
+                    LabeledContent("iPhone permission") {
+                        Text(permissionText)
                     }
                     if authorization == .notDetermined {
                         Button("Allow notifications") {
@@ -58,11 +96,37 @@ struct SettingsView: View {
                             }
                         }
                     }
+                } header: {
+                    Text("Notifications")
                 } footer: {
-                    if authorization == .denied {
-                        Text("Notifications are turned off in iOS Settings, so reminders won't arrive.")
-                    } else {
-                        Text(repeatsFooter)
+                    Text(repeatsFooter)
+                }
+
+                Section {
+                    Toggle(isOn: binding(\.summaryEnabled).animation()) {
+                        Label("Evening summary", systemImage: "moon.stars.fill")
+                    }
+                    if store.data.settings.summaryEnabled {
+                        DatePicker("Time", selection: summaryTime, displayedComponents: .hourAndMinute)
+                    }
+                } footer: {
+                    Text("One notification listing the habits not checked off yet.")
+                }
+
+                Section("Today screen") {
+                    Picker("Order", selection: binding(\.homeLayout)) {
+                        Text("Parts of day").tag(HomeLayout.partsOfDay)
+                        Text("By time").tag(HomeLayout.byTime)
+                    }
+                    Toggle("Done habits at the bottom", isOn: binding(\.doneToBottom))
+                }
+
+                Section {
+                    Picker("Language", selection: languageBinding) {
+                        Text("System").tag("system")
+                        ForEach(Self.languages, id: \.code) { language in
+                            Text(verbatim: language.name).tag(language.code)
+                        }
                     }
                 }
 
@@ -74,13 +138,13 @@ struct SettingsView: View {
                             Text(store.data.isPro ? String(localized: "Active") : String(localized: "Free version"))
                         } label: {
                             Label {
-                                Text("Habits Pro").foregroundStyle(Color.primary)
+                                Text("Habit Tracker Pro").foregroundStyle(Color.primary)
                             } icon: {
                                 Image(systemName: "crown.fill").foregroundStyle(.orange)
                             }
                         }
                     }
-                    Toggle("Pro test mode", isOn: proBinding)
+                    Toggle("Pro test mode", isOn: binding(\.proUnlocked))
                 } footer: {
                     Text("There are no purchases yet: this switch turns Pro features on for testing.")
                 }
@@ -98,6 +162,21 @@ struct SettingsView: View {
                 }
 
                 Section {
+                    ShareLink(item: exportURL) {
+                        Label("Export data", systemImage: "square.and.arrow.up")
+                    }
+                    Button {
+                        showingImporter = true
+                    } label: {
+                        Label("Import data", systemImage: "square.and.arrow.down")
+                    }
+                } header: {
+                    Text("Backup")
+                } footer: {
+                    Text("Save a copy to Files or iCloud Drive. Importing replaces all current data.")
+                }
+
+                Section {
                     LabeledContent("Scheduled notifications", value: "\(pendingCount)")
                     LabeledContent("Version", value: version)
                 } footer: {
@@ -111,7 +190,7 @@ struct SettingsView: View {
                     Task { await refresh() }
                 }
             }
-            .onChange(of: store.data.isPro) { _, _ in
+            .onChange(of: store.data.settings) { _, _ in
                 Task {
                     try? await Task.sleep(for: .milliseconds(400))
                     await refresh()
@@ -119,6 +198,34 @@ struct SettingsView: View {
             }
             .sheet(isPresented: $showingPaywall) {
                 PaywallView()
+            }
+            .fileImporter(isPresented: $showingImporter, allowedContentTypes: [.json]) { result in
+                if case .success(let url) = result {
+                    pendingImport = url
+                }
+            }
+            .alert(
+                "Replace all data?",
+                isPresented: Binding(get: { pendingImport != nil }, set: { if !$0 { pendingImport = nil } }),
+                presenting: pendingImport
+            ) { url in
+                Button("Import", role: .destructive) {
+                    importResult = store.importData(from: url)
+                }
+                Button("Cancel", role: .cancel) {}
+            } message: { _ in
+                Text("Current habits and history will be replaced with the data from the file.")
+            }
+            .alert(
+                importResult == true ? String(localized: "Data imported") : String(localized: "Couldn't read the file"),
+                isPresented: Binding(get: { importResult != nil }, set: { if !$0 { importResult = nil } })
+            ) {
+                Button("OK", role: .cancel) {}
+            }
+            .alert("Restart the app", isPresented: $showingRestartHint) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text("The new language will apply after you close the app and open it again.")
             }
         }
     }

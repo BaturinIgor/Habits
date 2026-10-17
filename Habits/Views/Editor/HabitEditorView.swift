@@ -19,19 +19,36 @@ struct HabitEditorView: View {
     @State private var repeatCount: Int
     @State private var repeatInterval: Int
     @State private var showingPaywall = false
+    @State private var timesPerWeek: Int
+    @State private var partOfDay: PartOfDay
+    @State private var hasTarget: Bool
+    @State private var target: Int
+    @State private var unit: String
+    @State private var isPaused: Bool
+    @State private var pausedUntil: Date
     @FocusState private var nameFocused: Bool
 
     private enum Frequency: Hashable {
         case daily
         case days
+        case weekly
         case once
     }
 
     private let calendar = Calendar.app
 
     init(habit: Habit?) {
-        original = habit
-        let base = habit ?? Habit(
+        self.init(original: habit, base: habit)
+    }
+
+    /// Новая привычка из шаблона.
+    init(template: Habit) {
+        self.init(original: nil, base: template)
+    }
+
+    private init(original: Habit?, base: Habit?) {
+        self.original = original
+        let base = base ?? Habit(
             icon: .symbol(SymbolCatalog.symbols.randomElement() ?? "star.fill"),
             colorIndex: Int.random(in: 0..<Palette.colors.count)
         )
@@ -43,12 +60,26 @@ struct HabitEditorView: View {
         _hasReminder = State(initialValue: base.reminder != nil)
         _reminderDate = State(initialValue: (base.reminder ?? ReminderTime(hour: 9, minute: 0)).dateToday)
         let everyDay = base.schedule.weekdays == Weekdays.all
-        _frequency = State(initialValue: base.schedule.kind == .once ? .once : (everyDay ? .daily : .days))
+        switch base.schedule.kind {
+        case .once: _frequency = State(initialValue: .once)
+        case .weekly: _frequency = State(initialValue: .weekly)
+        case .repeating: _frequency = State(initialValue: everyDay ? .daily : .days)
+        }
         // В режиме "По дням" выбор начинается с пустого: нажимаешь дни, когда привычка нужна.
         _customDays = State(initialValue: everyDay ? [] : base.schedule.weekdays)
         _customRepeat = State(initialValue: base.repeatCount != nil)
         _repeatCount = State(initialValue: base.repeatCount ?? RepeatRule.standard.count)
         _repeatInterval = State(initialValue: base.repeatInterval ?? RepeatRule.standard.interval)
+        _timesPerWeek = State(initialValue: base.schedule.timesPerWeek)
+        _partOfDay = State(initialValue: base.partOfDay ?? .anytime)
+        _hasTarget = State(initialValue: (base.target ?? 0) > 1)
+        _target = State(initialValue: max(2, base.target ?? 8))
+        _unit = State(initialValue: base.unit ?? "")
+        let today = Calendar.app.startOfDay(for: Date())
+        let pauseActive = (base.pausedUntil.map { $0 >= today }) ?? false
+        _isPaused = State(initialValue: pauseActive)
+        _pausedUntil = State(initialValue: pauseActive ? (base.pausedUntil ?? today)
+                             : (Calendar.app.date(byAdding: .day, value: 7, to: today) ?? today))
     }
 
     private var color: Color { Palette.color(draft.colorIndex) }
@@ -78,7 +109,9 @@ struct HabitEditorView: View {
                 appearanceSection
                 scheduleSection
                 reminderSection
+                goalSection
                 groupSection
+                pauseSection
                 if original != nil {
                     dangerSection
                 }
@@ -104,13 +137,14 @@ struct HabitEditorView: View {
                     newGroupName = ""
                 }
             }
-            .confirmationDialog("Delete habit?", isPresented: $confirmDelete, titleVisibility: .visible) {
+            .alert("Delete habit?", isPresented: $confirmDelete) {
                 Button("Delete", role: .destructive) {
                     if let original {
                         store.deleteHabit(original.id)
                     }
                     dismiss()
                 }
+                Button("Cancel", role: .cancel) {}
             } message: {
                 Text("Its check-in history will be deleted too.")
             }
@@ -163,16 +197,20 @@ struct HabitEditorView: View {
             Picker("How often", selection: $frequency.animation(.snappy)) {
                 Text("Every day").tag(Frequency.daily)
                 Text("Some days").tag(Frequency.days)
+                Text("Times a week").tag(Frequency.weekly)
                 Text("Once").tag(Frequency.once)
             }
-            .pickerStyle(.segmented)
-            .listRowSeparator(.hidden)
 
             if frequency == .once {
                 DatePicker("Date", selection: $draft.schedule.onceDate, displayedComponents: .date)
             } else {
                 if frequency == .days {
                     WeekdayPicker(selection: $customDays)
+                }
+                if frequency == .weekly {
+                    Stepper(value: $timesPerWeek, in: 1...6) {
+                        LabeledContent("Times a week", value: "\(timesPerWeek)")
+                    }
                 }
                 DatePicker("Start", selection: $draft.schedule.startDate, displayedComponents: .date)
                 Toggle("End date", isOn: $hasEndDate.animation(.snappy))
@@ -192,6 +230,13 @@ struct HabitEditorView: View {
         Section {
             Toggle(isOn: $hasReminder.animation(.snappy)) {
                 Label("Reminder", systemImage: "bell.badge.fill")
+            }
+            if !hasReminder {
+                Picker("Part of day", selection: $partOfDay) {
+                    ForEach(PartOfDay.allCases) { part in
+                        Text(part.title).tag(part)
+                    }
+                }
             }
             if hasReminder {
                 DatePicker("Time", selection: $reminderDate, displayedComponents: .hourAndMinute)
@@ -213,18 +258,7 @@ struct HabitEditorView: View {
                         }
                     }
                 } else {
-                    Button {
-                        showingPaywall = true
-                    } label: {
-                        HStack(spacing: 8) {
-                            Text("Custom repeats")
-                                .foregroundStyle(Color.primary)
-                            ProBadge()
-                            Spacer()
-                            Image(systemName: "lock.fill")
-                                .foregroundStyle(.secondary)
-                        }
-                    }
+                    lockedRow("Custom repeats")
                 }
             }
         } header: {
@@ -232,6 +266,64 @@ struct HabitEditorView: View {
         } footer: {
             if hasReminder {
                 Text(repeatFooter)
+            }
+        }
+    }
+
+    private var goalSection: some View {
+        Section {
+            if store.data.isPro {
+                Toggle(isOn: $hasTarget.animation(.snappy)) {
+                    HStack(spacing: 8) {
+                        Text("Daily goal")
+                        ProBadge()
+                    }
+                }
+                if hasTarget {
+                    Stepper(value: $target, in: 2...100) {
+                        LabeledContent("Goal", value: "\(target)")
+                    }
+                    TextField("Unit, for example glasses", text: $unit)
+                }
+            } else {
+                lockedRow("Daily goal")
+            }
+        } footer: {
+            Text("For example, 8 glasses of water. Each tap on the circle adds one.")
+        }
+    }
+
+    private var pauseSection: some View {
+        Section {
+            if store.data.isPro {
+                Toggle(isOn: $isPaused.animation(.snappy)) {
+                    HStack(spacing: 8) {
+                        Text("Pause")
+                        ProBadge()
+                    }
+                }
+                if isPaused {
+                    DatePicker("Until", selection: $pausedUntil, in: calendar.startOfDay(for: Date())..., displayedComponents: .date)
+                }
+            } else {
+                lockedRow("Pause")
+            }
+        } footer: {
+            Text("During a pause the habit is hidden and sends no reminders, and your streak is kept.")
+        }
+    }
+
+    private func lockedRow(_ title: LocalizedStringKey) -> some View {
+        Button {
+            showingPaywall = true
+        } label: {
+            HStack(spacing: 8) {
+                Text(title)
+                    .foregroundStyle(Color.primary)
+                ProBadge()
+                Spacer()
+                Image(systemName: "lock.fill")
+                    .foregroundStyle(.secondary)
             }
         }
     }
@@ -291,14 +383,33 @@ struct HabitEditorView: View {
         case .days:
             habit.schedule.kind = .repeating
             habit.schedule.weekdays = customDays
+        case .weekly:
+            habit.schedule.kind = .weekly
+            habit.schedule.weekdays = Weekdays.all
         case .once:
             habit.schedule.kind = .once
+        }
+        habit.schedule.timesPerWeek = timesPerWeek
+        habit.partOfDay = partOfDay
+        if store.data.isPro {
+            let cleanUnit = unit.trimmingCharacters(in: .whitespacesAndNewlines)
+            habit.target = hasTarget ? target : nil
+            habit.unit = hasTarget && !cleanUnit.isEmpty ? cleanUnit : nil
+            if isPaused {
+                let today = calendar.startOfDay(for: Date())
+                let wasActive = draft.pausedUntil.map { $0 >= today } ?? false
+                habit.pausedFrom = wasActive ? (draft.pausedFrom ?? today) : today
+                habit.pausedUntil = calendar.startOfDay(for: pausedUntil)
+            } else {
+                habit.pausedFrom = nil
+                habit.pausedUntil = nil
+            }
         }
         habit.name = habit.name.trimmingCharacters(in: .whitespacesAndNewlines)
         habit.details = habit.details.trimmingCharacters(in: .whitespacesAndNewlines)
         habit.schedule.startDate = calendar.startOfDay(for: habit.schedule.startDate)
         habit.schedule.onceDate = calendar.startOfDay(for: habit.schedule.onceDate)
-        if habit.schedule.kind == .repeating && hasEndDate {
+        if habit.schedule.kind != .once && hasEndDate {
             habit.schedule.endDate = max(calendar.startOfDay(for: endDate), habit.schedule.startDate)
         } else {
             habit.schedule.endDate = nil

@@ -21,9 +21,11 @@ enum NotificationPlanner {
     struct Event {
         let id: String
         let date: Date
-        let habit: Habit
+        let habit: Habit?
         let day: String
         let index: Int
+        /// Текст вечерней сводки, если это сводка.
+        var summary: String? = nil
     }
 
     nonisolated static func identifier(habitID: UUID, day: String, index: Int) -> String {
@@ -88,6 +90,8 @@ enum NotificationPlanner {
 
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
+        // Общий выключатель в настройках приложения.
+        guard data.settings.remindersEnabled else { return }
         for event in plan(data: data, now: now) {
             center.add(makeRequest(event), withCompletionHandler: nil)
         }
@@ -128,6 +132,7 @@ enum NotificationPlanner {
                       let fire = reminder.date(on: day, calendar: calendar) else { continue }
                 let key = DayKey.make(day, calendar: calendar)
                 if data.status(habit.id, day: key) != nil { continue }
+                if data.weeklyGoalMet(habit, before: day, calendar: calendar) { continue }
 
                 for index in 0...repeatCount {
                     let date = fire.addingTimeInterval(Double(index) * interval)
@@ -148,6 +153,21 @@ enum NotificationPlanner {
             }
         }
 
+        if data.settings.summaryEnabled {
+            for offset in 0...1 {
+                guard let day = calendar.date(byAdding: .day, value: offset, to: today),
+                      let fire = data.settings.summaryTime.date(on: day, calendar: calendar),
+                      fire > now.addingTimeInterval(2) else { continue }
+                let key = DayKey.make(day, calendar: calendar)
+                let pending = data.habits(on: day, calendar: calendar)
+                    .filter { $0.schedule.kind != .weekly && data.status($0.id, day: key) == nil }
+                    .map(\.name)
+                guard !pending.isEmpty else { continue }
+                near.append(Event(id: "summary|\(key)", date: fire, habit: nil, day: key, index: 0,
+                                  summary: pending.joined(separator: ", ")))
+            }
+        }
+
         near.sort { $0.date < $1.date }
         far.sort { $0.date < $1.date }
         return Array((near + far).prefix(maxPending))
@@ -155,7 +175,18 @@ enum NotificationPlanner {
 
     private static func makeRequest(_ event: Event) -> UNNotificationRequest {
         let content = UNMutableNotificationContent()
-        let habit = event.habit
+        let components = Calendar.app.dateComponents(
+            [.year, .month, .day, .hour, .minute, .second],
+            from: event.date
+        )
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+        guard let habit = event.habit else {
+            content.title = String(localized: "Day summary")
+            content.body = String(localized: "Not checked off yet: \(event.summary ?? "")")
+            content.sound = .default
+            content.threadIdentifier = "summary"
+            return UNNotificationRequest(identifier: event.id, content: content, trigger: trigger)
+        }
         if case .emoji(let emoji) = habit.icon {
             content.title = "\(emoji) \(habit.name)"
         } else {
@@ -171,12 +202,6 @@ enum NotificationPlanner {
         content.threadIdentifier = habit.id.uuidString
         content.interruptionLevel = .active
         content.userInfo = ["habitID": habit.id.uuidString, "day": event.day]
-
-        let components = Calendar.app.dateComponents(
-            [.year, .month, .day, .hour, .minute, .second],
-            from: event.date
-        )
-        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
         return UNNotificationRequest(identifier: event.id, content: content, trigger: trigger)
     }
 }

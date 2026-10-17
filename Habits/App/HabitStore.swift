@@ -124,7 +124,7 @@ final class HabitStore {
 
     func toggleDone(_ id: UUID, on day: Date) {
         let key = DayKey.make(day)
-        data.toggleDone(habitID: id, day: key)
+        data.tap(habitID: id, day: key)
         commit()
         Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
     }
@@ -149,6 +149,39 @@ final class HabitStore {
     func setPro(_ enabled: Bool) {
         data.settings.proUnlocked = enabled
         commit()
+    }
+
+    func decrement(_ id: UUID, on day: Date) {
+        data.decrement(habitID: id, day: DayKey.make(day))
+        commit()
+    }
+
+    /// Изменение настроек с сохранением и пересчётом уведомлений.
+    func updateSettings(_ change: (inout AppSettings) -> Void) {
+        change(&data.settings)
+        commit()
+    }
+
+    // MARK: Резервная копия
+
+    func exportData() -> Data {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+        encoder.dateEncodingStrategy = .iso8601
+        return (try? encoder.encode(data)) ?? Data()
+    }
+
+    /// Заменяет все данные содержимым файла. Возвращает false, если файл не подошёл.
+    func importData(from url: URL) -> Bool {
+        let access = url.startAccessingSecurityScopedResource()
+        defer { if access { url.stopAccessingSecurityScopedResource() } }
+        guard let raw = try? Data(contentsOf: url) else { return false }
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        guard let imported = try? decoder.decode(AppData.self, from: raw) else { return false }
+        data = imported
+        commit()
+        return true
     }
 
     /// Возвращает false, если вернуть из архива нельзя из-за лимита бесплатной версии.
