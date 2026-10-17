@@ -12,12 +12,12 @@ func makeSections(_ habits: [Habit], data: AppData) -> [HabitSection] {
     var result: [HabitSection] = []
     var used = Set<UUID>()
     for group in data.sortedGroups {
-        let items = habits.filter { $0.groupID == group.id }
+        let items = habits.filter { $0.groupID == group.id }.sortedForDisplay()
         guard !items.isEmpty else { continue }
         items.forEach { used.insert($0.id) }
         result.append(HabitSection(id: group.id.uuidString, title: group.name, habits: items))
     }
-    let rest = habits.filter { !used.contains($0.id) }
+    let rest = habits.filter { !used.contains($0.id) }.sortedForDisplay()
     if !rest.isEmpty {
         result.append(HabitSection(id: "ungrouped", title: "Без группы", habits: rest))
     }
@@ -32,6 +32,7 @@ struct TodayView: View {
     @State private var noteTarget: NoteTarget?
     @State private var habitToDelete: Habit?
     @State private var anchorToday: Date = Calendar.app.startOfDay(for: Date())
+    @State private var showingOrder = false
     @Environment(\.scenePhase) private var scenePhase
     @Namespace private var zoom
 
@@ -80,6 +81,16 @@ struct TodayView: View {
                         }
                     }
                 }
+                if store.data.activeHabits.count > 1 {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            showingOrder = true
+                        } label: {
+                            Image(systemName: "arrow.up.arrow.down")
+                        }
+                        .accessibilityLabel("Порядок привычек")
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         showingNewHabit = true
@@ -95,6 +106,9 @@ struct TodayView: View {
             }
             .sheet(isPresented: $showingNewHabit) {
                 HabitEditorView(habit: nil)
+            }
+            .sheet(isPresented: $showingOrder) {
+                HabitOrderView()
             }
             .sheet(item: $editingHabit) { habit in
                 HabitEditorView(habit: habit)

@@ -76,13 +76,13 @@ object HabitRepository {
     }
 
     /** Изменяет данные, сохраняет их, пересчитывает уведомления и обновляет виджет. */
-    fun update(transform: (AppData) -> AppData) {
+    fun update(reschedule: Boolean = true, transform: (AppData) -> AppData) {
         synchronized(lock) {
             val newValue = transform(_data.value)
             _data.value = newValue
             save(newValue)
         }
-        ReminderScheduler.reschedule(appContext)
+        if (reschedule) ReminderScheduler.reschedule(appContext)
         scope.launch { refreshWidgets() }
     }
 
@@ -111,15 +111,11 @@ object HabitRepository {
         d.copy(habits = d.habits.map { if (it.id == id) it.copy(archived = archived) else it })
     }
 
-    /** Сдвигает привычку вверх или вниз внутри переданного списка (например, одной группы). */
-    fun move(ids: List<String>, id: String, delta: Int) = update { d ->
-        val from = ids.indexOf(id)
-        val to = from + delta
-        if (from < 0 || to !in ids.indices) return@update d
-        val newOrder = ids.toMutableList().apply { add(to, removeAt(from)) }
+    /** Задаёт новый ручной порядок: переданные привычки обмениваются своими местами. */
+    fun applyManualOrder(ids: List<String>) = update(reschedule = false) { d ->
         val orders = ids.mapNotNull { hid -> d.habits.firstOrNull { it.id == hid }?.sortOrder }.sorted()
-        if (orders.size != newOrder.size) return@update d
-        val position = newOrder.withIndex().associate { it.value to orders[it.index] }
+        if (orders.size != ids.size) return@update d
+        val position = ids.withIndex().associate { it.value to orders[it.index] }
         d.copy(habits = d.habits.map { h -> position[h.id]?.let { h.copy(sortOrder = it) } ?: h })
     }
 

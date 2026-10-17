@@ -5,6 +5,7 @@ struct HabitsListView: View {
     @State private var showingNewHabit = false
     @State private var showArchive = false
     @State private var habitToDelete: Habit?
+    @State private var showingOrder = false
 
     var body: some View {
         NavigationStack {
@@ -41,9 +42,6 @@ struct HabitsListView: View {
                                 .tint(.orange)
                             }
                         }
-                        .onMove { source, destination in
-                            store.reorder(section.habits.map(\.id), from: source, to: destination)
-                        }
                     }
                 }
 
@@ -79,8 +77,14 @@ struct HabitsListView: View {
             .listStyle(.insetGrouped)
             .navigationTitle("Привычки")
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    EditButton()
+                if store.data.activeHabits.count > 1 {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button {
+                            showingOrder = true
+                        } label: {
+                            Label("Порядок", systemImage: "arrow.up.arrow.down")
+                        }
+                    }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
@@ -96,6 +100,9 @@ struct HabitsListView: View {
             }
             .sheet(isPresented: $showingNewHabit) {
                 HabitEditorView(habit: nil)
+            }
+            .sheet(isPresented: $showingOrder) {
+                HabitOrderView()
             }
             .confirmationDialog(
                 "Удалить привычку?",

@@ -62,18 +62,18 @@ final class HabitStore {
         commit()
     }
 
-    /// Перестановка внутри списка привычек (например, одной группы).
-    func reorder(_ ids: [UUID], from source: IndexSet, to destination: Int) {
-        var newOrder = ids
-        newOrder.move(fromOffsets: source, toOffset: destination)
+    /// Задаёт новый ручной порядок для переданных привычек: они обмениваются своими местами.
+    /// Уведомления от порядка не зависят, поэтому их не пересчитываем.
+    func applyManualOrder(_ ids: [UUID]) {
         let orders = ids.compactMap { id in data.habits.first { $0.id == id }?.sortOrder }.sorted()
-        guard orders.count == newOrder.count else { return }
-        for (position, id) in newOrder.enumerated() {
+        guard orders.count == ids.count else { return }
+        for (position, id) in ids.enumerated() {
             if let index = data.habits.firstIndex(where: { $0.id == id }) {
                 data.habits[index].sortOrder = orders[position]
             }
         }
-        commit()
+        DataFile.save(data)
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     // MARK: Группы

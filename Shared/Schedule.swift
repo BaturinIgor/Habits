@@ -102,6 +102,28 @@ extension String {
     }
 }
 
+// MARK: - Порядок показа
+
+extension Array where Element == Habit {
+    /// Сначала привычки с напоминанием, по времени от утра к вечеру,
+    /// затем привычки без напоминания в ручном порядке.
+    func sortedForDisplay() -> [Habit] {
+        sorted { a, b in
+            switch (a.reminder, b.reminder) {
+            case let (ra?, rb?):
+                if ra.minutesOfDay != rb.minutesOfDay { return ra.minutesOfDay < rb.minutesOfDay }
+                return a.sortOrder < b.sortOrder
+            case (.some, .none):
+                return true
+            case (.none, .some):
+                return false
+            case (.none, .none):
+                return a.sortOrder < b.sortOrder
+            }
+        }
+    }
+}
+
 // MARK: - Расписание привычки
 
 extension Habit {

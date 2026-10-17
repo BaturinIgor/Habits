@@ -54,6 +54,7 @@ import com.personal.habits.ui.screens.DetailScreen
 import com.personal.habits.ui.screens.EditorScreen
 import com.personal.habits.ui.screens.GroupsScreen
 import com.personal.habits.ui.screens.HabitsScreen
+import com.personal.habits.ui.screens.OrderScreen
 import com.personal.habits.ui.screens.SettingsScreen
 import com.personal.habits.ui.screens.StatsScreen
 import com.personal.habits.ui.screens.TodayScreen
@@ -83,6 +84,7 @@ object Routes {
     const val DETAIL = "habit/{id}"
     const val EDITOR = "edit?id={id}"
     const val GROUPS = "groups"
+    const val ORDER = "order"
 
     fun detail(id: String) = "habit/$id"
     fun editor(id: String? = null) = if (id == null) "edit" else "edit?id=$id"
@@ -161,12 +163,14 @@ fun HabitsAppUi() {
                     onOpenHabit = { navController.navigate(Routes.detail(it)) },
                     onNewHabit = { navController.navigate(Routes.editor()) },
                     onEditHabit = { navController.navigate(Routes.editor(it)) },
+                    onOpenOrder = { navController.navigate(Routes.ORDER) },
                 )
             }
             composable(TopTab.Habits.route) {
                 HabitsScreen(
                     onOpenHabit = { navController.navigate(Routes.detail(it)) },
                     onNewHabit = { navController.navigate(Routes.editor()) },
+                    onOpenOrder = { navController.navigate(Routes.ORDER) },
                 )
             }
             composable(TopTab.Stats.route) {
@@ -205,6 +209,9 @@ fun HabitsAppUi() {
             }
             composable(Routes.GROUPS) {
                 GroupsScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Routes.ORDER) {
+                OrderScreen(onBack = { navController.popBackStack() })
             }
         }
     }

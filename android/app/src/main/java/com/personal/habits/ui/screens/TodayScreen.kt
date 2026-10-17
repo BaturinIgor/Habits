@@ -42,6 +42,7 @@ import androidx.compose.material.icons.rounded.LocalFireDepartment
 import androidx.compose.material.icons.rounded.Notifications
 import androidx.compose.material.icons.automirrored.rounded.StickyNote2
 import androidx.compose.material.icons.automirrored.rounded.Undo
+import androidx.compose.material.icons.rounded.SwapVert
 import androidx.compose.material.icons.rounded.WbSunny
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.DropdownMenu
@@ -49,6 +50,7 @@ import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.MaterialTheme
@@ -86,6 +88,7 @@ import com.personal.habits.data.Stats
 import com.personal.habits.data.activeHabits
 import com.personal.habits.data.habitsOn
 import com.personal.habits.data.note
+import com.personal.habits.data.sortedForDisplay
 import com.personal.habits.data.sortedGroups
 import com.personal.habits.data.status
 import com.personal.habits.ui.Palette
@@ -110,12 +113,12 @@ fun makeSections(habits: List<Habit>, data: AppData): List<HabitSection> {
     val result = mutableListOf<HabitSection>()
     val used = mutableSetOf<String>()
     for (group in data.sortedGroups) {
-        val items = habits.filter { it.groupId == group.id }
+        val items = habits.filter { it.groupId == group.id }.sortedForDisplay()
         if (items.isEmpty()) continue
         used += items.map { it.id }
         result += HabitSection(group.id, group.name, items)
     }
-    val rest = habits.filter { it.id !in used }
+    val rest = habits.filter { it.id !in used }.sortedForDisplay()
     if (rest.isNotEmpty()) result += HabitSection("ungrouped", "Без группы", rest)
     return result
 }
@@ -126,6 +129,7 @@ fun TodayScreen(
     onOpenHabit: (String) -> Unit,
     onNewHabit: () -> Unit,
     onEditHabit: (String) -> Unit,
+    onOpenOrder: () -> Unit,
 ) {
     val data by HabitRepository.data.collectAsStateWithLifecycle()
     var selectedEpochDay by rememberSaveable { mutableStateOf(LocalDate.now().toEpochDay()) }
@@ -154,6 +158,11 @@ fun TodayScreen(
                 actions = {
                     if (!isToday) {
                         TextButton(onClick = { selectedEpochDay = today.toEpochDay() }) { Text("Сегодня") }
+                    }
+                    if (data.activeHabits.size > 1) {
+                        IconButton(onClick = onOpenOrder) {
+                            Icon(Icons.Rounded.SwapVert, contentDescription = "Порядок привычек")
+                        }
                     }
                 },
                 colors = TopAppBarDefaults.largeTopAppBarColors(

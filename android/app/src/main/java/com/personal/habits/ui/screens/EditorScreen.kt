@@ -106,6 +106,8 @@ private fun Long.utcMillisToLocalDate(): LocalDate = Instant.ofEpochMilli(this).
 
 private enum class DateField { START, END, ONCE }
 
+private enum class Frequency { DAILY, DAYS, ONCE }
+
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 fun EditorScreen(habitId: String?, onClose: () -> Unit, onDeleted: () -> Unit) {
@@ -125,8 +127,18 @@ fun EditorScreen(habitId: String?, onClose: () -> Unit, onDeleted: () -> Unit) {
     var iconValue by remember { mutableStateOf(initial.iconValue) }
     var colorIndex by remember { mutableStateOf(initial.colorIndex) }
     var groupId by remember { mutableStateOf(initial.groupId) }
-    var kind by remember { mutableStateOf(initial.schedule.kind) }
-    var weekdays by remember { mutableStateOf(initial.schedule.weekdays) }
+    val everyDay = initial.schedule.weekdays == Weekdays.all
+    var frequency by remember {
+        mutableStateOf(
+            when {
+                initial.schedule.kind == ScheduleKind.ONCE -> Frequency.ONCE
+                everyDay -> Frequency.DAILY
+                else -> Frequency.DAYS
+            }
+        )
+    }
+    // В режиме "По дням" выбор начинается с пустого: нажимаешь дни, когда привычка нужна.
+    var customDays by remember { mutableStateOf(if (everyDay) emptySet() else initial.schedule.weekdays) }
     var startDate by remember { mutableStateOf(initial.startDay()) }
     var hasEnd by remember { mutableStateOf(initial.endDay() != null) }
     var endDate by remember { mutableStateOf(initial.endDay() ?: initial.startDay().plusDays(30)) }
@@ -141,7 +153,7 @@ fun EditorScreen(habitId: String?, onClose: () -> Unit, onDeleted: () -> Unit) {
     var showIcons by remember { mutableStateOf(false) }
 
     val color = Palette.color(colorIndex)
-    val canSave = name.isNotBlank() && (kind == ScheduleKind.ONCE || weekdays.isNotEmpty())
+    val canSave = name.isNotBlank() && (frequency != Frequency.DAYS || customDays.isNotEmpty())
     val settings = HabitRepository.data.value.settings
 
     fun save() {
@@ -154,10 +166,10 @@ fun EditorScreen(habitId: String?, onClose: () -> Unit, onDeleted: () -> Unit) {
             colorIndex = colorIndex,
             groupId = groupId,
             schedule = HabitSchedule(
-                kind = kind,
-                weekdays = weekdays,
+                kind = if (frequency == Frequency.ONCE) ScheduleKind.ONCE else ScheduleKind.REPEATING,
+                weekdays = if (frequency == Frequency.DAYS) customDays else Weekdays.all,
                 startDate = startDate.toString(),
-                endDate = if (kind == ScheduleKind.REPEATING && hasEnd) safeEnd.toString() else null,
+                endDate = if (frequency != Frequency.ONCE && hasEnd) safeEnd.toString() else null,
                 onceDate = onceDate.toString(),
             ),
             reminder = if (hasReminder) reminder else null,
@@ -277,22 +289,27 @@ fun EditorScreen(habitId: String?, onClose: () -> Unit, onDeleted: () -> Unit) {
 
             // Расписание
             FormSection("Расписание") {
+                val options = listOf(
+                    Frequency.DAILY to "Каждый день",
+                    Frequency.DAYS to "По дням",
+                    Frequency.ONCE to "Один раз",
+                )
                 SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
-                    SegmentedButton(
-                        selected = kind == ScheduleKind.REPEATING,
-                        onClick = { kind = ScheduleKind.REPEATING },
-                        shape = SegmentedButtonDefaults.itemShape(0, 2)
-                    ) { Text("Регулярно") }
-                    SegmentedButton(
-                        selected = kind == ScheduleKind.ONCE,
-                        onClick = { kind = ScheduleKind.ONCE },
-                        shape = SegmentedButtonDefaults.itemShape(1, 2)
-                    ) { Text("Один раз") }
+                    options.forEachIndexed { index, (value, title) ->
+                        SegmentedButton(
+                            selected = frequency == value,
+                            onClick = { frequency = value },
+                            shape = SegmentedButtonDefaults.itemShape(index, options.size),
+                            icon = {}
+                        ) { Text(title, maxLines = 1) }
+                    }
                 }
-                if (kind == ScheduleKind.ONCE) {
+                if (frequency == Frequency.ONCE) {
                     ValueRow("Дата", Ru.dayMonth(onceDate)) { datePickerFor = DateField.ONCE }
                 } else {
-                    WeekdayPicker(weekdays) { weekdays = it }
+                    AnimatedVisibility(visible = frequency == Frequency.DAYS) {
+                        WeekdayPicker(customDays) { customDays = it }
+                    }
                     HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
                     ValueRow("Начало", Ru.dayMonth(startDate)) { datePickerFor = DateField.START }
                     SwitchRow("Дата окончания", hasEnd) { hasEnd = it }
@@ -581,7 +598,7 @@ private fun WeekdayPicker(selection: Set<Int>, onChange: (Set<Int>) -> Unit) {
             }
         }
         FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            listOf("Каждый день" to Weekdays.all, "Будни" to Weekdays.workdays, "Выходные" to Weekdays.weekend).forEach { (title, days) ->
+            listOf("Будни" to Weekdays.workdays, "Выходные" to Weekdays.weekend).forEach { (title, days) ->
                 val active = selection == days
                 Text(
                     title,
@@ -599,6 +616,12 @@ private fun WeekdayPicker(selection: Set<Int>, onChange: (Set<Int>) -> Unit) {
                 )
             }
         }
+        Text(
+            if (selection.isEmpty()) "Нажми на дни, в которые нужно выполнять привычку"
+            else "Привычка по дням: " + Weekdays.ordered.filter { it in selection }.joinToString(", ") { Weekdays.short(it) },
+            style = MaterialTheme.typography.bodySmall,
+            color = if (selection.isEmpty()) Color(0xFFFF9500) else MaterialTheme.colorScheme.onSurfaceVariant
+        )
     }
 }
 

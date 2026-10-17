@@ -64,7 +64,9 @@ struct HabitsProvider: TimelineProvider {
     static func entry(for date: Date, data: AppData) -> HabitsEntry {
         let calendar = Calendar.app
         let key = DayKey.make(date, calendar: calendar)
-        let items = data.habits(on: date, calendar: calendar)
+        let ordered = data.habits(on: date, calendar: calendar).sortedForDisplay()
+        let position = Dictionary(uniqueKeysWithValues: ordered.enumerated().map { ($1.id, $0) })
+        let items = ordered
             .map { habit in
                 WidgetHabit(
                     id: habit.id,
@@ -76,10 +78,11 @@ struct HabitsProvider: TimelineProvider {
                 )
             }
             .sorted { lhs, rhs in
+                // Неотмеченные выше, внутри - тот же порядок, что в приложении.
                 let l = lhs.status == nil ? 0 : 1
                 let r = rhs.status == nil ? 0 : 1
                 if l != r { return l < r }
-                return (lhs.time ?? "99:99") < (rhs.time ?? "99:99")
+                return (position[lhs.id] ?? 0) < (position[rhs.id] ?? 0)
             }
         return HabitsEntry(date: date, dayKey: key, items: items)
     }

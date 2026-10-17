@@ -29,6 +29,7 @@ import androidx.compose.material.icons.rounded.KeyboardArrowDown
 import androidx.compose.material.icons.rounded.KeyboardArrowUp
 import androidx.compose.material.icons.rounded.Layers
 import androidx.compose.material.icons.rounded.Notifications
+import androidx.compose.material.icons.rounded.SwapVert
 import androidx.compose.material.icons.rounded.Unarchive
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.DropdownMenu
@@ -36,6 +37,7 @@ import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.MaterialTheme
@@ -76,7 +78,7 @@ import com.personal.habits.ui.components.SectionHeader
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HabitsScreen(onOpenHabit: (String) -> Unit, onNewHabit: () -> Unit) {
+fun HabitsScreen(onOpenHabit: (String) -> Unit, onNewHabit: () -> Unit, onOpenOrder: () -> Unit) {
     val data by HabitRepository.data.collectAsStateWithLifecycle()
     var showArchive by rememberSaveable { mutableStateOf(false) }
     var deleteFor by remember { mutableStateOf<Habit?>(null) }
@@ -92,6 +94,13 @@ fun HabitsScreen(onOpenHabit: (String) -> Unit, onNewHabit: () -> Unit) {
                     containerColor = MaterialTheme.colorScheme.background,
                     scrolledContainerColor = MaterialTheme.colorScheme.background,
                 ),
+                actions = {
+                    if (data.activeHabits.size > 1) {
+                        IconButton(onClick = onOpenOrder) {
+                            Icon(Icons.Rounded.SwapVert, contentDescription = "Порядок привычек")
+                        }
+                    }
+                },
                 scrollBehavior = scrollBehavior
             )
         },
@@ -126,15 +135,11 @@ fun HabitsScreen(onOpenHabit: (String) -> Unit, onNewHabit: () -> Unit) {
             }
             sections.forEach { section ->
                 item(key = "h-${section.key}") { SectionHeader(section.title, Modifier.animateItem()) }
-                val ids = section.habits.map { it.id }
                 items(section.habits, key = { it.id }) { habit ->
                     HabitRow(
                         habit = habit,
                         modifier = Modifier.animateItem(),
                         onOpen = { onOpenHabit(habit.id) },
-                        canMoveUp = ids.indexOf(habit.id) > 0,
-                        canMoveDown = ids.indexOf(habit.id) < ids.lastIndex,
-                        onMove = { delta -> HabitRepository.move(ids, habit.id, delta) },
                         onArchive = { HabitRepository.setArchived(habit.id, true) },
                         onDelete = { deleteFor = habit },
                     )
@@ -164,9 +169,6 @@ fun HabitsScreen(onOpenHabit: (String) -> Unit, onNewHabit: () -> Unit) {
                             habit = habit,
                             modifier = Modifier.animateItem().alpha(0.65f),
                             onOpen = { onOpenHabit(habit.id) },
-                            canMoveUp = false,
-                            canMoveDown = false,
-                            onMove = {},
                             onArchive = { HabitRepository.setArchived(habit.id, false) },
                             onDelete = { deleteFor = habit },
                             archived = true,
@@ -199,9 +201,6 @@ private fun HabitRow(
     habit: Habit,
     modifier: Modifier,
     onOpen: () -> Unit,
-    canMoveUp: Boolean,
-    canMoveDown: Boolean,
-    onMove: (Int) -> Unit,
     onArchive: () -> Unit,
     onDelete: () -> Unit,
     archived: Boolean = false,
@@ -247,12 +246,6 @@ private fun HabitRow(
             }
         }
         DropdownMenu(expanded = menu, onDismissRequest = { menu = false }) {
-            if (canMoveUp) {
-                DropdownMenuItem(text = { Text("Выше") }, leadingIcon = { Icon(Icons.Rounded.KeyboardArrowUp, null) }, onClick = { menu = false; onMove(-1) })
-            }
-            if (canMoveDown) {
-                DropdownMenuItem(text = { Text("Ниже") }, leadingIcon = { Icon(Icons.Rounded.KeyboardArrowDown, null) }, onClick = { menu = false; onMove(1) })
-            }
             DropdownMenuItem(
                 text = { Text(if (archived) "Вернуть из архива" else "В архив") },
                 leadingIcon = { Icon(if (archived) Icons.Rounded.Unarchive else Icons.Rounded.Archive, null) },

@@ -75,6 +75,11 @@ fun Habit.startDay(): LocalDate = schedule.startDate.toLocalDateOrNull() ?: Loca
 fun Habit.onceDay(): LocalDate = schedule.onceDate.toLocalDateOrNull() ?: LocalDate.now()
 fun Habit.endDay(): LocalDate? = schedule.endDate?.toLocalDateOrNull()
 
+/** Сначала привычки с напоминанием по времени, затем без напоминания в ручном порядке. */
+fun List<Habit>.sortedForDisplay(): List<Habit> = sortedWith(
+    compareBy<Habit>({ if (it.reminder != null) 0 else 1 }, { it.reminder?.minutesOfDay ?: 0 }, { it.sortOrder })
+)
+
 fun Habit.isScheduledOn(day: LocalDate): Boolean = when (schedule.kind) {
     ScheduleKind.ONCE -> day == onceDay()
     ScheduleKind.REPEATING -> {

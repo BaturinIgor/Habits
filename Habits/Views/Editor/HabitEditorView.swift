@@ -13,7 +13,15 @@ struct HabitEditorView: View {
     @State private var showingNewGroup = false
     @State private var newGroupName = ""
     @State private var confirmDelete = false
+    @State private var frequency: Frequency
+    @State private var customDays: Set<Int>
     @FocusState private var nameFocused: Bool
+
+    private enum Frequency: Hashable {
+        case daily
+        case days
+        case once
+    }
 
     private let calendar = Calendar.app
 
@@ -30,6 +38,10 @@ struct HabitEditorView: View {
                          ?? Calendar.app.date(byAdding: .day, value: 30, to: start) ?? start)
         _hasReminder = State(initialValue: base.reminder != nil)
         _reminderDate = State(initialValue: (base.reminder ?? ReminderTime(hour: 9, minute: 0)).dateToday)
+        let everyDay = base.schedule.weekdays == Weekdays.all
+        _frequency = State(initialValue: base.schedule.kind == .once ? .once : (everyDay ? .daily : .days))
+        // В режиме "По дням" выбор начинается с пустого: нажимаешь дни, когда привычка нужна.
+        _customDays = State(initialValue: everyDay ? [] : base.schedule.weekdays)
     }
 
     private var color: Color { Palette.color(draft.colorIndex) }
@@ -37,7 +49,7 @@ struct HabitEditorView: View {
     private var canSave: Bool {
         let name = draft.name.trimmingCharacters(in: .whitespacesAndNewlines)
         if name.isEmpty { return false }
-        if draft.schedule.kind == .repeating && draft.schedule.weekdays.isEmpty { return false }
+        if frequency == .days && customDays.isEmpty { return false }
         return true
     }
 
@@ -134,17 +146,20 @@ struct HabitEditorView: View {
 
     private var scheduleSection: some View {
         Section("Расписание") {
-            Picker("Тип", selection: $draft.schedule.kind.animation(.snappy)) {
-                Text("Регулярно").tag(HabitSchedule.Kind.repeating)
-                Text("Один раз").tag(HabitSchedule.Kind.once)
+            Picker("Как часто", selection: $frequency.animation(.snappy)) {
+                Text("Каждый день").tag(Frequency.daily)
+                Text("По дням").tag(Frequency.days)
+                Text("Один раз").tag(Frequency.once)
             }
             .pickerStyle(.segmented)
             .listRowSeparator(.hidden)
 
-            if draft.schedule.kind == .once {
+            if frequency == .once {
                 DatePicker("Дата", selection: $draft.schedule.onceDate, displayedComponents: .date)
             } else {
-                WeekdayPicker(selection: $draft.schedule.weekdays)
+                if frequency == .days {
+                    WeekdayPicker(selection: $customDays)
+                }
                 DatePicker("Начало", selection: $draft.schedule.startDate, displayedComponents: .date)
                 Toggle("Дата окончания", isOn: $hasEndDate.animation(.snappy))
                 if hasEndDate {
@@ -217,6 +232,16 @@ struct HabitEditorView: View {
 
     private func save() {
         var habit = draft
+        switch frequency {
+        case .daily:
+            habit.schedule.kind = .repeating
+            habit.schedule.weekdays = Weekdays.all
+        case .days:
+            habit.schedule.kind = .repeating
+            habit.schedule.weekdays = customDays
+        case .once:
+            habit.schedule.kind = .once
+        }
         habit.name = habit.name.trimmingCharacters(in: .whitespacesAndNewlines)
         habit.details = habit.details.trimmingCharacters(in: .whitespacesAndNewlines)
         habit.schedule.startDate = calendar.startOfDay(for: habit.schedule.startDate)
@@ -243,6 +268,12 @@ struct HabitEditorView: View {
 struct WeekdayPicker: View {
     @Binding var selection: Set<Int>
 
+    private var summary: String {
+        if selection.isEmpty { return "Нажми на дни, в которые нужно выполнять привычку" }
+        let days = Weekdays.ordered.filter { selection.contains($0) }.map(Weekdays.short).joined(separator: ", ")
+        return "Привычка по дням: " + days
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(spacing: 6) {
@@ -266,10 +297,14 @@ struct WeekdayPicker: View {
                 }
             }
             HStack(spacing: 8) {
-                preset("Каждый день", Weekdays.all)
                 preset("Будни", Weekdays.workdays)
                 preset("Выходные", Weekdays.weekend)
+                Spacer(minLength: 0)
             }
+            Text(summary)
+                .font(.footnote)
+                .foregroundStyle(selection.isEmpty ? Color.orange : Color.secondary)
+                .contentTransition(.opacity)
         }
         .padding(.vertical, 4)
     }
