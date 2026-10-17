@@ -1,0 +1,166 @@
+Active||Активен||Aktiv||Actif||Activo||已启用||有効||활성||सक्रिय
+Activity over %lld weeks||Активность за %lld недель||Aktivität der letzten %lld Wochen||Activité sur %lld semaines||Actividad en %lld semanas||近 %lld 周活动||過去%lld週間の記録||최근 %lld주 활동||पिछले %lld हफ़्तों की गतिविधि
+Add a habit, pick days and a time, and I'll remind you.||Добавь привычку, выбери дни и время, и я напомню о ней.||Füge eine Gewohnheit hinzu, wähle Tage und Uhrzeit, und ich erinnere dich daran.||Ajoute une habitude, choisis les jours et l'heure, et je te la rappellerai.||Añade un hábito, elige los días y la hora, y te lo recordaré.||添加一个习惯，选择日期和时间，我会提醒你。||習慣を追加して曜日と時刻を選ぶと、お知らせします。||습관을 추가하고 요일과 시간을 고르면 알려 드릴게요.||एक आदत जोड़ें, दिन और समय चुनें, और मैं आपको याद दिलाऊँगा।
+Add habit||Добавить привычку||Gewohnheit hinzufügen||Ajouter une habitude||Añadir hábito||添加习惯||習慣を追加||습관 추가||आदत जोड़ें
+Add note||Добавить заметку||Notiz hinzufügen||Ajouter une note||Añadir nota||添加备注||メモを追加||메모 추가||नोट जोड़ें
+All data is stored only on this iPhone.||Все данные хранятся только на этом iPhone.||Alle Daten werden nur auf diesem iPhone gespeichert.||Toutes les données restent uniquement sur cet iPhone.||Todos los datos se guardan solo en este iPhone.||所有数据仅保存在这台 iPhone 上。||すべてのデータはこのiPhoneにのみ保存されます。||모든 데이터는 이 iPhone에만 저장됩니다.||सारा डेटा सिर्फ़ इसी iPhone पर रहता है।
+All done||Всё выполнено||Alles erledigt||Tout est fait||Todo hecho||全部完成||すべて完了||모두 완료||सब पूरा
+All done!||Всё выполнено!||Alles erledigt!||Tout est fait !||¡Todo hecho!||全部完成！||すべて完了！||모두 완료!||सब पूरा!
+Allow notifications||Разрешить уведомления||Mitteilungen erlauben||Autoriser les notifications||Permitir notificaciones||允许通知||通知を許可||알림 허용||सूचनाओं की अनुमति दें
+An archived habit is hidden from the Today screen and sends no notifications, but its history is kept.||Архивная привычка не показывается на главном экране и не присылает уведомления, но её история сохраняется.||Eine archivierte Gewohnheit wird auf dem Heute-Bildschirm ausgeblendet und sendet keine Mitteilungen, ihr Verlauf bleibt aber erhalten.||Une habitude archivée n'apparaît plus sur l'écran Aujourd'hui et n'envoie plus de notifications, mais son historique est conservé.||Un hábito archivado no aparece en la pantalla Hoy ni envía notificaciones, pero su historial se conserva.||归档的习惯不会显示在“今天”页面，也不会发送通知，但历史记录会保留。||アーカイブした習慣は「今日」に表示されず通知も届きませんが、履歴は残ります。||보관된 습관은 오늘 화면에 표시되지 않고 알림도 오지 않지만 기록은 유지됩니다.||संग्रहित आदत 'आज' स्क्रीन पर नहीं दिखती और सूचनाएँ नहीं भेजती, लेकिन उसका इतिहास बना रहता है।
+And %lld more||И ещё %lld||Und %lld weitere||Et %lld de plus||Y %lld más||还有 %lld 个||ほか%lld件||외 %lld개||और %lld
+Appearance||Оформление||Darstellung||Apparence||Apariencia||外观||外観||모양||रूप
+Archive||В архив||Archivieren||Archiver||Archivar||归档||アーカイブ||보관||संग्रहित करें
+Archive (%lld)||Архив (%lld)||Archiv (%lld)||Archives (%lld)||Archivo (%lld)||归档 (%lld)||アーカイブ (%lld)||보관함 (%lld)||संग्रह (%lld)
+Archived||В архиве||Archiviert||Archivée||Archivado||已归档||アーカイブ済み||보관됨||संग्रहित
+Available after App Store release||Будет доступно после выхода в App Store||Verfügbar nach Veröffentlichung im App Store||Disponible après la sortie sur l'App Store||Disponible tras el lanzamiento en App Store||App Store 上架后可用||App Store公開後に利用可能||App Store 출시 후 이용 가능||App Store पर आने के बाद उपलब्ध
+Best current streak||Лучшая серия сейчас||Beste aktuelle Serie||Meilleure série en cours||Mejor racha actual||当前最佳连续||現在の最長連続||현재 최고 연속||अभी की सबसे लंबी लगातार
+Best streak||Лучшая серия||Beste Serie||Meilleure série||Mejor racha||最佳连续||最長連続||최고 연속||सबसे लंबी लगातार
+By habit||По привычкам||Nach Gewohnheit||Par habitude||Por hábito||按习惯||習慣別||습관별||आदत के अनुसार
+Cancel||Отмена||Abbrechen||Annuler||Cancelar||取消||キャンセル||취소||रद्द करें
+Choose how many times and how often each reminder repeats.||Выбирай, сколько раз и как часто повторяется каждое напоминание.||Lege fest, wie oft und in welchem Abstand jede Erinnerung wiederholt wird.||Choisis combien de fois et à quelle fréquence chaque rappel se répète.||Elige cuántas veces y con qué frecuencia se repite cada recordatorio.||自行设置每个提醒重复的次数和间隔。||各リマインダーの繰り返し回数と間隔を設定できます。||각 알림의 반복 횟수와 간격을 정할 수 있어요.||हर रिमाइंडर कितनी बार और कितने अंतराल पर दोहराए, यह चुनें।
+Close||Закрыть||Schließen||Fermer||Cerrar||关闭||閉じる||닫기||बंद करें
+Coming soon: follow your child's progress.||Скоро: следи за успехами ребёнка.||Demnächst: Verfolge die Fortschritte deines Kindes.||Bientôt : suis les progrès de ton enfant.||Próximamente: sigue el progreso de tu hijo.||即将推出：查看孩子的进度。||近日公開：お子さまの進み具合を確認。||곧 출시: 자녀의 진행 상황을 확인하세요.||जल्द आ रहा है: अपने बच्चे की प्रगति देखें।
+Coming soon: your habits on all your devices.||Скоро: привычки на всех твоих устройствах.||Demnächst: deine Gewohnheiten auf allen Geräten.||Bientôt : tes habitudes sur tous tes appareils.||Próximamente: tus hábitos en todos tus dispositivos.||即将推出：在所有设备上同步习惯。||近日公開：すべてのデバイスで習慣を同期。||곧 출시: 모든 기기에서 습관을 확인하세요.||जल्द आ रहा है: आपकी आदतें आपके सभी डिवाइस पर।
+Completed||Выполнено||Erledigt||Fait||Hecho||已完成||完了||완료||पूरा
+Completion||Выполнение||Erfüllung||Réussite||Cumplimiento||完成率||達成率||달성률||पूरा होने की दर
+Create||Создать||Erstellen||Créer||Crear||创建||作成||만들기||बनाएँ
+Create your first one and it will appear here.||Создай первую, и она появится здесь.||Erstelle deine erste, dann erscheint sie hier.||Crée ta première habitude, elle apparaîtra ici.||Crea el primero y aparecerá aquí.||创建第一个习惯，它会显示在这里。||最初の習慣を作成すると、ここに表示されます。||첫 습관을 만들면 여기에 표시돼요.||अपनी पहली आदत बनाएँ, वह यहाँ दिखेगी।
+Current streak||Текущая серия||Aktuelle Serie||Série en cours||Racha actual||当前连续||現在の連続||현재 연속||मौजूदा लगातार
+Custom reminder repeats||Свои повторы напоминаний||Eigene Wiederholungen||Rappels répétés personnalisés||Repeticiones personalizadas||自定义提醒重复||リマインダーの繰り返し設定||알림 반복 직접 설정||रिमाइंडर के अपने दोहराव
+Custom repeats||Свои повторы||Eigene Wiederholungen||Répétitions perso||Repeticiones propias||自定义重复||繰り返しを設定||반복 직접 설정||अपने दोहराव
+Date||Дата||Datum||Date||Fecha||日期||日付||날짜||तारीख़
+Day||День||Tag||Jour||Día||日||日||날||दिन
+Days: %@||Дни: %@||Tage: %@||Jours : %@||Días: %@||日期：%@||曜日：%@||요일: %@||दिन: %@
+Delete||Удалить||Löschen||Supprimer||Eliminar||删除||削除||삭제||हटाएँ
+Delete habit||Удалить привычку||Gewohnheit löschen||Supprimer l'habitude||Eliminar hábito||删除习惯||習慣を削除||습관 삭제||आदत हटाएँ
+Delete habit?||Удалить привычку?||Gewohnheit löschen?||Supprimer l'habitude ?||¿Eliminar el hábito?||删除该习惯？||習慣を削除しますか？||습관을 삭제할까요?||आदत हटाएँ?
+Description or motivation (optional)||Описание или мотивация (необязательно)||Beschreibung oder Motivation (optional)||Description ou motivation (facultatif)||Descripción o motivación (opcional)||描述或动力（可选）||説明やモチベーション（任意）||설명 또는 동기 (선택)||विवरण या प्रेरणा (वैकल्पिक)
+Done||Готово||Fertig||Terminé||Listo||完成||完了||완료||हो गया
+Drink water||Выпить воду||Wasser trinken||Boire de l'eau||Beber agua||喝水||水を飲む||물 마시기||पानी पिएँ
+Edit||Изменить||Bearbeiten||Modifier||Editar||编辑||編集||편집||बदलें
+Edit habit||Изменить привычку||Gewohnheit bearbeiten||Modifier l'habitude||Editar hábito||编辑习惯||習慣を編集||습관 편집||आदत बदलें
+Edit note||Изменить заметку||Notiz bearbeiten||Modifier la note||Editar nota||编辑备注||メモを編集||메모 편집||नोट बदलें
+Emoji||Эмодзи||Emoji||Émoji||Emoji||表情||絵文字||이모지||इमोजी
+End||Окончание||Ende||Fin||Fin||结束||終了||종료||अंत
+End date||Дата окончания||Enddatum||Date de fin||Fecha de fin||结束日期||終了日||종료일||अंतिम तारीख़
+Ended||Завершена||Beendet||Terminée||Finalizado||已结束||終了||종료됨||समाप्त
+Every day||Каждый день||Täglich||Tous les jours||Cada día||每天||毎日||매일||हर दिन
+Family||Семья||Familie||Famille||Familia||家庭||ファミリー||가족||परिवार
+Free day||Свободный день||Freier Tag||Journée libre||Día libre||休息日||休みの日||쉬는 날||खाली दिन
+Free day today||Сегодня свободно||Heute frei||Libre aujourd'hui||Hoy libre||今天休息||今日は休み||오늘은 쉬는 날||आज छुट्टी
+Free version||Бесплатная версия||Kostenlose Version||Version gratuite||Versión gratuita||免费版||無料版||무료 버전||मुफ़्त संस्करण
+Great job, keep it up||Отличная работа, так держать||Super gemacht, weiter so||Bravo, continue comme ça||Buen trabajo, sigue así||干得好，继续保持||よくできました、この調子で||잘했어요, 계속 이렇게||बहुत बढ़िया, ऐसे ही जारी रखें
+Group||Группа||Gruppe||Groupe||Grupo||分组||グループ||그룹||समूह
+Groups||Группы||Gruppen||Groupes||Grupos||分组||グループ||그룹||समूह
+Groups help sort habits by topic: morning, health, work.||Группы помогают разложить привычки по темам: утро, здоровье, работа.||Gruppen sortieren Gewohnheiten nach Themen: Morgen, Gesundheit, Arbeit.||Les groupes classent les habitudes par thème : matin, santé, travail.||Los grupos ordenan los hábitos por tema: mañana, salud, trabajo.||分组可按主题整理习惯：早晨、健康、工作。||グループで習慣をテーマ別に整理できます（朝、健康、仕事など）。||그룹으로 습관을 주제별로 정리하세요: 아침, 건강, 일.||समूह आदतों को विषय के अनुसार बाँटते हैं: सुबह, सेहत, काम।
+Habit||Привычка||Gewohnheit||Habitude||Hábito||习惯||習慣||습관||आदत
+Habit deleted||Привычка удалена||Gewohnheit gelöscht||Habitude supprimée||Hábito eliminado||习惯已删除||習慣は削除されました||습관이 삭제됨||आदत हटा दी गई
+Habit name||Название привычки||Name der Gewohnheit||Nom de l'habitude||Nombre del hábito||习惯名称||習慣の名前||습관 이름||आदत का नाम
+Habit order||Порядок привычек||Reihenfolge||Ordre des habitudes||Orden de hábitos||习惯顺序||習慣の順序||습관 순서||आदतों का क्रम
+Habit progress||Прогресс привычек||Fortschritt||Progression||Progreso de hábitos||习惯进度||習慣の進み具合||습관 진행률||आदतों की प्रगति
+Habits||Привычки||Gewohnheiten||Habitudes||Hábitos||习惯||習慣||습관||आदतें
+Habits Pro||Привычки Pro||Gewohnheiten Pro||Habitudes Pro||Hábitos Pro||习惯 Pro||習慣 Pro||습관 Pro||आदतें Pro
+Habits %lld/%lld||Привычки %lld/%lld||Gewohnheiten %lld/%lld||Habitudes %lld/%lld||Hábitos %lld/%lld||习惯 %lld/%lld||習慣 %lld/%lld||습관 %lld/%lld||आदतें %lld/%lld
+Habits with reminders are sorted by time. The rest come after them and can be dragged.||Привычки с напоминанием идут по времени. Остальные стоят после них, их можно перетащить.||Gewohnheiten mit Erinnerung sind nach Uhrzeit sortiert. Die übrigen folgen danach und lassen sich verschieben.||Les habitudes avec rappel sont triées par heure. Les autres viennent ensuite et peuvent être déplacées.||Los hábitos con recordatorio se ordenan por hora. Los demás van después y se pueden arrastrar.||有提醒的习惯按时间排序，其余的排在后面，可以拖动调整。||リマインダー付きの習慣は時刻順に並びます。それ以外は後に続き、ドラッグで並べ替えられます。||알림이 있는 습관은 시간순으로 정렬돼요. 나머지는 그 뒤에 오며 끌어서 옮길 수 있어요.||रिमाइंडर वाली आदतें समय के क्रम में रहती हैं। बाकी उनके बाद आती हैं और खींचकर बदली जा सकती हैं।
+How many habits are done today.||Сколько привычек выполнено сегодня.||Wie viele Gewohnheiten heute erledigt sind.||Combien d'habitudes sont faites aujourd'hui.||Cuántos hábitos has hecho hoy.||今天完成了多少习惯。||今日完了した習慣の数。||오늘 완료한 습관 수.||आज कितनी आदतें पूरी हुईं।
+How often||Как часто||Wie oft||Fréquence||Frecuencia||频率||頻度||빈도||कितनी बार
+Icon||Иконка||Symbol||Icône||Icono||图标||アイコン||아이콘||आइकन
+If not checked off: %@. Done in the notification stops the repeats.||Если не отметить: %@. Кнопка "Готово" в уведомлении остановит повторы.||Ohne Abhaken: %@. „Fertig" in der Mitteilung stoppt die Wiederholungen.||Sans validation : %@. « Terminé » dans la notification arrête les répétitions.||Si no lo marcas: %@. «Listo» en la notificación detiene las repeticiones.||未打卡时：%@。点击通知中的“完成”即可停止重复。||未チェックの場合：%@。通知の「完了」で繰り返しを止められます。||체크하지 않으면: %@. 알림의 '완료'를 누르면 반복이 멈춰요.||पूरा न करने पर: %@। सूचना में 'हो गया' दबाने से दोहराव रुक जाएगा।
+Interval||Интервал||Intervall||Intervalle||Intervalo||间隔||間隔||간격||अंतराल
+Its check-in history will be deleted too.||История отметок тоже будет удалена.||Der Verlauf wird ebenfalls gelöscht.||Son historique sera aussi supprimé.||Su historial también se eliminará.||打卡记录也会被删除。||記録も削除されます。||기록도 함께 삭제돼요.||इसका इतिहास भी हट जाएगा।
+Its check-in history will be deleted too. To keep the history, archive the habit instead.||История отметок тоже будет удалена. Если хочешь сохранить историю, перемести привычку в архив.||Der Verlauf wird ebenfalls gelöscht. Um ihn zu behalten, archiviere die Gewohnheit stattdessen.||Son historique sera aussi supprimé. Pour le garder, archive plutôt l'habitude.||Su historial también se eliminará. Para conservarlo, archiva el hábito.||打卡记录也会被删除。如需保留记录，请改为归档。||記録も削除されます。記録を残すにはアーカイブしてください。||기록도 함께 삭제돼요. 기록을 남기려면 보관하세요.||इसका इतिहास भी हट जाएगा। इतिहास रखने के लिए आदत को संग्रहित करें।
+Last 12 weeks||Последние 12 недель||Letzte 12 Wochen||12 dernières semaines||Últimas 12 semanas||最近 12 周||過去12週間||최근 12주||पिछले 12 हफ़्ते
+Last 30 days||За 30 дней||Letzte 30 Tage||30 derniers jours||Últimos 30 días||最近 30 天||過去30日間||최근 30일||पिछले 30 दिन
+Last 7 days||Последние 7 дней||Letzte 7 Tage||7 derniers jours||Últimos 7 días||最近 7 天||過去7日間||최근 7일||पिछले 7 दिन
+Less||Меньше||Weniger||Moins||Menos||少||少||적음||कम
+Let's start with your first habit||Начнём с первой привычки||Fangen wir mit deiner ersten Gewohnheit an||Commençons par ta première habitude||Empecemos con tu primer hábito||从第一个习惯开始吧||最初の習慣から始めましょう||첫 습관부터 시작해요||चलिए पहली आदत से शुरू करें
+Mark as done||Выполнено||Als erledigt markieren||Marquer comme fait||Marcar como hecho||标记为完成||完了にする||완료로 표시||पूरा करें
+Mark habit||Отметить привычку||Gewohnheit abhaken||Valider l'habitude||Marcar hábito||打卡习惯||習慣をチェック||습관 체크||आदत पूरी करें
+Missed||Не сделано||Verpasst||Manqué||No hecho||未完成||未達成||놓침||छूटा
+More||Больше||Mehr||Plus||Más||多||多||많음||ज़्यादा
+More freedom for the habits that matter.||Больше свободы для важных привычек.||Mehr Freiheit für die Gewohnheiten, die zählen.||Plus de liberté pour les habitudes qui comptent.||Más libertad para los hábitos que importan.||为重要的习惯提供更多自由。||大切な習慣をもっと自由に。||중요한 습관을 더 자유롭게.||ज़रूरी आदतों के लिए ज़्यादा आज़ादी।
+Move to archive||Переместить в архив||Archivieren||Archiver||Archivar||移至归档||アーカイブへ移動||보관함으로 이동||संग्रह में भेजें
+Name||Название||Name||Nom||Nombre||名称||名前||이름||नाम
+New group||Новая группа||Neue Gruppe||Nouveau groupe||Nuevo grupo||新分组||新しいグループ||새 그룹||नया समूह
+New habit||Новая привычка||Neue Gewohnheit||Nouvelle habitude||Nuevo hábito||新习惯||新しい習慣||새 습관||नई आदत
+Next||Дальше||Als Nächstes||Ensuite||Siguiente||下一个||次||다음||अगली
+No group||Без группы||Ohne Gruppe||Sans groupe||Sin grupo||未分组||グループなし||그룹 없음||बिना समूह
+No habits||Привычек нет||Keine Gewohnheiten||Aucune habitude||Sin hábitos||没有习惯||習慣なし||습관 없음||कोई आदत नहीं
+No habits are planned for this day.||На этот день привычек не запланировано.||Für diesen Tag sind keine Gewohnheiten geplant.||Aucune habitude n'est prévue ce jour-là.||No hay hábitos previstos para este día.||这一天没有计划的习惯。||この日に予定された習慣はありません。||이날 예정된 습관이 없어요.||इस दिन के लिए कोई आदत तय नहीं है।
+No habits today||На сегодня привычек нет||Heute keine Gewohnheiten||Aucune habitude aujourd'hui||Hoy no hay hábitos||今天没有习惯||今日の習慣はありません||오늘은 습관이 없어요||आज कोई आदत नहीं
+No habits yet||Привычек пока нет||Noch keine Gewohnheiten||Pas encore d'habitudes||Aún no hay hábitos||还没有习惯||まだ習慣がありません||아직 습관이 없어요||अभी कोई आदत नहीं
+Not set up||Не настроены||Nicht eingerichtet||Non configurées||Sin configurar||未设置||未設定||설정 안 됨||सेट नहीं
+Note||Заметка||Notiz||Note||Nota||备注||メモ||메모||नोट
+Notes||Заметки||Notizen||Notes||Notas||备注||メモ||메모||नोट्स
+Nothing to count yet||Пока нечего считать||Noch nichts zu zählen||Rien à compter pour l'instant||Aún no hay nada que contar||暂无统计||まだ集計するものがありません||아직 집계할 내용이 없어요||अभी गिनने को कुछ नहीं
+Nothing yet. Add a note by pressing and holding a habit on the Today screen or a day in the calendar.||Пока пусто. Заметку можно добавить, удерживая карточку на главном экране или день в календаре.||Noch leer. Füge eine Notiz hinzu, indem du eine Gewohnheit auf dem Heute-Bildschirm oder einen Tag im Kalender gedrückt hältst.||Rien pour l'instant. Ajoute une note en maintenant une habitude sur l'écran Aujourd'hui ou un jour du calendrier.||Aún no hay nada. Añade una nota manteniendo pulsado un hábito en la pantalla Hoy o un día del calendario.||暂无内容。在“今天”页面长按习惯或在日历中长按某天即可添加备注。||まだありません。「今日」画面の習慣やカレンダーの日付を長押しするとメモを追加できます。||아직 없어요. 오늘 화면의 습관이나 달력의 날짜를 길게 눌러 메모를 추가하세요.||अभी कुछ नहीं। 'आज' स्क्रीन पर आदत या कैलेंडर में दिन को दबाकर रखें और नोट जोड़ें।
+Notification||Уведомление||Mitteilung||Notification||Notificación||通知||通知||알림||सूचना
+Notifications||Уведомления||Mitteilungen||Notifications||Notificaciones||通知||通知||알림||सूचनाएँ
+Notifications are turned off in iOS Settings, so reminders won't arrive.||Уведомления выключены в настройках iOS, поэтому напоминания не придут.||Mitteilungen sind in den iOS-Einstellungen deaktiviert, daher kommen keine Erinnerungen an.||Les notifications sont désactivées dans les réglages iOS, les rappels n'arriveront donc pas.||Las notificaciones están desactivadas en los Ajustes de iOS, así que no llegarán recordatorios.||iOS 设置中已关闭通知，因此不会收到提醒。||iOSの設定で通知がオフのため、リマインダーは届きません。||iOS 설정에서 알림이 꺼져 있어 알림을 받을 수 없어요.||iOS सेटिंग्स में सूचनाएँ बंद हैं, इसलिए रिमाइंडर नहीं आएँगे।
+Off||Выключены||Aus||Désactivées||Desactivadas||已关闭||オフ||꺼짐||बंद
+On||Включены||Ein||Activées||Activadas||已开启||オン||켜짐||चालू
+On weekdays||По будням||Werktags||En semaine||Entre semana||工作日||平日||평일||कार्यदिवसों में
+On weekends||По выходным||Am Wochenende||Le week-end||Los fines de semana||周末||週末||주말||सप्ताहांत में
+Once||Один раз||Einmal||Une fois||Una vez||一次||1回||한 번||एक बार
+Once, %@||Один раз, %@||Einmal, %@||Une fois, %@||Una vez, %@||一次，%@||1回、%@||한 번, %@||एक बार, %@
+One notification at the chosen time.||Одно уведомление в выбранное время.||Eine Mitteilung zur gewählten Uhrzeit.||Une seule notification à l'heure choisie.||Una notificación a la hora elegida.||在所选时间发送一次通知。||選んだ時刻に1回通知します。||선택한 시간에 한 번 알려요.||चुने गए समय पर एक सूचना।
+Open iOS Settings||Открыть настройки iOS||iOS-Einstellungen öffnen||Ouvrir les réglages iOS||Abrir Ajustes de iOS||打开 iOS 设置||iOSの設定を開く||iOS 설정 열기||iOS सेटिंग्स खोलें
+Order||Порядок||Reihenfolge||Ordre||Orden||顺序||並び順||순서||क्रम
+Organization||Организация||Organisation||Organisation||Organización||整理||整理||정리||व्यवस्था
+Pro is active||Pro включён||Pro ist aktiv||Pro est actif||Pro está activo||Pro 已启用||Proが有効です||Pro 활성화됨||Pro सक्रिय है
+Pro test mode||Тестовый режим Pro||Pro-Testmodus||Mode test Pro||Modo de prueba Pro||Pro 测试模式||Proテストモード||Pro 테스트 모드||Pro टेस्ट मोड
+Purchases will be available once the app is published. Until then, Pro can be turned on for testing in Settings.||Покупки появятся после публикации приложения. А пока Pro можно включить для проверки в настройках.||Käufe sind nach der Veröffentlichung möglich. Bis dahin lässt sich Pro in den Einstellungen zum Testen aktivieren.||Les achats seront possibles après la publication. D'ici là, Pro peut être activé pour test dans les réglages.||Las compras estarán disponibles tras la publicación. Mientras tanto, Pro se puede activar para pruebas en Ajustes.||应用上架后即可购买。在此之前，可在设置中开启 Pro 进行测试。||購入はアプリ公開後に可能になります。それまでは設定でProをテスト用にオンにできます。||앱이 출시되면 구매할 수 있어요. 그전까지는 설정에서 테스트용으로 Pro를 켤 수 있어요.||ऐप प्रकाशित होने के बाद खरीदारी उपलब्ध होगी। तब तक सेटिंग्स में टेस्ट के लिए Pro चालू कर सकते हैं।
+Reading||Чтение||Lesen||Lecture||Lectura||阅读||読書||독서||पढ़ना
+Remaining||Осталось||Offen||Restant||Pendiente||剩余||残り||남음||बाकी
+Reminder||Напоминание||Erinnerung||Rappel||Recordatorio||提醒||リマインダー||알림||रिमाइंडर
+Reminder again. Check it off when you're done.||Напоминаю ещё раз. Отметь, когда сделаешь.||Noch einmal zur Erinnerung. Hake sie ab, wenn du fertig bist.||Petit rappel. Valide-la quand c'est fait.||Te lo recuerdo de nuevo. Márcalo cuando termines.||再次提醒，完成后记得打卡。||もう一度お知らせします。終わったらチェックしてください。||다시 알려 드려요. 마치면 체크하세요.||फिर से याद दिला रहा हूँ। पूरा होने पर निशान लगाएँ।
+Rename||Переименовать||Umbenennen||Renommer||Renombrar||重命名||名前を変更||이름 변경||नाम बदलें
+Repeats||Повторы||Wiederholungen||Répétitions||Repeticiones||重复次数||繰り返し回数||반복 횟수||दोहराव
+Reset||Сбросить||Zurücksetzen||Réinitialiser||Restablecer||重置||リセット||초기화||रीसेट
+Restore||Вернуть||Wiederherstellen||Restaurer||Restaurar||恢复||戻す||복원||वापस लाएँ
+Restore from archive||Вернуть из архива||Aus Archiv wiederherstellen||Restaurer depuis les archives||Restaurar del archivo||从归档恢复||アーカイブから戻す||보관함에서 복원||संग्रह से वापस लाएँ
+Save||Сохранить||Sichern||Enregistrer||Guardar||保存||保存||저장||सहेजें
+Schedule||Расписание||Zeitplan||Planning||Horario||计划||スケジュール||일정||समय-सारिणी
+Scheduled notifications||Запланировано уведомлений||Geplante Mitteilungen||Notifications planifiées||Notificaciones programadas||已安排的通知||予定された通知||예약된 알림||तय सूचनाएँ
+Settings||Настройки||Einstellungen||Réglages||Ajustes||设置||設定||설정||सेटिंग्स
+Skip||Пропустить||Überspringen||Passer||Omitir||跳过||スキップ||건너뛰기||छोड़ें
+Skipped||Пропущено||Übersprungen||Passée||Omitido||已跳过||スキップ済み||건너뜀||छोड़ा
+Some days||По дням||Bestimmte Tage||Certains jours||Algunos días||指定日||曜日指定||요일 선택||कुछ दिन
+Start||Начало||Beginn||Début||Inicio||开始||開始||시작||शुरुआत
+Statistics||Статистика||Statistik||Statistiques||Estadísticas||统计||統計||통계||आँकड़े
+Statistics will appear once you start checking off habits.||Статистика появится, когда ты начнёшь отмечать привычки.||Die Statistik erscheint, sobald du Gewohnheiten abhakst.||Les statistiques apparaîtront dès que tu valideras des habitudes.||Las estadísticas aparecerán cuando empieces a marcar hábitos.||开始打卡后就会显示统计。||習慣をチェックし始めると統計が表示されます。||습관을 체크하기 시작하면 통계가 표시돼요.||आदतें पूरी करना शुरू करते ही आँकड़े दिखेंगे।
+Status||Статус||Status||Statut||Estado||状态||状態||상태||स्थिति
+Symbols||Символы||Symbole||Symboles||Símbolos||符号||記号||기호||चिह्न
+Sync and backup||Синхронизация и резервная копия||Synchronisierung und Backup||Synchronisation et sauvegarde||Sincronización y copia de seguridad||同步与备份||同期とバックアップ||동기화 및 백업||सिंक और बैकअप
+Tap a day to check it off. Press and hold to skip it or add a note.||Нажми на день, чтобы отметить. Удерживай, чтобы пропустить или добавить заметку.||Tippe auf einen Tag, um ihn abzuhaken. Halte gedrückt, um ihn zu überspringen oder eine Notiz hinzuzufügen.||Touche un jour pour le valider. Maintiens pour le passer ou ajouter une note.||Toca un día para marcarlo. Mantén pulsado para omitirlo o añadir una nota.||点按某天即可打卡，长按可跳过或添加备注。||日付をタップでチェック、長押しでスキップやメモ追加。||날짜를 탭하면 체크, 길게 누르면 건너뛰기나 메모 추가.||दिन पर टैप करके पूरा करें। छोड़ने या नोट जोड़ने के लिए दबाकर रखें।
+Tap the days when the habit should be done||Нажми на дни, в которые нужно выполнять привычку||Tippe auf die Tage, an denen die Gewohnheit dran ist||Touche les jours où l'habitude doit être faite||Toca los días en que quieres hacer el hábito||点选需要执行习惯的日子||習慣を行う曜日をタップ||습관을 실천할 요일을 탭하세요||जिन दिनों आदत करनी है, उन पर टैप करें
+The free version has up to 5 active habits.||В бесплатной версии до 5 активных привычек.||Die kostenlose Version erlaubt bis zu 5 aktive Gewohnheiten.||La version gratuite permet jusqu'à 5 habitudes actives.||La versión gratuita permite hasta 5 hábitos activos.||免费版最多 5 个进行中的习惯。||無料版はアクティブな習慣が5つまでです。||무료 버전은 활성 습관 5개까지예요.||मुफ़्त संस्करण में 5 सक्रिय आदतें तक।
+There are no purchases yet: this switch turns Pro features on for testing.||Покупок пока нет: этот переключатель включает функции Pro для проверки.||Noch keine Käufe: Dieser Schalter aktiviert Pro-Funktionen zum Testen.||Pas encore d'achats : cet interrupteur active les fonctions Pro pour les tester.||Aún no hay compras: este interruptor activa las funciones Pro para probarlas.||暂无购买功能：此开关用于测试 Pro 功能。||まだ購入機能はありません。このスイッチでPro機能をテストできます。||아직 구매 기능이 없어요. 이 스위치로 Pro 기능을 테스트할 수 있어요.||अभी खरीदारी नहीं है: यह स्विच टेस्ट के लिए Pro सुविधाएँ चालू करता है।
+Time||Время||Uhrzeit||Heure||Hora||时间||時刻||시간||समय
+Time for your habit||Пора выполнить привычку||Zeit für deine Gewohnheit||C'est l'heure de ton habitude||Es hora de tu hábito||该完成习惯了||習慣の時間です||습관을 실천할 시간이에요||आपकी आदत का समय
+Time to rest||Можно отдохнуть||Zeit zum Ausruhen||Place au repos||Hora de descansar||好好休息||ひと休みしましょう||쉬어도 돼요||आराम का समय
+Today||Сегодня||Heute||Aujourd'hui||Hoy||今天||今日||오늘||आज
+Today's habits||Привычки на сегодня||Heutige Gewohnheiten||Habitudes du jour||Hábitos de hoy||今日习惯||今日の習慣||오늘의 습관||आज की आदतें
+Today's progress and quick check-off right from the Home Screen.||Прогресс дня и отметка привычек прямо с экрана Домой.||Tagesfortschritt und schnelles Abhaken direkt auf dem Home-Bildschirm.||La progression du jour et la validation rapide depuis l'écran d'accueil.||El progreso del día y marcado rápido desde la pantalla de inicio.||在主屏幕查看今日进度并快速打卡。||ホーム画面で今日の進み具合を確認し、すぐにチェック。||홈 화면에서 오늘의 진행률을 보고 바로 체크하세요.||होम स्क्रीन से आज की प्रगति देखें और तुरंत निशान लगाएँ।
+Tomorrow||Завтра||Morgen||Demain||Mañana||明天||明日||내일||कल
+Total check-ins||Всего отметок||Abgehakt insgesamt||Validations au total||Total de marcas||累计打卡||合計チェック数||총 체크 수||कुल बार पूरी
+Uncheck||Снять отметку||Abhaken aufheben||Annuler la validation||Desmarcar||取消打卡||チェックを外す||체크 해제||निशान हटाएँ
+Undo skip||Отменить пропуск||Überspringen aufheben||Annuler le passage||Deshacer omisión||取消跳过||スキップを取り消す||건너뛰기 취소||छोड़ना रद्द करें
+Unknown||Неизвестно||Unbekannt||Inconnu||Desconocido||未知||不明||알 수 없음||अज्ञात
+Unlimited habits||Безлимит привычек||Unbegrenzte Gewohnheiten||Habitudes illimitées||Hábitos ilimitados||无限习惯||習慣を無制限に||무제한 습관||असीमित आदतें
+Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day.||Пока привычка не отмечена, напоминание повторяется: %@. Кнопки "Готово" и "Пропустить" в уведомлении останавливают повторы на этот день.||Bis eine Gewohnheit abgehakt ist, wird ihre Erinnerung wiederholt: %@. „Fertig" und „Überspringen" in der Mitteilung stoppen die Wiederholungen für diesen Tag.||Tant qu'une habitude n'est pas validée, son rappel se répète : %@. « Terminé » et « Passer » dans la notification arrêtent les répétitions pour la journée.||Hasta que marques un hábito, su recordatorio se repite: %@. «Listo» y «Omitir» en la notificación detienen las repeticiones ese día.||习惯未打卡时，提醒会重复：%@。点击通知中的“完成”或“跳过”可停止当天的重复。||チェックするまでリマインダーが繰り返されます：%@。通知の「完了」か「スキップ」でその日の繰り返しを止められます。||습관을 체크할 때까지 알림이 반복돼요: %@. 알림의 '완료'나 '건너뛰기'를 누르면 그날 반복이 멈춰요.||आदत पूरी होने तक रिमाइंडर दोहराया जाता है: %@। सूचना में 'हो गया' या 'छोड़ें' दबाने से उस दिन का दोहराव रुक जाता है।
+Version||Версия||Version||Version||Versión||版本||バージョン||버전||संस्करण
+Walk||Прогулка||Spaziergang||Marche||Paseo||散步||散歩||산책||टहलना
+Week||Неделя||Woche||Semaine||Semana||周||週||주||हफ़्ता
+Weekdays||Будни||Werktage||Semaine||Entre semana||工作日||平日||평일||कार्यदिवस
+Weekends||Выходные||Wochenende||Week-end||Fin de semana||周末||週末||주말||सप्ताहांत
+Yesterday||Вчера||Gestern||Hier||Ayer||昨天||昨日||어제||बीता कल
+Your own emoji from the keyboard||Свой эмодзи с клавиатуры||Eigenes Emoji per Tastatur||Ton émoji depuis le clavier||Tu emoji desde el teclado||用键盘输入表情||キーボードから絵文字を入力||키보드로 이모지 입력||कीबोर्ड से अपना इमोजी
+%lld of %lld done||%lld из %lld выполнено||%lld von %lld erledigt||%lld sur %lld faites||%lld de %lld hechos||已完成 %lld/%lld||%lld/%lld 完了||%lld/%lld 완료||%2$lld में से %1$lld पूरी
+%lld of %lld habits||%lld из %lld привычек||%lld von %lld Gewohnheiten||%lld sur %lld habitudes||%lld de %lld hábitos||%lld/%lld 个习惯||習慣 %lld/%lld||습관 %lld/%lld||%2$lld में से %1$lld आदतें
+%lld min||%lld мин||%lld Min.||%lld min||%lld min||%lld 分钟||%lld分||%lld분||%lld मिनट
+%lld of %lld||%lld из %lld||%lld von %lld||%lld sur %lld||%lld de %lld||%lld / %lld||%lld / %lld||%lld / %lld||%2$lld में से %1$lld
+of %lld||из %lld||von %lld||sur %lld||de %lld||共 %lld||/ %lld||/ %lld||%lld में से
+from %@||с %@||ab %@||à partir du %@||desde el %@||%@起||%@から||%@부터||%@ से
+until %@||до %@||bis %@||jusqu'au %@||hasta el %@||至%@||%@まで||%@까지||%@ तक

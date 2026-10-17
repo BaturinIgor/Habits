@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%lld days</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld день</string>
+			<key>few</key>
+			<string>%lld дня</string>
+			<key>many</key>
+			<string>%lld дней</string>
+			<key>other</key>
+			<string>%lld дня</string>
+		</dict>
+	</dict>
+	<key>%lld habits left</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>Осталась %lld привычка</string>
+			<key>few</key>
+			<string>Осталось %lld привычки</string>
+			<key>many</key>
+			<string>Осталось %lld привычек</string>
+			<key>other</key>
+			<string>Осталось %lld привычки</string>
+		</dict>
+	</dict>
+	<key>%lld habits planned</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>Запланирована %lld привычка</string>
+			<key>few</key>
+			<string>Запланировано %lld привычки</string>
+			<key>many</key>
+			<string>Запланировано %lld привычек</string>
+			<key>other</key>
+			<string>Запланировано %lld привычки</string>
+		</dict>
+	</dict>
+	<key>%lld repeats every %lld min</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%1$lld повтор каждые %2$lld мин</string>
+			<key>few</key>
+			<string>%1$lld повтора каждые %2$lld мин</string>
+			<key>many</key>
+			<string>%1$lld повторов каждые %2$lld мин</string>
+			<key>other</key>
+			<string>%1$lld повтора каждые %2$lld мин</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
