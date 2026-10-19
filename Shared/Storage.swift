@@ -67,11 +67,12 @@ enum AppGroup {
 
     /// Идентификатор группы, которая реально доступна, или nil, если общего контейнера нет
     /// (тогда приложение и виджет не видят данные друг друга).
-    static var resolvedIdentifier: String? {
-        candidates.first { FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: $0) != nil }
+    static let resolvedIdentifier: String? = candidates.first {
+        FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: $0) != nil
     }
 
-    static var containerURL: URL {
+    /// Считается один раз за запуск: поиск группы читает файлы подписи.
+    static let containerURL: URL = {
         let fm = FileManager.default
         for id in candidates {
             if let url = fm.containerURL(forSecurityApplicationGroupIdentifier: id) {
@@ -81,7 +82,7 @@ enum AppGroup {
         let fallback = fm.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
         try? fm.createDirectory(at: fallback, withIntermediateDirectories: true)
         return fallback
-    }
+    }()
 }
 
 /// Отметка о том, что виджет смог прочитать общий контейнер (для проверки в настройках).
@@ -113,7 +114,26 @@ enum DataFile {
 
     /// Возвращает nil, если файл есть, но прочитать его сейчас нельзя
     /// (например, телефон ещё не разблокирован после перезагрузки).
+    /// Если раньше общей папки не было, данные лежали в папке приложения.
+    /// Когда общая папка появилась, переносим их туда (только из приложения, не из виджета).
+    private static func migrateFromPrivateFolderIfNeeded() {
+        guard Bundle.main.bundleURL.pathExtension != "appex", AppGroup.resolvedIdentifier != nil else { return }
+        let fm = FileManager.default
+        let shared = url
+        guard !fm.fileExists(atPath: shared.path) else { return }
+        let privateDir = fm.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+        let files = ["habits-data.json", "custom-background.jpg", "custom-avatar.jpg"]
+        for name in files {
+            let from = privateDir.appendingPathComponent(name)
+            let to = shared.deletingLastPathComponent().appendingPathComponent(name)
+            if fm.fileExists(atPath: from.path) && !fm.fileExists(atPath: to.path) {
+                try? fm.copyItem(at: from, to: to)
+            }
+        }
+    }
+
     static func loadIfAvailable() -> AppData? {
+        migrateFromPrivateFolderIfNeeded()
         let url = self.url
         guard FileManager.default.fileExists(atPath: url.path) else { return AppData() }
         let raw: Data
