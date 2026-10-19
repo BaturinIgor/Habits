@@ -25,7 +25,6 @@ struct TodayView: View {
     @State private var noteTarget: NoteTarget?
     @State private var habitToDelete: Habit?
     @State private var showingProfile = false
-    @State private var showingReorder = false
     @Namespace private var zoom
 
     private var calendar: Calendar { .app }
@@ -91,16 +90,6 @@ struct TodayView: View {
                         }
                     }
                 }
-                if store.data.activeHabits.count > 1 {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button {
-                            showingReorder = true
-                        } label: {
-                            Image(systemName: "arrow.up.arrow.down")
-                        }
-                        .accessibilityLabel("Reorder")
-                    }
-                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         addHabit()
@@ -122,9 +111,6 @@ struct TodayView: View {
             }
             .sheet(isPresented: $showingProfile) {
                 ProfileView()
-            }
-            .sheet(isPresented: $showingReorder) {
-                ReorderView()
             }
             .sheet(item: $editingHabit) { habit in
                 HabitEditorView(habit: habit)
@@ -219,8 +205,17 @@ struct TodayView: View {
             let sections = todaySections(habits, data: store.data, day: dayKey)
             ForEach(sections) { section in
                 Section {
-                    ForEach(section.habits) { habit in
-                        row(for: habit)
+                    // Каждая часть - отдельный ForEach со своим onMove: перетащить можно
+                    // только внутри части, поэтому строка не "отпрыгивает" после отпускания.
+                    ForEach(moveGroups(section.habits)) { group in
+                        ForEach(group.habits) { habit in
+                            row(for: habit)
+                                .moveDisabled(!group.movable)
+                        }
+                        .onMove { source, destination in
+                            guard group.movable else { return }
+                            move(group.habits, from: source, to: destination)
+                        }
                     }
                 } header: {
                     if !section.title.isEmpty {
@@ -232,6 +227,46 @@ struct TodayView: View {
                 }
             }
         }
+    }
+
+    private struct MoveGroup: Identifiable {
+        let id: String
+        let habits: [Habit]
+        let movable: Bool
+    }
+
+    /// Делит секцию (она уже в порядке показа) на подряд идущие части, внутри которых
+    /// порядок задаётся вручную. Привычки с напоминанием в режиме "по времени" не двигаются,
+    /// а при "отмеченные внизу" неотмеченные и отмеченные двигаются каждая в своей части.
+    private func moveGroups(_ habits: [Habit]) -> [MoveGroup] {
+        let settings = store.data.settings
+        var groups: [MoveGroup] = []
+        var current: [Habit] = []
+        var currentKey: (zone: Bool, movable: Bool)?
+        func flush() {
+            guard let key = currentKey, !current.isEmpty else { return }
+            groups.append(MoveGroup(id: "\(groups.count)-\(key.zone)-\(key.movable)", habits: current, movable: key.movable))
+            current = []
+        }
+        for habit in habits {
+            let zone = settings.doneToBottom && store.data.status(habit.id, day: dayKey) != nil
+            let movable = !(settings.homeLayout == .byTime && habit.reminder != nil)
+            if let key = currentKey, key.zone == zone, key.movable == movable {
+                current.append(habit)
+            } else {
+                flush()
+                currentKey = (zone, movable)
+                current = [habit]
+            }
+        }
+        flush()
+        return groups
+    }
+
+    private func move(_ habits: [Habit], from source: IndexSet, to destination: Int) {
+        var ids = habits.map(\.id)
+        ids.move(fromOffsets: source, toOffset: destination)
+        store.applyManualOrder(ids)
     }
 
     private func row(for habit: Habit) -> some View {
@@ -331,7 +366,7 @@ struct GestureHint: View {
             Image(systemName: "hand.draw.fill")
                 .font(.title3)
                 .foregroundStyle(Color.accentColor)
-            Text("Swipe a card right to check it off, left for more actions. The arrows button at the top changes the order.")
+            Text("Swipe a card right to check it off, left for more actions. Press and hold to reorder.")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
             Spacer(minLength: 0)

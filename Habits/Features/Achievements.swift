@@ -16,23 +16,44 @@ struct AchievementFacts {
     var weeklyGoals = 0
     var minimumChecks = 0
     var freezesUsed = 0
+    var weekendChecks = 0
+    var activeDays = 0
+    var goalChecks = 0
+    var chainChecks = 0
+    var groups = 0
+    var notedChecks = 0
 
     init(data: AppData, now: Date = Date()) {
         let calendar = Calendar.app
         habitsCreated = data.habits.count
+        groups = data.groups.count
+        let habitsByID = Dictionary(data.habits.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
+        var days = Set<String>()
         for (key, entry) in data.checkIns {
-            if !(entry.note ?? "").isEmpty { notes += 1 }
+            let hasNote = !(entry.note ?? "").isEmpty
+            if hasNote { notes += 1 }
             guard entry.status == .done else { continue }
             totalDone += 1
+            if hasNote { notedChecks += 1 }
             if entry.isMinimum == true { minimumChecks += 1 }
+            let parts = key.split(separator: "|").map(String.init)
+            let dayPart = parts.last ?? ""
+            days.insert(dayPart)
+            if let date = DayKey.date(dayPart, calendar: calendar), calendar.isDateInWeekend(date) {
+                weekendChecks += 1
+            }
+            if let id = parts.first.flatMap(UUID.init(uuidString:)), let habit = habitsByID[id] {
+                if (habit.target ?? 1) > 1 { goalChecks += 1 }
+                if habit.chainAfter != nil { chainChecks += 1 }
+            }
             // Ранние и поздние отметки считаем только в тот же день, без задним числом.
-            let dayPart = key.split(separator: "|").last.map(String.init) ?? ""
             if dayPart == DayKey.make(entry.updatedAt, calendar: calendar) {
                 let hour = calendar.component(.hour, from: entry.updatedAt)
                 if hour < 8 { earlyChecks += 1 }
                 if hour >= 22 { lateChecks += 1 }
             }
         }
+        activeDays = days.count
         for habit in data.habits {
             let stats = Stats.habit(habit, in: data, now: now, calendar: calendar)
             if !stats.isWeekly { bestStreak = max(bestStreak, stats.bestStreak) }
@@ -112,6 +133,40 @@ enum Achievements {
                     detail: "Do the minimum version 10 times", goal: 10) { $0.minimumChecks },
         Achievement(id: "frozen", icon: "snowflake", color: .cyan, title: "Ice cold",
                     detail: "Save a streak with a freeze", goal: 1) { $0.freezesUsed },
+        Achievement(id: "streak14", icon: "flame.circle.fill", color: .orange, title: "Two weeks",
+                    detail: "Keep a 14-day streak", goal: 14) { $0.bestStreak },
+        Achievement(id: "streak60", icon: "shield.lefthalf.filled", color: .red, title: "Iron will",
+                    detail: "Keep a 60-day streak", goal: 60) { $0.bestStreak },
+        Achievement(id: "streak200", icon: "mountain.2.fill", color: .purple, title: "Unstoppable",
+                    detail: "Keep a 200-day streak", goal: 200) { $0.bestStreak },
+        Achievement(id: "fiftyChecks", icon: "50.circle.fill", color: .blue, title: "Fifty",
+                    detail: "Check off habits 50 times", goal: 50) { $0.totalDone },
+        Achievement(id: "fiveHundredChecks", icon: "medal.fill", color: .orange, title: "Half a thousand",
+                    detail: "Check off habits 500 times", goal: 500) { $0.totalDone },
+        Achievement(id: "perfectTen", icon: "seal.fill", color: .green, title: "Consistency",
+                    detail: "Have 30 perfect days", goal: 30) { $0.perfectDays },
+        Achievement(id: "perfectMonth", icon: "calendar.circle.fill", color: .mint, title: "Perfect month",
+                    detail: "30 perfect days in a row", goal: 30) { $0.bestPerfectRun },
+        Achievement(id: "lark", icon: "sun.horizon.fill", color: .yellow, title: "Sunrise club",
+                    detail: "Check off 50 habits before 8 am", goal: 50) { $0.earlyChecks },
+        Achievement(id: "weekend", icon: "beach.umbrella.fill", color: .cyan, title: "Weekend warrior",
+                    detail: "Check off 30 habits on weekends", goal: 30) { $0.weekendChecks },
+        Achievement(id: "regular", icon: "calendar.day.timeline.left", color: .blue, title: "Regular",
+                    detail: "Check off habits on 30 different days", goal: 30) { $0.activeDays },
+        Achievement(id: "veteran", icon: "laurel.leading", color: .indigo, title: "Veteran",
+                    detail: "Check off habits on 365 different days", goal: 365) { $0.activeDays },
+        Achievement(id: "architect", icon: "building.columns.fill", color: .pink, title: "Architect",
+                    detail: "Create 10 habits", goal: 10) { $0.habitsCreated },
+        Achievement(id: "organizer", icon: "folder.fill", color: .brown, title: "Organizer",
+                    detail: "Create 3 groups", goal: 3) { $0.groups },
+        Achievement(id: "goalGetter", icon: "target", color: .red, title: "On target",
+                    detail: "Reach a daily goal 20 times", goal: 20) { $0.goalChecks },
+        Achievement(id: "chainReaction", icon: "link", color: .teal, title: "Chain reaction",
+                    detail: "Complete a chained habit 10 times", goal: 10) { $0.chainChecks },
+        Achievement(id: "chronicler", icon: "book.closed.fill", color: .brown, title: "Chronicler",
+                    detail: "Write 50 notes", goal: 50) { $0.notes },
+        Achievement(id: "reflective", icon: "text.bubble.fill", color: .purple, title: "Reflective",
+                    detail: "Add a note to 20 completed habits", goal: 20) { $0.notedChecks },
     ]
 
     static func unlockedIDs(_ data: AppData) -> Set<String> {
@@ -189,6 +244,30 @@ enum Rewards {
                colors: [c(0.75, 0.65, 1), c(0.95, 0.8, 1)]),
         Reward(id: "midnight", kind: .background, unlock: .pro, needsPro: true, emoji: "",
                colors: [c(0.05, 0.1, 0.25), c(0.2, 0.25, 0.5)]),
+        Reward(id: "lemon", kind: .background, unlock: .free, needsPro: false, emoji: "",
+               colors: [c(1, 0.92, 0.5), c(0.85, 1, 0.6)]),
+        Reward(id: "dawn", kind: .background, unlock: .achievement("streak14"), needsPro: false, emoji: "",
+               colors: [c(1, 0.7, 0.75), c(0.7, 0.75, 1)]),
+        Reward(id: "lagoon", kind: .background, unlock: .achievement("weekend"), needsPro: false, emoji: "",
+               colors: [c(0.3, 0.85, 0.85), c(0.55, 0.95, 0.7)]),
+        Reward(id: "sand", kind: .background, unlock: .achievement("regular"), needsPro: false, emoji: "",
+               colors: [c(0.95, 0.85, 0.65), c(1, 0.95, 0.85)]),
+        Reward(id: "berry", kind: .background, unlock: .achievement("fiftyChecks"), needsPro: false, emoji: "",
+               colors: [c(0.75, 0.25, 0.55), c(0.95, 0.55, 0.65)]),
+        Reward(id: "glacier", kind: .background, unlock: .achievement("perfectTen"), needsPro: true, emoji: "",
+               colors: [c(0.75, 0.92, 1), c(0.55, 0.75, 0.95), c(0.9, 0.97, 1)]),
+        Reward(id: "volcano", kind: .background, unlock: .achievement("streak60"), needsPro: true, emoji: "",
+               colors: [c(0.55, 0.05, 0.1), c(0.95, 0.35, 0.1), c(1, 0.75, 0.2)]),
+        Reward(id: "emerald", kind: .background, unlock: .achievement("fiveHundredChecks"), needsPro: true, emoji: "",
+               colors: [c(0.0, 0.45, 0.35), c(0.2, 0.75, 0.55)]),
+        Reward(id: "cosmos", kind: .background, unlock: .achievement("veteran"), needsPro: true, emoji: "",
+               colors: [c(0.02, 0.02, 0.15), c(0.25, 0.1, 0.45), c(0.1, 0.5, 0.7)]),
+        Reward(id: "rose", kind: .background, unlock: .pro, needsPro: true, emoji: "",
+               colors: [c(1, 0.55, 0.6), c(1, 0.8, 0.75), c(0.95, 0.65, 0.85)]),
+        Reward(id: "tropic", kind: .background, unlock: .pro, needsPro: true, emoji: "",
+               colors: [c(0.1, 0.8, 0.6), c(1, 0.85, 0.3), c(1, 0.45, 0.4)]),
+        Reward(id: "graphite", kind: .background, unlock: .pro, needsPro: true, emoji: "",
+               colors: [c(0.25, 0.27, 0.3), c(0.5, 0.52, 0.56)]),
     ]
 
     static let avatars: [Reward] = [
@@ -207,6 +286,22 @@ enum Rewards {
         avatar("lion", "🦁", .achievement("resilient"), pro: true),
         avatar("panda", "🐼", .pro), avatar("octopus", "🐙", .pro), avatar("robot", "🤖", .pro),
         avatar("alien", "👽", .pro), avatar("crown", "👑", .pro), avatar("rocket", "🚀", .pro),
+        avatar("sun", "🌞", .free), avatar("cactus", "🌵", .free),
+        avatar("bee", "🐝", .achievement("fiftyChecks")),
+        avatar("dog", "🐶", .achievement("streak14")),
+        avatar("koala", "🐨", .achievement("weekend")),
+        avatar("rabbit", "🐰", .achievement("regular")),
+        avatar("hedgehog", "🦔", .achievement("organizer")),
+        avatar("butterfly", "🦋", .achievement("reflective")),
+        avatar("dolphin", "🐬", .achievement("architect")),
+        avatar("tiger", "🐯", .achievement("streak60"), pro: true),
+        avatar("eagle", "🦅", .achievement("lark"), pro: true),
+        avatar("whale", "🐳", .achievement("fiveHundredChecks"), pro: true),
+        avatar("wizard", "🧙", .achievement("chronicler"), pro: true),
+        avatar("ninja", "🥷", .achievement("goalGetter"), pro: true),
+        avatar("astronaut", "🧑‍🚀", .achievement("veteran"), pro: true),
+        avatar("diamond", "💎", .pro), avatar("ghost", "👻", .pro), avatar("t-rex", "🦖", .pro),
+        avatar("mermaid", "🧜", .pro), avatar("shark", "🦈", .pro), avatar("planet", "🪐", .pro),
     ]
 
     private static func avatar(_ id: String, _ emoji: String, _ unlock: Unlock, pro: Bool = false) -> Reward {
