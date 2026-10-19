@@ -1,3 +1,4 @@
+import WidgetKit
 import StoreKit
 import SwiftUI
 import UIKit
@@ -17,6 +18,7 @@ struct SettingsView: View {
     @State private var showingRestartHint = false
     @State private var showingProfile = false
     @State private var showingFeedback = false
+    @State private var widgetBeat = WidgetHeartbeat.read()
     @AppStorage("appLanguage") private var appLanguage = "system"
 
     private static let languages: [(code: String, name: String)] = [
@@ -114,6 +116,36 @@ struct SettingsView: View {
                     }
                 } footer: {
                     Text("One notification listing the habits not checked off yet.")
+                }
+
+                Section {
+                    LabeledContent("Shared data") {
+                        if AppGroup.resolvedIdentifier != nil {
+                            Label("Available", systemImage: "checkmark.circle.fill").foregroundStyle(.green)
+                        } else {
+                            Label("Not available", systemImage: "xmark.circle.fill").foregroundStyle(.red)
+                        }
+                    }
+                    LabeledContent("Last widget update") {
+                        if let beat = widgetBeat {
+                            Text(beat.date, format: .relative(presentation: .named))
+                        } else {
+                            Text("Never")
+                        }
+                    }
+                    Button {
+                        WidgetCenter.shared.reloadAllTimelines()
+                        Task {
+                            try? await Task.sleep(for: .seconds(2))
+                            widgetBeat = WidgetHeartbeat.read()
+                        }
+                    } label: {
+                        Label("Refresh widgets", systemImage: "arrow.clockwise")
+                    }
+                } header: {
+                    Text("Widget")
+                } footer: {
+                    Text("If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked.")
                 }
 
                 Section {

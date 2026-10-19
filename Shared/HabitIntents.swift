@@ -36,3 +36,24 @@ struct ToggleHabitIntent: AppIntent {
         return .result()
     }
 }
+
+/// Кормление питомца прямо из виджета.
+struct FeedPetIntent: AppIntent {
+    static let title: LocalizedStringResource = "Feed pet"
+    static let isDiscoverable: Bool = false
+
+    init() {}
+
+    func perform() async throws -> some IntentResult {
+        guard var data = DataFile.loadIfAvailable(), var pet = data.wallet.pet else { return .result() }
+        let key = DayKey.make(Date())
+        guard pet.feeds[key, default: 0] < Sparks.feedsPerDay,
+              Sparks.snapshotBalance(data) >= Sparks.feedPrice else { return .result() }
+        pet.feeds[key, default: 0] += 1
+        data.wallet.pet = pet
+        data.wallet.spent += Sparks.feedPrice
+        DataFile.save(data)
+        WidgetCenter.shared.reloadAllTimelines()
+        return .result()
+    }
+}

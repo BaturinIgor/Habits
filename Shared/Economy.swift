@@ -56,23 +56,10 @@ enum Sparks {
         return perDay
     }
 
-    static func report(_ data: AppData, facts: AchievementFacts, unlockedAchievements: Int, calendar: Calendar = .app) -> SparkReport {
-        var r = SparkReport()
-        let perDay = checksPerDay(data, calendar: calendar)
-        r.checks = perDay.values.reduce(0, +)
-        for day in perDay.keys {
-            guard let date = DayKey.date(day, calendar: calendar) else { continue }
-            let p = Stats.day(date, in: data, calendar: calendar)
-            if p.total > 0 && p.done == p.total { r.perfectDays += perfectDayBonus }
-        }
-        r.streaks = facts.streakWeeks * weekStreakBonus + facts.streakMonths * monthStreakBonus
-        r.comebacks = facts.comebacks * comebackBonus
-        r.achievements = unlockedAchievements * achievementBonus
-        r.gifts = data.wallet.proMonths.count * proMonthlyGift
-        return r
-    }
-
     static func balance(earned: Int, data: AppData) -> Int { max(0, earned - data.wallet.spent) }
+
+    /// Баланс по последнему подсчёту приложения (для виджета, где нет полного подсчёта).
+    static func snapshotBalance(_ data: AppData) -> Int { max(0, data.wallet.earnedSnapshot - data.wallet.spent) }
 }
 
 /// Значок искр с числом.

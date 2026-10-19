@@ -43,6 +43,7 @@
 "Archive" = "보관";
 "Archive (%lld)" = "보관함 (%lld)";
 "Archived" = "보관됨";
+"Available" = "사용 가능";
 "Avatars" = "아바타";
 "Baby" = "아기";
 "Backgrounds" = "배경";
@@ -143,6 +144,7 @@
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "이번 달 추가 프리즈: %lld/%lld. 스파크로 살 수 있는 아바타와 배경은 프로필에 있어요.";
 "Family" = "가족";
 "Feed" = "먹이 주기";
+"Feed pet" = "펫 먹이 주기";
 "Feed your pet" = "펫 먹이 주기";
 "Feedback" = "피드백";
 "Fifty" = "50번";
@@ -192,6 +194,7 @@
 "Ice cold" = "냉정함";
 "Icon" = "아이콘";
 "If not checked off: %@. Done in the notification stops the repeats." = "체크하지 않으면: %@. 알림의 '완료'를 누르면 반복이 멈춰요.";
+"If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked." = "공유 데이터를 사용할 수 없으면 위젯이 습관을 볼 수 없어요. SideStore로 앱을 다시 설치하고 확장 프로그램을 유지하세요.";
 "Import" = "가져오기";
 "Import data" = "데이터 가져오기";
 "Include technical info" = "기술 정보 포함";
@@ -215,6 +218,7 @@
 "Last 12 weeks" = "최근 12주";
 "Last 30 days" = "최근 30일";
 "Last 7 days" = "최근 7일";
+"Last widget update" = "마지막 위젯 업데이트";
 "Legend" = "전설";
 "Less" = "적음";
 "Let's go" = "시작하기";
@@ -239,12 +243,14 @@
 "Move to archive" = "보관함으로 이동";
 "N times a week" = "주 N회";
 "Name" = "이름";
+"Never" = "없음";
 "New achievement!" = "새 업적!";
 "New group" = "새 그룹";
 "New habit" = "새 습관";
 "Next" = "다음";
 "Next up in your chain" = "연결된 다음 습관";
 "Night owl" = "올빼미";
+"No access to app data" = "앱 데이터에 접근할 수 없어요";
 "No group" = "그룹 없음";
 "No habits" = "습관 없음";
 "No habits are planned for this day." = "이날 예정된 습관이 없어요.";
@@ -253,6 +259,7 @@
 "No mail account" = "메일 계정 없음";
 "No purchases found for this Apple Account." = "이 Apple 계정의 구매 내역이 없어요.";
 "None" = "없음";
+"Not available" = "사용 불가";
 "Not checked off yet: %@" = "아직 체크하지 않음: %@";
 "Not enough sparks" = "스파크가 부족해요";
 "Not set up" = "설정 안 됨";
@@ -278,6 +285,7 @@
 "One notification listing the habits not checked off yet." = "아직 체크하지 않은 습관을 알림 하나로 알려 드려요.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "당일이나 다음 날 체크만 인정돼요. 체크를 취소하면 스파크도 돌아가요.";
 "Open iOS Settings" = "iOS 설정 열기";
+"Open the app to adopt one." = "앱을 열어 데려오세요.";
 "Order" = "순서";
 "Organization" = "정리";
 "Organizer" = "정리왕";
@@ -311,7 +319,9 @@
 "Read" = "독서";
 "Reading" = "독서";
 "Reflective" = "사색가";
+"Refresh widgets" = "위젯 새로고침";
 "Regular" = "단골";
+"Reinstall the app and keep its extensions. Details are in Settings, Widget." = "확장 프로그램을 유지한 채 앱을 다시 설치하세요. 자세한 내용은 설정, 위젯에서.";
 "Remaining" = "남음";
 "Reminder" = "알림";
 "Reminder again. Check it off when you're done." = "다시 알려 드려요. 마치면 체크하세요.";
@@ -336,6 +346,7 @@
 "Send" = "보내기";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone에서 메일을 설정하거나 %@(으)로 보내 주세요.";
 "Settings" = "설정";
+"Shared data" = "공유 데이터";
 "Show introduction" = "소개 다시 보기";
 "Shows how many habits are left for today." = "오늘 남은 습관 수를 보여줘요.";
 "Simple gestures" = "간단한 제스처";
@@ -373,6 +384,7 @@
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "최소 버전도 완료로 인정돼 연속 기록이 유지돼요. 연결된 습관은 앞 습관을 체크하면 바로 알려 드려요.";
 "The new language will apply after you close the app and open it again." = "앱을 닫았다가 다시 열면 새 언어가 적용돼요.";
 "The purchase could not be verified." = "구매를 확인할 수 없어요.";
+"The widget will update after unlocking." = "잠금 해제 후 위젯이 업데이트돼요.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "아직 구매 기능이 없어요. 이 스위치로 Pro 기능을 테스트할 수 있어요.";
 "Time" = "시간";
 "Time for your habit" = "습관을 실천할 시간이에요";
@@ -396,6 +408,7 @@
 "Unknown" = "알 수 없음";
 "Unlimited habits" = "무제한 습관";
 "Unlock the full collection and Pro-only designs." = "전체 컬렉션과 Pro 전용 디자인.";
+"Unlock your iPhone" = "iPhone 잠금을 해제하세요";
 "Unlock: %@" = "해제 조건: %@";
 "Unstoppable" = "멈출 수 없어";
 "Until" = "종료일";
@@ -412,6 +425,7 @@
 "Weekly hero" = "주간 영웅";
 "Welcome to Habit Tracker" = "습관 트래커에 오신 걸 환영해요";
 "What happened and what did you expect?" = "무슨 일이 있었고 어떻게 되길 기대했나요?";
+"Widget" = "위젯";
 "Workout" = "운동";
 "Write 10 notes" = "메모 10개 쓰기";
 "Write 50 notes" = "메모 50개 작성";
@@ -422,6 +436,7 @@
 "Young" = "청소년";
 "Your own emoji from the keyboard" = "키보드로 이모지 입력";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "습관을 체크할 때마다 펫이 자라고, 며칠 사라지면 슬퍼해요.";
+"Your pet's mood and feeding right from the Home Screen." = "홈 화면에서 펫의 기분을 보고 먹이를 줄 수 있어요.";
 "Your photo" = "내 사진";
 "from %@" = "%@부터";
 "glasses" = "잔";

@@ -22,6 +22,12 @@ enum AppGroup {
         return result
     }
 
+    /// Идентификатор группы, которая реально доступна, или nil, если общего контейнера нет
+    /// (тогда приложение и виджет не видят данные друг друга).
+    static var resolvedIdentifier: String? {
+        candidates.first { FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: $0) != nil }
+    }
+
     static var containerURL: URL {
         let fm = FileManager.default
         for id in candidates {
@@ -32,6 +38,25 @@ enum AppGroup {
         let fallback = fm.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
         try? fm.createDirectory(at: fallback, withIntermediateDirectories: true)
         return fallback
+    }
+}
+
+/// Отметка о том, что виджет смог прочитать общий контейнер (для проверки в настройках).
+enum WidgetHeartbeat {
+    private static var url: URL { AppGroup.containerURL.appendingPathComponent("widget-heartbeat") }
+
+    static func write(habitCount: Int) {
+        guard AppGroup.resolvedIdentifier != nil else { return }
+        let text = "\(Date().timeIntervalSince1970)|\(habitCount)"
+        try? text.data(using: .utf8)?.write(to: url, options: .atomic)
+    }
+
+    /// Когда виджет последний раз обновлялся и сколько привычек видел.
+    static func read() -> (date: Date, habits: Int)? {
+        guard let text = try? String(contentsOf: url, encoding: .utf8) else { return nil }
+        let parts = text.split(separator: "|")
+        guard parts.count == 2, let t = Double(parts[0]), let n = Int(parts[1]) else { return nil }
+        return (Date(timeIntervalSince1970: t), n)
     }
 }
 
@@ -57,6 +82,8 @@ enum DataFile {
         do {
             return try JSONDecoder().decode(AppData.self, from: raw)
         } catch {
+            // Виджет файл не трогает: возможно, его записала более новая версия приложения.
+            if Bundle.main.bundleURL.pathExtension == "appex" { return nil }
             // Сохраняем повреждённый файл, чтобы данные можно было восстановить.
             let stamp = Int(Date().timeIntervalSince1970)
             let backup = url.deletingLastPathComponent()

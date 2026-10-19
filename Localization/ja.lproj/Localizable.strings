@@ -43,6 +43,7 @@
 "Archive" = "アーカイブ";
 "Archive (%lld)" = "アーカイブ (%lld)";
 "Archived" = "アーカイブ済み";
+"Available" = "利用可能";
 "Avatars" = "アバター";
 "Baby" = "赤ちゃん";
 "Backgrounds" = "背景";
@@ -143,6 +144,7 @@
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "今月の追加フリーズ：%lld/%lld。スパークで買えるアバターと背景はプロフィールにあります。";
 "Family" = "ファミリー";
 "Feed" = "ごはんをあげる";
+"Feed pet" = "ペットにごはん";
 "Feed your pet" = "ペットにごはん";
 "Feedback" = "フィードバック";
 "Fifty" = "50回";
@@ -192,6 +194,7 @@
 "Ice cold" = "クール";
 "Icon" = "アイコン";
 "If not checked off: %@. Done in the notification stops the repeats." = "未チェックの場合：%@。通知の「完了」で繰り返しを止められます。";
+"If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked." = "共有データが利用できないと、ウィジェットは習慣を表示できません。SideStore でアプリを再インストールし、拡張機能を残してください。";
 "Import" = "読み込む";
 "Import data" = "データを読み込む";
 "Include technical info" = "技術情報を含める";
@@ -215,6 +218,7 @@
 "Last 12 weeks" = "過去12週間";
 "Last 30 days" = "過去30日間";
 "Last 7 days" = "過去7日間";
+"Last widget update" = "ウィジェットの最終更新";
 "Legend" = "レジェンド";
 "Less" = "少";
 "Let's go" = "はじめる";
@@ -239,12 +243,14 @@
 "Move to archive" = "アーカイブへ移動";
 "N times a week" = "週N回";
 "Name" = "名前";
+"Never" = "なし";
 "New achievement!" = "新しい実績！";
 "New group" = "新しいグループ";
 "New habit" = "新しい習慣";
 "Next" = "次";
 "Next up in your chain" = "連鎖の次の習慣";
 "Night owl" = "夜型";
+"No access to app data" = "アプリのデータにアクセスできません";
 "No group" = "グループなし";
 "No habits" = "習慣なし";
 "No habits are planned for this day." = "この日に予定された習慣はありません。";
@@ -253,6 +259,7 @@
 "No mail account" = "メールアカウントがありません";
 "No purchases found for this Apple Account." = "この Apple アカウントの購入は見つかりませんでした。";
 "None" = "なし";
+"Not available" = "利用不可";
 "Not checked off yet: %@" = "まだチェックしていません：%@";
 "Not enough sparks" = "スパークが足りません";
 "Not set up" = "未設定";
@@ -278,6 +285,7 @@
 "One notification listing the habits not checked off yet." = "まだチェックしていない習慣を1件の通知でお知らせします。";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "当日か翌日のチェックだけが対象です。チェックを外すとスパークも戻ります。";
 "Open iOS Settings" = "iOSの設定を開く";
+"Open the app to adopt one." = "アプリを開いて迎えましょう。";
 "Order" = "並び順";
 "Organization" = "整理";
 "Organizer" = "整理上手";
@@ -311,7 +319,9 @@
 "Read" = "読書";
 "Reading" = "読書";
 "Reflective" = "内省家";
+"Refresh widgets" = "ウィジェットを更新";
 "Regular" = "常連";
+"Reinstall the app and keep its extensions. Details are in Settings, Widget." = "拡張機能を残してアプリを再インストールしてください。詳しくは設定のウィジェットへ。";
 "Remaining" = "残り";
 "Reminder" = "リマインダー";
 "Reminder again. Check it off when you're done." = "もう一度お知らせします。終わったらチェックしてください。";
@@ -336,6 +346,7 @@
 "Send" = "送信";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone でメールを設定するか、%@ に送信してください。";
 "Settings" = "設定";
+"Shared data" = "共有データ";
 "Show introduction" = "紹介を表示";
 "Shows how many habits are left for today." = "今日残っている習慣の数を表示します。";
 "Simple gestures" = "かんたん操作";
@@ -373,6 +384,7 @@
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "ミニマム版も達成扱いで連続記録が続きます。連鎖した習慣は前の習慣をチェックした直後に通知します。";
 "The new language will apply after you close the app and open it again." = "アプリを閉じて開き直すと新しい言語になります。";
 "The purchase could not be verified." = "購入を確認できませんでした。";
+"The widget will update after unlocking." = "ロック解除後にウィジェットが更新されます。";
 "There are no purchases yet: this switch turns Pro features on for testing." = "まだ購入機能はありません。このスイッチでPro機能をテストできます。";
 "Time" = "時刻";
 "Time for your habit" = "習慣の時間です";
@@ -396,6 +408,7 @@
 "Unknown" = "不明";
 "Unlimited habits" = "習慣を無制限に";
 "Unlock the full collection and Pro-only designs." = "全コレクションとPro限定デザイン。";
+"Unlock your iPhone" = "iPhone のロックを解除してください";
 "Unlock: %@" = "解放条件：%@";
 "Unstoppable" = "止まらない";
 "Until" = "終了日";
@@ -412,6 +425,7 @@
 "Weekly hero" = "週間ヒーロー";
 "Welcome to Habit Tracker" = "習慣トラッカーへようこそ";
 "What happened and what did you expect?" = "何が起きて、どうなるはずでしたか？";
+"Widget" = "ウィジェット";
 "Workout" = "運動";
 "Write 10 notes" = "メモを10件書く";
 "Write 50 notes" = "メモを50件書く";
@@ -422,6 +436,7 @@
 "Young" = "子ども";
 "Your own emoji from the keyboard" = "キーボードから絵文字を入力";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "習慣をチェックするたびにペットは成長し、数日いなくなると寂しがります。";
+"Your pet's mood and feeding right from the Home Screen." = "ホーム画面でペットの様子を見てごはんをあげられます。";
 "Your photo" = "自分の写真";
 "from %@" = "%@から";
 "glasses" = "杯";

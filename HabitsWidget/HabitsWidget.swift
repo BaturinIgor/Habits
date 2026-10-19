@@ -19,10 +19,19 @@ struct WidgetHabit: Identifiable, Hashable {
     var goalMet: Bool = false
 }
 
+/// Почему виджет не может показать данные.
+enum WidgetProblem {
+    /// Нет общего контейнера с приложением (группа приложений не выдана при установке).
+    case noAccess
+    /// Файл пока нельзя прочитать (телефон не разблокирован после перезагрузки).
+    case locked
+}
+
 struct HabitsEntry: TimelineEntry {
     let date: Date
     let dayKey: String
     let items: [WidgetHabit]
+    var problem: WidgetProblem? = nil
 
     var done: Int { items.filter { $0.status == .done }.count }
     var total: Int { items.filter { $0.status != .skipped && ($0.countsInTotal || $0.status == .done) }.count }
@@ -51,12 +60,30 @@ struct HabitsProvider: TimelineProvider {
         if context.isPreview {
             completion(.sample)
         } else {
-            completion(Self.entry(for: Date(), data: DataFile.load()))
+            let (data, problem) = Self.load()
+            var entry = Self.entry(for: Date(), data: data)
+            entry.problem = problem
+            completion(entry)
         }
     }
 
+    /// Читает данные и сообщает, если прочитать их нельзя.
+    static func load() -> (AppData, WidgetProblem?) {
+        guard AppGroup.resolvedIdentifier != nil else { return (AppData(), .noAccess) }
+        guard let data = DataFile.loadIfAvailable() else { return (AppData(), .locked) }
+        WidgetHeartbeat.write(habitCount: data.activeHabits.count)
+        return (data, nil)
+    }
+
     func getTimeline(in context: Context, completion: @escaping (Timeline<HabitsEntry>) -> Void) {
-        let data = DataFile.load()
+        let (data, problem) = Self.load()
+        if let problem {
+            // Попробуем снова через 15 минут: возможно, телефон разблокируют.
+            var entry = Self.entry(for: Date(), data: data)
+            entry.problem = problem
+            completion(Timeline(entries: [entry], policy: .after(Date().addingTimeInterval(15 * 60))))
+            return
+        }
         let calendar = Calendar.app
         let now = Date()
         let tomorrow = calendar.date(byAdding: .day, value: 1, to: calendar.startOfDay(for: now)) ?? now.addingTimeInterval(86400)
@@ -117,6 +144,7 @@ struct HabitsProvider: TimelineProvider {
 struct HabitsWidgetBundle: WidgetBundle {
     var body: some Widget {
         TodayWidget()
+        PetWidget()
         ProgressWidget()
     }
 }
@@ -126,8 +154,14 @@ struct TodayWidget: Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: HabitsProvider()) { entry in
-            TodayWidgetView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
+            Group {
+                if let problem = entry.problem {
+                    WidgetProblemView(problem: problem)
+                } else {
+                    TodayWidgetView(entry: entry)
+                }
+            }
+            .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("Today's habits")
         .description("Today's progress and quick check-off right from the Home Screen.")
@@ -150,6 +184,25 @@ struct ProgressWidget: Widget {
 }
 
 // MARK: - Главный экран
+
+struct WidgetProblemView: View {
+    let problem: WidgetProblem
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Image(systemName: problem == .noAccess ? "exclamationmark.triangle.fill" : "lock.fill")
+                .font(.title3)
+                .foregroundStyle(.orange)
+            Text(problem == .noAccess ? "No access to app data" : "Unlock your iPhone")
+                .font(.subheadline.weight(.semibold))
+            Text(problem == .noAccess ? "Reinstall the app and keep its extensions. Details are in Settings, Widget." : "The widget will update after unlocking.")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            Spacer(minLength: 0)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
 
 struct TodayWidgetView: View {
     @Environment(\.widgetFamily) private var family
@@ -348,6 +401,177 @@ struct LockScreenView: View {
                 ProgressView(value: entry.progress)
             }
             .widgetAccentable()
+        }
+    }
+}
+
+// MARK: - Питомец
+
+struct PetEntry: TimelineEntry {
+    let date: Date
+    var pet: PetState?
+    var stage: PetStage = .egg
+    var mood: PetMood = .calm
+    var xp = 0
+    var balance = 0
+    var feedsToday = 0
+    var done = 0
+    var total = 0
+    var problem: WidgetProblem?
+
+    static var sample: PetEntry {
+        PetEntry(date: Date(), pet: PetState(species: "cat", name: String(localized: "Buddy"), adoptedAt: Date()),
+                 stage: .young, mood: .happy, xp: 70, balance: 42, feedsToday: 1, done: 2, total: 4)
+    }
+
+    var canFeed: Bool { pet != nil && feedsToday < Sparks.feedsPerDay && balance >= Sparks.feedPrice }
+}
+
+struct PetProvider: TimelineProvider {
+    func placeholder(in context: Context) -> PetEntry { .sample }
+
+    func getSnapshot(in context: Context, completion: @escaping (PetEntry) -> Void) {
+        if context.isPreview {
+            completion(.sample)
+        } else {
+            completion(Self.entry(at: Date()))
+        }
+    }
+
+    func getTimeline(in context: Context, completion: @escaping (Timeline<PetEntry>) -> Void) {
+        let now = Date()
+        let first = Self.entry(at: now)
+        if first.problem != nil {
+            completion(Timeline(entries: [first], policy: .after(now.addingTimeInterval(15 * 60))))
+            return
+        }
+        // Настроение меняется со временем (сон ночью), поэтому записи на каждый час.
+        var entries = [first]
+        for hour in 1...12 {
+            entries.append(Self.entry(at: now.addingTimeInterval(Double(hour) * 3600)))
+        }
+        completion(Timeline(entries: entries, policy: .atEnd))
+    }
+
+    static func entry(at date: Date) -> PetEntry {
+        let (data, problem) = HabitsProvider.load()
+        var entry = PetEntry(date: date, problem: problem)
+        guard problem == nil else { return entry }
+        let progress = Stats.day(date, in: data)
+        entry.done = progress.done
+        entry.total = progress.total
+        entry.balance = Sparks.snapshotBalance(data)
+        guard let pet = data.wallet.pet else { return entry }
+        entry.pet = pet
+        entry.xp = Pets.xp(pet, data: data)
+        entry.stage = PetStage.stage(xp: entry.xp)
+        entry.mood = Pets.mood(pet, data: data, now: date)
+        entry.feedsToday = pet.feeds[DayKey.make(date), default: 0]
+        return entry
+    }
+}
+
+struct PetWidget: Widget {
+    let kind = "PetWidget"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: PetProvider()) { entry in
+            Group {
+                if let problem = entry.problem {
+                    WidgetProblemView(problem: problem)
+                } else {
+                    PetWidgetView(entry: entry)
+                }
+            }
+            .containerBackground(for: .widget) {
+                LinearGradient(colors: [Color.orange.opacity(0.18), Color.pink.opacity(0.12)],
+                               startPoint: .topLeading, endPoint: .bottomTrailing)
+            }
+        }
+        .configurationDisplayName("Pet")
+        .description("Your pet's mood and feeding right from the Home Screen.")
+        .supportedFamilies([.systemSmall, .systemMedium])
+    }
+}
+
+struct PetWidgetView: View {
+    @Environment(\.widgetFamily) private var family
+    let entry: PetEntry
+
+    var body: some View {
+        if let pet = entry.pet {
+            if family == .systemSmall {
+                VStack(spacing: 4) {
+                    HStack {
+                        Text(pet.name).font(.caption.weight(.semibold)).lineLimit(1)
+                        Spacer(minLength: 0)
+                        SparkBadge(amount: entry.balance, font: .caption2.weight(.bold))
+                    }
+                    PetAvatar(pet: pet, stage: entry.stage, mood: entry.mood, size: 78)
+                    feedButton(compact: true)
+                }
+            } else {
+                HStack(spacing: 14) {
+                    PetAvatar(pet: pet, stage: entry.stage, mood: entry.mood, size: 110)
+                    VStack(alignment: .leading, spacing: 5) {
+                        HStack {
+                            Text(pet.name).font(.headline).lineLimit(1)
+                            Spacer(minLength: 0)
+                            SparkBadge(amount: entry.balance, font: .caption.weight(.bold))
+                        }
+                        Text("\(entry.stage.title) · \(entry.mood.title)")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                        if let next = entry.stage.next {
+                            ProgressView(value: Double(entry.xp - entry.stage.threshold),
+                                         total: Double(next.threshold - entry.stage.threshold))
+                                .tint(.orange)
+                        }
+                        if entry.total > 0 {
+                            Text("\(entry.done) of \(entry.total) done")
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                        }
+                        Spacer(minLength: 0)
+                        feedButton(compact: false)
+                    }
+                }
+            }
+        } else {
+            VStack(spacing: 6) {
+                Text(verbatim: "🥚").font(.system(size: 44))
+                Text("Get a pet").font(.subheadline.weight(.semibold))
+                Text("Open the app to adopt one.")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func feedButton(compact: Bool) -> some View {
+        if entry.feedsToday >= Sparks.feedsPerDay {
+            Text("Full for today")
+                .font(.caption2.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 5)
+        } else {
+            Button(intent: FeedPetIntent()) {
+                HStack(spacing: 4) {
+                    Text(verbatim: "🍓")
+                    if !compact { Text("Feed") }
+                    SparkBadge(amount: Sparks.feedPrice, font: .caption2.weight(.bold))
+                }
+                .font(.caption.weight(.semibold))
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 5)
+                .background(Capsule().fill(Color.orange.opacity(entry.canFeed ? 0.25 : 0.1)))
+            }
+            .buttonStyle(.plain)
+            .disabled(!entry.canFeed)
         }
     }
 }

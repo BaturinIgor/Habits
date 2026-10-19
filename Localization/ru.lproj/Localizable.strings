@@ -43,6 +43,7 @@
 "Archive" = "В архив";
 "Archive (%lld)" = "Архив (%lld)";
 "Archived" = "В архиве";
+"Available" = "Доступны";
 "Avatars" = "Аватарки";
 "Baby" = "Малыш";
 "Backgrounds" = "Фоны";
@@ -143,6 +144,7 @@
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Дополнительных заморозок в этом месяце: %lld/%lld. Аватарки и фоны за искры есть в профиле.";
 "Family" = "Семья";
 "Feed" = "Покормить";
+"Feed pet" = "Покормить питомца";
 "Feed your pet" = "Покормить питомца";
 "Feedback" = "Обратная связь";
 "Fifty" = "Полсотни";
@@ -192,6 +194,7 @@
 "Ice cold" = "Хладнокровие";
 "Icon" = "Иконка";
 "If not checked off: %@. Done in the notification stops the repeats." = "Если не отметить: %@. Кнопка \"Готово\" в уведомлении остановит повторы.";
+"If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked." = "Если общие данные недоступны, виджет не видит привычки. Переустанови приложение через SideStore и при вопросе оставь расширения приложения.";
 "Import" = "Загрузить";
 "Import data" = "Загрузить данные";
 "Include technical info" = "Добавить техническую информацию";
@@ -215,6 +218,7 @@
 "Last 12 weeks" = "Последние 12 недель";
 "Last 30 days" = "За 30 дней";
 "Last 7 days" = "Последние 7 дней";
+"Last widget update" = "Последнее обновление виджета";
 "Legend" = "Легенда";
 "Less" = "Меньше";
 "Let's go" = "Начать";
@@ -239,12 +243,14 @@
 "Move to archive" = "Переместить в архив";
 "N times a week" = "N раз в неделю";
 "Name" = "Название";
+"Never" = "Никогда";
 "New achievement!" = "Новая ачивка!";
 "New group" = "Новая группа";
 "New habit" = "Новая привычка";
 "Next" = "Дальше";
 "Next up in your chain" = "Следующая в твоей связке";
 "Night owl" = "Сова";
+"No access to app data" = "Нет доступа к данным";
 "No group" = "Без группы";
 "No habits" = "Привычек нет";
 "No habits are planned for this day." = "На этот день привычек не запланировано.";
@@ -253,6 +259,7 @@
 "No mail account" = "Почта не настроена";
 "No purchases found for this Apple Account." = "Для этого Apple Account покупок не найдено.";
 "None" = "Нет";
+"Not available" = "Недоступны";
 "Not checked off yet: %@" = "Ещё не отмечено: %@";
 "Not enough sparks" = "Не хватает искр";
 "Not set up" = "Не настроены";
@@ -278,6 +285,7 @@
 "One notification listing the habits not checked off yet." = "Одно уведомление со списком привычек, которые ещё не отмечены.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Засчитываются только отметки, поставленные в тот же день или на следующий. Если снять отметку, искра вернётся обратно.";
 "Open iOS Settings" = "Открыть настройки iOS";
+"Open the app to adopt one." = "Открой приложение, чтобы завести.";
 "Order" = "Порядок";
 "Organization" = "Организация";
 "Organizer" = "Организатор";
@@ -311,7 +319,9 @@
 "Read" = "Чтение";
 "Reading" = "Чтение";
 "Reflective" = "Вдумчивый";
+"Refresh widgets" = "Обновить виджеты";
 "Regular" = "Завсегдатай";
+"Reinstall the app and keep its extensions. Details are in Settings, Widget." = "Переустанови приложение и оставь расширения. Подробности в Настройках, раздел Виджет.";
 "Remaining" = "Осталось";
 "Reminder" = "Напоминание";
 "Reminder again. Check it off when you're done." = "Напоминаю ещё раз. Отметь, когда сделаешь.";
@@ -336,6 +346,7 @@
 "Send" = "Отправить";
 "Set up Mail on this iPhone or send your message to %@." = "Настрой Почту на iPhone или отправь сообщение на %@.";
 "Settings" = "Настройки";
+"Shared data" = "Общие данные";
 "Show introduction" = "Показать знакомство";
 "Shows how many habits are left for today." = "Показывает, сколько привычек осталось на сегодня.";
 "Simple gestures" = "Простые жесты";
@@ -373,6 +384,7 @@
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Минимальная версия засчитывается как выполнение и сохраняет серию. Привычка в связке напомнит о себе сразу после отметки предыдущей.";
 "The new language will apply after you close the app and open it again." = "Новый язык включится, когда ты закроешь приложение и откроешь его снова.";
 "The purchase could not be verified." = "Не удалось проверить покупку.";
+"The widget will update after unlocking." = "Виджет обновится после разблокировки.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "Покупок пока нет: этот переключатель включает функции Pro для проверки.";
 "Time" = "Время";
 "Time for your habit" = "Пора выполнить привычку";
@@ -396,6 +408,7 @@
 "Unknown" = "Неизвестно";
 "Unlimited habits" = "Безлимит привычек";
 "Unlock the full collection and Pro-only designs." = "Вся коллекция и дизайны только для Pro.";
+"Unlock your iPhone" = "Разблокируй iPhone";
 "Unlock: %@" = "Как открыть: %@";
 "Unstoppable" = "Неудержимый";
 "Until" = "До";
@@ -412,6 +425,7 @@
 "Weekly hero" = "Герой недели";
 "Welcome to Habit Tracker" = "Добро пожаловать в Трекер привычек";
 "What happened and what did you expect?" = "Что произошло и что ты ожидал увидеть?";
+"Widget" = "Виджет";
 "Workout" = "Тренировка";
 "Write 10 notes" = "Напиши 10 заметок";
 "Write 50 notes" = "Напиши 50 заметок";
@@ -422,6 +436,7 @@
 "Young" = "Подросток";
 "Your own emoji from the keyboard" = "Свой эмодзи с клавиатуры";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Питомец растёт с каждой отмеченной привычкой и грустит, если ты пропадаешь на несколько дней.";
+"Your pet's mood and feeding right from the Home Screen." = "Настроение питомца и кормление прямо с главного экрана.";
 "Your photo" = "Своё фото";
 "from %@" = "с %@";
 "glasses" = "стаканов";

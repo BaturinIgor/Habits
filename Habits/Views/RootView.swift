@@ -67,6 +67,7 @@ struct RootView: View {
         .task(id: store.revision) {
             checkAchievements()
             store.claimProGift()
+            store.syncEarnedSnapshot()
             showSparkGain()
             if store.data.settings.onboardingDone {
                 RatingPrompt.maybeAsk(data: store.data, requestReview: requestReview)

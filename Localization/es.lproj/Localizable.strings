@@ -43,6 +43,7 @@
 "Archive" = "Archivar";
 "Archive (%lld)" = "Archivo (%lld)";
 "Archived" = "Archivado";
+"Available" = "Disponibles";
 "Avatars" = "Avatares";
 "Baby" = "Bebé";
 "Backgrounds" = "Fondos";
@@ -143,6 +144,7 @@
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Congelaciones extra este mes: %lld/%lld. Avatares y fondos por chispas en tu perfil.";
 "Family" = "Familia";
 "Feed" = "Alimentar";
+"Feed pet" = "Alimentar mascota";
 "Feed your pet" = "Alimentar a tu mascota";
 "Feedback" = "Comentarios";
 "Fifty" = "Cincuenta";
@@ -192,6 +194,7 @@
 "Ice cold" = "A sangre fría";
 "Icon" = "Icono";
 "If not checked off: %@. Done in the notification stops the repeats." = "Si no lo marcas: %@. «Listo» en la notificación detiene las repeticiones.";
+"If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked." = "Si los datos compartidos no están disponibles, el widget no ve tus hábitos. Reinstala la app con SideStore y conserva sus extensiones.";
 "Import" = "Importar";
 "Import data" = "Importar datos";
 "Include technical info" = "Incluir información técnica";
@@ -215,6 +218,7 @@
 "Last 12 weeks" = "Últimas 12 semanas";
 "Last 30 days" = "Últimos 30 días";
 "Last 7 days" = "Últimos 7 días";
+"Last widget update" = "Última actualización del widget";
 "Legend" = "Leyenda";
 "Less" = "Menos";
 "Let's go" = "Empezar";
@@ -239,12 +243,14 @@
 "Move to archive" = "Archivar";
 "N times a week" = "N veces por semana";
 "Name" = "Nombre";
+"Never" = "Nunca";
 "New achievement!" = "¡Nuevo logro!";
 "New group" = "Nuevo grupo";
 "New habit" = "Nuevo hábito";
 "Next" = "Siguiente";
 "Next up in your chain" = "Siguiente en tu cadena";
 "Night owl" = "Ave nocturna";
+"No access to app data" = "Sin acceso a los datos";
 "No group" = "Sin grupo";
 "No habits" = "Sin hábitos";
 "No habits are planned for this day." = "No hay hábitos previstos para este día.";
@@ -253,6 +259,7 @@
 "No mail account" = "No hay cuenta de correo";
 "No purchases found for this Apple Account." = "No se encontraron compras para esta cuenta de Apple.";
 "None" = "Ninguno";
+"Not available" = "No disponibles";
 "Not checked off yet: %@" = "Aún sin marcar: %@";
 "Not enough sparks" = "No hay suficientes chispas";
 "Not set up" = "Sin configurar";
@@ -278,6 +285,7 @@
 "One notification listing the habits not checked off yet." = "Una notificación con los hábitos que aún no has marcado.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Solo cuentan las marcas del mismo día o del siguiente. Desmarcar un hábito devuelve su chispa.";
 "Open iOS Settings" = "Abrir Ajustes de iOS";
+"Open the app to adopt one." = "Abre la app para adoptar una.";
 "Order" = "Orden";
 "Organization" = "Organización";
 "Organizer" = "Organizador";
@@ -311,7 +319,9 @@
 "Read" = "Leer";
 "Reading" = "Lectura";
 "Reflective" = "Reflexivo";
+"Refresh widgets" = "Actualizar widgets";
 "Regular" = "Habitual";
+"Reinstall the app and keep its extensions. Details are in Settings, Widget." = "Reinstala la app conservando sus extensiones. Detalles en Ajustes, Widget.";
 "Remaining" = "Pendiente";
 "Reminder" = "Recordatorio";
 "Reminder again. Check it off when you're done." = "Te lo recuerdo de nuevo. Márcalo cuando termines.";
@@ -336,6 +346,7 @@
 "Send" = "Enviar";
 "Set up Mail on this iPhone or send your message to %@." = "Configura Mail en el iPhone o envía tu mensaje a %@.";
 "Settings" = "Ajustes";
+"Shared data" = "Datos compartidos";
 "Show introduction" = "Ver la introducción";
 "Shows how many habits are left for today." = "Muestra cuántos hábitos quedan para hoy.";
 "Simple gestures" = "Gestos sencillos";
@@ -373,6 +384,7 @@
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "La versión mínima cuenta como hecha y mantiene tu racha. Un hábito encadenado te avisa justo después de marcar el anterior.";
 "The new language will apply after you close the app and open it again." = "El nuevo idioma se aplicará cuando cierres la app y la vuelvas a abrir.";
 "The purchase could not be verified." = "No se pudo verificar la compra.";
+"The widget will update after unlocking." = "El widget se actualizará al desbloquear.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "Aún no hay compras: este interruptor activa las funciones Pro para probarlas.";
 "Time" = "Hora";
 "Time for your habit" = "Es hora de tu hábito";
@@ -396,6 +408,7 @@
 "Unknown" = "Desconocido";
 "Unlimited habits" = "Hábitos ilimitados";
 "Unlock the full collection and Pro-only designs." = "Toda la colección y diseños exclusivos de Pro.";
+"Unlock your iPhone" = "Desbloquea tu iPhone";
 "Unlock: %@" = "Para desbloquear: %@";
 "Unstoppable" = "Imparable";
 "Until" = "Hasta";
@@ -412,6 +425,7 @@
 "Weekly hero" = "Héroe semanal";
 "Welcome to Habit Tracker" = "Bienvenido a Rastreador de hábitos";
 "What happened and what did you expect?" = "¿Qué pasó y qué esperabas?";
+"Widget" = "Widget";
 "Workout" = "Entrenamiento";
 "Write 10 notes" = "Escribe 10 notas";
 "Write 50 notes" = "Escribe 50 notas";
@@ -422,6 +436,7 @@
 "Young" = "Joven";
 "Your own emoji from the keyboard" = "Tu emoji desde el teclado";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Tu mascota crece con cada hábito que marcas y se pone triste si desapareces unos días.";
+"Your pet's mood and feeding right from the Home Screen." = "El ánimo de tu mascota y alimentarla desde la pantalla de inicio.";
 "Your photo" = "Tu foto";
 "from %@" = "desde el %@";
 "glasses" = "vasos";

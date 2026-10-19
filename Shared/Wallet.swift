@@ -13,6 +13,8 @@ struct Wallet: Codable, Hashable {
     var pet: PetState?
     /// Купленные виды питомцев.
     var ownedPets: [String] = []
+    /// Сколько всего заработано по последнему подсчёту в приложении.
+    var earnedSnapshot = 0
 
     init() {}
 
@@ -24,6 +26,7 @@ struct Wallet: Codable, Hashable {
         proMonths = try c.decodeIfPresent([String].self, forKey: .proMonths) ?? []
         pet = try? c.decodeIfPresent(PetState.self, forKey: .pet)
         ownedPets = try c.decodeIfPresent([String].self, forKey: .ownedPets) ?? []
+        earnedSnapshot = try c.decodeIfPresent(Int.self, forKey: .earnedSnapshot) ?? 0
     }
 
     static func monthKey(_ date: Date, calendar: Calendar = .app) -> String {

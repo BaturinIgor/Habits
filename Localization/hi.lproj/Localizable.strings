@@ -43,6 +43,7 @@
 "Archive" = "संग्रहित करें";
 "Archive (%lld)" = "संग्रह (%lld)";
 "Archived" = "संग्रहित";
+"Available" = "उपलब्ध";
 "Avatars" = "अवतार";
 "Baby" = "बच्चा";
 "Backgrounds" = "पृष्ठभूमि";
@@ -143,6 +144,7 @@
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "इस महीने अतिरिक्त फ़्रीज़: %lld/%lld। चिंगारियों वाले अवतार और बैकग्राउंड प्रोफ़ाइल में हैं।";
 "Family" = "परिवार";
 "Feed" = "खिलाएँ";
+"Feed pet" = "पालतू को खिलाएँ";
 "Feed your pet" = "पालतू को खिलाएँ";
 "Feedback" = "प्रतिक्रिया";
 "Fifty" = "पचास";
@@ -192,6 +194,7 @@
 "Ice cold" = "बर्फ़ जैसा ठंडा";
 "Icon" = "आइकन";
 "If not checked off: %@. Done in the notification stops the repeats." = "पूरा न करने पर: %@। सूचना में 'हो गया' दबाने से दोहराव रुक जाएगा।";
+"If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked." = "साझा डेटा उपलब्ध न हो तो विजेट आपकी आदतें नहीं देख सकता। SideStore से ऐप दोबारा इंस्टॉल करें और एक्सटेंशन रखें।";
 "Import" = "आयात करें";
 "Import data" = "डेटा आयात करें";
 "Include technical info" = "तकनीकी जानकारी जोड़ें";
@@ -215,6 +218,7 @@
 "Last 12 weeks" = "पिछले 12 हफ़्ते";
 "Last 30 days" = "पिछले 30 दिन";
 "Last 7 days" = "पिछले 7 दिन";
+"Last widget update" = "विजेट का पिछला अपडेट";
 "Legend" = "दिग्गज";
 "Less" = "कम";
 "Let's go" = "शुरू करें";
@@ -239,12 +243,14 @@
 "Move to archive" = "संग्रह में भेजें";
 "N times a week" = "हफ़्ते में N बार";
 "Name" = "नाम";
+"Never" = "कभी नहीं";
 "New achievement!" = "नई उपलब्धि!";
 "New group" = "नया समूह";
 "New habit" = "नई आदत";
 "Next" = "अगली";
 "Next up in your chain" = "आपकी कड़ी में अगली";
 "Night owl" = "रात का उल्लू";
+"No access to app data" = "ऐप डेटा तक पहुँच नहीं";
 "No group" = "बिना समूह";
 "No habits" = "कोई आदत नहीं";
 "No habits are planned for this day." = "इस दिन के लिए कोई आदत तय नहीं है।";
@@ -253,6 +259,7 @@
 "No mail account" = "मेल खाता नहीं है";
 "No purchases found for this Apple Account." = "इस Apple खाते के लिए कोई खरीद नहीं मिली।";
 "None" = "कोई नहीं";
+"Not available" = "उपलब्ध नहीं";
 "Not checked off yet: %@" = "अभी बाकी: %@";
 "Not enough sparks" = "पर्याप्त चिंगारियाँ नहीं";
 "Not set up" = "सेट नहीं";
@@ -278,6 +285,7 @@
 "One notification listing the habits not checked off yet." = "एक सूचना, जिसमें अभी बाकी आदतें होंगी।";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "केवल उसी दिन या अगले दिन की गई निशानियाँ गिनी जाती हैं। निशान हटाने पर चिंगारी वापस चली जाती है।";
 "Open iOS Settings" = "iOS सेटिंग्स खोलें";
+"Open the app to adopt one." = "अपनाने के लिए ऐप खोलें।";
 "Order" = "क्रम";
 "Organization" = "व्यवस्था";
 "Organizer" = "आयोजक";
@@ -311,7 +319,9 @@
 "Read" = "पढ़ना";
 "Reading" = "पढ़ना";
 "Reflective" = "चिंतनशील";
+"Refresh widgets" = "विजेट रीफ़्रेश करें";
 "Regular" = "नियमित";
+"Reinstall the app and keep its extensions. Details are in Settings, Widget." = "ऐप दोबारा इंस्टॉल करें और उसके एक्सटेंशन रखें। विवरण सेटिंग्स, विजेट में।";
 "Remaining" = "बाकी";
 "Reminder" = "रिमाइंडर";
 "Reminder again. Check it off when you're done." = "फिर से याद दिला रहा हूँ। पूरा होने पर निशान लगाएँ।";
@@ -336,6 +346,7 @@
 "Send" = "भेजें";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone पर मेल सेट करें या अपना संदेश %@ पर भेजें।";
 "Settings" = "सेटिंग्स";
+"Shared data" = "साझा डेटा";
 "Show introduction" = "परिचय दिखाएँ";
 "Shows how many habits are left for today." = "दिखाता है कि आज कितनी आदतें बाकी हैं।";
 "Simple gestures" = "आसान इशारे";
@@ -373,6 +384,7 @@
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "न्यूनतम रूप भी पूरा माना जाता है और लगातार गिनती बचाता है। जुड़ी आदत पिछली पूरी होते ही याद दिलाती है।";
 "The new language will apply after you close the app and open it again." = "ऐप बंद करके फिर खोलने पर नई भाषा लागू होगी।";
 "The purchase could not be verified." = "खरीद की पुष्टि नहीं हो सकी।";
+"The widget will update after unlocking." = "अनलॉक करने के बाद विजेट अपडेट होगा।";
 "There are no purchases yet: this switch turns Pro features on for testing." = "अभी खरीदारी नहीं है: यह स्विच टेस्ट के लिए Pro सुविधाएँ चालू करता है।";
 "Time" = "समय";
 "Time for your habit" = "आपकी आदत का समय";
@@ -396,6 +408,7 @@
 "Unknown" = "अज्ञात";
 "Unlimited habits" = "असीमित आदतें";
 "Unlock the full collection and Pro-only designs." = "पूरा संग्रह और केवल Pro डिज़ाइन।";
+"Unlock your iPhone" = "अपना iPhone अनलॉक करें";
 "Unlock: %@" = "खोलने के लिए: %@";
 "Unstoppable" = "अजेय";
 "Until" = "तक";
@@ -412,6 +425,7 @@
 "Weekly hero" = "साप्ताहिक हीरो";
 "Welcome to Habit Tracker" = "आदत ट्रैकर में आपका स्वागत है";
 "What happened and what did you expect?" = "क्या हुआ और आपने क्या उम्मीद की थी?";
+"Widget" = "विजेट";
 "Workout" = "कसरत";
 "Write 10 notes" = "10 नोट लिखें";
 "Write 50 notes" = "50 नोट लिखें";
@@ -422,6 +436,7 @@
 "Young" = "किशोर";
 "Your own emoji from the keyboard" = "कीबोर्ड से अपना इमोजी";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "हर पूरी की गई आदत के साथ आपका पालतू बढ़ता है और कुछ दिन गायब रहने पर उदास हो जाता है।";
+"Your pet's mood and feeding right from the Home Screen." = "होम स्क्रीन से ही पालतू का मूड देखें और उसे खिलाएँ।";
 "Your photo" = "आपकी फ़ोटो";
 "from %@" = "%@ से";
 "glasses" = "गिलास";

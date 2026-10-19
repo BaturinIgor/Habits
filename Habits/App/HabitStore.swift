@@ -109,6 +109,15 @@ final class HabitStore {
         return value
     }
 
+    /// Запоминает заработанное, чтобы виджет мог кормить питомца без полного подсчёта.
+    func syncEarnedSnapshot() {
+        let total = economy.report.total
+        guard data.wallet.earnedSnapshot != total else { return }
+        data.wallet.earnedSnapshot = total
+        DataFile.save(data)
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+
     /// Списывает искры, если хватает. Возвращает true при успехе.
     private func spend(_ amount: Int) -> Bool {
         guard economy.balance >= amount else { return false }

@@ -43,6 +43,7 @@
 "Archive" = "归档";
 "Archive (%lld)" = "归档 (%lld)";
 "Archived" = "已归档";
+"Available" = "可用";
 "Avatars" = "头像";
 "Baby" = "幼崽";
 "Backgrounds" = "背景";
@@ -143,6 +144,7 @@
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "本月额外冻结：%lld/%lld。可用火花购买的头像和背景在个人资料中。";
 "Family" = "家庭";
 "Feed" = "喂食";
+"Feed pet" = "喂宠物";
 "Feed your pet" = "喂宠物";
 "Feedback" = "反馈";
 "Fifty" = "五十";
@@ -192,6 +194,7 @@
 "Ice cold" = "冷静如冰";
 "Icon" = "图标";
 "If not checked off: %@. Done in the notification stops the repeats." = "未打卡时：%@。点击通知中的“完成”即可停止重复。";
+"If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked." = "如果共享数据不可用，小组件就看不到你的习惯。请通过 SideStore 重新安装应用并保留扩展。";
 "Import" = "导入";
 "Import data" = "导入数据";
 "Include technical info" = "附带技术信息";
@@ -215,6 +218,7 @@
 "Last 12 weeks" = "最近 12 周";
 "Last 30 days" = "最近 30 天";
 "Last 7 days" = "最近 7 天";
+"Last widget update" = "小组件上次更新";
 "Legend" = "传奇";
 "Less" = "少";
 "Let's go" = "开始";
@@ -239,12 +243,14 @@
 "Move to archive" = "移至归档";
 "N times a week" = "每周 N 次";
 "Name" = "名称";
+"Never" = "从未";
 "New achievement!" = "新成就！";
 "New group" = "新分组";
 "New habit" = "新习惯";
 "Next" = "下一个";
 "Next up in your chain" = "习惯链的下一个";
 "Night owl" = "夜猫子";
+"No access to app data" = "无法访问应用数据";
 "No group" = "未分组";
 "No habits" = "没有习惯";
 "No habits are planned for this day." = "这一天没有计划的习惯。";
@@ -253,6 +259,7 @@
 "No mail account" = "未设置邮件账户";
 "No purchases found for this Apple Account." = "此 Apple 账户没有购买记录。";
 "None" = "无";
+"Not available" = "不可用";
 "Not checked off yet: %@" = "尚未打卡：%@";
 "Not enough sparks" = "火花不够";
 "Not set up" = "未设置";
@@ -278,6 +285,7 @@
 "One notification listing the habits not checked off yet." = "一条通知，列出尚未打卡的习惯。";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "只有当天或第二天的打卡才算数。取消打卡会收回火花。";
 "Open iOS Settings" = "打开 iOS 设置";
+"Open the app to adopt one." = "打开应用来领养一只。";
 "Order" = "顺序";
 "Organization" = "整理";
 "Organizer" = "整理达人";
@@ -311,7 +319,9 @@
 "Read" = "阅读";
 "Reading" = "阅读";
 "Reflective" = "善于反思";
+"Refresh widgets" = "刷新小组件";
 "Regular" = "常客";
+"Reinstall the app and keep its extensions. Details are in Settings, Widget." = "请重新安装应用并保留扩展。详情见设置中的小组件。";
 "Remaining" = "剩余";
 "Reminder" = "提醒";
 "Reminder again. Check it off when you're done." = "再次提醒，完成后记得打卡。";
@@ -336,6 +346,7 @@
 "Send" = "发送";
 "Set up Mail on this iPhone or send your message to %@." = "请在 iPhone 上设置“邮件”，或将消息发送至 %@。";
 "Settings" = "设置";
+"Shared data" = "共享数据";
 "Show introduction" = "查看引导";
 "Shows how many habits are left for today." = "显示今天还剩多少个习惯。";
 "Simple gestures" = "简单手势";
@@ -373,6 +384,7 @@
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "最低版本也算完成，并保持连续记录。链中的习惯会在你完成上一个后立即提醒。";
 "The new language will apply after you close the app and open it again." = "关闭并重新打开应用后，新语言才会生效。";
 "The purchase could not be verified." = "无法验证此次购买。";
+"The widget will update after unlocking." = "解锁后小组件会更新。";
 "There are no purchases yet: this switch turns Pro features on for testing." = "暂无购买功能：此开关用于测试 Pro 功能。";
 "Time" = "时间";
 "Time for your habit" = "该完成习惯了";
@@ -396,6 +408,7 @@
 "Unknown" = "未知";
 "Unlimited habits" = "无限习惯";
 "Unlock the full collection and Pro-only designs." = "解锁全部收藏和 Pro 专属设计。";
+"Unlock your iPhone" = "请解锁 iPhone";
 "Unlock: %@" = "解锁条件：%@";
 "Unstoppable" = "势不可挡";
 "Until" = "截止";
@@ -412,6 +425,7 @@
 "Weekly hero" = "每周英雄";
 "Welcome to Habit Tracker" = "欢迎使用习惯追踪";
 "What happened and what did you expect?" = "发生了什么？你原本期望什么？";
+"Widget" = "小组件";
 "Workout" = "锻炼";
 "Write 10 notes" = "写 10 条备注";
 "Write 50 notes" = "写 50 条备注";
@@ -422,6 +436,7 @@
 "Young" = "少年";
 "Your own emoji from the keyboard" = "用键盘输入表情";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "每完成一个习惯，宠物就会成长；你消失几天，它会难过。";
+"Your pet's mood and feeding right from the Home Screen." = "直接在主屏幕查看宠物心情并喂食。";
 "Your photo" = "自己的照片";
 "from %@" = "%@起";
 "glasses" = "杯";
