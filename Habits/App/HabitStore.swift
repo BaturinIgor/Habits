@@ -163,13 +163,16 @@ final class HabitStore {
     @discardableResult
     func feedPet() -> Bool {
         guard data.wallet.pet != nil, feedsToday < Sparks.feedsPerDay, spend(Sparks.feedPrice) else { return false }
-        let key = DayKey.make(Date())
-        data.wallet.pet?.feeds[key, default: 0] += 1
+        // Меняем копию и записываем целиком: чтение и запись data в одном
+        // выражении приводили к падению (одновременный доступ к памяти).
+        guard var pet = data.wallet.pet else { return false }
+        pet.feeds[DayKey.make(Date()), default: 0] += 1
         // Старые записи о кормлении не нужны дольше года.
         if let cutoff = Calendar.app.date(byAdding: .day, value: -400, to: Date()) {
             let old = DayKey.make(cutoff)
-            data.wallet.pet?.feeds = data.wallet.pet?.feeds.filter { $0.key >= old } ?? [:]
+            pet.feeds = pet.feeds.filter { $0.key >= old }
         }
+        data.wallet.pet = pet
         commit()
         return true
     }
