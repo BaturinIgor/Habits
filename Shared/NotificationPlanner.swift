@@ -13,7 +13,7 @@ enum NotificationPlanner {
     static let doneAction = "HABIT_DONE"
     static let skipAction = "HABIT_SKIP"
 
-    private static let maxPending = 64
+    private static let maxPending = 63 // одно место оставляем под связку
     private static let horizonDays = 30
     private static let nearWindow: TimeInterval = 36 * 3600
     private static var generation = 0
@@ -89,7 +89,10 @@ enum NotificationPlanner {
         guard status == .authorized || status == .provisional || status == .ephemeral else { return }
 
         let center = UNUserNotificationCenter.current()
-        center.removeAllPendingNotificationRequests()
+        // Уведомления по связке (index 99) живут несколько секунд, их не трогаем.
+        let stale = await center.pendingNotificationRequests().map(\.identifier).filter { !$0.hasSuffix("|99") }
+        guard token == generation else { return }
+        center.removePendingNotificationRequests(withIdentifiers: stale)
         // Общий выключатель в настройках приложения.
         guard data.settings.remindersEnabled else { return }
         for event in plan(data: data, now: now) {
@@ -97,10 +100,10 @@ enum NotificationPlanner {
         }
     }
 
-    /// Убирает из Центра уведомлений уже показанные напоминания по этой привычке за этот день.
-    static func clearDelivered(habitID: UUID, day: String) async {
+    /// Убирает из Центра уведомлений уже показанные напоминания по этой привычке (за день или все).
+    static func clearDelivered(habitID: UUID, day: String? = nil) async {
         let center = UNUserNotificationCenter.current()
-        let prefix = "\(habitID.uuidString)|\(day)|"
+        let prefix = day.map { "\(habitID.uuidString)|\($0)|" } ?? "\(habitID.uuidString)|"
         let delivered = await center.deliveredNotifications()
         let ids = delivered.map(\.request.identifier).filter { $0.hasPrefix(prefix) }
         if !ids.isEmpty {
@@ -109,6 +112,16 @@ enum NotificationPlanner {
     }
 
     /// Напоминание о следующей привычке в связке, через несколько секунд.
+    /// После отметки привычки напоминает о тех, что идут "после неё".
+    static func notifyChain(after id: UUID, day: Date, data: AppData) {
+        let key = DayKey.make(day)
+        guard data.status(id, day: key) == .done, Calendar.app.isDateInToday(day),
+              data.settings.remindersEnabled else { return }
+        for habit in data.habits(on: day) where habit.chainAfter == id && data.status(habit.id, day: key) == nil {
+            notifyChained(habit, day: key)
+        }
+    }
+
     static func notifyChained(_ habit: Habit, day: String) {
         let content = UNMutableNotificationContent()
         if case .emoji(let emoji) = habit.icon {
@@ -188,7 +201,12 @@ enum NotificationPlanner {
 
         near.sort { $0.date < $1.date }
         far.sort { $0.date < $1.date }
-        return Array((near + far).prefix(maxPending))
+        // Сначала гарантируем места под первые напоминания следующих дней,
+        // чтобы много повторов сегодня не вытеснили всё остальное.
+        let reserved = Array(far.prefix(20))
+        let nearPart = Array(near.prefix(maxPending - reserved.count))
+        let rest = Array(far.dropFirst(reserved.count).prefix(maxPending - reserved.count - nearPart.count))
+        return (nearPart + reserved + rest).sorted { $0.date < $1.date }
     }
 
     private static func makeRequest(_ event: Event) -> UNNotificationRequest {

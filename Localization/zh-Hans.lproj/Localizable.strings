@@ -117,6 +117,7 @@
 "Groups" = "分组";
 "Groups help sort habits by topic: morning, health, work." = "分组可按主题整理习惯：早晨、健康、工作。";
 "Habit" = "习惯";
+"Habit Tracker" = "习惯打卡";
 "Habit Tracker Pro" = "习惯追踪 Pro";
 "Habit deleted" = "习惯已删除";
 "Habit name" = "习惯名称";
@@ -318,6 +319,7 @@
 "Yearly" = "按年";
 "Yesterday" = "昨天";
 "Your own emoji from the keyboard" = "用键盘输入表情";
+"Your photo" = "自己的照片";
 "from %@" = "%@起";
 "glasses" = "杯";
 "iPhone permission" = "iPhone 权限";

@@ -422,7 +422,7 @@ extension AppData {
         var entry = checkIns[k] ?? CheckIn(status: nil, note: nil, updatedAt: Date())
         let trimmed = note.trimmingCharacters(in: .whitespacesAndNewlines)
         entry.note = trimmed.isEmpty ? nil : trimmed
-        entry.updatedAt = Date()
+        // updatedAt не трогаем: по нему считается время отметки для ачивок.
         store(entry, key: k)
     }
 

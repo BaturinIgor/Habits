@@ -1,3 +1,4 @@
+import Combine
 import SwiftUI
 import UIKit
 
@@ -66,15 +67,10 @@ struct TodayView: View {
             .scrollIndicators(.hidden)
             .background(RewardBackground(reward: Rewards.background(store.data.settings.backgroundID)))
             .onChange(of: scenePhase) { _, phase in
-                // Если приложение висело в памяти после полуночи, переключаемся на новый день.
-                guard phase == .active else { return }
-                let today = calendar.startOfDay(for: Date())
-                if today != anchorToday {
-                    if calendar.isDate(selectedDay, inSameDayAs: anchorToday) {
-                        selectedDay = today
-                    }
-                    anchorToday = today
-                }
+                if phase == .active { rollOverDay() }
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .NSCalendarDayChanged).receive(on: RunLoop.main)) { _ in
+                rollOverDay()
             }
             .navigationTitle(isToday ? String(localized: "Today") : Fmt.relativeDay(selectedDay))
             .toolbar {
@@ -82,8 +78,7 @@ struct TodayView: View {
                     Button {
                         showingProfile = true
                     } label: {
-                        Text(Rewards.avatar(store.data.settings.avatarID).emoji)
-                            .font(.title3)
+                        AvatarView(reward: Rewards.avatar(store.data.settings.avatarID), size: 30)
                     }
                     .accessibilityLabel("Profile")
                 }
@@ -156,6 +151,16 @@ struct TodayView: View {
                 Text("Its check-in history will be deleted too.")
             }
         }
+    }
+
+    /// После полуночи переключаемся на новый день, если был открыт "сегодня".
+    private func rollOverDay() {
+        let today = calendar.startOfDay(for: Date())
+        guard today != anchorToday else { return }
+        if calendar.isDate(selectedDay, inSameDayAs: anchorToday) {
+            selectedDay = today
+        }
+        anchorToday = today
     }
 
     private var progress: DayProgress {

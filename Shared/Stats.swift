@@ -95,7 +95,7 @@ enum Stats {
             guard let next = calendar.date(byAdding: .day, value: 1, to: day) else { break }
             day = next
         }
-        result.currentStreak = run
+        result.currentStreak = habit.hasEnded(now: now, calendar: calendar) ? 0 : run
         result.completionRate = counted > 0 ? Double(result.totalDone) / Double(counted) : 0
         return result
     }
@@ -106,6 +106,10 @@ enum Stats {
         let today = calendar.startOfDay(for: now)
         let thisWeek = startOfWeek(today, calendar: calendar)
         var week = startOfWeek(habit.firstDay(calendar: calendar), calendar: calendar)
+        // Первая неделя, если привычку завели не с её начала, засчитывается только при успехе.
+        let firstWeek = habit.firstDay(calendar: calendar) > week
+            ? calendar.date(byAdding: .day, value: 7, to: week) ?? week
+            : week
         if let earliest = calendar.date(byAdding: .day, value: -maxLookback, to: thisWeek), week < earliest {
             week = startOfWeek(earliest, calendar: calendar)
         }
@@ -126,7 +130,7 @@ enum Stats {
                     result.goalsMet += 1
                     counted += 1
                     result.bestStreak = max(result.bestStreak, run)
-                } else if week < thisWeek {
+                } else if week < thisWeek && week >= firstWeek {
                     run = 0
                     counted += 1
                 }
@@ -134,7 +138,7 @@ enum Stats {
             guard let next = calendar.date(byAdding: .day, value: 7, to: week) else { break }
             week = next
         }
-        result.currentStreak = run
+        result.currentStreak = habit.hasEnded(now: now, calendar: calendar) ? 0 : run
         result.completionRate = counted > 0 ? Double(met) / Double(counted) : 0
         return result
     }

@@ -117,6 +117,7 @@
 "Groups" = "グループ";
 "Groups help sort habits by topic: morning, health, work." = "グループで習慣をテーマ別に整理できます（朝、健康、仕事など）。";
 "Habit" = "習慣";
+"Habit Tracker" = "習慣トラッカー";
 "Habit Tracker Pro" = "習慣トラッカー Pro";
 "Habit deleted" = "習慣は削除されました";
 "Habit name" = "習慣の名前";
@@ -318,6 +319,7 @@
 "Yearly" = "年額";
 "Yesterday" = "昨日";
 "Your own emoji from the keyboard" = "キーボードから絵文字を入力";
+"Your photo" = "自分の写真";
 "from %@" = "%@から";
 "glasses" = "杯";
 "iPhone permission" = "iPhoneの許可";

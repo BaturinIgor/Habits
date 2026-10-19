@@ -26,6 +26,8 @@ struct HabitEditorView: View {
     @State private var target: Int
     @State private var unit: String
     @State private var isPaused: Bool
+    /// Пауза уже стояла при открытии: без Pro её всё равно можно снять.
+    @State private var pauseWasActive = false
     @State private var pausedUntil: Date
     @State private var minimumVersion: String
     @State private var chainAfter: UUID?
@@ -83,6 +85,7 @@ struct HabitEditorView: View {
         _minimumVersion = State(initialValue: base.minimumVersion ?? "")
         _chainAfter = State(initialValue: base.chainAfter)
         _isPaused = State(initialValue: pauseActive)
+        _pauseWasActive = State(initialValue: pauseActive)
         _pausedUntil = State(initialValue: pauseActive ? (base.pausedUntil ?? today)
                              : (Calendar.app.date(byAdding: .day, value: 7, to: today) ?? today))
     }
@@ -327,7 +330,7 @@ struct HabitEditorView: View {
 
     private var pauseSection: some View {
         Section {
-            if store.data.isPro {
+            if store.data.isPro || pauseWasActive {
                 Toggle(isOn: $isPaused.animation(.snappy)) {
                     HStack(spacing: 8) {
                         Text("Pause")
@@ -430,6 +433,8 @@ struct HabitEditorView: View {
             let cleanUnit = unit.trimmingCharacters(in: .whitespacesAndNewlines)
             habit.target = hasTarget ? target : nil
             habit.unit = hasTarget && !cleanUnit.isEmpty ? cleanUnit : nil
+        }
+        if store.data.isPro || pauseWasActive {
             if isPaused {
                 let today = calendar.startOfDay(for: Date())
                 let wasActive = draft.pausedUntil.map { $0 >= today } ?? false

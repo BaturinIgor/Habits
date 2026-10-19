@@ -48,6 +48,7 @@ struct ProfileView: View {
 
                     section("Avatars") {
                         LazyVGrid(columns: smallGrid, spacing: 12) {
+                            PhotoRewardTile(slot: .avatar) { showingPaywall = true }
                             ForEach(Rewards.avatars) { reward in
                                 rewardButton(reward, unlocked: unlocked, isPro: isPro,
                                              selected: store.data.settings.avatarID == reward.id) {
@@ -59,6 +60,7 @@ struct ProfileView: View {
 
                     section("Backgrounds") {
                         LazyVGrid(columns: smallGrid, spacing: 12) {
+                            PhotoRewardTile(slot: .background) { showingPaywall = true }
                             ForEach(Rewards.backgrounds) { reward in
                                 rewardButton(reward, unlocked: unlocked, isPro: isPro,
                                              selected: store.data.settings.backgroundID == reward.id) {

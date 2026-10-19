@@ -15,6 +15,8 @@ struct WidgetHabit: Identifiable, Hashable {
     var countText: String? = nil
     /// Привычки "N раз в неделю" входят в итог дня, только если их сделали.
     var countsInTotal: Bool = true
+    /// Недельная цель уже выполнена, привычку не нужно предлагать.
+    var goalMet: Bool = false
 }
 
 struct HabitsEntry: TimelineEntry {
@@ -25,7 +27,7 @@ struct HabitsEntry: TimelineEntry {
     var done: Int { items.filter { $0.status == .done }.count }
     var total: Int { items.filter { $0.status != .skipped && ($0.countsInTotal || $0.status == .done) }.count }
     var progress: Double { total == 0 ? 0 : Double(done) / Double(total) }
-    var pending: [WidgetHabit] { items.filter { $0.status == nil } }
+    var pending: [WidgetHabit] { items.filter { $0.status == nil && !$0.goalMet } }
 
     static var sample: HabitsEntry {
         HabitsEntry(
@@ -81,7 +83,8 @@ struct HabitsProvider: TimelineProvider {
                     time: habit.reminder?.text,
                     progress: widgetProgress(habit, data: data, key: key),
                     countText: widgetCount(habit, data: data, key: key),
-                    countsInTotal: habit.schedule.kind != .weekly
+                    countsInTotal: habit.schedule.kind != .weekly,
+                    goalMet: habit.schedule.kind == .weekly && data.weeklyGoalMet(habit, before: date, calendar: calendar)
                 )
             }
             .sorted { lhs, rhs in

@@ -117,6 +117,7 @@
 "Groups" = "समूह";
 "Groups help sort habits by topic: morning, health, work." = "समूह आदतों को विषय के अनुसार बाँटते हैं: सुबह, सेहत, काम।";
 "Habit" = "आदत";
+"Habit Tracker" = "आदत ट्रैकर";
 "Habit Tracker Pro" = "आदत ट्रैकर Pro";
 "Habit deleted" = "आदत हटा दी गई";
 "Habit name" = "आदत का नाम";
@@ -318,6 +319,7 @@
 "Yearly" = "वार्षिक";
 "Yesterday" = "बीता कल";
 "Your own emoji from the keyboard" = "कीबोर्ड से अपना इमोजी";
+"Your photo" = "आपकी फ़ोटो";
 "from %@" = "%@ से";
 "glasses" = "गिलास";
 "iPhone permission" = "iPhone अनुमति";

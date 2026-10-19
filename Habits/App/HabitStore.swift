@@ -22,7 +22,11 @@ final class HabitStore {
         }
     }
 
+    /// Растёт при каждом сохранении, чтобы экраны могли реагировать на любые изменения.
+    private(set) var revision = 0
+
     private func commit() {
+        revision += 1
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()
         let snapshot = data
@@ -54,6 +58,7 @@ final class HabitStore {
         data.habits.removeAll { $0.id == id }
         data.removeCheckIns(for: id)
         commit()
+        Task { await NotificationPlanner.clearDelivered(habitID: id) }
     }
 
     func setArchived(_ id: UUID, _ archived: Bool) {
@@ -144,13 +149,7 @@ final class HabitStore {
 
     /// Связка привычек: после отметки напоминаем о следующих.
     private func notifyChain(after id: UUID, day: Date) {
-        let key = DayKey.make(day)
-        guard data.status(id, day: key) == .done, Calendar.app.isDateInToday(day),
-              data.settings.remindersEnabled else { return }
-        let next = data.habits(on: day).filter { $0.chainAfter == id && data.status($0.id, day: key) == nil }
-        for habit in next {
-            NotificationPlanner.notifyChained(habit, day: key)
-        }
+        NotificationPlanner.notifyChain(after: id, day: day, data: data)
     }
 
     func setStatus(_ status: CheckStatus?, for id: UUID, on day: Date) {
@@ -173,6 +172,11 @@ final class HabitStore {
 
     func setPro(_ enabled: Bool) {
         data.settings.proUnlocked = enabled
+        if !enabled {
+            // Pro-награды без Pro не носим, возвращаем стандартные.
+            if Rewards.background(data.settings.backgroundID).needsPro { data.settings.backgroundID = Rewards.backgrounds[0].id }
+            if Rewards.avatar(data.settings.avatarID).needsPro { data.settings.avatarID = Rewards.avatars[0].id }
+        }
         commit()
     }
 
@@ -224,7 +228,9 @@ final class HabitStore {
         guard action == NotificationPlanner.doneAction || action == NotificationPlanner.skipAction else { return }
         guard let fresh = DataFile.loadIfAvailable() else { return }
         data = fresh
+        guard data.habits.contains(where: { $0.id == habitID }) else { return }
         data.setStatus(action == NotificationPlanner.doneAction ? .done : .skipped, habitID: habitID, day: day)
+        revision += 1
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()
         await NotificationPlanner.clearDelivered(habitID: habitID, day: day)

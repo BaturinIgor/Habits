@@ -117,6 +117,7 @@
 "Groups" = "Grupos";
 "Groups help sort habits by topic: morning, health, work." = "Los grupos ordenan los hábitos por tema: mañana, salud, trabajo.";
 "Habit" = "Hábito";
+"Habit Tracker" = "Rastreador de hábitos";
 "Habit Tracker Pro" = "Rastreador de hábitos Pro";
 "Habit deleted" = "Hábito eliminado";
 "Habit name" = "Nombre del hábito";
@@ -318,6 +319,7 @@
 "Yearly" = "Anual";
 "Yesterday" = "Ayer";
 "Your own emoji from the keyboard" = "Tu emoji desde el teclado";
+"Your photo" = "Tu foto";
 "from %@" = "desde el %@";
 "glasses" = "vasos";
 "iPhone permission" = "Permiso del iPhone";

@@ -13,6 +13,7 @@ struct RootView: View {
     @Environment(\.requestReview) private var requestReview
     @State private var selection: AppTab = .today
     @State private var banner: (achievement: Achievement, more: Int)?
+    @State private var hideTask: Task<Void, Never>?
 
     private var onboardingBinding: Binding<Bool> {
         Binding(get: { !store.data.settings.onboardingDone },
@@ -46,7 +47,7 @@ struct RootView: View {
         .fullScreenCover(isPresented: onboardingBinding) {
             OnboardingView()
         }
-        .task(id: store.data.checkIns.count + store.data.habits.count) {
+        .task(id: store.revision) {
             checkAchievements()
             if store.data.settings.onboardingDone {
                 RatingPrompt.maybeAsk(data: store.data, requestReview: requestReview)
@@ -65,8 +66,10 @@ struct RootView: View {
         withAnimation(.spring(response: 0.45, dampingFraction: 0.8)) {
             banner = (first, fresh.count - 1)
         }
-        Task {
+        hideTask?.cancel()
+        hideTask = Task {
             try? await Task.sleep(for: .seconds(3.5))
+            guard !Task.isCancelled else { return }
             withAnimation { banner = nil }
         }
     }

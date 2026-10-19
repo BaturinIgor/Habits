@@ -30,6 +30,9 @@ struct ToggleHabitIntent: AppIntent {
         WidgetCenter.shared.reloadAllTimelines()
         await NotificationPlanner.clearDelivered(habitID: uuid, day: day)
         await NotificationPlanner.reschedule(data: data)
+        if let date = DayKey.date(day) {
+            await NotificationPlanner.notifyChain(after: uuid, day: date, data: data)
+        }
         return .result()
     }
 }

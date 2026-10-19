@@ -61,7 +61,12 @@ enum DataFile {
             let stamp = Int(Date().timeIntervalSince1970)
             let backup = url.deletingLastPathComponent()
                 .appendingPathComponent("habits-data-broken-\(stamp).json")
-            try? raw.write(to: backup)
+            // Переносим файл, а не копируем: так копия делается один раз,
+            // а не при каждом чтении виджетом.
+            if (try? FileManager.default.moveItem(at: url, to: backup)) == nil {
+                try? raw.write(to: backup)
+                try? FileManager.default.removeItem(at: url)
+            }
             return AppData()
         }
     }

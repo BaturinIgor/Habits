@@ -117,6 +117,7 @@
 "Groups" = "그룹";
 "Groups help sort habits by topic: morning, health, work." = "그룹으로 습관을 주제별로 정리하세요: 아침, 건강, 일.";
 "Habit" = "습관";
+"Habit Tracker" = "습관 트래커";
 "Habit Tracker Pro" = "습관 트래커 Pro";
 "Habit deleted" = "습관이 삭제됨";
 "Habit name" = "습관 이름";
@@ -318,6 +319,7 @@
 "Yearly" = "연간";
 "Yesterday" = "어제";
 "Your own emoji from the keyboard" = "키보드로 이모지 입력";
+"Your photo" = "내 사진";
 "from %@" = "%@부터";
 "glasses" = "잔";
 "iPhone permission" = "iPhone 권한";

@@ -117,6 +117,7 @@
 "Groups" = "Группы";
 "Groups help sort habits by topic: morning, health, work." = "Группы помогают разложить привычки по темам: утро, здоровье, работа.";
 "Habit" = "Привычка";
+"Habit Tracker" = "Трекер привычек";
 "Habit Tracker Pro" = "Трекер привычек Pro";
 "Habit deleted" = "Привычка удалена";
 "Habit name" = "Название привычки";
@@ -318,6 +319,7 @@
 "Yearly" = "На год";
 "Yesterday" = "Вчера";
 "Your own emoji from the keyboard" = "Свой эмодзи с клавиатуры";
+"Your photo" = "Своё фото";
 "from %@" = "с %@";
 "glasses" = "стаканов";
 "iPhone permission" = "Разрешение iPhone";

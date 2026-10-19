@@ -213,8 +213,16 @@ enum Rewards {
         Reward(id: id, kind: .avatar, unlock: unlock, needsPro: pro || unlock == .pro, emoji: emoji, colors: [])
     }
 
-    static func background(_ id: String) -> Reward { backgrounds.first { $0.id == id } ?? backgrounds[0] }
-    static func avatar(_ id: String) -> Reward { avatars.first { $0.id == id } ?? avatars[0] }
+    /// Свои фото (Pro), выбираются в профиле.
+    static let photoBackground = Reward(id: CustomImages.photoID, kind: .background, unlock: .pro, needsPro: true, emoji: "", colors: [])
+    static let photoAvatar = Reward(id: CustomImages.photoID, kind: .avatar, unlock: .pro, needsPro: true, emoji: "🙂", colors: [])
+
+    static func background(_ id: String) -> Reward {
+        id == CustomImages.photoID ? photoBackground : backgrounds.first { $0.id == id } ?? backgrounds[0]
+    }
+    static func avatar(_ id: String) -> Reward {
+        id == CustomImages.photoID ? photoAvatar : avatars.first { $0.id == id } ?? avatars[0]
+    }
 
     /// Что награда открывает, для подписи под заблокированной.
     static func achievement(for reward: Reward) -> Achievement? {
@@ -230,6 +238,19 @@ struct AvatarView: View {
     var size: CGFloat = 36
 
     var body: some View {
+        if reward.id == CustomImages.photoID, let image = CustomImages.shared.avatar {
+            Image(uiImage: image)
+                .resizable()
+                .scaledToFill()
+                .frame(width: size, height: size)
+                .clipShape(Circle())
+                .overlay(Circle().strokeBorder(Color.accentColor.opacity(0.35), lineWidth: 1.5))
+        } else {
+            emojiBody
+        }
+    }
+
+    private var emojiBody: some View {
         Text(reward.emoji)
             .font(.system(size: size * 0.58))
             .frame(width: size, height: size)
@@ -246,7 +267,17 @@ struct RewardBackground: View {
     var body: some View {
         ZStack {
             Color(uiColor: .systemGroupedBackground)
-            if !reward.colors.isEmpty {
+            if reward.id == CustomImages.photoID, let image = CustomImages.shared.background {
+                GeometryReader { proxy in
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: proxy.size.width, height: proxy.size.height)
+                        .clipped()
+                }
+                // Лёгкая дымка, чтобы карточки и текст читались на любом фото.
+                Color(uiColor: .systemGroupedBackground).opacity(scheme == .dark ? 0.45 : 0.35)
+            } else if !reward.colors.isEmpty {
                 LinearGradient(colors: reward.colors, startPoint: .topLeading, endPoint: .bottomTrailing)
                     .opacity(scheme == .dark ? 0.35 : 0.45)
             }
