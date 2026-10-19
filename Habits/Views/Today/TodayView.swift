@@ -24,6 +24,7 @@ struct TodayView: View {
     @State private var noteTarget: NoteTarget?
     @State private var habitToDelete: Habit?
     @State private var showingProfile = false
+    @State private var showingReorder = false
     @Namespace private var zoom
 
     private var calendar: Calendar { .app }
@@ -95,6 +96,16 @@ struct TodayView: View {
                         }
                     }
                 }
+                if store.data.activeHabits.count > 1 {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            showingReorder = true
+                        } label: {
+                            Image(systemName: "arrow.up.arrow.down")
+                        }
+                        .accessibilityLabel("Reorder")
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         addHabit()
@@ -116,6 +127,9 @@ struct TodayView: View {
             }
             .sheet(isPresented: $showingProfile) {
                 ProfileView()
+            }
+            .sheet(isPresented: $showingReorder) {
+                ReorderView()
             }
             .sheet(item: $editingHabit) { habit in
                 HabitEditorView(habit: habit)
@@ -202,10 +216,6 @@ struct TodayView: View {
                 Section {
                     ForEach(section.habits) { habit in
                         row(for: habit)
-                            .moveDisabled(store.data.settings.homeLayout == .byTime && habit.reminder != nil)
-                    }
-                    .onMove { source, destination in
-                        move(in: section.habits, from: source, to: destination)
                     }
                 } header: {
                     if !section.title.isEmpty {
@@ -217,15 +227,6 @@ struct TodayView: View {
                 }
             }
         }
-    }
-
-    private func move(in habits: [Habit], from source: IndexSet, to destination: Int) {
-        var ids = habits.map(\.id)
-        ids.move(fromOffsets: source, toOffset: destination)
-        let movable = store.data.settings.homeLayout == .byTime
-            ? ids.filter { id in habits.first { $0.id == id }?.reminder == nil }
-            : ids
-        store.applyManualOrder(movable)
     }
 
     private func row(for habit: Habit) -> some View {
@@ -325,7 +326,7 @@ struct GestureHint: View {
             Image(systemName: "hand.draw.fill")
                 .font(.title3)
                 .foregroundStyle(Color.accentColor)
-            Text("Swipe a card right to check it off, left for more actions. Press and hold to reorder.")
+            Text("Swipe a card right to check it off, left for more actions. The arrows button at the top changes the order.")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
             Spacer(minLength: 0)

@@ -64,13 +64,14 @@ final class HabitStore {
 
     /// Задаёт новый ручной порядок: переданные привычки встают на свои места в этом порядке,
     /// а все привычки получают уникальные номера, чтобы порядок не "залипал".
-    func applyManualOrder(_ ids: [UUID]) {
-        var global = data.habits.sorted { $0.sortOrder < $1.sortOrder }.map(\.id)
-        let moved = Set(ids)
-        let slots = global.indices.filter { moved.contains(global[$0]) }
-        guard slots.count == ids.count else { return }
-        for (slot, id) in zip(slots, ids) { global[slot] = id }
-        for (position, id) in global.enumerated() {
+    /// Задаёт порядок привычек целиком: переданные id идут первыми, остальные следом в прежнем порядке.
+    func setOrder(_ ids: [UUID]) {
+        let listed = Set(ids)
+        let rest = data.habits
+            .filter { !listed.contains($0.id) }
+            .sorted(by: Habit.manualOrder)
+            .map(\.id)
+        for (position, id) in (ids + rest).enumerated() {
             if let index = data.habits.firstIndex(where: { $0.id == id }) {
                 data.habits[index].sortOrder = position
             }

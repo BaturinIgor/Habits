@@ -97,13 +97,13 @@ extension Array where Element == Habit {
             switch (a.reminder, b.reminder) {
             case let (ra?, rb?):
                 if ra.minutesOfDay != rb.minutesOfDay { return ra.minutesOfDay < rb.minutesOfDay }
-                return a.sortOrder < b.sortOrder
+                return Habit.manualOrder(a, b)
             case (.some, .none):
                 return true
             case (.none, .some):
                 return false
             case (.none, .none):
-                return a.sortOrder < b.sortOrder
+                return Habit.manualOrder(a, b)
             }
         }
     }
@@ -207,7 +207,7 @@ func todaySections(_ habits: [Habit], data: AppData, day: String) -> [HabitSecti
         return [HabitSection(id: "all", title: "", habits: finish(habits.sortedForDisplay()))]
     case .partsOfDay:
         return PartOfDay.allCases.compactMap { part in
-            let items = habits.filter { $0.effectivePartOfDay == part }.sorted { $0.sortOrder < $1.sortOrder }
+            let items = habits.filter { $0.effectivePartOfDay == part }.sorted(by: Habit.manualOrder)
             return items.isEmpty ? nil : HabitSection(id: part.rawValue, title: part.title, habits: finish(items))
         }
     }

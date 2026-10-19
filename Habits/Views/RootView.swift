@@ -1,3 +1,4 @@
+import StoreKit
 import SwiftUI
 
 enum AppTab: Hashable {
@@ -9,6 +10,7 @@ enum AppTab: Hashable {
 
 struct RootView: View {
     @Environment(HabitStore.self) private var store
+    @Environment(\.requestReview) private var requestReview
     @State private var selection: AppTab = .today
     @State private var banner: (achievement: Achievement, more: Int)?
 
@@ -46,6 +48,9 @@ struct RootView: View {
         }
         .task(id: store.data.checkIns.count + store.data.habits.count) {
             checkAchievements()
+            if store.data.settings.onboardingDone {
+                RatingPrompt.maybeAsk(data: store.data, requestReview: requestReview)
+            }
         }
     }
 

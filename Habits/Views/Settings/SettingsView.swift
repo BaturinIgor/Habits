@@ -1,3 +1,4 @@
+import StoreKit
 import SwiftUI
 import UIKit
 import UniformTypeIdentifiers
@@ -15,6 +16,7 @@ struct SettingsView: View {
     @State private var importResult: Bool?
     @State private var showingRestartHint = false
     @State private var showingProfile = false
+    @State private var showingFeedback = false
     @AppStorage("appLanguage") private var appLanguage = "system"
 
     private static let languages: [(code: String, name: String)] = [
@@ -145,9 +147,13 @@ struct SettingsView: View {
                             }
                         }
                     }
+                    #if SIDELOAD
                     Toggle("Pro test mode", isOn: binding(\.proUnlocked))
+                    #endif
                 } footer: {
+                    #if SIDELOAD
                     Text("There are no purchases yet: this switch turns Pro features on for testing.")
+                    #endif
                 }
 
                 Section("Organization") {
@@ -196,6 +202,25 @@ struct SettingsView: View {
                 }
 
                 Section {
+                    Button {
+                        showingFeedback = true
+                    } label: {
+                        Label("Write to the developer", systemImage: "envelope.fill")
+                    }
+                    if let url = AppInfo.reviewURL {
+                        Button {
+                            openURL(url)
+                        } label: {
+                            Label("Rate the app", systemImage: "star.fill")
+                        }
+                    }
+                } header: {
+                    Text("Feedback")
+                } footer: {
+                    Text("Found a bug or have an idea? Every message is read.")
+                }
+
+                Section {
                     LabeledContent("Scheduled notifications", value: "\(pendingCount)")
                     LabeledContent("Version", value: version)
                 } footer: {
@@ -220,6 +245,9 @@ struct SettingsView: View {
             }
             .sheet(isPresented: $showingProfile) {
                 ProfileView()
+            }
+            .sheet(isPresented: $showingFeedback) {
+                FeedbackView()
             }
             .fileImporter(isPresented: $showingImporter, allowedContentTypes: [.json]) { result in
                 if case .success(let url) = result {

@@ -352,7 +352,7 @@ struct NotesCard: View {
             Text("Notes")
                 .font(.headline)
             if notes.isEmpty {
-                Text("Nothing yet. Add a note by pressing and holding a habit on the Today screen or a day in the calendar.")
+                Text("Nothing yet. Add a note by swiping a habit left on the Today screen or by pressing and holding a day in the calendar.")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             } else {

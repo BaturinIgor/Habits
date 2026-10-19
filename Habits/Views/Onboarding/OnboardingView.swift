@@ -16,7 +16,7 @@ struct OnboardingView: View {
         Page(icon: "checkmark.circle.fill", color: .accentColor, title: "Small steps every day",
              text: "Track habits, get gentle reminders and watch your streaks grow."),
         Page(icon: "hand.draw.fill", color: .orange, title: "Simple gestures",
-             text: "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder."),
+             text: "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. The arrows button at the top changes the order."),
         Page(icon: "snowflake", color: .cyan, title: "Misses are okay",
              text: "Two misses a month won't break your streak, and a minimum version still counts on hard days."),
         Page(icon: "trophy.fill", color: .yellow, title: "Achievements and rewards",

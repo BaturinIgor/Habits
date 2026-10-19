@@ -12,6 +12,7 @@ struct HabitsApp: App {
             RootView()
                 .environment(store)
                 .task {
+                    ProStore.shared.start()
                     if store.data.settings.onboardingDone {
                         await NotificationPlanner.requestAuthorizationIfNeeded()
                     }
@@ -22,7 +23,10 @@ struct HabitsApp: App {
             switch phase {
             case .active:
                 store.reloadFromDisk()
-                Task { await store.reschedule() }
+                Task {
+                    await store.reschedule()
+                    await ProStore.shared.refreshEntitlements()
+                }
             case .background:
                 BackgroundRefresh.schedule()
             default:

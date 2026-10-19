@@ -230,6 +230,13 @@ struct Habit: Identifiable, Hashable, Codable {
     }
 
     /// Повторы напоминания с учётом Pro: без Pro всегда стандартные.
+    /// Ручной порядок: sortOrder, при равенстве дата создания и id, чтобы порядок не прыгал.
+    static func manualOrder(_ a: Habit, _ b: Habit) -> Bool {
+        if a.sortOrder != b.sortOrder { return a.sortOrder < b.sortOrder }
+        if a.createdAt != b.createdAt { return a.createdAt < b.createdAt }
+        return a.id.uuidString < b.id.uuidString
+    }
+
     func repeatRule(isPro: Bool) -> RepeatRule {
         if isPro, let count = repeatCount, let interval = repeatInterval {
             return RepeatRule(count: count, interval: interval)
@@ -301,7 +308,12 @@ enum HomeLayout: String, Codable, Hashable, CaseIterable {
 
 struct AppSettings: Codable, Hashable {
     /// Pro включён. Пока покупок нет, это тестовый переключатель в настройках.
-    var proUnlocked: Bool = true
+    #if SIDELOAD
+    static let proDefault = true
+    #else
+    static let proDefault = false
+    #endif
+    var proUnlocked: Bool = AppSettings.proDefault
     /// Общий выключатель напоминаний приложения.
     var remindersEnabled: Bool = true
     var homeLayout: HomeLayout = .partsOfDay
@@ -324,7 +336,7 @@ struct AppSettings: Codable, Hashable {
 
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
-        proUnlocked = try c.decodeIfPresent(Bool.self, forKey: .proUnlocked) ?? true
+        proUnlocked = try c.decodeIfPresent(Bool.self, forKey: .proUnlocked) ?? AppSettings.proDefault
         remindersEnabled = try c.decodeIfPresent(Bool.self, forKey: .remindersEnabled) ?? true
         homeLayout = (try? c.decodeIfPresent(HomeLayout.self, forKey: .homeLayout)) ?? .partsOfDay
         doneToBottom = try c.decodeIfPresent(Bool.self, forKey: .doneToBottom) ?? false
@@ -484,11 +496,11 @@ extension AppData {
     }
 
     var activeHabits: [Habit] {
-        habits.filter { !$0.isArchived }.sorted { $0.sortOrder < $1.sortOrder }
+        habits.filter { !$0.isArchived }.sorted(by: Habit.manualOrder)
     }
 
     var archivedHabits: [Habit] {
-        habits.filter { $0.isArchived }.sorted { $0.sortOrder < $1.sortOrder }
+        habits.filter { $0.isArchived }.sorted(by: Habit.manualOrder)
     }
 
     var sortedGroups: [HabitGroup] {
