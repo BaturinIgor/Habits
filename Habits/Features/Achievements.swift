@@ -94,7 +94,18 @@ struct Achievement: Identifiable {
 }
 
 enum Achievements {
-    static let all: [Achievement] = [
+    /// Порядок показа: по темам, внутри темы от простых к сложным.
+    static let all: [Achievement] = {
+        let order = ["first", "streak3", "streak7", "streak14", "streak30", "streak60", "streak100", "streak200", "streak365",
+                     "fiftyChecks", "hundredChecks", "fiveHundredChecks", "thousandChecks",
+                     "perfectDay", "perfectWeek", "perfectTen", "perfectMonth",
+                     "regular", "veteran", "earlyBird", "lark", "nightOwl", "weekend",
+                     "comeback", "resilient", "frozen", "minimalist", "weeklyHero", "goalGetter", "chainReaction",
+                     "collector", "architect", "organizer", "writer", "reflective", "chronicler"]
+        return raw.sorted { (order.firstIndex(of: $0.id) ?? 999) < (order.firstIndex(of: $1.id) ?? 999) }
+    }()
+
+    private static let raw: [Achievement] = [
         Achievement(id: "first", icon: "sparkles", color: .yellow, title: "First step",
                     detail: "Check off a habit for the first time", goal: 1) { $0.totalDone },
         Achievement(id: "streak3", icon: "flame", color: .orange, title: "Warming up",
@@ -216,7 +227,26 @@ struct Reward: Identifiable {
 enum Rewards {
     private static func c(_ r: Double, _ g: Double, _ b: Double) -> Color { Color(red: r, green: g, blue: b) }
 
-    static let backgrounds: [Reward] = [
+    /// Сначала бесплатные, потом за ачивки, потом за ачивки с Pro, в конце только Pro.
+    private static func ordered(_ items: [Reward]) -> [Reward] {
+        func rank(_ r: Reward) -> (Int, Int) {
+            switch r.unlock {
+            case .free: return (r.needsPro ? 3 : 0, 0)
+            case .pro: return (3, 0)
+            case .achievement(let id):
+                return (r.needsPro ? 2 : 1, Achievements.all.firstIndex { $0.id == id } ?? 999)
+            }
+        }
+        return items.enumerated().sorted { a, b in
+            let ra = rank(a.element), rb = rank(b.element)
+            return ra != rb ? ra < rb : a.offset < b.offset
+        }.map(\.element)
+    }
+
+    static let backgrounds: [Reward] = ordered(rawBackgrounds)
+    static let avatars: [Reward] = ordered(rawAvatars)
+
+    private static let rawBackgrounds: [Reward] = [
         Reward(id: "default", kind: .background, unlock: .free, needsPro: false, emoji: "", colors: []),
         Reward(id: "sky", kind: .background, unlock: .free, needsPro: false, emoji: "",
                colors: [c(0.55, 0.78, 1), c(0.78, 0.9, 1)]),
@@ -270,7 +300,7 @@ enum Rewards {
                colors: [c(0.25, 0.27, 0.3), c(0.5, 0.52, 0.56)]),
     ]
 
-    static let avatars: [Reward] = [
+    private static let rawAvatars: [Reward] = [
         avatar("sprout", "🌱", .free), avatar("smile", "🙂", .free), avatar("chick", "🐣", .free),
         avatar("star", "🌟", .achievement("first")),
         avatar("fox", "🦊", .achievement("streak7")),
