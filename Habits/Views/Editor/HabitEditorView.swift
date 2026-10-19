@@ -126,6 +126,7 @@ struct HabitEditorView: View {
                 }
             }
             .scrollDismissesKeyboard(.interactively)
+            .appBackground()
             .navigationTitle(original == nil ? String(localized: "New habit") : String(localized: "Edit habit"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

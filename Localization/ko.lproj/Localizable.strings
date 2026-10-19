@@ -217,6 +217,7 @@
 "Notification" = "알림";
 "Notifications" = "알림";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "iOS 설정에서 알림이 꺼져 있어 알림을 받을 수 없어요.";
+"Number on the app icon" = "앱 아이콘 배지";
 "OK" = "확인";
 "Off" = "꺼짐";
 "Off in iPhone Settings" = "iPhone 설정에서 꺼짐";
@@ -280,6 +281,7 @@
 "Set up Mail on this iPhone or send your message to %@." = "iPhone에서 메일을 설정하거나 %@(으)로 보내 주세요.";
 "Settings" = "설정";
 "Show introduction" = "소개 다시 보기";
+"Shows how many habits are left for today." = "오늘 남은 습관 수를 보여줘요.";
 "Simple gestures" = "간단한 제스처";
 "Skip" = "건너뛰기";
 "Skipped" = "건너뜀";
@@ -341,6 +343,7 @@
 "Weekend warrior" = "주말 전사";
 "Weekends" = "주말";
 "Weekly hero" = "주간 영웅";
+"Welcome to Habit Tracker" = "습관 트래커에 오신 걸 환영해요";
 "What happened and what did you expect?" = "무슨 일이 있었고 어떻게 되길 기대했나요?";
 "Workout" = "운동";
 "Write 10 notes" = "메모 10개 쓰기";

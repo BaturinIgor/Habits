@@ -116,6 +116,14 @@ struct SettingsView: View {
                     Text("One notification listing the habits not checked off yet.")
                 }
 
+                Section {
+                    Toggle(isOn: binding(\.badgeEnabled)) {
+                        Label("Number on the app icon", systemImage: "app.badge.fill")
+                    }
+                } footer: {
+                    Text("Shows how many habits are left for today.")
+                }
+
                 Section("Today screen") {
                     Picker("Order", selection: binding(\.homeLayout)) {
                         Text("Parts of day").tag(HomeLayout.partsOfDay)
@@ -223,10 +231,13 @@ struct SettingsView: View {
                 Section {
                     LabeledContent("Scheduled notifications", value: "\(pendingCount)")
                     LabeledContent("Version", value: version)
+                } header: {
+                    Text("Habit Tracker")
                 } footer: {
                     Text("All data is stored only on this iPhone.")
                 }
             }
+            .appBackground()
             .navigationTitle("Settings")
             .task { await refresh() }
             .onChange(of: scenePhase) { _, phase in
@@ -325,6 +336,7 @@ struct GroupsView: View {
                 store.moveGroups(from: source, to: destination)
             }
         }
+        .appBackground()
         .navigationTitle("Groups")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {

@@ -217,6 +217,7 @@
 "Notification" = "सूचना";
 "Notifications" = "सूचनाएँ";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "iOS सेटिंग्स में सूचनाएँ बंद हैं, इसलिए रिमाइंडर नहीं आएँगे।";
+"Number on the app icon" = "ऐप आइकन पर संख्या";
 "OK" = "ठीक है";
 "Off" = "बंद";
 "Off in iPhone Settings" = "iPhone सेटिंग्स में बंद";
@@ -280,6 +281,7 @@
 "Set up Mail on this iPhone or send your message to %@." = "iPhone पर मेल सेट करें या अपना संदेश %@ पर भेजें।";
 "Settings" = "सेटिंग्स";
 "Show introduction" = "परिचय दिखाएँ";
+"Shows how many habits are left for today." = "दिखाता है कि आज कितनी आदतें बाकी हैं।";
 "Simple gestures" = "आसान इशारे";
 "Skip" = "छोड़ें";
 "Skipped" = "छोड़ा";
@@ -341,6 +343,7 @@
 "Weekend warrior" = "वीकेंड योद्धा";
 "Weekends" = "सप्ताहांत";
 "Weekly hero" = "साप्ताहिक हीरो";
+"Welcome to Habit Tracker" = "आदत ट्रैकर में आपका स्वागत है";
 "What happened and what did you expect?" = "क्या हुआ और आपने क्या उम्मीद की थी?";
 "Workout" = "कसरत";
 "Write 10 notes" = "10 नोट लिखें";

@@ -217,6 +217,7 @@
 "Notification" = "Уведомление";
 "Notifications" = "Уведомления";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "Уведомления выключены в настройках iOS, поэтому напоминания не придут.";
+"Number on the app icon" = "Число на иконке приложения";
 "OK" = "OK";
 "Off" = "Выключены";
 "Off in iPhone Settings" = "Выключены в настройках iPhone";
@@ -280,6 +281,7 @@
 "Set up Mail on this iPhone or send your message to %@." = "Настрой Почту на iPhone или отправь сообщение на %@.";
 "Settings" = "Настройки";
 "Show introduction" = "Показать знакомство";
+"Shows how many habits are left for today." = "Показывает, сколько привычек осталось на сегодня.";
 "Simple gestures" = "Простые жесты";
 "Skip" = "Пропустить";
 "Skipped" = "Пропущено";
@@ -341,6 +343,7 @@
 "Weekend warrior" = "Герой выходных";
 "Weekends" = "Выходные";
 "Weekly hero" = "Герой недели";
+"Welcome to Habit Tracker" = "Добро пожаловать в Трекер привычек";
 "What happened and what did you expect?" = "Что произошло и что ты ожидал увидеть?";
 "Workout" = "Тренировка";
 "Write 10 notes" = "Напиши 10 заметок";

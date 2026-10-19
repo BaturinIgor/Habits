@@ -77,6 +77,7 @@ struct HabitsListView: View {
                 }
             }
             .listStyle(.insetGrouped)
+            .appBackground()
             .navigationTitle("Habits")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {

@@ -319,6 +319,8 @@ struct AppSettings: Codable, Hashable {
     var homeLayout: HomeLayout = .partsOfDay
     var doneToBottom: Bool = false
     var summaryEnabled: Bool = true
+    /// Число неотмеченных привычек на иконке приложения.
+    var badgeEnabled: Bool = true
     var summaryTime = ReminderTime(hour: 21, minute: 0)
     var onboardingDone = false
     var gestureHintShown = false
@@ -331,7 +333,7 @@ struct AppSettings: Codable, Hashable {
 
     enum CodingKeys: String, CodingKey {
         case proUnlocked, remindersEnabled, homeLayout, doneToBottom, summaryEnabled, summaryTime
-        case onboardingDone, gestureHintShown, backgroundID, avatarID, seenAchievements
+        case onboardingDone, gestureHintShown, backgroundID, avatarID, seenAchievements, badgeEnabled
     }
 
     init(from decoder: Decoder) throws {
@@ -347,6 +349,7 @@ struct AppSettings: Codable, Hashable {
         backgroundID = try c.decodeIfPresent(String.self, forKey: .backgroundID) ?? "default"
         avatarID = try c.decodeIfPresent(String.self, forKey: .avatarID) ?? "sprout"
         seenAchievements = try c.decodeIfPresent([String].self, forKey: .seenAchievements) ?? []
+        badgeEnabled = try c.decodeIfPresent(Bool.self, forKey: .badgeEnabled) ?? true
     }
 }
 

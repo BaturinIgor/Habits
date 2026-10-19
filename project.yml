@@ -35,7 +35,7 @@ targets:
     info:
       path: Habits/Info.plist
       properties:
-        CFBundleDisplayName: Habit Tracker
+        CFBundleDisplayName: Habits
         CFBundleDevelopmentRegion: en
         CFBundleLocalizations: [en, ru, de, fr, es, zh-Hans, ja, ko, hi]
         CFBundleAllowMixedLocalizations: true
@@ -73,7 +73,7 @@ targets:
     info:
       path: HabitsWidget/Info.plist
       properties:
-        CFBundleDisplayName: Habit Tracker
+        CFBundleDisplayName: Habits
         CFBundleDevelopmentRegion: en
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)

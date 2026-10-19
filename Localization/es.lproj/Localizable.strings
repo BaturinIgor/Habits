@@ -217,6 +217,7 @@
 "Notification" = "Notificación";
 "Notifications" = "Notificaciones";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "Las notificaciones están desactivadas en los Ajustes de iOS, así que no llegarán recordatorios.";
+"Number on the app icon" = "Número en el icono de la app";
 "OK" = "OK";
 "Off" = "Desactivadas";
 "Off in iPhone Settings" = "Desactivadas en Ajustes";
@@ -280,6 +281,7 @@
 "Set up Mail on this iPhone or send your message to %@." = "Configura Mail en el iPhone o envía tu mensaje a %@.";
 "Settings" = "Ajustes";
 "Show introduction" = "Ver la introducción";
+"Shows how many habits are left for today." = "Muestra cuántos hábitos quedan para hoy.";
 "Simple gestures" = "Gestos sencillos";
 "Skip" = "Omitir";
 "Skipped" = "Omitido";
@@ -341,6 +343,7 @@
 "Weekend warrior" = "Guerrero de fin de semana";
 "Weekends" = "Fin de semana";
 "Weekly hero" = "Héroe semanal";
+"Welcome to Habit Tracker" = "Bienvenido a Rastreador de hábitos";
 "What happened and what did you expect?" = "¿Qué pasó y qué esperabas?";
 "Workout" = "Entrenamiento";
 "Write 10 notes" = "Escribe 10 notas";

@@ -217,6 +217,7 @@
 "Notification" = "通知";
 "Notifications" = "通知";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "iOSの設定で通知がオフのため、リマインダーは届きません。";
+"Number on the app icon" = "アプリアイコンのバッジ";
 "OK" = "OK";
 "Off" = "オフ";
 "Off in iPhone Settings" = "iPhoneの設定でオフ";
@@ -280,6 +281,7 @@
 "Set up Mail on this iPhone or send your message to %@." = "iPhone でメールを設定するか、%@ に送信してください。";
 "Settings" = "設定";
 "Show introduction" = "紹介を表示";
+"Shows how many habits are left for today." = "今日残っている習慣の数を表示します。";
 "Simple gestures" = "かんたん操作";
 "Skip" = "スキップ";
 "Skipped" = "スキップ済み";
@@ -341,6 +343,7 @@
 "Weekend warrior" = "週末の戦士";
 "Weekends" = "週末";
 "Weekly hero" = "週間ヒーロー";
+"Welcome to Habit Tracker" = "習慣トラッカーへようこそ";
 "What happened and what did you expect?" = "何が起きて、どうなるはずでしたか？";
 "Workout" = "運動";
 "Write 10 notes" = "メモを10件書く";

@@ -72,8 +72,9 @@ P = {
   'hi': {'one': 'हफ़्ते में %lld बार', 'other': 'हफ़्ते में %lld बार'},
  },
 }
-NAMES = {'en': 'Habit Tracker', 'ru': 'Трекер привычек', 'de': 'Gewohnheitstracker', 'fr': "Suivi d'habitudes",
-         'es': 'Rastreador de hábitos', 'zh-Hans': '习惯追踪', 'ja': '習慣トラッカー', 'ko': '습관 트래커', 'hi': 'आदत ट्रैकर'}
+# Короткое название под иконкой. Внутри приложения используется полное: "Трекер привычек".
+NAMES = {'en': 'Habits', 'ru': 'Привычки', 'de': 'Gewohnheiten', 'fr': 'Habitudes',
+         'es': 'Hábitos', 'zh-Hans': '习惯', 'ja': '習慣', 'ko': '습관', 'hi': 'आदतें'}
 
 def esc(s):
     return s.replace('\\', '\\\\').replace('"', '\\"')

@@ -217,6 +217,7 @@
 "Notification" = "通知";
 "Notifications" = "通知";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "iOS 设置中已关闭通知，因此不会收到提醒。";
+"Number on the app icon" = "应用图标上的数字";
 "OK" = "好";
 "Off" = "已关闭";
 "Off in iPhone Settings" = "已在 iPhone 设置中关闭";
@@ -280,6 +281,7 @@
 "Set up Mail on this iPhone or send your message to %@." = "请在 iPhone 上设置“邮件”，或将消息发送至 %@。";
 "Settings" = "设置";
 "Show introduction" = "查看引导";
+"Shows how many habits are left for today." = "显示今天还剩多少个习惯。";
 "Simple gestures" = "简单手势";
 "Skip" = "跳过";
 "Skipped" = "已跳过";
@@ -341,6 +343,7 @@
 "Weekend warrior" = "周末战士";
 "Weekends" = "周末";
 "Weekly hero" = "每周英雄";
+"Welcome to Habit Tracker" = "欢迎使用习惯追踪";
 "What happened and what did you expect?" = "发生了什么？你原本期望什么？";
 "Workout" = "锻炼";
 "Write 10 notes" = "写 10 条备注";

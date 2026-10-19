@@ -64,7 +64,7 @@ struct TodayView: View {
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
             .scrollIndicators(.hidden)
-            .background(RewardBackground(reward: Rewards.background(store.data.settings.backgroundID)))
+            .background(AppBackground())
             .onChange(of: scenePhase) { _, phase in
                 if phase == .active { rollOverDay() }
             }

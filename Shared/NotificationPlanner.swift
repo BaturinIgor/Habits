@@ -26,6 +26,26 @@ enum NotificationPlanner {
         let index: Int
         /// Текст вечерней сводки, если это сводка.
         var summary: String? = nil
+        /// Число на иконке, которое выставит это уведомление.
+        var badge: Int? = nil
+        /// Тихое уведомление только для обновления числа на иконке (в полночь).
+        var badgeOnly = false
+    }
+
+    /// Сколько привычек на этот день ещё не отмечено (недельные с выполненной целью не считаются).
+    static func pendingCount(data: AppData, day: Date, calendar: Calendar = .app) -> Int {
+        let key = DayKey.make(day, calendar: calendar)
+        return data.habits(on: day, calendar: calendar).filter { habit in
+            guard data.status(habit.id, day: key) == nil else { return false }
+            if habit.schedule.kind == .weekly && data.weeklyGoalMet(habit, before: day, calendar: calendar) { return false }
+            return true
+        }.count
+    }
+
+    /// Обновляет число на иконке приложения.
+    static func updateBadge(data: AppData, now: Date = Date()) async {
+        let count = data.settings.badgeEnabled ? pendingCount(data: data, day: now) : 0
+        try? await UNUserNotificationCenter.current().setBadgeCount(count)
     }
 
     nonisolated static func identifier(habitID: UUID, day: String, index: Int) -> String {
@@ -93,6 +113,7 @@ enum NotificationPlanner {
         let stale = await center.pendingNotificationRequests().map(\.identifier).filter { !$0.hasSuffix("|99") }
         guard token == generation else { return }
         center.removePendingNotificationRequests(withIdentifiers: stale)
+        await updateBadge(data: data, now: now)
         // Общий выключатель в настройках приложения.
         guard data.settings.remindersEnabled else { return }
         for event in plan(data: data, now: now) {
@@ -206,7 +227,26 @@ enum NotificationPlanner {
         let reserved = Array(far.prefix(20))
         let nearPart = Array(near.prefix(maxPending - reserved.count))
         let rest = Array(far.dropFirst(reserved.count).prefix(maxPending - reserved.count - nearPart.count))
-        return (nearPart + reserved + rest).sorted { $0.date < $1.date }
+        var events = (nearPart + reserved + rest).sorted { $0.date < $1.date }
+        if data.settings.badgeEnabled {
+            // В начале следующих дней тихо обновляем число на иконке.
+            for offset in 1...2 {
+                guard let day = calendar.date(byAdding: .day, value: offset, to: today),
+                      events.count < maxPending else { continue }
+                events.append(Event(id: "badge|\(DayKey.make(day, calendar: calendar))", date: day.addingTimeInterval(1),
+                                    habit: nil, day: DayKey.make(day, calendar: calendar), index: 0, badgeOnly: true))
+            }
+            var cache: [String: Int] = [:]
+            for i in events.indices {
+                let key = events[i].day
+                if cache[key] == nil, let date = DayKey.date(key, calendar: calendar) {
+                    cache[key] = pendingCount(data: data, day: date, calendar: calendar)
+                }
+                events[i].badge = cache[key]
+            }
+            events.sort { $0.date < $1.date }
+        }
+        return events
     }
 
     private static func makeRequest(_ event: Event) -> UNNotificationRequest {
@@ -216,6 +256,10 @@ enum NotificationPlanner {
             from: event.date
         )
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+        if let badge = event.badge { content.badge = NSNumber(value: badge) }
+        if event.badgeOnly {
+            return UNNotificationRequest(identifier: event.id, content: content, trigger: trigger)
+        }
         guard let habit = event.habit else {
             content.title = String(localized: "Day summary")
             content.body = String(localized: "Not checked off yet: \(event.summary ?? "")")

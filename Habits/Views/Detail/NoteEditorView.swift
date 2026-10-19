@@ -32,6 +32,7 @@ struct NoteEditorView: View {
                 Spacer(minLength: 0)
             }
             .padding(16)
+            .background(AppBackground())
             .navigationTitle("Note")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

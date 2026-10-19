@@ -118,6 +118,7 @@ struct FeedbackView: View {
                 }
             }
             .scrollDismissesKeyboard(.interactively)
+            .appBackground()
             .navigationTitle("Feedback")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

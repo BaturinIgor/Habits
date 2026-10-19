@@ -13,7 +13,7 @@ struct OnboardingView: View {
     }
 
     private let pages: [Page] = [
-        Page(icon: "checkmark.circle.fill", color: .accentColor, title: "Small steps every day",
+        Page(icon: "checkmark.circle.fill", color: .accentColor, title: "Welcome to Habit Tracker",
              text: "Track habits, get gentle reminders and watch your streaks grow."),
         Page(icon: "hand.draw.fill", color: .orange, title: "Simple gestures",
              text: "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder."),

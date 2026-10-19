@@ -3,10 +3,18 @@ import UIKit
 
 // MARK: - Фон и карточки
 
+/// Фон всех экранов: выбранный в профиле фон (градиент или своё фото).
 struct AppBackground: View {
+    @Environment(HabitStore.self) private var store
     var body: some View {
-        Color(uiColor: .systemGroupedBackground)
-            .ignoresSafeArea()
+        RewardBackground(reward: Rewards.background(store.data.settings.backgroundID))
+    }
+}
+
+extension View {
+    /// Список или форма поверх фона приложения.
+    func appBackground() -> some View {
+        scrollContentBackground(.hidden).background(AppBackground())
     }
 }
 

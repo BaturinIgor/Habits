@@ -73,7 +73,7 @@ struct ProfileView: View {
                 .padding(16)
                 .padding(.bottom, 24)
             }
-            .background(RewardBackground(reward: Rewards.background(store.data.settings.backgroundID)))
+            .background(AppBackground())
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
