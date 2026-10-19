@@ -198,6 +198,13 @@ struct WidgetProblemView: View {
             Text(problem == .noAccess ? "Reinstall the app and keep its extensions. Details are in Settings, Widget." : "The widget will update after unlocking.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
+            if problem == .noAccess {
+                Text(verbatim: AppGroup.diagnostics)
+                    .font(.system(size: 8, design: .monospaced))
+                    .foregroundStyle(.tertiary)
+                    .lineLimit(5)
+                    .minimumScaleFactor(0.6)
+            }
             Spacer(minLength: 0)
         }
         .frame(maxWidth: .infinity, alignment: .leading)

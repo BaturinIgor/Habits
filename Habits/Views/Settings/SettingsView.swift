@@ -145,7 +145,12 @@ struct SettingsView: View {
                 } header: {
                     Text("Widget")
                 } footer: {
-                    Text("If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked.")
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked.")
+                        Text(verbatim: AppGroup.diagnostics)
+                            .font(.caption2.monospaced())
+                            .textSelection(.enabled)
+                    }
                 }
 
                 Section {
