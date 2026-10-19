@@ -6,6 +6,9 @@ struct ProfileView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var showingPaywall = false
     @State private var hint: Achievement?
+    @State private var purchase: Reward?
+    @State private var showingSparks = false
+    @State private var showingPet = false
 
     private let grid = [GridItem(.adaptive(minimum: 96), spacing: 12)]
     private let smallGrid = [GridItem(.adaptive(minimum: 64), spacing: 12)]
@@ -34,8 +37,17 @@ struct ProfileView: View {
                         }
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(.secondary)
+                        Button {
+                            showingSparks = true
+                        } label: {
+                            SparkBadge(amount: store.economy.balance, font: .headline)
+                                .padding(.horizontal, 14).padding(.vertical, 7)
+                        }
+                        .buttonStyle(.glass)
                     }
                     .padding(.top, 8)
+
+                    PetCard { showingPet = true }
 
                     section("Achievements") {
                         LazyVGrid(columns: grid, spacing: 12) {
@@ -82,6 +94,25 @@ struct ProfileView: View {
                 }
             }
             .sheet(isPresented: $showingPaywall) { PaywallView() }
+            .sheet(isPresented: $showingSparks) { SparksView() }
+            .sheet(isPresented: $showingPet) { PetView() }
+            .alert(
+                "Buy for sparks?",
+                isPresented: Binding(get: { purchase != nil }, set: { if !$0 { purchase = nil } }),
+                presenting: purchase
+            ) { reward in
+                if store.economy.balance >= (reward.price ?? 0) {
+                    Button("Buy") { withAnimation(.snappy) { _ = store.buyReward(reward) } }
+                }
+                Button("Cancel", role: .cancel) {}
+            } message: { reward in
+                let price = reward.price ?? 0
+                if store.economy.balance >= price {
+                    Text("It costs \(price) sparks. You have \(store.economy.balance).")
+                } else {
+                    Text("It costs \(price) sparks, you have \(store.economy.balance). Check off habits to earn more.")
+                }
+            }
             .alert(
                 Text(hint?.title ?? ""),
                 isPresented: Binding(get: { hint != nil }, set: { if !$0 { hint = nil } })
@@ -103,9 +134,11 @@ struct ProfileView: View {
 
     private func rewardButton<Content: View>(_ reward: Reward, unlocked: Set<String>, isPro: Bool,
                                              selected: Bool, @ViewBuilder label: () -> Content) -> some View {
-        let available = reward.isAvailable(unlocked: unlocked, isPro: isPro)
+        let available = reward.isAvailable(unlocked: unlocked, isPro: isPro, purchased: store.data.wallet.purchases)
         return Button {
-            if available {
+            if !available, reward.price != nil {
+                purchase = reward
+            } else if available {
                 withAnimation(.snappy) {
                     store.updateSettings {
                         if reward.kind == .avatar { $0.avatarID = reward.id } else { $0.backgroundID = reward.id }
@@ -118,10 +151,15 @@ struct ProfileView: View {
             }
         } label: {
             label()
-                .saturation(available ? 1 : 0)
-                .opacity(available ? 1 : 0.45)
+                .saturation(available || reward.price != nil ? 1 : 0)
+                .opacity(available ? 1 : (reward.price != nil ? 0.8 : 0.45))
                 .overlay(alignment: .topTrailing) {
-                    if !available {
+                    if !available, let price = reward.price {
+                        SparkBadge(amount: price, font: .caption2.weight(.bold))
+                            .padding(.horizontal, 6).padding(.vertical, 3)
+                            .background(Capsule().fill(.background))
+                            .shadow(color: .black.opacity(0.15), radius: 2, y: 1)
+                    } else if !available {
                         if reward.needsPro && Rewards.achievement(for: reward).map({ unlocked.contains($0.id) }) ?? true {
                             ProBadge().scaleEffect(0.8)
                         } else {

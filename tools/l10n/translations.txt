@@ -359,3 +359,73 @@ Tap the circle or swipe right to check off. Swipe left to skip, add a note or ed
 Number on the app icon||Число на иконке приложения||Zahl auf dem App-Symbol||Pastille sur l'icône||Número en el icono de la app||应用图标上的数字||アプリアイコンのバッジ||앱 아이콘 배지||ऐप आइकन पर संख्या
 Shows how many habits are left for today.||Показывает, сколько привычек осталось на сегодня.||Zeigt, wie viele Gewohnheiten heute noch offen sind.||Indique combien d'habitudes il reste pour aujourd'hui.||Muestra cuántos hábitos quedan para hoy.||显示今天还剩多少个习惯。||今日残っている習慣の数を表示します。||오늘 남은 습관 수를 보여줘요.||दिखाता है कि आज कितनी आदतें बाकी हैं।
 Welcome to Habit Tracker||Добро пожаловать в Трекер привычек||Willkommen beim Gewohnheitstracker||Bienvenue dans Suivi d'habitudes||Bienvenido a Rastreador de hábitos||欢迎使用习惯追踪||習慣トラッカーへようこそ||습관 트래커에 오신 걸 환영해요||आदत ट्रैकर में आपका स्वागत है
+Egg||Яйцо||Ei||Œuf||Huevo||蛋||たまご||알||अंडा
+Baby||Малыш||Baby||Bébé||Bebé||幼崽||赤ちゃん||아기||बच्चा
+Young||Подросток||Jungtier||Jeune||Joven||少年||子ども||청소년||किशोर
+Grown-up||Взрослый||Erwachsen||Adulte||Adulto||成年||おとな||어른||वयस्क
+Happy||Счастлив||Glücklich||Heureux||Feliz||很开心||ごきげん||행복해요||खुश
+Waiting for you||Ждёт тебя||Wartet auf dich||T'attend||Te espera||在等你||あなたを待っている||기다리고 있어요||आपका इंतज़ार कर रहा है
+Sad||Грустит||Traurig||Triste||Triste||有点难过||しょんぼり||슬퍼요||उदास
+Misses you a lot||Очень скучает||Vermisst dich sehr||Tu lui manques beaucoup||Te echa mucho de menos||非常想你||とても寂しがっている||많이 보고 싶어해요||आपको बहुत याद कर रहा है
+Sleeping||Спит||Schläft||Dort||Duerme||在睡觉||おやすみ中||자는 중||सो रहा है
+Cat||Котик||Katze||Chat||Gato||小猫||ネコ||고양이||बिल्ली
+Dog||Щенок||Hund||Chien||Perro||小狗||イヌ||강아지||कुत्ता
+Chick||Цыплёнок||Küken||Poussin||Pollito||小鸡||ひよこ||병아리||चूज़ा
+Bunny||Зайчик||Hase||Lapin||Conejo||兔子||ウサギ||토끼||खरगोश
+Turtle||Черепаха||Schildkröte||Tortue||Tortuga||乌龟||カメ||거북이||कछुआ
+Fox||Лисёнок||Fuchs||Renard||Zorro||狐狸||キツネ||여우||लोमड़ी
+Panda||Панда||Panda||Panda||Panda||熊猫||パンダ||판다||पांडा
+Owl||Совёнок||Eule||Hibou||Búho||猫头鹰||フクロウ||부엉이||उल्लू
+Dragon||Дракон||Drache||Dragon||Dragón||龙||ドラゴン||용||ड्रैगन
+Unicorn||Единорог||Einhorn||Licorne||Unicornio||独角兽||ユニコーン||유니콘||यूनिकॉर्न
+Phoenix||Феникс||Phönix||Phénix||Fénix||凤凰||フェニックス||불사조||फ़ीनिक्स
+You're doing great!||У тебя отлично получается!||Du machst das super!||Tu t'en sors très bien !||¡Lo estás haciendo genial!||你做得很棒！||すごくいい調子！||정말 잘하고 있어요!||आप बहुत अच्छा कर रहे हैं!
+One more habit?||Ещё одну привычку?||Noch eine Gewohnheit?||Encore une habitude ?||¿Un hábito más?||再来一个习惯？||もうひとつ習慣やる？||습관 하나 더?||एक और आदत?
+I believe in you!||Я в тебя верю!||Ich glaube an dich!||Je crois en toi !||¡Creo en ti!||我相信你！||信じてるよ！||난 널 믿어요!||मुझे आप पर भरोसा है!
+Small steps add up.||Маленькие шаги складываются в большие.||Kleine Schritte summieren sich.||Les petits pas s'additionnent.||Los pequeños pasos suman.||小步积累成大进步。||小さな一歩が積み重なる。||작은 걸음이 모여요.||छोटे कदम मिलकर बड़े बनते हैं।
+Let's keep the streak going!||Давай не прерывать серию!||Lass uns die Serie halten!||Gardons la série !||¡Sigamos con la racha!||继续保持连续吧！||連続記録を続けよう！||연속 기록을 이어가요!||चलो श्रृंखला जारी रखें!
+I'm proud of you!||Я горжусь тобой!||Ich bin stolz auf dich!||Je suis fier de toi !||¡Estoy orgulloso de ti!||我为你骄傲！||誇りに思うよ！||자랑스러워요!||मुझे आप पर गर्व है!
+Don't forget about me!||Не забывай про меня!||Vergiss mich nicht!||Ne m'oublie pas !||¡No te olvides de mí!||别忘了我哦！||わたしのこと忘れないでね！||날 잊지 말아요!||मुझे मत भूलना!
+Today is a good day.||Сегодня хороший день.||Heute ist ein guter Tag.||Aujourd'hui est une bonne journée.||Hoy es un buen día.||今天是美好的一天。||今日はいい日だね。||오늘은 좋은 날이에요.||आज अच्छा दिन है।
+Buddy||Дружок||Kumpel||Copain||Amigo||小伙伴||相棒||친구||दोस्त
+Get a pet||Завести питомца||Haustier holen||Adopter un compagnon||Conseguir mascota||领养宠物||ペットを迎える||펫 데려오기||पालतू पाएँ
+It grows with every habit you check off.||Он растёт с каждой отмеченной привычкой.||Es wächst mit jeder erledigten Gewohnheit.||Il grandit à chaque habitude validée.||Crece con cada hábito que marcas.||每完成一个习惯，它就长大一点。||習慣をチェックするたびに成長します。||습관을 체크할 때마다 자라요.||हर पूरी की गई आदत के साथ यह बढ़ता है।
+Pet||Питомец||Haustier||Compagnon||Mascota||宠物||ペット||펫||पालतू
+Not enough sparks||Не хватает искр||Nicht genug Funken||Pas assez d'étincelles||No hay suficientes chispas||火花不够||スパークが足りません||스파크가 부족해요||पर्याप्त चिंगारियाँ नहीं
+Check off habits to earn more.||Отмечай привычки, чтобы заработать ещё.||Hake Gewohnheiten ab, um mehr zu verdienen.||Valide des habitudes pour en gagner plus.||Marca hábitos para ganar más.||完成习惯即可获得更多。||習慣をチェックしてもっと集めよう。||습관을 체크해서 더 모아요.||और कमाने के लिए आदतें पूरी करें।
+%lld more to %@||Ещё %lld до стадии "%@"||Noch %lld bis %@||Encore %lld avant %@||Faltan %lld para %@||再 %lld 点到达%@||%2$@まであと%1$lld||%2$@까지 %1$lld 남음||%@ तक %lld और
+Your pet grows with every habit you check off and gets sad when you disappear for a few days.||Питомец растёт с каждой отмеченной привычкой и грустит, если ты пропадаешь на несколько дней.||Dein Haustier wächst mit jeder erledigten Gewohnheit und wird traurig, wenn du ein paar Tage verschwindest.||Ton compagnon grandit à chaque habitude validée et devient triste si tu disparais quelques jours.||Tu mascota crece con cada hábito que marcas y se pone triste si desapareces unos días.||每完成一个习惯，宠物就会成长；你消失几天，它会难过。||習慣をチェックするたびにペットは成長し、数日いなくなると寂しがります。||습관을 체크할 때마다 펫이 자라고, 며칠 사라지면 슬퍼해요.||हर पूरी की गई आदत के साथ आपका पालतू बढ़ता है और कुछ दिन गायब रहने पर उदास हो जाता है।
+Full for today||На сегодня сыт||Für heute satt||Rassasié pour aujourd'hui||Lleno por hoy||今天吃饱了||今日はおなかいっぱい||오늘은 배불러요||आज के लिए पेट भर गया
+Feed||Покормить||Füttern||Nourrir||Alimentar||喂食||ごはんをあげる||먹이 주기||खिलाएँ
+Species||Вид||Art||Espèce||Especie||种类||種類||종류||प्रजाति
+Adopt a pet||Заведи питомца||Hol dir ein Haustier||Adopte un compagnon||Adopta una mascota||领养一只宠物||ペットを迎えよう||펫을 데려와요||एक पालतू अपनाएँ
+It hatches from an egg and grows with every habit you check off. Feed it with sparks and don't leave it alone for long.||Он вылупится из яйца и будет расти с каждой отмеченной привычкой. Корми его искрами и не оставляй надолго одного.||Es schlüpft aus einem Ei und wächst mit jeder erledigten Gewohnheit. Füttere es mit Funken und lass es nicht lange allein.||Il éclot d'un œuf et grandit à chaque habitude validée. Nourris-le avec des étincelles et ne le laisse pas seul trop longtemps.||Nace de un huevo y crece con cada hábito que marcas. Aliméntalo con chispas y no lo dejes solo mucho tiempo.||它从蛋里孵化，每完成一个习惯就会长大。用火花喂它，别让它孤单太久。||たまごから生まれ、習慣をチェックするたびに成長します。スパークでごはんをあげて、長くひとりにしないでね。||알에서 태어나 습관을 체크할 때마다 자라요. 스파크로 먹이를 주고 오래 혼자 두지 마세요.||यह अंडे से निकलता है और हर पूरी आदत के साथ बढ़ता है। इसे चिंगारियों से खिलाएँ और ज़्यादा देर अकेला न छोड़ें।
+Adopt||Завести||Aufnehmen||Adopter||Adoptar||领养||迎える||데려오기||अपनाएँ
+More species are available for sparks and with Pro.||Другие виды можно получить за искры и с Pro.||Weitere Arten gibt es für Funken und mit Pro.||D'autres espèces sont disponibles contre des étincelles et avec Pro.||Hay más especies por chispas y con Pro.||更多种类可用火花或 Pro 获得。||ほかの種類はスパークや Pro で手に入ります。||다른 종류는 스파크나 Pro로 얻을 수 있어요.||और प्रजातियाँ चिंगारियों और Pro से मिलती हैं।
+Buy for sparks?||Купить за искры?||Für Funken kaufen?||Acheter avec des étincelles ?||¿Comprar con chispas?||用火花购买？||スパークで購入しますか？||스파크로 구매할까요?||चिंगारियों से खरीदें?
+It costs %lld sparks. You have %lld.||Цена: ✨ %lld. У тебя: ✨ %lld.||Preis: ✨ %lld. Du hast: ✨ %lld.||Prix : ✨ %lld. Tu as : ✨ %lld.||Precio: ✨ %lld. Tienes: ✨ %lld.||价格：✨ %lld。你有：✨ %lld。||価格：✨ %lld。所持：✨ %lld。||가격: ✨ %lld. 보유: ✨ %lld.||कीमत: ✨ %lld। आपके पास: ✨ %lld।
+It costs %lld sparks, you have %lld. Check off habits to earn more.||Цена: ✨ %lld, у тебя: ✨ %lld. Отмечай привычки, чтобы заработать ещё.||Preis: ✨ %lld, du hast: ✨ %lld. Hake Gewohnheiten ab, um mehr zu verdienen.||Prix : ✨ %lld, tu as : ✨ %lld. Valide des habitudes pour en gagner plus.||Precio: ✨ %lld, tienes: ✨ %lld. Marca hábitos para ganar más.||价格：✨ %lld，你有：✨ %lld。完成习惯即可获得更多。||価格：✨ %lld、所持：✨ %lld。習慣をチェックしてもっと集めよう。||가격: ✨ %lld, 보유: ✨ %lld. 습관을 체크해서 더 모아요.||कीमत: ✨ %lld, आपके पास: ✨ %lld। और कमाने के लिए आदतें पूरी करें।
+Sparks||Искры||Funken||Étincelles||Chispas||火花||スパーク||스파크||चिंगारियाँ
+Earned in total: %lld||Всего заработано: %lld||Insgesamt verdient: %lld||Gagné au total : %lld||Ganado en total: %lld||累计获得：%lld||合計獲得：%lld||총 획득: %lld||कुल कमाई: %lld
+Earned||Заработано||Verdient||Gagné||Ganado||已获得||獲得||획득||कमाया
+Check-ins||Отметки||Abhaken||Validations||Marcas||打卡||チェック||체크||पूरी की गई आदतें
+Perfect days||Идеальные дни||Perfekte Tage||Journées parfaites||Días perfectos||完美日||完璧な日||완벽한 날||परफ़ेक्ट दिन
+Streaks||Серии||Serien||Séries||Rachas||连续||連続記録||연속 기록||श्रृंखलाएँ
+Comebacks||Возвращения||Comebacks||Retours||Regresos||回归||カムバック||복귀||वापसी
+Pro gifts||Подарки Pro||Pro-Geschenke||Cadeaux Pro||Regalos Pro||Pro 礼物||Pro ギフト||Pro 선물||Pro उपहार
+Extra freeze||Дополнительная заморозка||Extra-Freeze||Gel supplémentaire||Congelación extra||额外冻结||追加フリーズ||추가 프리즈||अतिरिक्त फ़्रीज़
+Feed your pet||Покормить питомца||Haustier füttern||Nourrir ton compagnon||Alimentar a tu mascota||喂宠物||ペットにごはん||펫 먹이 주기||पालतू को खिलाएँ
+Spend||Потратить||Ausgeben||Dépenser||Gastar||使用||使う||사용하기||खर्च करें
+Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile.||Дополнительных заморозок в этом месяце: %lld/%lld. Аватарки и фоны за искры есть в профиле.||Extra-Freezes diesen Monat: %lld/%lld. Avatare und Hintergründe für Funken findest du im Profil.||Gels supplémentaires ce mois-ci : %lld/%lld. Avatars et fonds contre des étincelles dans ton profil.||Congelaciones extra este mes: %lld/%lld. Avatares y fondos por chispas en tu perfil.||本月额外冻结：%lld/%lld。可用火花购买的头像和背景在个人资料中。||今月の追加フリーズ：%lld/%lld。スパークで買えるアバターと背景はプロフィールにあります。||이번 달 추가 프리즈: %lld/%lld. 스파크로 살 수 있는 아바타와 배경은 프로필에 있어요.||इस महीने अतिरिक्त फ़्रीज़: %lld/%lld। चिंगारियों वाले अवतार और बैकग्राउंड प्रोफ़ाइल में हैं।
+1 spark for each check-in, up to %lld a day||1 искра за каждую отметку, до %lld в день||1 Funke pro Abhaken, bis zu %lld am Tag||1 étincelle par validation, jusqu'à %lld par jour||1 chispa por marca, hasta %lld al día||每次打卡 1 个火花，每天最多 %lld 个||チェックごとに1スパーク、1日最大%lld||체크마다 1 스파크, 하루 최대 %lld||हर पूरी आदत पर 1 चिंगारी, दिन में अधिकतम %lld
++%lld for a perfect day||+%lld за идеальный день||+%lld für einen perfekten Tag||+%lld pour une journée parfaite||+%lld por un día perfecto||完美日 +%lld||完璧な日に+%lld||완벽한 날 +%lld||परफ़ेक्ट दिन पर +%lld
++%lld for every 7 days of a streak, +%lld for every 30||+%lld за каждые 7 дней серии, +%lld за каждые 30||+%lld für je 7 Tage Serie, +%lld für je 30||+%lld tous les 7 jours de série, +%lld tous les 30||+%lld por cada 7 días de racha, +%lld por cada 30||连续每 7 天 +%lld，每 30 天 +%lld||連続7日ごとに+%lld、30日ごとに+%lld||연속 7일마다 +%lld, 30일마다 +%lld||श्रृंखला के हर 7 दिन पर +%lld, हर 30 पर +%lld
++%lld for coming back after a miss||+%lld за возвращение после пропуска||+%lld fürs Zurückkommen nach einer Lücke||+%lld pour un retour après un oubli||+%lld por volver tras un fallo||中断后回归 +%lld||休んだ後に戻ると+%lld||빠진 뒤 돌아오면 +%lld||चूक के बाद लौटने पर +%lld
++%lld for each achievement||+%lld за каждую ачивку||+%lld pro Erfolg||+%lld par succès||+%lld por cada logro||每个成就 +%lld||実績ごとに+%lld||업적마다 +%lld||हर उपलब्धि पर +%lld
+Pro: +%lld every month and up to %lld a day||Pro: +%lld каждый месяц и до %lld в день||Pro: +%lld jeden Monat und bis zu %lld am Tag||Pro : +%lld chaque mois et jusqu'à %lld par jour||Pro: +%lld cada mes y hasta %lld al día||Pro：每月 +%lld，每天最多 %lld||Pro：毎月+%lld、1日最大%lld||Pro: 매달 +%lld, 하루 최대 %lld||Pro: हर महीने +%lld और दिन में अधिकतम %lld
+How to earn||Как заработать||So verdienst du||Comment gagner||Cómo ganar||如何获得||集め方||모으는 방법||कैसे कमाएँ
+Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back.||Засчитываются только отметки, поставленные в тот же день или на следующий. Если снять отметку, искра вернётся обратно.||Es zählen nur Abhaken am selben oder nächsten Tag. Wird eine Gewohnheit abgewählt, ist der Funke wieder weg.||Seules les validations du jour même ou du lendemain comptent. Décocher une habitude retire son étincelle.||Solo cuentan las marcas del mismo día o del siguiente. Desmarcar un hábito devuelve su chispa.||只有当天或第二天的打卡才算数。取消打卡会收回火花。||当日か翌日のチェックだけが対象です。チェックを外すとスパークも戻ります。||당일이나 다음 날 체크만 인정돼요. 체크를 취소하면 스파크도 돌아가요.||केवल उसी दिन या अगले दिन की गई निशानियाँ गिनी जाती हैं। निशान हटाने पर चिंगारी वापस चली जाती है।
+Exclusive pets and more sparks||Особые питомцы и больше искр||Exklusive Haustiere und mehr Funken||Compagnons exclusifs et plus d'étincelles||Mascotas exclusivas y más chispas||专属宠物和更多火花||限定ペットとスパーク増量||전용 펫과 더 많은 스파크||ख़ास पालतू और ज़्यादा चिंगारियाँ
+Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit.||Дракон, единорог и феникс, подарок 100 искр каждый месяц и выше дневной лимит.||Drache, Einhorn und Phönix, monatlich 100 Funken geschenkt und ein höheres Tageslimit.||Dragon, licorne et phénix, 100 étincelles offertes chaque mois et une limite quotidienne plus élevée.||Dragón, unicornio y fénix, 100 chispas de regalo cada mes y un límite diario mayor.||龙、独角兽和凤凰，每月赠送 100 火花，每日上限更高。||ドラゴン、ユニコーン、フェニックス、毎月100スパークのプレゼントと1日の上限アップ。||용, 유니콘, 불사조, 매달 100 스파크 선물과 더 높은 일일 한도.||ड्रैगन, यूनिकॉर्न और फ़ीनिक्स, हर महीने 100 चिंगारियाँ उपहार और ज़्यादा दैनिक सीमा।
+Sparks and a pet||Искры и питомец||Funken und ein Haustier||Étincelles et compagnon||Chispas y mascota||火花与宠物||スパークとペット||스파크와 펫||चिंगारियाँ और पालतू
+Earn sparks for check-ins, spend them in the shop and raise a pet that grows with your habits.||Получай искры за отметки, трать их в магазине и расти питомца, который растёт вместе с твоими привычками.||Verdiene Funken fürs Abhaken, gib sie im Shop aus und zieh ein Haustier groß, das mit deinen Gewohnheiten wächst.||Gagne des étincelles en validant, dépense-les dans la boutique et élève un compagnon qui grandit avec tes habitudes.||Gana chispas al marcar, gástalas en la tienda y cría una mascota que crece con tus hábitos.||打卡赚火花，在商店里使用，并养一只随习惯成长的宠物。||チェックでスパークを集めてショップで使い、習慣と一緒に育つペットを育てよう。||체크로 스파크를 모아 상점에서 쓰고, 습관과 함께 자라는 펫을 키워요.||आदतें पूरी करके चिंगारियाँ कमाएँ, दुकान में खर्च करें और अपनी आदतों के साथ बढ़ने वाला पालतू पालें।

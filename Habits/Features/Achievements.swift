@@ -22,6 +22,8 @@ struct AchievementFacts {
     var chainChecks = 0
     var groups = 0
     var notedChecks = 0
+    var streakWeeks = 0
+    var streakMonths = 0
 
     init(data: AppData, now: Date = Date()) {
         let calendar = Calendar.app
@@ -59,6 +61,8 @@ struct AchievementFacts {
             if !stats.isWeekly { bestStreak = max(bestStreak, stats.bestStreak) }
             weeklyGoals += stats.goalsMet
             comebacks += stats.comebacks
+            streakWeeks += stats.weekMilestones
+            streakMonths += stats.monthMilestones
             freezesUsed += stats.frozenDays.count
         }
         // Идеальные дни за последний год.
@@ -203,6 +207,8 @@ enum Unlock: Equatable {
     case free
     case achievement(String)
     case pro
+    /// Покупается за искры.
+    case shop(Int)
 }
 
 struct Reward: Identifiable {
@@ -214,13 +220,19 @@ struct Reward: Identifiable {
     let emoji: String
     let colors: [Color]
 
-    func isAvailable(unlocked: Set<String>, isPro: Bool) -> Bool {
+    func isAvailable(unlocked: Set<String>, isPro: Bool, purchased: [String] = []) -> Bool {
         if needsPro && !isPro { return false }
         switch unlock {
         case .free: return true
         case .pro: return isPro
         case .achievement(let id): return unlocked.contains(id)
+        case .shop: return purchased.contains(id)
         }
+    }
+
+    var price: Int? {
+        if case .shop(let price) = unlock { return price }
+        return nil
     }
 }
 
@@ -231,10 +243,11 @@ enum Rewards {
     private static func ordered(_ items: [Reward]) -> [Reward] {
         func rank(_ r: Reward) -> (Int, Int) {
             switch r.unlock {
-            case .free: return (r.needsPro ? 3 : 0, 0)
-            case .pro: return (3, 0)
+            case .free: return (r.needsPro ? 4 : 0, 0)
+            case .pro: return (4, 0)
+            case .shop(let price): return (2, price)
             case .achievement(let id):
-                return (r.needsPro ? 2 : 1, Achievements.all.firstIndex { $0.id == id } ?? 999)
+                return (r.needsPro ? 3 : 1, Achievements.all.firstIndex { $0.id == id } ?? 999)
             }
         }
         return items.enumerated().sorted { a, b in
@@ -274,6 +287,18 @@ enum Rewards {
                colors: [c(0.75, 0.65, 1), c(0.95, 0.8, 1)]),
         Reward(id: "midnight", kind: .background, unlock: .pro, needsPro: true, emoji: "",
                colors: [c(0.05, 0.1, 0.25), c(0.2, 0.25, 0.5)]),
+        Reward(id: "honey", kind: .background, unlock: .shop(50), needsPro: false, emoji: "",
+               colors: [c(1, 0.8, 0.35), c(1, 0.93, 0.7)]),
+        Reward(id: "lilac", kind: .background, unlock: .shop(60), needsPro: false, emoji: "",
+               colors: [c(0.8, 0.7, 0.95), c(0.95, 0.85, 1)]),
+        Reward(id: "seafoam", kind: .background, unlock: .shop(80), needsPro: false, emoji: "",
+               colors: [c(0.55, 0.9, 0.85), c(0.8, 0.95, 1)]),
+        Reward(id: "coral", kind: .background, unlock: .shop(100), needsPro: false, emoji: "",
+               colors: [c(1, 0.5, 0.45), c(1, 0.75, 0.6)]),
+        Reward(id: "nightSky", kind: .background, unlock: .shop(150), needsPro: false, emoji: "",
+               colors: [c(0.1, 0.15, 0.4), c(0.35, 0.3, 0.65), c(0.85, 0.55, 0.7)]),
+        Reward(id: "rainbow", kind: .background, unlock: .shop(250), needsPro: false, emoji: "",
+               colors: [c(1, 0.5, 0.5), c(1, 0.85, 0.45), c(0.5, 0.9, 0.6), c(0.5, 0.7, 1), c(0.75, 0.55, 1)]),
         Reward(id: "lemon", kind: .background, unlock: .free, needsPro: false, emoji: "",
                colors: [c(1, 0.92, 0.5), c(0.85, 1, 0.6)]),
         Reward(id: "dawn", kind: .background, unlock: .achievement("streak14"), needsPro: false, emoji: "",
@@ -316,6 +341,10 @@ enum Rewards {
         avatar("lion", "🦁", .achievement("resilient"), pro: true),
         avatar("panda", "🐼", .pro), avatar("octopus", "🐙", .pro), avatar("robot", "🤖", .pro),
         avatar("alien", "👽", .pro), avatar("crown", "👑", .pro), avatar("rocket", "🚀", .pro),
+        avatar("frog", "🐸", .shop(30)), avatar("pumpkin", "🎃", .shop(40)), avatar("bear", "🐻", .shop(50)),
+        avatar("pig", "🐷", .shop(50)), avatar("parrot", "🦜", .shop(70)), avatar("flamingo", "🦩", .shop(70)),
+        avatar("sloth", "🦥", .shop(90)), avatar("giraffe", "🦒", .shop(90)), avatar("teddy", "🧸", .shop(120)),
+        avatar("dragonFace", "🐲", .shop(200)),
         avatar("sun", "🌞", .free), avatar("cactus", "🌵", .free),
         avatar("bee", "🐝", .achievement("fiftyChecks")),
         avatar("dog", "🐶", .achievement("streak14")),

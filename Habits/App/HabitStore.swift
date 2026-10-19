@@ -19,6 +19,7 @@ final class HabitStore {
     func reloadFromDisk() {
         if let fresh = DataFile.loadIfAvailable() {
             data = fresh
+            revision += 1
         }
     }
 
@@ -85,6 +86,104 @@ final class HabitStore {
         revision += 1
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()
+    }
+
+    // MARK: Искры, магазин, питомец
+
+    struct Economy {
+        var report = SparkReport()
+        var balance = 0
+    }
+
+    @ObservationIgnored private var economyCache: (revision: Int, value: Economy)?
+
+    /// Заработанное и баланс, пересчитываются после изменений.
+    var economy: Economy {
+        _ = revision
+        if let cache = economyCache, cache.revision == revision { return cache.value }
+        let facts = AchievementFacts(data: data)
+        let unlocked = Achievements.all.filter { $0.isUnlocked(facts) }.count
+        let report = Sparks.report(data, facts: facts, unlockedAchievements: unlocked)
+        let value = Economy(report: report, balance: Sparks.balance(earned: report.total, data: data))
+        economyCache = (revision, value)
+        return value
+    }
+
+    /// Списывает искры, если хватает. Возвращает true при успехе.
+    private func spend(_ amount: Int) -> Bool {
+        guard economy.balance >= amount else { return false }
+        data.wallet.spent += amount
+        return true
+    }
+
+    @discardableResult
+    func buyReward(_ reward: Reward) -> Bool {
+        guard case .shop(let price) = reward.unlock, !data.wallet.purchases.contains(reward.id), spend(price) else { return false }
+        data.wallet.purchases.append(reward.id)
+        if reward.kind == .avatar { data.settings.avatarID = reward.id } else { data.settings.backgroundID = reward.id }
+        commit()
+        return true
+    }
+
+    var extraFreezesThisMonth: Int { data.wallet.extraFreezes[Wallet.monthKey(Date()), default: 0] }
+
+    @discardableResult
+    func buyFreeze() -> Bool {
+        guard extraFreezesThisMonth < Sparks.maxExtraFreezes, spend(Sparks.freezePrice) else { return false }
+        data.wallet.extraFreezes[Wallet.monthKey(Date()), default: 0] += 1
+        commit()
+        return true
+    }
+
+    /// Подарок Pro раз в месяц. Возвращает число подаренных искр.
+    @discardableResult
+    func claimProGift() -> Int {
+        let month = Wallet.monthKey(Date())
+        guard data.isPro, !data.wallet.proMonths.contains(month) else { return 0 }
+        data.wallet.proMonths.append(month)
+        commit()
+        return Sparks.proMonthlyGift
+    }
+
+    func adoptPet(species: String, name: String) {
+        let clean = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        data.wallet.pet = PetState(species: species, name: clean.isEmpty ? String(localized: "Buddy") : clean, adoptedAt: Date())
+        commit()
+    }
+
+    func renamePet(_ name: String) {
+        let clean = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !clean.isEmpty else { return }
+        data.wallet.pet?.name = clean
+        commit()
+    }
+
+    var feedsToday: Int { data.wallet.pet?.feeds[DayKey.make(Date()), default: 0] ?? 0 }
+
+    @discardableResult
+    func feedPet() -> Bool {
+        guard data.wallet.pet != nil, feedsToday < Sparks.feedsPerDay, spend(Sparks.feedPrice) else { return false }
+        let key = DayKey.make(Date())
+        data.wallet.pet?.feeds[key, default: 0] += 1
+        // Старые записи о кормлении не нужны дольше года.
+        if let cutoff = Calendar.app.date(byAdding: .day, value: -400, to: Date()) {
+            let old = DayKey.make(cutoff)
+            data.wallet.pet?.feeds = data.wallet.pet?.feeds.filter { $0.key >= old } ?? [:]
+        }
+        commit()
+        return true
+    }
+
+    /// Сменить вид питомца; платный вид сначала покупается.
+    @discardableResult
+    func setPetSpecies(_ species: PetSpecies) -> Bool {
+        if !Pets.isOwned(species, data: data) {
+            guard !species.needsPro, let price = species.price, spend(price) else { return false }
+            data.wallet.ownedPets.append(species.id)
+        }
+        data.wallet.pet?.species = species.id
+        commit()
+        return true
     }
 
     // MARK: Группы

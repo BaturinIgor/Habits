@@ -17,11 +17,19 @@ struct HabitStats: Hashable {
     var last30Total = 0
     /// Сколько раз привычку выполнили после пропуска.
     var comebacks = 0
+    /// Сколько раз серия доходила до 7, 14, 21... и до 30, 60... дней (для бонусов искр).
+    var weekMilestones = 0
+    var monthMilestones = 0
 }
 
 enum Freeze {
     /// Сколько пропусков в месяц не прерывают серию.
     static let perMonth = 2
+
+    /// Лимит на месяц с учётом докупленных за искры.
+    static func limit(year: Int, month: Int, data: AppData) -> Int {
+        perMonth + data.wallet.extraFreezes[String(format: "%04d-%02d", year, month), default: 0]
+    }
 }
 
 struct DayProgress: Identifiable, Hashable {
@@ -68,6 +76,8 @@ enum Stats {
                 switch data.status(habit.id, day: key) {
                 case .some(.done):
                     run += 1
+                    if run % 7 == 0 { result.weekMilestones += 1 }
+                    if run % 30 == 0 { result.monthMilestones += 1 }
                     result.totalDone += 1
                     counted += 1
                     result.bestStreak = max(result.bestStreak, run)
@@ -83,7 +93,7 @@ enum Stats {
                         if inWindow { result.last30Total += 1 }
                         let c = calendar.dateComponents([.year, .month], from: day)
                         let month = (c.year ?? 0) * 12 + (c.month ?? 0)
-                        if run > 0 && freezesUsed[month, default: 0] < Freeze.perMonth {
+                        if run > 0 && freezesUsed[month, default: 0] < Freeze.limit(year: c.year ?? 0, month: c.month ?? 0, data: data) {
                             freezesUsed[month, default: 0] += 1
                             result.frozenDays.insert(key)
                         } else {

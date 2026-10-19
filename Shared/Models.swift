@@ -362,11 +362,12 @@ struct AppData: Codable {
     /// Ключ: "<habitID>|yyyy-MM-dd".
     var checkIns: [String: CheckIn] = [:]
     var settings: AppSettings = AppSettings()
+    var wallet: Wallet = Wallet()
 
     init() {}
 
     enum CodingKeys: String, CodingKey {
-        case version, habits, groups, checkIns, settings
+        case version, habits, groups, checkIns, settings, wallet
     }
 
     init(from decoder: Decoder) throws {
@@ -376,6 +377,7 @@ struct AppData: Codable {
         groups = try c.decodeIfPresent([HabitGroup].self, forKey: .groups) ?? []
         checkIns = try c.decodeIfPresent([String: CheckIn].self, forKey: .checkIns) ?? [:]
         settings = try c.decodeIfPresent(AppSettings.self, forKey: .settings) ?? AppSettings()
+        wallet = (try? c.decodeIfPresent(Wallet.self, forKey: .wallet)) ?? Wallet()
     }
 }
 

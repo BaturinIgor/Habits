@@ -39,7 +39,7 @@ struct HabitDetailView: View {
                     StatTile(title: "Total check-ins", value: "\(stats.totalDone)", systemImage: "checkmark.circle.fill", color: .green)
                     if !stats.isWeekly {
                         StatTile(title: "Last 30 days", value: "\(stats.last30Done)/\(stats.last30Total)", systemImage: "calendar", color: .blue)
-                        StatTile(title: "Freezes this month", value: "\(freezesThisMonth(stats))/\(Freeze.perMonth)", systemImage: "snowflake", color: .cyan)
+                        StatTile(title: "Freezes this month", value: "\(freezesThisMonth(stats))/\(Freeze.perMonth + store.data.wallet.extraFreezes[Wallet.monthKey(Date()), default: 0])", systemImage: "snowflake", color: .cyan)
                     }
                 }
 

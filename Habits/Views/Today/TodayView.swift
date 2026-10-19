@@ -25,6 +25,8 @@ struct TodayView: View {
     @State private var noteTarget: NoteTarget?
     @State private var habitToDelete: Habit?
     @State private var showingProfile = false
+    @State private var showingSparks = false
+    @State private var showingPet = false
     @Namespace private var zoom
 
     private var calendar: Calendar { .app }
@@ -46,6 +48,11 @@ struct TodayView: View {
 
                 DayProgressCard(progress: progress, isFuture: isFuture, celebrate: isToday)
                     .plainRow(top: 6, bottom: 6)
+
+                if store.data.wallet.pet != nil && isToday {
+                    PetCard { showingPet = true }
+                        .plainRow(top: 4, bottom: 6)
+                }
 
                 if !store.data.groups.isEmpty {
                     GroupFilterBar(selection: $groupFilter)
@@ -81,6 +88,14 @@ struct TodayView: View {
                     }
                     .accessibilityLabel("Profile")
                 }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        showingSparks = true
+                    } label: {
+                        SparkBadge(amount: store.economy.balance)
+                    }
+                    .accessibilityLabel("Sparks")
+                }
                 if !isToday {
                     ToolbarItem(placement: .topBarLeading) {
                         Button("Today") {
@@ -111,6 +126,12 @@ struct TodayView: View {
             }
             .sheet(isPresented: $showingProfile) {
                 ProfileView()
+            }
+            .sheet(isPresented: $showingSparks) {
+                SparksView()
+            }
+            .sheet(isPresented: $showingPet) {
+                PetView()
             }
             .sheet(item: $editingHabit) { habit in
                 HabitEditorView(habit: habit)
