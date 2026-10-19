@@ -18,8 +18,40 @@ enum AppGroup {
                 result += groups
             }
         }
+        // Настоящие группы из профиля подписи (SideStore может переименовать группу
+        // и не записать ALTAppGroups).
+        result += provisionedGroups(in: bundleURL)
+        if bundleURL.pathExtension == "appex" {
+            result += provisionedGroups(in: bundleURL.deletingLastPathComponent().deletingLastPathComponent())
+        }
+        // Варианты с суффиксом команды, который SideStore добавляет к идентификаторам.
+        for id in [Bundle.main.bundleIdentifier, appBundleIdentifier].compactMap({ $0 }) {
+            if let range = id.range(of: "com.personal.habits.") {
+                let suffix = id[range.upperBound...].split(separator: ".").last.map(String.init) ?? ""
+                if !suffix.isEmpty && suffix != "widget" {
+                    result.append("\(defaultIdentifier).\(suffix)")
+                }
+            }
+        }
         result.append(defaultIdentifier)
         return result
+    }
+
+    private static var appBundleIdentifier: String? {
+        let url = Bundle.main.bundleURL
+        guard url.pathExtension == "appex" else { return Bundle.main.bundleIdentifier }
+        return Bundle(url: url.deletingLastPathComponent().deletingLastPathComponent())?.bundleIdentifier
+    }
+
+    /// Группы из embedded.mobileprovision: плист внутри подписанного файла.
+    private static func provisionedGroups(in bundle: URL) -> [String] {
+        guard let raw = try? Data(contentsOf: bundle.appendingPathComponent("embedded.mobileprovision")),
+              let start = raw.range(of: Data("<?xml".utf8)),
+              let end = raw.range(of: Data("</plist>".utf8), in: start.lowerBound..<raw.endIndex),
+              let plist = try? PropertyListSerialization.propertyList(from: raw[start.lowerBound..<end.upperBound], format: nil) as? [String: Any],
+              let entitlements = plist["Entitlements"] as? [String: Any],
+              let groups = entitlements["com.apple.security.application-groups"] as? [String] else { return [] }
+        return groups.filter { !$0.contains("*") }
     }
 
     /// Для диагностики: какие группы пробовали и какие доступны.
