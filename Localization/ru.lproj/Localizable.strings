@@ -23,6 +23,7 @@
 "A grown pet brings up to +5 a day" = "Подросший питомец приносит до +5 в день";
 "A week strong" = "Неделя силы";
 "A whole year" = "Целый год";
+"Abstract ideas and news" = "Абстрактные понятия и новости";
 "Achievements" = "Ачивки";
 "Achievements and rewards" = "Ачивки и награды";
 "Active" = "Активен";
@@ -35,6 +36,7 @@
 "Added" = "Добавлено";
 "Adopt" = "Завести";
 "Adopt a pet" = "Заведи питомца";
+"Advanced" = "Продвинутый";
 "After habit" = "После привычки";
 "After: %@" = "После: %@";
 "Afternoon" = "День";
@@ -60,6 +62,7 @@
 "Background" = "Фон";
 "Backgrounds" = "Фоны";
 "Backup" = "Резервная копия";
+"Beginner" = "Начальный";
 "Best current streak" = "Лучшая серия сейчас";
 "Best streak" = "Лучшая серия";
 "Better than nothing" = "Лучше, чем ничего";
@@ -161,6 +164,7 @@
 "Evening" = "Вечер";
 "Evening summary" = "Вечерняя сводка";
 "Every day" = "Каждый день";
+"Everyday basics" = "Самые нужные слова на каждый день";
 "Exclusive avatars and backgrounds" = "Эксклюзивные аватарки и фоны";
 "Exclusive pets and more sparks" = "Особые питомцы и больше искр";
 "Export data" = "Экспорт данных";
@@ -230,6 +234,7 @@
 "Import data" = "Загрузить данные";
 "In progress: %lld" = "Учу: %lld";
 "Include technical info" = "Добавить техническую информацию";
+"Intermediate" = "Средний";
 "Interval" = "Интервал";
 "Iron will" = "Железная воля";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "Цена: ✨ %lld, у тебя: ✨ %lld. Отмечай привычки, чтобы заработать ещё.";
@@ -264,6 +269,7 @@
 "Let's go" = "Начать";
 "Let's keep the streak going!" = "Давай не прерывать серию!";
 "Let's start with your first habit" = "Начнём с первой привычки";
+"Level" = "Уровень";
 "Level %lld" = "Уровень %lld";
 "Listen" = "Послушать";
 "Listen to a podcast" = "Слушать подкаст";
@@ -455,7 +461,7 @@
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Нажми на день, чтобы отметить. Удерживай, чтобы пропустить или добавить заметку.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Нажми на кружок или смахни вправо, чтобы отметить. Смахни влево, чтобы пропустить, добавить заметку или изменить. Удерживай, чтобы поменять порядок.";
 "Tap the days when the habit should be done" = "Нажми на дни, в которые нужно выполнять привычку";
-"Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done." = "Нажми на кружок привычки, чтобы открыть карточки на сегодня. Незнакомые слова вернутся на повторение, а привычка отметится сама, когда пройдёшь все карточки дня.";
+"Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "Нажми на кружок привычки, чтобы открыть карточки на сегодня. Новые слова идут вразброс из выбранного уровня. Незнакомые слова вернутся на повторение, а привычка отметится сама, когда пройдёшь все карточки дня. Уровень можно поменять в любой момент, выученные слова сохранятся.";
 "Tap to see the translation" = "Нажми, чтобы увидеть перевод";
 "Tell us what you think" = "Расскажи, что думаешь";
 "Terms of Use" = "Условия";
@@ -513,6 +519,7 @@
 "Widget" = "Виджет";
 "Words" = "Слова";
 "Words for today are done" = "Слова на сегодня пройдены";
+"Work, travel and conversation" = "Работа, путешествия и разговоры";
 "Workout" = "Тренировка";
 "Write 10 notes" = "Напиши 10 заметок";
 "Write 50 notes" = "Напиши 50 заметок";

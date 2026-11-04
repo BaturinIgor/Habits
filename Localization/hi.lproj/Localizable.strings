@@ -23,6 +23,7 @@
 "A grown pet brings up to +5 a day" = "बड़ा पालतू रोज़ +5 तक लाता है";
 "A week strong" = "एक मज़बूत हफ़्ता";
 "A whole year" = "पूरा एक साल";
+"Abstract ideas and news" = "अमूर्त विचार और ख़बरें";
 "Achievements" = "उपलब्धियाँ";
 "Achievements and rewards" = "उपलब्धियाँ और इनाम";
 "Active" = "सक्रिय";
@@ -35,6 +36,7 @@
 "Added" = "जोड़ा गया";
 "Adopt" = "अपनाएँ";
 "Adopt a pet" = "एक पालतू अपनाएँ";
+"Advanced" = "उन्नत";
 "After habit" = "इस आदत के बाद";
 "After: %@" = "इसके बाद: %@";
 "Afternoon" = "दोपहर";
@@ -60,6 +62,7 @@
 "Background" = "पृष्ठभूमि";
 "Backgrounds" = "पृष्ठभूमि";
 "Backup" = "बैकअप";
+"Beginner" = "शुरुआती";
 "Best current streak" = "अभी की सबसे लंबी लगातार";
 "Best streak" = "सबसे लंबी लगातार";
 "Better than nothing" = "कुछ न करने से बेहतर";
@@ -161,6 +164,7 @@
 "Evening" = "शाम";
 "Evening summary" = "शाम का सारांश";
 "Every day" = "हर दिन";
+"Everyday basics" = "रोज़मर्रा के बुनियादी शब्द";
 "Exclusive avatars and backgrounds" = "ख़ास अवतार और पृष्ठभूमि";
 "Exclusive pets and more sparks" = "ख़ास पालतू और ज़्यादा चिंगारियाँ";
 "Export data" = "डेटा निर्यात करें";
@@ -230,6 +234,7 @@
 "Import data" = "डेटा आयात करें";
 "In progress: %lld" = "सीख रहे हैं: %lld";
 "Include technical info" = "तकनीकी जानकारी जोड़ें";
+"Intermediate" = "मध्यम";
 "Interval" = "अंतराल";
 "Iron will" = "फ़ौलादी इरादा";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "कीमत: ✨ %lld, आपके पास: ✨ %lld। और कमाने के लिए आदतें पूरी करें।";
@@ -264,6 +269,7 @@
 "Let's go" = "शुरू करें";
 "Let's keep the streak going!" = "चलो श्रृंखला जारी रखें!";
 "Let's start with your first habit" = "चलिए पहली आदत से शुरू करें";
+"Level" = "स्तर";
 "Level %lld" = "लेवल %lld";
 "Listen" = "सुनें";
 "Listen to a podcast" = "पॉडकास्ट सुनें";
@@ -455,7 +461,7 @@
 "Tap a day to check it off. Press and hold to skip it or add a note." = "दिन पर टैप करके पूरा करें। छोड़ने या नोट जोड़ने के लिए दबाकर रखें।";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "पूरा करने के लिए गोले पर टैप करें या दाएँ स्वाइप करें। छोड़ने, नोट या बदलाव के लिए बाएँ स्वाइप करें। क्रम बदलने के लिए दबाकर रखें।";
 "Tap the days when the habit should be done" = "जिन दिनों आदत करनी है, उन पर टैप करें";
-"Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done." = "आज के कार्ड खोलने के लिए आदत के गोले पर टैप करें। जो शब्द अभी याद नहीं हैं वे दोहराने के लिए लौटेंगे, और दिन के सारे कार्ड पूरे होने पर आदत अपने आप पूरी हो जाएगी।";
+"Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "आज के कार्ड खोलने के लिए आदत के गोले पर टैप करें। नए शब्द चुने गए स्तर से किसी भी क्रम में आते हैं। जो शब्द अभी याद नहीं हैं वे दोहराने के लिए लौटेंगे, और दिन के सारे कार्ड पूरे होने पर आदत अपने आप पूरी हो जाएगी। स्तर कभी भी बदला जा सकता है, सीखे हुए शब्द बने रहेंगे।";
 "Tap to see the translation" = "अनुवाद देखने के लिए टैप करें";
 "Tell us what you think" = "अपनी राय बताएँ";
 "Terms of Use" = "उपयोग की शर्तें";
@@ -513,6 +519,7 @@
 "Widget" = "विजेट";
 "Words" = "शब्द";
 "Words for today are done" = "आज के शब्द पूरे हो गए";
+"Work, travel and conversation" = "काम, यात्रा और बातचीत";
 "Workout" = "कसरत";
 "Write 10 notes" = "10 नोट लिखें";
 "Write 50 notes" = "50 नोट लिखें";

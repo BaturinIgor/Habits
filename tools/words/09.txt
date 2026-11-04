@@ -1,0 +1,122 @@
+#level 2
+# category|en|ru|de|fr|es|pt-BR|it|tr|pl|id|zh-Hans|ja|ko|hi
+ideas|knowledge|знание|das Wissen|la connaissance|el conocimiento|o conhecimento|la conoscenza|bilgi|wiedza|pengetahuan|知识|知識|지식|ज्ञान
+ideas|wisdom|мудрость|die Weisheit|la sagesse|la sabiduría|a sabedoria|la saggezza|bilgelik|mądrość|kebijaksanaan|智慧|知恵|지혜|बुद्धिमानी
+ideas|meaning|смысл|die Bedeutung|le sens|el significado|o significado|il significato|anlam|znaczenie|makna|意义|意味|의미|अर्थ
+ideas|purpose|цель (назначение)|der Zweck|le but|el propósito|o propósito|lo scopo|amaç|cel (sens)|tujuan|目的|目的|목적|उद्देश्य
+ideas|belief|убеждение|die Überzeugung|la croyance|la creencia|a crença|la convinzione|inanç|przekonanie|keyakinan|信念|信念|신념|विश्वास
+ideas|doubt|сомнение|der Zweifel|le doute|la duda|a dúvida|il dubbio|şüphe|wątpliwość|keraguan|怀疑|疑い|의심|संदेह
+ideas|attitude|отношение (позиция)|die Einstellung|l'attitude|la actitud|a atitude|l'atteggiamento|tutum|postawa|sikap|态度|態度|태도|रवैया
+ideas|point of view|точка зрения|der Standpunkt|le point de vue|el punto de vista|o ponto de vista|il punto di vista|bakış açısı|punkt widzenia|sudut pandang|观点|観点|관점|दृष्टिकोण
+ideas|argument|довод|das Argument|l'argument|el argumento|o argumento|l'argomento (tesi)|argüman|argument|argumen|论点|論拠|논거|तर्क
+ideas|conclusion|вывод|die Schlussfolgerung|la conclusion|la conclusión|a conclusão|la conclusione|sonuç (çıkarım)|wniosek|kesimpulan|结论|結論|결론|निष्कर्ष
+ideas|cause|причина|die Ursache|la cause|la causa|a causa|la causa|neden|przyczyna|penyebab|原因|原因|원인|कारण
+ideas|effect|следствие|die Wirkung|l'effet|el efecto|o efeito|l'effetto|etki|skutek|akibat|影响|効果|효과|प्रभाव
+ideas|consequence|последствие|die Folge|la conséquence|la consecuencia|a consequência|la conseguenza|sonuç (doğurduğu)|konsekwencja|konsekuensi|后果|結果 (影響)|결과 (여파)|परिणाम (नतीजा)
+ideas|influence|влияние|der Einfluss|l'influence|la influencia|a influência|l'influenza|nüfuz|wpływ|pengaruh|影响力|影響|영향|असर
+ideas|advantage|преимущество|der Vorteil|l'avantage|la ventaja|a vantagem|il vantaggio|avantaj|zaleta|keuntungan (kelebihan)|优势|利点|장점|फ़ायदा
+ideas|disadvantage|недостаток|der Nachteil|l'inconvénient|la desventaja|a desvantagem|lo svantaggio|dezavantaj|wada|kekurangan|缺点|欠点|단점|नुकसान
+ideas|risk|риск|das Risiko|le risque|el riesgo|o risco|il rischio|risk|ryzyko|risiko|风险|リスク|위험|जोखिम
+ideas|chance|шанс|die Chance|la chance|la posibilidad|a chance|la possibilità|şans|szansa|kesempatan|机会|チャンス|기회|मौका
+ideas|condition|условие|die Bedingung|la condition|la condición|a condição|la condizione|koşul|warunek|syarat|条件|条件|조건|शर्त
+ideas|situation|ситуация|die Situation|la situation|la situación|a situação|la situazione|durum|sytuacja|situasi|情况|状況|상황|स्थिति
+ideas|issue|вопрос (проблема)|das Thema (Problem)|la question (enjeu)|la cuestión|a questão|la questione|mesele|kwestia|isu|议题|問題 (論点)|쟁점|मुद्दा
+ideas|solution|решение (проблемы)|die Lösung|la solution|la solución|a solução|la soluzione|çözüm|rozwiązanie|solusi|解决办法|解決策|해결책|समाधान
+ideas|aim|задача (цель)|das Ziel (Absicht)|l'objectif|el objetivo|o objetivo|l'obiettivo|hedef|dążenie|sasaran|目标|狙い|목표|लक्ष्य
+ideas|effort|усилие|die Anstrengung|l'effort|el esfuerzo|o esforço|lo sforzo|çaba|wysiłek|usaha|努力|努力|노력|प्रयास
+ideas|progress|прогресс|der Fortschritt|le progrès|el progreso|o progresso|il progresso|ilerleme|postęp|kemajuan|进步|進歩|진보|प्रगति
+ideas|development|развитие|die Entwicklung|le développement|el desarrollo|o desenvolvimento|lo sviluppo|gelişme|rozwój|perkembangan|发展|発展|발전|विकास
+ideas|quantity|количество|die Menge|la quantité|la cantidad|a quantidade|la quantità|miktar|ilość|jumlah|数量|量|양|मात्रा
+ideas|level|уровень|das Niveau|le niveau|el nivel|o nível|il livello|seviye|poziom|tingkat|水平|レベル|수준|स्तर
+ideas|amount|сумма|der Betrag|le montant|el importe|o montante|l'importo|tutar|kwota|jumlah uang|金额|金額|금액|राशि
+ideas|imagination|воображение|die Fantasie|l'imagination|la imaginación|a imaginação|l'immaginazione|hayal gücü|wyobraźnia|imajinasi|想象力|想像力|상상력|कल्पना
+ideas|memory|память|das Gedächtnis|la mémoire|la memoria|a memória|la memoria|hafıza|pamięć|ingatan|记忆|記憶|기억|स्मृति
+ideas|attention|внимание|die Aufmerksamkeit|l'attention|la atención|a atenção|l'attenzione|dikkat|uwaga|perhatian|注意|注意|주의|ध्यान
+ideas|ability|способность|die Fähigkeit|la capacité|la capacidad|a capacidade|la capacità|yetenek|zdolność|kemampuan|能力|能力|능력|क्षमता
+ideas|talent|талант|das Talent|le talent|el talento|o talento|il talento|yetenek (doğuştan)|talent|bakat|天赋|才能|재능|प्रतिभा
+ideas|goal in life|цель в жизни|das Lebensziel|le but dans la vie|la meta en la vida|o objetivo de vida|lo scopo della vita|hayat amacı|cel w życiu|tujuan hidup|人生目标|人生の目標|인생의 목표|जीवन का लक्ष्य
+ideas|independence|независимость|die Unabhängigkeit|l'indépendance|la independencia|a independência|l'indipendenza|bağımsızlık|niezależność|kemerdekaan|独立|独立|독립|आज़ादी
+ideas|respect|уважение|der Respekt|le respect|el respeto|o respeito|il rispetto|saygı|szacunek|rasa hormat|尊重|尊敬|존중|सम्मान
+ideas|trust|доверие|das Vertrauen|la confiance|la confianza|a confiança|la fiducia|güven|zaufanie|kepercayaan|信任|信頼|신뢰|भरोसा
+ideas|patience|терпение|die Geduld|la patience|la paciencia|a paciência|la pazienza|sabır|cierpliwość|kesabaran|耐心|忍耐|인내|धैर्य
+ideas|courage|смелость|der Mut|le courage|el valor (coraje)|a coragem|il coraggio|cesaret|odwaga|keberanian|勇气|勇気|용기|साहस
+ideas|confidence|уверенность|das Selbstvertrauen|la confiance en soi|la confianza en sí mismo|a autoconfiança|la sicurezza di sé|özgüven|pewność siebie|percaya diri|自信|自信|자신감|आत्मविश्वास
+ideas|kindness|доброта|die Freundlichkeit|la gentillesse|la amabilidad|a gentileza|la gentilezza|nezaket|życzliwość|kebaikan|善良|親切|친절|दयालुता
+ideas|honesty|честность|die Ehrlichkeit|l'honnêteté|la honestidad|a honestidade|l'onestà|dürüstlük|uczciwość|kejujuran|诚实|正直|정직|ईमानदारी
+ideas|loyalty|верность|die Treue|la fidélité|la lealtad|a lealdade|la lealtà|sadakat|lojalność|kesetiaan|忠诚|忠誠|충성|वफ़ादारी
+ideas|duty|долг (обязанность)|die Pflicht|le devoir|el deber|o dever|il dovere|görev|obowiązek|kewajiban|义务|義務|의무|कर्तव्य
+ideas|happiness|счастье|das Glück|le bonheur|la felicidad|a felicidade|la felicità|mutluluk|szczęście|kebahagiaan|幸福|幸せ|행복|ख़ुशी
+ideas|anxiety|тревога|die Angst (Sorge)|l'anxiété|la ansiedad|a ansiedade|l'ansia|kaygı|niepokój|kecemasan|焦虑|不安|불안|चिंता
+ideas|stress|стресс|der Stress|le stress|el estrés|o estresse|lo stress|stres|stres|stres|压力|ストレス|스트레스|तनाव
+ideas|shame|стыд|die Scham|la honte|la vergüenza|a vergonha|la vergogna|utanç|wstyd|rasa malu|羞耻|恥|수치심|शर्म
+ideas|guilt|вина|die Schuld|la culpabilité|la culpa|a culpa|la colpa|suçluluk|wina|rasa bersalah|内疚|罪悪感|죄책감|अपराध बोध
+ideas|regret|сожаление|das Bedauern|le regret|el arrepentimiento|o arrependimento|il rimpianto|pişmanlık|żal|penyesalan|后悔|後悔|후회|पछतावा
+ideas|satisfaction|удовлетворение|die Zufriedenheit|la satisfaction|la satisfacción|a satisfação|la soddisfazione|memnuniyet|zadowolenie|kepuasan|满足|満足|만족|संतोष
+ideas|curiosity|любопытство|die Neugier|la curiosité|la curiosidad|a curiosidade|la curiosità|merak|ciekawość|rasa ingin tahu|好奇心|好奇心|호기심|जिज्ञासा
+ideas|sympathy|сочувствие|das Mitgefühl|la compassion|la compasión|a compaixão|la compassione|şefkat|współczucie|simpati|同情|同情|동정|सहानुभूति
+verbs|to achieve|достигать|erreichen|atteindre|lograr|alcançar|raggiungere|başarmak|osiągać|mencapai|实现|達成する|달성하다|हासिल करना
+verbs|to avoid|избегать|vermeiden|éviter|evitar|evitar|evitare|kaçınmak|unikać|menghindari|避免|避ける|피하다|टालना
+verbs|to allow|позволять|erlauben|permettre|permitir|permitir|permettere|izin vermek|pozwalać|mengizinkan|允许|許す|허락하다|अनुमति देना
+verbs|to forbid|запрещать|verbieten|interdire|prohibir|proibir|vietare|yasaklamak|zabraniać|melarang|禁止|禁止する|금지하다|मना करना
+verbs|to require|требовать|verlangen|exiger|exigir|exigir|richiedere|gerektirmek|wymagać|membutuhkan|要求|要求する|요구하다|आवश्यकता होना
+verbs|to suggest|предлагать|vorschlagen|proposer|sugerir|sugerir|suggerire|önermek|proponować|menyarankan|建议|提案する|제안하다|सुझाव देना
+verbs|to convince|убеждать|überzeugen|convaincre|convencer|convencer|convincere|ikna etmek|przekonywać|meyakinkan|说服|説得する|설득하다|मनाना
+verbs|to influence|влиять|beeinflussen|influencer|influir|influenciar|influenzare|etkilemek|wpływać|memengaruhi|影响|影響を与える|영향을 주다|प्रभावित करना
+verbs|to depend|зависеть|abhängen|dépendre|depender|depender|dipendere|bağlı olmak|zależeć|bergantung|取决于|依存する|의존하다|निर्भर होना
+verbs|to belong|принадлежать|gehören|appartenir|pertenecer|pertencer|appartenere|ait olmak|należeć|milik|属于|属する|속하다|संबंधित होना
+verbs|to consist of|состоять из|bestehen aus|se composer de|consistir en|consistir em|consistere in|oluşmak|składać się z|terdiri dari|由…组成|成り立つ|구성되다|से बना होना
+verbs|to include|включать|einschließen|inclure|incluir|incluir|includere|içermek|obejmować|termasuk|包括|含む|포함하다|शामिल करना
+verbs|to compare|сравнивать|vergleichen|comparer|comparar|comparar|confrontare|karşılaştırmak|porównywać|membandingkan|比较|比べる|비교하다|तुलना करना
+verbs|to imagine|представлять (воображать)|sich vorstellen|imaginer|imaginar|imaginar|immaginare|hayal etmek|wyobrażać sobie|membayangkan|想象|想像する|상상하다|कल्पना करना
+verbs|to realize|осознавать|erkennen|se rendre compte|darse cuenta|perceber|rendersi conto|farkına varmak|uświadamiać sobie|menyadari|意识到|気づく|깨닫다|एहसास होना
+verbs|to notice|замечать|bemerken|remarquer|notar|notar|notare|fark etmek|zauważać|memperhatikan|注意到|気がつく|알아차리다|ग़ौर करना
+verbs|to doubt|сомневаться|zweifeln|douter|dudar|duvidar|dubitare|şüphe etmek|wątpić|meragukan|怀疑|疑う|의심하다|संदेह करना
+verbs|to believe|верить|glauben|croire|creer|acreditar|credere|inanmak|wierzyć|percaya|相信|信じる|믿다|विश्वास करना
+verbs|to expect|ожидать|erwarten|s'attendre à|esperar (prever)|esperar (prever)|aspettarsi|beklemek (ummak)|oczekiwać|mengharapkan|期待|期待する|기대하다|उम्मीद करना
+verbs|to admit|признавать|zugeben|admettre|admitir|admitir|ammettere|kabul etmek|przyznawać|mengakui|承认|認める|인정하다|स्वीकार करना
+verbs|to refuse|отказываться|ablehnen|refuser|negarse|recusar|rifiutare|reddetmek|odmawiać|menolak|拒绝|断る|거절하다|अस्वीकार करना
+verbs|to support|поддерживать|unterstützen|soutenir|apoyar|apoiar|sostenere (appoggiare)|desteklemek|wspierać|mendukung|支持|支える|지지하다|समर्थन करना
+verbs|to oppose|выступать против|sich widersetzen|s'opposer|oponerse|opor-se|opporsi|karşı çıkmak|sprzeciwiać się|menentang|反对|反対する|반대하다|विरोध करना
+verbs|to solve|решать|lösen|résoudre|resolver|resolver|risolvere|çözmek|rozwiązywać|memecahkan|解决|解決する|해결하다|हल करना
+verbs|to create|создавать|erschaffen|créer|crear|criar|creare|yaratmak|tworzyć|menciptakan (membuat)|创造|創造する|창조하다|बनाना (रचना)
+verbs|to cause|вызывать (быть причиной)|verursachen|causer|causar|causar|causare|neden olmak|powodować|menyebabkan|导致|引き起こす|일으키다|कारण बनना
+verbs|to prevent|предотвращать|verhindern|empêcher|prevenir|prevenir|prevenire|önlemek|zapobiegać|mencegah|预防|防ぐ|예방하다|रोकना
+verbs|to reach|достигать (добраться)|erreichen (ankommen)|parvenir à|alcanzar|chegar a|arrivare a|ulaşmak|docierać|sampai|到达|到達する|도달하다|पहुँचना
+verbs|to establish|основывать|gründen|fonder|fundar|fundar|fondare|kurmak|zakładać|mendirikan|建立|設立する|설립하다|स्थापित करना
+verbs|to define|определять|definieren|définir|definir|definir|definire|tanımlamak|definiować|mendefinisikan|定义|定義する|정의하다|परिभाषित करना
+verbs|to express|выражать|ausdrücken|exprimer|expresar|expressar|esprimere|ifade etmek|wyrażać|mengungkapkan|表达|表現する|표현하다|व्यक्त करना
+verbs|to respect|уважать|respektieren|respecter|respetar|respeitar|rispettare|saygı duymak|szanować|menghormati|尊重|尊重する|존중하다|सम्मान करना
+verbs|to forgive|прощать|vergeben|pardonner|perdonar|perdoar|perdonare|affetmek|wybaczać|memaafkan|原谅|許す (罪を)|용서하다|माफ़ करना
+verbs|to deserve|заслуживать|verdienen (würdig sein)|mériter|merecer|merecer|meritare|hak etmek|zasługiwać|layak|值得|値する|받을 만하다|हक़दार होना
+verbs|to adapt|приспосабливаться|sich anpassen|s'adapter|adaptarse|adaptar-se|adattarsi|uyum sağlamak|przystosowywać się|beradaptasi|适应|適応する|적응하다|अनुकूल होना
+verbs|to overcome|преодолевать|überwinden|surmonter|superar|superar|superare|üstesinden gelmek|pokonywać|mengatasi|克服|克服する|극복하다|पार पाना
+verbs|to encourage|поощрять|ermutigen|encourager|animar|incentivar|incoraggiare|teşvik etmek|zachęcać|mendorong|鼓励|励ます|격려하다|प्रोत्साहित करना
+adjectives|abstract|абстрактный|abstrakt|abstrait|abstracto|abstrato|astratto|soyut|abstrakcyjny|abstrak|抽象的|抽象的な|추상적인|अमूर्त
+adjectives|obvious|очевидный|offensichtlich|évident|obvio|óbvio|ovvio|açık (belli)|oczywisty|jelas|明显的|明らかな|명백한|स्पष्ट
+adjectives|complex|сложный (составной)|komplex|complexe|complejo|complexo|complesso|karmaşık|złożony|kompleks|复杂的|複雑な|복잡한|जटिल
+adjectives|significant|значительный|bedeutend|significatif|significativo|significativo|significativo|önemli (kayda değer)|znaczący|signifikan|重大的|重要な (著しい)|상당한|महत्वपूर्ण (उल्लेखनीय)
+adjectives|reliable|надёжный|zuverlässig|fiable|fiable|confiável|affidabile|güvenilir|niezawodny|dapat diandalkan|可靠的|信頼できる|믿을 수 있는|विश्वसनीय
+adjectives|efficient|эффективный|effizient|efficace|eficiente|eficiente|efficiente|verimli|wydajny|efisien|高效的|効率的な|효율적인|कुशल
+adjectives|fair|справедливый|fair|juste|justo|justo|giusto|adil|sprawiedliwy|adil|公平的|公平な|공정한|निष्पक्ष
+adjectives|unfair|несправедливый|unfair|injuste|injusto|injusto|ingiusto|adaletsiz|niesprawiedliwy|tidak adil|不公平的|不公平な|불공평한|अन्यायपूर्ण
+adjectives|global|глобальный|global|mondial|global|global|globale|küresel|globalny|global|全球的|世界的な|세계적인|वैश्विक
+adjectives|local|местный|lokal|local|local|local|locale|yerel|lokalny|lokal|当地的|地元の|지역의|स्थानीय
+adjectives|public|общественный|öffentlich|public|público|público|pubblico|kamusal|publiczny|umum|公共的|公共の|공공의|सार्वजनिक
+adjectives|private|частный|privat|privé|privado|privado|privato|özel|prywatny|pribadi|私人的|私的な|사적인|निजी
+adjectives|modern|современный|modern|moderne|moderno|moderno|moderno|modern|nowoczesny|modern|现代的|現代の|현대의|आधुनिक
+adjectives|ancient|древний|uralt|ancien|antiguo|antigo|antico|antik|starożytny|kuno|古代的|古代の|고대의|प्राचीन
+adjectives|essential|необходимый (важнейший)|wesentlich|essentiel|esencial|essencial|essenziale|temel|niezbędny|penting sekali|必不可少的|不可欠な|필수적인|आवश्यक
+adjectives|available|доступный|verfügbar|disponible|disponible|disponível|disponibile|mevcut|dostępny|tersedia|可用的|利用できる|이용 가능한|उपलब्ध
+adjectives|accurate|точный|genau|précis|preciso|preciso|preciso|doğru (kesin)|dokładny|akurat|准确的|正確な|정확한|सटीक
+adjectives|realistic|реалистичный|realistisch|réaliste|realista|realista|realistico|gerçekçi|realistyczny|realistis|现实的|現実的な|현실적인|यथार्थवादी
+adjectives|responsible|ответственный|verantwortungsvoll|responsable|responsable|responsável|responsabile|sorumlu|odpowiedzialny|bertanggung jawab|负责任的|責任感のある|책임감 있는|ज़िम्मेदार
+adjectives|independent|независимый|unabhängig|indépendant|independiente|independente|indipendente|bağımsız|niezależny|mandiri|独立的|独立した|독립적인|स्वतंत्र
+adjectives|confident|уверенный|selbstbewusst|sûr de soi|seguro de sí mismo|confiante|sicuro di sé|kendinden emin|pewny siebie|percaya diri (yakin)|自信的|自信のある|자신 있는|आत्मविश्वासी
+adjectives|generous|щедрый|großzügig|généreux|generoso|generoso|generoso|cömert|hojny|murah hati|慷慨的|気前のいい|관대한|उदार
+adjectives|curious|любопытный|neugierig|curieux|curioso|curioso|curioso|meraklı|ciekawy|ingin tahu|好奇的|好奇心の強い|호기심 많은|जिज्ञासु
+adjectives|ambitious|амбициозный|ehrgeizig|ambitieux|ambicioso|ambicioso|ambizioso|hırslı|ambitny|ambisius|有雄心的|野心的な|야심 찬|महत्वाकांक्षी
+adjectives|patient|терпеливый|geduldig|patient|paciente|paciente|paziente|sabırlı|cierpliwy|sabar|有耐心的|辛抱強い|참을성 있는|धैर्यवान
+adjectives|thankful|признательный|dankbar|reconnaissant|agradecido|agradecido|riconoscente|minnettar|wdzięczny|berterima kasih|感激的|感謝している|감사하는|आभारी
+adjectives|anxious|тревожный|ängstlich|anxieux|ansioso|ansioso|ansioso|endişeli|zaniepokojony|cemas|焦虑的|不安な|불안한|चिंतित
+adjectives|confused|растерянный|verwirrt|perplexe|confundido|confuso|confuso|kafası karışık|zdezorientowany|bingung|困惑的|混乱した|혼란스러운|उलझन में
+adjectives|inspired|вдохновлённый|inspiriert|inspiré|inspirado|inspirado|ispirato|ilham almış|zainspirowany|terinspirasi|受到启发的|刺激を受けた|영감을 받은|प्रेरित

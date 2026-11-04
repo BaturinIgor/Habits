@@ -1,0 +1,129 @@
+#level 2
+# category|en|ru|de|fr|es|pt-BR|it|tr|pl|id|zh-Hans|ja|ko|hi
+society|society|общество|die Gesellschaft|la société|la sociedad|a sociedade|la società|toplum|społeczeństwo|masyarakat|社会|社会|사회|समाज
+society|government|правительство|die Regierung|le gouvernement|el gobierno|o governo|il governo|hükümet|rząd|pemerintah|政府|政府|정부|सरकार
+society|election|выборы|die Wahl|l'élection|las elecciones|a eleição|le elezioni|seçim|wybory|pemilihan umum|选举|選挙|선거|चुनाव
+society|law|закон|das Gesetz|la loi|la ley|a lei|la legge|kanun|prawo|hukum|法律|法律|법|कानून
+society|right (freedom)|право|das Recht|le droit|el derecho|o direito|il diritto|hak|prawo (uprawnienie)|hak|权利|権利|권리|अधिकार
+society|freedom|свобода|die Freiheit|la liberté|la libertad|a liberdade|la libertà|özgürlük|wolność|kebebasan|自由|自由|자유|स्वतंत्रता
+society|equality|равенство|die Gleichheit|l'égalité|la igualdad|a igualdade|l'uguaglianza|eşitlik|równość|kesetaraan|平等|平等|평등|समानता
+society|justice|справедливость|die Gerechtigkeit|la justice|la justicia|a justiça|la giustizia|adalet|sprawiedliwość|keadilan|正义|正義|정의|न्याय
+society|citizen|гражданин|der Bürger|le citoyen|el ciudadano|o cidadão|il cittadino|vatandaş|obywatel|warga negara|公民|市民|시민|नागरिक
+society|population|население|die Bevölkerung|la population|la población|a população|la popolazione|nüfus|ludność|penduduk|人口|人口|인구|जनसंख्या
+society|generation|поколение|die Generation|la génération|la generación|a geração|la generazione|nesil|pokolenie|generasi|一代人|世代|세대|पीढ़ी
+society|tradition|традиция|die Tradition|la tradition|la tradición|a tradição|la tradizione|gelenek|tradycja|tradisi|传统|伝統|전통|परंपरा
+society|culture|культура|die Kultur|la culture|la cultura|a cultura|la cultura|kültür|kultura|budaya|文化|文化|문화|संस्कृति
+society|religion|религия|die Religion|la religion|la religión|a religião|la religione|din|religia|agama|宗教|宗教|종교|धर्म
+society|history|история|die Geschichte|l'histoire|la historia|a história|la storia|tarih|historia|sejarah|历史|歴史|역사|इतिहास
+society|war|война|der Krieg|la guerre|la guerra|a guerra|la guerra|savaş|wojna|perang|战争|戦争|전쟁|युद्ध
+society|peace|мир (не война)|der Frieden|la paix|la paz|a paz|la pace|barış|pokój (brak wojny)|perdamaian|和平|平和|평화|शांति
+society|crime|преступление|das Verbrechen|le crime|el delito|o crime|il crimine|suç|przestępstwo|kejahatan|犯罪|犯罪|범죄|अपराध
+society|court|суд|das Gericht|le tribunal|el tribunal|o tribunal|il tribunale|mahkeme|sąd|pengadilan|法院|裁判所|법원|अदालत
+society|punishment|наказание|die Strafe|la punition|el castigo|a punição|la punizione|ceza|kara|hukuman|惩罚|罰|처벌|सज़ा
+society|evidence|доказательство|der Beweis|la preuve|la prueba|a prova|la prova|kanıt|dowód|bukti|证据|証拠|증거|सबूत
+society|victim|жертва|das Opfer|la victime|la víctima|a vítima|la vittima|kurban|ofiara|korban|受害者|被害者|피해자|पीड़ित
+society|protest|протест|der Protest|la manifestation|la protesta|o protesto|la protesta|protesto|protest|unjuk rasa|抗议|抗議|시위|विरोध प्रदर्शन
+society|authority|власть|die Macht (Behörde)|l'autorité|la autoridad|a autoridade|l'autorità|otorite|władza|otoritas|权威|権威|권위|प्राधिकार
+society|policy|политика (курс)|die Politik (Kurs)|la politique (mesures)|la política (medidas)|a política (diretriz)|la politica (linea)|politika (izlenen yol)|polityka (kurs)|kebijakan|政策|政策|정책|नीति
+society|politics|политика|die Politik|la politique|la política|a política|la politica|siyaset|polityka|politik|政治|政治|정치|राजनीति
+society|president|президент|der Präsident|le président|el presidente|o presidente|il presidente|cumhurbaşkanı|prezydent|presiden|总统|大統領|대통령|राष्ट्रपति
+society|minister|министр|der Minister|le ministre|el ministro|o ministro|il ministro|bakan|minister|menteri|部长|大臣|장관|मंत्री
+society|state (country)|государство|der Staat|l'État|el Estado|o Estado|lo Stato|devlet|państwo|negara|国家|国家|국가|राज्य
+society|nation|нация|die Nation|la nation|la nación|a nação|la nazione|ulus|naród|bangsa|民族|国民|민족|राष्ट्र
+society|immigrant|иммигрант|der Einwanderer|l'immigré|el inmigrante|o imigrante|l'immigrato|göçmen|imigrant|imigran|移民|移民|이민자|आप्रवासी
+society|poverty|бедность|die Armut|la pauvreté|la pobreza|a pobreza|la povertà|yoksulluk|ubóstwo|kemiskinan|贫困|貧困|빈곤|गरीबी
+society|violence|насилие|die Gewalt|la violence|la violencia|a violência|la violenza|şiddet|przemoc|kekerasan|暴力|暴力|폭력|हिंसा
+society|safety|безопасность|die Sicherheit|la sécurité|la seguridad|a segurança|la sicurezza|güvenlik|bezpieczeństwo|keamanan|安全|安全|안전|सुरक्षा
+society|community|сообщество|die Gemeinschaft|la communauté|la comunidad|a comunidade|la comunità|topluluk|społeczność|komunitas|社区|地域社会|공동체|समुदाय
+society|volunteer|волонтёр|der Freiwillige|le bénévole|el voluntario|o voluntário|il volontario|gönüllü|wolontariusz|relawan|志愿者|ボランティア|자원봉사자|स्वयंसेवक
+news|newspaper|газета|die Zeitung|le journal|el periódico|o jornal|il giornale|gazete|gazeta|surat kabar|报纸|新聞|신문|अख़बार
+news|journalist|журналист|der Journalist|le journaliste|el periodista|o jornalista|il giornalista|gazeteci|dziennikarz|wartawan|记者|記者|기자|पत्रकार
+news|article|статья|der Artikel|l'article|el artículo|o artigo|l'articolo|makale|artykuł|artikel|文章|記事|기사|लेख
+news|headline|заголовок|die Schlagzeile|le gros titre|el titular|a manchete|il titolo|manşet|nagłówek|judul berita|标题|見出し|헤드라인|सुर्ख़ी
+news|event|событие|das Ereignis|l'événement|el acontecimiento|o acontecimento|l'evento|olay|wydarzenie|peristiwa|事件|出来事|사건|घटना
+news|crisis|кризис|die Krise|la crise|la crisis|a crise|la crisi|kriz|kryzys|krisis|危机|危機|위기|संकट
+news|disaster|катастрофа|die Katastrophe|la catastrophe|el desastre|o desastre|il disastro|felaket|katastrofa|bencana|灾难|災害|재난|आपदा
+news|interview (media)|интервью|das Interview|l'interview|la entrevista (medios)|a entrevista (mídia)|l'intervista|röportaj|wywiad|wawancara|采访|インタビュー|인터뷰|साक्षात्कार
+news|announcement|объявление|die Ankündigung|l'annonce|el anuncio|o anúncio|l'annuncio|duyuru|ogłoszenie|pengumuman|公告|発表|발표|घोषणा
+news|rumor|слух|das Gerücht|la rumeur|el rumor|o boato|la voce (diceria)|söylenti|plotka|desas-desus|谣言|うわさ|소문|अफ़वाह
+news|source|источник|die Quelle|la source|la fuente|a fonte|la fonte|kaynak|źródło|sumber|来源|情報源|출처|स्रोत
+news|fact|факт|die Tatsache|le fait|el hecho|o fato|il fatto|gerçek|fakt|fakta|事实|事実|사실|तथ्य
+news|truth|правда|die Wahrheit|la vérité|la verdad|a verdade|la verità|doğruluk|prawda|kebenaran|真相|真実|진실|सच
+news|lie|ложь|die Lüge|le mensonge|la mentira|a mentira|la bugia|yalan|kłamstwo|kebohongan|谎言|うそ|거짓말|झूठ
+news|advertisement|реклама|die Werbung|la publicité|el anuncio publicitario|a propaganda|la pubblicità|reklam|reklama|iklan|广告|広告|광고|विज्ञापन
+news|media|СМИ|die Medien|les médias|los medios|a mídia|i media|medya|media|media|媒体|メディア|언론|मीडिया
+news|public opinion|общественное мнение|die öffentliche Meinung|l'opinion publique|la opinión pública|a opinião pública|l'opinione pubblica|kamuoyu|opinia publiczna|opini publik|舆论|世論|여론|जनमत
+news|survey|опрос|die Umfrage|le sondage|la encuesta|a pesquisa (enquete)|il sondaggio|anket|ankieta|survei|调查|アンケート|설문 조사|सर्वेक्षण
+news|to announce|объявлять|ankündigen|annoncer|anunciar|anunciar|annunciare|duyurmak|ogłaszać|mengumumkan|宣布|発表する|발표하다|घोषणा करना
+news|to report|сообщать|berichten|rapporter|informar|relatar|riferire|bildirmek|relacjonować|melaporkan|报道|報道する|보도하다|रिपोर्ट करना
+news|to publish|публиковать|veröffentlichen|publier|publicar|publicar|pubblicare|yayımlamak|publikować|menerbitkan|出版|出版する|출판하다|प्रकाशित करना
+news|to happen|происходить|geschehen|se passer|suceder|acontecer|succedere|olmak (meydana gelmek)|dziać się|terjadi|发生|起こる|일어나다|होना (घटित)
+news|to claim|утверждать|behaupten|affirmer|afirmar|afirmar|sostenere|iddia etmek|twierdzić|mengklaim|声称|主張する|주장하다|दावा करना
+news|to deny|отрицать|leugnen|nier|negar|negar|negare|inkâr etmek|zaprzeczać|menyangkal|否认|否定する|부인하다|इनकार करना
+news|to warn|предупреждать|warnen|avertir|advertir|alertar|avvertire|uyarmak|ostrzegać|memperingatkan|警告|警告する|경고하다|चेतावनी देना
+economy|economy|экономика|die Wirtschaft|l'économie|la economía|a economia|l'economia|ekonomi|gospodarka|ekonomi|经济|経済|경제|अर्थव्यवस्था
+economy|market (economy)|рынок (экономика)|der Markt (Wirtschaft)|le marché (économie)|el mercado (economía)|o mercado (economia)|il mercato (economia)|piyasa|rynek (gospodarka)|pasar (ekonomi)|市场|市場|시장 (경제)|बाज़ार (अर्थव्यवस्था)
+economy|tax|налог|die Steuer|l'impôt|el impuesto|o imposto|la tassa|vergi|podatek|pajak|税|税金|세금|कर
+economy|budget|бюджет|das Budget|le budget|el presupuesto|o orçamento|il bilancio|bütçe|budżet|anggaran|预算|予算|예산|बजट
+economy|profit|прибыль|der Gewinn|le bénéfice|la ganancia|o lucro|il profitto|kâr|zysk|keuntungan|利润|利益|이익|लाभ
+economy|loss|убыток|der Verlust|la perte|la pérdida|o prejuízo|la perdita|zarar|strata|kerugian|亏损|損失|손실|घाटा
+economy|debt|долг|die Schulden|la dette|la deuda|a dívida|il debito|borç|dług|utang|债务|借金|빚|कर्ज़
+economy|loan|кредит|der Kredit|le prêt|el préstamo|o empréstimo|il prestito|kredi|pożyczka|pinjaman|贷款|ローン|대출|ऋण
+economy|investment|инвестиция|die Investition|l'investissement|la inversión|o investimento|l'investimento|yatırım|inwestycja|investasi|投资|投資|투자|निवेश
+economy|income|доход|das Einkommen|le revenu|el ingreso|a renda|il reddito|gelir|dochód|pendapatan|收入|収入|소득|आय
+economy|growth|рост|das Wachstum|la croissance|el crecimiento|o crescimento|la crescita|büyüme|wzrost|pertumbuhan|增长|成長|성장|वृद्धि
+economy|inflation|инфляция|die Inflation|l'inflation|la inflación|a inflação|l'inflazione|enflasyon|inflacja|inflasi|通货膨胀|インフレ|인플레이션|मुद्रास्फीति
+economy|unemployment|безработица|die Arbeitslosigkeit|le chômage|el desempleo|o desemprego|la disoccupazione|işsizlik|bezrobocie|pengangguran|失业|失業|실업|बेरोज़गारी
+economy|industry|промышленность|die Industrie|l'industrie|la industria|a indústria|l'industria|sanayi|przemysł|industri|工业|産業|산업|उद्योग
+economy|trade|торговля|der Handel|le commerce|el comercio|o comércio|il commercio|ticaret|handel|perdagangan|贸易|貿易|무역|व्यापार
+economy|product|продукт|das Produkt|le produit|el producto|o produto|il prodotto|ürün|produkt|produk|产品|製品|제품|उत्पाद
+economy|demand|спрос|die Nachfrage|la demande|la demanda|a demanda|la domanda|talep|popyt|permintaan|需求|需要|수요|मांग
+economy|supply|предложение (товаров)|das Angebot|l'offre|la oferta|a oferta|l'offerta|arz|podaż|penawaran|供给|供給|공급|आपूर्ति
+economy|competition|конкуренция|der Wettbewerb|la concurrence|la competencia|a concorrência|la concorrenza|rekabet|konkurencja|persaingan|竞争|競争|경쟁|प्रतियोगिता
+economy|value|ценность|der Wert|la valeur|el valor|o valor|il valore|değer|wartość|nilai|价值|価値|가치|मूल्य
+economy|resource|ресурс|die Ressource|la ressource|el recurso|o recurso|la risorsa|kaynak (kaynaklar)|zasób|sumber daya|资源|資源|자원|संसाधन
+economy|to invest|инвестировать|investieren|investir|invertir|investir|investire|yatırım yapmak|inwestować|berinvestasi|投资|投資する|투자하다|निवेश करना
+economy|to grow|расти|wachsen|grandir|crecer|crescer|crescere|büyümek|rosnąć|tumbuh|增长|成長する|성장하다|बढ़ना
+economy|to increase|увеличивать|erhöhen|augmenter|aumentar|aumentar|aumentare|artırmak|zwiększać|meningkatkan|增加|増やす|늘리다|बढ़ाना
+economy|to reduce|сокращать|verringern|réduire|reducir|reduzir|ridurre|azaltmak|zmniejszać|mengurangi|减少|減らす|줄이다|कम करना
+economy|to afford|позволить себе|sich leisten|se permettre|permitirse|dar-se ao luxo de|permettersi|gücü yetmek|pozwolić sobie|mampu membeli|负担得起|買う余裕がある|감당하다|ख़र्च उठा पाना
+economy|to produce|производить|herstellen|produire|producir|produzir|produrre|üretmek|produkować|memproduksi|生产|生産する|생산하다|उत्पादन करना
+economy|to compete|конкурировать|konkurrieren|rivaliser|competir|competir|competere|rekabet etmek|konkurować|bersaing|竞争|競争する|경쟁하다|प्रतिस्पर्धा करना
+science|science|наука|die Wissenschaft|la science|la ciencia|a ciência|la scienza|bilim|nauka|ilmu pengetahuan|科学|科学|과학|विज्ञान
+science|research|исследование|die Forschung|la recherche|la investigación|a pesquisa|la ricerca|araştırma|badanie|penelitian|研究|研究|연구|अनुसंधान
+science|scientist|учёный|der Wissenschaftler|le scientifique|el científico|o cientista|lo scienziato|bilim insanı|naukowiec|ilmuwan|科学家|科学者|과학자|वैज्ञानिक
+science|experiment|эксперимент|das Experiment|l'expérience (scientifique)|el experimento|o experimento|l'esperimento|deney|eksperyment|percobaan|实验|実験|실험|प्रयोग
+science|theory|теория|die Theorie|la théorie|la teoría|a teoria|la teoria|teori|teoria|teori|理论|理論|이론|सिद्धांत
+science|discovery|открытие|die Entdeckung|la découverte|el descubrimiento|a descoberta|la scoperta|keşif|odkrycie|penemuan|发现|発見|발견|खोज
+science|invention|изобретение|die Erfindung|l'invention|el invento|a invenção|l'invenzione|icat|wynalazek|penemuan (ciptaan)|发明|発明|발명|आविष्कार
+science|technology|технология|die Technologie|la technologie|la tecnología|a tecnologia|la tecnologia|teknoloji|technologia|teknologi|技术|技術|기술|प्रौद्योगिकी
+science|energy|энергия|die Energie|l'énergie|la energía|a energia|l'energia|enerji|energia|energi|能源|エネルギー|에너지|ऊर्जा
+science|data|данные|die Daten|les données|los datos|os dados|i dati|veri|dane|data|数据|データ|데이터|आंकड़े
+science|result|результат|das Ergebnis|le résultat|el resultado|o resultado|il risultato|sonuç|wynik|hasil|结果|結果|결과|परिणाम
+science|method|метод|die Methode|la méthode|el método|o método|il metodo|yöntem|metoda|metode|方法|方法|방법|विधि
+science|analysis|анализ|die Analyse|l'analyse|el análisis|a análise|l'analisi|analiz|analiza|analisis|分析|分析|분석|विश्लेषण
+science|universe|вселенная|das Universum|l'univers|el universo|o universo|l'universo|evren|wszechświat|alam semesta|宇宙|宇宙|우주|ब्रह्मांड
+science|planet|планета|der Planet|la planète|el planeta|o planeta|il pianeta|gezegen|planeta|planet|行星|惑星|행성|ग्रह
+science|species|вид (биология)|die Art (Biologie)|l'espèce|la especie|a espécie|la specie|tür (canlı)|gatunek|spesies|物种|種|종 (생물)|प्रजाति
+science|evolution|эволюция|die Evolution|l'évolution|la evolución|a evolução|l'evoluzione|evrim|ewolucja|evolusi|进化|進化|진화|विकास (जैव)
+science|disease|болезнь|die Krankheit|la maladie|la enfermedad|a doença|la malattia|hastalık|choroba|penyakit|疾病|病気|질병|बीमारी
+science|vaccine|вакцина|der Impfstoff|le vaccin|la vacuna|a vacina|il vaccino|aşı|szczepionka|vaksin|疫苗|ワクチン|백신|टीका
+science|brain|мозг|das Gehirn|le cerveau|el cerebro|o cérebro|il cervello|beyin|mózg|otak|大脑|脳|뇌|दिमाग़
+science|artificial intelligence|искусственный интеллект|die künstliche Intelligenz|l'intelligence artificielle|la inteligencia artificial|a inteligência artificial|l'intelligenza artificiale|yapay zekâ|sztuczna inteligencja|kecerdasan buatan|人工智能|人工知能|인공지능|कृत्रिम बुद्धिमत्ता
+science|to discover|открывать (находить)|entdecken|découvrir|descubrir|descobrir|scoprire|keşfetmek|odkrywać|menemukan|发现|発見する|발견하다|खोजना
+science|to invent|изобретать|erfinden|inventer|inventar|inventar|inventare|icat etmek|wynaleźć|menciptakan|发明|発明する|발명하다|आविष्कार करना
+science|to prove|доказывать|beweisen|prouver|demostrar|provar|dimostrare|kanıtlamak|udowodnić|membuktikan|证明|証明する|증명하다|साबित करना
+science|to measure|измерять|messen|mesurer|medir|medir|misurare|ölçmek|mierzyć|mengukur|测量|測る|측정하다|मापना
+science|to research|исследовать|erforschen|faire des recherches|investigar|pesquisar|ricercare|araştırmak|badać|meneliti|研究|研究する|연구하다|शोध करना
+science|to develop|развивать|entwickeln|développer|desarrollar|desenvolver|sviluppare|geliştirmek|rozwijać|mengembangkan|发展|開発する|개발하다|विकसित करना
+nature|climate change|изменение климата|der Klimawandel|le changement climatique|el cambio climático|a mudança climática|il cambiamento climatico|iklim değişikliği|zmiana klimatu|perubahan iklim|气候变化|気候変動|기후 변화|जलवायु परिवर्तन
+nature|recycling|переработка отходов|das Recycling|le recyclage|el reciclaje|a reciclagem|il riciclaggio|geri dönüşüm|recykling|daur ulang|回收利用|リサイクル|재활용|पुनर्चक्रण
+nature|waste|отходы|der Abfall|les déchets|los residuos|o lixo|i rifiuti|atık|odpady|sampah|垃圾|ごみ|쓰레기|कचरा
+nature|nature|природа|die Natur|la nature|la naturaleza|a natureza|la natura|doğa|przyroda|alam|自然|自然|자연|प्रकृति
+nature|drought|засуха|die Dürre|la sécheresse|la sequía|a seca|la siccità|kuraklık|susza|kekeringan|干旱|干ばつ|가뭄|सूखा
+nature|flood|наводнение|die Überschwemmung|l'inondation|la inundación|a enchente|l'alluvione|sel|powódź|banjir|洪水|洪水|홍수|बाढ़
+nature|earthquake|землетрясение|das Erdbeben|le tremblement de terre|el terremoto|o terremoto|il terremoto|deprem|trzęsienie ziemi|gempa bumi|地震|地震|지진|भूकंप
+nature|to protect|защищать|schützen|protéger|proteger|proteger|proteggere|korumak|chronić|melindungi|保护|守る|보호하다|रक्षा करना
+nature|to destroy|разрушать|zerstören|détruire|destruir|destruir|distruggere|yok etmek|niszczyć|menghancurkan|破坏|破壊する|파괴하다|नष्ट करना
+nature|to recycle|перерабатывать|recyceln|recycler|reciclar|reciclar|riciclare|geri dönüştürmek|poddawać recyklingowi|mendaur ulang|回收|リサイクルする|재활용하다|पुनर्चक्रित करना
+nature|to waste|тратить впустую|verschwenden|gaspiller|desperdiciar|desperdiçar|sprecare|israf etmek|marnować|menyia-nyiakan|浪费|無駄にする|낭비하다|बर्बाद करना

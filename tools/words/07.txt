@@ -1,0 +1,127 @@
+#level 1
+# category|en|ru|de|fr|es|pt-BR|it|tr|pl|id|zh-Hans|ja|ko|hi
+shopping|discount|скидка|der Rabatt|la réduction|el descuento|o desconto|lo sconto|indirim|zniżka|diskon|折扣|割引|할인|छूट
+shopping|receipt|чек|der Kassenbon|le ticket de caisse|el recibo|o recibo|lo scontrino|fiş|paragon|struk|收据|レシート|영수증|रसीद
+shopping|cash|наличные|das Bargeld|les espèces|el efectivo|o dinheiro vivo|i contanti|nakit|gotówka|uang tunai|现金|現金|현금|नकद
+shopping|card (bank)|карта (банковская)|die Karte (Bank)|la carte bancaire|la tarjeta|o cartão|la carta di credito|kart (banka)|karta płatnicza|kartu bank|银行卡|カード|카드|कार्ड
+shopping|size|размер|die Größe|la taille|la talla|o tamanho|la taglia|beden|rozmiar|ukuran|尺码|サイズ|사이즈|नाप
+shopping|quality|качество|die Qualität|la qualité|la calidad|a qualidade|la qualità|kalite|jakość|kualitas|质量|品質|품질|गुणवत्ता
+shopping|sale|распродажа|der Ausverkauf|les soldes|las rebajas|a liquidação|i saldi|indirim sezonu|wyprzedaż|obral|大减价|セール|세일|सेल
+shopping|change (money)|сдача|das Wechselgeld|la monnaie|el cambio|o troco|il resto|para üstü|reszta|uang kembalian|找零|おつり|거스름돈|छुट्टे पैसे
+shopping|queue|очередь|die Schlange|la file d'attente|la cola|a fila|la coda|kuyruk|kolejka|antrean|排队|列|줄|लाइन
+shopping|to choose a gift|выбирать подарок|ein Geschenk aussuchen|choisir un cadeau|elegir un regalo|escolher um presente|scegliere un regalo|hediye seçmek|wybierać prezent|memilih hadiah|挑选礼物|プレゼントを選ぶ|선물을 고르다|तोहफ़ा चुनना
+shopping|to try on|примерять|anprobieren|essayer (un vêtement)|probarse|experimentar|provare (un vestito)|denemek (kıyafet)|przymierzać|mencoba (pakaian)|试穿|試着する|입어 보다|पहनकर देखना
+shopping|to cost|стоить|kosten|coûter|costar|custar|costare|mal olmak|kosztować|berharga|花费|値段がする|비용이 들다|क़ीमत होना
+shopping|to spend|тратить|ausgeben|dépenser|gastar|gastar|spendere|harcamak|wydawać|menghabiskan|花 (钱)|使う (お金)|쓰다 (돈)|ख़र्च करना
+shopping|to save (money)|копить|sparen|économiser|ahorrar|economizar|risparmiare|biriktirmek|oszczędzać|menabung (uang)|存钱 (动词)|貯める|모으다 (돈)|बचत करना
+shopping|to order|заказывать|bestellen|commander|pedir|pedir|ordinare|sipariş vermek|zamawiać|memesan (barang)|点 (菜)|注文する|주문하다|ऑर्डर करना
+food|taste|вкус|der Geschmack|le goût|el sabor|o sabor|il sapore|tat|smak|rasa|味道|味|맛|स्वाद
+food|recipe|рецепт|das Rezept|la recette|la receta|a receita|la ricetta|tarif|przepis|resep|食谱|レシピ|조리법|विधि
+food|ingredient|ингредиент|die Zutat|l'ingrédient|el ingrediente|o ingrediente|l'ingrediente|malzeme|składnik|bahan|原料|材料|재료|सामग्री
+food|meal|приём пищи|die Mahlzeit|le repas|la comida (del día)|a refeição|il pasto|öğün|posiłek|hidangan|一餐|食事|식사|भोजन
+food|snack|перекус|der Snack|l'en-cas|el tentempié|o lanche|lo spuntino|atıştırmalık|przekąska|camilan|零食|おやつ|간식|नाश्ता (हल्का)
+food|dessert|десерт|der Nachtisch|le dessert|el postre|a sobremesa|il dolce|tatlı|deser|hidangan penutup|甜点|デザート|디저트|मिठाई (भोजन के बाद)
+food|sweet|сладкий|süß|sucré|dulce|doce|dolce|tatlı (tat)|słodki|manis|甜|甘い|단|मीठा
+food|salty|солёный|salzig|salé|salado|salgado|salato|tuzlu|słony|asin|咸|しょっぱい|짠|नमकीन
+food|bitter|горький|bitter|amer|amargo|amargo|amaro|acı (tat)|gorzki|pahit|苦|苦い|쓴|कड़वा
+food|spicy|острый|scharf|épicé|picante|apimentado|piccante|acılı|ostry|pedas|辣|辛い|매운|तीखा
+food|fresh|свежий|frisch|frais|fresco|fresco|fresco|taze|świeży|segar|新鲜|新鮮な|신선한|ताज़ा
+food|raw|сырой|roh|cru|crudo|cru|crudo|çiğ|surowy|mentah|生的|生の|날것의|कच्चा
+food|to taste|пробовать|probieren|goûter|probar|provar|assaggiare|tadına bakmak|próbować (jedzenie)|mencicipi|尝|味見する|맛보다|चखना
+food|to boil|варить|kochen (sieden)|bouillir|hervir|ferver|bollire|kaynatmak|gotować (wodę)|merebus|煮|ゆでる|끓이다|उबालना
+food|to fry|жарить|braten|frire|freír|fritar|friggere|kızartmak|smażyć|menggoreng|炸|揚げる|튀기다|तलना
+nature|environment|окружающая среда|die Umwelt|l'environnement|el medio ambiente|o meio ambiente|l'ambiente|çevre|środowisko|lingkungan hidup|环境|環境|환경|पर्यावरण
+nature|climate|климат|das Klima|le climat|el clima|o clima|il clima|iklim|klimat|iklim|气候|気候|기후|जलवायु
+nature|temperature|температура|die Temperatur|la température|la temperatura|a temperatura|la temperatura|sıcaklık|temperatura|suhu|温度|気温|온도|तापमान
+nature|storm|буря|der Sturm|la tempête|la tormenta|a tempestade|la tempesta|fırtına|burza|badai|暴风雨|嵐|폭풍|तूफ़ान
+nature|fog|туман|der Nebel|le brouillard|la niebla|a neblina|la nebbia|sis|mgła|kabut|雾|霧|안개|कोहरा
+nature|ice|лёд|das Eis (gefroren)|la glace (eau gelée)|el hielo|o gelo|il ghiaccio|buz|lód|es|冰|氷|얼음|बर्फ़ (जमा पानी)
+nature|plant|растение|die Pflanze|la plante|la planta|a planta|la pianta|bitki|roślina|tanaman|植物|植物|식물|पौधा
+nature|leaf|лист|das Blatt|la feuille|la hoja|a folha|la foglia|yaprak|liść|daun|叶子|葉|잎|पत्ता
+nature|field|поле|das Feld|le champ|el campo|o campo|il campo|tarla|pole|ladang|田野|畑|들판|खेत
+nature|desert|пустыня|die Wüste|le désert|el desierto|o deserto|il deserto|çöl|pustynia|gurun|沙漠|砂漠|사막|रेगिस्तान
+nature|coast|побережье|die Küste|la côte|la costa|o litoral|la costa|kıyı|wybrzeże|pesisir|海岸|海岸|해안|तट
+nature|wave|волна|die Welle|la vague|la ola|a onda|l'onda|dalga|fala|ombak|波浪|波|파도|लहर
+nature|sunrise|восход|der Sonnenaufgang|le lever du soleil|el amanecer|o nascer do sol|l'alba|gün doğumu|wschód słońca|matahari terbit|日出|日の出|일출|सूर्योदय
+nature|sunset|закат|der Sonnenuntergang|le coucher du soleil|la puesta de sol|o pôr do sol|il tramonto|gün batımı|zachód słońca|matahari terbenam|日落|日の入り|일몰|सूर्यास्त
+nature|pollution|загрязнение|die Verschmutzung|la pollution|la contaminación|a poluição|l'inquinamento|kirlilik|zanieczyszczenie|polusi|污染|汚染|오염|प्रदूषण
+tech|internet|интернет|das Internet|internet|internet|a internet|internet|internet|internet|internet|互联网|インターネット|인터넷|इंटरनेट
+tech|website|сайт|die Webseite|le site web|el sitio web|o site|il sito web|web sitesi|strona internetowa|situs web|网站|ウェブサイト|웹사이트|वेबसाइट
+tech|password|пароль|das Passwort|le mot de passe|la contraseña|a senha|la password|şifre|hasło|kata sandi|密码|パスワード|비밀번호|पासवर्ड
+tech|screen|экран|der Bildschirm|l'écran|la pantalla|a tela|lo schermo|ekran|ekran|layar|屏幕|画面|화면|स्क्रीन
+tech|battery|батарея|der Akku|la batterie|la batería|a bateria|la batteria|pil|bateria|baterai|电池|バッテリー|배터리|बैटरी
+tech|charger|зарядка (устройство)|das Ladegerät|le chargeur|el cargador|o carregador|il caricabatterie|şarj aleti|ładowarka|pengisi daya|充电器|充電器|충전기|चार्जर
+tech|message|сообщение|die Nachricht|le message|el mensaje|a mensagem|il messaggio|mesaj|wiadomość|pesan|消息|メッセージ|메시지|संदेश
+tech|app|приложение|die App|l'application|la aplicación|o aplicativo|l'app|uygulama|aplikacja|aplikasi|应用|アプリ|앱|ऐप
+tech|camera|камера|die Kamera|l'appareil photo|la cámara|a câmera|la fotocamera|kamera|aparat|kamera|相机|カメラ|카메라|कैमरा
+tech|file|файл|die Datei|le fichier|el archivo|o arquivo|il file|dosya|plik|berkas|文件|ファイル|파일|फ़ाइल
+tech|to download|скачивать|herunterladen|télécharger|descargar|baixar|scaricare|indirmek|pobierać|mengunduh|下载|ダウンロードする|다운로드하다|डाउनलोड करना
+tech|to call|звонить|anrufen|appeler|llamar|ligar|chiamare|aramak (telefon)|dzwonić|menelepon|打电话|電話する|전화하다|फ़ोन करना
+tech|to search|искать|suchen|chercher|buscar|procurar|cercare|aramak|szukać|mencari|搜索|探す|검색하다|खोजना
+tech|to save (file)|сохранять|speichern|enregistrer|guardar|salvar|salvare|kaydetmek|zapisywać|menyimpan|保存|保存する|저장하다|सहेजना
+tech|to delete|удалять|löschen|supprimer|borrar|apagar|cancellare|silmek|usuwać|menghapus|删除|削除する|삭제하다|मिटाना
+feelings|worried|обеспокоенный|besorgt|inquiet|preocupado|preocupado|preoccupato|endişeli|zmartwiony|khawatir|担心|心配な|걱정하는|चिंतित
+feelings|bored|скучающий|gelangweilt|qui s'ennuie|aburrido|entediado|annoiato|sıkılmış|znudzony|bosan|无聊|退屈な|지루한|ऊबा हुआ
+feelings|excited|взволнованный (радостно)|aufgeregt|enthousiaste|emocionado|animado|emozionato|heyecanlı|podekscytowany|bersemangat|兴奋|わくわくした|신나는|उत्साहित
+feelings|nervous|нервный|nervös|nerveux|nervioso|nervoso|nervoso|gergin|zdenerwowany|gugup|紧张|緊張した|긴장한|घबराया हुआ
+feelings|proud|гордый|stolz|fier|orgulloso|orgulhoso|orgoglioso|gururlu|dumny|bangga|自豪|誇らしい|자랑스러운|गर्वित
+feelings|lonely|одинокий|einsam|seul (isolé)|solo (solitario)|sozinho|solo (solitario)|yalnız|samotny|kesepian|孤独|寂しい|외로운|अकेला
+feelings|jealous|ревнивый|eifersüchtig|jaloux|celoso|ciumento|geloso|kıskanç|zazdrosny|cemburu|嫉妒|嫉妬深い|질투하는|जलनेवाला
+feelings|grateful|благодарный|dankbar|reconnaissant|agradecido|grato|grato|minnettar|wdzięczny|bersyukur|感激|感謝している|감사하는|आभारी
+feelings|embarrassed|смущённый|verlegen|gêné|avergonzado|envergonhado|imbarazzato|utanmış|zawstydzony|malu|尴尬|恥ずかしい|당황한|शर्मिंदा
+feelings|disappointed|разочарованный|enttäuscht|déçu|decepcionado|decepcionado|deluso|hayal kırıklığına uğramış|rozczarowany|kecewa|失望|がっかりした|실망한|निराश
+feelings|relaxed|расслабленный|entspannt|détendu|relajado|relaxado|rilassato|rahat|zrelaksowany|santai|放松|リラックスした|편안한|तनावमुक्त
+feelings|to worry|волноваться|sich Sorgen machen|s'inquiéter|preocuparse|se preocupar|preoccuparsi|endişelenmek|martwić się|khawatir (kata kerja)|担忧|心配する|걱정하다|चिंता करना
+feelings|to hope|надеяться|hoffen|espérer|esperar (desear)|esperar (ter esperança)|sperare|ummak|mieć nadzieję|berharap|希望 (动词)|願う|바라다|उम्मीद करना
+feelings|to enjoy|наслаждаться|genießen|profiter|disfrutar|aproveitar|godersi|tadını çıkarmak|cieszyć się|menikmati|享受|楽しむ|즐기다|आनंद लेना
+feelings|to hate|ненавидеть|hassen|détester|odiar|odiar|odiare|nefret etmek|nienawidzić|membenci|恨|嫌う|싫어하다|नफ़रत करना
+feelings|to prefer|предпочитать|bevorzugen|préférer|preferir|preferir|preferire|tercih etmek|woleć|lebih suka|更喜欢|好む|선호하다|ज़्यादा पसंद करना
+feelings|to be afraid|бояться|Angst haben|avoir peur|tener miedo|ter medo|avere paura|korkmak|bać się|takut (kata kerja)|害怕 (动词)|怖がる|무서워하다|डरना
+feelings|to calm down|успокоиться|sich beruhigen|se calmer|calmarse|se acalmar|calmarsi|sakinleşmek|uspokoić się|menenangkan diri|冷静下来|落ち着く|진정하다|शांत होना
+adjectives|comfortable|удобный|bequem|confortable|cómodo|confortável|comodo|rahat (konforlu)|wygodny|nyaman|舒服|快適な|편한|आरामदायक
+adjectives|dangerous|опасный|gefährlich|dangereux|peligroso|perigoso|pericoloso|tehlikeli|niebezpieczny|berbahaya|危险|危険な|위험한|ख़तरनाक
+adjectives|safe|безопасный|sicher|sûr|seguro|seguro|sicuro|güvenli|bezpieczny|aman|安全|安全な|안전한|सुरक्षित
+adjectives|quiet|тихий|leise|calme (silencieux)|tranquilo (silencioso)|silencioso|silenzioso|sessiz|cichy|sunyi|安静|静かな|조용한|शांत (आवाज़)
+adjectives|loud|громкий|laut|bruyant|ruidoso|barulhento|rumoroso|gürültülü|głośny|berisik|吵|うるさい|시끄러운|ऊँची आवाज़ वाला
+adjectives|wet|мокрый|nass|mouillé|mojado|molhado|bagnato|ıslak|mokry|basah|湿|濡れた|젖은|गीला
+adjectives|dry|сухой|trocken|sec|seco|seco|secco|kuru|suchy|kering|干|乾いた|마른|सूखा
+adjectives|heavy|тяжёлый|schwer (Gewicht)|lourd|pesado|pesado|pesante|ağır|ciężki|berat|重|重い|무거운|भारी
+adjectives|light (weight)|лёгкий (по весу)|leicht (Gewicht)|léger|ligero|leve|leggero|hafif|lekki|ringan|轻|軽い|가벼운|हल्का
+adjectives|thick|толстый|dick|épais|grueso|grosso|spesso|kalın|gruby|tebal|厚|厚い|두꺼운|मोटा
+adjectives|thin|тонкий|dünn|mince|delgado|fino|sottile|ince|cienki|tipis|薄|薄い|얇은|पतला
+adjectives|deep|глубокий|tief|profond|profundo|profundo|profondo|derin|głęboki|dalam|深|深い|깊은|गहरा
+adjectives|wide|широкий|breit|large|ancho|largo|largo|geniş|szeroki|lebar|宽|広い|넓은|चौड़ा
+adjectives|narrow|узкий|eng|étroit|estrecho|estreito|stretto|dar|wąski|sempit|窄|狭い|좁은|संकरा
+adjectives|soft|мягкий|weich|doux (au toucher)|suave|macio|morbido|yumuşak|miękki|lembut|软|柔らかい|부드러운|नरम
+adjectives|hard|твёрдый|hart|dur|duro|duro|duro|sert|twardy|keras|硬|硬い|딱딱한|सख़्त
+adjectives|rich|богатый|reich|riche|rico|rico|ricco|zengin|bogaty|kaya|富有|お金持ちの|부유한|अमीर
+adjectives|poor|бедный|arm|pauvre|pobre|pobre|povero|fakir|biedny|miskin|穷|貧しい|가난한|ग़रीब
+adjectives|famous|знаменитый|berühmt|célèbre|famoso|famoso|famoso|ünlü|sławny|terkenal|著名|有名な|유명한|मशहूर
+adjectives|popular|популярный|beliebt|populaire|popular|popular|popolare|popüler|popularny|populer|受欢迎|人気のある|인기 있는|लोकप्रिय
+adjectives|possible|возможный|möglich|possible|posible|possível|possibile|mümkün|możliwy|mungkin (bisa)|可能|可能な|가능한|संभव
+adjectives|impossible|невозможный|unmöglich|impossible|imposible|impossível|impossibile|imkânsız|niemożliwy|mustahil|不可能|不可能な|불가능한|असंभव
+adjectives|necessary|необходимый|notwendig|nécessaire|necesario|necessário|necessario|gerekli|konieczny|perlu|必要|必要な|필요한|आवश्यक
+adjectives|usual|обычный|gewöhnlich|habituel|habitual|habitual|solito|olağan|zwykły|biasa|平常|普通の|보통의|सामान्य
+adjectives|strange|странный|seltsam|étrange|extraño|estranho|strano|garip|dziwny|aneh|奇怪|変な|이상한|अजीब
+adjectives|similar|похожий|ähnlich|similaire|parecido|parecido|simile|benzer|podobny|mirip|相似|似ている|비슷한|समान
+adjectives|different|разный|anders|différent|diferente|diferente|diverso|farklı|inny|berbeda|不同|違う|다른|अलग
+adjectives|ready|готовый|bereit|prêt|listo|pronto|pronto|hazır|gotowy|siap|准备好|準備ができた|준비된|तैयार
+adjectives|polite|вежливый|höflich|poli|educado|educado|gentile|kibar|uprzejmy|sopan|礼貌|礼儀正しい|예의 바른|विनम्र
+adjectives|lazy|ленивый|faul|paresseux|perezoso|preguiçoso|pigro|tembel|leniwy|malas|懒|怠け者の|게으른|आलसी
+adjectives|honest|честный|ehrlich|honnête|honesto|honesto|onesto|dürüst|uczciwy|jujur|诚实|正直な|정직한|ईमानदार
+adjectives|brave|смелый|mutig|courageux|valiente|corajoso|coraggioso|cesur|odważny|berani|勇敢|勇敢な|용감한|बहादुर
+adjectives|kind|добрый|freundlich|gentil|amable|gentil|gentile (buono)|nazik|życzliwy|baik hati|善良|親切な|친절한|दयालु
+adjectives|funny|смешной|lustig|drôle|gracioso|engraçado|divertente|komik|zabawny|lucu|好笑|おかしい|웃기는|मज़ेदार
+adjectives|serious|серьёзный|ernst|sérieux|serio|sério|serio|ciddi|poważny|serius|严肃|真面目な|진지한|गंभीर
+adjectives|clever|умный|klug|intelligent|listo (inteligente)|inteligente|intelligente|zeki|mądry|pintar|聪明|賢い|똑똑한|होशियार
+adjectives|careful|осторожный|vorsichtig|prudent|cuidadoso|cuidadoso|attento|dikkatli|ostrożny|hati-hati|小心|注意深い|조심스러운|सावधान
+time|early|рано|früh|tôt|temprano|cedo|presto|erken|wcześnie|pagi-pagi|早|早く|일찍|जल्दी
+time|late|поздно|spät|tard|tarde|tarde|tardi|geç|późno|terlambat|晚|遅く|늦게|देर से
+time|soon|скоро|bald|bientôt|pronto|em breve|presto (fra poco)|yakında|wkrótce|segera|很快|もうすぐ|곧|जल्द ही
+time|already|уже|schon|déjà|ya|já|già|zaten|już|sudah|已经|もう|이미|पहले ही
+time|still|всё ещё|noch|encore (toujours)|todavía|ainda|ancora|hâlâ|wciąż|masih|还|まだ|아직|अभी भी
+time|recently|недавно|kürzlich|récemment|recientemente|recentemente|recentemente|son zamanlarda|niedawno|baru-baru ini|最近|最近|최근에|हाल ही में
+time|future|будущее|die Zukunft|l'avenir|el futuro|o futuro|il futuro|gelecek|przyszłość|masa depan|未来|未来|미래|भविष्य
+time|past|прошлое|die Vergangenheit|le passé|el pasado|o passado|il passato|geçmiş|przeszłość|masa lalu|过去|過去|과거|अतीत
+time|century|век|das Jahrhundert|le siècle|el siglo|o século|il secolo|yüzyıl|wiek (stulecie)|abad|世纪|世紀|세기|सदी
+time|weekend|выходные|das Wochenende|le week-end|el fin de semana|o fim de semana|il fine settimana|hafta sonu|weekend|akhir pekan|周末|週末|주말|सप्ताहांत

@@ -495,7 +495,6 @@ Stretch||Stretching
 Study for 30 minutes||Studiare 30 minuti
 Swimming||Nuoto
 Take vitamins||Prendere le vitamine
-Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.||Tocca il cerchio dell'abitudine per aprire le schede di oggi. Le parole che non conosci ancora tornano per il ripasso, e l'abitudine viene segnata quando finisci le schede del giorno.
 Tap to see the translation||Tocca per vedere la traduzione
 Tidy up for 10 minutes||Riordinare per 10 minuti
 Track expenses||Annotare le spese
@@ -535,3 +534,11 @@ Profile section||Sezione del profilo
 Send the message||Invia il messaggio
 Shows how many reminders came since you last opened the app.||Mostra quanti promemoria sono arrivati dall'ultima apertura dell'app.
 What %@ gives you||Cosa ti dà %@
+Level||Livello
+Beginner||Principiante
+Intermediate||Intermedio
+Advanced||Avanzato
+Everyday basics||Le basi di tutti i giorni
+Work, travel and conversation||Lavoro, viaggi e conversazione
+Abstract ideas and news||Idee astratte e notizie
+Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept.||Tocca il cerchio dell'abitudine per aprire le schede di oggi. Le parole nuove arrivano in ordine casuale dal livello scelto. Quelle che non conosci ancora tornano per il ripasso, e l'abitudine viene segnata quando finisci le schede del giorno. Puoi cambiare livello quando vuoi, le parole imparate restano.

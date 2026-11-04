@@ -172,6 +172,8 @@ struct Habit: Identifiable, Hashable, Codable {
     /// Изучение слов: код языка из словаря (например "es") и сколько новых слов в день.
     var wordsLanguage: String?
     var wordsPerDay: Int?
+    /// Уровень слов: 0 начальный, 1 средний, 2 продвинутый.
+    var wordsLevel: Int?
 
     init(id: UUID = UUID(),
          name: String = "",
@@ -188,7 +190,8 @@ struct Habit: Identifiable, Hashable, Codable {
          target: Int? = nil,
          unit: String? = nil,
          wordsLanguage: String? = nil,
-         wordsPerDay: Int? = nil) {
+         wordsPerDay: Int? = nil,
+         wordsLevel: Int? = nil) {
         self.id = id
         self.name = name
         self.details = details
@@ -205,12 +208,13 @@ struct Habit: Identifiable, Hashable, Codable {
         self.unit = unit
         self.wordsLanguage = wordsLanguage
         self.wordsPerDay = wordsPerDay
+        self.wordsLevel = wordsLevel
     }
 
     enum CodingKeys: String, CodingKey {
         case id, name, details, icon, colorIndex, groupID, schedule, reminder, createdAt, isArchived, sortOrder
         case repeatCount, repeatInterval, partOfDay, pausedFrom, pausedUntil, target, unit, minimumVersion, chainAfter
-        case wordsLanguage, wordsPerDay
+        case wordsLanguage, wordsPerDay, wordsLevel
     }
 
     init(from decoder: Decoder) throws {
@@ -237,6 +241,7 @@ struct Habit: Identifiable, Hashable, Codable {
         chainAfter = try c.decodeIfPresent(UUID.self, forKey: .chainAfter)
         wordsLanguage = try c.decodeIfPresent(String.self, forKey: .wordsLanguage)
         wordsPerDay = try c.decodeIfPresent(Int.self, forKey: .wordsPerDay)
+        wordsLevel = try c.decodeIfPresent(Int.self, forKey: .wordsLevel)
     }
 
     /// Привычка "учить слова": отметка ставится сама, когда пройдены слова дня.
