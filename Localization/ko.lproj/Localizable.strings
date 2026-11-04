@@ -87,8 +87,10 @@
 "Completion" = "달성률";
 "Consistency" = "꾸준함";
 "Continue" = "계속";
+"Copied" = "복사됨";
 "Copy address" = "주소 복사";
 "Copy message" = "메시지 복사";
+"Copy message and address" = "메시지와 주소 복사";
 "Couldn't read the file" = "파일을 읽을 수 없어요";
 "Count glasses of water, pages or minutes toward a goal." = "물 잔 수, 페이지, 시간을 목표까지 세어 보세요.";
 "Create" = "만들기";
@@ -225,6 +227,7 @@
 "Let's keep the streak going!" = "연속 기록을 이어가요!";
 "Let's start with your first habit" = "첫 습관부터 시작해요";
 "Level %lld" = "레벨 %lld";
+"Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "이 iPhone에 메일이 설정되어 있지 않아요. 다른 메일 앱을 열거나 메시지를 복사해 %@ 으로 보내세요.";
 "Mark as done" = "완료로 표시";
 "Mark habit" = "습관 체크";
 "Meditate" = "명상";
@@ -285,6 +288,7 @@
 "One notification listing the habits not checked off yet." = "아직 체크하지 않은 습관을 알림 하나로 알려 드려요.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "당일이나 다음 날 체크만 인정돼요. 체크를 취소하면 스파크도 돌아가요.";
 "Open iOS Settings" = "iOS 설정 열기";
+"Open mail app" = "메일 앱 열기";
 "Open the app to adopt one." = "앱을 열어 데려오세요.";
 "Order" = "순서";
 "Organization" = "정리";
@@ -294,6 +298,7 @@
 "Panda" = "판다";
 "Part of day" = "시간대";
 "Parts of day" = "시간대별";
+"Paste the message into any mail app and send it to %@." = "메시지를 메일 앱에 붙여 넣고 %@ 으로 보내세요.";
 "Pause" = "일시 정지";
 "Paused until %@" = "%@까지 일시 정지";
 "Per week" = "주당";
@@ -344,6 +349,7 @@
 "Schedule" = "일정";
 "Scheduled notifications" = "예약된 알림";
 "Send" = "보내기";
+"Send the message" = "메시지 보내기";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone에서 메일을 설정하거나 %@(으)로 보내 주세요.";
 "Settings" = "설정";
 "Shared data" = "공유 데이터";
@@ -378,6 +384,7 @@
 "Tap a day to check it off. Press and hold to skip it or add a note." = "날짜를 탭하면 체크, 길게 누르면 건너뛰기나 메모 추가.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "원을 탭하거나 오른쪽으로 밀어 체크하세요. 왼쪽으로 밀면 건너뛰기, 메모, 편집. 길게 눌러 순서 변경.";
 "Tap the days when the habit should be done" = "습관을 실천할 요일을 탭하세요";
+"Technical details" = "기술 정보";
 "Tell us what you think" = "생각을 들려주세요";
 "Terms of Use" = "이용 약관";
 "The free version has up to 5 active habits." = "무료 버전은 활성 습관 5개까지예요.";

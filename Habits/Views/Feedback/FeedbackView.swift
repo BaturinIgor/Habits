@@ -51,6 +51,8 @@ struct FeedbackView: View {
     @State private var includeDiagnostics = true
     @State private var showingMail = false
     @State private var showingNoMail = false
+    @State private var showingSendOptions = false
+    @State private var copied = false
     @State private var sent = false
     @FocusState private var focused: Bool
 
@@ -140,6 +142,21 @@ struct FeedbackView: View {
                 }
                 .ignoresSafeArea()
             }
+            .confirmationDialog("Send the message", isPresented: $showingSendOptions, titleVisibility: .visible) {
+                Button("Open mail app") { openMailApp() }
+                Button("Copy message and address") {
+                    UIPasteboard.general.string = "\(AppInfo.supportEmail)\n\n\(body_)"
+                    copied = true
+                }
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to \(AppInfo.supportEmail).")
+            }
+            .alert("Copied", isPresented: $copied) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text("Paste the message into any mail app and send it to \(AppInfo.supportEmail).")
+            }
             .alert("No mail account", isPresented: $showingNoMail) {
                 Button("Copy address") {
                     UIPasteboard.general.string = AppInfo.supportEmail
@@ -158,12 +175,20 @@ struct FeedbackView: View {
         focused = false
         if MFMailComposeViewController.canSendMail() {
             showingMail = true
-            return
+        } else {
+            // В системной Почте нет ящика: письмо может уйти через Gmail, Outlook
+            // и другие почтовые приложения, либо пользователь копирует текст сам.
+            showingSendOptions = true
         }
+    }
+
+    private func openMailApp() {
         var components = URLComponents()
         components.scheme = "mailto"
         components.path = AppInfo.supportEmail
         components.queryItems = [URLQueryItem(name: "subject", value: subject), URLQueryItem(name: "body", value: body_)]
+        // URLComponents не кодирует «+», а почтовые клиенты читают его как пробел.
+        components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
         if let url = components.url {
             openURL(url) { accepted in
                 if accepted { dismiss() } else { showingNoMail = true }

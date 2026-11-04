@@ -87,8 +87,10 @@
 "Completion" = "Réussite";
 "Consistency" = "Constance";
 "Continue" = "Continuer";
+"Copied" = "Copié";
 "Copy address" = "Copier l'adresse";
 "Copy message" = "Copier le message";
+"Copy message and address" = "Copier le message et l'adresse";
 "Couldn't read the file" = "Impossible de lire le fichier";
 "Count glasses of water, pages or minutes toward a goal." = "Compte les verres d'eau, les pages ou les minutes jusqu'à l'objectif.";
 "Create" = "Créer";
@@ -225,6 +227,7 @@
 "Let's keep the streak going!" = "Gardons la série !";
 "Let's start with your first habit" = "Commençons par ta première habitude";
 "Level %lld" = "Niveau %lld";
+"Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Mail n'est pas configuré sur cet iPhone. Ouvre une autre app de mail ou copie le message et envoie-le à %@.";
 "Mark as done" = "Marquer comme fait";
 "Mark habit" = "Valider l'habitude";
 "Meditate" = "Méditer";
@@ -285,6 +288,7 @@
 "One notification listing the habits not checked off yet." = "Une notification qui liste les habitudes pas encore validées.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Seules les validations du jour même ou du lendemain comptent. Décocher une habitude retire son étincelle.";
 "Open iOS Settings" = "Ouvrir les réglages iOS";
+"Open mail app" = "Ouvrir l'app de mail";
 "Open the app to adopt one." = "Ouvre l'app pour en adopter un.";
 "Order" = "Ordre";
 "Organization" = "Organisation";
@@ -294,6 +298,7 @@
 "Panda" = "Panda";
 "Part of day" = "Moment de la journée";
 "Parts of day" = "Par moment de la journée";
+"Paste the message into any mail app and send it to %@." = "Colle le message dans une app de mail et envoie-le à %@.";
 "Pause" = "Pause";
 "Paused until %@" = "En pause jusqu'au %@";
 "Per week" = "Par semaine";
@@ -344,6 +349,7 @@
 "Schedule" = "Planning";
 "Scheduled notifications" = "Notifications planifiées";
 "Send" = "Envoyer";
+"Send the message" = "Envoyer le message";
 "Set up Mail on this iPhone or send your message to %@." = "Configure Mail sur l'iPhone ou envoie ton message à %@.";
 "Settings" = "Réglages";
 "Shared data" = "Données partagées";
@@ -378,6 +384,7 @@
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Touche un jour pour le valider. Maintiens pour le passer ou ajouter une note.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Touche le cercle ou balaie vers la droite pour valider. Balaie vers la gauche pour passer, noter ou modifier. Maintiens pour réordonner.";
 "Tap the days when the habit should be done" = "Touche les jours où l'habitude doit être faite";
+"Technical details" = "Détails techniques";
 "Tell us what you think" = "Dis-nous ce que tu en penses";
 "Terms of Use" = "Conditions";
 "The free version has up to 5 active habits." = "La version gratuite permet jusqu'à 5 habitudes actives.";

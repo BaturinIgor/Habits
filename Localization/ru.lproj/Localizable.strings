@@ -87,8 +87,10 @@
 "Completion" = "Выполнение";
 "Consistency" = "Постоянство";
 "Continue" = "Дальше";
+"Copied" = "Скопировано";
 "Copy address" = "Скопировать адрес";
 "Copy message" = "Скопировать сообщение";
+"Copy message and address" = "Скопировать сообщение и адрес";
 "Couldn't read the file" = "Не удалось прочитать файл";
 "Count glasses of water, pages or minutes toward a goal." = "Считай стаканы воды, страницы или минуты до цели.";
 "Create" = "Создать";
@@ -225,6 +227,7 @@
 "Let's keep the streak going!" = "Давай не прерывать серию!";
 "Let's start with your first habit" = "Начнём с первой привычки";
 "Level %lld" = "Уровень %lld";
+"Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "В Почте на этом iPhone нет ящика. Открой другое почтовое приложение или скопируй сообщение и отправь его на %@.";
 "Mark as done" = "Выполнено";
 "Mark habit" = "Отметить привычку";
 "Meditate" = "Медитация";
@@ -285,6 +288,7 @@
 "One notification listing the habits not checked off yet." = "Одно уведомление со списком привычек, которые ещё не отмечены.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Засчитываются только отметки, поставленные в тот же день или на следующий. Если снять отметку, искра вернётся обратно.";
 "Open iOS Settings" = "Открыть настройки iOS";
+"Open mail app" = "Открыть почтовое приложение";
 "Open the app to adopt one." = "Открой приложение, чтобы завести.";
 "Order" = "Порядок";
 "Organization" = "Организация";
@@ -294,6 +298,7 @@
 "Panda" = "Панда";
 "Part of day" = "Время дня";
 "Parts of day" = "По времени дня";
+"Paste the message into any mail app and send it to %@." = "Вставь сообщение в любое почтовое приложение и отправь на %@.";
 "Pause" = "Пауза";
 "Paused until %@" = "На паузе до %@";
 "Per week" = "Раз в неделю";
@@ -344,6 +349,7 @@
 "Schedule" = "Расписание";
 "Scheduled notifications" = "Запланировано уведомлений";
 "Send" = "Отправить";
+"Send the message" = "Отправка сообщения";
 "Set up Mail on this iPhone or send your message to %@." = "Настрой Почту на iPhone или отправь сообщение на %@.";
 "Settings" = "Настройки";
 "Shared data" = "Общие данные";
@@ -378,6 +384,7 @@
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Нажми на день, чтобы отметить. Удерживай, чтобы пропустить или добавить заметку.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Нажми на кружок или смахни вправо, чтобы отметить. Смахни влево, чтобы пропустить, добавить заметку или изменить. Удерживай, чтобы поменять порядок.";
 "Tap the days when the habit should be done" = "Нажми на дни, в которые нужно выполнять привычку";
+"Technical details" = "Технические подробности";
 "Tell us what you think" = "Расскажи, что думаешь";
 "Terms of Use" = "Условия";
 "The free version has up to 5 active habits." = "В бесплатной версии до 5 активных привычек.";
