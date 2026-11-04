@@ -1,5 +1,7 @@
 "%@ / month" = "%@ в месяц";
 "%@ / year" = "%@ в год";
+"%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: цена ✨ %lld, у тебя: ✨ %lld. Не хватает ✨ %lld. Отмечай привычки, чтобы заработать.";
+"%@ costs %lld sparks. You have %lld." = "%@: цена ✨ %lld. У тебя: ✨ %lld.";
 "%lld min" = "%lld мин";
 "%lld more to %@" = "Ещё %lld до стадии \"%@\"";
 "%lld of %lld" = "%lld из %lld";
@@ -10,14 +12,20 @@
 "+%lld for coming back after a miss" = "+%lld за возвращение после пропуска";
 "+%lld for each achievement" = "+%lld за каждую ачивку";
 "+%lld for every 7 days of a streak, +%lld for every 30" = "+%lld за каждые 7 дней серии, +%lld за каждые 30";
+"+1 spark every active day" = "+1 искра за каждый активный день";
+"+2 sparks every active day" = "+2 искры за каждый активный день";
+"+3 sparks every active day and +1 streak freeze a month" = "+3 искры за каждый активный день и +1 заморозка серии в месяц";
+"+5 sparks every active day and +2 streak freezes a month" = "+5 искр за каждый активный день и +2 заморозки серии в месяц";
 "1 spark for each check-in, up to %lld a day" = "1 искра за каждую отметку, до %lld в день";
 "30 perfect days in a row" = "30 идеальных дней подряд";
 "7 perfect days in a row" = "7 идеальных дней подряд";
+"A grown pet brings up to +5 a day" = "Подросший питомец приносит до +5 в день";
 "A week strong" = "Неделя силы";
 "A whole year" = "Целый год";
 "Achievements" = "Ачивки";
 "Achievements and rewards" = "Ачивки и награды";
 "Active" = "Активен";
+"Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Активный день: хотя бы одна привычка отмечена вовремя. Кормление даёт %lld опыта, и питомец растёт быстрее.";
 "Activity over %lld weeks" = "Активность за %lld недель";
 "Add a habit, pick days and a time, and I'll remind you." = "Добавь привычку, выбери дни и время, и я напомню о ней.";
 "Add a note to 20 completed habits" = "Добавь заметку к 20 выполненным привычкам";
@@ -44,8 +52,10 @@
 "Archive (%lld)" = "Архив (%lld)";
 "Archived" = "В архиве";
 "Available" = "Доступны";
+"Avatar" = "Аватарка";
 "Avatars" = "Аватарки";
 "Baby" = "Малыш";
+"Background" = "Фон";
 "Backgrounds" = "Фоны";
 "Backup" = "Резервная копия";
 "Best current streak" = "Лучшая серия сейчас";
@@ -149,6 +159,7 @@
 "Feed pet" = "Покормить питомца";
 "Feed your pet" = "Покормить питомца";
 "Feedback" = "Обратная связь";
+"Feeding" = "Кормление";
 "Fifty" = "Полсотни";
 "First step" = "Первый шаг";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "Например, 8 стаканов воды. Каждое нажатие на кружок добавляет один.";
@@ -184,6 +195,7 @@
 "Half a thousand" = "Пятьсот";
 "Happy" = "Счастлив";
 "Hard days and chains" = "Тяжёлые дни и связки";
+"Hatches after a few check-ins" = "Вылупится после нескольких отметок";
 "Have 30 perfect days" = "Набери 30 идеальных дней";
 "Hide keyboard" = "Скрыть клавиатуру";
 "How many habits are done today." = "Сколько привычек выполнено сегодня.";
@@ -273,6 +285,7 @@
 "Notification" = "Уведомление";
 "Notifications" = "Уведомления";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "Уведомления выключены в настройках iOS, поэтому напоминания не придут.";
+"Now" = "Сейчас";
 "Number on the app icon" = "Число на иконке приложения";
 "OK" = "OK";
 "Off" = "Выключены";
@@ -307,6 +320,7 @@
 "Perfect month" = "Идеальный месяц";
 "Perfect week" = "Идеальная неделя";
 "Pet" = "Питомец";
+"Pet gifts" = "Подарки питомца";
 "Phoenix" = "Феникс";
 "Pick a template or create your own." = "Выбери шаблон или создай свою.";
 "Privacy Policy" = "Конфиденциальность";
@@ -431,6 +445,7 @@
 "Weekends" = "Выходные";
 "Weekly hero" = "Герой недели";
 "Welcome to Habit Tracker" = "Добро пожаловать в Трекер привычек";
+"What %@ gives you" = "Что даёт %@";
 "What happened and what did you expect?" = "Что произошло и что ты ожидал увидеть?";
 "Widget" = "Виджет";
 "Workout" = "Тренировка";

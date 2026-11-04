@@ -1,5 +1,7 @@
 "%@ / month" = "%@ / mois";
 "%@ / year" = "%@ / an";
+"%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@ : prix ✨ %lld, tu as : ✨ %lld. Il en manque ✨ %lld. Valide des habitudes pour les gagner.";
+"%@ costs %lld sparks. You have %lld." = "%@ : prix ✨ %lld. Tu as : ✨ %lld.";
 "%lld min" = "%lld min";
 "%lld more to %@" = "Encore %lld avant %@";
 "%lld of %lld" = "%lld sur %lld";
@@ -10,14 +12,20 @@
 "+%lld for coming back after a miss" = "+%lld pour un retour après un oubli";
 "+%lld for each achievement" = "+%lld par succès";
 "+%lld for every 7 days of a streak, +%lld for every 30" = "+%lld tous les 7 jours de série, +%lld tous les 30";
+"+1 spark every active day" = "+1 étincelle chaque jour actif";
+"+2 sparks every active day" = "+2 étincelles chaque jour actif";
+"+3 sparks every active day and +1 streak freeze a month" = "+3 étincelles chaque jour actif et +1 gel de série par mois";
+"+5 sparks every active day and +2 streak freezes a month" = "+5 étincelles chaque jour actif et +2 gels de série par mois";
 "1 spark for each check-in, up to %lld a day" = "1 étincelle par validation, jusqu'à %lld par jour";
 "30 perfect days in a row" = "30 journées parfaites d'affilée";
 "7 perfect days in a row" = "7 journées parfaites d'affilée";
+"A grown pet brings up to +5 a day" = "Un compagnon qui grandit rapporte jusqu'à +5 par jour";
 "A week strong" = "Une semaine solide";
 "A whole year" = "Une année entière";
 "Achievements" = "Succès";
 "Achievements and rewards" = "Succès et récompenses";
 "Active" = "Actif";
+"Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Jour actif : au moins une habitude validée à temps. Nourrir donne %lld XP, ton compagnon grandit plus vite.";
 "Activity over %lld weeks" = "Activité sur %lld semaines";
 "Add a habit, pick days and a time, and I'll remind you." = "Ajoute une habitude, choisis les jours et l'heure, et je te la rappellerai.";
 "Add a note to 20 completed habits" = "Ajoute une note à 20 habitudes faites";
@@ -44,8 +52,10 @@
 "Archive (%lld)" = "Archives (%lld)";
 "Archived" = "Archivée";
 "Available" = "Disponibles";
+"Avatar" = "Avatar";
 "Avatars" = "Avatars";
 "Baby" = "Bébé";
+"Background" = "Fond";
 "Backgrounds" = "Fonds";
 "Backup" = "Sauvegarde";
 "Best current streak" = "Meilleure série en cours";
@@ -149,6 +159,7 @@
 "Feed pet" = "Nourrir le compagnon";
 "Feed your pet" = "Nourrir ton compagnon";
 "Feedback" = "Avis";
+"Feeding" = "Repas";
 "Fifty" = "Cinquante";
 "First step" = "Premier pas";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "Par exemple, 8 verres d'eau. Chaque appui sur le cercle en ajoute un.";
@@ -184,6 +195,7 @@
 "Half a thousand" = "Cinq cents";
 "Happy" = "Heureux";
 "Hard days and chains" = "Jours difficiles et enchaînements";
+"Hatches after a few check-ins" = "Éclot après quelques validations";
 "Have 30 perfect days" = "Cumule 30 journées parfaites";
 "Hide keyboard" = "Masquer le clavier";
 "How many habits are done today." = "Combien d'habitudes sont faites aujourd'hui.";
@@ -273,6 +285,7 @@
 "Notification" = "Notification";
 "Notifications" = "Notifications";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "Les notifications sont désactivées dans les réglages iOS, les rappels n'arriveront donc pas.";
+"Now" = "Maintenant";
 "Number on the app icon" = "Pastille sur l'icône";
 "OK" = "OK";
 "Off" = "Désactivées";
@@ -307,6 +320,7 @@
 "Perfect month" = "Mois parfait";
 "Perfect week" = "Semaine parfaite";
 "Pet" = "Compagnon";
+"Pet gifts" = "Cadeaux du compagnon";
 "Phoenix" = "Phénix";
 "Pick a template or create your own." = "Choisis un modèle ou crée la tienne.";
 "Privacy Policy" = "Confidentialité";
@@ -431,6 +445,7 @@
 "Weekends" = "Week-end";
 "Weekly hero" = "Héros de la semaine";
 "Welcome to Habit Tracker" = "Bienvenue dans Suivi d'habitudes";
+"What %@ gives you" = "Ce que %@ t'apporte";
 "What happened and what did you expect?" = "Que s'est-il passé et qu'attendais-tu ?";
 "Widget" = "Widget";
 "Workout" = "Entraînement";

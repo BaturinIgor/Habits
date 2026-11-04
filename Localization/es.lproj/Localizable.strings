@@ -1,5 +1,7 @@
 "%@ / month" = "%@ / mes";
 "%@ / year" = "%@ / año";
+"%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: precio ✨ %lld, tienes: ✨ %lld. Te faltan ✨ %lld. Marca hábitos para ganarlas.";
+"%@ costs %lld sparks. You have %lld." = "%@: precio ✨ %lld. Tienes: ✨ %lld.";
 "%lld min" = "%lld min";
 "%lld more to %@" = "Faltan %lld para %@";
 "%lld of %lld" = "%lld de %lld";
@@ -10,14 +12,20 @@
 "+%lld for coming back after a miss" = "+%lld por volver tras un fallo";
 "+%lld for each achievement" = "+%lld por cada logro";
 "+%lld for every 7 days of a streak, +%lld for every 30" = "+%lld por cada 7 días de racha, +%lld por cada 30";
+"+1 spark every active day" = "+1 chispa cada día activo";
+"+2 sparks every active day" = "+2 chispas cada día activo";
+"+3 sparks every active day and +1 streak freeze a month" = "+3 chispas cada día activo y +1 congelación de racha al mes";
+"+5 sparks every active day and +2 streak freezes a month" = "+5 chispas cada día activo y +2 congelaciones de racha al mes";
 "1 spark for each check-in, up to %lld a day" = "1 chispa por marca, hasta %lld al día";
 "30 perfect days in a row" = "30 días perfectos seguidos";
 "7 perfect days in a row" = "7 días perfectos seguidos";
+"A grown pet brings up to +5 a day" = "Una mascota crecida da hasta +5 al día";
 "A week strong" = "Una semana firme";
 "A whole year" = "Un año entero";
 "Achievements" = "Logros";
 "Achievements and rewards" = "Logros y recompensas";
 "Active" = "Activo";
+"Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Día activo: al menos un hábito marcado a tiempo. Alimentar da %lld XP y tu mascota crece más rápido.";
 "Activity over %lld weeks" = "Actividad en %lld semanas";
 "Add a habit, pick days and a time, and I'll remind you." = "Añade un hábito, elige los días y la hora, y te lo recordaré.";
 "Add a note to 20 completed habits" = "Añade una nota a 20 hábitos completados";
@@ -44,8 +52,10 @@
 "Archive (%lld)" = "Archivo (%lld)";
 "Archived" = "Archivado";
 "Available" = "Disponibles";
+"Avatar" = "Avatar";
 "Avatars" = "Avatares";
 "Baby" = "Bebé";
+"Background" = "Fondo";
 "Backgrounds" = "Fondos";
 "Backup" = "Copia de seguridad";
 "Best current streak" = "Mejor racha actual";
@@ -149,6 +159,7 @@
 "Feed pet" = "Alimentar mascota";
 "Feed your pet" = "Alimentar a tu mascota";
 "Feedback" = "Comentarios";
+"Feeding" = "Comida";
 "Fifty" = "Cincuenta";
 "First step" = "Primer paso";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "Por ejemplo, 8 vasos de agua. Cada toque en el círculo suma uno.";
@@ -184,6 +195,7 @@
 "Half a thousand" = "Quinientos";
 "Happy" = "Feliz";
 "Hard days and chains" = "Días difíciles y cadenas";
+"Hatches after a few check-ins" = "Eclosiona tras unas pocas marcas";
 "Have 30 perfect days" = "Consigue 30 días perfectos";
 "Hide keyboard" = "Ocultar teclado";
 "How many habits are done today." = "Cuántos hábitos has hecho hoy.";
@@ -273,6 +285,7 @@
 "Notification" = "Notificación";
 "Notifications" = "Notificaciones";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "Las notificaciones están desactivadas en los Ajustes de iOS, así que no llegarán recordatorios.";
+"Now" = "Ahora";
 "Number on the app icon" = "Número en el icono de la app";
 "OK" = "OK";
 "Off" = "Desactivadas";
@@ -307,6 +320,7 @@
 "Perfect month" = "Mes perfecto";
 "Perfect week" = "Semana perfecta";
 "Pet" = "Mascota";
+"Pet gifts" = "Regalos de la mascota";
 "Phoenix" = "Fénix";
 "Pick a template or create your own." = "Elige una plantilla o crea el tuyo.";
 "Privacy Policy" = "Privacidad";
@@ -431,6 +445,7 @@
 "Weekends" = "Fin de semana";
 "Weekly hero" = "Héroe semanal";
 "Welcome to Habit Tracker" = "Bienvenido a Rastreador de hábitos";
+"What %@ gives you" = "Lo que te da %@";
 "What happened and what did you expect?" = "¿Qué pasó y qué esperabas?";
 "Widget" = "Widget";
 "Workout" = "Entrenamiento";

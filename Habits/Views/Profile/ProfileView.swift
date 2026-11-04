@@ -21,7 +21,7 @@ struct ProfileView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var showingPaywall = false
     @State private var hint: Achievement?
-    @State private var purchase: Reward?
+    @State private var purchase: SparkPurchase?
     @State private var showingSparks = false
     @State private var showingPet = false
     @SceneStorage("profile.tab") private var tab: ProfileTab = .achievements
@@ -119,23 +119,7 @@ struct ProfileView: View {
             .sheet(isPresented: $showingPaywall) { PaywallView() }
             .sheet(isPresented: $showingSparks) { SparksView() }
             .sheet(isPresented: $showingPet) { PetView() }
-            .alert(
-                "Buy for sparks?",
-                isPresented: Binding(get: { purchase != nil }, set: { if !$0 { purchase = nil } }),
-                presenting: purchase
-            ) { reward in
-                if store.economy.balance >= (reward.price ?? 0) {
-                    Button("Buy") { withAnimation(.snappy) { _ = store.buyReward(reward) } }
-                }
-                Button("Cancel", role: .cancel) {}
-            } message: { reward in
-                let price = reward.price ?? 0
-                if store.economy.balance >= price {
-                    Text("It costs \(price) sparks. You have \(store.economy.balance).")
-                } else {
-                    Text("It costs \(price) sparks, you have \(store.economy.balance). Check off habits to earn more.")
-                }
-            }
+            .sparkPurchaseAlert($purchase)
             .alert(
                 Text(hint?.title ?? ""),
                 isPresented: Binding(get: { hint != nil }, set: { if !$0 { hint = nil } })
@@ -151,8 +135,9 @@ struct ProfileView: View {
                                              selected: Bool, @ViewBuilder label: () -> Content) -> some View {
         let available = reward.isAvailable(unlocked: unlocked, isPro: isPro, purchased: store.data.wallet.purchases)
         return Button {
-            if !available, reward.price != nil {
-                purchase = reward
+            if !available, let price = reward.price {
+                let title = reward.kind == .avatar ? String(localized: "Avatar") : String(localized: "Background")
+                purchase = SparkPurchase(title: title, price: price) { _ = store.buyReward(reward) }
             } else if available {
                 withAnimation(.snappy) {
                     store.updateSettings {

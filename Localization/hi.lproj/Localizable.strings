@@ -1,5 +1,7 @@
 "%@ / month" = "%@ / माह";
 "%@ / year" = "%@ / वर्ष";
+"%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: कीमत ✨ %lld, आपके पास: ✨ %lld। ✨ %lld और चाहिए। कमाने के लिए आदतें पूरी करें।";
+"%@ costs %lld sparks. You have %lld." = "%@: कीमत ✨ %lld। आपके पास: ✨ %lld।";
 "%lld min" = "%lld मिनट";
 "%lld more to %@" = "%@ तक %lld और";
 "%lld of %lld" = "%2$lld में से %1$lld";
@@ -10,14 +12,20 @@
 "+%lld for coming back after a miss" = "चूक के बाद लौटने पर +%lld";
 "+%lld for each achievement" = "हर उपलब्धि पर +%lld";
 "+%lld for every 7 days of a streak, +%lld for every 30" = "श्रृंखला के हर 7 दिन पर +%lld, हर 30 पर +%lld";
+"+1 spark every active day" = "हर सक्रिय दिन +1 चिंगारी";
+"+2 sparks every active day" = "हर सक्रिय दिन +2 चिंगारियाँ";
+"+3 sparks every active day and +1 streak freeze a month" = "हर सक्रिय दिन +3 चिंगारियाँ और हर महीने +1 स्ट्रीक फ़्रीज़";
+"+5 sparks every active day and +2 streak freezes a month" = "हर सक्रिय दिन +5 चिंगारियाँ और हर महीने +2 स्ट्रीक फ़्रीज़";
 "1 spark for each check-in, up to %lld a day" = "हर पूरी आदत पर 1 चिंगारी, दिन में अधिकतम %lld";
 "30 perfect days in a row" = "लगातार 30 परफ़ेक्ट दिन";
 "7 perfect days in a row" = "लगातार 7 परफ़ेक्ट दिन";
+"A grown pet brings up to +5 a day" = "बड़ा पालतू रोज़ +5 तक लाता है";
 "A week strong" = "एक मज़बूत हफ़्ता";
 "A whole year" = "पूरा एक साल";
 "Achievements" = "उपलब्धियाँ";
 "Achievements and rewards" = "उपलब्धियाँ और इनाम";
 "Active" = "सक्रिय";
+"Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "सक्रिय दिन: कम से कम एक आदत समय पर पूरी हो। खिलाने से %lld XP मिलता है और पालतू जल्दी बढ़ता है।";
 "Activity over %lld weeks" = "पिछले %lld हफ़्तों की गतिविधि";
 "Add a habit, pick days and a time, and I'll remind you." = "एक आदत जोड़ें, दिन और समय चुनें, और मैं आपको याद दिलाऊँगा।";
 "Add a note to 20 completed habits" = "20 पूरी की गई आदतों में नोट जोड़ें";
@@ -44,8 +52,10 @@
 "Archive (%lld)" = "संग्रह (%lld)";
 "Archived" = "संग्रहित";
 "Available" = "उपलब्ध";
+"Avatar" = "अवतार";
 "Avatars" = "अवतार";
 "Baby" = "बच्चा";
+"Background" = "पृष्ठभूमि";
 "Backgrounds" = "पृष्ठभूमि";
 "Backup" = "बैकअप";
 "Best current streak" = "अभी की सबसे लंबी लगातार";
@@ -149,6 +159,7 @@
 "Feed pet" = "पालतू को खिलाएँ";
 "Feed your pet" = "पालतू को खिलाएँ";
 "Feedback" = "प्रतिक्रिया";
+"Feeding" = "खाना";
 "Fifty" = "पचास";
 "First step" = "पहला कदम";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "जैसे, 8 गिलास पानी। गोले पर हर टैप से एक जुड़ता है।";
@@ -184,6 +195,7 @@
 "Half a thousand" = "पाँच सौ";
 "Happy" = "खुश";
 "Hard days and chains" = "मुश्किल दिन और जोड़";
+"Hatches after a few check-ins" = "कुछ बार पूरा करने पर अंडे से निकलेगा";
 "Have 30 perfect days" = "30 परफ़ेक्ट दिन पूरे करें";
 "Hide keyboard" = "कीबोर्ड छिपाएँ";
 "How many habits are done today." = "आज कितनी आदतें पूरी हुईं।";
@@ -273,6 +285,7 @@
 "Notification" = "सूचना";
 "Notifications" = "सूचनाएँ";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "iOS सेटिंग्स में सूचनाएँ बंद हैं, इसलिए रिमाइंडर नहीं आएँगे।";
+"Now" = "अभी";
 "Number on the app icon" = "ऐप आइकन पर संख्या";
 "OK" = "ठीक है";
 "Off" = "बंद";
@@ -307,6 +320,7 @@
 "Perfect month" = "परफ़ेक्ट महीना";
 "Perfect week" = "परफ़ेक्ट हफ़्ता";
 "Pet" = "पालतू";
+"Pet gifts" = "पालतू के उपहार";
 "Phoenix" = "फ़ीनिक्स";
 "Pick a template or create your own." = "टेम्पलेट चुनें या अपनी बनाएँ।";
 "Privacy Policy" = "गोपनीयता नीति";
@@ -431,6 +445,7 @@
 "Weekends" = "सप्ताहांत";
 "Weekly hero" = "साप्ताहिक हीरो";
 "Welcome to Habit Tracker" = "आदत ट्रैकर में आपका स्वागत है";
+"What %@ gives you" = "%@ आपको क्या देता है";
 "What happened and what did you expect?" = "क्या हुआ और आपने क्या उम्मीद की थी?";
 "Widget" = "विजेट";
 "Workout" = "कसरत";

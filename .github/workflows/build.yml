@@ -7,13 +7,18 @@ on:
       - "android/**"
       - ".github/workflows/android.yml"
       - "README.md"
+  pull_request:
+    paths-ignore:
+      - "android/**"
+      - ".github/workflows/android.yml"
+      - "README.md"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: build-ipa
+  group: build-ipa-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
   cancel-in-progress: true
 
 jobs:
@@ -80,6 +85,8 @@ jobs:
           path: Habits.ipa
 
       - name: Publish release
+        # Сборки для pull request только проверяют, что проект собирается.
+        if: github.event_name != 'pull_request'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

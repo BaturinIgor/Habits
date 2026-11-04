@@ -10,7 +10,7 @@ struct PetCard: View {
             HStack(spacing: 14) {
                 if let pet = store.data.wallet.pet {
                     let xp = Pets.xp(pet, data: store.data)
-                    let stage = PetStage.stage(xp: xp)
+                    let stage = Pets.stage(pet, data: store.data)
                     let mood = Pets.mood(pet, data: store.data)
                     PetAvatar(pet: pet, stage: stage, mood: mood, size: 64)
                     VStack(alignment: .leading, spacing: 3) {
@@ -19,7 +19,8 @@ struct PetCard: View {
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                         if let next = stage.next {
-                            ProgressView(value: Double(xp - stage.threshold), total: Double(next.threshold - stage.threshold))
+                            ProgressView(value: Double(min(max(0, xp - stage.threshold), next.threshold - stage.threshold)),
+                                         total: Double(next.threshold - stage.threshold))
                                 .tint(.orange)
                         }
                     }
@@ -57,7 +58,7 @@ struct PetView: View {
     @State private var phrase: Int?
     @State private var hearts = 0
     @State private var showingPaywall = false
-    @State private var notEnough = false
+    @State private var purchase: SparkPurchase?
 
     private let grid = [GridItem(.adaptive(minimum: 76), spacing: 12)]
 
@@ -83,6 +84,8 @@ struct PetView: View {
                 }
                 ToolbarItem(placement: .topBarLeading) {
                     SparkBadge(amount: store.economy.balance)
+                        .padding(.horizontal, 8)
+                        .accessibilityLabel("Sparks")
                 }
             }
             .sheet(isPresented: $showingPaywall) { PaywallView() }
@@ -91,11 +94,7 @@ struct PetView: View {
                 Button("Save") { store.renamePet(renameText) }
                 Button("Cancel", role: .cancel) {}
             }
-            .alert("Not enough sparks", isPresented: $notEnough) {
-                Button("OK", role: .cancel) {}
-            } message: {
-                Text("Check off habits to earn more.")
-            }
+            .sparkPurchaseAlert($purchase)
         }
     }
 
@@ -104,7 +103,7 @@ struct PetView: View {
     @ViewBuilder
     private func petSection(_ pet: PetState) -> some View {
         let xp = Pets.xp(pet, data: store.data)
-        let stage = PetStage.stage(xp: xp)
+        let stage = Pets.stage(pet, data: store.data)
         let mood = Pets.mood(pet, data: store.data)
 
         VStack(spacing: 10) {
@@ -137,10 +136,11 @@ struct PetView: View {
                 .foregroundStyle(.secondary)
             if let next = stage.next {
                 VStack(spacing: 4) {
-                    ProgressView(value: Double(xp - stage.threshold), total: Double(next.threshold - stage.threshold))
+                    ProgressView(value: Double(min(max(0, xp - stage.threshold), next.threshold - stage.threshold)),
+                                 total: Double(next.threshold - stage.threshold))
                         .tint(.orange)
                         .frame(maxWidth: 240)
-                    Text("\(next.threshold - xp) more to \(next.title)")
+                    Text("\(max(1, next.threshold - xp)) more to \(next.title)")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -154,8 +154,8 @@ struct PetView: View {
 
         Button {
             if store.feedsToday >= Sparks.feedsPerDay { return }
-            withAnimation(.snappy) {
-                if store.feedPet() { hearts += 1 } else { notEnough = true }
+            purchase = SparkPurchase(title: String(localized: "Feeding"), price: Sparks.feedPrice) {
+                if store.feedPet() { hearts += 1 }
             }
         } label: {
             HStack {
@@ -172,6 +172,8 @@ struct PetView: View {
         }
         .buttonStyle(.glassProminent)
         .disabled(store.feedsToday >= Sparks.feedsPerDay)
+
+        perksSection(current: stage, name: pet.name)
 
         speciesGrid(current: pet.species)
     }
@@ -190,6 +192,58 @@ struct PetView: View {
         }
     }
 
+    /// Что питомец даёт на каждой стадии: ради этого его стоит кормить и растить.
+    private func perksSection(current: PetStage, name: String) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("What \(name) gives you").font(.title3.weight(.bold))
+            VStack(spacing: 0) {
+                ForEach(PetStage.allCases.filter { $0 != .egg }, id: \.self) { stage in
+                    let reached = stage <= current
+                    HStack(spacing: 12) {
+                        Image(systemName: reached ? "checkmark.circle.fill" : "lock.fill")
+                            .font(.body.weight(.semibold))
+                            .foregroundStyle(reached ? Color.orange : Color.secondary)
+                            .frame(width: 24)
+                        VStack(alignment: .leading, spacing: 2) {
+                            HStack(spacing: 6) {
+                                Text(stage.title).font(.subheadline.weight(.semibold))
+                                if stage == current {
+                                    Text("Now")
+                                        .font(.caption2.weight(.bold))
+                                        .padding(.horizontal, 6).padding(.vertical, 2)
+                                        .background(Capsule().fill(Color.orange.opacity(0.2)))
+                                        .foregroundStyle(.orange)
+                                }
+                            }
+                            Text(stage.perks)
+                                .font(.footnote)
+                                .foregroundStyle(.secondary)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                        Spacer(minLength: 0)
+                        if !reached {
+                            Text(verbatim: "\(stage.threshold) XP")
+                                .font(.caption.weight(.semibold))
+                                .monospacedDigit()
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .padding(.vertical, 10)
+                    .opacity(reached ? 1 : 0.6)
+                    if stage != PetStage.allCases.last {
+                        Divider().padding(.leading, 36)
+                    }
+                }
+            }
+            .padding(.horizontal, 14)
+            .background(RoundedRectangle(cornerRadius: 18, style: .continuous).fill(.background.opacity(0.7)))
+            Text("Active day: at least one habit checked off on time. Feeding gives \(Sparks.feedXP) XP, so your pet grows faster.")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
     private func speciesGrid(current: String) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Species").font(.title3.weight(.bold))
@@ -199,8 +253,12 @@ struct PetView: View {
                         guard species.id != current else { return }
                         if species.needsPro && !store.data.isPro {
                             showingPaywall = true
-                        } else if !store.setPetSpecies(species) {
-                            notEnough = true
+                        } else if !Pets.isOwned(species, data: store.data), let price = species.price {
+                            purchase = SparkPurchase(title: String(localized: species.title), price: price) {
+                                _ = store.setPetSpecies(species)
+                            }
+                        } else {
+                            withAnimation(.snappy) { _ = store.setPetSpecies(species) }
                         }
                     }
                 }

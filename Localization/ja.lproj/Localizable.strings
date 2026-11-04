@@ -1,5 +1,7 @@
 "%@ / month" = "%@ / 月";
 "%@ / year" = "%@ / 年";
+"%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@：価格 ✨ %lld、所持：✨ %lld。あと ✨ %lld 必要です。習慣をチェックして集めよう。";
+"%@ costs %lld sparks. You have %lld." = "%@：価格 ✨ %lld。所持：✨ %lld。";
 "%lld min" = "%lld分";
 "%lld more to %@" = "%2$@まであと%1$lld";
 "%lld of %lld" = "%lld / %lld";
@@ -10,14 +12,20 @@
 "+%lld for coming back after a miss" = "休んだ後に戻ると+%lld";
 "+%lld for each achievement" = "実績ごとに+%lld";
 "+%lld for every 7 days of a streak, +%lld for every 30" = "連続7日ごとに+%lld、30日ごとに+%lld";
+"+1 spark every active day" = "アクティブな日ごとに +1 スパーク";
+"+2 sparks every active day" = "アクティブな日ごとに +2 スパーク";
+"+3 sparks every active day and +1 streak freeze a month" = "アクティブな日ごとに +3 スパーク、毎月フリーズ +1";
+"+5 sparks every active day and +2 streak freezes a month" = "アクティブな日ごとに +5 スパーク、毎月フリーズ +2";
 "1 spark for each check-in, up to %lld a day" = "チェックごとに1スパーク、1日最大%lld";
 "30 perfect days in a row" = "完璧な日を30日連続";
 "7 perfect days in a row" = "7日連続でパーフェクト";
+"A grown pet brings up to +5 a day" = "育ったペットは1日最大 +5 くれます";
 "A week strong" = "1週間達成";
 "A whole year" = "まる1年";
 "Achievements" = "実績";
 "Achievements and rewards" = "実績とごほうび";
 "Active" = "有効";
+"Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "アクティブな日：少なくとも1つの習慣を期限内にチェック。ごはんで %lld XP もらえ、早く育ちます。";
 "Activity over %lld weeks" = "過去%lld週間の記録";
 "Add a habit, pick days and a time, and I'll remind you." = "習慣を追加して曜日と時刻を選ぶと、お知らせします。";
 "Add a note to 20 completed habits" = "完了した習慣20件にメモを追加";
@@ -44,8 +52,10 @@
 "Archive (%lld)" = "アーカイブ (%lld)";
 "Archived" = "アーカイブ済み";
 "Available" = "利用可能";
+"Avatar" = "アバター";
 "Avatars" = "アバター";
 "Baby" = "赤ちゃん";
+"Background" = "背景";
 "Backgrounds" = "背景";
 "Backup" = "バックアップ";
 "Best current streak" = "現在の最長連続";
@@ -149,6 +159,7 @@
 "Feed pet" = "ペットにごはん";
 "Feed your pet" = "ペットにごはん";
 "Feedback" = "フィードバック";
+"Feeding" = "ごはん";
 "Fifty" = "50回";
 "First step" = "最初の一歩";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "例：水8杯。丸をタップするたびに1つ増えます。";
@@ -184,6 +195,7 @@
 "Half a thousand" = "500回";
 "Happy" = "ごきげん";
 "Hard days and chains" = "つらい日と連鎖";
+"Hatches after a few check-ins" = "数回チェックすると孵化します";
 "Have 30 perfect days" = "完璧な日を30日";
 "Hide keyboard" = "キーボードを隠す";
 "How many habits are done today." = "今日完了した習慣の数。";
@@ -273,6 +285,7 @@
 "Notification" = "通知";
 "Notifications" = "通知";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "iOSの設定で通知がオフのため、リマインダーは届きません。";
+"Now" = "現在";
 "Number on the app icon" = "アプリアイコンのバッジ";
 "OK" = "OK";
 "Off" = "オフ";
@@ -307,6 +320,7 @@
 "Perfect month" = "完璧な1か月";
 "Perfect week" = "パーフェクトな週";
 "Pet" = "ペット";
+"Pet gifts" = "ペットのおくりもの";
 "Phoenix" = "フェニックス";
 "Pick a template or create your own." = "テンプレートを選ぶか、自分で作成しましょう。";
 "Privacy Policy" = "プライバシー";
@@ -431,6 +445,7 @@
 "Weekends" = "週末";
 "Weekly hero" = "週間ヒーロー";
 "Welcome to Habit Tracker" = "習慣トラッカーへようこそ";
+"What %@ gives you" = "%@ がくれるもの";
 "What happened and what did you expect?" = "何が起きて、どうなるはずでしたか？";
 "Widget" = "ウィジェット";
 "Workout" = "運動";
