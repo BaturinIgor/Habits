@@ -87,8 +87,10 @@
 "Completion" = "完成率";
 "Consistency" = "坚持不懈";
 "Continue" = "继续";
+"Copied" = "已复制";
 "Copy address" = "复制地址";
 "Copy message" = "复制内容";
+"Copy message and address" = "复制消息和地址";
 "Couldn't read the file" = "无法读取文件";
 "Count glasses of water, pages or minutes toward a goal." = "记录喝水杯数、阅读页数或分钟数，直到达成目标。";
 "Create" = "创建";
@@ -225,6 +227,7 @@
 "Let's keep the streak going!" = "继续保持连续吧！";
 "Let's start with your first habit" = "从第一个习惯开始吧";
 "Level %lld" = "等级 %lld";
+"Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "这台 iPhone 未设置“邮件”。请打开其他邮件应用，或复制消息发送到 %@。";
 "Mark as done" = "标记为完成";
 "Mark habit" = "打卡习惯";
 "Meditate" = "冥想";
@@ -285,6 +288,7 @@
 "One notification listing the habits not checked off yet." = "一条通知，列出尚未打卡的习惯。";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "只有当天或第二天的打卡才算数。取消打卡会收回火花。";
 "Open iOS Settings" = "打开 iOS 设置";
+"Open mail app" = "打开邮件应用";
 "Open the app to adopt one." = "打开应用来领养一只。";
 "Order" = "顺序";
 "Organization" = "整理";
@@ -294,6 +298,7 @@
 "Panda" = "熊猫";
 "Part of day" = "时段";
 "Parts of day" = "按时段";
+"Paste the message into any mail app and send it to %@." = "将消息粘贴到任意邮件应用并发送到 %@。";
 "Pause" = "暂停";
 "Paused until %@" = "暂停至%@";
 "Per week" = "每周";
@@ -345,6 +350,7 @@
 "Schedule" = "计划";
 "Scheduled notifications" = "已安排的通知";
 "Send" = "发送";
+"Send the message" = "发送消息";
 "Set up Mail on this iPhone or send your message to %@." = "请在 iPhone 上设置“邮件”，或将消息发送至 %@。";
 "Settings" = "设置";
 "Shared data" = "共享数据";

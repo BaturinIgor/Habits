@@ -87,8 +87,10 @@
 "Completion" = "Erfüllung";
 "Consistency" = "Beständigkeit";
 "Continue" = "Weiter";
+"Copied" = "Kopiert";
 "Copy address" = "Adresse kopieren";
 "Copy message" = "Nachricht kopieren";
+"Copy message and address" = "Nachricht und Adresse kopieren";
 "Couldn't read the file" = "Datei konnte nicht gelesen werden";
 "Count glasses of water, pages or minutes toward a goal." = "Zähle Gläser Wasser, Seiten oder Minuten bis zum Ziel.";
 "Create" = "Erstellen";
@@ -225,6 +227,7 @@
 "Let's keep the streak going!" = "Lass uns die Serie halten!";
 "Let's start with your first habit" = "Fangen wir mit deiner ersten Gewohnheit an";
 "Level %lld" = "Level %lld";
+"Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Mail ist auf diesem iPhone nicht eingerichtet. Öffne eine andere Mail-App oder kopiere die Nachricht und sende sie an %@.";
 "Mark as done" = "Als erledigt markieren";
 "Mark habit" = "Gewohnheit abhaken";
 "Meditate" = "Meditieren";
@@ -285,6 +288,7 @@
 "One notification listing the habits not checked off yet." = "Eine Mitteilung mit den Gewohnheiten, die noch offen sind.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Es zählen nur Abhaken am selben oder nächsten Tag. Wird eine Gewohnheit abgewählt, ist der Funke wieder weg.";
 "Open iOS Settings" = "iOS-Einstellungen öffnen";
+"Open mail app" = "Mail-App öffnen";
 "Open the app to adopt one." = "Öffne die App, um eins aufzunehmen.";
 "Order" = "Reihenfolge";
 "Organization" = "Organisation";
@@ -294,6 +298,7 @@
 "Panda" = "Panda";
 "Part of day" = "Tageszeit";
 "Parts of day" = "Nach Tageszeit";
+"Paste the message into any mail app and send it to %@." = "Füge die Nachricht in eine Mail-App ein und sende sie an %@.";
 "Pause" = "Pause";
 "Paused until %@" = "Pausiert bis %@";
 "Per week" = "Pro Woche";
@@ -345,6 +350,7 @@
 "Schedule" = "Zeitplan";
 "Scheduled notifications" = "Geplante Mitteilungen";
 "Send" = "Senden";
+"Send the message" = "Nachricht senden";
 "Set up Mail on this iPhone or send your message to %@." = "Richte Mail auf dem iPhone ein oder sende deine Nachricht an %@.";
 "Settings" = "Einstellungen";
 "Shared data" = "Gemeinsame Daten";
