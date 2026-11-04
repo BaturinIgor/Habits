@@ -359,19 +359,25 @@ struct BackupSettingsView: View {
     @State private var pendingImport: URL?
     @State private var importResult: Bool?
 
-    /// Файл с копией всех данных для экспорта.
-    private var exportURL: URL {
+    @State private var exportURL: URL?
+
+    /// Файл с копией всех данных пишется один раз при открытии экрана, а не на каждой перерисовке.
+    private func prepareExport() {
         let stamp = DayKey.make(Date())
         let url = FileManager.default.temporaryDirectory.appendingPathComponent("habits-backup-\(stamp).json")
-        try? store.exportData().write(to: url, options: .atomic)
-        return url
+        exportURL = (try? store.exportData().write(to: url, options: .atomic)) != nil ? url : nil
     }
 
     var body: some View {
         Form {
             Section {
-                ShareLink(item: exportURL) {
+                if let exportURL {
+                    ShareLink(item: exportURL) {
+                        Label("Export data", systemImage: "square.and.arrow.up")
+                    }
+                } else {
                     Label("Export data", systemImage: "square.and.arrow.up")
+                        .foregroundStyle(.secondary)
                 }
                 Button {
                     showingImporter = true
@@ -385,6 +391,7 @@ struct BackupSettingsView: View {
         .appBackground()
         .navigationTitle("Backup")
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear(perform: prepareExport)
         .fileImporter(isPresented: $showingImporter, allowedContentTypes: [.json]) { result in
             if case .success(let url) = result {
                 pendingImport = url
@@ -397,6 +404,7 @@ struct BackupSettingsView: View {
         ) { url in
             Button("Import", role: .destructive) {
                 importResult = store.importData(from: url)
+                prepareExport()
             }
             Button("Cancel", role: .cancel) {}
         } message: { _ in
