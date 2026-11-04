@@ -34,7 +34,7 @@ struct HabitDetailView: View {
                 header(habit, color: color)
 
                 if let language = habit.wordsLanguage {
-                    WordsProgressCard(language: language, color: color) { showingWords = true }
+                    WordsProgressCard(language: language, level: habit.wordsLevel ?? 0, color: color) { showingWords = true }
                 }
 
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
@@ -396,16 +396,20 @@ struct NotesCard: View {
 struct WordsProgressCard: View {
     @Environment(HabitStore.self) private var store
     let language: String
+    let level: Int
     let color: Color
     var onStart: () -> Void
 
     var body: some View {
-        let progress = WordPlan.progress(language: language, data: store.data)
+        let progress = WordPlan.progress(language: language, level: level, data: store.data)
         VStack(alignment: .leading, spacing: 14) {
             HStack(spacing: 12) {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(WordLanguage.name(language))
                         .font(.headline)
+                    Text((WordLevel(rawValue: level) ?? .beginner).title)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(color)
                     Text(String(localized: "Learned: \(progress.learned) of \(progress.total)"))
                         .font(.subheadline)
                         .foregroundStyle(.secondary)

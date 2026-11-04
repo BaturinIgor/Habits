@@ -495,7 +495,6 @@ Stretch||Peregangan
 Study for 30 minutes||Belajar 30 menit
 Swimming||Berenang
 Take vitamins||Minum vitamin
-Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.||Ketuk lingkaran kebiasaan untuk membuka kartu hari ini. Kata yang belum kamu tahu akan muncul lagi untuk diulang, dan kebiasaan dicentang otomatis setelah kartu hari ini selesai.
 Tap to see the translation||Ketuk untuk melihat terjemahan
 Tidy up for 10 minutes||Beres-beres 10 menit
 Track expenses||Catat pengeluaran
@@ -535,3 +534,11 @@ Profile section||Bagian profil
 Send the message||Kirim pesan
 Shows how many reminders came since you last opened the app.||Menampilkan berapa pengingat yang masuk sejak terakhir kali kamu membuka aplikasi.
 What %@ gives you||Yang diberikan %@
+Level||Tingkat
+Beginner||Pemula
+Intermediate||Menengah
+Advanced||Mahir
+Everyday basics||Dasar sehari-hari
+Work, travel and conversation||Kerja, perjalanan, dan percakapan
+Abstract ideas and news||Gagasan abstrak dan berita
+Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept.||Ketuk lingkaran kebiasaan untuk membuka kartu hari ini. Kata baru muncul acak dari tingkat yang dipilih. Kata yang belum kamu tahu akan muncul lagi untuk diulang, dan kebiasaan dicentang otomatis setelah kartu hari ini selesai. Tingkat bisa diubah kapan saja, kata yang sudah dipelajari tetap tersimpan.

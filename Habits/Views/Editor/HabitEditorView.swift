@@ -220,6 +220,16 @@ struct HabitEditorView: View {
                     Text(WordLanguage.name(code)).tag(code)
                 }
             }
+            Picker("Level", selection: Binding(get: { draft.wordsLevel ?? 0 }, set: { draft.wordsLevel = $0 })) {
+                ForEach(WordLevel.allCases) { level in
+                    VStack(alignment: .leading) {
+                        Text(level.title)
+                        Text(level.subtitle)
+                    }
+                    .tag(level.rawValue)
+                }
+            }
+            .pickerStyle(.navigationLink)
             Picker("New words a day", selection: Binding(get: { draft.wordsPerDay ?? 10 }, set: { draft.wordsPerDay = $0 })) {
                 ForEach(WordPlan.perDayOptions, id: \.self) { count in
                     Text(verbatim: "\(count)").tag(count)
@@ -228,7 +238,7 @@ struct HabitEditorView: View {
         } header: {
             Text("Words")
         } footer: {
-            Text("Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.")
+            Text("Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept.")
         }
     }
 

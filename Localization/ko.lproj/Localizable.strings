@@ -23,6 +23,7 @@
 "A grown pet brings up to +5 a day" = "자란 펫은 하루 최대 +5를 가져와요";
 "A week strong" = "일주일 달성";
 "A whole year" = "꼬박 1년";
+"Abstract ideas and news" = "추상적 개념과 뉴스";
 "Achievements" = "업적";
 "Achievements and rewards" = "업적과 보상";
 "Active" = "활성";
@@ -35,6 +36,7 @@
 "Added" = "추가됨";
 "Adopt" = "데려오기";
 "Adopt a pet" = "펫을 데려와요";
+"Advanced" = "고급";
 "After habit" = "다음 습관 뒤에";
 "After: %@" = "다음 뒤: %@";
 "Afternoon" = "오후";
@@ -60,6 +62,7 @@
 "Background" = "배경";
 "Backgrounds" = "배경";
 "Backup" = "백업";
+"Beginner" = "초급";
 "Best current streak" = "현재 최고 연속";
 "Best streak" = "최고 연속";
 "Better than nothing" = "안 하는 것보다 낫다";
@@ -161,6 +164,7 @@
 "Evening" = "저녁";
 "Evening summary" = "저녁 요약";
 "Every day" = "매일";
+"Everyday basics" = "일상 기본 단어";
 "Exclusive avatars and backgrounds" = "전용 아바타와 배경";
 "Exclusive pets and more sparks" = "전용 펫과 더 많은 스파크";
 "Export data" = "데이터 내보내기";
@@ -230,6 +234,7 @@
 "Import data" = "데이터 가져오기";
 "In progress: %lld" = "학습 중: %lld";
 "Include technical info" = "기술 정보 포함";
+"Intermediate" = "중급";
 "Interval" = "간격";
 "Iron will" = "강철 의지";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "가격: ✨ %lld, 보유: ✨ %lld. 습관을 체크해서 더 모아요.";
@@ -264,6 +269,7 @@
 "Let's go" = "시작하기";
 "Let's keep the streak going!" = "연속 기록을 이어가요!";
 "Let's start with your first habit" = "첫 습관부터 시작해요";
+"Level" = "수준";
 "Level %lld" = "레벨 %lld";
 "Listen" = "듣기";
 "Listen to a podcast" = "팟캐스트 듣기";
@@ -455,7 +461,7 @@
 "Tap a day to check it off. Press and hold to skip it or add a note." = "날짜를 탭하면 체크, 길게 누르면 건너뛰기나 메모 추가.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "원을 탭하거나 오른쪽으로 밀어 체크하세요. 왼쪽으로 밀면 건너뛰기, 메모, 편집. 길게 눌러 순서 변경.";
 "Tap the days when the habit should be done" = "습관을 실천할 요일을 탭하세요";
-"Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done." = "습관의 동그라미를 누르면 오늘의 카드가 열려요. 모르는 단어는 복습으로 다시 나오고, 오늘 카드를 모두 마치면 습관이 자동으로 체크돼요.";
+"Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "습관의 동그라미를 누르면 오늘의 카드가 열려요. 새 단어는 선택한 수준에서 무작위로 나와요. 모르는 단어는 복습으로 다시 나오고, 오늘 카드를 모두 마치면 습관이 자동으로 체크돼요. 수준은 언제든 바꿀 수 있고 외운 단어는 유지돼요.";
 "Tap to see the translation" = "눌러서 뜻 보기";
 "Tell us what you think" = "생각을 들려주세요";
 "Terms of Use" = "이용 약관";
@@ -513,6 +519,7 @@
 "Widget" = "위젯";
 "Words" = "단어";
 "Words for today are done" = "오늘의 단어 완료";
+"Work, travel and conversation" = "일, 여행, 대화";
 "Workout" = "운동";
 "Write 10 notes" = "메모 10개 쓰기";
 "Write 50 notes" = "메모 50개 작성";

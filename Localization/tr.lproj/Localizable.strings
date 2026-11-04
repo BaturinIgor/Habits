@@ -23,6 +23,7 @@
 "A grown pet brings up to +5 a day" = "Büyümüş evcil hayvan günde +5'e kadar getirir";
 "A week strong" = "Güçlü bir hafta";
 "A whole year" = "Koca bir yıl";
+"Abstract ideas and news" = "Soyut kavramlar ve haberler";
 "Achievements" = "Başarılar";
 "Achievements and rewards" = "Başarılar ve ödüller";
 "Active" = "Etkin";
@@ -35,6 +36,7 @@
 "Added" = "Eklendi";
 "Adopt" = "Sahiplen";
 "Adopt a pet" = "Evcil hayvan sahiplen";
+"Advanced" = "İleri";
 "After habit" = "Şu alışkanlıktan sonra";
 "After: %@" = "Sonra: %@";
 "Afternoon" = "Öğleden sonra";
@@ -60,6 +62,7 @@
 "Background" = "Arka plan";
 "Backgrounds" = "Arka planlar";
 "Backup" = "Yedek";
+"Beginner" = "Başlangıç";
 "Best current streak" = "Şu anki en iyi seri";
 "Best streak" = "En iyi seri";
 "Better than nothing" = "Hiç yoktan iyidir";
@@ -161,6 +164,7 @@
 "Evening" = "Akşam";
 "Evening summary" = "Akşam özeti";
 "Every day" = "Her gün";
+"Everyday basics" = "Günlük temel kelimeler";
 "Exclusive avatars and backgrounds" = "Özel avatarlar ve arka planlar";
 "Exclusive pets and more sparks" = "Özel evcil hayvanlar ve daha çok kıvılcım";
 "Export data" = "Verileri dışa aktar";
@@ -230,6 +234,7 @@
 "Import data" = "Verileri içe aktar";
 "In progress: %lld" = "Öğreniliyor: %lld";
 "Include technical info" = "Teknik bilgileri ekle";
+"Intermediate" = "Orta";
 "Interval" = "Aralık";
 "Iron will" = "Demir irade";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "Fiyatı %lld kıvılcım, sende %lld var. Daha fazla kazanmak için alışkanlık işaretle.";
@@ -264,6 +269,7 @@
 "Let's go" = "Haydi";
 "Let's keep the streak going!" = "Seriyi sürdürelim!";
 "Let's start with your first habit" = "İlk alışkanlığınla başlayalım";
+"Level" = "Seviye";
 "Level %lld" = "Seviye %lld";
 "Listen" = "Dinle";
 "Listen to a podcast" = "Podcast dinle";
@@ -455,7 +461,7 @@
 "Tap a day to check it off. Press and hold to skip it or add a note." = "İşaretlemek için bir güne dokun. Atlamak veya not eklemek için basılı tut.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "İşaretlemek için daireye dokun veya sağa kaydır. Atlamak, not eklemek veya düzenlemek için sola kaydır. Sıralamak için basılı tut.";
 "Tap the days when the habit should be done" = "Alışkanlığın yapılacağı günlere dokun";
-"Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done." = "Bugünün kartlarını açmak için alışkanlığın dairesine dokun. Henüz bilmediğin kelimeler tekrar için geri gelir, günün kartları bitince alışkanlık kendiliğinden işaretlenir.";
+"Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "Bugünün kartlarını açmak için alışkanlığın dairesine dokun. Yeni kelimeler seçilen seviyeden rastgele sırayla gelir. Henüz bilmediğin kelimeler tekrar için geri gelir, günün kartları bitince alışkanlık kendiliğinden işaretlenir. Seviyeyi istediğin zaman değiştirebilirsin, öğrendiğin kelimeler korunur.";
 "Tap to see the translation" = "Çeviriyi görmek için dokun";
 "Tell us what you think" = "Ne düşündüğünü söyle";
 "Terms of Use" = "Kullanım Koşulları";
@@ -513,6 +519,7 @@
 "Widget" = "Widget";
 "Words" = "Kelimeler";
 "Words for today are done" = "Bugünün kelimeleri tamam";
+"Work, travel and conversation" = "İş, seyahat ve sohbet";
 "Workout" = "Antrenman";
 "Write 10 notes" = "10 not yaz";
 "Write 50 notes" = "50 not yaz";

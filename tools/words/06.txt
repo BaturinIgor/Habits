@@ -1,0 +1,126 @@
+#level 1
+# category|en|ru|de|fr|es|pt-BR|it|tr|pl|id|zh-Hans|ja|ko|hi
+work|salary|зарплата|das Gehalt|le salaire|el sueldo|o salário|lo stipendio|maaş|pensja|gaji|工资|給料|월급|वेतन
+work|interview|собеседование|das Vorstellungsgespräch|l'entretien|la entrevista|a entrevista|il colloquio|mülakat|rozmowa kwalifikacyjna|wawancara|面试|面接|면접|साक्षात्कार
+work|experience|опыт|die Erfahrung|l'expérience|la experiencia|a experiência|l'esperienza|deneyim|doświadczenie|pengalaman|经验|経験|경험|अनुभव
+work|skill|навык|die Fähigkeit|la compétence|la habilidad|a habilidade|l'abilità|beceri|umiejętność|keterampilan|技能|スキル|기술|कौशल
+work|task|задача|die Aufgabe|la tâche|la tarea|a tarefa|il compito|görev|zadanie|tugas|任务|タスク|과제|काम (कार्य)
+work|deadline|срок|die Frist|la date limite|el plazo|o prazo|la scadenza|son tarih|termin|tenggat waktu|截止日期|締め切り|마감일|समय सीमा
+work|project|проект|das Projekt|le projet|el proyecto|o projeto|il progetto|proje|projekt|proyek|项目|プロジェクト|프로젝트|परियोजना
+work|team|команда|das Team|l'équipe|el equipo|a equipe|la squadra|takım|zespół|tim|团队|チーム|팀|टीम
+work|customer|клиент|der Kunde|le client|el cliente|o cliente|il cliente|müşteri|klient|pelanggan|顾客|顧客|고객|ग्राहक
+work|contract|договор|der Vertrag|le contrat|el contrato|o contrato|il contratto|sözleşme|umowa|kontrak|合同|契約|계약|अनुबंध
+work|report|отчёт|der Bericht|le rapport|el informe|o relatório|il rapporto|rapor|raport|laporan|报告|報告書|보고서|रिपोर्ट
+work|presentation|презентация|die Präsentation|la présentation|la presentación|a apresentação|la presentazione|sunum|prezentacja|presentasi|演示|プレゼン|발표|प्रस्तुति
+work|schedule|расписание|der Zeitplan|l'emploi du temps|el horario|a agenda|l'orario|program|harmonogram|jadwal|日程|スケジュール|일정|समय-सारणी
+work|career|карьера|die Karriere|la carrière|la carrera|a carreira|la carriera|kariyer|kariera|karier|职业生涯|キャリア|경력|करियर
+work|success|успех|der Erfolg|le succès|el éxito|o sucesso|il successo|başarı|sukces|kesuksesan|成功|成功|성공|सफलता
+work|mistake|ошибка|der Fehler|l'erreur|el error|o erro|l'errore|hata|błąd|kesalahan|错误|間違い|실수|ग़लती
+work|advice|совет|der Rat|le conseil|el consejo|o conselho|il consiglio|tavsiye|rada|nasihat|建议|アドバイス|조언|सलाह
+work|decision|решение|die Entscheidung|la décision|la decisión|a decisão|la decisione|karar|decyzja|keputusan|决定|決定|결정|फ़ैसला
+work|opportunity|возможность|die Gelegenheit|l'occasion|la oportunidad|a oportunidade|l'opportunità|fırsat|okazja|kesempatan|机会|機会|기회|अवसर
+work|responsibility|ответственность|die Verantwortung|la responsabilité|la responsabilidad|a responsabilidade|la responsabilità|sorumluluk|odpowiedzialność|tanggung jawab|责任|責任|책임|ज़िम्मेदारी
+work|to earn|зарабатывать|verdienen|gagner (de l'argent)|ganar|ganhar|guadagnare|kazanmak|zarabiać|menghasilkan uang|挣钱|稼ぐ|벌다|कमाना
+work|to hire|нанимать|einstellen|embaucher|contratar|contratar|assumere|işe almak|zatrudniać|mempekerjakan|雇用|雇う|고용하다|नौकरी पर रखना
+work|to quit|уволиться|kündigen|démissionner|renunciar|pedir demissão|dimettersi|istifa etmek|rzucić pracę|mengundurkan diri|辞职|辞める|그만두다|नौकरी छोड़ना
+work|to manage|руководить|leiten|gérer|dirigir|gerenciar|gestire|yönetmek|zarządzać|mengelola|管理|管理する|관리하다|संभालना
+work|to prepare|готовить (подготовить)|vorbereiten|préparer|preparar|preparar|preparare|hazırlamak|przygotowywać|menyiapkan|准备|準備する|준비하다|तैयार करना
+work|to explain|объяснять|erklären|expliquer|explicar|explicar|spiegare|açıklamak|wyjaśniać|menjelaskan|解释|説明する|설명하다|समझाना
+work|to agree|соглашаться|zustimmen|être d'accord|estar de acuerdo|concordar|essere d'accordo|katılmak|zgadzać się|setuju|同意|賛成する|동의하다|सहमत होना
+work|to discuss|обсуждать|besprechen|discuter|discutir|discutir|discutere|tartışmak|omawiać|membahas|讨论|話し合う|논의하다|चर्चा करना
+work|to send|отправлять|schicken|envoyer|enviar|enviar|inviare|göndermek|wysyłać|mengirim|发送|送る|보내다|भेजना
+work|to receive|получать|bekommen|recevoir|recibir|receber|ricevere|almak (teslim)|otrzymywać|menerima|收到|受け取る|받다|प्राप्त करना
+work|to check|проверять|prüfen|vérifier|comprobar|verificar|controllare|kontrol etmek|sprawdzać|memeriksa|检查|確認する|확인하다|जाँचना
+work|to improve|улучшать|verbessern|améliorer|mejorar|melhorar|migliorare|geliştirmek|poprawiać|meningkatkan|改善|改善する|개선하다|सुधारना
+work|to succeed|добиваться успеха|Erfolg haben|réussir|tener éxito|ter sucesso|avere successo|başarmak|odnieść sukces|berhasil|成功 (动词)|成功する|성공하다|सफल होना
+work|to fail|терпеть неудачу|scheitern|échouer|fracasar|fracassar|fallire|başarısız olmak|ponieść porażkę|gagal|失败|失敗する|실패하다|असफल होना
+work|to try|пытаться|versuchen|essayer|intentar|tentar|provare|denemek|próbować|mencoba|尝试|試す|시도하다|कोशिश करना
+work|to decide|решать|entscheiden|décider|decidir|decidir|decidere|karar vermek|decydować|memutuskan|决定 (动词)|決める|결정하다|तय करना
+work|to choose|выбирать|wählen|choisir|elegir|escolher|scegliere|seçmek|wybierać|memilih|选择|選ぶ|고르다|चुनना
+work|to change|менять|ändern|changer|cambiar|mudar|cambiare|değiştirmek|zmieniać|mengubah|改变|変える|바꾸다|बदलना
+work|to continue|продолжать|fortsetzen|continuer|continuar|continuar|continuare|devam etmek|kontynuować|melanjutkan|继续|続ける|계속하다|जारी रखना
+work|to repeat|повторять|wiederholen|répéter|repetir|repetir|ripetere|tekrarlamak|powtarzać|mengulangi|重复|繰り返す|반복하다|दोहराना
+travel|flight|рейс|der Flug|le vol|el vuelo|o voo|il volo|uçuş|lot|penerbangan|航班|フライト|항공편|उड़ान
+travel|luggage|багаж|das Gepäck|les bagages|el equipaje|a bagagem|i bagagli|bagaj|bagaż|bagasi|行李|荷物|짐|सामान
+travel|border|граница|die Grenze|la frontière|la frontera|a fronteira|il confine|sınır|granica|perbatasan|边境|国境|국경|सीमा
+travel|customs|таможня|der Zoll|la douane|la aduana|a alfândega|la dogana|gümrük|cło|bea cukai|海关|税関|세관|सीमा शुल्क
+travel|visa|виза|das Visum|le visa|el visado|o visto|il visto|vize|wiza|visa|签证|ビザ|비자|वीज़ा
+travel|delay|задержка|die Verspätung|le retard|el retraso|o atraso|il ritardo|gecikme|opóźnienie|keterlambatan|延误|遅延|지연|देरी
+travel|departure|отправление|die Abfahrt|le départ|la salida (viaje)|a partida|la partenza|kalkış|odjazd|keberangkatan|出发|出発|출발|प्रस्थान
+travel|arrival|прибытие|die Ankunft|l'arrivée|la llegada|a chegada|l'arrivo|varış|przyjazd|kedatangan|到达|到着|도착|आगमन
+travel|platform|платформа|der Bahnsteig|le quai|el andén|a plataforma|il binario|peron|peron|peron|站台|ホーム|승강장|प्लेटफ़ॉर्म
+travel|seat|место (сиденье)|der Sitzplatz|la place|el asiento|o assento|il posto|koltuk|miejsce|kursi (tempat duduk)|座位|座席|좌석|सीट
+travel|guide|гид|der Reiseführer|le guide|el guía|o guia|la guida|rehber|przewodnik|pemandu|导游|ガイド|가이드|गाइड
+travel|sight|достопримечательность|die Sehenswürdigkeit|le site touristique|el lugar de interés|o ponto turístico|l'attrazione|görülecek yer|zabytek|tempat wisata|景点|名所|명소|दर्शनीय स्थल
+travel|souvenir|сувенир|das Andenken|le souvenir|el recuerdo|a lembrança|il souvenir|hediyelik eşya|pamiątka|cendera mata|纪念品|お土産|기념품|स्मृति-चिह्न
+travel|abroad|за границей|im Ausland|à l'étranger|en el extranjero|no exterior|all'estero|yurt dışında|za granicą|di luar negeri|在国外|海外で|해외에서|विदेश में
+travel|journey|путь|die Fahrt|le trajet|el trayecto|o trajeto|il tragitto|yolculuk (süreç)|droga (podróż)|perjalanan jauh|旅程|道のり|여정|यात्रा
+travel|direction|направление|die Richtung|la direction|la dirección|a direção|la direzione|yön|kierunek|arah|方向|方向|방향|दिशा
+travel|distance|расстояние|die Entfernung|la distance|la distancia|a distância|la distanza|mesafe|odległość|jarak|距离|距離|거리 (간격)|दूरी
+travel|corner|угол|die Ecke|le coin|la esquina|a esquina|l'angolo|köşe|róg|sudut|拐角|角|모퉁이|कोना
+travel|traffic|пробки|der Verkehr|la circulation|el tráfico|o trânsito|il traffico|trafik|ruch uliczny|lalu lintas|交通|交通|교통|यातायात
+travel|accident|авария|der Unfall|l'accident|el accidente|o acidente|l'incidente|kaza|wypadek|kecelakaan|事故|事故|사고|दुर्घटना
+travel|to book|бронировать|buchen|réserver|reservar|reservar|prenotare|rezervasyon yapmak|rezerwować|memesan|预订 (动词)|予約する|예약하다|बुक करना
+travel|to arrive|прибывать|ankommen|arriver|llegar|chegar|arrivare|varmak|przybywać|tiba|到达 (动词)|到着する|도착하다|पहुँचना
+travel|to leave|уезжать|abfahren|partir|salir|partir|partire|ayrılmak|wyjeżdżać|berangkat|离开|出発する|떠나다|निकलना
+travel|to return|возвращаться|zurückkehren|revenir|volver|voltar|tornare|dönmek|wracać|kembali|回来|戻る|돌아오다|लौटना
+travel|to visit|посещать|besuchen|visiter|visitar|visitar|visitare|ziyaret etmek|odwiedzać|mengunjungi|参观|訪れる|방문하다|घूमने जाना
+travel|to rent|арендовать|mieten|louer|alquilar|alugar|affittare|kiralamak|wynajmować|menyewa|租|借りる|빌리다|किराये पर लेना
+travel|to get lost|заблудиться|sich verlaufen|se perdre|perderse|se perder|perdersi|kaybolmak|zgubić się|tersesat|迷路|道に迷う|길을 잃다|रास्ता भटकना
+travel|to pack|собирать вещи|packen|faire ses bagages|hacer la maleta|fazer as malas|fare le valigie|bavul hazırlamak|pakować się|berkemas|收拾行李|荷造りする|짐을 싸다|सामान बाँधना
+home|rent|арендная плата|die Miete|le loyer|el alquiler|o aluguel|l'affitto|kira|czynsz|uang sewa|房租|家賃|집세|किराया
+home|furniture|мебель|die Möbel|les meubles|los muebles|os móveis|i mobili|mobilya|meble|perabot|家具|家具|가구|फ़र्नीचर
+home|stairs|лестница|die Treppe|l'escalier|la escalera|a escada|le scale|merdiven|schody|tangga|楼梯|階段|계단|सीढ़ियाँ
+home|elevator|лифт|der Aufzug|l'ascenseur|el ascensor|o elevador|l'ascensore|asansör|winda|lift|电梯|エレベーター|엘리베이터|लिफ़्ट
+home|fridge|холодильник|der Kühlschrank|le frigo|la nevera|a geladeira|il frigorifero|buzdolabı|lodówka|kulkas|冰箱|冷蔵庫|냉장고|फ़्रिज
+home|oven|духовка|der Ofen|le four|el horno|o forno|il forno|fırın|piekarnik|oven|烤箱|オーブン|오븐|ओवन
+home|washing machine|стиральная машина|die Waschmaschine|la machine à laver|la lavadora|a máquina de lavar|la lavatrice|çamaşır makinesi|pralka|mesin cuci|洗衣机|洗濯機|세탁기|वॉशिंग मशीन
+home|blanket|одеяло|die Decke|la couverture|la manta|o cobertor|la coperta|battaniye|koc|selimut|毯子|毛布|담요|कंबल
+home|pillow|подушка|das Kissen|l'oreiller|la almohada|o travesseiro|il cuscino|yastık|poduszka|bantal|枕头|枕|베개|तकिया
+home|shelf|полка|das Regal|l'étagère|la estantería|a prateleira|lo scaffale|raf|półka|rak|架子|棚|선반|शेल्फ़
+home|neighborhood|район|die Nachbarschaft|le quartier|el barrio|o bairro|il quartiere|mahalle|okolica|lingkungan|街区|近所|동네|मोहल्ला
+home|to move|переезжать|umziehen|déménager|mudarse|se mudar|traslocare|taşınmak|przeprowadzać się|pindah rumah|搬家|引っ越す|이사하다|घर बदलना
+home|to clean|убирать|putzen|nettoyer|limpiar|limpar|pulire|temizlemek|sprzątać|membersihkan|打扫|掃除する|청소하다|साफ़ करना
+home|to repair|чинить|reparieren|réparer|reparar|consertar|riparare|tamir etmek|naprawiać|memperbaiki|修理|修理する|수리하다|मरम्मत करना
+home|to borrow|занимать (брать в долг)|leihen|emprunter|pedir prestado|pegar emprestado|prendere in prestito|ödünç almak|pożyczać|meminjam|借|借りる (かりる)|빌리다 (돈)|उधार लेना
+home|to lend|давать в долг|verleihen|prêter|prestar|emprestar|prestare|ödünç vermek|pożyczać komuś|meminjamkan|借给|貸す|빌려주다|उधार देना
+health|fever|температура (жар)|das Fieber|la fièvre|la fiebre|a febre|la febbre|ateş (hastalık)|gorączka|demam|发烧|熱|열|बुख़ार
+health|cough|кашель|der Husten|la toux|la tos|a tosse|la tosse|öksürük|kaszel|batuk|咳嗽|咳|기침|खाँसी
+health|cold (illness)|простуда|die Erkältung|le rhume|el resfriado|o resfriado|il raffreddore|soğuk algınlığı|przeziębienie|pilek|感冒|風邪|감기|ज़ुकाम
+health|headache|головная боль|die Kopfschmerzen|le mal de tête|el dolor de cabeza|a dor de cabeça|il mal di testa|baş ağrısı|ból głowy|sakit kepala|头疼|頭痛|두통|सिरदर्द
+health|appointment|запись (к врачу)|der Termin|le rendez-vous|la cita|a consulta|l'appuntamento|randevu|wizyta|janji temu|预约|予約 (病院)|진료 예약|अपॉइंटमेंट
+health|injury|травма|die Verletzung|la blessure|la lesión|a lesão|la ferita|yaralanma|uraz|cedera|受伤|けが|부상|चोट
+health|diet|диета|die Diät|le régime|la dieta|a dieta|la dieta|diyet|dieta|diet|饮食|食事制限|식단|आहार
+health|exercise|упражнение|die Übung|l'exercice|el ejercicio|o exercício|l'esercizio|egzersiz|ćwiczenie|latihan|锻炼|運動 (うんどう)|운동 (연습)|व्यायाम
+health|weight|вес|das Gewicht|le poids|el peso|o peso|il peso|kilo|waga|berat badan|体重|体重|몸무게|वज़न
+health|to feel|чувствовать|fühlen|sentir|sentir|sentir|sentire (provare)|hissetmek|czuć|merasa|感觉|感じる|느끼다|महसूस करना
+health|to hurt|болеть|wehtun|faire mal|doler|doer|fare male|acımak|boleć|terasa sakit|疼|痛む|아프다|दर्द होना
+health|to rest|отдыхать|sich ausruhen|se reposer|descansar|descansar|riposare|dinlenmek|odpoczywać|beristirahat|休息|休む|쉬다|आराम करना
+health|to breathe|дышать|atmen|respirer|respirar|respirar|respirare|nefes almak|oddychać|bernapas|呼吸|息をする|숨쉬다|साँस लेना
+health|to recover|выздоравливать|sich erholen|guérir|recuperarse|se recuperar|guarire|iyileşmek|wyzdrowieć|pulih|康复|回復する|회복하다|ठीक होना
+people|relationship|отношения|die Beziehung|la relation|la relación|o relacionamento|la relazione|ilişki|związek|hubungan|关系|関係|관계|रिश्ता
+people|wedding|свадьба|die Hochzeit|le mariage|la boda|o casamento|il matrimonio|düğün|ślub|pernikahan|婚礼|結婚式|결혼식|शादी
+people|couple|пара|das Paar|le couple|la pareja|o casal|la coppia|çift|para|pasangan|情侣|カップル|커플|जोड़ा
+people|parents|родители|die Eltern|les parents|los padres|os pais|i genitori|ebeveynler|rodzice|orang tua|父母|両親|부모님|माता-पिता
+people|relative|родственник|der Verwandte|le parent (famille)|el pariente|o parente|il parente|akraba|krewny|kerabat|亲戚|親戚|친척|रिश्तेदार
+people|stranger|незнакомец|der Fremde|l'inconnu|el desconocido|o desconhecido|lo sconosciuto|yabancı|nieznajomy|orang asing|陌生人|見知らぬ人|낯선 사람|अजनबी
+people|age|возраст|das Alter|l'âge|la edad|a idade|l'età|yaş|wiek|usia|年龄|年齢|나이|उम्र
+people|character|характер|der Charakter|le caractère|el carácter|o caráter|il carattere|karakter|charakter|watak|性格|性格|성격|स्वभाव
+people|behavior|поведение|das Verhalten|le comportement|el comportamiento|o comportamento|il comportamento|davranış|zachowanie|perilaku|行为|行動|행동|व्यवहार
+people|conversation|разговор|das Gespräch|la conversation|la conversación|a conversa|la conversazione|sohbet|rozmowa|percakapan|对话|会話|대화|बातचीत
+people|opinion|мнение|die Meinung|l'avis|la opinión|a opinião|l'opinione|görüş|opinia|pendapat|意见|意見|의견|राय
+people|reason|причина|der Grund|la raison|la razón|a razão|la ragione|sebep|powód|alasan|原因|理由|이유|कारण
+people|example|пример|das Beispiel|l'exemple|el ejemplo|o exemplo|l'esempio|örnek|przykład|contoh|例子|例|예|उदाहरण
+people|promise|обещание|das Versprechen|la promesse|la promesa|a promessa|la promessa|söz (vaat)|obietnica|janji|承诺|約束|약속|वादा
+people|secret|секрет|das Geheimnis|le secret|el secreto|o segredo|il segreto|sır|sekret|rahasia|秘密|秘密|비밀|राज़
+people|to meet|встречаться|treffen|rencontrer|conocer (a alguien)|conhecer|incontrare|tanışmak|spotykać|bertemu|见面|会う|만나다|मिलना
+people|to invite|приглашать|einladen|inviter|invitar|convidar|invitare|davet etmek|zapraszać|mengundang|邀请|招待する|초대하다|बुलाना
+people|to thank|благодарить|danken|remercier|agradecer|agradecer|ringraziare|teşekkür etmek|dziękować|berterima kasih|感谢|感謝する|감사하다|धन्यवाद देना
+people|to apologize|извиняться|sich entschuldigen|s'excuser|disculparse|pedir desculpas|scusarsi|özür dilemek|przepraszać|meminta maaf|道歉|謝る|사과하다|माफ़ी माँगना
+people|to argue|спорить|streiten|se disputer|discutir (pelear)|brigar|litigare|tartışmak (kavga)|kłócić się|bertengkar|争吵|口論する|말다툼하다|बहस करना
+people|to trust|доверять|vertrauen|faire confiance|confiar|confiar|fidarsi|güvenmek|ufać|percaya|信任|信頼する|신뢰하다|भरोसा करना
+people|to miss (someone)|скучать|vermissen|manquer (à quelqu'un)|echar de menos|sentir falta|mancare|özlemek|tęsknić|merindukan|想念|恋しく思う|그리워하다|याद करना (कमी)
+people|to marry|жениться / выйти замуж|heiraten|se marier|casarse|casar|sposarsi|evlenmek|brać ślub|menikah|结婚|結婚する|결혼하다|शादी करना
+people|to celebrate|праздновать|feiern|fêter|celebrar|comemorar|festeggiare|kutlamak|świętować|merayakan|庆祝|祝う|축하하다|जश्न मनाना
+people|to introduce|представлять (знакомить)|vorstellen|présenter|presentar|apresentar|presentare|tanıtmak|przedstawiać|memperkenalkan|介绍|紹介する|소개하다|परिचय कराना
+people|to shake hands|пожимать руку|die Hand geben|serrer la main|dar la mano|apertar a mão|stringere la mano|el sıkışmak|podawać rękę|berjabat tangan|握手|握手する|악수하다|हाथ मिलाना

@@ -66,9 +66,35 @@ enum WordLanguage {
 
 // MARK: - Словарь
 
+/// Уровень знания языка: свой набор слов на каждом уровне.
+enum WordLevel: Int, CaseIterable, Identifiable {
+    case beginner = 0
+    case intermediate = 1
+    case advanced = 2
+
+    var id: Int { rawValue }
+
+    var title: String {
+        switch self {
+        case .beginner: return String(localized: "Beginner")
+        case .intermediate: return String(localized: "Intermediate")
+        case .advanced: return String(localized: "Advanced")
+        }
+    }
+
+    var subtitle: String {
+        switch self {
+        case .beginner: return String(localized: "Everyday basics")
+        case .intermediate: return String(localized: "Work, travel and conversation")
+        case .advanced: return String(localized: "Abstract ideas and news")
+        }
+    }
+}
+
 struct Word: Identifiable, Hashable {
     /// Английское слово, оно же постоянный ключ прогресса.
     let id: String
+    let level: Int
     let category: String
     let forms: [String: String]
 
@@ -76,8 +102,17 @@ struct Word: Identifiable, Hashable {
 }
 
 enum WordBank {
-    /// Все слова из words.tsv в порядке изучения: от простых к сложным.
+    /// Все слова из words.tsv. Строка: уровень|категория|en|ru|...
     static let all: [Word] = load()
+
+    static func words(level: Int) -> [Word] { all.filter { $0.level == level } }
+
+    /// Слова уровня в перемешанном порядке. Порядок свой для каждого языка и не меняется
+    /// между запусками, чтобы начатые слова не перескакивали.
+    static func shuffled(level: Int, language: String) -> [Word] {
+        var generator = SeededGenerator(seed: language + "|\(level)")
+        return words(level: level).shuffled(using: &generator)
+    }
 
     private static func load() -> [Word] {
         guard let url = Bundle.main.url(forResource: "words", withExtension: "tsv"),
@@ -88,17 +123,43 @@ enum WordBank {
             let parts = line.split(separator: "|", omittingEmptySubsequences: false).map {
                 $0.trimmingCharacters(in: .whitespaces)
             }
-            guard parts.count == WordLanguage.codes.count + 1, !parts[0].hasPrefix("#") else { continue }
-            let id = parts[1]
+            guard parts.count == WordLanguage.codes.count + 2, !parts[0].hasPrefix("#") else { continue }
+            let level = Int(parts[0]) ?? 0
+            let category = parts[1]
+            let id = parts[2]
             guard !seen.contains(id) else { continue }
             seen.insert(id)
             var forms: [String: String] = [:]
             for (index, code) in WordLanguage.codes.enumerated() {
-                forms[code] = parts[index + 1]
+                forms[code] = parts[index + 2]
             }
-            result.append(Word(id: id, category: parts[0], forms: forms))
+            result.append(Word(id: id, level: level, category: category, forms: forms))
         }
         return result
+    }
+}
+
+/// Генератор с постоянным зерном: одинаковая последовательность на всех устройствах и запусках.
+struct SeededGenerator: RandomNumberGenerator {
+    private var state: UInt64
+
+    init(seed: String) {
+        // FNV-1a: hashValue у строк меняется между запусками, поэтому считаем сами.
+        var hash: UInt64 = 0xcbf29ce484222325
+        for byte in seed.utf8 {
+            hash ^= UInt64(byte)
+            hash = hash &* 0x100000001b3
+        }
+        state = hash
+    }
+
+    mutating func next() -> UInt64 {
+        // SplitMix64.
+        state &+= 0x9E3779B97F4A7C15
+        var z = state
+        z = (z ^ (z >> 30)) &* 0xBF58476D1CE4E5B9
+        z = (z ^ (z >> 27)) &* 0x94D049BB133111EB
+        return z ^ (z >> 31)
     }
 }
 
@@ -124,35 +185,37 @@ enum WordPlan {
 
     static func key(_ language: String, _ wordID: String) -> String { language + "|" + wordID }
 
-    /// Слова на сегодня: сначала повторение, потом новые до дневной нормы.
-    static func session(language: String, perDay: Int, data: AppData, day: String, extraNew: Int = 0) -> [Word] {
+    /// Слова на сегодня: сначала повторение (любого уровня), потом новые слова выбранного уровня
+    /// вразброс до дневной нормы. Повторение тоже идёт в случайном порядке.
+    static func session(language: String, level: Int, perDay: Int, data: AppData, day: String, extraNew: Int = 0) -> [Word] {
         var reviews: [(Word, String)] = []
-        var newWords: [Word] = []
         var introducedToday = 0
         for word in WordBank.all {
-            if let card = data.words[key(language, word.id)] {
-                if card.introduced == day { introducedToday += 1 }
-                if card.due <= day && card.lastSeen != day { reviews.append((word, card.due)) }
-            } else {
-                newWords.append(word)
-            }
+            guard let card = data.words[key(language, word.id)] else { continue }
+            if card.introduced == day { introducedToday += 1 }
+            if card.due <= day && card.lastSeen != day { reviews.append((word, card.due)) }
         }
         let reviewLimit = max(perDay * 2, 10)
-        let due = reviews.sorted { $0.1 < $1.1 }.prefix(reviewLimit).map { $0.0 }
+        let due = reviews.sorted { $0.1 < $1.1 }.prefix(reviewLimit).map { $0.0 }.shuffled()
         let newCount = max(0, perDay + extraNew - introducedToday)
-        return Array(due) + newWords.prefix(newCount)
+        let newWords = WordBank.shuffled(level: level, language: language)
+            .filter { data.words[key(language, $0.id)] == nil }
+            .prefix(newCount)
+        return Array(due) + newWords
     }
 
     struct Progress {
         var learned = 0
         var learning = 0
-        var total = WordBank.all.count
+        var total = 0
     }
 
-    static func progress(language: String, data: AppData) -> Progress {
+    /// Прогресс по словам выбранного уровня.
+    static func progress(language: String, level: Int, data: AppData) -> Progress {
         var result = Progress()
-        let prefix = language + "|"
-        for (key, card) in data.words where key.hasPrefix(prefix) {
+        for word in WordBank.words(level: level) {
+            result.total += 1
+            guard let card = data.words[key(language, word.id)] else { continue }
             if card.box >= learnedBox { result.learned += 1 } else { result.learning += 1 }
         }
         return result

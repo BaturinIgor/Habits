@@ -17,6 +17,7 @@ struct WordsSessionView: View {
     private var habit: Habit? { store.habit(habitID) }
     private var language: String { habit?.wordsLanguage ?? WordLanguage.suggested }
     private var perDay: Int { habit?.wordsPerDay ?? 10 }
+    private var level: Int { habit?.wordsLevel ?? 0 }
     private var color: Color { Palette.color(habit?.colorIndex ?? 6) }
 
     /// Язык перевода: язык интерфейса, а если он совпадает с изучаемым, то английский.
@@ -58,7 +59,7 @@ struct WordsSessionView: View {
 
     private func start() {
         guard !started else { return }
-        let words = WordPlan.session(language: language, perDay: perDay, data: store.data,
+        let words = WordPlan.session(language: language, level: level, perDay: perDay, data: store.data,
                                      day: DayKey.make(Date()), extraNew: extraNew)
         queue = words
         total = words.count
@@ -168,7 +169,7 @@ struct WordsSessionView: View {
     }
 
     private var finished: some View {
-        let progress = WordPlan.progress(language: language, data: store.data)
+        let progress = WordPlan.progress(language: language, level: level, data: store.data)
         let nothingLeft = progress.learned + progress.learning >= progress.total && total == 0
         return VStack(spacing: 16) {
             Spacer()

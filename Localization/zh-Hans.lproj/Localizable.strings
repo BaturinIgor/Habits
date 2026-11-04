@@ -23,6 +23,7 @@
 "A grown pet brings up to +5 a day" = "长大的宠物每天最多带来 +5";
 "A week strong" = "坚持一周";
 "A whole year" = "整整一年";
+"Abstract ideas and news" = "抽象概念和新闻";
 "Achievements" = "成就";
 "Achievements and rewards" = "成就与奖励";
 "Active" = "已启用";
@@ -35,6 +36,7 @@
 "Added" = "已添加";
 "Adopt" = "领养";
 "Adopt a pet" = "领养一只宠物";
+"Advanced" = "高级";
 "After habit" = "在此习惯之后";
 "After: %@" = "之后：%@";
 "Afternoon" = "下午";
@@ -60,6 +62,7 @@
 "Background" = "背景";
 "Backgrounds" = "背景";
 "Backup" = "备份";
+"Beginner" = "初级";
 "Best current streak" = "当前最佳连续";
 "Best streak" = "最佳连续";
 "Better than nothing" = "聊胜于无";
@@ -161,6 +164,7 @@
 "Evening" = "晚上";
 "Evening summary" = "晚间小结";
 "Every day" = "每天";
+"Everyday basics" = "日常基础词汇";
 "Exclusive avatars and backgrounds" = "专属头像和背景";
 "Exclusive pets and more sparks" = "专属宠物和更多火花";
 "Export data" = "导出数据";
@@ -230,6 +234,7 @@
 "Import data" = "导入数据";
 "In progress: %lld" = "学习中：%lld";
 "Include technical info" = "附带技术信息";
+"Intermediate" = "中级";
 "Interval" = "间隔";
 "Iron will" = "钢铁意志";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "价格：✨ %lld，你有：✨ %lld。完成习惯即可获得更多。";
@@ -264,6 +269,7 @@
 "Let's go" = "开始";
 "Let's keep the streak going!" = "继续保持连续吧！";
 "Let's start with your first habit" = "从第一个习惯开始吧";
+"Level" = "水平";
 "Level %lld" = "等级 %lld";
 "Listen" = "收听";
 "Listen to a podcast" = "听播客";
@@ -455,7 +461,7 @@
 "Tap a day to check it off. Press and hold to skip it or add a note." = "点按某天即可打卡，长按可跳过或添加备注。";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "点圆圈或向右滑动即可打卡。向左滑动可跳过、写备注或编辑。长按可调整顺序。";
 "Tap the days when the habit should be done" = "点选需要执行习惯的日子";
-"Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done." = "点击习惯的圆圈打开今天的卡片。还不会的单词会再次复习，完成当天所有卡片后习惯会自动打勾。";
+"Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "点击习惯的圆圈打开今天的卡片。新单词从所选水平中随机出现。还不会的单词会再次复习，完成当天所有卡片后习惯会自动打勾。可以随时更改水平，已学的单词会保留。";
 "Tap to see the translation" = "点击查看翻译";
 "Tell us what you think" = "说说你的想法";
 "Terms of Use" = "使用条款";
@@ -513,6 +519,7 @@
 "Widget" = "小组件";
 "Words" = "单词";
 "Words for today are done" = "今天的单词完成了";
+"Work, travel and conversation" = "工作、旅行和交谈";
 "Workout" = "锻炼";
 "Write 10 notes" = "写 10 条备注";
 "Write 50 notes" = "写 50 条备注";

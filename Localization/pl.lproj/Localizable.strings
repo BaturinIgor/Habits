@@ -23,6 +23,7 @@
 "A grown pet brings up to +5 a day" = "Dorosły zwierzak przynosi do +5 dziennie";
 "A week strong" = "Mocny tydzień";
 "A whole year" = "Cały rok";
+"Abstract ideas and news" = "Pojęcia abstrakcyjne i wiadomości";
 "Achievements" = "Osiągnięcia";
 "Achievements and rewards" = "Osiągnięcia i nagrody";
 "Active" = "Aktywny";
@@ -35,6 +36,7 @@
 "Added" = "Dodano";
 "Adopt" = "Adoptuj";
 "Adopt a pet" = "Adoptuj zwierzaka";
+"Advanced" = "Zaawansowany";
 "After habit" = "Po nawyku";
 "After: %@" = "Po: %@";
 "Afternoon" = "Popołudnie";
@@ -60,6 +62,7 @@
 "Background" = "Tło";
 "Backgrounds" = "Tła";
 "Backup" = "Kopia zapasowa";
+"Beginner" = "Początkujący";
 "Best current streak" = "Najlepsza obecna seria";
 "Best streak" = "Najlepsza seria";
 "Better than nothing" = "Lepsze niż nic";
@@ -161,6 +164,7 @@
 "Evening" = "Wieczór";
 "Evening summary" = "Wieczorne podsumowanie";
 "Every day" = "Codziennie";
+"Everyday basics" = "Podstawy na co dzień";
 "Exclusive avatars and backgrounds" = "Ekskluzywne awatary i tła";
 "Exclusive pets and more sparks" = "Ekskluzywne zwierzaki i więcej iskier";
 "Export data" = "Eksportuj dane";
@@ -230,6 +234,7 @@
 "Import data" = "Importuj dane";
 "In progress: %lld" = "W trakcie: %lld";
 "Include technical info" = "Dołącz dane techniczne";
+"Intermediate" = "Średniozaawansowany";
 "Interval" = "Odstęp";
 "Iron will" = "Żelazna wola";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "Kosztuje %lld iskier, masz %lld. Odhaczaj nawyki, aby zdobyć więcej.";
@@ -264,6 +269,7 @@
 "Let's go" = "Zaczynamy";
 "Let's keep the streak going!" = "Utrzymajmy serię!";
 "Let's start with your first habit" = "Zacznijmy od pierwszego nawyku";
+"Level" = "Poziom";
 "Level %lld" = "Poziom %lld";
 "Listen" = "Posłuchaj";
 "Listen to a podcast" = "Słuchać podcastu";
@@ -455,7 +461,7 @@
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Stuknij dzień, aby go odhaczyć. Przytrzymaj, aby go pominąć lub dodać notatkę.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Stuknij kółko lub przesuń w prawo, aby odhaczyć. Przesuń w lewo, aby pominąć, dodać notatkę lub edytować. Przytrzymaj, aby zmienić kolejność.";
 "Tap the days when the habit should be done" = "Stuknij dni, w które nawyk ma być wykonany";
-"Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done." = "Stuknij kółko nawyku, aby otworzyć dzisiejsze karty. Słowa, których jeszcze nie znasz, wrócą do powtórki, a nawyk odhaczy się sam po przejściu wszystkich kart dnia.";
+"Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "Stuknij kółko nawyku, aby otworzyć dzisiejsze karty. Nowe słowa pojawiają się w losowej kolejności z wybranego poziomu. Słowa, których jeszcze nie znasz, wrócą do powtórki, a nawyk odhaczy się sam po przejściu kart dnia. Poziom możesz zmienić w każdej chwili, nauczone słowa zostaną.";
 "Tap to see the translation" = "Stuknij, aby zobaczyć tłumaczenie";
 "Tell us what you think" = "Powiedz, co myślisz";
 "Terms of Use" = "Warunki korzystania";
@@ -513,6 +519,7 @@
 "Widget" = "Widżet";
 "Words" = "Słówka";
 "Words for today are done" = "Słówka na dziś zrobione";
+"Work, travel and conversation" = "Praca, podróże i rozmowy";
 "Workout" = "Trening";
 "Write 10 notes" = "Napisz 10 notatek";
 "Write 50 notes" = "Napisz 50 notatek";

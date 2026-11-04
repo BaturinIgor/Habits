@@ -23,6 +23,7 @@
 "A grown pet brings up to +5 a day" = "Hewan yang sudah besar memberi hingga +5 per hari";
 "A week strong" = "Seminggu penuh";
 "A whole year" = "Setahun penuh";
+"Abstract ideas and news" = "Gagasan abstrak dan berita";
 "Achievements" = "Pencapaian";
 "Achievements and rewards" = "Pencapaian dan hadiah";
 "Active" = "Aktif";
@@ -35,6 +36,7 @@
 "Added" = "Ditambahkan";
 "Adopt" = "Adopsi";
 "Adopt a pet" = "Adopsi hewan";
+"Advanced" = "Mahir";
 "After habit" = "Setelah kebiasaan";
 "After: %@" = "Setelah: %@";
 "Afternoon" = "Siang";
@@ -60,6 +62,7 @@
 "Background" = "Latar";
 "Backgrounds" = "Latar";
 "Backup" = "Cadangan";
+"Beginner" = "Pemula";
 "Best current streak" = "Rentetan terbaik saat ini";
 "Best streak" = "Rentetan terbaik";
 "Better than nothing" = "Lebih baik daripada tidak";
@@ -161,6 +164,7 @@
 "Evening" = "Malam";
 "Evening summary" = "Ringkasan malam";
 "Every day" = "Setiap hari";
+"Everyday basics" = "Dasar sehari-hari";
 "Exclusive avatars and backgrounds" = "Avatar dan latar eksklusif";
 "Exclusive pets and more sparks" = "Hewan eksklusif dan lebih banyak percikan";
 "Export data" = "Ekspor data";
@@ -230,6 +234,7 @@
 "Import data" = "Impor data";
 "In progress: %lld" = "Sedang dipelajari: %lld";
 "Include technical info" = "Sertakan info teknis";
+"Intermediate" = "Menengah";
 "Interval" = "Jeda";
 "Iron will" = "Tekad baja";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "Harganya %lld percikan, kamu punya %lld. Centang kebiasaan untuk mendapat lebih banyak.";
@@ -264,6 +269,7 @@
 "Let's go" = "Ayo";
 "Let's keep the streak going!" = "Ayo jaga rentetannya!";
 "Let's start with your first habit" = "Mari mulai dengan kebiasaan pertamamu";
+"Level" = "Tingkat";
 "Level %lld" = "Level %lld";
 "Listen" = "Dengarkan";
 "Listen to a podcast" = "Dengarkan podcast";
@@ -455,7 +461,7 @@
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Ketuk hari untuk mencentangnya. Tekan lama untuk melewati atau menambah catatan.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Ketuk lingkaran atau geser ke kanan untuk mencentang. Geser ke kiri untuk melewati, menambah catatan, atau mengubah. Tekan lama untuk mengubah urutan.";
 "Tap the days when the habit should be done" = "Ketuk hari saat kebiasaan harus dilakukan";
-"Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done." = "Ketuk lingkaran kebiasaan untuk membuka kartu hari ini. Kata yang belum kamu tahu akan muncul lagi untuk diulang, dan kebiasaan dicentang otomatis setelah kartu hari ini selesai.";
+"Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "Ketuk lingkaran kebiasaan untuk membuka kartu hari ini. Kata baru muncul acak dari tingkat yang dipilih. Kata yang belum kamu tahu akan muncul lagi untuk diulang, dan kebiasaan dicentang otomatis setelah kartu hari ini selesai. Tingkat bisa diubah kapan saja, kata yang sudah dipelajari tetap tersimpan.";
 "Tap to see the translation" = "Ketuk untuk melihat terjemahan";
 "Tell us what you think" = "Ceritakan pendapatmu";
 "Terms of Use" = "Ketentuan Penggunaan";
@@ -513,6 +519,7 @@
 "Widget" = "Widget";
 "Words" = "Kata";
 "Words for today are done" = "Kata hari ini selesai";
+"Work, travel and conversation" = "Kerja, perjalanan, dan percakapan";
 "Workout" = "Olahraga";
 "Write 10 notes" = "Tulis 10 catatan";
 "Write 50 notes" = "Tulis 50 catatan";

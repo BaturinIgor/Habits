@@ -495,7 +495,6 @@ Stretch||Esneme
 Study for 30 minutes||30 dakika çalış
 Swimming||Yüzme
 Take vitamins||Vitamin al
-Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.||Bugünün kartlarını açmak için alışkanlığın dairesine dokun. Henüz bilmediğin kelimeler tekrar için geri gelir, günün kartları bitince alışkanlık kendiliğinden işaretlenir.
 Tap to see the translation||Çeviriyi görmek için dokun
 Tidy up for 10 minutes||10 dakika topla
 Track expenses||Harcamaları kaydet
@@ -535,3 +534,11 @@ Profile section||Profil bölümü
 Send the message||Mesajı gönder
 Shows how many reminders came since you last opened the app.||Uygulamayı son açışından beri kaç hatırlatma geldiğini gösterir.
 What %@ gives you||%@ sana ne verir
+Level||Seviye
+Beginner||Başlangıç
+Intermediate||Orta
+Advanced||İleri
+Everyday basics||Günlük temel kelimeler
+Work, travel and conversation||İş, seyahat ve sohbet
+Abstract ideas and news||Soyut kavramlar ve haberler
+Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept.||Bugünün kartlarını açmak için alışkanlığın dairesine dokun. Yeni kelimeler seçilen seviyeden rastgele sırayla gelir. Henüz bilmediğin kelimeler tekrar için geri gelir, günün kartları bitince alışkanlık kendiliğinden işaretlenir. Seviyeyi istediğin zaman değiştirebilirsin, öğrendiğin kelimeler korunur.
