@@ -189,7 +189,7 @@ extension PaywallView {
                         }
                     }
                     if let offer = product.subscription?.introductoryOffer, offer.paymentMode == .freeTrial {
-                        Text("Free trial: \(Fmt.days(offer.period.value * (offer.period.unit == .week ? 7 : 1)))")
+                        Text("Free trial: \(Fmt.days(trialDays(offer.period)))")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -207,6 +207,17 @@ extension PaywallView {
             )
         }
         .buttonStyle(.plain)
+    }
+
+    /// Длина пробного периода в днях (раньше месяц показывался как "1 день").
+    private func trialDays(_ period: Product.SubscriptionPeriod) -> Int {
+        switch period.unit {
+        case .day: period.value
+        case .week: period.value * 7
+        case .month: period.value * 30
+        case .year: period.value * 365
+        default: period.value
+        }
     }
 
     private func planTitle(_ product: Product) -> String {

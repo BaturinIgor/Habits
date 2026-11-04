@@ -95,7 +95,7 @@ struct RootView: View {
     /// Показывает баннер, если появились новые ачивки.
     private func checkAchievements() {
         guard store.data.settings.onboardingDone else { return }
-        let unlocked = Achievements.unlockedIDs(store.data)
+        let unlocked = store.unlockedAchievementIDs
         let seen = Set(store.data.settings.seenAchievements)
         let fresh = Achievements.all.filter { unlocked.contains($0.id) && !seen.contains($0.id) }
         guard let first = fresh.first else { return }

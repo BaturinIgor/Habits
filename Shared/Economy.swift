@@ -11,7 +11,9 @@ struct SparkReport: Equatable {
     var comebacks = 0
     var achievements = 0
     var gifts = 0
-    var total: Int { checks + perfectDays + streaks + comebacks + achievements + gifts }
+    /// Сохранено с удалённых привычек.
+    var kept = 0
+    var total: Int { checks + perfectDays + streaks + comebacks + achievements + gifts + kept }
 }
 
 enum Sparks {
@@ -169,7 +171,7 @@ enum Pets {
 
     /// Опыт: честные отметки с момента появления питомца плюс кормления.
     static func xp(_ pet: PetState, data: AppData) -> Int {
-        Sparks.checksPerDay(data, from: pet.adoptedAt).values.reduce(0, +) + pet.totalFeeds * 3
+        Sparks.checksPerDay(data, from: pet.adoptedAt).values.reduce(0, +) + pet.totalFeeds * 3 + data.wallet.keptPetXP
     }
 
     static func mood(_ pet: PetState, data: AppData, now: Date = Date(), calendar: Calendar = .app) -> PetMood {

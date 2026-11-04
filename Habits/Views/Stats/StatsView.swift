@@ -39,7 +39,8 @@ struct StatsView: View {
         let allStats = data.activeHabits.map { Stats.habit($0, in: data) }
         let today = Stats.day(Date(), in: data)
         let rate30 = Stats.overallRate(days: 30, in: data)
-        let bestCurrent = allStats.map(\.currentStreak).max() ?? 0
+        // У привычек "N раз в неделю" серия в неделях, в днях её сравнивать нельзя.
+        let bestCurrent = allStats.filter { !$0.isWeekly }.map(\.currentStreak).max() ?? 0
         let totalDone = allStats.map(\.totalDone).reduce(0, +)
         return LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
             StatTile(title: "Today", value: String(localized: "\(today.done) of \(today.total)"), systemImage: "checkmark.circle.fill", color: .accentColor)

@@ -14,6 +14,7 @@ extension Sparks {
         r.comebacks = facts.comebacks * comebackBonus
         r.achievements = unlockedAchievements * achievementBonus
         r.gifts = data.wallet.proMonths.count * proMonthlyGift
+        r.kept = data.wallet.keptEarned
         return r
     }
 

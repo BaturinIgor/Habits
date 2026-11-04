@@ -30,6 +30,7 @@ struct SparksView: View {
                     row("Comebacks", r.comebacks)
                     row("Achievements", r.achievements)
                     if r.gifts > 0 { row("Pro gifts", r.gifts) }
+                    if r.kept > 0 { row("From deleted habits", r.kept) }
                 }
 
                 Section {

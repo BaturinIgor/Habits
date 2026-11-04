@@ -56,8 +56,19 @@ final class HabitStore {
     }
 
     func deleteHabit(_ id: UUID) {
+        // Заработанное считается из истории отметок, поэтому без этого удаление привычки
+        // уменьшало бы баланс искр и опыт питомца. Разницу запоминаем в кошельке.
+        let earnedBefore = economy.report.total
+        let xpBefore = data.wallet.pet.map { Pets.xp($0, data: data) }
         data.habits.removeAll { $0.id == id }
         data.removeCheckIns(for: id)
+        revision += 1
+        let lostSparks = earnedBefore - economy.report.total
+        if lostSparks > 0 { data.wallet.keptEarned += lostSparks }
+        if let xpBefore, let pet = data.wallet.pet {
+            let lostXP = xpBefore - Pets.xp(pet, data: data)
+            if lostXP > 0 { data.wallet.keptPetXP += lostXP }
+        }
         commit()
         Task { await NotificationPlanner.clearDelivered(habitID: id) }
     }
@@ -96,12 +107,27 @@ final class HabitStore {
     }
 
     @ObservationIgnored private var economyCache: (revision: Int, value: Economy)?
+    @ObservationIgnored private var factsCache: (revision: Int, value: AchievementFacts)?
+
+    /// Сводка для ачивок: считается один раз на изменение, её используют и искры, и баннер ачивок.
+    var achievementFacts: AchievementFacts {
+        _ = revision
+        if let cache = factsCache, cache.revision == revision { return cache.value }
+        let facts = AchievementFacts(data: data)
+        factsCache = (revision, facts)
+        return facts
+    }
+
+    var unlockedAchievementIDs: Set<String> {
+        let facts = achievementFacts
+        return Set(Achievements.all.filter { $0.isUnlocked(facts) }.map(\.id))
+    }
 
     /// Заработанное и баланс, пересчитываются после изменений.
     var economy: Economy {
         _ = revision
         if let cache = economyCache, cache.revision == revision { return cache.value }
-        let facts = AchievementFacts(data: data)
+        let facts = achievementFacts
         let unlocked = Achievements.all.filter { $0.isUnlocked(facts) }.count
         let report = Sparks.report(data, facts: facts, unlockedAchievements: unlocked)
         let value = Economy(report: report, balance: Sparks.balance(earned: report.total, data: data))
@@ -157,6 +183,7 @@ final class HabitStore {
     func adoptPet(species: String, name: String) {
         let clean = name.trimmingCharacters(in: .whitespacesAndNewlines)
         data.wallet.pet = PetState(species: species, name: clean.isEmpty ? String(localized: "Buddy") : clean, adoptedAt: Date())
+        data.wallet.keptPetXP = 0
         commit()
     }
 
@@ -277,6 +304,8 @@ final class HabitStore {
 
     func setNote(_ note: String, for id: UUID, dayKey: String) {
         data.setNote(note, habitID: id, day: dayKey)
+        // Заметки влияют на ачивки (и искры за них), поэтому экраны должны пересчитаться.
+        revision += 1
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()
     }
