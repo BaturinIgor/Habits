@@ -487,10 +487,12 @@ struct TemplatesGrid: View {
                             .font(.subheadline.weight(.semibold))
                             .foregroundStyle(Color.primary)
                             .multilineTextAlignment(.leading)
-                            .lineLimit(2)
+                            .lineLimit(3)
+                            .fixedSize(horizontal: false, vertical: true)
                         Spacer(minLength: 0)
                     }
                     .padding(10)
+                    .frame(maxHeight: .infinity)
                     .background(RoundedRectangle(cornerRadius: 18, style: .continuous)
                         .fill(Color(uiColor: .secondarySystemGroupedBackground)))
                 }
