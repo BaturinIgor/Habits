@@ -227,7 +227,8 @@ struct AchievementTile: View {
             Spacer(minLength: 0)
             // Низ плитки всегда одинаковый: полоса прогресса и счётчик прижаты к краю.
             VStack(spacing: 4) {
-                ProgressView(value: Double(achievement.progress(facts)), total: Double(achievement.goal))
+                ProgressView(value: Double(unlocked ? achievement.goal : achievement.progress(facts)),
+                             total: Double(achievement.goal))
                     .tint(achievement.color)
                 if unlocked {
                     Image(systemName: "checkmark.circle.fill")
