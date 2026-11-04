@@ -154,8 +154,11 @@ struct PetView: View {
 
         Button {
             if store.feedsToday >= Sparks.feedsPerDay { return }
-            purchase = SparkPurchase(title: String(localized: "Feeding"), price: Sparks.feedPrice) {
-                if store.feedPet() { hearts += 1 }
+            // Кормление без подтверждения; окно появится, только если искр не хватает.
+            if store.economy.balance >= Sparks.feedPrice {
+                withAnimation(.snappy) { if store.feedPet() { hearts += 1 } }
+            } else {
+                purchase = SparkPurchase(title: String(localized: "Feeding"), price: Sparks.feedPrice) {}
             }
         } label: {
             HStack {
