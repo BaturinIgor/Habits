@@ -304,7 +304,7 @@ struct NotificationSettingsView: View {
                     Label("Number on the app icon", systemImage: "app.badge.fill")
                 }
             } footer: {
-                Text("Shows how many habits are left for today.")
+                Text("Shows how many reminders came since you last opened the app.")
             }
         }
         .appBackground()

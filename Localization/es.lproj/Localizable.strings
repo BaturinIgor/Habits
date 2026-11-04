@@ -316,6 +316,7 @@
 "Pro: +%lld every month and up to %lld a day" = "Pro: +%lld cada mes y hasta %lld al día";
 "Profile" = "Perfil";
 "Profile and achievements" = "Perfil y logros";
+"Profile section" = "Sección del perfil";
 "Purchase failed" = "La compra falló";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Las compras solo funcionan en la versión de App Store. En esta compilación, Pro se puede activar para pruebas en Ajustes.";
 "Rate the app" = "Valorar la app";
@@ -354,7 +355,7 @@
 "Settings" = "Ajustes";
 "Shared data" = "Datos compartidos";
 "Show introduction" = "Ver la introducción";
-"Shows how many habits are left for today." = "Muestra cuántos hábitos quedan para hoy.";
+"Shows how many reminders came since you last opened the app." = "Muestra cuántos recordatorios llegaron desde la última vez que abriste la app.";
 "Simple gestures" = "Gestos sencillos";
 "Skip" = "Omitir";
 "Skipped" = "Omitido";

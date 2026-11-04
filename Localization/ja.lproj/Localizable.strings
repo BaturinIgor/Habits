@@ -316,6 +316,7 @@
 "Pro: +%lld every month and up to %lld a day" = "Pro：毎月+%lld、1日最大%lld";
 "Profile" = "プロフィール";
 "Profile and achievements" = "プロフィールと実績";
+"Profile section" = "プロフィールのセクション";
 "Purchase failed" = "購入できませんでした";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "購入は App Store 版でのみ利用できます。このビルドでは設定でテスト用に Pro をオンにできます。";
 "Rate the app" = "アプリを評価";
@@ -354,7 +355,7 @@
 "Settings" = "設定";
 "Shared data" = "共有データ";
 "Show introduction" = "紹介を表示";
-"Shows how many habits are left for today." = "今日残っている習慣の数を表示します。";
+"Shows how many reminders came since you last opened the app." = "前回アプリを開いてから届いたリマインダーの数を表示します。";
 "Simple gestures" = "かんたん操作";
 "Skip" = "スキップ";
 "Skipped" = "スキップ済み";
