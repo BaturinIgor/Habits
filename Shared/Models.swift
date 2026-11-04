@@ -415,6 +415,9 @@ extension AppData {
     mutating func setStatus(_ status: CheckStatus?, habitID: UUID, day: String) {
         let k = Self.key(habitID, day)
         var entry = checkIns[k] ?? CheckIn(status: nil, note: nil, updatedAt: Date())
+        // Повторная отметка тем же статусом ничего не меняет: иначе старая отметка
+        // получила бы новое время и перестала бы считаться честной (пропала бы искра).
+        if status != nil && entry.status == status && entry.isMinimum != true { return }
         entry.status = status
         entry.isMinimum = nil
         if status == nil { entry.count = nil }

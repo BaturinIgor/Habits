@@ -31,7 +31,7 @@ struct ProfileView: View {
 
     var body: some View {
         let facts = AchievementFacts(data: store.data)
-        let unlocked = Set(Achievements.all.filter { $0.isUnlocked(facts) }.map(\.id))
+        let unlocked = store.unlockedAchievementIDs
         let isPro = store.data.isPro
         let level = Achievements.level(totalDone: facts.totalDone)
 
