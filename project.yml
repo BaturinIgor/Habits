@@ -37,7 +37,7 @@ targets:
       properties:
         CFBundleDisplayName: Habits
         CFBundleDevelopmentRegion: en
-        CFBundleLocalizations: [en, ru, de, fr, es, zh-Hans, ja, ko, hi]
+        CFBundleLocalizations: [en, ru, de, fr, es, pt-BR, it, tr, pl, id, zh-Hans, ja, ko, hi]
         CFBundleAllowMixedLocalizations: true
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)

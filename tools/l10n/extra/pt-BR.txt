@@ -1,0 +1,445 @@
+Active||Ativo
+Activity over %lld weeks||Atividade nas últimas %lld semanas
+Add a habit, pick days and a time, and I'll remind you.||Adicione um hábito, escolha os dias e o horário, e eu vou lembrar você.
+Add habit||Adicionar hábito
+Add note||Adicionar nota
+All data is stored only on this iPhone.||Todos os dados ficam apenas neste iPhone.
+All done||Tudo feito
+All done!||Tudo feito!
+Allow notifications||Permitir notificações
+An archived habit is hidden from the Today screen and sends no notifications, but its history is kept.||Um hábito arquivado não aparece na tela Hoje e não envia notificações, mas o histórico é mantido.
+And %lld more||E mais %lld
+Appearance||Aparência
+Archive||Arquivar
+Archive (%lld)||Arquivo (%lld)
+Archived||Arquivado
+Best current streak||Melhor sequência atual
+Best streak||Melhor sequência
+By habit||Por hábito
+Cancel||Cancelar
+Choose how many times and how often each reminder repeats.||Escolha quantas vezes e com que frequência cada lembrete se repete.
+Close||Fechar
+Completed||Concluído
+Completion||Conclusão
+Create||Criar
+Create your first one and it will appear here.||Crie o primeiro e ele vai aparecer aqui.
+Current streak||Sequência atual
+Custom reminder repeats||Repetições personalizadas
+Custom repeats||Repetições próprias
+Date||Data
+Day||Dia
+Days: %@||Dias: %@
+Delete||Excluir
+Delete habit||Excluir hábito
+Delete habit?||Excluir o hábito?
+Description or motivation (optional)||Descrição ou motivação (opcional)
+Done||OK
+Drink water||Beber água
+Edit||Editar
+Edit habit||Editar hábito
+Edit note||Editar nota
+Emoji||Emoji
+End||Fim
+End date||Data de término
+Ended||Encerrado
+Every day||Todos os dias
+Family||Família
+Free day||Dia livre
+Free day today||Hoje é dia livre
+Free version||Versão gratuita
+Great job, keep it up||Muito bem, continue assim
+Group||Grupo
+Groups||Grupos
+Groups help sort habits by topic: morning, health, work.||Grupos ajudam a organizar hábitos por tema: manhã, saúde, trabalho.
+Habit||Hábito
+Habit deleted||Hábito excluído
+Habit name||Nome do hábito
+Habit order||Ordem dos hábitos
+Habit progress||Progresso dos hábitos
+Habits||Hábitos
+Habits Pro||Hábitos Pro
+Habits %lld/%lld||Hábitos %lld/%lld
+Habits with reminders are sorted by time. The rest come after them and can be dragged.||Hábitos com lembrete são ordenados por horário. Os outros vêm depois e podem ser arrastados.
+How many habits are done today.||Quantos hábitos foram feitos hoje.
+How often||Frequência
+Icon||Ícone
+If not checked off: %@. Done in the notification stops the repeats.||Se não for marcado: %@. "Feito" na notificação interrompe as repetições.
+Interval||Intervalo
+Its check-in history will be deleted too.||O histórico de marcações também será excluído.
+Its check-in history will be deleted too. To keep the history, archive the habit instead.||O histórico de marcações também será excluído. Para mantê-lo, arquive o hábito.
+Last 12 weeks||Últimas 12 semanas
+Last 30 days||Últimos 30 dias
+Last 7 days||Últimos 7 dias
+Less||Menos
+Let's start with your first habit||Vamos começar pelo seu primeiro hábito
+Mark as done||Marcar como feito
+Mark habit||Marcar hábito
+Missed||Perdido
+More||Mais
+More freedom for the habits that matter.||Mais liberdade para os hábitos que importam.
+Move to archive||Mover para o arquivo
+Name||Nome
+New group||Novo grupo
+New habit||Novo hábito
+Next||Próximo
+No group||Sem grupo
+No habits||Sem hábitos
+No habits are planned for this day.||Nenhum hábito planejado para este dia.
+No habits today||Nenhum hábito hoje
+No habits yet||Ainda não há hábitos
+Not set up||Não configurado
+Note||Nota
+Notes||Notas
+Nothing to count yet||Nada para contar ainda
+Notification||Notificação
+Notifications||Notificações
+Notifications are turned off in iOS Settings, so reminders won't arrive.||As notificações estão desativadas nos Ajustes do iOS, então os lembretes não vão chegar.
+Off||Desligado
+On||Ligado
+On weekdays||Nos dias úteis
+On weekends||Nos fins de semana
+Once||Uma vez
+Once, %@||Uma vez, %@
+One notification at the chosen time.||Uma notificação no horário escolhido.
+Open iOS Settings||Abrir Ajustes do iOS
+Order||Ordem
+Organization||Organização
+Pro is active||Pro está ativo
+Pro test mode||Modo de teste Pro
+Reading||Leitura
+Remaining||Restante
+Reminder||Lembrete
+Reminder again. Check it off when you're done.||Lembrando de novo. Marque quando terminar.
+Rename||Renomear
+Repeats||Repetições
+Reset||Redefinir
+Restore||Restaurar
+Restore from archive||Restaurar do arquivo
+Save||Salvar
+Schedule||Agenda
+Scheduled notifications||Notificações agendadas
+Settings||Ajustes
+Skip||Pular
+Skipped||Pulado
+Some days||Alguns dias
+Start||Início
+Statistics||Estatísticas
+Statistics will appear once you start checking off habits.||As estatísticas vão aparecer quando você começar a marcar hábitos.
+Status||Status
+Symbols||Símbolos
+Sync and backup||Sincronização e backup
+Tap a day to check it off. Press and hold to skip it or add a note.||Toque em um dia para marcá-lo. Toque e segure para pular ou adicionar uma nota.
+Tap the days when the habit should be done||Toque nos dias em que o hábito deve ser feito
+The free version has up to 5 active habits.||A versão gratuita tem até 5 hábitos ativos.
+There are no purchases yet: this switch turns Pro features on for testing.||Ainda não há compras: este botão ativa os recursos Pro para teste.
+Time||Horário
+Time for your habit||Hora do seu hábito
+Time to rest||Hora de descansar
+Today||Hoje
+Today's habits||Hábitos de hoje
+Today's progress and quick check-off right from the Home Screen.||O progresso de hoje e marcação rápida direto na Tela de Início.
+Tomorrow||Amanhã
+Total check-ins||Total de marcações
+Uncheck||Desmarcar
+Undo skip||Desfazer pulo
+Unknown||Desconhecido
+Unlimited habits||Hábitos ilimitados
+Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day.||Até o hábito ser marcado, o lembrete se repete: %@. "Feito" e "Pular" na notificação interrompem as repetições naquele dia.
+Version||Versão
+Walk||Caminhar
+Week||Semana
+Weekdays||Dias úteis
+Weekends||Fins de semana
+Yesterday||Ontem
+Your own emoji from the keyboard||Seu próprio emoji do teclado
+%lld of %lld done||%lld de %lld feitos
+%lld of %lld habits||%lld de %lld hábitos
+%lld min||%lld min
+%lld of %lld||%lld de %lld
+of %lld||de %lld
+from %@||desde %@
+until %@||até %@
+%lld of %lld this week||%lld de %lld nesta semana
+Afternoon||Tarde
+All||Todos
+Allowed||Permitido
+Anytime||A qualquer hora
+Backup||Backup
+By time||Por horário
+Couldn't read the file||Não foi possível ler o arquivo
+Count glasses of water, pages or minutes toward a goal.||Conte copos de água, páginas ou minutos até a meta.
+Current habits and history will be replaced with the data from the file.||Os hábitos e o histórico atuais serão substituídos pelos dados do arquivo.
+Daily goal||Meta diária
+Daily goals||Metas diárias
+Data imported||Dados importados
+Day summary||Resumo do dia
+Done habits at the bottom||Hábitos feitos no final
+During a pause the habit is hidden and sends no reminders, and your streak is kept.||Durante a pausa o hábito fica oculto e não envia lembretes, e sua sequência é mantida.
+Evening||Noite
+Evening summary||Resumo da noite
+Export data||Exportar dados
+For example, 8 glasses of water. Each tap on the circle adds one.||Por exemplo, 8 copos de água. Cada toque no círculo soma um.
+Go to bed on time||Dormir na hora certa
+Goal||Meta
+Habit Tracker Pro||Rastreador de Hábitos Pro
+Import||Importar
+Import data||Importar dados
+Language||Idioma
+Meditate||Meditar
+Minus one||Menos um
+Morning||Manhã
+N times a week||N vezes por semana
+Not checked off yet: %@||Ainda não marcado: %@
+OK||OK
+Off in iPhone Settings||Desligado nos Ajustes do iPhone
+One notification listing the habits not checked off yet.||Uma notificação com os hábitos ainda não marcados.
+Part of day||Parte do dia
+Parts of day||Partes do dia
+Pause||Pausa
+Paused until %@||Em pausa até %@
+Per week||Por semana
+Pick a template or create your own.||Escolha um modelo ou crie o seu.
+Read||Ler
+Reminders||Lembretes
+Replace all data?||Substituir todos os dados?
+Restart the app||Reinicie o app
+Save a copy to Files or iCloud Drive. Importing replaces all current data.||Salve uma cópia em Arquivos ou no iCloud Drive. Importar substitui todos os dados atuais.
+System||Sistema
+Take a break for a trip or illness without losing your streak.||Faça uma pausa por viagem ou doença sem perder a sequência.
+The new language will apply after you close the app and open it again.||O novo idioma será aplicado depois que você fechar e abrir o app de novo.
+Today screen||Tela Hoje
+Unit, for example glasses||Unidade, por exemplo copos
+Until||Até
+Workout||Treino
+glasses||copos
+iPhone permission||Permissão do iPhone
+Hide keyboard||Ocultar teclado
+7 perfect days in a row||7 dias perfeitos seguidos
+A week strong||Uma semana firme
+A whole year||Um ano inteiro
+Achievements||Conquistas
+Achievements and rewards||Conquistas e recompensas
+After habit||Depois do hábito
+After: %@||Depois de: %@
+Avatars||Avatares
+Backgrounds||Fundos
+Better than nothing||Melhor que nada
+Check off 10 habits after 10 pm||Marque 10 hábitos depois das 22h
+Check off 10 habits before 8 am||Marque 10 hábitos antes das 8h
+Check off a habit for the first time||Marque um hábito pela primeira vez
+Check off habits 100 times||Marque hábitos 100 vezes
+Check off habits 1000 times||Marque hábitos 1000 vezes
+Collector||Colecionador
+Come back after a miss 10 times||Volte depois de uma falha 10 vezes
+Comeback||Volta por cima
+Complete every habit in a day||Conclua todos os hábitos de um dia
+Continue||Continuar
+Create 5 habits||Crie 5 hábitos
+Diarist||Diarista
+Do the minimum version 10 times||Faça a versão mínima 10 vezes
+Early bird||Madrugador
+Earn achievements to unlock avatars and backgrounds, and level up with every check-in.||Ganhe conquistas para desbloquear avatares e fundos, e suba de nível a cada marcação.
+Exclusive avatars and backgrounds||Avatares e fundos exclusivos
+First step||Primeiro passo
+Freeze||Congelamento
+Freezes this month||Congelamentos neste mês
+Hard days and chains||Dias difíceis e cadeias
+Hundred||Cem
+Hundred check-ins||Cem marcações
+Ice cold||Frio total
+Keep a 100-day streak||Mantenha uma sequência de 100 dias
+Keep a 3-day streak||Mantenha uma sequência de 3 dias
+Keep a 30-day streak||Mantenha uma sequência de 30 dias
+Keep a 365-day streak||Mantenha uma sequência de 365 dias
+Keep a 7-day streak||Mantenha uma sequência de 7 dias
+Legend||Lenda
+Level %lld||Nível %lld
+Let's go||Vamos lá
+Minimum||Mínimo
+Minimum version, for example 5 squats||Versão mínima, por exemplo 5 agachamentos
+Misses are okay||Tudo bem falhar
+Month of power||Mês de força
+New achievement!||Nova conquista!
+Next up in your chain||Próximo da sua cadeia
+Night owl||Coruja
+None||Nenhum
+Perfect day||Dia perfeito
+Perfect week||Semana perfeita
+Profile||Perfil
+Profile and achievements||Perfil e conquistas
+Reach a weekly goal 4 times||Alcance uma meta semanal 4 vezes
+Resilient||Resiliente
+Return to a habit after a miss||Volte a um hábito depois de uma falha
+Save a streak with a freeze||Salve uma sequência com um congelamento
+Show introduction||Mostrar introdução
+Simple gestures||Gestos simples
+Small steps every day||Pequenos passos todos os dias
+The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it.||A versão mínima conta como feita e mantém a sequência. Um hábito em cadeia lembra você logo depois de marcar o anterior.
+Track habits, get gentle reminders and watch your streaks grow.||Acompanhe hábitos, receba lembretes gentis e veja suas sequências crescerem.
+Two misses a month won't break your streak, and a minimum version still counts on hard days.||Duas falhas por mês não quebram a sequência, e a versão mínima conta nos dias difíceis.
+Unlock the full collection and Pro-only designs.||Desbloqueie a coleção completa e designs exclusivos do Pro.
+Unlock: %@||Como desbloquear: %@
+Warming up||Aquecendo
+Weekly hero||Herói da semana
+Write 10 notes||Escreva 10 notas
+Nothing yet. Add a note by swiping a habit left on the Today screen or by pressing and holding a day in the calendar.||Nada ainda. Adicione uma nota deslizando um hábito para a esquerda na tela Hoje ou tocando e segurando um dia no calendário.
+Report a bug||Relatar um erro
+Suggest an idea||Sugerir uma ideia
+Other||Outro
+Topic||Assunto
+What happened and what did you expect?||O que aconteceu e o que você esperava?
+Tell us what you think||Diga o que você acha
+Steps to reproduce help a lot. You can attach a screenshot in the email.||Passos para reproduzir ajudam muito. Você pode anexar uma captura de tela no e-mail.
+Include technical info||Incluir informações técnicas
+App version, iOS version, device model and language. Your habits and notes are never sent.||Versão do app, versão do iOS, modelo do aparelho e idioma. Seus hábitos e notas nunca são enviados.
+Send||Enviar
+Feedback||Feedback
+No mail account||Nenhuma conta de e-mail
+Copy address||Copiar endereço
+Copy message||Copiar mensagem
+Set up Mail on this iPhone or send your message to %@.||Configure o Mail neste iPhone ou envie sua mensagem para %@.
+Write to the developer||Escrever ao desenvolvedor
+Rate the app||Avaliar o app
+Found a bug or have an idea? Every message is read.||Encontrou um erro ou tem uma ideia? Toda mensagem é lida.
+Purchase failed||A compra falhou
+Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings.||Compras funcionam só na versão da App Store. Nesta versão, o Pro pode ser ativado para teste nos Ajustes.
+Buy||Comprar
+Subscribe||Assinar
+Subscriptions renew automatically until cancelled. Cancel anytime in Settings, Apple Account, Subscriptions, at least 24 hours before the period ends.||As assinaturas são renovadas automaticamente até serem canceladas. Cancele quando quiser em Ajustes, Conta Apple, Assinaturas, pelo menos 24 horas antes do fim do período.
+Restore purchases||Restaurar compras
+Terms of Use||Termos de Uso
+Privacy Policy||Política de Privacidade
+Free trial: %@||Teste grátis: %@
+Yearly||Anual
+Monthly||Mensal
+Forever||Para sempre
+%@ / year||%@ / ano
+%@ / month||%@ / mês
+The purchase could not be verified.||Não foi possível verificar a compra.
+No purchases found for this Apple Account.||Nenhuma compra encontrada para esta Conta Apple.
+Habit Tracker||Rastreador de Hábitos
+Your photo||Sua foto
+Two weeks||Duas semanas
+Keep a 14-day streak||Mantenha uma sequência de 14 dias
+Iron will||Vontade de ferro
+Keep a 60-day streak||Mantenha uma sequência de 60 dias
+Unstoppable||Imparável
+Keep a 200-day streak||Mantenha uma sequência de 200 dias
+Fifty||Cinquenta
+Check off habits 50 times||Marque hábitos 50 vezes
+Half a thousand||Meio milhar
+Check off habits 500 times||Marque hábitos 500 vezes
+Consistency||Constância
+Have 30 perfect days||Tenha 30 dias perfeitos
+Perfect month||Mês perfeito
+30 perfect days in a row||30 dias perfeitos seguidos
+Sunrise club||Clube do nascer do sol
+Check off 50 habits before 8 am||Marque 50 hábitos antes das 8h
+Weekend warrior||Guerreiro de fim de semana
+Check off 30 habits on weekends||Marque 30 hábitos nos fins de semana
+Regular||Frequentador
+Check off habits on 30 different days||Marque hábitos em 30 dias diferentes
+Veteran||Veterano
+Check off habits on 365 different days||Marque hábitos em 365 dias diferentes
+Architect||Arquiteto
+Create 10 habits||Crie 10 hábitos
+Organizer||Organizador
+Create 3 groups||Crie 3 grupos
+On target||Na mosca
+Reach a daily goal 20 times||Alcance uma meta diária 20 vezes
+Chain reaction||Reação em cadeia
+Complete a chained habit 10 times||Conclua um hábito em cadeia 10 vezes
+Chronicler||Cronista
+Write 50 notes||Escreva 50 notas
+Reflective||Reflexivo
+Add a note to 20 completed habits||Adicione uma nota a 20 hábitos concluídos
+Swipe a card right to check it off, left for more actions. Press and hold to reorder.||Deslize um cartão para a direita para marcá-lo, para a esquerda para mais ações. Toque e segure para reordenar.
+Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder.||Toque no círculo ou deslize para a direita para marcar. Deslize para a esquerda para pular, adicionar uma nota ou editar. Toque e segure para reordenar.
+Number on the app icon||Número no ícone do app
+Shows how many habits are left for today.||Mostra quantos hábitos faltam hoje.
+Welcome to Habit Tracker||Boas-vindas ao Rastreador de Hábitos
+Egg||Ovo
+Baby||Filhote
+Young||Jovem
+Grown-up||Adulto
+Happy||Feliz
+Waiting for you||Esperando você
+Sad||Triste
+Misses you a lot||Com muita saudade
+Sleeping||Dormindo
+Cat||Gato
+Dog||Cachorro
+Chick||Pintinho
+Bunny||Coelhinho
+Turtle||Tartaruga
+Fox||Raposa
+Panda||Panda
+Owl||Coruja
+Dragon||Dragão
+Unicorn||Unicórnio
+Phoenix||Fênix
+You're doing great!||Você está indo muito bem!
+One more habit?||Mais um hábito?
+I believe in you!||Eu acredito em você!
+Small steps add up.||Pequenos passos fazem diferença.
+Let's keep the streak going!||Vamos manter a sequência!
+I'm proud of you!||Tenho orgulho de você!
+Don't forget about me!||Não se esqueça de mim!
+Today is a good day.||Hoje é um bom dia.
+Buddy||Amigão
+Get a pet||Ter um bichinho
+It grows with every habit you check off.||Ele cresce a cada hábito que você marca.
+Pet||Bichinho
+Not enough sparks||Faíscas insuficientes
+Check off habits to earn more.||Marque hábitos para ganhar mais.
+%lld more to %@||Faltam %lld para "%@"
+Your pet grows with every habit you check off and gets sad when you disappear for a few days.||Seu bichinho cresce a cada hábito marcado e fica triste quando você some por alguns dias.
+Full for today||Satisfeito por hoje
+Feed||Alimentar
+Species||Espécie
+Adopt a pet||Adotar um bichinho
+It hatches from an egg and grows with every habit you check off. Feed it with sparks and don't leave it alone for long.||Ele nasce de um ovo e cresce a cada hábito que você marca. Alimente-o com faíscas e não o deixe sozinho por muito tempo.
+Adopt||Adotar
+More species are available for sparks and with Pro.||Mais espécies estão disponíveis por faíscas e com o Pro.
+Buy for sparks?||Comprar com faíscas?
+It costs %lld sparks. You have %lld.||Custa %lld faíscas. Você tem %lld.
+It costs %lld sparks, you have %lld. Check off habits to earn more.||Custa %lld faíscas, você tem %lld. Marque hábitos para ganhar mais.
+Sparks||Faíscas
+Earned in total: %lld||Total ganho: %lld
+Earned||Ganhas
+Check-ins||Marcações
+Perfect days||Dias perfeitos
+Streaks||Sequências
+Comebacks||Voltas
+Pro gifts||Presentes Pro
+Extra freeze||Congelamento extra
+Feed your pet||Alimente seu bichinho
+Spend||Gastar
+Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile.||Congelamentos extras neste mês: %lld/%lld. Avatares e fundos por faíscas estão no seu perfil.
+1 spark for each check-in, up to %lld a day||1 faísca por marcação, até %lld por dia
++%lld for a perfect day||+%lld por um dia perfeito
++%lld for every 7 days of a streak, +%lld for every 30||+%lld a cada 7 dias de sequência, +%lld a cada 30
++%lld for coming back after a miss||+%lld por voltar depois de uma falha
++%lld for each achievement||+%lld por cada conquista
+Pro: +%lld every month and up to %lld a day||Pro: +%lld todo mês e até %lld por dia
+How to earn||Como ganhar
+Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back.||Só contam marcações feitas no mesmo dia ou no dia seguinte. Desmarcar um hábito devolve a faísca.
+Exclusive pets and more sparks||Bichinhos exclusivos e mais faíscas
+Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit.||Dragão, unicórnio e fênix, um presente mensal de 100 faíscas e um limite diário maior.
+Sparks and a pet||Faíscas e um bichinho
+Earn sparks for check-ins, spend them in the shop and raise a pet that grows with your habits.||Ganhe faíscas com marcações, gaste na loja e crie um bichinho que cresce com seus hábitos.
+No access to app data||Sem acesso aos dados do app
+Unlock your iPhone||Desbloqueie o iPhone
+Reinstall the app and keep its extensions. Details are in Settings, Widget.||Reinstale o app mantendo as extensões. Detalhes em Ajustes, Widget.
+The widget will update after unlocking.||O widget será atualizado após o desbloqueio.
+Your pet's mood and feeding right from the Home Screen.||O humor do seu bichinho e a alimentação direto na Tela de Início.
+Open the app to adopt one.||Abra o app para adotar um.
+Feed pet||Alimentar bichinho
+Shared data||Dados compartilhados
+Available||Disponível
+Not available||Indisponível
+Last widget update||Última atualização do widget
+Never||Nunca
+Refresh widgets||Atualizar widgets
+Widget||Widget
+If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked.||Se os dados compartilhados não estiverem disponíveis, o widget não vê seus hábitos. Reinstale o app pelo SideStore e mantenha as extensões quando for perguntado.
