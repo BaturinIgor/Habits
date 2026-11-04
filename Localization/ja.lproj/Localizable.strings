@@ -311,6 +311,7 @@
 "Pro: +%lld every month and up to %lld a day" = "Pro：毎月+%lld、1日最大%lld";
 "Profile" = "プロフィール";
 "Profile and achievements" = "プロフィールと実績";
+"Profile section" = "プロフィールのセクション";
 "Purchase failed" = "購入できませんでした";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "購入は App Store 版でのみ利用できます。このビルドでは設定でテスト用に Pro をオンにできます。";
 "Rate the app" = "アプリを評価";

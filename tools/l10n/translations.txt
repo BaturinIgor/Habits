@@ -222,6 +222,7 @@ Achievements and rewards||Ачивки и награды||Erfolge und Belohnunge
 After habit||После привычки||Nach Gewohnheit||Après l'habitude||Después del hábito||在此习惯之后||この習慣の後||다음 습관 뒤에||इस आदत के बाद
 After: %@||После: %@||Nach: %@||Après : %@||Después de: %@||之后：%@||次の後：%@||다음 뒤: %@||इसके बाद: %@
 Avatars||Аватарки||Avatare||Avatars||Avatares||头像||アバター||아바타||अवतार
+Profile section||Раздел профиля||Profilbereich||Section du profil||Sección del perfil||个人资料分区||プロフィールのセクション||프로필 섹션||प्रोफ़ाइल अनुभाग
 Backgrounds||Фоны||Hintergründe||Fonds||Fondos||背景||背景||배경||पृष्ठभूमि
 Better than nothing||Лучше, чем ничего||Besser als nichts||Mieux que rien||Mejor que nada||聊胜于无||何もしないよりいい||안 하는 것보다 낫다||कुछ न करने से बेहतर
 Check off 10 habits after 10 pm||Отметь 10 привычек после 22:00||Hake 10 Gewohnheiten nach 22 Uhr ab||Valide 10 habitudes après 22 h||Marca 10 hábitos después de las 22:00||在 22 点后打卡 10 次||22時以降に10回チェック||밤 10시 이후 10번 체크||रात 10 बजे के बाद 10 आदतें पूरी करें
