@@ -311,6 +311,7 @@
 "Pro: +%lld every month and up to %lld a day" = "Pro : +%lld chaque mois et jusqu'à %lld par jour";
 "Profile" = "Profil";
 "Profile and achievements" = "Profil et succès";
+"Profile section" = "Section du profil";
 "Purchase failed" = "Échec de l'achat";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Les achats ne fonctionnent que dans la version App Store. Dans cette version, Pro peut être activé pour les tests dans Réglages.";
 "Rate the app" = "Noter l'app";

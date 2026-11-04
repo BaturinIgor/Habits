@@ -311,6 +311,7 @@
 "Pro: +%lld every month and up to %lld a day" = "Pro: 매달 +%lld, 하루 최대 %lld";
 "Profile" = "프로필";
 "Profile and achievements" = "프로필 및 업적";
+"Profile section" = "프로필 섹션";
 "Purchase failed" = "구매 실패";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "구매는 App Store 버전에서만 가능해요. 이 빌드에서는 설정에서 테스트용으로 Pro를 켤 수 있어요.";
 "Rate the app" = "앱 평가하기";

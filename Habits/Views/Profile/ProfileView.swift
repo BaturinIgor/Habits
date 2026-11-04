@@ -1,6 +1,21 @@
 import SwiftUI
 
-/// Профиль: уровень, ачивки и награды (аватарки и фоны).
+/// Вкладки нижней части профиля.
+enum ProfileTab: String, CaseIterable, Identifiable {
+    case achievements, avatars, backgrounds
+
+    var id: String { rawValue }
+
+    var title: LocalizedStringKey {
+        switch self {
+        case .achievements: "Achievements"
+        case .avatars: "Avatars"
+        case .backgrounds: "Backgrounds"
+        }
+    }
+}
+
+/// Профиль: уровень, ачивки и награды (аватарки и фоны) во вкладках.
 struct ProfileView: View {
     @Environment(HabitStore.self) private var store
     @Environment(\.dismiss) private var dismiss
@@ -9,6 +24,7 @@ struct ProfileView: View {
     @State private var purchase: Reward?
     @State private var showingSparks = false
     @State private var showingPet = false
+    @SceneStorage("profile.tab") private var tab: ProfileTab = .achievements
 
     private let grid = [GridItem(.adaptive(minimum: 96), spacing: 12)]
     private let smallGrid = [GridItem(.adaptive(minimum: 64), spacing: 12)]
@@ -49,38 +65,45 @@ struct ProfileView: View {
 
                     PetCard { showingPet = true }
 
-                    section("Achievements") {
-                        LazyVGrid(columns: grid, spacing: 12) {
-                            ForEach(Achievements.all) { achievement in
-                                AchievementTile(achievement: achievement, facts: facts,
-                                                unlocked: unlocked.contains(achievement.id))
+                    VStack(spacing: 16) {
+                        Picker("Profile section", selection: $tab) {
+                            ForEach(ProfileTab.allCases) { option in
+                                Text(option.title).tag(option)
                             }
                         }
-                    }
+                        .pickerStyle(.segmented)
 
-                    section("Avatars") {
-                        LazyVGrid(columns: smallGrid, spacing: 12) {
-                            PhotoRewardTile(slot: .avatar) { showingPaywall = true }
-                            ForEach(Rewards.avatars) { reward in
-                                rewardButton(reward, unlocked: unlocked, isPro: isPro,
-                                             selected: store.data.settings.avatarID == reward.id) {
-                                    AvatarView(reward: reward, size: 60)
+                        switch tab {
+                        case .achievements:
+                            LazyVGrid(columns: grid, spacing: 12) {
+                                ForEach(Achievements.all) { achievement in
+                                    AchievementTile(achievement: achievement, facts: facts,
+                                                    unlocked: unlocked.contains(achievement.id))
+                                }
+                            }
+                        case .avatars:
+                            LazyVGrid(columns: smallGrid, spacing: 12) {
+                                PhotoRewardTile(slot: .avatar) { showingPaywall = true }
+                                ForEach(Rewards.avatars) { reward in
+                                    rewardButton(reward, unlocked: unlocked, isPro: isPro,
+                                                 selected: store.data.settings.avatarID == reward.id) {
+                                        AvatarView(reward: reward, size: 60)
+                                    }
+                                }
+                            }
+                        case .backgrounds:
+                            LazyVGrid(columns: smallGrid, spacing: 12) {
+                                PhotoRewardTile(slot: .background) { showingPaywall = true }
+                                ForEach(Rewards.backgrounds) { reward in
+                                    rewardButton(reward, unlocked: unlocked, isPro: isPro,
+                                                 selected: store.data.settings.backgroundID == reward.id) {
+                                        BackgroundSwatch(reward: reward).frame(height: 84)
+                                    }
                                 }
                             }
                         }
                     }
-
-                    section("Backgrounds") {
-                        LazyVGrid(columns: smallGrid, spacing: 12) {
-                            PhotoRewardTile(slot: .background) { showingPaywall = true }
-                            ForEach(Rewards.backgrounds) { reward in
-                                rewardButton(reward, unlocked: unlocked, isPro: isPro,
-                                             selected: store.data.settings.backgroundID == reward.id) {
-                                    BackgroundSwatch(reward: reward).frame(height: 84)
-                                }
-                            }
-                        }
-                    }
+                    .animation(.snappy, value: tab)
                 }
                 .padding(16)
                 .padding(.bottom, 24)
@@ -122,14 +145,6 @@ struct ProfileView: View {
                 Text("Unlock: \(String(localized: hint?.detail ?? ""))")
             }
         }
-    }
-
-    private func section<Content: View>(_ title: LocalizedStringKey, @ViewBuilder content: () -> Content) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text(title).font(.title3.weight(.bold))
-            content()
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private func rewardButton<Content: View>(_ reward: Reward, unlocked: Set<String>, isPro: Bool,
@@ -201,22 +216,31 @@ struct AchievementTile: View {
             Text(achievement.title)
                 .font(.caption.weight(.bold))
                 .multilineTextAlignment(.center)
-                .lineLimit(2)
+                .lineLimit(2, reservesSpace: true)
             if unlocked {
                 Text(achievement.detail)
                     .font(.caption2)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
-                    .lineLimit(3)
-            } else {
+                    .lineLimit(2)
+            }
+            Spacer(minLength: 0)
+            // Низ плитки всегда одинаковый: полоса прогресса и счётчик прижаты к краю.
+            VStack(spacing: 4) {
                 ProgressView(value: Double(achievement.progress(facts)), total: Double(achievement.goal))
                     .tint(achievement.color)
-                Text(verbatim: "\(achievement.progress(facts))/\(achievement.goal)")
-                    .font(.caption2.monospacedDigit())
-                    .foregroundStyle(.secondary)
+                if unlocked {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.caption2.weight(.bold))
+                        .foregroundStyle(achievement.color)
+                } else {
+                    Text(verbatim: "\(achievement.progress(facts))/\(achievement.goal)")
+                        .font(.caption2.monospacedDigit())
+                        .foregroundStyle(.secondary)
+                }
             }
         }
-        .frame(maxWidth: .infinity, minHeight: 150, alignment: .top)
+        .frame(maxWidth: .infinity, minHeight: 184, maxHeight: .infinity)
         .padding(10)
         .background(RoundedRectangle(cornerRadius: 20, style: .continuous)
             .fill(Color(uiColor: .secondarySystemGroupedBackground)))
