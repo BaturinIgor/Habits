@@ -152,42 +152,44 @@ private struct CatalogCard: View {
     }
 
     var body: some View {
-        HStack(spacing: 10) {
-            Button(action: onOpen) {
-                HStack(spacing: 10) {
-                    HabitIconView(icon: habit.icon, color: color, size: 36)
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(habit.name)
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(Color.primary)
-                            .multilineTextAlignment(.leading)
-                            .lineLimit(2)
-                            .minimumScaleFactor(0.85)
-                        Text(subtitle)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                            .lineLimit(1)
-                    }
-                    Spacer(minLength: 0)
+        // Иконка и кнопка сверху, название на всю ширину карточки снизу,
+        // чтобы длинные названия переносились, а не обрезались.
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(alignment: .top) {
+                HabitIconView(icon: habit.icon, color: color, size: 36)
+                Spacer(minLength: 8)
+                Button(action: onAdd) {
+                    Image(systemName: isAdded ? "checkmark" : "plus")
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundStyle(isAdded ? Color.white : color)
+                        .frame(width: 30, height: 30)
+                        .background(Circle().fill(isAdded ? AnyShapeStyle(color.gradient) : AnyShapeStyle(color.opacity(0.15))))
                 }
-                .contentShape(Rectangle())
+                .buttonStyle(PressableStyle(scale: 0.85))
+                .disabled(isAdded)
+                .accessibilityLabel(isAdded ? String(localized: "Added") : String(localized: "Add habit"))
             }
-            .buttonStyle(PressableStyle())
-
-            Button(action: onAdd) {
-                Image(systemName: isAdded ? "checkmark" : "plus")
-                    .font(.system(size: 13, weight: .bold))
-                    .foregroundStyle(isAdded ? Color.white : color)
-                    .frame(width: 28, height: 28)
-                    .background(Circle().fill(isAdded ? AnyShapeStyle(color.gradient) : AnyShapeStyle(color.opacity(0.15))))
+            VStack(alignment: .leading, spacing: 2) {
+                Text(habit.name)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(Color.primary)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(3)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(subtitle)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
             }
-            .buttonStyle(PressableStyle(scale: 0.85))
-            .disabled(isAdded)
-            .accessibilityLabel(isAdded ? String(localized: "Added") : String(localized: "Add habit"))
+            Spacer(minLength: 0)
         }
-        .padding(10)
-        .frame(maxHeight: .infinity)
+        .padding(12)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(RoundedRectangle(cornerRadius: 18, style: .continuous)
             .fill(Color(uiColor: .secondarySystemGroupedBackground)))
+        .contentShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .onTapGesture(perform: onOpen)
+        .accessibilityElement(children: .combine)
+        .accessibilityAddTraits(.isButton)
     }
 }
