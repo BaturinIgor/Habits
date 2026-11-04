@@ -1,5 +1,7 @@
 "%@ / month" = "%@ / Monat";
 "%@ / year" = "%@ / Jahr";
+"%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: Preis ✨ %lld, du hast: ✨ %lld. Es fehlen ✨ %lld. Hake Gewohnheiten ab, um sie zu verdienen.";
+"%@ costs %lld sparks. You have %lld." = "%@: Preis ✨ %lld. Du hast: ✨ %lld.";
 "%lld min" = "%lld Min.";
 "%lld more to %@" = "Noch %lld bis %@";
 "%lld of %lld" = "%lld von %lld";
@@ -10,14 +12,20 @@
 "+%lld for coming back after a miss" = "+%lld fürs Zurückkommen nach einer Lücke";
 "+%lld for each achievement" = "+%lld pro Erfolg";
 "+%lld for every 7 days of a streak, +%lld for every 30" = "+%lld für je 7 Tage Serie, +%lld für je 30";
+"+1 spark every active day" = "+1 Funke an jedem aktiven Tag";
+"+2 sparks every active day" = "+2 Funken an jedem aktiven Tag";
+"+3 sparks every active day and +1 streak freeze a month" = "+3 Funken an jedem aktiven Tag und +1 Serien-Freeze pro Monat";
+"+5 sparks every active day and +2 streak freezes a month" = "+5 Funken an jedem aktiven Tag und +2 Serien-Freezes pro Monat";
 "1 spark for each check-in, up to %lld a day" = "1 Funke pro Abhaken, bis zu %lld am Tag";
 "30 perfect days in a row" = "30 perfekte Tage am Stück";
 "7 perfect days in a row" = "7 perfekte Tage in Folge";
+"A grown pet brings up to +5 a day" = "Ein großes Haustier bringt bis zu +5 am Tag";
 "A week strong" = "Eine starke Woche";
 "A whole year" = "Ein ganzes Jahr";
 "Achievements" = "Erfolge";
 "Achievements and rewards" = "Erfolge und Belohnungen";
 "Active" = "Aktiv";
+"Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Aktiver Tag: mindestens eine Gewohnheit rechtzeitig abgehakt. Füttern gibt %lld EP, so wächst dein Haustier schneller.";
 "Activity over %lld weeks" = "Aktivität der letzten %lld Wochen";
 "Add a habit, pick days and a time, and I'll remind you." = "Füge eine Gewohnheit hinzu, wähle Tage und Uhrzeit, und ich erinnere dich daran.";
 "Add a note to 20 completed habits" = "Füge 20 erledigten Gewohnheiten eine Notiz hinzu";
@@ -44,8 +52,10 @@
 "Archive (%lld)" = "Archiv (%lld)";
 "Archived" = "Archiviert";
 "Available" = "Verfügbar";
+"Avatar" = "Avatar";
 "Avatars" = "Avatare";
 "Baby" = "Baby";
+"Background" = "Hintergrund";
 "Backgrounds" = "Hintergründe";
 "Backup" = "Backup";
 "Best current streak" = "Beste aktuelle Serie";
@@ -87,8 +97,10 @@
 "Completion" = "Erfüllung";
 "Consistency" = "Beständigkeit";
 "Continue" = "Weiter";
+"Copied" = "Kopiert";
 "Copy address" = "Adresse kopieren";
 "Copy message" = "Nachricht kopieren";
+"Copy message and address" = "Nachricht und Adresse kopieren";
 "Couldn't read the file" = "Datei konnte nicht gelesen werden";
 "Count glasses of water, pages or minutes toward a goal." = "Zähle Gläser Wasser, Seiten oder Minuten bis zum Ziel.";
 "Create" = "Erstellen";
@@ -147,6 +159,7 @@
 "Feed pet" = "Haustier füttern";
 "Feed your pet" = "Haustier füttern";
 "Feedback" = "Feedback";
+"Feeding" = "Füttern";
 "Fifty" = "Fünfzig";
 "First step" = "Erster Schritt";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "Zum Beispiel 8 Gläser Wasser. Jedes Tippen auf den Kreis zählt eins dazu.";
@@ -183,6 +196,7 @@
 "Half a thousand" = "Fünfhundert";
 "Happy" = "Glücklich";
 "Hard days and chains" = "Schwere Tage und Ketten";
+"Hatches after a few check-ins" = "Schlüpft nach ein paar Abhaken";
 "Have 30 perfect days" = "Sammle 30 perfekte Tage";
 "Hide keyboard" = "Tastatur ausblenden";
 "How many habits are done today." = "Wie viele Gewohnheiten heute erledigt sind.";
@@ -226,6 +240,7 @@
 "Let's keep the streak going!" = "Lass uns die Serie halten!";
 "Let's start with your first habit" = "Fangen wir mit deiner ersten Gewohnheit an";
 "Level %lld" = "Level %lld";
+"Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Mail ist auf diesem iPhone nicht eingerichtet. Öffne eine andere Mail-App oder kopiere die Nachricht und sende sie an %@.";
 "Mark as done" = "Als erledigt markieren";
 "Mark habit" = "Gewohnheit abhaken";
 "Meditate" = "Meditieren";
@@ -271,6 +286,7 @@
 "Notification" = "Mitteilung";
 "Notifications" = "Mitteilungen";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "Mitteilungen sind in den iOS-Einstellungen deaktiviert, daher kommen keine Erinnerungen an.";
+"Now" = "Jetzt";
 "Number on the app icon" = "Zahl auf dem App-Symbol";
 "OK" = "OK";
 "Off" = "Aus";
@@ -286,6 +302,7 @@
 "One notification listing the habits not checked off yet." = "Eine Mitteilung mit den Gewohnheiten, die noch offen sind.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Es zählen nur Abhaken am selben oder nächsten Tag. Wird eine Gewohnheit abgewählt, ist der Funke wieder weg.";
 "Open iOS Settings" = "iOS-Einstellungen öffnen";
+"Open mail app" = "Mail-App öffnen";
 "Open the app to adopt one." = "Öffne die App, um eins aufzunehmen.";
 "Order" = "Reihenfolge";
 "Organization" = "Organisation";
@@ -295,6 +312,7 @@
 "Panda" = "Panda";
 "Part of day" = "Tageszeit";
 "Parts of day" = "Nach Tageszeit";
+"Paste the message into any mail app and send it to %@." = "Füge die Nachricht in eine Mail-App ein und sende sie an %@.";
 "Pause" = "Pause";
 "Paused until %@" = "Pausiert bis %@";
 "Per week" = "Pro Woche";
@@ -303,6 +321,7 @@
 "Perfect month" = "Perfekter Monat";
 "Perfect week" = "Perfekte Woche";
 "Pet" = "Haustier";
+"Pet gifts" = "Geschenke vom Haustier";
 "Phoenix" = "Phönix";
 "Pick a template or create your own." = "Wähle eine Vorlage oder erstelle eine eigene.";
 "Privacy Policy" = "Datenschutz";
@@ -312,6 +331,7 @@
 "Pro: +%lld every month and up to %lld a day" = "Pro: +%lld jeden Monat und bis zu %lld am Tag";
 "Profile" = "Profil";
 "Profile and achievements" = "Profil und Erfolge";
+"Profile section" = "Profilbereich";
 "Purchase failed" = "Kauf fehlgeschlagen";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Käufe funktionieren nur in der App-Store-Version. In diesem Build kannst du Pro zum Testen in den Einstellungen aktivieren.";
 "Rate the app" = "App bewerten";
@@ -345,11 +365,12 @@
 "Schedule" = "Zeitplan";
 "Scheduled notifications" = "Geplante Mitteilungen";
 "Send" = "Senden";
+"Send the message" = "Nachricht senden";
 "Set up Mail on this iPhone or send your message to %@." = "Richte Mail auf dem iPhone ein oder sende deine Nachricht an %@.";
 "Settings" = "Einstellungen";
 "Shared data" = "Gemeinsame Daten";
 "Show introduction" = "Einführung zeigen";
-"Shows how many habits are left for today." = "Zeigt, wie viele Gewohnheiten heute noch offen sind.";
+"Shows how many reminders came since you last opened the app." = "Zeigt, wie viele Erinnerungen seit dem letzten Öffnen der App eingegangen sind.";
 "Simple gestures" = "Einfache Gesten";
 "Skip" = "Überspringen";
 "Skipped" = "Übersprungen";
@@ -425,6 +446,7 @@
 "Weekends" = "Wochenende";
 "Weekly hero" = "Wochenheld";
 "Welcome to Habit Tracker" = "Willkommen beim Gewohnheitstracker";
+"What %@ gives you" = "Was %@ dir bringt";
 "What happened and what did you expect?" = "Was ist passiert und was hast du erwartet?";
 "Widget" = "Widget";
 "Workout" = "Training";

@@ -24,6 +24,8 @@ struct HabitsApp: App {
             case .active:
                 store.reloadFromDisk()
                 Task {
+                    // Пользователь в приложении: новые уведомления увидены, счётчик на иконке с нуля.
+                    await NotificationPlanner.markSeen()
                     await store.reschedule()
                     await ProStore.shared.refreshEntitlements()
                 }
