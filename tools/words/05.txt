@@ -1,0 +1,120 @@
+adjectives|good|хороший|gut|bon|bueno|bom|buono|iyi|dobry|baik|好|良い|좋은|अच्छा
+adjectives|bad|плохой|schlecht|mauvais|malo|ruim|cattivo|kötü|zły|buruk|坏|悪い|나쁜|बुरा
+adjectives|big|большой|groß|grand|grande|grande|grande|büyük|duży|besar|大|大きい|큰|बड़ा
+adjectives|small|маленький|klein|petit|pequeño|pequeno|piccolo|küçük|mały|kecil|小|小さい|작은|छोटा
+adjectives|new|новый|neu|nouveau|nuevo|novo|nuovo|yeni|nowy|baru|新|新しい|새로운|नया
+adjectives|old|старый|alt|vieux|viejo|velho|vecchio|eski|stary|tua|旧|古い|오래된|पुराना
+adjectives|young|молодой|jung|jeune|joven|jovem|giovane|genç|młody|muda|年轻|若い|젊은|जवान
+adjectives|beautiful|красивый|schön|beau|bonito|bonito|bello|güzel|piękny|cantik|美丽|美しい|아름다운|सुंदर
+adjectives|long|длинный|lang|long|largo|longo|lungo|uzun|długi|panjang|长|長い|긴|लंबा
+adjectives|short|короткий|kurz|court|corto|curto|corto|kısa|krótki|pendek|短|短い|짧은|छोटा (लंबाई)
+adjectives|fast|быстрый|schnell|rapide|rápido|rápido|veloce|hızlı|szybki|cepat|快|速い|빠른|तेज़
+adjectives|slow|медленный|langsam|lent|lento|lento|lento|yavaş|wolny|lambat|慢|遅い|느린|धीमा
+adjectives|easy|лёгкий|einfach|facile|fácil|fácil|facile|kolay|łatwy|mudah|容易|簡単|쉬운|आसान
+adjectives|difficult|трудный|schwierig|difficile|difícil|difícil|difficile|zor|trudny|sulit|难|難しい|어려운|कठिन
+adjectives|cheap|дешёвый|billig|bon marché|barato|barato|economico|ucuz|tani|murah|便宜|安い|싼|सस्ता
+adjectives|expensive|дорогой|teuer|cher|caro|caro|caro|pahalı|drogi|mahal|贵|高い|비싼|महँगा
+adjectives|clean|чистый|sauber|propre|limpio|limpo|pulito|temiz|czysty|bersih|干净|きれい|깨끗한|साफ़
+adjectives|dirty|грязный|schmutzig|sale|sucio|sujo|sporco|kirli|brudny|kotor|脏|汚い|더러운|गंदा
+adjectives|full|полный|voll|plein|lleno|cheio|pieno|dolu|pełny|penuh|满|いっぱい|가득한|भरा हुआ
+adjectives|empty|пустой|leer|vide|vacío|vazio|vuoto|boş|pusty|kosong|空|空っぽ|빈|ख़ाली
+adjectives|open|открытый|offen|ouvert|abierto|aberto|aperto|açık|otwarty|terbuka|开着|開いている|열린|खुला
+adjectives|closed|закрытый|geschlossen|fermé|cerrado|fechado|chiuso|kapalı|zamknięty|tertutup|关着|閉まっている|닫힌|बंद
+adjectives|strong|сильный|stark|fort|fuerte|forte|forte|güçlü|silny|kuat|强|強い|강한|मज़बूत
+adjectives|weak|слабый|schwach|faible|débil|fraco|debole|zayıf|słaby|lemah|弱|弱い|약한|कमज़ोर
+adjectives|high|высокий|hoch|haut|alto|alto|alto|yüksek|wysoki|tinggi|高|高い (たかい)|높은|ऊँचा
+adjectives|low|низкий|niedrig|bas|bajo|baixo|basso|alçak|niski|rendah|低|低い|낮은|नीचा
+adjectives|near|близко|nah|près|cerca|perto|vicino|yakın|blisko|dekat|近|近い|가까운|पास
+adjectives|far|далеко|weit|loin|lejos|longe|lontano|uzak|daleko|jauh|远|遠い|먼|दूर
+adjectives|right (correct)|правильный|richtig|correct|correcto|certo|giusto|doğru|poprawny|benar|对|正しい|맞는|सही
+adjectives|wrong|неправильный|falsch|faux|incorrecto|errado|sbagliato|yanlış|błędny|salah|错|間違った|틀린|ग़लत
+adjectives|important|важный|wichtig|important|importante|importante|importante|önemli|ważny|penting|重要|大切な|중요한|ज़रूरी
+adjectives|interesting|интересный|interessant|intéressant|interesante|interessante|interessante|ilginç|ciekawy|menarik|有趣|面白い|재미있는|दिलचस्प
+adjectives|delicious|вкусный|lecker|délicieux|delicioso|gostoso|buono (cibo)|lezzetli|smaczny|enak|好吃|おいしい|맛있는|स्वादिष्ट
+adjectives|free (no cost)|бесплатный|kostenlos|gratuit|gratis|grátis|gratis|ücretsiz|darmowy|gratis|免费|無料|무료|मुफ़्त
+adjectives|busy|занятой|beschäftigt|occupé|ocupado|ocupado|occupato|meşgul|zajęty|sibuk|忙|忙しい|바쁜|व्यस्त
+adjectives|tired|уставший|müde|fatigué|cansado|cansado|stanco|yorgun|zmęczony|lelah|累|疲れた|피곤한|थका हुआ
+adjectives|hungry|голодный|hungrig|affamé|hambriento|com fome|affamato|aç|głodny|lapar|饿|お腹がすいた|배고픈|भूखा
+adjectives|thirsty|хочется пить|durstig|assoiffé|sediento|com sede|assetato|susamış|spragniony|haus|渴|喉が渇いた|목마른|प्यासा
+adjectives|sick|больной|krank|malade|enfermo|doente|malato|hasta|chory|sakit|生病|病気の|아픈|बीमार
+adjectives|healthy|здоровый|gesund|en bonne santé|sano|saudável|sano|sağlıklı|zdrowy|sehat|健康的|健康な|건강한|स्वस्थ
+emotions|happy|счастливый|glücklich|heureux|feliz|feliz|felice|mutlu|szczęśliwy|bahagia|快乐|幸せ|행복한|ख़ुश
+emotions|sad|грустный|traurig|triste|triste|triste|triste|üzgün|smutny|sedih|难过|悲しい|슬픈|उदास
+emotions|angry|злой|wütend|en colère|enfadado|bravo|arrabbiato|kızgın|zły (gniewny)|marah|生气|怒った|화난|गुस्सा
+emotions|afraid|испуганный|ängstlich|effrayé|asustado|com medo|spaventato|korkmuş|przestraszony|takut|害怕|怖い|무서운|डरा हुआ
+emotions|calm|спокойный|ruhig|calme|tranquilo|calmo|calmo|sakin|spokojny|tenang|平静|落ち着いた|차분한|शांत
+emotions|surprised|удивлённый|überrascht|surpris|sorprendido|surpreso|sorpreso|şaşırmış|zaskoczony|terkejut|惊讶|驚いた|놀란|हैरान
+emotions|love|любовь|die Liebe|l'amour|el amor|o amor|l'amore|aşk|miłość|cinta|爱情|愛|사랑|प्यार
+emotions|joy|радость|die Freude|la joie|la alegría|a alegria|la gioia|sevinç|radość|kegembiraan|喜悦|喜び|기쁨|ख़ुशी
+emotions|fear|страх|die Angst|la peur|el miedo|o medo|la paura|korku|strach|ketakutan|恐惧|恐怖|두려움|डर
+emotions|hope|надежда|die Hoffnung|l'espoir|la esperanza|a esperança|la speranza|umut|nadzieja|harapan|希望|希望 (きぼう)|희망|उम्मीद
+emotions|dream|мечта|der Traum|le rêve|el sueño (deseo)|o sonho|il sogno|hayal|marzenie|mimpi|梦想|夢|꿈|सपना
+emotions|idea|идея|die Idee|l'idée|la idea|a ideia|l'idea|fikir|pomysł|ide|主意|アイデア|아이디어|विचार
+work|work|работа|die Arbeit|le travail|el trabajo|o trabalho|il lavoro|iş|praca|pekerjaan|工作 (名词)|仕事|일|काम
+work|job|должность|der Job|l'emploi|el empleo|o emprego|l'impiego|meslek|posada|jabatan|职位|職|직업|नौकरी
+work|boss|начальник|der Chef|le patron|el jefe|o chefe|il capo|patron|szef|atasan|老板|上司|상사|मालिक
+work|colleague|коллега|der Kollege|le collègue|el colega|o colega|il collega|iş arkadaşı|kolega z pracy|rekan kerja|同事|同僚|동료|सहकर्मी
+work|meeting|встреча|das Treffen|la réunion|la reunión|a reunião|la riunione|toplantı|spotkanie|rapat|会议|会議|회의|बैठक
+work|company|компания|die Firma|l'entreprise|la empresa|a empresa|l'azienda|şirket|firma|perusahaan|公司|会社|회사|कंपनी
+work|teacher|учитель|der Lehrer|le professeur|el profesor|o professor|l'insegnante|öğretmen|nauczyciel|guru|老师|先生|선생님|शिक्षक
+work|student|студент|der Student|l'étudiant|el estudiante|o estudante|lo studente|öğrenci|student|mahasiswa|学生|学生 (がくせい)|학생|छात्र
+work|lesson|урок|die Lektion|la leçon|la lección|a aula|la lezione|ders|lekcja|pelajaran|课|授業|수업|पाठ
+work|homework|домашнее задание|die Hausaufgabe|les devoirs|los deberes|a lição de casa|i compiti|ödev|praca domowa|pekerjaan rumah|作业|宿題|숙제|गृहकार्य
+work|exam|экзамен|die Prüfung|l'examen|el examen|a prova|l'esame|sınav|egzamin|ujian|考试|試験|시험|परीक्षा
+work|pen|ручка|der Kugelschreiber|le stylo|el bolígrafo|a caneta|la penna|tükenmez kalem|długopis|pulpen|笔|ペン|펜|पेन
+work|pencil|карандаш|der Bleistift|le crayon|el lápiz|o lápis|la matita|kurşun kalem|ołówek|pensil|铅笔|鉛筆|연필|पेंसिल
+work|paper|бумага|das Papier|le papier|el papel|o papel|la carta|kağıt|papier|kertas|纸|紙|종이|काग़ज़
+work|letter|письмо|der Brief|la lettre|la carta|a carta|la lettera|mektup|list|surat|信|手紙|편지|चिट्ठी
+work|email|электронное письмо|die E-Mail|l'e-mail|el correo electrónico|o e-mail|l'email|e-posta|e-mail|surel|电子邮件|メール|이메일|ईमेल
+work|problem|проблема|das Problem|le problème|el problema|o problema|il problema|sorun|problem|masalah|问题 (难题)|問題|문제|समस्या
+work|plan|план|der Plan|le plan|el plan|o plano|il piano|plan|plan|rencana|计划|計画|계획|योजना
+work|goal|цель|das Ziel|l'objectif|la meta|a meta|l'obiettivo|hedef|cel|tujuan|目标|目標|목표|लक्ष्य
+work|habit|привычка|die Gewohnheit|l'habitude|el hábito|o hábito|l'abitudine|alışkanlık|nawyk|kebiasaan|习惯|習慣|습관|आदत
+travel|trip|поездка|die Reise|le voyage|el viaje|a viagem|il viaggio|yolculuk|podróż|perjalanan|旅行 (名词)|旅|여행|सफ़र
+travel|passport|паспорт|der Reisepass|le passeport|el pasaporte|o passaporte|il passaporto|pasaport|paszport|paspor|护照|パスポート|여권|पासपोर्ट
+travel|suitcase|чемодан|der Koffer|la valise|la maleta|a mala|la valigia|bavul|walizka|koper|行李箱|スーツケース|여행 가방|सूटकेस
+travel|country|страна|das Land|le pays|el país|o país|il paese|ülke|kraj|negara|国家|国|나라|देश
+travel|world|мир|die Welt|le monde|el mundo|o mundo|il mondo|dünya|świat|dunia|世界|世界 (せかい)|세계|दुनिया
+travel|photo|фотография|das Foto|la photo|la foto|a foto|la foto|fotoğraf|zdjęcie|foto|照片|写真|사진|फ़ोटो
+travel|tourist|турист|der Tourist|le touriste|el turista|o turista|il turista|turist|turysta|turis|游客|観光客|관광객|पर्यटक
+travel|reservation|бронирование|die Reservierung|la réservation|la reserva|a reserva|la prenotazione|rezervasyon|rezerwacja|reservasi|预订|予約|예약|आरक्षण
+travel|help!|помогите!|Hilfe!|au secours !|¡socorro!|socorro!|aiuto!|imdat!|pomocy!|tolong!|救命！|助けて！|도와주세요!|बचाओ!
+travel|where?|где?|wo?|où ?|¿dónde?|onde?|dove?|nerede?|gdzie?|di mana?|在哪里？|どこ？|어디?|कहाँ?
+travel|when?|когда?|wann?|quand ?|¿cuándo?|quando?|quando?|ne zaman?|kiedy?|kapan?|什么时候？|いつ？|언제?|कब?
+travel|what?|что?|was?|quoi ?|¿qué?|o quê?|che cosa?|ne?|co?|apa?|什么？|何？|뭐?|क्या?
+travel|who?|кто?|wer?|qui ?|¿quién?|quem?|chi?|kim?|kto?|siapa?|谁？|誰？|누구?|कौन?
+travel|why?|почему?|warum?|pourquoi ?|¿por qué?|por quê?|perché?|neden?|dlaczego?|mengapa?|为什么？|なぜ？|왜?|क्यों?
+travel|how?|как?|wie?|comment ?|¿cómo?|como?|come?|nasıl?|jak?|bagaimana?|怎么？|どうやって？|어떻게?|कैसे?
+travel|how much?|сколько?|wie viel?|combien ?|¿cuánto?|quanto?|quanto?|ne kadar?|ile?|berapa?|多少？|いくら？|얼마예요?|कितना?
+travel|here|здесь|hier|ici|aquí|aqui|qui|burada|tutaj|di sini|这里|ここ|여기|यहाँ
+travel|there|там|dort|là-bas|allí|lá|lì|orada|tam|di sana|那里|そこ|거기|वहाँ
+travel|entrance|вход|der Eingang|l'entrée|la entrada|a entrada|l'ingresso|giriş|wejście|pintu masuk|入口|入口 (いりぐち)|입구|प्रवेश
+travel|exit|выход|der Ausgang|la sortie|la salida|a saída|l'uscita|çıkış|wyjście|pintu keluar|出口|出口 (でぐち)|출구|निकास
+travel|toilet|туалет|die Toilette|les toilettes|el baño (servicio)|o banheiro (sanitário)|il gabinetto|tuvalet|toaleta|toilet|厕所|トイレ|화장실|शौचालय
+travel|open (shop)|открыто|geöffnet|ouvert (magasin)|abierto (tienda)|aberto (loja)|aperto (negozio)|açık (dükkan)|otwarte|buka|营业中|営業中|영업 중|खुला है
+misc|music|музыка|die Musik|la musique|la música|a música|la musica|müzik|muzyka|musik|音乐|音楽|음악|संगीत
+misc|song|песня|das Lied|la chanson|la canción|a canção|la canzone|şarkı|piosenka|lagu|歌|歌 (うた)|노래|गीत
+misc|movie|фильм|der Film|le film|la película|o filme|il film|film|film|film|电影|映画|영화|फ़िल्म
+misc|game|игра|das Spiel|le jeu|el juego|o jogo|il gioco|oyun|gra|permainan|游戏|ゲーム|게임|खेल
+misc|sport|спорт|der Sport|le sport|el deporte|o esporte|lo sport|spor|sport|olahraga|运动|スポーツ|운동|खेलकूद
+misc|ball|мяч|der Ball|le ballon|la pelota|a bola|la palla|top|piłka|bola|球|ボール|공|गेंद
+misc|gift|подарок|das Geschenk|le cadeau|el regalo|o presente|il regalo|hediye|prezent|hadiah|礼物|プレゼント|선물|तोहफ़ा
+misc|party|вечеринка|die Party|la fête (soirée)|la fiesta (reunión)|a festa|la festa (serata)|parti|impreza|pesta|派对|パーティー|파티|पार्टी
+misc|news|новости|die Nachrichten|les nouvelles|las noticias|as notícias|le notizie|haberler|wiadomości|berita|新闻|ニュース|뉴스|ख़बर
+misc|story|история|die Geschichte|l'histoire|la historia|a história|la storia|hikaye|historia|cerita|故事|物語|이야기|कहानी
+misc|life|жизнь|das Leben|la vie|la vida|a vida|la vita|hayat|życie|kehidupan|生活 (名词)|人生|인생|ज़िंदगी
+misc|people|люди|die Leute|les gens|la gente|as pessoas|la gente|insanlar|ludzie|orang-orang|人们|人々|사람들|लोग
+misc|everything|всё|alles|tout|todo|tudo|tutto|her şey|wszystko|semuanya|一切|全部|모든 것|सब कुछ
+misc|nothing|ничего|nichts|rien|nada|nada|niente|hiçbir şey|nic|tidak ada|什么都没有|何も|아무것도|कुछ नहीं
+misc|very|очень|sehr|très|muy|muito|molto|çok|bardzo|sangat|很|とても|매우|बहुत
+misc|a little|немного|ein bisschen|un peu|un poco|um pouco|un po'|biraz|trochę|sedikit|一点|少し|조금|थोड़ा
+misc|together|вместе|zusammen|ensemble|juntos|juntos|insieme|birlikte|razem|bersama|一起|一緒に|함께|साथ में
+misc|again|снова|wieder|encore|otra vez|de novo|di nuovo|tekrar|znowu|lagi|再|また|다시|फिर से
+misc|maybe|может быть|vielleicht|peut-être|quizás|talvez|forse|belki|może|mungkin|也许|たぶん|아마|शायद
+misc|of course|конечно|natürlich|bien sûr|por supuesto|claro|certo|tabii ki|oczywiście|tentu saja|当然|もちろん|물론|बिल्कुल
+misc|welcome|добро пожаловать|willkommen|bienvenue|bienvenido|bem-vindo|benvenuto|hoş geldiniz|witamy|selamat datang|欢迎|ようこそ|환영합니다|स्वागत है
+misc|congratulations|поздравляю|herzlichen Glückwunsch|félicitations|felicidades|parabéns|congratulazioni|tebrikler|gratulacje|selamat|恭喜|おめでとう|축하합니다|बधाई हो
+misc|good luck|удачи|viel Glück|bonne chance|buena suerte|boa sorte|buona fortuna|iyi şanslar|powodzenia|semoga beruntung|祝你好运|頑張って|행운을 빌어요|शुभकामनाएँ
+misc|cheers|за здоровье|prost|santé|salud|saúde|salute|şerefe|na zdrowie|bersulang|干杯|乾杯|건배|चियर्स
+misc|I don't understand|я не понимаю|ich verstehe nicht|je ne comprends pas|no entiendo|não entendo|non capisco|anlamıyorum|nie rozumiem|saya tidak mengerti|我不明白|分かりません|이해가 안 돼요|मैं नहीं समझा
+misc|I love you|я тебя люблю|ich liebe dich|je t'aime|te quiero|eu te amo|ti amo|seni seviyorum|kocham cię|aku cinta kamu|我爱你|愛してる|사랑해요|मैं तुमसे प्यार करता हूँ

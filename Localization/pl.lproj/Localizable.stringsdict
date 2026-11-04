@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%lld days</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld dzień</string>
+			<key>few</key>
+			<string>%lld dni</string>
+			<key>many</key>
+			<string>%lld dni</string>
+			<key>other</key>
+			<string>%lld dnia</string>
+		</dict>
+	</dict>
+	<key>%lld habits left</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>Został %lld nawyk</string>
+			<key>few</key>
+			<string>Zostały %lld nawyki</string>
+			<key>many</key>
+			<string>Zostało %lld nawyków</string>
+			<key>other</key>
+			<string>Zostało %lld nawyku</string>
+		</dict>
+	</dict>
+	<key>%lld habits planned</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>Zaplanowano %lld nawyk</string>
+			<key>few</key>
+			<string>Zaplanowano %lld nawyki</string>
+			<key>many</key>
+			<string>Zaplanowano %lld nawyków</string>
+			<key>other</key>
+			<string>Zaplanowano %lld nawyku</string>
+		</dict>
+	</dict>
+	<key>%lld repeats every %lld min</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%1$lld powtórzenie co %2$lld min</string>
+			<key>few</key>
+			<string>%1$lld powtórzenia co %2$lld min</string>
+			<key>many</key>
+			<string>%1$lld powtórzeń co %2$lld min</string>
+			<key>other</key>
+			<string>%1$lld powtórzenia co %2$lld min</string>
+		</dict>
+	</dict>
+	<key>%lld weeks</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld tydzień</string>
+			<key>few</key>
+			<string>%lld tygodnie</string>
+			<key>many</key>
+			<string>%lld tygodni</string>
+			<key>other</key>
+			<string>%lld tygodnia</string>
+		</dict>
+	</dict>
+	<key>%lld times a week</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%1$#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>lld</string>
+			<key>one</key>
+			<string>%lld raz w tygodniu</string>
+			<key>few</key>
+			<string>%lld razy w tygodniu</string>
+			<key>many</key>
+			<string>%lld razy w tygodniu</string>
+			<key>other</key>
+			<string>%lld razy w tygodniu</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

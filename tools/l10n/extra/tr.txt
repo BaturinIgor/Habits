@@ -1,0 +1,537 @@
+Active||Etkin
+Activity over %lld weeks||Son %lld haftalık etkinlik
+Add a habit, pick days and a time, and I'll remind you.||Bir alışkanlık ekle, günleri ve saati seç, ben de sana hatırlatayım.
+Add habit||Alışkanlık ekle
+Add note||Not ekle
+All data is stored only on this iPhone.||Tüm veriler yalnızca bu iPhone'da saklanır.
+All done||Hepsi tamam
+All done!||Hepsi tamam!
+Allow notifications||Bildirimlere izin ver
+An archived habit is hidden from the Today screen and sends no notifications, but its history is kept.||Arşivlenen alışkanlık Bugün ekranında görünmez ve bildirim göndermez, ama geçmişi saklanır.
+And %lld more||Ve %lld tane daha
+Appearance||Görünüm
+Archive||Arşivle
+Archive (%lld)||Arşiv (%lld)
+Archived||Arşivde
+Best current streak||Şu anki en iyi seri
+Best streak||En iyi seri
+By habit||Alışkanlığa göre
+Cancel||Vazgeç
+Choose how many times and how often each reminder repeats.||Her hatırlatmanın kaç kez ve ne sıklıkla tekrarlanacağını seç.
+Close||Kapat
+Completed||Tamamlandı
+Completion||Tamamlanma
+Create||Oluştur
+Create your first one and it will appear here.||İlkini oluştur, burada görünecek.
+Current streak||Mevcut seri
+Custom reminder repeats||Özel hatırlatma tekrarları
+Custom repeats||Özel tekrarlar
+Date||Tarih
+Day||Gün
+Days: %@||Günler: %@
+Delete||Sil
+Delete habit||Alışkanlığı sil
+Delete habit?||Alışkanlık silinsin mi?
+Description or motivation (optional)||Açıklama veya motivasyon (isteğe bağlı)
+Done||Bitti
+Drink water||Su iç
+Edit||Düzenle
+Edit habit||Alışkanlığı düzenle
+Edit note||Notu düzenle
+Emoji||Emoji
+End||Bitiş
+End date||Bitiş tarihi
+Ended||Sona erdi
+Every day||Her gün
+Family||Aile
+Free day||Serbest gün
+Free day today||Bugün serbest gün
+Free version||Ücretsiz sürüm
+Great job, keep it up||Harika, böyle devam
+Group||Grup
+Groups||Gruplar
+Groups help sort habits by topic: morning, health, work.||Gruplar alışkanlıkları konuya göre ayırmaya yardım eder: sabah, sağlık, iş.
+Habit||Alışkanlık
+Habit deleted||Alışkanlık silindi
+Habit name||Alışkanlık adı
+Habit order||Alışkanlık sırası
+Habit progress||Alışkanlık ilerlemesi
+Habits||Alışkanlıklar
+Habits Pro||Alışkanlıklar Pro
+Habits %lld/%lld||Alışkanlıklar %lld/%lld
+Habits with reminders are sorted by time. The rest come after them and can be dragged.||Hatırlatmalı alışkanlıklar saate göre sıralanır. Diğerleri sonra gelir ve sürüklenebilir.
+How many habits are done today.||Bugün kaç alışkanlık yapıldı.
+How often||Sıklık
+Icon||Simge
+If not checked off: %@. Done in the notification stops the repeats.||İşaretlenmezse: %@. Bildirimdeki "Bitti" tekrarları durdurur.
+Interval||Aralık
+Its check-in history will be deleted too.||İşaretleme geçmişi de silinecek.
+Its check-in history will be deleted too. To keep the history, archive the habit instead.||İşaretleme geçmişi de silinecek. Geçmişi korumak için alışkanlığı arşivle.
+Last 12 weeks||Son 12 hafta
+Last 30 days||Son 30 gün
+Last 7 days||Son 7 gün
+Less||Az
+Let's start with your first habit||İlk alışkanlığınla başlayalım
+Mark as done||Yapıldı olarak işaretle
+Mark habit||Alışkanlığı işaretle
+Missed||Kaçırıldı
+More||Çok
+More freedom for the habits that matter.||Önemli alışkanlıklar için daha fazla özgürlük.
+Move to archive||Arşive taşı
+Name||Ad
+New group||Yeni grup
+New habit||Yeni alışkanlık
+Next||İleri
+No group||Grup yok
+No habits||Alışkanlık yok
+No habits are planned for this day.||Bu gün için planlanmış alışkanlık yok.
+No habits today||Bugün alışkanlık yok
+No habits yet||Henüz alışkanlık yok
+Not set up||Ayarlanmadı
+Note||Not
+Notes||Notlar
+Nothing to count yet||Henüz sayılacak bir şey yok
+Notification||Bildirim
+Notifications||Bildirimler
+Notifications are turned off in iOS Settings, so reminders won't arrive.||Bildirimler iOS Ayarları'nda kapalı, bu yüzden hatırlatmalar gelmeyecek.
+Off||Kapalı
+On||Açık
+On weekdays||Hafta içi
+On weekends||Hafta sonu
+Once||Bir kez
+Once, %@||Bir kez, %@
+One notification at the chosen time.||Seçilen saatte tek bildirim.
+Open iOS Settings||iOS Ayarları'nı aç
+Order||Sıra
+Organization||Düzen
+Pro is active||Pro etkin
+Pro test mode||Pro test modu
+Reading||Okuma
+Remaining||Kalan
+Reminder||Hatırlatma
+Reminder again. Check it off when you're done.||Tekrar hatırlatıyorum. Bitirince işaretle.
+Rename||Yeniden adlandır
+Repeats||Tekrarlar
+Reset||Sıfırla
+Restore||Geri yükle
+Restore from archive||Arşivden geri al
+Save||Kaydet
+Schedule||Plan
+Scheduled notifications||Planlanan bildirimler
+Settings||Ayarlar
+Skip||Atla
+Skipped||Atlandı
+Some days||Bazı günler
+Start||Başlangıç
+Statistics||İstatistikler
+Statistics will appear once you start checking off habits.||Alışkanlıkları işaretlemeye başladığında istatistikler görünecek.
+Status||Durum
+Symbols||Semboller
+Sync and backup||Eşitleme ve yedekleme
+Tap a day to check it off. Press and hold to skip it or add a note.||İşaretlemek için bir güne dokun. Atlamak veya not eklemek için basılı tut.
+Tap the days when the habit should be done||Alışkanlığın yapılacağı günlere dokun
+The free version has up to 5 active habits.||Ücretsiz sürümde en fazla 5 etkin alışkanlık olabilir.
+There are no purchases yet: this switch turns Pro features on for testing.||Henüz satın alma yok: bu anahtar Pro özelliklerini test için açar.
+Time||Saat
+Time for your habit||Alışkanlık zamanı
+Time to rest||Dinlenme zamanı
+Today||Bugün
+Today's habits||Bugünün alışkanlıkları
+Today's progress and quick check-off right from the Home Screen.||Bugünün ilerlemesi ve Ana Ekran'dan hızlı işaretleme.
+Tomorrow||Yarın
+Total check-ins||Toplam işaretleme
+Uncheck||İşareti kaldır
+Undo skip||Atlamayı geri al
+Unknown||Bilinmiyor
+Unlimited habits||Sınırsız alışkanlık
+Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day.||Alışkanlık işaretlenene kadar hatırlatma tekrarlanır: %@. Bildirimdeki "Bitti" ve "Atla" o günün tekrarlarını durdurur.
+Version||Sürüm
+Walk||Yürüyüş
+Week||Hafta
+Weekdays||Hafta içi
+Weekends||Hafta sonu
+Yesterday||Dün
+Your own emoji from the keyboard||Klavyeden kendi emojin
+%lld of %lld done||%lld/%lld yapıldı
+%lld of %lld habits||%lld/%lld alışkanlık
+%lld min||%lld dk
+%lld of %lld||%lld/%lld
+of %lld||/ %lld
+from %@||%@ tarihinden
+until %@||%@ tarihine kadar
+%lld of %lld this week||Bu hafta %lld/%lld
+Afternoon||Öğleden sonra
+All||Tümü
+Allowed||İzin verildi
+Anytime||Herhangi bir zaman
+Backup||Yedek
+By time||Saate göre
+Couldn't read the file||Dosya okunamadı
+Count glasses of water, pages or minutes toward a goal.||Bir hedefe doğru bardak, sayfa veya dakika say.
+Current habits and history will be replaced with the data from the file.||Mevcut alışkanlıklar ve geçmiş, dosyadaki verilerle değiştirilecek.
+Daily goal||Günlük hedef
+Daily goals||Günlük hedefler
+Data imported||Veriler içe aktarıldı
+Day summary||Gün özeti
+Done habits at the bottom||Yapılanlar en altta
+During a pause the habit is hidden and sends no reminders, and your streak is kept.||Mola sırasında alışkanlık gizlenir ve hatırlatma göndermez, serin korunur.
+Evening||Akşam
+Evening summary||Akşam özeti
+Export data||Verileri dışa aktar
+For example, 8 glasses of water. Each tap on the circle adds one.||Örneğin 8 bardak su. Daireye her dokunuş bir ekler.
+Go to bed on time||Zamanında yat
+Goal||Hedef
+Habit Tracker Pro||Alışkanlık Takibi Pro
+Import||İçe aktar
+Import data||Verileri içe aktar
+Language||Dil
+Meditate||Meditasyon yap
+Minus one||Bir eksilt
+Morning||Sabah
+N times a week||Haftada N kez
+Not checked off yet: %@||Henüz işaretlenmedi: %@
+OK||Tamam
+Off in iPhone Settings||iPhone Ayarları'nda kapalı
+One notification listing the habits not checked off yet.||Henüz işaretlenmemiş alışkanlıkları listeleyen tek bildirim.
+Part of day||Günün bölümü
+Parts of day||Günün bölümleri
+Pause||Mola
+Paused until %@||%@ tarihine kadar molada
+Per week||Haftada
+Pick a template or create your own.||Bir şablon seç ya da kendininkini oluştur.
+Read||Oku
+Reminders||Hatırlatmalar
+Replace all data?||Tüm veriler değiştirilsin mi?
+Restart the app||Uygulamayı yeniden başlat
+Save a copy to Files or iCloud Drive. Importing replaces all current data.||Dosyalar'a veya iCloud Drive'a bir kopya kaydet. İçe aktarma mevcut tüm verilerin yerine geçer.
+System||Sistem
+Take a break for a trip or illness without losing your streak.||Seyahat veya hastalık için serini kaybetmeden mola ver.
+The new language will apply after you close the app and open it again.||Yeni dil, uygulamayı kapatıp yeniden açtıktan sonra uygulanacak.
+Today screen||Bugün ekranı
+Unit, for example glasses||Birim, örneğin bardak
+Until||Bitiş
+Workout||Antrenman
+glasses||bardak
+iPhone permission||iPhone izni
+Hide keyboard||Klavyeyi gizle
+7 perfect days in a row||Üst üste 7 kusursuz gün
+A week strong||Güçlü bir hafta
+A whole year||Koca bir yıl
+Achievements||Başarılar
+Achievements and rewards||Başarılar ve ödüller
+After habit||Şu alışkanlıktan sonra
+After: %@||Sonra: %@
+Avatars||Avatarlar
+Backgrounds||Arka planlar
+Better than nothing||Hiç yoktan iyidir
+Check off 10 habits after 10 pm||Saat 22'den sonra 10 alışkanlık işaretle
+Check off 10 habits before 8 am||Saat 8'den önce 10 alışkanlık işaretle
+Check off a habit for the first time||İlk kez bir alışkanlık işaretle
+Check off habits 100 times||Alışkanlıkları 100 kez işaretle
+Check off habits 1000 times||Alışkanlıkları 1000 kez işaretle
+Collector||Koleksiyoncu
+Come back after a miss 10 times||Kaçırdıktan sonra 10 kez geri dön
+Comeback||Geri dönüş
+Complete every habit in a day||Bir gündeki tüm alışkanlıkları tamamla
+Continue||Devam
+Create 5 habits||5 alışkanlık oluştur
+Diarist||Günlük yazarı
+Do the minimum version 10 times||Minimum sürümü 10 kez yap
+Early bird||Erkenci
+Earn achievements to unlock avatars and backgrounds, and level up with every check-in.||Avatar ve arka plan açmak için başarı kazan, her işaretlemeyle seviye atla.
+Exclusive avatars and backgrounds||Özel avatarlar ve arka planlar
+First step||İlk adım
+Freeze||Dondurma
+Freezes this month||Bu ayki dondurmalar
+Hard days and chains||Zor günler ve zincirler
+Hundred||Yüz
+Hundred check-ins||Yüz işaretleme
+Ice cold||Buz gibi
+Keep a 100-day streak||100 günlük seri yap
+Keep a 3-day streak||3 günlük seri yap
+Keep a 30-day streak||30 günlük seri yap
+Keep a 365-day streak||365 günlük seri yap
+Keep a 7-day streak||7 günlük seri yap
+Legend||Efsane
+Level %lld||Seviye %lld
+Let's go||Haydi
+Minimum||Minimum
+Minimum version, for example 5 squats||Minimum sürüm, örneğin 5 squat
+Misses are okay||Kaçırmak sorun değil
+Month of power||Güç ayı
+New achievement!||Yeni başarı!
+Next up in your chain||Zincirde sıradaki
+Night owl||Gece kuşu
+None||Yok
+Perfect day||Kusursuz gün
+Perfect week||Kusursuz hafta
+Profile||Profil
+Profile and achievements||Profil ve başarılar
+Reach a weekly goal 4 times||Haftalık hedefe 4 kez ulaş
+Resilient||Dayanıklı
+Return to a habit after a miss||Kaçırdıktan sonra alışkanlığa geri dön
+Save a streak with a freeze||Bir seriyi dondurmayla kurtar
+Show introduction||Tanıtımı göster
+Simple gestures||Basit hareketler
+Small steps every day||Her gün küçük adımlar
+The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it.||Minimum sürüm yapılmış sayılır ve serini korur. Zincirli alışkanlık, öncekini işaretlediğin anda sana hatırlatılır.
+Track habits, get gentle reminders and watch your streaks grow.||Alışkanlıklarını takip et, nazik hatırlatmalar al ve serilerinin büyüdüğünü izle.
+Two misses a month won't break your streak, and a minimum version still counts on hard days.||Ayda iki kaçırma serini bozmaz, zor günlerde minimum sürüm de sayılır.
+Unlock the full collection and Pro-only designs.||Tüm koleksiyonu ve Pro'ya özel tasarımları aç.
+Unlock: %@||Nasıl açılır: %@
+Warming up||Isınma
+Weekly hero||Haftanın kahramanı
+Write 10 notes||10 not yaz
+Nothing yet. Add a note by swiping a habit left on the Today screen or by pressing and holding a day in the calendar.||Henüz bir şey yok. Bugün ekranında bir alışkanlığı sola kaydırarak veya takvimde bir güne basılı tutarak not ekle.
+Report a bug||Hata bildir
+Suggest an idea||Fikir öner
+Other||Diğer
+Topic||Konu
+What happened and what did you expect?||Ne oldu ve ne bekliyordun?
+Tell us what you think||Ne düşündüğünü söyle
+Steps to reproduce help a lot. You can attach a screenshot in the email.||Tekrarlama adımları çok yardımcı olur. E-postaya ekran görüntüsü ekleyebilirsin.
+Include technical info||Teknik bilgileri ekle
+App version, iOS version, device model and language. Your habits and notes are never sent.||Uygulama sürümü, iOS sürümü, cihaz modeli ve dil. Alışkanlıkların ve notların asla gönderilmez.
+Send||Gönder
+Feedback||Geri bildirim
+No mail account||E-posta hesabı yok
+Copy address||Adresi kopyala
+Copy message||Mesajı kopyala
+Set up Mail on this iPhone or send your message to %@.||Bu iPhone'da Mail'i ayarla veya mesajını %@ adresine gönder.
+Write to the developer||Geliştiriciye yaz
+Rate the app||Uygulamayı değerlendir
+Found a bug or have an idea? Every message is read.||Hata mı buldun, fikrin mi var? Her mesaj okunur.
+Purchase failed||Satın alma başarısız
+Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings.||Satın almalar yalnızca App Store sürümünde çalışır. Bu sürümde Pro, test için Ayarlar'dan açılabilir.
+Buy||Satın al
+Subscribe||Abone ol
+Subscriptions renew automatically until cancelled. Cancel anytime in Settings, Apple Account, Subscriptions, at least 24 hours before the period ends.||Abonelikler iptal edilene kadar otomatik yenilenir. Dönem bitmeden en az 24 saat önce Ayarlar, Apple Hesabı, Abonelikler bölümünden istediğin zaman iptal et.
+Restore purchases||Satın alımları geri yükle
+Terms of Use||Kullanım Koşulları
+Privacy Policy||Gizlilik Politikası
+Free trial: %@||Ücretsiz deneme: %@
+Yearly||Yıllık
+Monthly||Aylık
+Forever||Ömür boyu
+%@ / year||%@ / yıl
+%@ / month||%@ / ay
+The purchase could not be verified.||Satın alma doğrulanamadı.
+No purchases found for this Apple Account.||Bu Apple Hesabı için satın alma bulunamadı.
+Habit Tracker||Alışkanlık Takibi
+Your photo||Fotoğrafın
+Two weeks||İki hafta
+Keep a 14-day streak||14 günlük seri yap
+Iron will||Demir irade
+Keep a 60-day streak||60 günlük seri yap
+Unstoppable||Durdurulamaz
+Keep a 200-day streak||200 günlük seri yap
+Fifty||Elli
+Check off habits 50 times||Alışkanlıkları 50 kez işaretle
+Half a thousand||Beş yüz
+Check off habits 500 times||Alışkanlıkları 500 kez işaretle
+Consistency||İstikrar
+Have 30 perfect days||30 kusursuz gün yaşa
+Perfect month||Kusursuz ay
+30 perfect days in a row||Üst üste 30 kusursuz gün
+Sunrise club||Gün doğumu kulübü
+Check off 50 habits before 8 am||Saat 8'den önce 50 alışkanlık işaretle
+Weekend warrior||Hafta sonu savaşçısı
+Check off 30 habits on weekends||Hafta sonları 30 alışkanlık işaretle
+Regular||Müdavim
+Check off habits on 30 different days||30 farklı günde alışkanlık işaretle
+Veteran||Kıdemli
+Check off habits on 365 different days||365 farklı günde alışkanlık işaretle
+Architect||Mimar
+Create 10 habits||10 alışkanlık oluştur
+Organizer||Düzenleyici
+Create 3 groups||3 grup oluştur
+On target||Tam isabet
+Reach a daily goal 20 times||Günlük hedefe 20 kez ulaş
+Chain reaction||Zincirleme tepki
+Complete a chained habit 10 times||Zincirli bir alışkanlığı 10 kez tamamla
+Chronicler||Tarihçi
+Write 50 notes||50 not yaz
+Reflective||Düşünceli
+Add a note to 20 completed habits||Tamamlanan 20 alışkanlığa not ekle
+Swipe a card right to check it off, left for more actions. Press and hold to reorder.||İşaretlemek için kartı sağa, diğer işlemler için sola kaydır. Sıralamak için basılı tut.
+Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder.||İşaretlemek için daireye dokun veya sağa kaydır. Atlamak, not eklemek veya düzenlemek için sola kaydır. Sıralamak için basılı tut.
+Number on the app icon||Uygulama simgesinde sayı
+Welcome to Habit Tracker||Alışkanlık Takibi'ne hoş geldin
+Egg||Yumurta
+Baby||Bebek
+Young||Genç
+Grown-up||Yetişkin
+Happy||Mutlu
+Waiting for you||Seni bekliyor
+Sad||Üzgün
+Misses you a lot||Seni çok özledi
+Sleeping||Uyuyor
+Cat||Kedi
+Dog||Köpek
+Chick||Civciv
+Bunny||Tavşan
+Turtle||Kaplumbağa
+Fox||Tilki
+Panda||Panda
+Owl||Baykuş
+Dragon||Ejderha
+Unicorn||Tek boynuzlu at
+Phoenix||Anka kuşu
+You're doing great!||Harika gidiyorsun!
+One more habit?||Bir alışkanlık daha?
+I believe in you!||Sana inanıyorum!
+Small steps add up.||Küçük adımlar birikir.
+Let's keep the streak going!||Seriyi sürdürelim!
+I'm proud of you!||Seninle gurur duyuyorum!
+Don't forget about me!||Beni unutma!
+Today is a good day.||Bugün güzel bir gün.
+Buddy||Dostum
+Get a pet||Bir evcil hayvan edin
+It grows with every habit you check off.||İşaretlediğin her alışkanlıkla büyür.
+Pet||Evcil hayvan
+Not enough sparks||Yeterli kıvılcım yok
+Check off habits to earn more.||Daha fazla kazanmak için alışkanlık işaretle.
+%lld more to %@||"%@" için %lld kaldı
+Your pet grows with every habit you check off and gets sad when you disappear for a few days.||Evcil hayvanın işaretlediğin her alışkanlıkla büyür, birkaç gün ortadan kaybolursan üzülür.
+Full for today||Bugünlük tok
+Feed||Besle
+Species||Tür
+Adopt a pet||Evcil hayvan sahiplen
+It hatches from an egg and grows with every habit you check off. Feed it with sparks and don't leave it alone for long.||Yumurtadan çıkar ve işaretlediğin her alışkanlıkla büyür. Onu kıvılcımlarla besle ve uzun süre yalnız bırakma.
+Adopt||Sahiplen
+More species are available for sparks and with Pro.||Kıvılcımla ve Pro ile daha fazla tür açılır.
+Buy for sparks?||Kıvılcımla satın alınsın mı?
+It costs %lld sparks. You have %lld.||Fiyatı %lld kıvılcım. Sende %lld var.
+It costs %lld sparks, you have %lld. Check off habits to earn more.||Fiyatı %lld kıvılcım, sende %lld var. Daha fazla kazanmak için alışkanlık işaretle.
+Sparks||Kıvılcımlar
+Earned in total: %lld||Toplam kazanılan: %lld
+Earned||Kazanılan
+Check-ins||İşaretlemeler
+Perfect days||Kusursuz günler
+Streaks||Seriler
+Comebacks||Geri dönüşler
+Pro gifts||Pro hediyeleri
+Extra freeze||Ek dondurma
+Feed your pet||Evcil hayvanını besle
+Spend||Harca
+Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile.||Bu ayki ek dondurmalar: %lld/%lld. Kıvılcımla alınan avatar ve arka planlar profilinde.
+1 spark for each check-in, up to %lld a day||Her işaretleme için 1 kıvılcım, günde en fazla %lld
++%lld for a perfect day||Kusursuz gün için +%lld
++%lld for every 7 days of a streak, +%lld for every 30||Serinin her 7 günü için +%lld, her 30 günü için +%lld
++%lld for coming back after a miss||Kaçırdıktan sonra dönmek için +%lld
++%lld for each achievement||Her başarı için +%lld
+Pro: +%lld every month and up to %lld a day||Pro: her ay +%lld ve günde en fazla %lld
+How to earn||Nasıl kazanılır
+Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back.||Yalnızca aynı gün veya ertesi gün yapılan işaretlemeler sayılır. İşareti kaldırmak kıvılcımı geri alır.
+Exclusive pets and more sparks||Özel evcil hayvanlar ve daha çok kıvılcım
+Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit.||Ejderha, tek boynuzlu at ve anka kuşu, her ay 100 kıvılcım hediye ve daha yüksek günlük sınır.
+Sparks and a pet||Kıvılcımlar ve evcil hayvan
+Earn sparks for check-ins, spend them in the shop and raise a pet that grows with your habits.||İşaretlemelerle kıvılcım kazan, mağazada harca ve alışkanlıklarınla büyüyen bir evcil hayvan yetiştir.
+No access to app data||Uygulama verilerine erişim yok
+Unlock your iPhone||iPhone'unun kilidini aç
+Reinstall the app and keep its extensions. Details are in Settings, Widget.||Uygulamayı uzantılarını koruyarak yeniden yükle. Ayrıntılar Ayarlar, Widget bölümünde.
+The widget will update after unlocking.||Widget kilit açıldıktan sonra güncellenecek.
+Your pet's mood and feeding right from the Home Screen.||Evcil hayvanının ruh hali ve beslenmesi Ana Ekran'da.
+Open the app to adopt one.||Sahiplenmek için uygulamayı aç.
+Feed pet||Evcil hayvanı besle
+Shared data||Paylaşılan veriler
+Available||Erişilebilir
+Not available||Erişilemiyor
+Last widget update||Son widget güncellemesi
+Never||Hiç
+Refresh widgets||Widget'ları yenile
+Widget||Widget
+If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked.||Paylaşılan veriler erişilebilir değilse widget alışkanlıklarını göremez. Uygulamayı SideStore ile yeniden yükle ve sorulduğunda uzantılarını koru.
+Added||Eklendi
+Break bad habits||Kötü alışkanlıkları bırak
+Breathing exercise||Nefes egzersizi
+Brush and floss||Diş fırçala ve diş ipi kullan
+Call family||Aileni ara
+Clear your inbox||Gelen kutusunu temizle
+Custom habit||Kendi alışkanlığın
+Cycling||Bisiklet
+Do a good deed||İyilik yap
+Draw||Resim çiz
+Eat vegetables and fruit||Sebze ve meyve ye
+Finance||Finans
+Fitness||Spor
+Focus for an hour||Bir saat odaklan
+Health||Sağlık
+I know it||Biliyorum
+In progress: %lld||Öğreniliyor: %lld
+Keep a journal||Günlük tut
+Language to learn||Öğrenilecek dil
+Languages||Diller
+Learn %@||%@ öğren
+Learn words||Kelime öğren
+Learned: %lld of %lld||Öğrenilen: %lld / %lld
+Learning||Öğrenme
+Less social media||Daha az sosyal medya
+Listen||Dinle
+Listen to a podcast||Podcast dinle
+Make the bed||Yatağını topla
+Message a friend||Bir arkadaşa yaz
+Mindfulness||Farkındalık
+More words||Daha fazla kelime
+Morning exercises||Sabah egzersizi
+New word||Yeni kelime
+New words a day||Günlük yeni kelime
+No alcohol||Alkol yok
+No fast food||Fast food yok
+No impulse purchases||Plansız alışveriş yok
+No phone before bed||Yatmadan önce telefon yok
+No smoking||Sigara yok
+No sweets||Tatlı yok
+Plan the day||Günü planla
+Practice an instrument||Enstrüman çal
+Productivity||Verimlilik
+Put money aside||Para biriktir
+Relationships||İlişkiler
+Review||Tekrar
+Skin care||Cilt bakımı
+Spend time outdoors||Dışarıda vakit geçir
+Still learning||Hâlâ öğreniyorum
+Stretch||Esneme
+Study for 30 minutes||30 dakika çalış
+Swimming||Yüzme
+Take vitamins||Vitamin al
+Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.||Bugünün kartlarını açmak için alışkanlığın dairesine dokun. Henüz bilmediğin kelimeler tekrar için geri gelir, günün kartları bitince alışkanlık kendiliğinden işaretlenir.
+Tap to see the translation||Çeviriyi görmek için dokun
+Tidy up for 10 minutes||10 dakika topla
+Track expenses||Harcamaları kaydet
+Wake up early||Erken kalk
+Walk 10,000 steps||10.000 adım yürü
+Weekly review||Haftalık değerlendirme
+Words||Kelimeler
+Words for today are done||Bugünün kelimeleri tamam
+Write down 3 good things||3 güzel şey yaz
+Yoga||Yoga
+You've gone through the whole dictionary||Tüm sözlüğü bitirdin
+Your own name, icon and schedule||Kendi adın, simgen ve planın
+times||kez
+%lld words||%lld kelime
+Run||Koşu
+Push-ups||Şınav
+%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them.||%@ fiyatı %lld kıvılcım, sende %lld var. %lld eksik. Kazanmak için alışkanlık işaretle.
+%@ costs %lld sparks. You have %lld.||%@ fiyatı %lld kıvılcım. Sende %lld var.
++1 spark every active day||Her aktif gün +1 kıvılcım
++2 sparks every active day||Her aktif gün +2 kıvılcım
++3 sparks every active day and +1 streak freeze a month||Her aktif gün +3 kıvılcım ve ayda +1 seri dondurma
++5 sparks every active day and +2 streak freezes a month||Her aktif gün +5 kıvılcım ve ayda +2 seri dondurma
+A grown pet brings up to +5 a day||Büyümüş evcil hayvan günde +5'e kadar getirir
+Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster.||Aktif gün: en az bir alışkanlık zamanında işaretlendi. Beslemek %lld XP verir, evcil hayvanın daha hızlı büyür.
+Avatar||Avatar
+Background||Arka plan
+Copied||Kopyalandı
+Copy message and address||Mesajı ve adresi kopyala
+Feeding||Besleme
+Hatches after a few check-ins||Birkaç işaretlemeden sonra yumurtadan çıkar
+Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@.||Bu iPhone'da Mail kurulu değil. Başka bir e-posta uygulaması aç ya da mesajı kopyalayıp %@ adresine gönder.
+Now||Şimdi
+Open mail app||E-posta uygulamasını aç
+Paste the message into any mail app and send it to %@.||Mesajı herhangi bir e-posta uygulamasına yapıştır ve %@ adresine gönder.
+Pet gifts||Evcil hayvan hediyeleri
+Profile section||Profil bölümü
+Send the message||Mesajı gönder
+Shows how many reminders came since you last opened the app.||Uygulamayı son açışından beri kaç hatırlatma geldiğini gösterir.
+What %@ gives you||%@ sana ne verir

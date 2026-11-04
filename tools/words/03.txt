@@ -1,0 +1,81 @@
+home|house|дом|das Haus|la maison|la casa|a casa|la casa|ev|dom|rumah|房子|家|집|घर
+home|apartment|квартира|die Wohnung|l'appartement|el piso|o apartamento|l'appartamento|daire|mieszkanie|apartemen|公寓|アパート|아파트|फ़्लैट
+home|room|комната|das Zimmer|la chambre|la habitación|o quarto|la stanza|oda|pokój|kamar|房间|部屋|방|कमरा
+home|kitchen|кухня|die Küche|la cuisine|la cocina|a cozinha|la cucina|mutfak|kuchnia|dapur|厨房|台所|부엌|रसोई
+home|bathroom|ванная|das Badezimmer|la salle de bains|el baño|o banheiro|il bagno|banyo|łazienka|kamar mandi|浴室|浴室|욕실|बाथरूम
+home|bedroom|спальня|das Schlafzimmer|la chambre à coucher|el dormitorio|o quarto de dormir|la camera da letto|yatak odası|sypialnia|kamar tidur|卧室|寝室|침실|शयनकक्ष
+home|door|дверь|die Tür|la porte|la puerta|a porta|la porta|kapı|drzwi|pintu|门|ドア|문|दरवाज़ा
+home|window|окно|das Fenster|la fenêtre|la ventana|a janela|la finestra|pencere|okno|jendela|窗户|窓|창문|खिड़की
+home|table|стол|der Tisch|la table|la mesa|a mesa|il tavolo|masa|stół|meja|桌子|テーブル|탁자|मेज़
+home|chair|стул|der Stuhl|la chaise|la silla|a cadeira|la sedia|sandalye|krzesło|kursi|椅子|椅子|의자|कुर्सी
+home|bed|кровать|das Bett|le lit|la cama|a cama|il letto|yatak|łóżko|tempat tidur|床|ベッド|침대|बिस्तर
+home|sofa|диван|das Sofa|le canapé|el sofá|o sofá|il divano|kanepe|kanapa|sofa|沙发|ソファ|소파|सोफ़ा
+home|lamp|лампа|die Lampe|la lampe|la lámpara|a lâmpada|la lampada|lamba|lampa|lampu|灯|ランプ|램프|लैंप
+home|key|ключ|der Schlüssel|la clé|la llave|a chave|la chiave|anahtar|klucz|kunci|钥匙|鍵|열쇠|चाबी
+home|floor|пол|der Boden|le sol|el suelo|o chão|il pavimento|zemin|podłoga|lantai|地板|床|바닥|फ़र्श
+home|wall|стена|die Wand|le mur|la pared|a parede|il muro|duvar|ściana|dinding|墙|壁|벽|दीवार
+home|roof|крыша|das Dach|le toit|el tejado|o telhado|il tetto|çatı|dach|atap|屋顶|屋根|지붕|छत
+home|garden|сад|der Garten|le jardin|el jardín|o jardim|il giardino|bahçe|ogród|kebun|花园|庭|정원|बग़ीचा
+home|mirror|зеркало|der Spiegel|le miroir|el espejo|o espelho|lo specchio|ayna|lustro|cermin|镜子|鏡|거울|आईना
+home|clock|часы|die Uhr|l'horloge|el reloj|o relógio|l'orologio|saat|zegar|jam|钟|時計|시계|घड़ी
+home|phone|телефон|das Telefon|le téléphone|el teléfono|o telefone|il telefono|telefon|telefon|telepon|电话|電話|전화|फ़ोन
+home|computer|компьютер|der Computer|l'ordinateur|el ordenador|o computador|il computer|bilgisayar|komputer|komputer|电脑|パソコン|컴퓨터|कंप्यूटर
+home|book|книга|das Buch|le livre|el libro|o livro|il libro|kitap|książka|buku|书|本|책|किताब
+home|picture|картина|das Bild|le tableau|el cuadro|o quadro|il quadro|resim|obraz|lukisan|画|絵|그림|चित्र
+home|towel|полотенце|das Handtuch|la serviette|la toalla|a toalha|l'asciugamano|havlu|ręcznik|handuk|毛巾|タオル|수건|तौलिया
+home|soap|мыло|die Seife|le savon|el jabón|o sabão|il sapone|sabun|mydło|sabun mandi|肥皂|石けん|비누|साबुन
+clothes|clothes|одежда|die Kleidung|les vêtements|la ropa|a roupa|i vestiti|kıyafet|ubrania|pakaian|衣服|服|옷|कपड़े
+clothes|shirt|рубашка|das Hemd|la chemise|la camisa|a camisa|la camicia|gömlek|koszula|kemeja|衬衫|シャツ|셔츠|क़मीज़
+clothes|T-shirt|футболка|das T-Shirt|le tee-shirt|la camiseta|a camiseta|la maglietta|tişört|koszulka|kaus|T恤|Tシャツ|티셔츠|टी-शर्ट
+clothes|trousers|брюки|die Hose|le pantalon|los pantalones|a calça|i pantaloni|pantolon|spodnie|celana|裤子|ズボン|바지|पैंट
+clothes|dress|платье|das Kleid|la robe|el vestido|o vestido|il vestito|elbise|sukienka|gaun|连衣裙|ワンピース|원피스|पोशाक
+clothes|skirt|юбка|der Rock|la jupe|la falda|a saia|la gonna|etek|spódnica|rok|裙子|スカート|치마|स्कर्ट
+clothes|jacket|куртка|die Jacke|la veste|la chaqueta|a jaqueta|la giacca|ceket|kurtka|jaket|夹克|ジャケット|재킷|जैकेट
+clothes|coat|пальто|der Mantel|le manteau|el abrigo|o casaco|il cappotto|palto|płaszcz|mantel|大衣|コート|코트|कोट
+clothes|shoes|обувь|die Schuhe|les chaussures|los zapatos|os sapatos|le scarpe|ayakkabı|buty|sepatu|鞋|靴|신발|जूते
+clothes|hat|шапка|der Hut|le chapeau|el sombrero|o chapéu|il cappello|şapka|czapka|topi|帽子|帽子|모자|टोपी
+clothes|socks|носки|die Socken|les chaussettes|los calcetines|as meias|i calzini|çorap|skarpetki|kaus kaki|袜子|靴下|양말|मोज़े
+clothes|bag|сумка|die Tasche|le sac|el bolso|a bolsa|la borsa|çanta|torba|tas|包|かばん|가방|थैला
+clothes|glasses|очки|die Brille|les lunettes|las gafas|os óculos|gli occhiali|gözlük|okulary|kacamata|眼镜|眼鏡|안경|चश्मा
+clothes|watch|наручные часы|die Armbanduhr|la montre|el reloj de pulsera|o relógio de pulso|l'orologio da polso|kol saati|zegarek|jam tangan|手表|腕時計|손목시계|कलाई घड़ी
+clothes|ring|кольцо|der Ring|la bague|el anillo|o anel|l'anello|yüzük|pierścionek|cincin|戒指|指輪|반지|अँगूठी
+clothes|umbrella|зонт|der Regenschirm|le parapluie|el paraguas|o guarda-chuva|l'ombrello|şemsiye|parasol|payung|雨伞|傘|우산|छाता
+city|city|город|die Stadt|la ville|la ciudad|a cidade|la città|şehir|miasto|kota|城市|都市|도시|शहर
+city|street|улица|die Straße|la rue|la calle|a rua|la strada|sokak|ulica|jalan|街道|通り|거리|सड़क
+city|shop|магазин|das Geschäft|le magasin|la tienda|a loja|il negozio|dükkan|sklep|toko|商店|店|가게|दुकान
+city|market|рынок|der Markt|le marché|el mercado|o mercado|il mercato|pazar|targ|pasar|市场|市場|시장|बाज़ार
+city|bank|банк|die Bank|la banque|el banco|o banco|la banca|banka|bank|bank|银行|銀行|은행|बैंक
+city|hospital|больница|das Krankenhaus|l'hôpital|el hospital|o hospital|l'ospedale|hastane|szpital|rumah sakit|医院|病院|병원|अस्पताल
+city|pharmacy|аптека|die Apotheke|la pharmacie|la farmacia|a farmácia|la farmacia|eczane|apteka|apotek|药店|薬局|약국|दवाख़ाना
+city|school|школа|die Schule|l'école|la escuela|a escola|la scuola|okul|szkoła|sekolah|学校|学校|학교|स्कूल
+city|park|парк|der Park|le parc|el parque|o parque|il parco|park|park|taman|公园|公園|공원|पार्क
+city|museum|музей|das Museum|le musée|el museo|o museu|il museo|müze|muzeum|museum|博物馆|博物館|박물관|संग्रहालय
+city|library|библиотека|die Bibliothek|la bibliothèque|la biblioteca|a biblioteca|la biblioteca|kütüphane|biblioteka|perpustakaan|图书馆|図書館|도서관|पुस्तकालय
+city|church|церковь|die Kirche|l'église|la iglesia|a igreja|la chiesa|kilise|kościół|gereja|教堂|教会|교회|गिरजाघर
+city|hotel|гостиница|das Hotel|l'hôtel|el hotel|o hotel|l'albergo|otel|hotel|hotel|酒店|ホテル|호텔|होटल
+city|post office|почта|die Post|la poste|la oficina de correos|os correios|l'ufficio postale|postane|poczta|kantor pos|邮局|郵便局|우체국|डाकघर
+city|police|полиция|die Polizei|la police|la policía|a polícia|la polizia|polis|policja|polisi|警察|警察|경찰|पुलिस
+city|bridge|мост|die Brücke|le pont|el puente|a ponte|il ponte|köprü|most|jembatan|桥|橋|다리 (건축)|पुल
+city|square|площадь|der Platz|la place|la plaza|a praça|la piazza|meydan|plac|alun-alun|广场|広場|광장|चौक
+city|building|здание|das Gebäude|le bâtiment|el edificio|o prédio|l'edificio|bina|budynek|gedung|建筑|建物|건물|इमारत
+city|office|офис|das Büro|le bureau|la oficina|o escritório|l'ufficio|ofis|biuro|kantor|办公室|事務所|사무실|दफ़्तर
+city|cinema|кинотеатр|das Kino|le cinéma|el cine|o cinema|il cinema|sinema|kino|bioskop|电影院|映画館|영화관|सिनेमाघर
+city|theater|театр|das Theater|le théâtre|el teatro|o teatro|il teatro|tiyatro|teatr|teater|剧院|劇場|극장|रंगमंच
+city|airport|аэропорт|der Flughafen|l'aéroport|el aeropuerto|o aeroporto|l'aeroporto|havalimanı|lotnisko|bandara|机场|空港|공항|हवाई अड्डा
+city|station|вокзал|der Bahnhof|la gare|la estación|a estação|la stazione|istasyon|dworzec|stasiun|车站|駅|역|स्टेशन
+city|money|деньги|das Geld|l'argent|el dinero|o dinheiro|i soldi|para|pieniądze|uang|钱|お金|돈|पैसा
+city|price|цена|der Preis|le prix|el precio|o preço|il prezzo|fiyat|cena|harga|价格|値段|가격|दाम
+transport|car|машина|das Auto|la voiture|el coche|o carro|la macchina|araba|samochód|mobil|汽车|車|자동차|गाड़ी
+transport|bus|автобус|der Bus|le bus|el autobús|o ônibus|l'autobus|otobüs|autobus|bus|公交车|バス|버스|बस
+transport|train|поезд|der Zug|le train|el tren|o trem|il treno|tren|pociąg|kereta|火车|電車|기차|ट्रेन
+transport|plane|самолёт|das Flugzeug|l'avion|el avión|o avião|l'aereo|uçak|samolot|pesawat|飞机|飛行機|비행기|हवाई जहाज़
+transport|bicycle|велосипед|das Fahrrad|le vélo|la bicicleta|a bicicleta|la bicicletta|bisiklet|rower|sepeda|自行车|自転車|자전거|साइकिल
+transport|ship|корабль|das Schiff|le bateau|el barco|o navio|la nave|gemi|statek|kapal|船|船|배 (선박)|जहाज़
+transport|taxi|такси|das Taxi|le taxi|el taxi|o táxi|il taxi|taksi|taksówka|taksi|出租车|タクシー|택시|टैक्सी
+transport|metro|метро|die U-Bahn|le métro|el metro|o metrô|la metropolitana|metro|metro|kereta bawah tanah|地铁|地下鉄|지하철|मेट्रो
+transport|ticket|билет|die Fahrkarte|le billet|el billete|a passagem|il biglietto|bilet|bilet|tiket|票|切符|표|टिकट
+transport|road|дорога|der Weg|la route|la carretera|a estrada|la strada|yol|droga|jalan raya|路|道|길|रास्ता
+transport|map|карта|die Karte|la carte|el mapa|o mapa|la mappa|harita|mapa|peta|地图|地図|지도|नक्शा
+transport|left|налево|links|à gauche|a la izquierda|à esquerda|a sinistra|sola|w lewo|ke kiri|左边|左|왼쪽|बाएँ
+transport|right|направо|rechts|à droite|a la derecha|à direita|a destra|sağa|w prawo|ke kanan|右边|右|오른쪽|दाएँ
+transport|straight ahead|прямо|geradeaus|tout droit|todo recto|em frente|dritto|düz|prosto|lurus|直走|まっすぐ|똑바로|सीधे

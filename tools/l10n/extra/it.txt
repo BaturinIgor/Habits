@@ -1,0 +1,537 @@
+Active||Attivo
+Activity over %lld weeks||Attività nelle ultime %lld settimane
+Add a habit, pick days and a time, and I'll remind you.||Aggiungi un'abitudine, scegli i giorni e l'ora, e te la ricorderò.
+Add habit||Aggiungi abitudine
+Add note||Aggiungi nota
+All data is stored only on this iPhone.||Tutti i dati restano solo su questo iPhone.
+All done||Tutto fatto
+All done!||Tutto fatto!
+Allow notifications||Consenti notifiche
+An archived habit is hidden from the Today screen and sends no notifications, but its history is kept.||Un'abitudine archiviata non compare nella schermata Oggi e non invia notifiche, ma la sua cronologia resta.
+And %lld more||E altre %lld
+Appearance||Aspetto
+Archive||Archivia
+Archive (%lld)||Archivio (%lld)
+Archived||Archiviata
+Best current streak||Miglior serie attuale
+Best streak||Serie migliore
+By habit||Per abitudine
+Cancel||Annulla
+Choose how many times and how often each reminder repeats.||Scegli quante volte e ogni quanto si ripete ogni promemoria.
+Close||Chiudi
+Completed||Completata
+Completion||Completamento
+Create||Crea
+Create your first one and it will appear here.||Crea la prima e comparirà qui.
+Current streak||Serie attuale
+Custom reminder repeats||Ripetizioni personalizzate
+Custom repeats||Ripetizioni proprie
+Date||Data
+Day||Giorno
+Days: %@||Giorni: %@
+Delete||Elimina
+Delete habit||Elimina abitudine
+Delete habit?||Eliminare l'abitudine?
+Description or motivation (optional)||Descrizione o motivazione (facoltativa)
+Done||Fine
+Drink water||Bere acqua
+Edit||Modifica
+Edit habit||Modifica abitudine
+Edit note||Modifica nota
+Emoji||Emoji
+End||Fine
+End date||Data di fine
+Ended||Terminata
+Every day||Ogni giorno
+Family||Famiglia
+Free day||Giorno libero
+Free day today||Oggi è un giorno libero
+Free version||Versione gratuita
+Great job, keep it up||Ottimo lavoro, continua così
+Group||Gruppo
+Groups||Gruppi
+Groups help sort habits by topic: morning, health, work.||I gruppi aiutano a ordinare le abitudini per tema: mattina, salute, lavoro.
+Habit||Abitudine
+Habit deleted||Abitudine eliminata
+Habit name||Nome dell'abitudine
+Habit order||Ordine delle abitudini
+Habit progress||Progressi delle abitudini
+Habits||Abitudini
+Habits Pro||Abitudini Pro
+Habits %lld/%lld||Abitudini %lld/%lld
+Habits with reminders are sorted by time. The rest come after them and can be dragged.||Le abitudini con promemoria sono ordinate per ora. Le altre vengono dopo e si possono trascinare.
+How many habits are done today.||Quante abitudini sono state fatte oggi.
+How often||Frequenza
+Icon||Icona
+If not checked off: %@. Done in the notification stops the repeats.||Se non la segni: %@. "Fatto" nella notifica ferma le ripetizioni.
+Interval||Intervallo
+Its check-in history will be deleted too.||Verrà eliminata anche la cronologia.
+Its check-in history will be deleted too. To keep the history, archive the habit instead.||Verrà eliminata anche la cronologia. Per conservarla, archivia l'abitudine.
+Last 12 weeks||Ultime 12 settimane
+Last 30 days||Ultimi 30 giorni
+Last 7 days||Ultimi 7 giorni
+Less||Meno
+Let's start with your first habit||Iniziamo dalla tua prima abitudine
+Mark as done||Segna come fatta
+Mark habit||Segna abitudine
+Missed||Saltata
+More||Di più
+More freedom for the habits that matter.||Più libertà per le abitudini che contano.
+Move to archive||Sposta in archivio
+Name||Nome
+New group||Nuovo gruppo
+New habit||Nuova abitudine
+Next||Avanti
+No group||Nessun gruppo
+No habits||Nessuna abitudine
+No habits are planned for this day.||Nessuna abitudine prevista per questo giorno.
+No habits today||Nessuna abitudine oggi
+No habits yet||Ancora nessuna abitudine
+Not set up||Non configurate
+Note||Nota
+Notes||Note
+Nothing to count yet||Ancora niente da contare
+Notification||Notifica
+Notifications||Notifiche
+Notifications are turned off in iOS Settings, so reminders won't arrive.||Le notifiche sono disattivate nelle Impostazioni di iOS, quindi i promemoria non arriveranno.
+Off||No
+On||Sì
+On weekdays||Nei giorni feriali
+On weekends||Nel fine settimana
+Once||Una volta
+Once, %@||Una volta, %@
+One notification at the chosen time.||Una notifica all'ora scelta.
+Open iOS Settings||Apri Impostazioni di iOS
+Order||Ordine
+Organization||Organizzazione
+Pro is active||Pro è attivo
+Pro test mode||Modalità test Pro
+Reading||Lettura
+Remaining||Rimanenti
+Reminder||Promemoria
+Reminder again. Check it off when you're done.||Te lo ricordo di nuovo. Segnala quando hai finito.
+Rename||Rinomina
+Repeats||Ripetizioni
+Reset||Ripristina
+Restore||Ripristina
+Restore from archive||Ripristina dall'archivio
+Save||Salva
+Schedule||Programma
+Scheduled notifications||Notifiche programmate
+Settings||Impostazioni
+Skip||Salta
+Skipped||Saltata
+Some days||Alcuni giorni
+Start||Inizio
+Statistics||Statistiche
+Statistics will appear once you start checking off habits.||Le statistiche compariranno quando inizierai a segnare le abitudini.
+Status||Stato
+Symbols||Simboli
+Sync and backup||Sincronizzazione e backup
+Tap a day to check it off. Press and hold to skip it or add a note.||Tocca un giorno per segnarlo. Tieni premuto per saltarlo o aggiungere una nota.
+Tap the days when the habit should be done||Tocca i giorni in cui fare l'abitudine
+The free version has up to 5 active habits.||La versione gratuita ha fino a 5 abitudini attive.
+There are no purchases yet: this switch turns Pro features on for testing.||Non ci sono ancora acquisti: questo interruttore attiva le funzioni Pro per i test.
+Time||Ora
+Time for your habit||È l'ora della tua abitudine
+Time to rest||Tempo di riposo
+Today||Oggi
+Today's habits||Abitudini di oggi
+Today's progress and quick check-off right from the Home Screen.||I progressi di oggi e la spunta rapida direttamente dalla schermata Home.
+Tomorrow||Domani
+Total check-ins||Spunte totali
+Uncheck||Togli spunta
+Undo skip||Annulla salto
+Unknown||Sconosciuto
+Unlimited habits||Abitudini illimitate
+Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day.||Finché l'abitudine non è segnata, il promemoria si ripete: %@. "Fatto" e "Salta" nella notifica fermano le ripetizioni per quel giorno.
+Version||Versione
+Walk||Camminare
+Week||Settimana
+Weekdays||Feriali
+Weekends||Weekend
+Yesterday||Ieri
+Your own emoji from the keyboard||La tua emoji dalla tastiera
+%lld of %lld done||%lld di %lld fatte
+%lld of %lld habits||%lld di %lld abitudini
+%lld min||%lld min
+%lld of %lld||%lld di %lld
+of %lld||di %lld
+from %@||dal %@
+until %@||fino al %@
+%lld of %lld this week||%lld di %lld questa settimana
+Afternoon||Pomeriggio
+All||Tutte
+Allowed||Consentite
+Anytime||In qualsiasi momento
+Backup||Backup
+By time||Per ora
+Couldn't read the file||Impossibile leggere il file
+Count glasses of water, pages or minutes toward a goal.||Conta bicchieri d'acqua, pagine o minuti verso un obiettivo.
+Current habits and history will be replaced with the data from the file.||Le abitudini e la cronologia attuali saranno sostituite dai dati del file.
+Daily goal||Obiettivo giornaliero
+Daily goals||Obiettivi giornalieri
+Data imported||Dati importati
+Day summary||Riepilogo del giorno
+Done habits at the bottom||Abitudini fatte in fondo
+During a pause the habit is hidden and sends no reminders, and your streak is kept.||Durante la pausa l'abitudine è nascosta e non invia promemoria, e la serie resta.
+Evening||Sera
+Evening summary||Riepilogo serale
+Export data||Esporta dati
+For example, 8 glasses of water. Each tap on the circle adds one.||Per esempio, 8 bicchieri d'acqua. Ogni tocco sul cerchio aggiunge uno.
+Go to bed on time||Andare a letto in orario
+Goal||Obiettivo
+Habit Tracker Pro||Tracker di Abitudini Pro
+Import||Importa
+Import data||Importa dati
+Language||Lingua
+Meditate||Meditare
+Minus one||Meno uno
+Morning||Mattina
+N times a week||N volte a settimana
+Not checked off yet: %@||Non ancora segnate: %@
+OK||OK
+Off in iPhone Settings||Disattivate nelle Impostazioni
+One notification listing the habits not checked off yet.||Una notifica con le abitudini non ancora segnate.
+Part of day||Parte del giorno
+Parts of day||Parti del giorno
+Pause||Pausa
+Paused until %@||In pausa fino al %@
+Per week||A settimana
+Pick a template or create your own.||Scegli un modello o creane uno tuo.
+Read||Leggere
+Reminders||Promemoria
+Replace all data?||Sostituire tutti i dati?
+Restart the app||Riavvia l'app
+Save a copy to Files or iCloud Drive. Importing replaces all current data.||Salva una copia in File o su iCloud Drive. L'importazione sostituisce tutti i dati attuali.
+System||Sistema
+Take a break for a trip or illness without losing your streak.||Prenditi una pausa per un viaggio o una malattia senza perdere la serie.
+The new language will apply after you close the app and open it again.||La nuova lingua verrà applicata dopo aver chiuso e riaperto l'app.
+Today screen||Schermata Oggi
+Unit, for example glasses||Unità, per esempio bicchieri
+Until||Fino al
+Workout||Allenamento
+glasses||bicchieri
+iPhone permission||Permesso di iPhone
+Hide keyboard||Nascondi tastiera
+7 perfect days in a row||7 giorni perfetti di fila
+A week strong||Una settimana di fila
+A whole year||Un anno intero
+Achievements||Traguardi
+Achievements and rewards||Traguardi e premi
+After habit||Dopo l'abitudine
+After: %@||Dopo: %@
+Avatars||Avatar
+Backgrounds||Sfondi
+Better than nothing||Meglio di niente
+Check off 10 habits after 10 pm||Segna 10 abitudini dopo le 22
+Check off 10 habits before 8 am||Segna 10 abitudini prima delle 8
+Check off a habit for the first time||Segna un'abitudine per la prima volta
+Check off habits 100 times||Segna abitudini 100 volte
+Check off habits 1000 times||Segna abitudini 1000 volte
+Collector||Collezionista
+Come back after a miss 10 times||Riprendi dopo un salto 10 volte
+Comeback||Ritorno
+Complete every habit in a day||Completa tutte le abitudini di un giorno
+Continue||Continua
+Create 5 habits||Crea 5 abitudini
+Diarist||Diarista
+Do the minimum version 10 times||Fai la versione minima 10 volte
+Early bird||Mattiniero
+Earn achievements to unlock avatars and backgrounds, and level up with every check-in.||Ottieni traguardi per sbloccare avatar e sfondi, e sali di livello a ogni spunta.
+Exclusive avatars and backgrounds||Avatar e sfondi esclusivi
+First step||Primo passo
+Freeze||Congelamento
+Freezes this month||Congelamenti questo mese
+Hard days and chains||Giorni difficili e catene
+Hundred||Cento
+Hundred check-ins||Cento spunte
+Ice cold||A sangue freddo
+Keep a 100-day streak||Mantieni una serie di 100 giorni
+Keep a 3-day streak||Mantieni una serie di 3 giorni
+Keep a 30-day streak||Mantieni una serie di 30 giorni
+Keep a 365-day streak||Mantieni una serie di 365 giorni
+Keep a 7-day streak||Mantieni una serie di 7 giorni
+Legend||Leggenda
+Level %lld||Livello %lld
+Let's go||Andiamo
+Minimum||Minimo
+Minimum version, for example 5 squats||Versione minima, per esempio 5 squat
+Misses are okay||Saltare va bene
+Month of power||Mese di forza
+New achievement!||Nuovo traguardo!
+Next up in your chain||Il prossimo della catena
+Night owl||Nottambulo
+None||Nessuna
+Perfect day||Giorno perfetto
+Perfect week||Settimana perfetta
+Profile||Profilo
+Profile and achievements||Profilo e traguardi
+Reach a weekly goal 4 times||Raggiungi un obiettivo settimanale 4 volte
+Resilient||Resiliente
+Return to a habit after a miss||Riprendi un'abitudine dopo un salto
+Save a streak with a freeze||Salva una serie con un congelamento
+Show introduction||Mostra introduzione
+Simple gestures||Gesti semplici
+Small steps every day||Piccoli passi ogni giorno
+The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it.||La versione minima conta come fatta e mantiene la serie. Un'abitudine in catena te la ricorda subito dopo aver segnato quella precedente.
+Track habits, get gentle reminders and watch your streaks grow.||Segui le abitudini, ricevi promemoria gentili e guarda crescere le tue serie.
+Two misses a month won't break your streak, and a minimum version still counts on hard days.||Due salti al mese non interrompono la serie, e nei giorni difficili conta anche la versione minima.
+Unlock the full collection and Pro-only designs.||Sblocca l'intera collezione e i design esclusivi Pro.
+Unlock: %@||Come sbloccare: %@
+Warming up||Riscaldamento
+Weekly hero||Eroe della settimana
+Write 10 notes||Scrivi 10 note
+Nothing yet. Add a note by swiping a habit left on the Today screen or by pressing and holding a day in the calendar.||Ancora niente. Aggiungi una nota scorrendo un'abitudine a sinistra nella schermata Oggi o tenendo premuto un giorno nel calendario.
+Report a bug||Segnala un errore
+Suggest an idea||Suggerisci un'idea
+Other||Altro
+Topic||Argomento
+What happened and what did you expect?||Cosa è successo e cosa ti aspettavi?
+Tell us what you think||Dicci cosa ne pensi
+Steps to reproduce help a lot. You can attach a screenshot in the email.||I passaggi per riprodurre aiutano molto. Puoi allegare uno screenshot nell'email.
+Include technical info||Includi info tecniche
+App version, iOS version, device model and language. Your habits and notes are never sent.||Versione dell'app, versione di iOS, modello del dispositivo e lingua. Le tue abitudini e note non vengono mai inviate.
+Send||Invia
+Feedback||Feedback
+No mail account||Nessun account email
+Copy address||Copia indirizzo
+Copy message||Copia messaggio
+Set up Mail on this iPhone or send your message to %@.||Configura Mail su questo iPhone o invia il messaggio a %@.
+Write to the developer||Scrivi allo sviluppatore
+Rate the app||Valuta l'app
+Found a bug or have an idea? Every message is read.||Hai trovato un errore o hai un'idea? Ogni messaggio viene letto.
+Purchase failed||Acquisto non riuscito
+Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings.||Gli acquisti funzionano solo nella versione dell'App Store. In questa build, Pro si può attivare per i test nelle Impostazioni.
+Buy||Acquista
+Subscribe||Abbonati
+Subscriptions renew automatically until cancelled. Cancel anytime in Settings, Apple Account, Subscriptions, at least 24 hours before the period ends.||Gli abbonamenti si rinnovano automaticamente fino alla disdetta. Disdici quando vuoi in Impostazioni, Account Apple, Abbonamenti, almeno 24 ore prima della fine del periodo.
+Restore purchases||Ripristina acquisti
+Terms of Use||Condizioni d'uso
+Privacy Policy||Informativa sulla privacy
+Free trial: %@||Prova gratuita: %@
+Yearly||Annuale
+Monthly||Mensile
+Forever||Per sempre
+%@ / year||%@ / anno
+%@ / month||%@ / mese
+The purchase could not be verified.||Impossibile verificare l'acquisto.
+No purchases found for this Apple Account.||Nessun acquisto trovato per questo Account Apple.
+Habit Tracker||Tracker di Abitudini
+Your photo||La tua foto
+Two weeks||Due settimane
+Keep a 14-day streak||Mantieni una serie di 14 giorni
+Iron will||Volontà di ferro
+Keep a 60-day streak||Mantieni una serie di 60 giorni
+Unstoppable||Inarrestabile
+Keep a 200-day streak||Mantieni una serie di 200 giorni
+Fifty||Cinquanta
+Check off habits 50 times||Segna abitudini 50 volte
+Half a thousand||Mezzo migliaio
+Check off habits 500 times||Segna abitudini 500 volte
+Consistency||Costanza
+Have 30 perfect days||Fai 30 giorni perfetti
+Perfect month||Mese perfetto
+30 perfect days in a row||30 giorni perfetti di fila
+Sunrise club||Club dell'alba
+Check off 50 habits before 8 am||Segna 50 abitudini prima delle 8
+Weekend warrior||Guerriero del weekend
+Check off 30 habits on weekends||Segna 30 abitudini nel weekend
+Regular||Habitué
+Check off habits on 30 different days||Segna abitudini in 30 giorni diversi
+Veteran||Veterano
+Check off habits on 365 different days||Segna abitudini in 365 giorni diversi
+Architect||Architetto
+Create 10 habits||Crea 10 abitudini
+Organizer||Organizzatore
+Create 3 groups||Crea 3 gruppi
+On target||Centrato
+Reach a daily goal 20 times||Raggiungi un obiettivo giornaliero 20 volte
+Chain reaction||Reazione a catena
+Complete a chained habit 10 times||Completa un'abitudine in catena 10 volte
+Chronicler||Cronista
+Write 50 notes||Scrivi 50 note
+Reflective||Riflessivo
+Add a note to 20 completed habits||Aggiungi una nota a 20 abitudini completate
+Swipe a card right to check it off, left for more actions. Press and hold to reorder.||Scorri una scheda a destra per segnarla, a sinistra per altre azioni. Tieni premuto per riordinare.
+Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder.||Tocca il cerchio o scorri a destra per segnare. Scorri a sinistra per saltare, aggiungere una nota o modificare. Tieni premuto per riordinare.
+Number on the app icon||Numero sull'icona dell'app
+Welcome to Habit Tracker||Benvenuto in Tracker di Abitudini
+Egg||Uovo
+Baby||Cucciolo
+Young||Giovane
+Grown-up||Adulto
+Happy||Felice
+Waiting for you||Ti aspetta
+Sad||Triste
+Misses you a lot||Gli manchi tanto
+Sleeping||Dorme
+Cat||Gatto
+Dog||Cane
+Chick||Pulcino
+Bunny||Coniglietto
+Turtle||Tartaruga
+Fox||Volpe
+Panda||Panda
+Owl||Gufo
+Dragon||Drago
+Unicorn||Unicorno
+Phoenix||Fenice
+You're doing great!||Stai andando alla grande!
+One more habit?||Un'altra abitudine?
+I believe in you!||Credo in te!
+Small steps add up.||I piccoli passi si sommano.
+Let's keep the streak going!||Teniamo viva la serie!
+I'm proud of you!||Sono fiero di te!
+Don't forget about me!||Non dimenticarti di me!
+Today is a good day.||Oggi è una bella giornata.
+Buddy||Amico
+Get a pet||Prendi un cucciolo
+It grows with every habit you check off.||Cresce con ogni abitudine che segni.
+Pet||Cucciolo
+Not enough sparks||Scintille insufficienti
+Check off habits to earn more.||Segna abitudini per guadagnarne altre.
+%lld more to %@||Ancora %lld per "%@"
+Your pet grows with every habit you check off and gets sad when you disappear for a few days.||Il tuo cucciolo cresce con ogni abitudine segnata e si intristisce se sparisci per qualche giorno.
+Full for today||Sazio per oggi
+Feed||Nutri
+Species||Specie
+Adopt a pet||Adotta un cucciolo
+It hatches from an egg and grows with every habit you check off. Feed it with sparks and don't leave it alone for long.||Nasce da un uovo e cresce con ogni abitudine che segni. Nutrilo con le scintille e non lasciarlo solo a lungo.
+Adopt||Adotta
+More species are available for sparks and with Pro.||Altre specie sono disponibili con le scintille e con Pro.
+Buy for sparks?||Comprare con le scintille?
+It costs %lld sparks. You have %lld.||Costa %lld scintille. Ne hai %lld.
+It costs %lld sparks, you have %lld. Check off habits to earn more.||Costa %lld scintille, ne hai %lld. Segna abitudini per guadagnarne altre.
+Sparks||Scintille
+Earned in total: %lld||Guadagnate in totale: %lld
+Earned||Guadagnate
+Check-ins||Spunte
+Perfect days||Giorni perfetti
+Streaks||Serie
+Comebacks||Ritorni
+Pro gifts||Regali Pro
+Extra freeze||Congelamento extra
+Feed your pet||Nutri il cucciolo
+Spend||Spendi
+Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile.||Congelamenti extra questo mese: %lld/%lld. Avatar e sfondi con le scintille sono nel tuo profilo.
+1 spark for each check-in, up to %lld a day||1 scintilla per ogni spunta, fino a %lld al giorno
++%lld for a perfect day||+%lld per un giorno perfetto
++%lld for every 7 days of a streak, +%lld for every 30||+%lld ogni 7 giorni di serie, +%lld ogni 30
++%lld for coming back after a miss||+%lld per essere tornato dopo un salto
++%lld for each achievement||+%lld per ogni traguardo
+Pro: +%lld every month and up to %lld a day||Pro: +%lld ogni mese e fino a %lld al giorno
+How to earn||Come guadagnare
+Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back.||Contano solo le spunte fatte lo stesso giorno o quello dopo. Togliere la spunta riprende la scintilla.
+Exclusive pets and more sparks||Cuccioli esclusivi e più scintille
+Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit.||Drago, unicorno e fenice, un regalo mensile di 100 scintille e un limite giornaliero più alto.
+Sparks and a pet||Scintille e un cucciolo
+Earn sparks for check-ins, spend them in the shop and raise a pet that grows with your habits.||Guadagna scintille con le spunte, spendile nel negozio e cresci un cucciolo che cresce con le tue abitudini.
+No access to app data||Nessun accesso ai dati dell'app
+Unlock your iPhone||Sblocca l'iPhone
+Reinstall the app and keep its extensions. Details are in Settings, Widget.||Reinstalla l'app mantenendo le estensioni. Dettagli in Impostazioni, Widget.
+The widget will update after unlocking.||Il widget si aggiornerà dopo lo sblocco.
+Your pet's mood and feeding right from the Home Screen.||L'umore del tuo cucciolo e il cibo direttamente dalla schermata Home.
+Open the app to adopt one.||Apri l'app per adottarne uno.
+Feed pet||Nutri il cucciolo
+Shared data||Dati condivisi
+Available||Disponibili
+Not available||Non disponibili
+Last widget update||Ultimo aggiornamento del widget
+Never||Mai
+Refresh widgets||Aggiorna i widget
+Widget||Widget
+If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked.||Se i dati condivisi non sono disponibili, il widget non vede le tue abitudini. Reinstalla l'app tramite SideStore e mantieni le estensioni quando richiesto.
+Added||Aggiunta
+Break bad habits||Smettere le cattive abitudini
+Breathing exercise||Esercizio di respirazione
+Brush and floss||Denti e filo interdentale
+Call family||Chiamare la famiglia
+Clear your inbox||Svuotare la posta in arrivo
+Custom habit||Abitudine personale
+Cycling||Bicicletta
+Do a good deed||Fare una buona azione
+Draw||Disegnare
+Eat vegetables and fruit||Mangiare frutta e verdura
+Finance||Finanze
+Fitness||Sport
+Focus for an hour||Un'ora di concentrazione
+Health||Salute
+I know it||Lo so
+In progress: %lld||In corso: %lld
+Keep a journal||Tenere un diario
+Language to learn||Lingua da imparare
+Languages||Lingue
+Learn %@||Studiare %@
+Learn words||Imparare parole
+Learned: %lld of %lld||Imparate: %lld su %lld
+Learning||Apprendimento
+Less social media||Meno social
+Listen||Ascolta
+Listen to a podcast||Ascoltare un podcast
+Make the bed||Rifare il letto
+Message a friend||Scrivere a un amico
+Mindfulness||Consapevolezza
+More words||Altre parole
+Morning exercises||Ginnastica mattutina
+New word||Parola nuova
+New words a day||Parole nuove al giorno
+No alcohol||Niente alcol
+No fast food||Niente fast food
+No impulse purchases||Niente acquisti d'impulso
+No phone before bed||Niente telefono prima di dormire
+No smoking||Non fumare
+No sweets||Niente dolci
+Plan the day||Pianificare la giornata
+Practice an instrument||Suonare uno strumento
+Productivity||Produttività
+Put money aside||Mettere soldi da parte
+Relationships||Relazioni
+Review||Ripasso
+Skin care||Cura della pelle
+Spend time outdoors||Stare all'aria aperta
+Still learning||Lo sto imparando
+Stretch||Stretching
+Study for 30 minutes||Studiare 30 minuti
+Swimming||Nuoto
+Take vitamins||Prendere le vitamine
+Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.||Tocca il cerchio dell'abitudine per aprire le schede di oggi. Le parole che non conosci ancora tornano per il ripasso, e l'abitudine viene segnata quando finisci le schede del giorno.
+Tap to see the translation||Tocca per vedere la traduzione
+Tidy up for 10 minutes||Riordinare per 10 minuti
+Track expenses||Annotare le spese
+Wake up early||Svegliarsi presto
+Walk 10,000 steps||Fare 10.000 passi
+Weekly review||Bilancio settimanale
+Words||Parole
+Words for today are done||Le parole di oggi sono fatte
+Write down 3 good things||Scrivere 3 cose belle
+Yoga||Yoga
+You've gone through the whole dictionary||Hai completato tutto il dizionario
+Your own name, icon and schedule||Nome, icona e programma a tua scelta
+times||volte
+%lld words||%lld parole
+Run||Corsa
+Push-ups||Flessioni
+%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them.||%@ costa %lld scintille, ne hai %lld. Te ne mancano %lld. Segna abitudini per guadagnarle.
+%@ costs %lld sparks. You have %lld.||%@ costa %lld scintille. Ne hai %lld.
++1 spark every active day||+1 scintilla ogni giorno attivo
++2 sparks every active day||+2 scintille ogni giorno attivo
++3 sparks every active day and +1 streak freeze a month||+3 scintille ogni giorno attivo e +1 congelamento della serie al mese
++5 sparks every active day and +2 streak freezes a month||+5 scintille ogni giorno attivo e +2 congelamenti della serie al mese
+A grown pet brings up to +5 a day||Un cucciolo cresciuto porta fino a +5 al giorno
+Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster.||Giorno attivo: almeno un'abitudine segnata in tempo. Nutrirlo dà %lld XP, così il cucciolo cresce più in fretta.
+Avatar||Avatar
+Background||Sfondo
+Copied||Copiato
+Copy message and address||Copia messaggio e indirizzo
+Feeding||Pasto
+Hatches after a few check-ins||Si schiude dopo qualche spunta
+Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@.||Mail non è configurata su questo iPhone. Apri un'altra app di posta o copia il messaggio e invialo a %@.
+Now||Ora
+Open mail app||Apri app di posta
+Paste the message into any mail app and send it to %@.||Incolla il messaggio in un'app di posta e invialo a %@.
+Pet gifts||Regali del cucciolo
+Profile section||Sezione del profilo
+Send the message||Invia il messaggio
+Shows how many reminders came since you last opened the app.||Mostra quanti promemoria sono arrivati dall'ultima apertura dell'app.
+What %@ gives you||Cosa ti dà %@

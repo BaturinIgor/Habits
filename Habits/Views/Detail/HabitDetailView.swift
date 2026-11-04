@@ -10,6 +10,7 @@ struct HabitDetailView: View {
     @State private var month: Date = Calendar.app.dateInterval(of: .month, for: Date())?.start ?? Date()
     @State private var editingHabit: Habit?
     @State private var noteTarget: NoteTarget?
+    @State private var showingWords = false
 
     var body: some View {
         Group {
@@ -31,6 +32,10 @@ struct HabitDetailView: View {
         return ScrollView {
             VStack(spacing: 16) {
                 header(habit, color: color)
+
+                if let language = habit.wordsLanguage {
+                    WordsProgressCard(language: language, color: color) { showingWords = true }
+                }
 
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
                     StatTile(title: "Current streak", value: stats.isWeekly ? Fmt.weeks(stats.currentStreak) : Fmt.days(stats.currentStreak), systemImage: "flame.fill", color: .orange)
@@ -65,6 +70,9 @@ struct HabitDetailView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Edit") { editingHabit = habit }
             }
+        }
+        .fullScreenCover(isPresented: $showingWords) {
+            WordsSessionView(habitID: habit.id)
         }
         .sheet(item: $editingHabit) { habit in
             HabitEditorView(habit: habit)
@@ -379,5 +387,51 @@ struct NotesCard: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .card()
+    }
+}
+
+
+// MARK: - Изучение слов
+
+struct WordsProgressCard: View {
+    @Environment(HabitStore.self) private var store
+    let language: String
+    let color: Color
+    var onStart: () -> Void
+
+    var body: some View {
+        let progress = WordPlan.progress(language: language, data: store.data)
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(spacing: 12) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(WordLanguage.name(language))
+                        .font(.headline)
+                    Text(String(localized: "Learned: \(progress.learned) of \(progress.total)"))
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                    if progress.learning > 0 {
+                        Text(String(localized: "In progress: \(progress.learning)"))
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                Spacer(minLength: 0)
+                ZStack {
+                    ProgressRing(progress: Double(progress.learned) / Double(max(progress.total, 1)), lineWidth: 7, color: color)
+                    Image(systemName: "character.book.closed.fill")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundStyle(color)
+                }
+                .frame(width: 58, height: 58)
+            }
+            Button(action: onStart) {
+                Label("Learn words", systemImage: "rectangle.stack.fill")
+                    .font(.body.weight(.semibold))
+                    .frame(maxWidth: .infinity, minHeight: 44)
+            }
+            .buttonStyle(.glassProminent)
+            .tint(color)
+        }
+        .card(padding: 16, cornerRadius: 24)
     }
 }

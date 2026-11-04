@@ -332,6 +332,21 @@ final class HabitStore {
         WidgetCenter.shared.reloadAllTimelines()
     }
 
+    // MARK: Слова
+
+    /// Ответ на карточку слова. Сохраняем без перепланирования уведомлений: это частое действие.
+    func answerWord(language: String, wordID: String, known: Bool) {
+        data.answerWord(language: language, wordID: wordID, known: known, day: DayKey.make(Date()))
+        revision += 1
+        DataFile.save(data)
+    }
+
+    /// Слова дня пройдены: отмечаем привычку выполненной.
+    func completeWords(_ habitID: UUID) {
+        guard status(habitID, on: Date()) != .done else { return }
+        setStatus(.done, for: habitID, on: Date())
+    }
+
     // MARK: Настройки
 
     func setPro(_ enabled: Bool) {

@@ -1,0 +1,500 @@
+basics|hello|привет|hallo|bonjour|hola|olá|ciao|merhaba|cześć|halo|你好|こんにちは|안녕하세요|नमस्ते
+basics|goodbye|до свидания|auf Wiedersehen|au revoir|adiós|tchau|arrivederci|hoşça kal|do widzenia|selamat tinggal|再见|さようなら|안녕히 가세요|अलविदा
+basics|please|пожалуйста|bitte|s'il vous plaît|por favor|por favor|per favore|lütfen|proszę|tolong|请|お願いします|부탁합니다|कृपया
+basics|thank you|спасибо|danke|merci|gracias|obrigado|grazie|teşekkür ederim|dziękuję|terima kasih|谢谢|ありがとう|감사합니다|धन्यवाद
+basics|yes|да|ja|oui|sí|sim|sì|evet|tak|ya|是|はい|네|हाँ
+basics|no|нет|nein|non|no|não|no|hayır|nie|tidak|不|いいえ|아니요|नहीं
+basics|sorry|извините|Entschuldigung|pardon|perdón|desculpe|scusa|özür dilerim|przepraszam|maaf|对不起|すみません|죄송합니다|माफ़ कीजिए
+basics|good morning|доброе утро|guten Morgen|bonjour|buenos días|bom dia|buongiorno|günaydın|dzień dobry|selamat pagi|早上好|おはようございます|좋은 아침입니다|सुप्रभात
+basics|good night|спокойной ночи|gute Nacht|bonne nuit|buenas noches|boa noite|buonanotte|iyi geceler|dobranoc|selamat malam|晚安|おやすみなさい|안녕히 주무세요|शुभ रात्रि
+basics|friend|друг|der Freund|l'ami|el amigo|o amigo|l'amico|arkadaş|przyjaciel|teman|朋友|友達|친구|दोस्त
+basics|name|имя|der Name|le nom|el nombre|o nome|il nome|isim|imię|nama|名字|名前|이름|नाम
+basics|question|вопрос|die Frage|la question|la pregunta|a pergunta|la domanda|soru|pytanie|pertanyaan|问题|質問|질문|सवाल
+basics|answer|ответ|die Antwort|la réponse|la respuesta|a resposta|la risposta|cevap|odpowiedź|jawaban|答案|答え|대답|जवाब
+basics|word|слово|das Wort|le mot|la palabra|a palavra|la parola|kelime|słowo|kata|词|言葉|단어|शब्द
+basics|language|язык|die Sprache|la langue|el idioma|o idioma|la lingua|dil|język|bahasa|语言|言語|언어|भाषा
+basics|I|я|ich|je|yo|eu|io|ben|ja|saya|我|私|나|मैं
+basics|you|ты|du|tu|tú|você|tu|sen|ty|kamu|你|あなた|너|तुम
+basics|he|он|er|il|él|ele|lui|o (erkek)|on|dia (laki-laki)|他|彼|그|वह (पुरुष)
+basics|she|она|sie|elle|ella|ela|lei|o (kadın)|ona|dia (perempuan)|她|彼女|그녀|वह (स्त्री)
+basics|we|мы|wir|nous|nosotros|nós|noi|biz|my|kami|我们|私たち|우리|हम
+basics|they|они|sie (Plural)|ils|ellos|eles|loro|onlar|oni|mereka|他们|彼ら|그들|वे
+basics|this|это|das|ceci|esto|isto|questo|bu|to|ini|这个|これ|이것|यह
+basics|that|то|jenes|cela|eso|aquilo|quello|şu|tamto|itu|那个|あれ|저것|वह
+basics|and|и|und|et|y|e|e|ve|i|dan|和|と|그리고|और
+basics|or|или|oder|ou|o|ou|o|veya|lub|atau|或者|または|또는|या
+basics|but|но|aber|mais|pero|mas|ma|ama|ale|tetapi|但是|でも|하지만|लेकिन
+basics|with|с|mit|avec|con|com|con|ile|z|dengan|跟|と|와 함께|के साथ
+basics|without|без|ohne|sans|sin|sem|senza|olmadan|bez|tanpa|没有|なしで|없이|के बिना
+basics|because|потому что|weil|parce que|porque|porque|perché|çünkü|ponieważ|karena|因为|なぜなら|왜냐하면|क्योंकि
+basics|person|человек|der Mensch|la personne|la persona|a pessoa|la persona|insan|człowiek|orang|人|人 (ひと)|사람|इंसान
+basics|good evening|добрый вечер|guten Abend|bonsoir|buenas tardes|boa tarde|buonasera|iyi akşamlar|dobry wieczór|selamat sore|晚上好|こんばんは|좋은 저녁입니다|शुभ संध्या
+basics|how are you?|как дела?|wie geht's?|comment ça va ?|¿qué tal?|tudo bem?|come stai?|nasılsın?|jak się masz?|apa kabar?|你好吗？|元気ですか？|잘 지내요?|आप कैसे हैं?
+basics|fine|хорошо|gut (Befinden)|bien|bien|bem|bene|iyiyim|dobrze|baik-baik saja|很好|元気です|잘 지내요|ठीक हूँ
+basics|nice to meet you|приятно познакомиться|freut mich|enchanté|encantado|prazer|piacere|memnun oldum|miło mi|senang bertemu|很高兴认识你|はじめまして|만나서 반갑습니다|आपसे मिलकर ख़ुशी हुई
+numbers|one|один|eins|un|uno|um|uno|bir|jeden|satu|一|一|하나|एक
+numbers|two|два|zwei|deux|dos|dois|due|iki|dwa|dua|二|二|둘|दो
+numbers|three|три|drei|trois|tres|três|tre|üç|trzy|tiga|三|三|셋|तीन
+numbers|four|четыре|vier|quatre|cuatro|quatro|quattro|dört|cztery|empat|四|四|넷|चार
+numbers|five|пять|fünf|cinq|cinco|cinco|cinque|beş|pięć|lima|五|五|다섯|पाँच
+numbers|six|шесть|sechs|six|seis|seis|sei|altı|sześć|enam|六|六|여섯|छह
+numbers|seven|семь|sieben|sept|siete|sete|sette|yedi|siedem|tujuh|七|七|일곱|सात
+numbers|eight|восемь|acht|huit|ocho|oito|otto|sekiz|osiem|delapan|八|八|여덟|आठ
+numbers|nine|девять|neun|neuf|nueve|nove|nove|dokuz|dziewięć|sembilan|九|九|아홉|नौ
+numbers|ten|десять|zehn|dix|diez|dez|dieci|on|dziesięć|sepuluh|十|十|열|दस
+numbers|twenty|двадцать|zwanzig|vingt|veinte|vinte|venti|yirmi|dwadzieścia|dua puluh|二十|二十|스물|बीस
+numbers|hundred|сто|hundert|cent|cien|cem|cento|yüz|sto|seratus|一百|百|백|सौ
+numbers|thousand|тысяча|tausend|mille|mil|mil|mille|bin|tysiąc|seribu|一千|千|천|हज़ार
+numbers|first|первый|erste|premier|primero|primeiro|primo|birinci|pierwszy|pertama|第一|最初|첫 번째|पहला
+numbers|last|последний|letzte|dernier|último|último|ultimo|son|ostatni|terakhir|最后|最後|마지막|आख़िरी
+colors|red|красный|rot|rouge|rojo|vermelho|rosso|kırmızı|czerwony|merah|红色|赤|빨간색|लाल
+colors|blue|синий|blau|bleu|azul|azul|blu|mavi|niebieski|biru|蓝色|青|파란색|नीला
+colors|green|зелёный|grün|vert|verde|verde|verde|yeşil|zielony|hijau|绿色|緑|초록색|हरा
+colors|yellow|жёлтый|gelb|jaune|amarillo|amarelo|giallo|sarı|żółty|kuning|黄色|黄色|노란색|पीला
+colors|black|чёрный|schwarz|noir|negro|preto|nero|siyah|czarny|hitam|黑色|黒|검은색|काला
+colors|white|белый|weiß|blanc|blanco|branco|bianco|beyaz|biały|putih|白色|白|흰색|सफ़ेद
+colors|orange (color)|оранжевый|orange|orange|naranja|laranja|arancione|turuncu|pomarańczowy|oranye|橙色|オレンジ色|주황색|नारंगी
+colors|pink|розовый|rosa|rose|rosa|rosa|rosa|pembe|różowy|merah muda|粉色|ピンク|분홍색|गुलाबी
+colors|purple|фиолетовый|lila|violet|morado|roxo|viola|mor|fioletowy|ungu|紫色|紫|보라색|बैंगनी
+colors|brown|коричневый|braun|marron|marrón|marrom|marrone|kahverengi|brązowy|cokelat|棕色|茶色|갈색|भूरा
+colors|gray|серый|grau|gris|gris|cinza|grigio|gri|szary|abu-abu|灰色|灰色|회색|स्लेटी
+family|mother|мама|die Mutter|la mère|la madre|a mãe|la madre|anne|matka|ibu|妈妈|母|어머니|माँ
+family|father|папа|der Vater|le père|el padre|o pai|il padre|baba|ojciec|ayah|爸爸|父|아버지|पिता
+family|brother|брат|der Bruder|le frère|el hermano|o irmão|il fratello|erkek kardeş|brat|saudara laki-laki|兄弟|兄弟|형제|भाई
+family|sister|сестра|die Schwester|la sœur|la hermana|a irmã|la sorella|kız kardeş|siostra|saudara perempuan|姐妹|姉妹|자매|बहन
+family|son|сын|der Sohn|le fils|el hijo|o filho|il figlio|oğul|syn|anak laki-laki|儿子|息子|아들|बेटा
+family|daughter|дочь|die Tochter|la fille|la hija|a filha|la figlia|kız evlat|córka|anak perempuan|女儿|娘|딸|बेटी
+family|child|ребёнок|das Kind|l'enfant|el niño|a criança|il bambino|çocuk|dziecko|anak|孩子|子供|아이|बच्चा
+family|husband|муж|der Ehemann|le mari|el marido|o marido|il marito|koca|mąż|suami|丈夫|夫|남편|पति
+family|wife|жена|die Ehefrau|la femme|la esposa|a esposa|la moglie|eş|żona|istri|妻子|妻|아내|पत्नी
+family|grandmother|бабушка|die Großmutter|la grand-mère|la abuela|a avó|la nonna|büyükanne|babcia|nenek|奶奶|祖母|할머니|दादी
+family|grandfather|дедушка|der Großvater|le grand-père|el abuelo|o avô|il nonno|büyükbaba|dziadek|kakek|爷爷|祖父|할아버지|दादा
+family|family|семья|die Familie|la famille|la familia|a família|la famiglia|aile|rodzina|keluarga|家庭|家族|가족|परिवार
+family|man|мужчина|der Mann|l'homme|el hombre|o homem|l'uomo|adam|mężczyzna|pria|男人|男性|남자|आदमी
+family|woman|женщина|die Frau|la femme|la mujer|a mulher|la donna|kadın|kobieta|wanita|女人|女性|여자|औरत
+family|baby|малыш|das Baby|le bébé|el bebé|o bebê|il bambino piccolo|bebek|niemowlę|bayi|婴儿|赤ちゃん|아기|शिशु
+family|boy|мальчик|der Junge|le garçon|el chico|o menino|il ragazzo|erkek çocuk|chłopiec|anak laki-laki kecil|男孩|男の子|소년|लड़का
+family|girl|девочка|das Mädchen|la fille|la chica|a menina|la ragazza|kız|dziewczynka|anak perempuan kecil|女孩|女の子|소녀|लड़की
+family|neighbor|сосед|der Nachbar|le voisin|el vecino|o vizinho|il vicino|komşu|sąsiad|tetangga|邻居|隣人|이웃|पड़ोसी
+family|guest|гость|der Gast|l'invité|el invitado|o convidado|l'ospite|misafir|gość|tamu|客人|客|손님|मेहमान
+body|head|голова|der Kopf|la tête|la cabeza|a cabeça|la testa|baş|głowa|kepala|头|頭|머리|सिर
+body|hand|рука (кисть)|die Hand|la main|la mano|a mão|la mano|el|dłoń|tangan|手|手|손|हाथ
+body|eye|глаз|das Auge|l'œil|el ojo|o olho|l'occhio|göz|oko|mata|眼睛|目|눈|आँख
+body|ear|ухо|das Ohr|l'oreille|la oreja|a orelha|l'orecchio|kulak|ucho|telinga|耳朵|耳|귀|कान
+body|nose|нос|die Nase|le nez|la nariz|o nariz|il naso|burun|nos|hidung|鼻子|鼻|코|नाक
+body|mouth|рот|der Mund|la bouche|la boca|a boca|la bocca|ağız|usta|mulut|嘴|口|입|मुँह
+body|tooth|зуб|der Zahn|la dent|el diente|o dente|il dente|diş|ząb|gigi|牙齿|歯|이|दाँत
+body|hair|волосы|das Haar|les cheveux|el pelo|o cabelo|i capelli|saç|włosy|rambut|头发|髪|머리카락|बाल
+body|face|лицо|das Gesicht|le visage|la cara|o rosto|il viso|yüz|twarz|wajah|脸|顔|얼굴|चेहरा
+body|leg|нога|das Bein|la jambe|la pierna|a perna|la gamba|bacak|noga|kaki|腿|脚|다리|टाँग
+body|foot|стопа|der Fuß|le pied|el pie|o pé|il piede|ayak|stopa|telapak kaki|脚|足|발|पैर
+body|arm|рука (от плеча)|der Arm|le bras|el brazo|o braço|il braccio|kol|ramię|lengan|胳膊|腕|팔|बाँह
+body|finger|палец|der Finger|le doigt|el dedo|o dedo|il dito|parmak|palec|jari|手指|指|손가락|उँगली
+body|heart|сердце|das Herz|le cœur|el corazón|o coração|il cuore|kalp|serce|jantung|心脏|心臓|심장|दिल
+body|back|спина|der Rücken|le dos|la espalda|as costas|la schiena|sırt|plecy|punggung|背|背中|등|पीठ
+body|stomach|живот|der Bauch|le ventre|la barriga|a barriga|la pancia|karın|brzuch|perut|肚子|お腹|배|पेट
+body|skin|кожа|die Haut|la peau|la piel|a pele|la pelle|cilt|skóra|kulit|皮肤|肌|피부|त्वचा
+body|blood|кровь|das Blut|le sang|la sangre|o sangue|il sangue|kan|krew|darah|血|血|피|ख़ून
+body|neck|шея|der Hals|le cou|el cuello|o pescoço|il collo|boyun|szyja|leher|脖子|首|목|गर्दन
+body|shoulder|плечо|die Schulter|l'épaule|el hombro|o ombro|la spalla|omuz|bark|bahu|肩膀|肩|어깨|कंधा
+body|knee|колено|das Knie|le genou|la rodilla|o joelho|il ginocchio|diz|kolano|lutut|膝盖|膝|무릎|घुटना
+body|body|тело|der Körper|le corps|el cuerpo|o corpo|il corpo|vücut|ciało|tubuh|身体|体|몸|शरीर
+body|health|здоровье|die Gesundheit|la santé|la salud|a saúde|la salute|sağlık|zdrowie|kesehatan|健康|健康|건강|सेहत
+body|doctor|врач|der Arzt|le médecin|el médico|o médico|il medico|doktor|lekarz|dokter|医生|医者|의사|डॉक्टर
+body|medicine|лекарство|das Medikament|le médicament|el medicamento|o remédio|la medicina|ilaç|lekarstwo|obat|药|薬|약|दवा
+body|pain|боль|der Schmerz|la douleur|el dolor|a dor|il dolore|ağrı|ból|rasa sakit|疼痛|痛み|통증|दर्द
+body|sleep|сон|der Schlaf|le sommeil|el sueño|o sono|il sonno|uyku|sen|tidur|睡眠|睡眠|잠|नींद
+food|water|вода|das Wasser|l'eau|el agua|a água|l'acqua|su|woda|air|水|水|물|पानी
+food|bread|хлеб|das Brot|le pain|el pan|o pão|il pane|ekmek|chleb|roti|面包|パン|빵|रोटी
+food|milk|молоко|die Milch|le lait|la leche|o leite|il latte|süt|mleko|susu|牛奶|牛乳|우유|दूध
+food|coffee|кофе|der Kaffee|le café|el café|o café|il caffè|kahve|kawa|kopi|咖啡|コーヒー|커피|कॉफ़ी
+food|tea|чай|der Tee|le thé|el té|o chá|il tè|çay|herbata|teh|茶|お茶|차|चाय
+food|juice|сок|der Saft|le jus|el zumo|o suco|il succo|meyve suyu|sok|jus|果汁|ジュース|주스|जूस
+food|wine|вино|der Wein|le vin|el vino|o vinho|il vino|şarap|wino|anggur (minuman)|葡萄酒|ワイン|와인|शराब
+food|beer|пиво|das Bier|la bière|la cerveza|a cerveja|la birra|bira|piwo|bir|啤酒|ビール|맥주|बीयर
+food|food|еда|das Essen|la nourriture|la comida|a comida|il cibo|yemek|jedzenie|makanan|食物|食べ物|음식|खाना
+food|breakfast|завтрак|das Frühstück|le petit-déjeuner|el desayuno|o café da manhã|la colazione|kahvaltı|śniadanie|sarapan|早饭|朝ごはん|아침 식사|नाश्ता
+food|lunch|обед|das Mittagessen|le déjeuner|el almuerzo|o almoço|il pranzo|öğle yemeği|obiad|makan siang|午饭|昼ごはん|점심|दोपहर का खाना
+food|dinner|ужин|das Abendessen|le dîner|la cena|o jantar|la cena|akşam yemeği|kolacja|makan malam|晚饭|晩ごはん|저녁 식사|रात का खाना
+food|meat|мясо|das Fleisch|la viande|la carne|a carne|la carne|et|mięso|daging|肉|肉|고기|मांस
+food|fish|рыба|der Fisch|le poisson|el pescado|o peixe|il pesce|balık|ryba|ikan|鱼|魚|생선|मछली
+food|chicken (food)|курица|das Hähnchen|le poulet|el pollo|o frango|il pollo|tavuk|kurczak|ayam|鸡肉|鶏肉|닭고기|चिकन
+food|egg|яйцо|das Ei|l'œuf|el huevo|o ovo|l'uovo|yumurta|jajko|telur|鸡蛋|卵|달걀|अंडा
+food|cheese|сыр|der Käse|le fromage|el queso|o queijo|il formaggio|peynir|ser|keju|奶酪|チーズ|치즈|पनीर
+food|butter|масло (сливочное)|die Butter|le beurre|la mantequilla|a manteiga|il burro|tereyağı|masło|mentega|黄油|バター|버터|मक्खन
+food|rice|рис|der Reis|le riz|el arroz|o arroz|il riso|pirinç|ryż|nasi|米饭|ご飯|밥|चावल
+food|soup|суп|die Suppe|la soupe|la sopa|a sopa|la zuppa|çorba|zupa|sup|汤|スープ|수프|सूप
+food|salt|соль|das Salz|le sel|la sal|o sal|il sale|tuz|sól|garam|盐|塩|소금|नमक
+food|sugar|сахар|der Zucker|le sucre|el azúcar|o açúcar|lo zucchero|şeker|cukier|gula|糖|砂糖|설탕|चीनी
+food|cake|торт|der Kuchen|le gâteau|el pastel|o bolo|la torta|pasta|ciasto|kue|蛋糕|ケーキ|케이크|केक
+food|chocolate|шоколад|die Schokolade|le chocolat|el chocolate|o chocolate|il cioccolato|çikolata|czekolada|cokelat|巧克力|チョコレート|초콜릿|चॉकलेट
+food|ice cream|мороженое|das Eis|la glace|el helado|o sorvete|il gelato|dondurma|lody|es krim|冰淇淋|アイスクリーム|아이스크림|आइसक्रीम
+food|restaurant|ресторан|das Restaurant|le restaurant|el restaurante|o restaurante|il ristorante|restoran|restauracja|restoran|餐厅|レストラン|식당|रेस्टोरेंट
+food|menu|меню|die Speisekarte|le menu|el menú|o cardápio|il menù|menü|menu|menu|菜单|メニュー|메뉴|मेन्यू
+food|bill|счёт|die Rechnung|l'addition|la cuenta|a conta|il conto|hesap|rachunek|tagihan|账单|お会計|계산서|बिल
+food|plate|тарелка|der Teller|l'assiette|el plato|o prato|il piatto|tabak|talerz|piring|盘子|皿|접시|प्लेट
+food|cup|чашка|die Tasse|la tasse|la taza|a xícara|la tazza|fincan|filiżanka|cangkir|杯子|カップ|컵|कप
+food|glass|стакан|das Glas|le verre|el vaso|o copo|il bicchiere|bardak|szklanka|gelas|玻璃杯|グラス|유리잔|गिलास
+food|knife|нож|das Messer|le couteau|el cuchillo|a faca|il coltello|bıçak|nóż|pisau|刀|ナイフ|칼|चाकू
+food|fork|вилка|die Gabel|la fourchette|el tenedor|o garfo|la forchetta|çatal|widelec|garpu|叉子|フォーク|포크|काँटा
+food|spoon|ложка|der Löffel|la cuillère|la cuchara|a colher|il cucchiaio|kaşık|łyżka|sendok|勺子|スプーン|숟가락|चम्मच
+fruit|apple|яблоко|der Apfel|la pomme|la manzana|a maçã|la mela|elma|jabłko|apel|苹果|りんご|사과|सेब
+fruit|banana|банан|die Banane|la banane|el plátano|a banana|la banana|muz|banan|pisang|香蕉|バナナ|바나나|केला
+fruit|orange|апельсин|die Orange|l'orange|la naranja|a laranja|l'arancia|portakal|pomarańcza|jeruk|橙子|オレンジ|오렌지|संतरा
+fruit|lemon|лимон|die Zitrone|le citron|el limón|o limão|il limone|limon|cytryna|lemon|柠檬|レモン|레몬|नींबू
+fruit|grape|виноград|die Traube|le raisin|la uva|a uva|l'uva|üzüm|winogrono|anggur|葡萄|ぶどう|포도|अंगूर
+fruit|strawberry|клубника|die Erdbeere|la fraise|la fresa|o morango|la fragola|çilek|truskawka|stroberi|草莓|いちご|딸기|स्ट्रॉबेरी
+fruit|watermelon|арбуз|die Wassermelone|la pastèque|la sandía|a melancia|l'anguria|karpuz|arbuz|semangka|西瓜|スイカ|수박|तरबूज़
+fruit|pear|груша|die Birne|la poire|la pera|a pera|la pera|armut|gruszka|pir|梨|梨|배 (과일)|नाशपाती
+fruit|cherry|вишня|die Kirsche|la cerise|la cereza|a cereja|la ciliegia|kiraz|wiśnia|ceri|樱桃|さくらんぼ|체리|चेरी
+fruit|peach|персик|der Pfirsich|la pêche|el melocotón|o pêssego|la pesca|şeftali|brzoskwinia|persik|桃子|桃|복숭아|आड़ू
+fruit|fruit|фрукт|das Obst|le fruit|la fruta|a fruta|la frutta|meyve|owoc|buah|水果|果物|과일|फल
+fruit|vegetable|овощ|das Gemüse|le légume|la verdura|o legume|la verdura|sebze|warzywo|sayuran|蔬菜|野菜|채소|सब्ज़ी
+fruit|potato|картофель|die Kartoffel|la pomme de terre|la patata|a batata|la patata|patates|ziemniak|kentang|土豆|じゃがいも|감자|आलू
+fruit|tomato|помидор|die Tomate|la tomate|el tomate|o tomate|il pomodoro|domates|pomidor|tomat|西红柿|トマト|토마토|टमाटर
+fruit|carrot|морковь|die Karotte|la carotte|la zanahoria|a cenoura|la carota|havuç|marchewka|wortel|胡萝卜|にんじん|당근|गाजर
+fruit|onion|лук|die Zwiebel|l'oignon|la cebolla|a cebola|la cipolla|soğan|cebula|bawang|洋葱|玉ねぎ|양파|प्याज़
+fruit|garlic|чеснок|der Knoblauch|l'ail|el ajo|o alho|l'aglio|sarımsak|czosnek|bawang putih|大蒜|にんにく|마늘|लहसुन
+fruit|cucumber|огурец|die Gurke|le concombre|el pepino|o pepino|il cetriolo|salatalık|ogórek|mentimun|黄瓜|きゅうり|오이|खीरा
+fruit|cabbage|капуста|der Kohl|le chou|la col|o repolho|il cavolo|lahana|kapusta|kubis|卷心菜|キャベツ|양배추|पत्तागोभी
+fruit|mushroom|гриб|der Pilz|le champignon|la seta|o cogumelo|il fungo|mantar|grzyb|jamur|蘑菇|きのこ|버섯|मशरूम
+fruit|nut|орех|die Nuss|la noix|la nuez|a noz|la noce|ceviz|orzech|kacang|坚果|ナッツ|견과|मेवा
+animals|dog|собака|der Hund|le chien|el perro|o cachorro|il cane|köpek|pies|anjing|狗|犬|개|कुत्ता
+animals|cat|кошка|die Katze|le chat|el gato|o gato|il gatto|kedi|kot|kucing|猫|猫|고양이|बिल्ली
+animals|bird|птица|der Vogel|l'oiseau|el pájaro|o pássaro|l'uccello|kuş|ptak|burung|鸟|鳥|새|पक्षी
+animals|horse|лошадь|das Pferd|le cheval|el caballo|o cavalo|il cavallo|at|koń|kuda|马|馬|말|घोड़ा
+animals|cow|корова|die Kuh|la vache|la vaca|a vaca|la mucca|inek|krowa|sapi|牛|牛|소|गाय
+animals|pig|свинья|das Schwein|le cochon|el cerdo|o porco|il maiale|domuz|świnia|babi|猪|豚|돼지|सूअर
+animals|sheep|овца|das Schaf|le mouton|la oveja|a ovelha|la pecora|koyun|owca|domba|羊|羊|양|भेड़
+animals|chicken|курица (птица)|das Huhn|la poule|la gallina|a galinha|la gallina|tavuk|kura|ayam (hewan)|鸡|鶏|닭|मुर्गी
+animals|mouse|мышь|die Maus|la souris|el ratón|o rato|il topo|fare|mysz|tikus|老鼠|ねずみ|쥐|चूहा
+animals|rabbit|кролик|das Kaninchen|le lapin|el conejo|o coelho|il coniglio|tavşan|królik|kelinci|兔子|うさぎ|토끼|ख़रगोश
+animals|bear|медведь|der Bär|l'ours|el oso|o urso|l'orso|ayı|niedźwiedź|beruang|熊|熊|곰|भालू
+animals|wolf|волк|der Wolf|le loup|el lobo|o lobo|il lupo|kurt|wilk|serigala|狼|オオカミ|늑대|भेड़िया
+animals|fox|лиса|der Fuchs|le renard|el zorro|a raposa|la volpe|tilki|lis|rubah|狐狸|キツネ|여우|लोमड़ी
+animals|lion|лев|der Löwe|le lion|el león|o leão|il leone|aslan|lew|singa|狮子|ライオン|사자|शेर
+animals|tiger|тигр|der Tiger|le tigre|el tigre|o tigre|la tigre|kaplan|tygrys|harimau|老虎|トラ|호랑이|बाघ
+animals|elephant|слон|der Elefant|l'éléphant|el elefante|o elefante|l'elefante|fil|słoń|gajah|大象|ゾウ|코끼리|हाथी
+animals|monkey|обезьяна|der Affe|le singe|el mono|o macaco|la scimmia|maymun|małpa|monyet|猴子|サル|원숭이|बंदर
+animals|snake|змея|die Schlange|le serpent|la serpiente|a cobra|il serpente|yılan|wąż|ular|蛇|ヘビ|뱀|साँप
+animals|frog|лягушка|der Frosch|la grenouille|la rana|o sapo|la rana|kurbağa|żaba|katak|青蛙|カエル|개구리|मेंढक
+animals|fly|муха|die Fliege|la mouche|la mosca|a mosca|la mosca|sinek|mucha|lalat|苍蝇|ハエ|파리|मक्खी
+animals|bee|пчела|die Biene|l'abeille|la abeja|a abelha|l'ape|arı|pszczoła|lebah|蜜蜂|ハチ|벌|मधुमक्खी
+animals|butterfly|бабочка|der Schmetterling|le papillon|la mariposa|a borboleta|la farfalla|kelebek|motyl|kupu-kupu|蝴蝶|チョウ|나비|तितली
+animals|duck|утка|die Ente|le canard|el pato|o pato|l'anatra|ördek|kaczka|bebek (hewan)|鸭子|アヒル|오리|बत्तख़
+animals|turtle|черепаха|die Schildkröte|la tortue|la tortuga|a tartaruga|la tartaruga|kaplumbağa|żółw|kura-kura|乌龟|カメ|거북이|कछुआ
+animals|whale|кит|der Wal|la baleine|la ballena|a baleia|la balena|balina|wieloryb|paus|鲸鱼|クジラ|고래|व्हेल
+animals|animal|животное|das Tier|l'animal|el animal|o animal|l'animale|hayvan|zwierzę|hewan|动物|動物|동물|जानवर
+home|house|дом|das Haus|la maison|la casa|a casa|la casa|ev|dom|rumah|房子|家|집|घर
+home|apartment|квартира|die Wohnung|l'appartement|el piso|o apartamento|l'appartamento|daire|mieszkanie|apartemen|公寓|アパート|아파트|फ़्लैट
+home|room|комната|das Zimmer|la chambre|la habitación|o quarto|la stanza|oda|pokój|kamar|房间|部屋|방|कमरा
+home|kitchen|кухня|die Küche|la cuisine|la cocina|a cozinha|la cucina|mutfak|kuchnia|dapur|厨房|台所|부엌|रसोई
+home|bathroom|ванная|das Badezimmer|la salle de bains|el baño|o banheiro|il bagno|banyo|łazienka|kamar mandi|浴室|浴室|욕실|बाथरूम
+home|bedroom|спальня|das Schlafzimmer|la chambre à coucher|el dormitorio|o quarto de dormir|la camera da letto|yatak odası|sypialnia|kamar tidur|卧室|寝室|침실|शयनकक्ष
+home|door|дверь|die Tür|la porte|la puerta|a porta|la porta|kapı|drzwi|pintu|门|ドア|문|दरवाज़ा
+home|window|окно|das Fenster|la fenêtre|la ventana|a janela|la finestra|pencere|okno|jendela|窗户|窓|창문|खिड़की
+home|table|стол|der Tisch|la table|la mesa|a mesa|il tavolo|masa|stół|meja|桌子|テーブル|탁자|मेज़
+home|chair|стул|der Stuhl|la chaise|la silla|a cadeira|la sedia|sandalye|krzesło|kursi|椅子|椅子|의자|कुर्सी
+home|bed|кровать|das Bett|le lit|la cama|a cama|il letto|yatak|łóżko|tempat tidur|床|ベッド|침대|बिस्तर
+home|sofa|диван|das Sofa|le canapé|el sofá|o sofá|il divano|kanepe|kanapa|sofa|沙发|ソファ|소파|सोफ़ा
+home|lamp|лампа|die Lampe|la lampe|la lámpara|a lâmpada|la lampada|lamba|lampa|lampu|灯|ランプ|램프|लैंप
+home|key|ключ|der Schlüssel|la clé|la llave|a chave|la chiave|anahtar|klucz|kunci|钥匙|鍵|열쇠|चाबी
+home|floor|пол|der Boden|le sol|el suelo|o chão|il pavimento|zemin|podłoga|lantai|地板|床|바닥|फ़र्श
+home|wall|стена|die Wand|le mur|la pared|a parede|il muro|duvar|ściana|dinding|墙|壁|벽|दीवार
+home|roof|крыша|das Dach|le toit|el tejado|o telhado|il tetto|çatı|dach|atap|屋顶|屋根|지붕|छत
+home|garden|сад|der Garten|le jardin|el jardín|o jardim|il giardino|bahçe|ogród|kebun|花园|庭|정원|बग़ीचा
+home|mirror|зеркало|der Spiegel|le miroir|el espejo|o espelho|lo specchio|ayna|lustro|cermin|镜子|鏡|거울|आईना
+home|clock|часы|die Uhr|l'horloge|el reloj|o relógio|l'orologio|saat|zegar|jam|钟|時計|시계|घड़ी
+home|phone|телефон|das Telefon|le téléphone|el teléfono|o telefone|il telefono|telefon|telefon|telepon|电话|電話|전화|फ़ोन
+home|computer|компьютер|der Computer|l'ordinateur|el ordenador|o computador|il computer|bilgisayar|komputer|komputer|电脑|パソコン|컴퓨터|कंप्यूटर
+home|book|книга|das Buch|le livre|el libro|o livro|il libro|kitap|książka|buku|书|本|책|किताब
+home|picture|картина|das Bild|le tableau|el cuadro|o quadro|il quadro|resim|obraz|lukisan|画|絵|그림|चित्र
+home|towel|полотенце|das Handtuch|la serviette|la toalla|a toalha|l'asciugamano|havlu|ręcznik|handuk|毛巾|タオル|수건|तौलिया
+home|soap|мыло|die Seife|le savon|el jabón|o sabão|il sapone|sabun|mydło|sabun mandi|肥皂|石けん|비누|साबुन
+clothes|clothes|одежда|die Kleidung|les vêtements|la ropa|a roupa|i vestiti|kıyafet|ubrania|pakaian|衣服|服|옷|कपड़े
+clothes|shirt|рубашка|das Hemd|la chemise|la camisa|a camisa|la camicia|gömlek|koszula|kemeja|衬衫|シャツ|셔츠|क़मीज़
+clothes|T-shirt|футболка|das T-Shirt|le tee-shirt|la camiseta|a camiseta|la maglietta|tişört|koszulka|kaus|T恤|Tシャツ|티셔츠|टी-शर्ट
+clothes|trousers|брюки|die Hose|le pantalon|los pantalones|a calça|i pantaloni|pantolon|spodnie|celana|裤子|ズボン|바지|पैंट
+clothes|dress|платье|das Kleid|la robe|el vestido|o vestido|il vestito|elbise|sukienka|gaun|连衣裙|ワンピース|원피스|पोशाक
+clothes|skirt|юбка|der Rock|la jupe|la falda|a saia|la gonna|etek|spódnica|rok|裙子|スカート|치마|स्कर्ट
+clothes|jacket|куртка|die Jacke|la veste|la chaqueta|a jaqueta|la giacca|ceket|kurtka|jaket|夹克|ジャケット|재킷|जैकेट
+clothes|coat|пальто|der Mantel|le manteau|el abrigo|o casaco|il cappotto|palto|płaszcz|mantel|大衣|コート|코트|कोट
+clothes|shoes|обувь|die Schuhe|les chaussures|los zapatos|os sapatos|le scarpe|ayakkabı|buty|sepatu|鞋|靴|신발|जूते
+clothes|hat|шапка|der Hut|le chapeau|el sombrero|o chapéu|il cappello|şapka|czapka|topi|帽子|帽子|모자|टोपी
+clothes|socks|носки|die Socken|les chaussettes|los calcetines|as meias|i calzini|çorap|skarpetki|kaus kaki|袜子|靴下|양말|मोज़े
+clothes|bag|сумка|die Tasche|le sac|el bolso|a bolsa|la borsa|çanta|torba|tas|包|かばん|가방|थैला
+clothes|glasses|очки|die Brille|les lunettes|las gafas|os óculos|gli occhiali|gözlük|okulary|kacamata|眼镜|眼鏡|안경|चश्मा
+clothes|watch|наручные часы|die Armbanduhr|la montre|el reloj de pulsera|o relógio de pulso|l'orologio da polso|kol saati|zegarek|jam tangan|手表|腕時計|손목시계|कलाई घड़ी
+clothes|ring|кольцо|der Ring|la bague|el anillo|o anel|l'anello|yüzük|pierścionek|cincin|戒指|指輪|반지|अँगूठी
+clothes|umbrella|зонт|der Regenschirm|le parapluie|el paraguas|o guarda-chuva|l'ombrello|şemsiye|parasol|payung|雨伞|傘|우산|छाता
+city|city|город|die Stadt|la ville|la ciudad|a cidade|la città|şehir|miasto|kota|城市|都市|도시|शहर
+city|street|улица|die Straße|la rue|la calle|a rua|la strada|sokak|ulica|jalan|街道|通り|거리|सड़क
+city|shop|магазин|das Geschäft|le magasin|la tienda|a loja|il negozio|dükkan|sklep|toko|商店|店|가게|दुकान
+city|market|рынок|der Markt|le marché|el mercado|o mercado|il mercato|pazar|targ|pasar|市场|市場|시장|बाज़ार
+city|bank|банк|die Bank|la banque|el banco|o banco|la banca|banka|bank|bank|银行|銀行|은행|बैंक
+city|hospital|больница|das Krankenhaus|l'hôpital|el hospital|o hospital|l'ospedale|hastane|szpital|rumah sakit|医院|病院|병원|अस्पताल
+city|pharmacy|аптека|die Apotheke|la pharmacie|la farmacia|a farmácia|la farmacia|eczane|apteka|apotek|药店|薬局|약국|दवाख़ाना
+city|school|школа|die Schule|l'école|la escuela|a escola|la scuola|okul|szkoła|sekolah|学校|学校|학교|स्कूल
+city|park|парк|der Park|le parc|el parque|o parque|il parco|park|park|taman|公园|公園|공원|पार्क
+city|museum|музей|das Museum|le musée|el museo|o museu|il museo|müze|muzeum|museum|博物馆|博物館|박물관|संग्रहालय
+city|library|библиотека|die Bibliothek|la bibliothèque|la biblioteca|a biblioteca|la biblioteca|kütüphane|biblioteka|perpustakaan|图书馆|図書館|도서관|पुस्तकालय
+city|church|церковь|die Kirche|l'église|la iglesia|a igreja|la chiesa|kilise|kościół|gereja|教堂|教会|교회|गिरजाघर
+city|hotel|гостиница|das Hotel|l'hôtel|el hotel|o hotel|l'albergo|otel|hotel|hotel|酒店|ホテル|호텔|होटल
+city|post office|почта|die Post|la poste|la oficina de correos|os correios|l'ufficio postale|postane|poczta|kantor pos|邮局|郵便局|우체국|डाकघर
+city|police|полиция|die Polizei|la police|la policía|a polícia|la polizia|polis|policja|polisi|警察|警察|경찰|पुलिस
+city|bridge|мост|die Brücke|le pont|el puente|a ponte|il ponte|köprü|most|jembatan|桥|橋|다리 (건축)|पुल
+city|square|площадь|der Platz|la place|la plaza|a praça|la piazza|meydan|plac|alun-alun|广场|広場|광장|चौक
+city|building|здание|das Gebäude|le bâtiment|el edificio|o prédio|l'edificio|bina|budynek|gedung|建筑|建物|건물|इमारत
+city|office|офис|das Büro|le bureau|la oficina|o escritório|l'ufficio|ofis|biuro|kantor|办公室|事務所|사무실|दफ़्तर
+city|cinema|кинотеатр|das Kino|le cinéma|el cine|o cinema|il cinema|sinema|kino|bioskop|电影院|映画館|영화관|सिनेमाघर
+city|theater|театр|das Theater|le théâtre|el teatro|o teatro|il teatro|tiyatro|teatr|teater|剧院|劇場|극장|रंगमंच
+city|airport|аэропорт|der Flughafen|l'aéroport|el aeropuerto|o aeroporto|l'aeroporto|havalimanı|lotnisko|bandara|机场|空港|공항|हवाई अड्डा
+city|station|вокзал|der Bahnhof|la gare|la estación|a estação|la stazione|istasyon|dworzec|stasiun|车站|駅|역|स्टेशन
+city|money|деньги|das Geld|l'argent|el dinero|o dinheiro|i soldi|para|pieniądze|uang|钱|お金|돈|पैसा
+city|price|цена|der Preis|le prix|el precio|o preço|il prezzo|fiyat|cena|harga|价格|値段|가격|दाम
+transport|car|машина|das Auto|la voiture|el coche|o carro|la macchina|araba|samochód|mobil|汽车|車|자동차|गाड़ी
+transport|bus|автобус|der Bus|le bus|el autobús|o ônibus|l'autobus|otobüs|autobus|bus|公交车|バス|버스|बस
+transport|train|поезд|der Zug|le train|el tren|o trem|il treno|tren|pociąg|kereta|火车|電車|기차|ट्रेन
+transport|plane|самолёт|das Flugzeug|l'avion|el avión|o avião|l'aereo|uçak|samolot|pesawat|飞机|飛行機|비행기|हवाई जहाज़
+transport|bicycle|велосипед|das Fahrrad|le vélo|la bicicleta|a bicicleta|la bicicletta|bisiklet|rower|sepeda|自行车|自転車|자전거|साइकिल
+transport|ship|корабль|das Schiff|le bateau|el barco|o navio|la nave|gemi|statek|kapal|船|船|배 (선박)|जहाज़
+transport|taxi|такси|das Taxi|le taxi|el taxi|o táxi|il taxi|taksi|taksówka|taksi|出租车|タクシー|택시|टैक्सी
+transport|metro|метро|die U-Bahn|le métro|el metro|o metrô|la metropolitana|metro|metro|kereta bawah tanah|地铁|地下鉄|지하철|मेट्रो
+transport|ticket|билет|die Fahrkarte|le billet|el billete|a passagem|il biglietto|bilet|bilet|tiket|票|切符|표|टिकट
+transport|road|дорога|der Weg|la route|la carretera|a estrada|la strada|yol|droga|jalan raya|路|道|길|रास्ता
+transport|map|карта|die Karte|la carte|el mapa|o mapa|la mappa|harita|mapa|peta|地图|地図|지도|नक्शा
+transport|left|налево|links|à gauche|a la izquierda|à esquerda|a sinistra|sola|w lewo|ke kiri|左边|左|왼쪽|बाएँ
+transport|right|направо|rechts|à droite|a la derecha|à direita|a destra|sağa|w prawo|ke kanan|右边|右|오른쪽|दाएँ
+transport|straight ahead|прямо|geradeaus|tout droit|todo recto|em frente|dritto|düz|prosto|lurus|直走|まっすぐ|똑바로|सीधे
+nature|sun|солнце|die Sonne|le soleil|el sol|o sol|il sole|güneş|słońce|matahari|太阳|太陽|태양|सूरज
+nature|moon|луна|der Mond|la lune|la luna|a lua|la luna|ay|księżyc|bulan|月亮|月|달|चाँद
+nature|star|звезда|der Stern|l'étoile|la estrella|a estrela|la stella|yıldız|gwiazda|bintang|星星|星|별|तारा
+nature|sky|небо|der Himmel|le ciel|el cielo|o céu|il cielo|gökyüzü|niebo|langit|天空|空|하늘|आसमान
+nature|cloud|облако|die Wolke|le nuage|la nube|a nuvem|la nuvola|bulut|chmura|awan|云|雲|구름|बादल
+nature|rain|дождь|der Regen|la pluie|la lluvia|a chuva|la pioggia|yağmur|deszcz|hujan|雨|雨|비|बारिश
+nature|snow|снег|der Schnee|la neige|la nieve|a neve|la neve|kar|śnieg|salju|雪|雪|눈 (날씨)|बर्फ़
+nature|wind|ветер|der Wind|le vent|el viento|o vento|il vento|rüzgar|wiatr|angin|风|風|바람|हवा
+nature|weather|погода|das Wetter|le temps|el tiempo|o tempo|il tempo|hava|pogoda|cuaca|天气|天気|날씨|मौसम
+nature|tree|дерево|der Baum|l'arbre|el árbol|a árvore|l'albero|ağaç|drzewo|pohon|树|木|나무|पेड़
+nature|flower|цветок|die Blume|la fleur|la flor|a flor|il fiore|çiçek|kwiat|bunga|花|花|꽃|फूल
+nature|grass|трава|das Gras|l'herbe|la hierba|a grama|l'erba|çimen|trawa|rumput|草|草|풀|घास
+nature|forest|лес|der Wald|la forêt|el bosque|a floresta|il bosco|orman|las|hutan|森林|森|숲|जंगल
+nature|mountain|гора|der Berg|la montagne|la montaña|a montanha|la montagna|dağ|góra|gunung|山|山|산|पहाड़
+nature|river|река|der Fluss|la rivière|el río|o rio|il fiume|nehir|rzeka|sungai|河|川|강|नदी
+nature|lake|озеро|der See|le lac|el lago|o lago|il lago|göl|jezioro|danau|湖|湖|호수|झील
+nature|sea|море|das Meer|la mer|el mar|o mar|il mare|deniz|morze|laut|海|海|바다|समुद्र
+nature|beach|пляж|der Strand|la plage|la playa|a praia|la spiaggia|plaj|plaża|pantai|海滩|ビーチ|해변|समुद्र तट
+nature|island|остров|die Insel|l'île|la isla|a ilha|l'isola|ada|wyspa|pulau|岛|島|섬|द्वीप
+nature|stone|камень|der Stein|la pierre|la piedra|a pedra|la pietra|taş|kamień|batu|石头|石|돌|पत्थर
+nature|fire|огонь|das Feuer|le feu|el fuego|o fogo|il fuoco|ateş|ogień|api|火|火|불|आग
+nature|earth|земля|die Erde|la terre|la tierra|a terra|la terra|toprak|ziemia|tanah|土地|土|땅|ज़मीन
+nature|air|воздух|die Luft|l'air|el aire|o ar|l'aria|hava (soluduğumuz)|powietrze|udara|空气|空気|공기|वायु
+nature|hot|жарко|heiß|chaud|caliente|quente|caldo|sıcak|gorący|panas|热|暑い|더운|गरम
+nature|cold|холодно|kalt|froid|frío|frio|freddo|soğuk|zimny|dingin|冷|寒い|추운|ठंडा
+nature|spring|весна|der Frühling|le printemps|la primavera|a primavera|la primavera|ilkbahar|wiosna|musim semi|春天|春|봄|वसंत
+nature|summer|лето|der Sommer|l'été|el verano|o verão|l'estate|yaz|lato|musim panas|夏天|夏|여름|गर्मी
+nature|autumn|осень|der Herbst|l'automne|el otoño|o outono|l'autunno|sonbahar|jesień|musim gugur|秋天|秋|가을|पतझड़
+nature|winter|зима|der Winter|l'hiver|el invierno|o inverno|l'inverno|kış|zima|musim dingin|冬天|冬|겨울|सर्दी
+time|time|время|die Zeit|le temps|el tiempo|o tempo|il tempo|zaman|czas|waktu|时间|時間|시간|समय
+time|day|день|der Tag|le jour|el día|o dia|il giorno|gün|dzień|hari|天|日|날|दिन
+time|night|ночь|die Nacht|la nuit|la noche|a noite|la notte|gece|noc|malam|夜|夜|밤|रात
+time|morning|утро|der Morgen|le matin|la mañana|a manhã|la mattina|sabah|rano|pagi|早上|朝|아침|सुबह
+time|evening|вечер|der Abend|le soir|la tarde|a noite|la sera|akşam|wieczór|sore|晚上|夕方|저녁|शाम
+time|week|неделя|die Woche|la semaine|la semana|a semana|la settimana|hafta|tydzień|minggu|星期|週|주|हफ़्ता
+time|month|месяц|der Monat|le mois|el mes|o mês|il mese|ay (takvim)|miesiąc|bulan (kalender)|月份|月 (つき)|달 (기간)|महीना
+time|year|год|das Jahr|l'année|el año|o ano|l'anno|yıl|rok|tahun|年|年|년|साल
+time|hour|час|die Stunde|l'heure|la hora|a hora|l'ora|saat (süre)|godzina|jam (waktu)|小时|時間 (じかん)|시간 (단위)|घंटा
+time|minute|минута|die Minute|la minute|el minuto|o minuto|il minuto|dakika|minuta|menit|分钟|分|분|मिनट
+time|today|сегодня|heute|aujourd'hui|hoy|hoje|oggi|bugün|dzisiaj|hari ini|今天|今日|오늘|आज
+time|tomorrow|завтра|morgen|demain|mañana|amanhã|domani|yarın|jutro|besok|明天|明日|내일|कल (आने वाला)
+time|yesterday|вчера|gestern|hier|ayer|ontem|ieri|dün|wczoraj|kemarin|昨天|昨日|어제|कल (बीता हुआ)
+time|now|сейчас|jetzt|maintenant|ahora|agora|adesso|şimdi|teraz|sekarang|现在|今|지금|अभी
+time|later|потом|später|plus tard|más tarde|mais tarde|più tardi|sonra|później|nanti|以后|後で|나중에|बाद में
+time|always|всегда|immer|toujours|siempre|sempre|sempre|her zaman|zawsze|selalu|总是|いつも|항상|हमेशा
+time|never|никогда|nie|jamais|nunca|nunca|mai|asla|nigdy|tidak pernah|从不|決して|절대|कभी नहीं
+time|often|часто|oft|souvent|a menudo|frequentemente|spesso|sık sık|często|sering|经常|よく|자주|अक्सर
+time|sometimes|иногда|manchmal|parfois|a veces|às vezes|a volte|bazen|czasami|kadang-kadang|有时|時々|가끔|कभी-कभी
+time|Monday|понедельник|der Montag|lundi|el lunes|a segunda-feira|il lunedì|pazartesi|poniedziałek|Senin|星期一|月曜日|월요일|सोमवार
+time|Tuesday|вторник|der Dienstag|mardi|el martes|a terça-feira|il martedì|salı|wtorek|Selasa|星期二|火曜日|화요일|मंगलवार
+time|Wednesday|среда|der Mittwoch|mercredi|el miércoles|a quarta-feira|il mercoledì|çarşamba|środa|Rabu|星期三|水曜日|수요일|बुधवार
+time|Thursday|четверг|der Donnerstag|jeudi|el jueves|a quinta-feira|il giovedì|perşembe|czwartek|Kamis|星期四|木曜日|목요일|गुरुवार
+time|Friday|пятница|der Freitag|vendredi|el viernes|a sexta-feira|il venerdì|cuma|piątek|Jumat|星期五|金曜日|금요일|शुक्रवार
+time|Saturday|суббота|der Samstag|samedi|el sábado|o sábado|il sabato|cumartesi|sobota|Sabtu|星期六|土曜日|토요일|शनिवार
+time|Sunday|воскресенье|der Sonntag|dimanche|el domingo|o domingo|la domenica|pazar (gün)|niedziela|Minggu (hari)|星期日|日曜日|일요일|रविवार
+time|birthday|день рождения|der Geburtstag|l'anniversaire|el cumpleaños|o aniversário|il compleanno|doğum günü|urodziny|ulang tahun|生日|誕生日|생일|जन्मदिन
+time|holiday|праздник|der Feiertag|la fête|la fiesta|o feriado|la festa|bayram|święto|hari libur|节日|祝日|공휴일|त्योहार
+time|vacation|отпуск|der Urlaub|les vacances|las vacaciones|as férias|le vacanze|tatil|urlop|liburan|假期|休暇|휴가|छुट्टी
+verbs|to be|быть|sein|être|ser|ser|essere|olmak|być|menjadi|是|である|이다|होना
+verbs|to have|иметь|haben|avoir|tener|ter|avere|sahip olmak|mieć|punya|有|持つ|가지다|रखना
+verbs|to do|делать|machen|faire|hacer|fazer|fare|yapmak|robić|melakukan|做|する|하다|करना
+verbs|to go|идти|gehen|aller|ir|ir|andare|gitmek|iść|pergi|去|行く|가다|जाना
+verbs|to come|приходить|kommen|venir|venir|vir|venire|gelmek|przychodzić|datang|来|来る|오다|आना
+verbs|to see|видеть|sehen|voir|ver|ver|vedere|görmek|widzieć|melihat|看见|見る|보다|देखना
+verbs|to hear|слышать|hören|entendre|oír|ouvir|sentire|duymak|słyszeć|mendengar|听见|聞く|듣다|सुनना
+verbs|to speak|говорить|sprechen|parler|hablar|falar|parlare|konuşmak|mówić|berbicara|说|話す|말하다|बोलना
+verbs|to say|сказать|sagen|dire|decir|dizer|dire|söylemek|powiedzieć|mengatakan|说出|言う|말하다 (전하다)|कहना
+verbs|to eat|есть|essen|manger|comer|comer|mangiare|yemek (fiil)|jeść|makan|吃|食べる|먹다|खाना (क्रिया)
+verbs|to drink|пить|trinken|boire|beber|beber|bere|içmek|pić|minum|喝|飲む|마시다|पीना
+verbs|to sleep|спать|schlafen|dormir|dormir|dormir|dormire|uyumak|spać|tidur (kata kerja)|睡觉|寝る|자다|सोना
+verbs|to read|читать|lesen|lire|leer|ler|leggere|okumak|czytać|membaca|读|読む|읽다|पढ़ना
+verbs|to write|писать|schreiben|écrire|escribir|escrever|scrivere|yazmak|pisać|menulis|写|書く|쓰다|लिखना
+verbs|to learn|учить|lernen|apprendre|aprender|aprender|imparare|öğrenmek|uczyć się|belajar|学习|学ぶ|배우다|सीखना
+verbs|to work|работать|arbeiten|travailler|trabajar|trabalhar|lavorare|çalışmak|pracować|bekerja|工作|働く|일하다|काम करना
+verbs|to know|знать|wissen|savoir|saber|saber|sapere|bilmek|wiedzieć|tahu|知道|知る|알다|जानना
+verbs|to think|думать|denken|penser|pensar|pensar|pensare|düşünmek|myśleć|berpikir|想|考える|생각하다|सोचना
+verbs|to want|хотеть|wollen|vouloir|querer|querer|volere|istemek|chcieć|mau|想要|欲しい|원하다|चाहना
+verbs|to love|любить|lieben|aimer|amar|amar|amare|sevmek|kochać|mencintai|爱|愛する|사랑하다|प्यार करना
+verbs|to like|нравиться|mögen|aimer bien|gustar|gostar|piacere|hoşlanmak|lubić|suka|喜欢|好き|좋아하다|पसंद करना
+verbs|to give|давать|geben|donner|dar|dar|dare|vermek|dawać|memberi|给|あげる|주다|देना
+verbs|to take|брать|nehmen|prendre|tomar|pegar|prendere|almak|brać|mengambil|拿|取る|가져가다|लेना
+verbs|to buy|покупать|kaufen|acheter|comprar|comprar|comprare|satın almak|kupować|membeli|买|買う|사다|ख़रीदना
+verbs|to sell|продавать|verkaufen|vendre|vender|vender|vendere|satmak|sprzedawać|menjual|卖|売る|팔다|बेचना
+verbs|to open|открывать|öffnen|ouvrir|abrir|abrir|aprire|açmak|otwierać|membuka|打开|開ける|열다|खोलना
+verbs|to close|закрывать|schließen|fermer|cerrar|fechar|chiudere|kapatmak|zamykać|menutup|关上|閉める|닫다|बंद करना
+verbs|to wait|ждать|warten|attendre|esperar|esperar|aspettare|beklemek|czekać|menunggu|等|待つ|기다리다|इंतज़ार करना
+verbs|to help|помогать|helfen|aider|ayudar|ajudar|aiutare|yardım etmek|pomagać|membantu|帮助|助ける|돕다|मदद करना
+verbs|to play|играть|spielen|jouer|jugar|jogar|giocare|oynamak|grać|bermain|玩|遊ぶ|놀다|खेलना
+verbs|to run|бегать|laufen|courir|correr|correr|correre|koşmak|biegać|berlari|跑|走る|달리다|दौड़ना
+verbs|to walk|гулять|spazieren gehen|se promener|pasear|passear|passeggiare|yürümek|spacerować|berjalan-jalan|散步|散歩する|산책하다|टहलना
+verbs|to swim|плавать|schwimmen|nager|nadar|nadar|nuotare|yüzmek|pływać|berenang|游泳|泳ぐ|수영하다|तैरना
+verbs|to cook|готовить|kochen|cuisiner|cocinar|cozinhar|cucinare|yemek pişirmek|gotować|memasak|做饭|料理する|요리하다|पकाना
+verbs|to wash|мыть|waschen|laver|lavar|lavar|lavare|yıkamak|myć|mencuci|洗|洗う|씻다|धोना
+verbs|to live|жить|leben|vivre|vivir|viver|vivere|yaşamak|żyć|hidup|生活|住む|살다|रहना
+verbs|to sit|сидеть|sitzen|être assis|estar sentado|estar sentado|stare seduto|oturmak|siedzieć|duduk|坐|座る|앉다|बैठना
+verbs|to stand|стоять|stehen|être debout|estar de pie|estar de pé|stare in piedi|ayakta durmak|stać|berdiri|站|立つ|서다|खड़ा होना
+verbs|to find|находить|finden|trouver|encontrar|encontrar|trovare|bulmak|znajdować|menemukan|找到|見つける|찾다|ढूँढ़ना
+verbs|to lose|терять|verlieren|perdre|perder|perder|perdere|kaybetmek|gubić|kehilangan|丢失|なくす|잃다|खोना
+verbs|to understand|понимать|verstehen|comprendre|entender|entender|capire|anlamak|rozumieć|mengerti|理解|分かる|이해하다|समझना
+verbs|to remember|помнить|sich erinnern|se souvenir|recordar|lembrar|ricordare|hatırlamak|pamiętać|ingat|记得|覚えている|기억하다|याद रखना
+verbs|to forget|забывать|vergessen|oublier|olvidar|esquecer|dimenticare|unutmak|zapominać|lupa|忘记|忘れる|잊다|भूलना
+verbs|to begin|начинать|beginnen|commencer|empezar|começar|cominciare|başlamak|zaczynać|mulai|开始|始める|시작하다|शुरू करना
+verbs|to finish|заканчивать|beenden|finir|terminar|terminar|finire|bitirmek|kończyć|menyelesaikan|完成|終える|끝내다|ख़त्म करना
+verbs|to ask|спрашивать|fragen|demander|preguntar|perguntar|chiedere|sormak|pytać|bertanya|问|尋ねる|묻다|पूछना
+verbs|to answer|отвечать|antworten|répondre|responder|responder|rispondere|cevap vermek|odpowiadać|menjawab|回答|答える|대답하다|जवाब देना
+verbs|to pay|платить|bezahlen|payer|pagar|pagar|pagare|ödemek|płacić|membayar|付钱|払う|지불하다|भुगतान करना
+verbs|to travel|путешествовать|reisen|voyager|viajar|viajar|viaggiare|seyahat etmek|podróżować|bepergian|旅行|旅行する|여행하다|यात्रा करना
+verbs|to smile|улыбаться|lächeln|sourire|sonreír|sorrir|sorridere|gülümsemek|uśmiechać się|tersenyum|微笑|微笑む|미소 짓다|मुस्कुराना
+verbs|to laugh|смеяться|lachen|rire|reír|rir|ridere|gülmek|śmiać się|tertawa|笑|笑う|웃다|हँसना
+verbs|to cry|плакать|weinen|pleurer|llorar|chorar|piangere|ağlamak|płakać|menangis|哭|泣く|울다|रोना
+verbs|to sing|петь|singen|chanter|cantar|cantar|cantare|şarkı söylemek|śpiewać|bernyanyi|唱歌|歌う|노래하다|गाना
+verbs|to dance|танцевать|tanzen|danser|bailar|dançar|ballare|dans etmek|tańczyć|menari|跳舞|踊る|춤추다|नाचना
+adjectives|good|хороший|gut|bon|bueno|bom|buono|iyi|dobry|baik|好|良い|좋은|अच्छा
+adjectives|bad|плохой|schlecht|mauvais|malo|ruim|cattivo|kötü|zły|buruk|坏|悪い|나쁜|बुरा
+adjectives|big|большой|groß|grand|grande|grande|grande|büyük|duży|besar|大|大きい|큰|बड़ा
+adjectives|small|маленький|klein|petit|pequeño|pequeno|piccolo|küçük|mały|kecil|小|小さい|작은|छोटा
+adjectives|new|новый|neu|nouveau|nuevo|novo|nuovo|yeni|nowy|baru|新|新しい|새로운|नया
+adjectives|old|старый|alt|vieux|viejo|velho|vecchio|eski|stary|tua|旧|古い|오래된|पुराना
+adjectives|young|молодой|jung|jeune|joven|jovem|giovane|genç|młody|muda|年轻|若い|젊은|जवान
+adjectives|beautiful|красивый|schön|beau|bonito|bonito|bello|güzel|piękny|cantik|美丽|美しい|아름다운|सुंदर
+adjectives|long|длинный|lang|long|largo|longo|lungo|uzun|długi|panjang|长|長い|긴|लंबा
+adjectives|short|короткий|kurz|court|corto|curto|corto|kısa|krótki|pendek|短|短い|짧은|छोटा (लंबाई)
+adjectives|fast|быстрый|schnell|rapide|rápido|rápido|veloce|hızlı|szybki|cepat|快|速い|빠른|तेज़
+adjectives|slow|медленный|langsam|lent|lento|lento|lento|yavaş|wolny|lambat|慢|遅い|느린|धीमा
+adjectives|easy|лёгкий|einfach|facile|fácil|fácil|facile|kolay|łatwy|mudah|容易|簡単|쉬운|आसान
+adjectives|difficult|трудный|schwierig|difficile|difícil|difícil|difficile|zor|trudny|sulit|难|難しい|어려운|कठिन
+adjectives|cheap|дешёвый|billig|bon marché|barato|barato|economico|ucuz|tani|murah|便宜|安い|싼|सस्ता
+adjectives|expensive|дорогой|teuer|cher|caro|caro|caro|pahalı|drogi|mahal|贵|高い|비싼|महँगा
+adjectives|clean|чистый|sauber|propre|limpio|limpo|pulito|temiz|czysty|bersih|干净|きれい|깨끗한|साफ़
+adjectives|dirty|грязный|schmutzig|sale|sucio|sujo|sporco|kirli|brudny|kotor|脏|汚い|더러운|गंदा
+adjectives|full|полный|voll|plein|lleno|cheio|pieno|dolu|pełny|penuh|满|いっぱい|가득한|भरा हुआ
+adjectives|empty|пустой|leer|vide|vacío|vazio|vuoto|boş|pusty|kosong|空|空っぽ|빈|ख़ाली
+adjectives|open|открытый|offen|ouvert|abierto|aberto|aperto|açık|otwarty|terbuka|开着|開いている|열린|खुला
+adjectives|closed|закрытый|geschlossen|fermé|cerrado|fechado|chiuso|kapalı|zamknięty|tertutup|关着|閉まっている|닫힌|बंद
+adjectives|strong|сильный|stark|fort|fuerte|forte|forte|güçlü|silny|kuat|强|強い|강한|मज़बूत
+adjectives|weak|слабый|schwach|faible|débil|fraco|debole|zayıf|słaby|lemah|弱|弱い|약한|कमज़ोर
+adjectives|high|высокий|hoch|haut|alto|alto|alto|yüksek|wysoki|tinggi|高|高い (たかい)|높은|ऊँचा
+adjectives|low|низкий|niedrig|bas|bajo|baixo|basso|alçak|niski|rendah|低|低い|낮은|नीचा
+adjectives|near|близко|nah|près|cerca|perto|vicino|yakın|blisko|dekat|近|近い|가까운|पास
+adjectives|far|далеко|weit|loin|lejos|longe|lontano|uzak|daleko|jauh|远|遠い|먼|दूर
+adjectives|right (correct)|правильный|richtig|correct|correcto|certo|giusto|doğru|poprawny|benar|对|正しい|맞는|सही
+adjectives|wrong|неправильный|falsch|faux|incorrecto|errado|sbagliato|yanlış|błędny|salah|错|間違った|틀린|ग़लत
+adjectives|important|важный|wichtig|important|importante|importante|importante|önemli|ważny|penting|重要|大切な|중요한|ज़रूरी
+adjectives|interesting|интересный|interessant|intéressant|interesante|interessante|interessante|ilginç|ciekawy|menarik|有趣|面白い|재미있는|दिलचस्प
+adjectives|delicious|вкусный|lecker|délicieux|delicioso|gostoso|buono (cibo)|lezzetli|smaczny|enak|好吃|おいしい|맛있는|स्वादिष्ट
+adjectives|free (no cost)|бесплатный|kostenlos|gratuit|gratis|grátis|gratis|ücretsiz|darmowy|gratis|免费|無料|무료|मुफ़्त
+adjectives|busy|занятой|beschäftigt|occupé|ocupado|ocupado|occupato|meşgul|zajęty|sibuk|忙|忙しい|바쁜|व्यस्त
+adjectives|tired|уставший|müde|fatigué|cansado|cansado|stanco|yorgun|zmęczony|lelah|累|疲れた|피곤한|थका हुआ
+adjectives|hungry|голодный|hungrig|affamé|hambriento|com fome|affamato|aç|głodny|lapar|饿|お腹がすいた|배고픈|भूखा
+adjectives|thirsty|хочется пить|durstig|assoiffé|sediento|com sede|assetato|susamış|spragniony|haus|渴|喉が渇いた|목마른|प्यासा
+adjectives|sick|больной|krank|malade|enfermo|doente|malato|hasta|chory|sakit|生病|病気の|아픈|बीमार
+adjectives|healthy|здоровый|gesund|en bonne santé|sano|saudável|sano|sağlıklı|zdrowy|sehat|健康的|健康な|건강한|स्वस्थ
+emotions|happy|счастливый|glücklich|heureux|feliz|feliz|felice|mutlu|szczęśliwy|bahagia|快乐|幸せ|행복한|ख़ुश
+emotions|sad|грустный|traurig|triste|triste|triste|triste|üzgün|smutny|sedih|难过|悲しい|슬픈|उदास
+emotions|angry|злой|wütend|en colère|enfadado|bravo|arrabbiato|kızgın|zły (gniewny)|marah|生气|怒った|화난|गुस्सा
+emotions|afraid|испуганный|ängstlich|effrayé|asustado|com medo|spaventato|korkmuş|przestraszony|takut|害怕|怖い|무서운|डरा हुआ
+emotions|calm|спокойный|ruhig|calme|tranquilo|calmo|calmo|sakin|spokojny|tenang|平静|落ち着いた|차분한|शांत
+emotions|surprised|удивлённый|überrascht|surpris|sorprendido|surpreso|sorpreso|şaşırmış|zaskoczony|terkejut|惊讶|驚いた|놀란|हैरान
+emotions|love|любовь|die Liebe|l'amour|el amor|o amor|l'amore|aşk|miłość|cinta|爱情|愛|사랑|प्यार
+emotions|joy|радость|die Freude|la joie|la alegría|a alegria|la gioia|sevinç|radość|kegembiraan|喜悦|喜び|기쁨|ख़ुशी
+emotions|fear|страх|die Angst|la peur|el miedo|o medo|la paura|korku|strach|ketakutan|恐惧|恐怖|두려움|डर
+emotions|hope|надежда|die Hoffnung|l'espoir|la esperanza|a esperança|la speranza|umut|nadzieja|harapan|希望|希望 (きぼう)|희망|उम्मीद
+emotions|dream|мечта|der Traum|le rêve|el sueño (deseo)|o sonho|il sogno|hayal|marzenie|mimpi|梦想|夢|꿈|सपना
+emotions|idea|идея|die Idee|l'idée|la idea|a ideia|l'idea|fikir|pomysł|ide|主意|アイデア|아이디어|विचार
+work|work|работа|die Arbeit|le travail|el trabajo|o trabalho|il lavoro|iş|praca|pekerjaan|工作 (名词)|仕事|일|काम
+work|job|должность|der Job|l'emploi|el empleo|o emprego|l'impiego|meslek|posada|jabatan|职位|職|직업|नौकरी
+work|boss|начальник|der Chef|le patron|el jefe|o chefe|il capo|patron|szef|atasan|老板|上司|상사|मालिक
+work|colleague|коллега|der Kollege|le collègue|el colega|o colega|il collega|iş arkadaşı|kolega z pracy|rekan kerja|同事|同僚|동료|सहकर्मी
+work|meeting|встреча|das Treffen|la réunion|la reunión|a reunião|la riunione|toplantı|spotkanie|rapat|会议|会議|회의|बैठक
+work|company|компания|die Firma|l'entreprise|la empresa|a empresa|l'azienda|şirket|firma|perusahaan|公司|会社|회사|कंपनी
+work|teacher|учитель|der Lehrer|le professeur|el profesor|o professor|l'insegnante|öğretmen|nauczyciel|guru|老师|先生|선생님|शिक्षक
+work|student|студент|der Student|l'étudiant|el estudiante|o estudante|lo studente|öğrenci|student|mahasiswa|学生|学生 (がくせい)|학생|छात्र
+work|lesson|урок|die Lektion|la leçon|la lección|a aula|la lezione|ders|lekcja|pelajaran|课|授業|수업|पाठ
+work|homework|домашнее задание|die Hausaufgabe|les devoirs|los deberes|a lição de casa|i compiti|ödev|praca domowa|pekerjaan rumah|作业|宿題|숙제|गृहकार्य
+work|exam|экзамен|die Prüfung|l'examen|el examen|a prova|l'esame|sınav|egzamin|ujian|考试|試験|시험|परीक्षा
+work|pen|ручка|der Kugelschreiber|le stylo|el bolígrafo|a caneta|la penna|tükenmez kalem|długopis|pulpen|笔|ペン|펜|पेन
+work|pencil|карандаш|der Bleistift|le crayon|el lápiz|o lápis|la matita|kurşun kalem|ołówek|pensil|铅笔|鉛筆|연필|पेंसिल
+work|paper|бумага|das Papier|le papier|el papel|o papel|la carta|kağıt|papier|kertas|纸|紙|종이|काग़ज़
+work|letter|письмо|der Brief|la lettre|la carta|a carta|la lettera|mektup|list|surat|信|手紙|편지|चिट्ठी
+work|email|электронное письмо|die E-Mail|l'e-mail|el correo electrónico|o e-mail|l'email|e-posta|e-mail|surel|电子邮件|メール|이메일|ईमेल
+work|problem|проблема|das Problem|le problème|el problema|o problema|il problema|sorun|problem|masalah|问题 (难题)|問題|문제|समस्या
+work|plan|план|der Plan|le plan|el plan|o plano|il piano|plan|plan|rencana|计划|計画|계획|योजना
+work|goal|цель|das Ziel|l'objectif|la meta|a meta|l'obiettivo|hedef|cel|tujuan|目标|目標|목표|लक्ष्य
+work|habit|привычка|die Gewohnheit|l'habitude|el hábito|o hábito|l'abitudine|alışkanlık|nawyk|kebiasaan|习惯|習慣|습관|आदत
+travel|trip|поездка|die Reise|le voyage|el viaje|a viagem|il viaggio|yolculuk|podróż|perjalanan|旅行 (名词)|旅|여행|सफ़र
+travel|passport|паспорт|der Reisepass|le passeport|el pasaporte|o passaporte|il passaporto|pasaport|paszport|paspor|护照|パスポート|여권|पासपोर्ट
+travel|suitcase|чемодан|der Koffer|la valise|la maleta|a mala|la valigia|bavul|walizka|koper|行李箱|スーツケース|여행 가방|सूटकेस
+travel|country|страна|das Land|le pays|el país|o país|il paese|ülke|kraj|negara|国家|国|나라|देश
+travel|world|мир|die Welt|le monde|el mundo|o mundo|il mondo|dünya|świat|dunia|世界|世界 (せかい)|세계|दुनिया
+travel|photo|фотография|das Foto|la photo|la foto|a foto|la foto|fotoğraf|zdjęcie|foto|照片|写真|사진|फ़ोटो
+travel|tourist|турист|der Tourist|le touriste|el turista|o turista|il turista|turist|turysta|turis|游客|観光客|관광객|पर्यटक
+travel|reservation|бронирование|die Reservierung|la réservation|la reserva|a reserva|la prenotazione|rezervasyon|rezerwacja|reservasi|预订|予約|예약|आरक्षण
+travel|help!|помогите!|Hilfe!|au secours !|¡socorro!|socorro!|aiuto!|imdat!|pomocy!|tolong!|救命！|助けて！|도와주세요!|बचाओ!
+travel|where?|где?|wo?|où ?|¿dónde?|onde?|dove?|nerede?|gdzie?|di mana?|在哪里？|どこ？|어디?|कहाँ?
+travel|when?|когда?|wann?|quand ?|¿cuándo?|quando?|quando?|ne zaman?|kiedy?|kapan?|什么时候？|いつ？|언제?|कब?
+travel|what?|что?|was?|quoi ?|¿qué?|o quê?|che cosa?|ne?|co?|apa?|什么？|何？|뭐?|क्या?
+travel|who?|кто?|wer?|qui ?|¿quién?|quem?|chi?|kim?|kto?|siapa?|谁？|誰？|누구?|कौन?
+travel|why?|почему?|warum?|pourquoi ?|¿por qué?|por quê?|perché?|neden?|dlaczego?|mengapa?|为什么？|なぜ？|왜?|क्यों?
+travel|how?|как?|wie?|comment ?|¿cómo?|como?|come?|nasıl?|jak?|bagaimana?|怎么？|どうやって？|어떻게?|कैसे?
+travel|how much?|сколько?|wie viel?|combien ?|¿cuánto?|quanto?|quanto?|ne kadar?|ile?|berapa?|多少？|いくら？|얼마예요?|कितना?
+travel|here|здесь|hier|ici|aquí|aqui|qui|burada|tutaj|di sini|这里|ここ|여기|यहाँ
+travel|there|там|dort|là-bas|allí|lá|lì|orada|tam|di sana|那里|そこ|거기|वहाँ
+travel|entrance|вход|der Eingang|l'entrée|la entrada|a entrada|l'ingresso|giriş|wejście|pintu masuk|入口|入口 (いりぐち)|입구|प्रवेश
+travel|exit|выход|der Ausgang|la sortie|la salida|a saída|l'uscita|çıkış|wyjście|pintu keluar|出口|出口 (でぐち)|출구|निकास
+travel|toilet|туалет|die Toilette|les toilettes|el baño (servicio)|o banheiro (sanitário)|il gabinetto|tuvalet|toaleta|toilet|厕所|トイレ|화장실|शौचालय
+travel|open (shop)|открыто|geöffnet|ouvert (magasin)|abierto (tienda)|aberto (loja)|aperto (negozio)|açık (dükkan)|otwarte|buka|营业中|営業中|영업 중|खुला है
+misc|music|музыка|die Musik|la musique|la música|a música|la musica|müzik|muzyka|musik|音乐|音楽|음악|संगीत
+misc|song|песня|das Lied|la chanson|la canción|a canção|la canzone|şarkı|piosenka|lagu|歌|歌 (うた)|노래|गीत
+misc|movie|фильм|der Film|le film|la película|o filme|il film|film|film|film|电影|映画|영화|फ़िल्म
+misc|game|игра|das Spiel|le jeu|el juego|o jogo|il gioco|oyun|gra|permainan|游戏|ゲーム|게임|खेल
+misc|sport|спорт|der Sport|le sport|el deporte|o esporte|lo sport|spor|sport|olahraga|运动|スポーツ|운동|खेलकूद
+misc|ball|мяч|der Ball|le ballon|la pelota|a bola|la palla|top|piłka|bola|球|ボール|공|गेंद
+misc|gift|подарок|das Geschenk|le cadeau|el regalo|o presente|il regalo|hediye|prezent|hadiah|礼物|プレゼント|선물|तोहफ़ा
+misc|party|вечеринка|die Party|la fête (soirée)|la fiesta (reunión)|a festa|la festa (serata)|parti|impreza|pesta|派对|パーティー|파티|पार्टी
+misc|news|новости|die Nachrichten|les nouvelles|las noticias|as notícias|le notizie|haberler|wiadomości|berita|新闻|ニュース|뉴스|ख़बर
+misc|story|история|die Geschichte|l'histoire|la historia|a história|la storia|hikaye|historia|cerita|故事|物語|이야기|कहानी
+misc|life|жизнь|das Leben|la vie|la vida|a vida|la vita|hayat|życie|kehidupan|生活 (名词)|人生|인생|ज़िंदगी
+misc|people|люди|die Leute|les gens|la gente|as pessoas|la gente|insanlar|ludzie|orang-orang|人们|人々|사람들|लोग
+misc|everything|всё|alles|tout|todo|tudo|tutto|her şey|wszystko|semuanya|一切|全部|모든 것|सब कुछ
+misc|nothing|ничего|nichts|rien|nada|nada|niente|hiçbir şey|nic|tidak ada|什么都没有|何も|아무것도|कुछ नहीं
+misc|very|очень|sehr|très|muy|muito|molto|çok|bardzo|sangat|很|とても|매우|बहुत
+misc|a little|немного|ein bisschen|un peu|un poco|um pouco|un po'|biraz|trochę|sedikit|一点|少し|조금|थोड़ा
+misc|together|вместе|zusammen|ensemble|juntos|juntos|insieme|birlikte|razem|bersama|一起|一緒に|함께|साथ में
+misc|again|снова|wieder|encore|otra vez|de novo|di nuovo|tekrar|znowu|lagi|再|また|다시|फिर से
+misc|maybe|может быть|vielleicht|peut-être|quizás|talvez|forse|belki|może|mungkin|也许|たぶん|아마|शायद
+misc|of course|конечно|natürlich|bien sûr|por supuesto|claro|certo|tabii ki|oczywiście|tentu saja|当然|もちろん|물론|बिल्कुल
+misc|welcome|добро пожаловать|willkommen|bienvenue|bienvenido|bem-vindo|benvenuto|hoş geldiniz|witamy|selamat datang|欢迎|ようこそ|환영합니다|स्वागत है
+misc|congratulations|поздравляю|herzlichen Glückwunsch|félicitations|felicidades|parabéns|congratulazioni|tebrikler|gratulacje|selamat|恭喜|おめでとう|축하합니다|बधाई हो
+misc|good luck|удачи|viel Glück|bonne chance|buena suerte|boa sorte|buona fortuna|iyi şanslar|powodzenia|semoga beruntung|祝你好运|頑張って|행운을 빌어요|शुभकामनाएँ
+misc|cheers|за здоровье|prost|santé|salud|saúde|salute|şerefe|na zdrowie|bersulang|干杯|乾杯|건배|चियर्स
+misc|I don't understand|я не понимаю|ich verstehe nicht|je ne comprends pas|no entiendo|não entendo|non capisco|anlamıyorum|nie rozumiem|saya tidak mengerti|我不明白|分かりません|이해가 안 돼요|मैं नहीं समझा
+misc|I love you|я тебя люблю|ich liebe dich|je t'aime|te quiero|eu te amo|ti amo|seni seviyorum|kocham cię|aku cinta kamu|我爱你|愛してる|사랑해요|मैं तुमसे प्यार करता हूँ

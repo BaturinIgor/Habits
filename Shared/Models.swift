@@ -169,6 +169,9 @@ struct Habit: Identifiable, Hashable, Codable {
     var minimumVersion: String?
     /// Привычка, после отметки которой напомнить об этой.
     var chainAfter: UUID?
+    /// Изучение слов: код языка из словаря (например "es") и сколько новых слов в день.
+    var wordsLanguage: String?
+    var wordsPerDay: Int?
 
     init(id: UUID = UUID(),
          name: String = "",
@@ -183,7 +186,9 @@ struct Habit: Identifiable, Hashable, Codable {
          sortOrder: Int = 0,
          partOfDay: PartOfDay? = nil,
          target: Int? = nil,
-         unit: String? = nil) {
+         unit: String? = nil,
+         wordsLanguage: String? = nil,
+         wordsPerDay: Int? = nil) {
         self.id = id
         self.name = name
         self.details = details
@@ -198,11 +203,14 @@ struct Habit: Identifiable, Hashable, Codable {
         self.partOfDay = partOfDay
         self.target = target
         self.unit = unit
+        self.wordsLanguage = wordsLanguage
+        self.wordsPerDay = wordsPerDay
     }
 
     enum CodingKeys: String, CodingKey {
         case id, name, details, icon, colorIndex, groupID, schedule, reminder, createdAt, isArchived, sortOrder
         case repeatCount, repeatInterval, partOfDay, pausedFrom, pausedUntil, target, unit, minimumVersion, chainAfter
+        case wordsLanguage, wordsPerDay
     }
 
     init(from decoder: Decoder) throws {
@@ -227,7 +235,12 @@ struct Habit: Identifiable, Hashable, Codable {
         unit = try c.decodeIfPresent(String.self, forKey: .unit)
         minimumVersion = try c.decodeIfPresent(String.self, forKey: .minimumVersion)
         chainAfter = try c.decodeIfPresent(UUID.self, forKey: .chainAfter)
+        wordsLanguage = try c.decodeIfPresent(String.self, forKey: .wordsLanguage)
+        wordsPerDay = try c.decodeIfPresent(Int.self, forKey: .wordsPerDay)
     }
+
+    /// Привычка "учить слова": отметка ставится сама, когда пройдены слова дня.
+    var isWords: Bool { wordsLanguage != nil }
 
     /// Повторы напоминания с учётом Pro: без Pro всегда стандартные.
     /// Ручной порядок: sortOrder, при равенстве дата создания и id, чтобы порядок не прыгал.
@@ -363,11 +376,13 @@ struct AppData: Codable {
     var checkIns: [String: CheckIn] = [:]
     var settings: AppSettings = AppSettings()
     var wallet: Wallet = Wallet()
+    /// Прогресс изучения слов. Ключ: "<язык>|<номер слова>".
+    var words: [String: WordCard] = [:]
 
     init() {}
 
     enum CodingKeys: String, CodingKey {
-        case version, habits, groups, checkIns, settings, wallet
+        case version, habits, groups, checkIns, settings, wallet, words
     }
 
     init(from decoder: Decoder) throws {
@@ -378,7 +393,21 @@ struct AppData: Codable {
         checkIns = try c.decodeIfPresent([String: CheckIn].self, forKey: .checkIns) ?? [:]
         settings = try c.decodeIfPresent(AppSettings.self, forKey: .settings) ?? AppSettings()
         wallet = (try? c.decodeIfPresent(Wallet.self, forKey: .wallet)) ?? Wallet()
+        words = (try? c.decodeIfPresent([String: WordCard].self, forKey: .words)) ?? [:]
     }
+}
+
+// MARK: - Карточка слова
+
+/// Интервальное повторение: чем выше коробка, тем реже слово возвращается.
+struct WordCard: Codable, Hashable {
+    var box: Int
+    /// День следующего повтора, yyyy-MM-dd.
+    var due: String
+    /// День, когда слово показали впервые.
+    var introduced: String
+    /// День последнего ответа.
+    var lastSeen: String
 }
 
 extension AppData {

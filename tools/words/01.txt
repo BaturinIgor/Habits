@@ -1,0 +1,107 @@
+# category|en|ru|de|fr|es|pt-BR|it|tr|pl|id|zh-Hans|ja|ko|hi
+basics|hello|привет|hallo|bonjour|hola|olá|ciao|merhaba|cześć|halo|你好|こんにちは|안녕하세요|नमस्ते
+basics|goodbye|до свидания|auf Wiedersehen|au revoir|adiós|tchau|arrivederci|hoşça kal|do widzenia|selamat tinggal|再见|さようなら|안녕히 가세요|अलविदा
+basics|please|пожалуйста|bitte|s'il vous plaît|por favor|por favor|per favore|lütfen|proszę|tolong|请|お願いします|부탁합니다|कृपया
+basics|thank you|спасибо|danke|merci|gracias|obrigado|grazie|teşekkür ederim|dziękuję|terima kasih|谢谢|ありがとう|감사합니다|धन्यवाद
+basics|yes|да|ja|oui|sí|sim|sì|evet|tak|ya|是|はい|네|हाँ
+basics|no|нет|nein|non|no|não|no|hayır|nie|tidak|不|いいえ|아니요|नहीं
+basics|sorry|извините|Entschuldigung|pardon|perdón|desculpe|scusa|özür dilerim|przepraszam|maaf|对不起|すみません|죄송합니다|माफ़ कीजिए
+basics|good morning|доброе утро|guten Morgen|bonjour|buenos días|bom dia|buongiorno|günaydın|dzień dobry|selamat pagi|早上好|おはようございます|좋은 아침입니다|सुप्रभात
+basics|good night|спокойной ночи|gute Nacht|bonne nuit|buenas noches|boa noite|buonanotte|iyi geceler|dobranoc|selamat malam|晚安|おやすみなさい|안녕히 주무세요|शुभ रात्रि
+basics|friend|друг|der Freund|l'ami|el amigo|o amigo|l'amico|arkadaş|przyjaciel|teman|朋友|友達|친구|दोस्त
+basics|name|имя|der Name|le nom|el nombre|o nome|il nome|isim|imię|nama|名字|名前|이름|नाम
+basics|question|вопрос|die Frage|la question|la pregunta|a pergunta|la domanda|soru|pytanie|pertanyaan|问题|質問|질문|सवाल
+basics|answer|ответ|die Antwort|la réponse|la respuesta|a resposta|la risposta|cevap|odpowiedź|jawaban|答案|答え|대답|जवाब
+basics|word|слово|das Wort|le mot|la palabra|a palavra|la parola|kelime|słowo|kata|词|言葉|단어|शब्द
+basics|language|язык|die Sprache|la langue|el idioma|o idioma|la lingua|dil|język|bahasa|语言|言語|언어|भाषा
+basics|I|я|ich|je|yo|eu|io|ben|ja|saya|我|私|나|मैं
+basics|you|ты|du|tu|tú|você|tu|sen|ty|kamu|你|あなた|너|तुम
+basics|he|он|er|il|él|ele|lui|o (erkek)|on|dia (laki-laki)|他|彼|그|वह (पुरुष)
+basics|she|она|sie|elle|ella|ela|lei|o (kadın)|ona|dia (perempuan)|她|彼女|그녀|वह (स्त्री)
+basics|we|мы|wir|nous|nosotros|nós|noi|biz|my|kami|我们|私たち|우리|हम
+basics|they|они|sie (Plural)|ils|ellos|eles|loro|onlar|oni|mereka|他们|彼ら|그들|वे
+basics|this|это|das|ceci|esto|isto|questo|bu|to|ini|这个|これ|이것|यह
+basics|that|то|jenes|cela|eso|aquilo|quello|şu|tamto|itu|那个|あれ|저것|वह
+basics|and|и|und|et|y|e|e|ve|i|dan|和|と|그리고|और
+basics|or|или|oder|ou|o|ou|o|veya|lub|atau|或者|または|또는|या
+basics|but|но|aber|mais|pero|mas|ma|ama|ale|tetapi|但是|でも|하지만|लेकिन
+basics|with|с|mit|avec|con|com|con|ile|z|dengan|跟|と|와 함께|के साथ
+basics|without|без|ohne|sans|sin|sem|senza|olmadan|bez|tanpa|没有|なしで|없이|के बिना
+basics|because|потому что|weil|parce que|porque|porque|perché|çünkü|ponieważ|karena|因为|なぜなら|왜냐하면|क्योंकि
+basics|person|человек|der Mensch|la personne|la persona|a pessoa|la persona|insan|człowiek|orang|人|人 (ひと)|사람|इंसान
+basics|good evening|добрый вечер|guten Abend|bonsoir|buenas tardes|boa tarde|buonasera|iyi akşamlar|dobry wieczór|selamat sore|晚上好|こんばんは|좋은 저녁입니다|शुभ संध्या
+basics|how are you?|как дела?|wie geht's?|comment ça va ?|¿qué tal?|tudo bem?|come stai?|nasılsın?|jak się masz?|apa kabar?|你好吗？|元気ですか？|잘 지내요?|आप कैसे हैं?
+basics|fine|хорошо|gut (Befinden)|bien|bien|bem|bene|iyiyim|dobrze|baik-baik saja|很好|元気です|잘 지내요|ठीक हूँ
+basics|nice to meet you|приятно познакомиться|freut mich|enchanté|encantado|prazer|piacere|memnun oldum|miło mi|senang bertemu|很高兴认识你|はじめまして|만나서 반갑습니다|आपसे मिलकर ख़ुशी हुई
+numbers|one|один|eins|un|uno|um|uno|bir|jeden|satu|一|一|하나|एक
+numbers|two|два|zwei|deux|dos|dois|due|iki|dwa|dua|二|二|둘|दो
+numbers|three|три|drei|trois|tres|três|tre|üç|trzy|tiga|三|三|셋|तीन
+numbers|four|четыре|vier|quatre|cuatro|quatro|quattro|dört|cztery|empat|四|四|넷|चार
+numbers|five|пять|fünf|cinq|cinco|cinco|cinque|beş|pięć|lima|五|五|다섯|पाँच
+numbers|six|шесть|sechs|six|seis|seis|sei|altı|sześć|enam|六|六|여섯|छह
+numbers|seven|семь|sieben|sept|siete|sete|sette|yedi|siedem|tujuh|七|七|일곱|सात
+numbers|eight|восемь|acht|huit|ocho|oito|otto|sekiz|osiem|delapan|八|八|여덟|आठ
+numbers|nine|девять|neun|neuf|nueve|nove|nove|dokuz|dziewięć|sembilan|九|九|아홉|नौ
+numbers|ten|десять|zehn|dix|diez|dez|dieci|on|dziesięć|sepuluh|十|十|열|दस
+numbers|twenty|двадцать|zwanzig|vingt|veinte|vinte|venti|yirmi|dwadzieścia|dua puluh|二十|二十|스물|बीस
+numbers|hundred|сто|hundert|cent|cien|cem|cento|yüz|sto|seratus|一百|百|백|सौ
+numbers|thousand|тысяча|tausend|mille|mil|mil|mille|bin|tysiąc|seribu|一千|千|천|हज़ार
+numbers|first|первый|erste|premier|primero|primeiro|primo|birinci|pierwszy|pertama|第一|最初|첫 번째|पहला
+numbers|last|последний|letzte|dernier|último|último|ultimo|son|ostatni|terakhir|最后|最後|마지막|आख़िरी
+colors|red|красный|rot|rouge|rojo|vermelho|rosso|kırmızı|czerwony|merah|红色|赤|빨간색|लाल
+colors|blue|синий|blau|bleu|azul|azul|blu|mavi|niebieski|biru|蓝色|青|파란색|नीला
+colors|green|зелёный|grün|vert|verde|verde|verde|yeşil|zielony|hijau|绿色|緑|초록색|हरा
+colors|yellow|жёлтый|gelb|jaune|amarillo|amarelo|giallo|sarı|żółty|kuning|黄色|黄色|노란색|पीला
+colors|black|чёрный|schwarz|noir|negro|preto|nero|siyah|czarny|hitam|黑色|黒|검은색|काला
+colors|white|белый|weiß|blanc|blanco|branco|bianco|beyaz|biały|putih|白色|白|흰색|सफ़ेद
+colors|orange (color)|оранжевый|orange|orange|naranja|laranja|arancione|turuncu|pomarańczowy|oranye|橙色|オレンジ色|주황색|नारंगी
+colors|pink|розовый|rosa|rose|rosa|rosa|rosa|pembe|różowy|merah muda|粉色|ピンク|분홍색|गुलाबी
+colors|purple|фиолетовый|lila|violet|morado|roxo|viola|mor|fioletowy|ungu|紫色|紫|보라색|बैंगनी
+colors|brown|коричневый|braun|marron|marrón|marrom|marrone|kahverengi|brązowy|cokelat|棕色|茶色|갈색|भूरा
+colors|gray|серый|grau|gris|gris|cinza|grigio|gri|szary|abu-abu|灰色|灰色|회색|स्लेटी
+family|mother|мама|die Mutter|la mère|la madre|a mãe|la madre|anne|matka|ibu|妈妈|母|어머니|माँ
+family|father|папа|der Vater|le père|el padre|o pai|il padre|baba|ojciec|ayah|爸爸|父|아버지|पिता
+family|brother|брат|der Bruder|le frère|el hermano|o irmão|il fratello|erkek kardeş|brat|saudara laki-laki|兄弟|兄弟|형제|भाई
+family|sister|сестра|die Schwester|la sœur|la hermana|a irmã|la sorella|kız kardeş|siostra|saudara perempuan|姐妹|姉妹|자매|बहन
+family|son|сын|der Sohn|le fils|el hijo|o filho|il figlio|oğul|syn|anak laki-laki|儿子|息子|아들|बेटा
+family|daughter|дочь|die Tochter|la fille|la hija|a filha|la figlia|kız evlat|córka|anak perempuan|女儿|娘|딸|बेटी
+family|child|ребёнок|das Kind|l'enfant|el niño|a criança|il bambino|çocuk|dziecko|anak|孩子|子供|아이|बच्चा
+family|husband|муж|der Ehemann|le mari|el marido|o marido|il marito|koca|mąż|suami|丈夫|夫|남편|पति
+family|wife|жена|die Ehefrau|la femme|la esposa|a esposa|la moglie|eş|żona|istri|妻子|妻|아내|पत्नी
+family|grandmother|бабушка|die Großmutter|la grand-mère|la abuela|a avó|la nonna|büyükanne|babcia|nenek|奶奶|祖母|할머니|दादी
+family|grandfather|дедушка|der Großvater|le grand-père|el abuelo|o avô|il nonno|büyükbaba|dziadek|kakek|爷爷|祖父|할아버지|दादा
+family|family|семья|die Familie|la famille|la familia|a família|la famiglia|aile|rodzina|keluarga|家庭|家族|가족|परिवार
+family|man|мужчина|der Mann|l'homme|el hombre|o homem|l'uomo|adam|mężczyzna|pria|男人|男性|남자|आदमी
+family|woman|женщина|die Frau|la femme|la mujer|a mulher|la donna|kadın|kobieta|wanita|女人|女性|여자|औरत
+family|baby|малыш|das Baby|le bébé|el bebé|o bebê|il bambino piccolo|bebek|niemowlę|bayi|婴儿|赤ちゃん|아기|शिशु
+family|boy|мальчик|der Junge|le garçon|el chico|o menino|il ragazzo|erkek çocuk|chłopiec|anak laki-laki kecil|男孩|男の子|소년|लड़का
+family|girl|девочка|das Mädchen|la fille|la chica|a menina|la ragazza|kız|dziewczynka|anak perempuan kecil|女孩|女の子|소녀|लड़की
+family|neighbor|сосед|der Nachbar|le voisin|el vecino|o vizinho|il vicino|komşu|sąsiad|tetangga|邻居|隣人|이웃|पड़ोसी
+family|guest|гость|der Gast|l'invité|el invitado|o convidado|l'ospite|misafir|gość|tamu|客人|客|손님|मेहमान
+body|head|голова|der Kopf|la tête|la cabeza|a cabeça|la testa|baş|głowa|kepala|头|頭|머리|सिर
+body|hand|рука (кисть)|die Hand|la main|la mano|a mão|la mano|el|dłoń|tangan|手|手|손|हाथ
+body|eye|глаз|das Auge|l'œil|el ojo|o olho|l'occhio|göz|oko|mata|眼睛|目|눈|आँख
+body|ear|ухо|das Ohr|l'oreille|la oreja|a orelha|l'orecchio|kulak|ucho|telinga|耳朵|耳|귀|कान
+body|nose|нос|die Nase|le nez|la nariz|o nariz|il naso|burun|nos|hidung|鼻子|鼻|코|नाक
+body|mouth|рот|der Mund|la bouche|la boca|a boca|la bocca|ağız|usta|mulut|嘴|口|입|मुँह
+body|tooth|зуб|der Zahn|la dent|el diente|o dente|il dente|diş|ząb|gigi|牙齿|歯|이|दाँत
+body|hair|волосы|das Haar|les cheveux|el pelo|o cabelo|i capelli|saç|włosy|rambut|头发|髪|머리카락|बाल
+body|face|лицо|das Gesicht|le visage|la cara|o rosto|il viso|yüz|twarz|wajah|脸|顔|얼굴|चेहरा
+body|leg|нога|das Bein|la jambe|la pierna|a perna|la gamba|bacak|noga|kaki|腿|脚|다리|टाँग
+body|foot|стопа|der Fuß|le pied|el pie|o pé|il piede|ayak|stopa|telapak kaki|脚|足|발|पैर
+body|arm|рука (от плеча)|der Arm|le bras|el brazo|o braço|il braccio|kol|ramię|lengan|胳膊|腕|팔|बाँह
+body|finger|палец|der Finger|le doigt|el dedo|o dedo|il dito|parmak|palec|jari|手指|指|손가락|उँगली
+body|heart|сердце|das Herz|le cœur|el corazón|o coração|il cuore|kalp|serce|jantung|心脏|心臓|심장|दिल
+body|back|спина|der Rücken|le dos|la espalda|as costas|la schiena|sırt|plecy|punggung|背|背中|등|पीठ
+body|stomach|живот|der Bauch|le ventre|la barriga|a barriga|la pancia|karın|brzuch|perut|肚子|お腹|배|पेट
+body|skin|кожа|die Haut|la peau|la piel|a pele|la pelle|cilt|skóra|kulit|皮肤|肌|피부|त्वचा
+body|blood|кровь|das Blut|le sang|la sangre|o sangue|il sangue|kan|krew|darah|血|血|피|ख़ून
+body|neck|шея|der Hals|le cou|el cuello|o pescoço|il collo|boyun|szyja|leher|脖子|首|목|गर्दन
+body|shoulder|плечо|die Schulter|l'épaule|el hombro|o ombro|la spalla|omuz|bark|bahu|肩膀|肩|어깨|कंधा
+body|knee|колено|das Knie|le genou|la rodilla|o joelho|il ginocchio|diz|kolano|lutut|膝盖|膝|무릎|घुटना
+body|body|тело|der Körper|le corps|el cuerpo|o corpo|il corpo|vücut|ciało|tubuh|身体|体|몸|शरीर
+body|health|здоровье|die Gesundheit|la santé|la salud|a saúde|la salute|sağlık|zdrowie|kesehatan|健康|健康|건강|सेहत
+body|doctor|врач|der Arzt|le médecin|el médico|o médico|il medico|doktor|lekarz|dokter|医生|医者|의사|डॉक्टर
+body|medicine|лекарство|das Medikament|le médicament|el medicamento|o remédio|la medicina|ilaç|lekarstwo|obat|药|薬|약|दवा
+body|pain|боль|der Schmerz|la douleur|el dolor|a dor|il dolore|ağrı|ból|rasa sakit|疼痛|痛み|통증|दर्द
+body|sleep|сон|der Schlaf|le sommeil|el sueño|o sono|il sonno|uyku|sen|tidur|睡眠|睡眠|잠|नींद

@@ -24,6 +24,7 @@ struct SettingsView: View {
 
     private static let languages: [(code: String, name: String)] = [
         ("en", "English"), ("ru", "Русский"), ("de", "Deutsch"), ("fr", "Français"), ("es", "Español"),
+        ("pt-BR", "Português (Brasil)"), ("it", "Italiano"), ("tr", "Türkçe"), ("pl", "Polski"), ("id", "Bahasa Indonesia"),
         ("zh-Hans", "简体中文"), ("ja", "日本語"), ("ko", "한국어"), ("hi", "हिन्दी"),
     ]
 

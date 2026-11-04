@@ -14,6 +14,30 @@ for n, line in enumerate(open(SP + 'translations.txt', encoding='utf-8'), 1):
     assert parts[0] not in rows, ('dup', parts[0])
     rows[parts[0]] = parts[1:]
 
+# Языки, добавленные позже: отдельный файл на язык, строки "ключ||перевод".
+# Строка без перевода берётся из английского ключа, а скрипт её показывает.
+EXTRA = ['pt-BR', 'it', 'tr', 'pl', 'id']
+extra = {}
+for lang in EXTRA:
+    m = {}
+    for n, line in enumerate(open(SP + 'extra/' + lang + '.txt', encoding='utf-8'), 1):
+        line = line.rstrip('\n')
+        if not line.strip():
+            continue
+        parts = line.split('||')
+        assert len(parts) == 2, (lang, n, line[:60])
+        assert parts[0] not in m, (lang, 'dup', parts[0])
+        m[parts[0]] = parts[1]
+    unknown = sorted(set(m) - set(rows))
+    untranslated = sorted(set(rows) - set(m))
+    if unknown or untranslated:
+        print(lang, 'unknown keys:', unknown, 'untranslated:', untranslated)
+    for k, v in m.items():
+        # Плейсхолдеры должны совпадать с ключом.
+        ph = lambda t: sorted(re.findall(r'%(?:\d\$)?(?:lld|@)', t.replace('%1$', '%').replace('%2$', '%')))
+        assert ph(k) == ph(v), (lang, k, v)
+    extra[lang] = m
+
 # Plural forms: key -> {lang: {category: text}}
 P = {
  '%lld days': {
@@ -72,9 +96,58 @@ P = {
   'hi': {'one': 'हफ़्ते में %lld बार', 'other': 'हफ़्ते में %lld बार'},
  },
 }
+# Множественные формы для языков из EXTRA.
+P_EXTRA = {
+ '%lld days': {
+  'pt-BR': {'one': '%lld dia', 'other': '%lld dias'},
+  'it': {'one': '%lld giorno', 'other': '%lld giorni'},
+  'tr': {'one': '%lld gün', 'other': '%lld gün'},
+  'pl': {'one': '%lld dzień', 'few': '%lld dni', 'many': '%lld dni', 'other': '%lld dnia'},
+  'id': {'other': '%lld hari'},
+ },
+ '%lld habits left': {
+  'pt-BR': {'one': 'Falta %lld hábito', 'other': 'Faltam %lld hábitos'},
+  'it': {'one': 'Manca %lld abitudine', 'other': 'Mancano %lld abitudini'},
+  'tr': {'one': '%lld alışkanlık kaldı', 'other': '%lld alışkanlık kaldı'},
+  'pl': {'one': 'Został %lld nawyk', 'few': 'Zostały %lld nawyki', 'many': 'Zostało %lld nawyków', 'other': 'Zostało %lld nawyku'},
+  'id': {'other': '%lld kebiasaan lagi'},
+ },
+ '%lld habits planned': {
+  'pt-BR': {'one': '%lld hábito planejado', 'other': '%lld hábitos planejados'},
+  'it': {'one': '%lld abitudine prevista', 'other': '%lld abitudini previste'},
+  'tr': {'one': '%lld alışkanlık planlandı', 'other': '%lld alışkanlık planlandı'},
+  'pl': {'one': 'Zaplanowano %lld nawyk', 'few': 'Zaplanowano %lld nawyki', 'many': 'Zaplanowano %lld nawyków', 'other': 'Zaplanowano %lld nawyku'},
+  'id': {'other': '%lld kebiasaan direncanakan'},
+ },
+ '%lld repeats every %lld min': {
+  'pt-BR': {'one': '%1$lld repetição a cada %2$lld min', 'other': '%1$lld repetições a cada %2$lld min'},
+  'it': {'one': '%1$lld ripetizione ogni %2$lld min', 'other': '%1$lld ripetizioni ogni %2$lld min'},
+  'tr': {'one': 'Her %2$lld dk %1$lld tekrar', 'other': 'Her %2$lld dk %1$lld tekrar'},
+  'pl': {'one': '%1$lld powtórzenie co %2$lld min', 'few': '%1$lld powtórzenia co %2$lld min', 'many': '%1$lld powtórzeń co %2$lld min', 'other': '%1$lld powtórzenia co %2$lld min'},
+  'id': {'other': '%1$lld kali setiap %2$lld menit'},
+ },
+ '%lld weeks': {
+  'pt-BR': {'one': '%lld semana', 'other': '%lld semanas'},
+  'it': {'one': '%lld settimana', 'other': '%lld settimane'},
+  'tr': {'one': '%lld hafta', 'other': '%lld hafta'},
+  'pl': {'one': '%lld tydzień', 'few': '%lld tygodnie', 'many': '%lld tygodni', 'other': '%lld tygodnia'},
+  'id': {'other': '%lld minggu'},
+ },
+ '%lld times a week': {
+  'pt-BR': {'one': '%lld vez por semana', 'other': '%lld vezes por semana'},
+  'it': {'one': '%lld volta a settimana', 'other': '%lld volte a settimana'},
+  'tr': {'one': 'Haftada %lld kez', 'other': 'Haftada %lld kez'},
+  'pl': {'one': '%lld raz w tygodniu', 'few': '%lld razy w tygodniu', 'many': '%lld razy w tygodniu', 'other': '%lld razy w tygodniu'},
+  'id': {'other': '%lld kali seminggu'},
+ },
+}
+for key, forms in P_EXTRA.items():
+    P[key].update(forms)
+
 # Короткое название под иконкой. Внутри приложения используется полное: "Трекер привычек".
 NAMES = {'en': 'Habits', 'ru': 'Привычки', 'de': 'Gewohnheiten', 'fr': 'Habitudes',
-         'es': 'Hábitos', 'zh-Hans': '习惯', 'ja': '習慣', 'ko': '습관', 'hi': 'आदतें'}
+         'es': 'Hábitos', 'zh-Hans': '习惯', 'ja': '習慣', 'ko': '습관', 'hi': 'आदतें',
+         'pt-BR': 'Hábitos', 'it': 'Abitudini', 'tr': 'Alışkanlıklar', 'pl': 'Nawyki', 'id': 'Kebiasaan'}
 
 def esc(s):
     return s.replace('\\', '\\\\').replace('"', '\\"')
@@ -82,15 +155,18 @@ def esc(s):
 def xml(s):
     return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 
-for lang in ['en'] + LANGS:
+for lang in ['en'] + LANGS + EXTRA:
     d = OUT + lang + '.lproj/'
     os.makedirs(d, exist_ok=True)
     open(d + 'InfoPlist.strings', 'w', encoding='utf-8').write(f'"CFBundleDisplayName" = "{esc(NAMES[lang])}";\n"CFBundleName" = "{esc(NAMES[lang])}";\n')
     if lang != 'en':
-        i = LANGS.index(lang)
         with open(d + 'Localizable.strings', 'w', encoding='utf-8') as f:
             for k in sorted(rows):
-                f.write(f'"{esc(k)}" = "{esc(rows[k][i])}";\n')
+                if lang in extra:
+                    value = extra[lang].get(k, k)
+                else:
+                    value = rows[k][LANGS.index(lang)]
+                f.write(f'"{esc(k)}" = "{esc(value)}";\n')
     parts = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">',
              '<plist version="1.0">', '<dict>']
@@ -109,7 +185,7 @@ for lang in ['en'] + LANGS:
     open(d + 'Localizable.stringsdict', 'w', encoding='utf-8').write('\n'.join(parts))
 
 # Check that every UI string in code has a translation
-STRING_ARGS = {'days', 'repeats', 'standard', 'event.summary ?? ""'}
+STRING_ARGS = {'days', 'repeats', 'standard', 'event.summary ?? ""', 'inlineName(code)'}
 lit = re.compile(r'"((?:[^"\\]|\\.|\\\([^)]*\))*)"')
 def to_key(v):
     def r(m):
@@ -119,8 +195,8 @@ def to_key(v):
 ignore = {'ALTAppGroups', 'CFBundleShortVersionString', 'CFBundleVersion', 'EEEEdMMMM', 'HABIT_DONE', 'HABIT_REMINDER',
           'HABIT_SKIP', 'LLLLyyyy', 'PRO', 'ProgressWidget', 'TodayWidget', 'appex', 'dMMM', 'dMMMM', 'dMMMMyyyy',
           'habitID', 'habits-data.json', 'ungrouped', 'day', 'Habits Pro', 'AppleLanguages', 'all', 'appLanguage',
-          'checkmark', 'de', 'en', 'es', 'fr', 'hi', 'ja', 'ko', 'ru', 'zh-Hans', 'system', 'summary', 'summary|%lld',
-          'habits-backup-%lld.json', 'English', 'Deutsch', 'Español', 'Français', 'Not checked off yet: \\(event.summary ?? '}
+          'checkmark', 'de', 'en', 'es', 'fr', 'hi', 'ja', 'ko', 'ru', 'zh-Hans', 'pt-BR', 'it', 'tr', 'pl', 'id', 'system', 'summary', 'summary|%lld',
+          'habits-backup-%lld.json', 'English', 'Deutsch', 'Español', 'Français', 'Português (Brasil)', 'Italiano', 'Türkçe', 'Polski', 'Bahasa Indonesia', 'Not checked off yet: \\(event.summary ?? '}
 known = set(rows) | set(P) | ignore
 missing = set()
 files = glob.glob(ROOT + 'Habits/**/*.swift', recursive=True) + glob.glob(ROOT + 'HabitsWidget/*.swift') + glob.glob(ROOT + 'Shared/*.swift')
@@ -138,7 +214,7 @@ for f in files:
                 continue
             if v in ('bicycle', 'calendar', 'globe', 'infinity', 'laptopcomputer', 'nosign', 'pencil', 'sparkles', 'target', 'timer'):
                 continue
-            if v.startswith('habits-data-broken'):
+            if v.startswith('habits-data-broken') or re.fullmatch(r'[a-z]{2}-[A-Z]{2}', v):
                 continue
             k = to_key(v)
             if k not in known:
