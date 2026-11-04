@@ -1,5 +1,7 @@
 "%@ / month" = "%@ / bulan";
 "%@ / year" = "%@ / tahun";
+"%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "Harga %@ %lld percikan, kamu punya %lld. Kurang %lld. Centang kebiasaan untuk mendapatkannya.";
+"%@ costs %lld sparks. You have %lld." = "Harga %@ %lld percikan. Kamu punya %lld.";
 "%lld min" = "%lld mnt";
 "%lld more to %@" = "%lld lagi menuju \"%@\"";
 "%lld of %lld" = "%lld dari %lld";
@@ -11,14 +13,20 @@
 "+%lld for coming back after a miss" = "+%lld karena kembali setelah terlewat";
 "+%lld for each achievement" = "+%lld untuk setiap pencapaian";
 "+%lld for every 7 days of a streak, +%lld for every 30" = "+%lld untuk setiap 7 hari rentetan, +%lld untuk setiap 30";
+"+1 spark every active day" = "+1 percikan setiap hari aktif";
+"+2 sparks every active day" = "+2 percikan setiap hari aktif";
+"+3 sparks every active day and +1 streak freeze a month" = "+3 percikan setiap hari aktif dan +1 pembekuan rangkaian per bulan";
+"+5 sparks every active day and +2 streak freezes a month" = "+5 percikan setiap hari aktif dan +2 pembekuan rangkaian per bulan";
 "1 spark for each check-in, up to %lld a day" = "1 percikan untuk setiap centang, hingga %lld per hari";
 "30 perfect days in a row" = "30 hari sempurna berturut-turut";
 "7 perfect days in a row" = "7 hari sempurna berturut-turut";
+"A grown pet brings up to +5 a day" = "Hewan yang sudah besar memberi hingga +5 per hari";
 "A week strong" = "Seminggu penuh";
 "A whole year" = "Setahun penuh";
 "Achievements" = "Pencapaian";
 "Achievements and rewards" = "Pencapaian dan hadiah";
 "Active" = "Aktif";
+"Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Hari aktif: setidaknya satu kebiasaan dicentang tepat waktu. Memberi makan memberi %lld XP, jadi hewanmu tumbuh lebih cepat.";
 "Activity over %lld weeks" = "Aktivitas %lld minggu terakhir";
 "Add a habit, pick days and a time, and I'll remind you." = "Tambahkan kebiasaan, pilih hari dan jam, dan aku akan mengingatkanmu.";
 "Add a note to 20 completed habits" = "Tambahkan catatan ke 20 kebiasaan yang selesai";
@@ -46,8 +54,10 @@
 "Archive (%lld)" = "Arsip (%lld)";
 "Archived" = "Diarsipkan";
 "Available" = "Tersedia";
+"Avatar" = "Avatar";
 "Avatars" = "Avatar";
 "Baby" = "Bayi";
+"Background" = "Latar";
 "Backgrounds" = "Latar";
 "Backup" = "Cadangan";
 "Best current streak" = "Rentetan terbaik saat ini";
@@ -94,8 +104,10 @@
 "Completion" = "Penyelesaian";
 "Consistency" = "Konsistensi";
 "Continue" = "Lanjut";
+"Copied" = "Disalin";
 "Copy address" = "Salin alamat";
 "Copy message" = "Salin pesan";
+"Copy message and address" = "Salin pesan dan alamat";
 "Couldn't read the file" = "Tidak dapat membaca file";
 "Count glasses of water, pages or minutes toward a goal." = "Hitung gelas air, halaman, atau menit menuju target.";
 "Create" = "Buat";
@@ -159,6 +171,7 @@
 "Feed pet" = "Beri makan hewan";
 "Feed your pet" = "Beri makan hewanmu";
 "Feedback" = "Masukan";
+"Feeding" = "Makan";
 "Fifty" = "Lima puluh";
 "Finance" = "Keuangan";
 "First step" = "Langkah pertama";
@@ -197,6 +210,7 @@
 "Half a thousand" = "Lima ratus";
 "Happy" = "Senang";
 "Hard days and chains" = "Hari sulit dan rantai";
+"Hatches after a few check-ins" = "Menetas setelah beberapa centang";
 "Have 30 perfect days" = "Raih 30 hari sempurna";
 "Health" = "Kesehatan";
 "Hide keyboard" = "Sembunyikan papan ketik";
@@ -253,6 +267,7 @@
 "Level %lld" = "Level %lld";
 "Listen" = "Dengarkan";
 "Listen to a podcast" = "Dengarkan podcast";
+"Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Mail belum diatur di iPhone ini. Buka aplikasi email lain, atau salin pesan dan kirim ke %@.";
 "Make the bed" = "Rapikan tempat tidur";
 "Mark as done" = "Tandai selesai";
 "Mark habit" = "Centang kebiasaan";
@@ -311,6 +326,7 @@
 "Notification" = "Notifikasi";
 "Notifications" = "Notifikasi";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "Notifikasi dimatikan di Pengaturan iOS, jadi pengingat tidak akan datang.";
+"Now" = "Sekarang";
 "Number on the app icon" = "Angka di ikon aplikasi";
 "OK" = "OK";
 "Off" = "Mati";
@@ -326,6 +342,7 @@
 "One notification listing the habits not checked off yet." = "Satu notifikasi berisi kebiasaan yang belum dicentang.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Hanya centang di hari yang sama atau keesokan harinya yang dihitung. Membatalkan centang mengambil kembali percikannya.";
 "Open iOS Settings" = "Buka Pengaturan iOS";
+"Open mail app" = "Buka aplikasi email";
 "Open the app to adopt one." = "Buka aplikasi untuk mengadopsi.";
 "Order" = "Urutan";
 "Organization" = "Penataan";
@@ -335,6 +352,7 @@
 "Panda" = "Panda";
 "Part of day" = "Bagian hari";
 "Parts of day" = "Bagian hari";
+"Paste the message into any mail app and send it to %@." = "Tempel pesan di aplikasi email apa pun dan kirim ke %@.";
 "Pause" = "Jeda";
 "Paused until %@" = "Dijeda hingga %@";
 "Per week" = "Per minggu";
@@ -343,6 +361,7 @@
 "Perfect month" = "Bulan sempurna";
 "Perfect week" = "Minggu sempurna";
 "Pet" = "Hewan peliharaan";
+"Pet gifts" = "Hadiah hewan";
 "Phoenix" = "Phoenix";
 "Pick a template or create your own." = "Pilih templat atau buat sendiri.";
 "Plan the day" = "Rencanakan hari";
@@ -355,6 +374,7 @@
 "Productivity" = "Produktivitas";
 "Profile" = "Profil";
 "Profile and achievements" = "Profil dan pencapaian";
+"Profile section" = "Bagian profil";
 "Purchase failed" = "Pembelian gagal";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Pembelian hanya berfungsi di versi App Store. Di versi ini, Pro bisa dinyalakan untuk pengujian di Pengaturan.";
 "Push-ups" = "Push-up";
@@ -393,11 +413,12 @@
 "Schedule" = "Jadwal";
 "Scheduled notifications" = "Notifikasi terjadwal";
 "Send" = "Kirim";
+"Send the message" = "Kirim pesan";
 "Set up Mail on this iPhone or send your message to %@." = "Atur Mail di iPhone ini atau kirim pesanmu ke %@.";
 "Settings" = "Pengaturan";
 "Shared data" = "Data bersama";
 "Show introduction" = "Tampilkan pengenalan";
-"Shows how many habits are left for today." = "Menunjukkan berapa kebiasaan yang tersisa hari ini.";
+"Shows how many reminders came since you last opened the app." = "Menampilkan berapa pengingat yang masuk sejak terakhir kali kamu membuka aplikasi.";
 "Simple gestures" = "Gerakan sederhana";
 "Skin care" = "Perawatan kulit";
 "Skip" = "Lewati";
@@ -487,6 +508,7 @@
 "Weekly hero" = "Pahlawan mingguan";
 "Weekly review" = "Tinjauan mingguan";
 "Welcome to Habit Tracker" = "Selamat datang di Pelacak Kebiasaan";
+"What %@ gives you" = "Yang diberikan %@";
 "What happened and what did you expect?" = "Apa yang terjadi dan apa yang kamu harapkan?";
 "Widget" = "Widget";
 "Words" = "Kata";

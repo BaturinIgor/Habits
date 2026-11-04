@@ -83,7 +83,9 @@ struct HabitEditorView: View {
         let today = Calendar.app.startOfDay(for: Date())
         let pauseActive = (base.pausedUntil.map { $0 >= today }) ?? false
         _minimumVersion = State(initialValue: base.minimumVersion ?? "")
-        _chainAfter = State(initialValue: base.chainAfter)
+        // Связка с удалённой или архивной привычкой не показывается в списке и не работает.
+        let chainParent = base.chainAfter.flatMap { id in HabitStore.shared.data.activeHabits.first { $0.id == id } }
+        _chainAfter = State(initialValue: chainParent?.id)
         _isPaused = State(initialValue: pauseActive)
         _pauseWasActive = State(initialValue: pauseActive)
         _pausedUntil = State(initialValue: pauseActive ? (base.pausedUntil ?? today)

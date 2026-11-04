@@ -15,6 +15,10 @@ struct Wallet: Codable, Hashable {
     var ownedPets: [String] = []
     /// Сколько всего заработано по последнему подсчёту в приложении.
     var earnedSnapshot = 0
+    /// Искры, заработанные на удалённых привычках: удаление не должно уменьшать баланс.
+    var keptEarned = 0
+    /// Опыт питомца от удалённых привычек, чтобы питомец не "уменьшался".
+    var keptPetXP = 0
 
     init() {}
 
@@ -27,6 +31,8 @@ struct Wallet: Codable, Hashable {
         pet = try? c.decodeIfPresent(PetState.self, forKey: .pet)
         ownedPets = try c.decodeIfPresent([String].self, forKey: .ownedPets) ?? []
         earnedSnapshot = try c.decodeIfPresent(Int.self, forKey: .earnedSnapshot) ?? 0
+        keptEarned = try c.decodeIfPresent(Int.self, forKey: .keptEarned) ?? 0
+        keptPetXP = try c.decodeIfPresent(Int.self, forKey: .keptPetXP) ?? 0
     }
 
     static func monthKey(_ date: Date, calendar: Calendar = .app) -> String {
@@ -41,6 +47,24 @@ struct PetState: Codable, Hashable {
     var adoptedAt: Date
     /// Кормления по дням: "yyyy-MM-dd" -> сколько раз.
     var feeds: [String: Int] = [:]
+    /// Когда питомец впервые дошёл до стадии: rawValue стадии -> дата.
+    /// От этих дат считаются подарки и бонусные заморозки.
+    var stageReached: [String: Date] = [:]
 
     var totalFeeds: Int { feeds.values.reduce(0, +) }
+
+    var highestReached: PetStage? {
+        stageReached.keys.compactMap { Int($0).flatMap(PetStage.init(rawValue:)) }.max()
+    }
+}
+
+extension PetState {
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        species = try c.decode(String.self, forKey: .species)
+        name = try c.decode(String.self, forKey: .name)
+        adoptedAt = try c.decode(Date.self, forKey: .adoptedAt)
+        feeds = try c.decodeIfPresent([String: Int].self, forKey: .feeds) ?? [:]
+        stageReached = try c.decodeIfPresent([String: Date].self, forKey: .stageReached) ?? [:]
+    }
 }

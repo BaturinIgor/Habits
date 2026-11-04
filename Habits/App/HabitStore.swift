@@ -56,8 +56,19 @@ final class HabitStore {
     }
 
     func deleteHabit(_ id: UUID) {
+        // Заработанное считается из истории отметок, поэтому без этого удаление привычки
+        // уменьшало бы баланс искр и опыт питомца. Разницу запоминаем в кошельке.
+        let earnedBefore = economy.report.total
+        let xpBefore = data.wallet.pet.map { Pets.xp($0, data: data) }
         data.habits.removeAll { $0.id == id }
         data.removeCheckIns(for: id)
+        revision += 1
+        let lostSparks = earnedBefore - economy.report.total
+        if lostSparks > 0 { data.wallet.keptEarned += lostSparks }
+        if let xpBefore, let pet = data.wallet.pet {
+            let lostXP = xpBefore - Pets.xp(pet, data: data)
+            if lostXP > 0 { data.wallet.keptPetXP += lostXP }
+        }
         commit()
         Task { await NotificationPlanner.clearDelivered(habitID: id) }
     }
@@ -96,13 +107,32 @@ final class HabitStore {
     }
 
     @ObservationIgnored private var economyCache: (revision: Int, value: Economy)?
+    @ObservationIgnored private var factsCache: (revision: Int, value: AchievementFacts)?
+
+    /// Сводка для ачивок: считается один раз на изменение, её используют и искры, и баннер ачивок.
+    var achievementFacts: AchievementFacts {
+        _ = revision
+        if let cache = factsCache, cache.revision == revision { return cache.value }
+        let facts = AchievementFacts(data: data)
+        factsCache = (revision, facts)
+        return facts
+    }
+
+    /// Открытые ачивки. Однажды открытая ачивка остаётся навсегда (она запоминается
+    /// в seenAchievements), даже если удалить привычку, на которой она держалась.
+    var unlockedAchievementIDs: Set<String> {
+        let facts = achievementFacts
+        let known = Set(Achievements.all.map(\.id))
+        let kept = Set(data.settings.seenAchievements).intersection(known)
+        return Set(Achievements.all.filter { $0.isUnlocked(facts) }.map(\.id)).union(kept)
+    }
 
     /// Заработанное и баланс, пересчитываются после изменений.
     var economy: Economy {
         _ = revision
         if let cache = economyCache, cache.revision == revision { return cache.value }
-        let facts = AchievementFacts(data: data)
-        let unlocked = Achievements.all.filter { $0.isUnlocked(facts) }.count
+        let facts = achievementFacts
+        let unlocked = unlockedAchievementIDs.count
         let report = Sparks.report(data, facts: facts, unlockedAchievements: unlocked)
         let value = Economy(report: report, balance: Sparks.balance(earned: report.total, data: data))
         economyCache = (revision, value)
@@ -157,6 +187,7 @@ final class HabitStore {
     func adoptPet(species: String, name: String) {
         let clean = name.trimmingCharacters(in: .whitespacesAndNewlines)
         data.wallet.pet = PetState(species: species, name: clean.isEmpty ? String(localized: "Buddy") : clean, adoptedAt: Date())
+        data.wallet.keptPetXP = 0
         commit()
     }
 
@@ -184,6 +215,24 @@ final class HabitStore {
         data.wallet.pet = pet
         commit()
         return true
+    }
+
+    /// Запоминает, когда питомец впервые дошёл до каждой стадии: от этого
+    /// дня начинаются подарки и бонусные заморозки. Возвращает новую стадию, если она появилась.
+    @discardableResult
+    func syncPetStage() -> PetStage? {
+        guard var pet = data.wallet.pet else { return nil }
+        let current = PetStage.stage(xp: Pets.xp(pet, data: data))
+        let now = Date()
+        var reached: PetStage?
+        for stage in PetStage.allCases where stage > .egg && stage <= current && pet.stageReached[String(stage.rawValue)] == nil {
+            pet.stageReached[String(stage.rawValue)] = now
+            reached = stage
+        }
+        guard let reached else { return nil }
+        data.wallet.pet = pet
+        commit()
+        return reached
     }
 
     /// Сменить вид питомца; платный вид сначала покупается.
@@ -277,6 +326,8 @@ final class HabitStore {
 
     func setNote(_ note: String, for id: UUID, dayKey: String) {
         data.setNote(note, habitID: id, day: dayKey)
+        // Заметки влияют на ачивки (и искры за них), поэтому экраны должны пересчитаться.
+        revision += 1
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()
     }

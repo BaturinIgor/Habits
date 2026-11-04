@@ -1,5 +1,7 @@
 "%@ / month" = "%@ / 月";
 "%@ / year" = "%@ / 年";
+"%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@：价格 ✨ %lld，你有：✨ %lld。还差 ✨ %lld。完成习惯即可获得。";
+"%@ costs %lld sparks. You have %lld." = "%@：价格 ✨ %lld。你有：✨ %lld。";
 "%lld min" = "%lld 分钟";
 "%lld more to %@" = "再 %lld 点到达%@";
 "%lld of %lld" = "%lld / %lld";
@@ -11,14 +13,20 @@
 "+%lld for coming back after a miss" = "中断后回归 +%lld";
 "+%lld for each achievement" = "每个成就 +%lld";
 "+%lld for every 7 days of a streak, +%lld for every 30" = "连续每 7 天 +%lld，每 30 天 +%lld";
+"+1 spark every active day" = "每个活跃日 +1 火花";
+"+2 sparks every active day" = "每个活跃日 +2 火花";
+"+3 sparks every active day and +1 streak freeze a month" = "每个活跃日 +3 火花，每月 +1 次连续冻结";
+"+5 sparks every active day and +2 streak freezes a month" = "每个活跃日 +5 火花，每月 +2 次连续冻结";
 "1 spark for each check-in, up to %lld a day" = "每次打卡 1 个火花，每天最多 %lld 个";
 "30 perfect days in a row" = "连续 30 个完美日";
 "7 perfect days in a row" = "连续 7 个完美日";
+"A grown pet brings up to +5 a day" = "长大的宠物每天最多带来 +5";
 "A week strong" = "坚持一周";
 "A whole year" = "整整一年";
 "Achievements" = "成就";
 "Achievements and rewards" = "成就与奖励";
 "Active" = "已启用";
+"Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "活跃日：至少按时完成一个习惯。喂食可获得 %lld 经验，宠物长得更快。";
 "Activity over %lld weeks" = "近 %lld 周活动";
 "Add a habit, pick days and a time, and I'll remind you." = "添加一个习惯，选择日期和时间，我会提醒你。";
 "Add a note to 20 completed habits" = "为 20 个已完成的习惯添加备注";
@@ -46,8 +54,10 @@
 "Archive (%lld)" = "归档 (%lld)";
 "Archived" = "已归档";
 "Available" = "可用";
+"Avatar" = "头像";
 "Avatars" = "头像";
 "Baby" = "幼崽";
+"Background" = "背景";
 "Backgrounds" = "背景";
 "Backup" = "备份";
 "Best current streak" = "当前最佳连续";
@@ -94,8 +104,10 @@
 "Completion" = "完成率";
 "Consistency" = "坚持不懈";
 "Continue" = "继续";
+"Copied" = "已复制";
 "Copy address" = "复制地址";
 "Copy message" = "复制内容";
+"Copy message and address" = "复制消息和地址";
 "Couldn't read the file" = "无法读取文件";
 "Count glasses of water, pages or minutes toward a goal." = "记录喝水杯数、阅读页数或分钟数，直到达成目标。";
 "Create" = "创建";
@@ -159,6 +171,7 @@
 "Feed pet" = "喂宠物";
 "Feed your pet" = "喂宠物";
 "Feedback" = "反馈";
+"Feeding" = "喂食";
 "Fifty" = "五十";
 "Finance" = "理财";
 "First step" = "第一步";
@@ -197,6 +210,7 @@
 "Half a thousand" = "五百";
 "Happy" = "很开心";
 "Hard days and chains" = "艰难日子与习惯链";
+"Hatches after a few check-ins" = "打卡几次后就会孵化";
 "Have 30 perfect days" = "累计 30 个完美日";
 "Health" = "健康";
 "Hide keyboard" = "隐藏键盘";
@@ -253,6 +267,7 @@
 "Level %lld" = "等级 %lld";
 "Listen" = "收听";
 "Listen to a podcast" = "听播客";
+"Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "这台 iPhone 未设置“邮件”。请打开其他邮件应用，或复制消息发送到 %@。";
 "Make the bed" = "整理床铺";
 "Mark as done" = "标记为完成";
 "Mark habit" = "打卡习惯";
@@ -311,6 +326,7 @@
 "Notification" = "通知";
 "Notifications" = "通知";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "iOS 设置中已关闭通知，因此不会收到提醒。";
+"Now" = "当前";
 "Number on the app icon" = "应用图标上的数字";
 "OK" = "好";
 "Off" = "已关闭";
@@ -326,6 +342,7 @@
 "One notification listing the habits not checked off yet." = "一条通知，列出尚未打卡的习惯。";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "只有当天或第二天的打卡才算数。取消打卡会收回火花。";
 "Open iOS Settings" = "打开 iOS 设置";
+"Open mail app" = "打开邮件应用";
 "Open the app to adopt one." = "打开应用来领养一只。";
 "Order" = "顺序";
 "Organization" = "整理";
@@ -335,6 +352,7 @@
 "Panda" = "熊猫";
 "Part of day" = "时段";
 "Parts of day" = "按时段";
+"Paste the message into any mail app and send it to %@." = "将消息粘贴到任意邮件应用并发送到 %@。";
 "Pause" = "暂停";
 "Paused until %@" = "暂停至%@";
 "Per week" = "每周";
@@ -343,6 +361,7 @@
 "Perfect month" = "完美一月";
 "Perfect week" = "完美的一周";
 "Pet" = "宠物";
+"Pet gifts" = "宠物礼物";
 "Phoenix" = "凤凰";
 "Pick a template or create your own." = "选择模板或自己创建。";
 "Plan the day" = "规划一天";
@@ -355,6 +374,7 @@
 "Productivity" = "效率";
 "Profile" = "个人资料";
 "Profile and achievements" = "个人资料与成就";
+"Profile section" = "个人资料分区";
 "Purchase failed" = "购买失败";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "仅 App Store 版本支持购买。此版本可在设置中开启 Pro 进行测试。";
 "Push-ups" = "俯卧撑";
@@ -393,11 +413,12 @@
 "Schedule" = "计划";
 "Scheduled notifications" = "已安排的通知";
 "Send" = "发送";
+"Send the message" = "发送消息";
 "Set up Mail on this iPhone or send your message to %@." = "请在 iPhone 上设置“邮件”，或将消息发送至 %@。";
 "Settings" = "设置";
 "Shared data" = "共享数据";
 "Show introduction" = "查看引导";
-"Shows how many habits are left for today." = "显示今天还剩多少个习惯。";
+"Shows how many reminders came since you last opened the app." = "显示自上次打开应用以来收到了多少条提醒。";
 "Simple gestures" = "简单手势";
 "Skin care" = "护肤";
 "Skip" = "跳过";
@@ -487,6 +508,7 @@
 "Weekly hero" = "每周英雄";
 "Weekly review" = "每周回顾";
 "Welcome to Habit Tracker" = "欢迎使用习惯追踪";
+"What %@ gives you" = "%@ 能带给你什么";
 "What happened and what did you expect?" = "发生了什么？你原本期望什么？";
 "Widget" = "小组件";
 "Words" = "单词";

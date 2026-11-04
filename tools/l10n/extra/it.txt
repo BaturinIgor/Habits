@@ -356,7 +356,6 @@ Add a note to 20 completed habits||Aggiungi una nota a 20 abitudini completate
 Swipe a card right to check it off, left for more actions. Press and hold to reorder.||Scorri una scheda a destra per segnarla, a sinistra per altre azioni. Tieni premuto per riordinare.
 Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder.||Tocca il cerchio o scorri a destra per segnare. Scorri a sinistra per saltare, aggiungere una nota o modificare. Tieni premuto per riordinare.
 Number on the app icon||Numero sull'icona dell'app
-Shows how many habits are left for today.||Mostra quante abitudini restano per oggi.
 Welcome to Habit Tracker||Benvenuto in Tracker di Abitudini
 Egg||Uovo
 Baby||Cucciolo
@@ -513,3 +512,26 @@ times||volte
 %lld words||%lld parole
 Run||Corsa
 Push-ups||Flessioni
+%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them.||%@ costa %lld scintille, ne hai %lld. Te ne mancano %lld. Segna abitudini per guadagnarle.
+%@ costs %lld sparks. You have %lld.||%@ costa %lld scintille. Ne hai %lld.
++1 spark every active day||+1 scintilla ogni giorno attivo
++2 sparks every active day||+2 scintille ogni giorno attivo
++3 sparks every active day and +1 streak freeze a month||+3 scintille ogni giorno attivo e +1 congelamento della serie al mese
++5 sparks every active day and +2 streak freezes a month||+5 scintille ogni giorno attivo e +2 congelamenti della serie al mese
+A grown pet brings up to +5 a day||Un cucciolo cresciuto porta fino a +5 al giorno
+Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster.||Giorno attivo: almeno un'abitudine segnata in tempo. Nutrirlo dà %lld XP, così il cucciolo cresce più in fretta.
+Avatar||Avatar
+Background||Sfondo
+Copied||Copiato
+Copy message and address||Copia messaggio e indirizzo
+Feeding||Pasto
+Hatches after a few check-ins||Si schiude dopo qualche spunta
+Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@.||Mail non è configurata su questo iPhone. Apri un'altra app di posta o copia il messaggio e invialo a %@.
+Now||Ora
+Open mail app||Apri app di posta
+Paste the message into any mail app and send it to %@.||Incolla il messaggio in un'app di posta e invialo a %@.
+Pet gifts||Regali del cucciolo
+Profile section||Sezione del profilo
+Send the message||Invia il messaggio
+Shows how many reminders came since you last opened the app.||Mostra quanti promemoria sono arrivati dall'ultima apertura dell'app.
+What %@ gives you||Cosa ti dà %@

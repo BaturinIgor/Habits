@@ -186,7 +186,8 @@ enum Achievements {
 
     static func unlockedIDs(_ data: AppData) -> Set<String> {
         let facts = AchievementFacts(data: data)
-        return Set(all.filter { $0.isUnlocked(facts) }.map(\.id))
+        let kept = Set(data.settings.seenAchievements).intersection(Set(all.map(\.id)))
+        return Set(all.filter { $0.isUnlocked(facts) }.map(\.id)).union(kept)
     }
 
     /// Уровень растёт с числом отметок: 5, 20, 45, 80, ... отметок.

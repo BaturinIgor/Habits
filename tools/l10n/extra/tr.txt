@@ -356,7 +356,6 @@ Add a note to 20 completed habits||Tamamlanan 20 alışkanlığa not ekle
 Swipe a card right to check it off, left for more actions. Press and hold to reorder.||İşaretlemek için kartı sağa, diğer işlemler için sola kaydır. Sıralamak için basılı tut.
 Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder.||İşaretlemek için daireye dokun veya sağa kaydır. Atlamak, not eklemek veya düzenlemek için sola kaydır. Sıralamak için basılı tut.
 Number on the app icon||Uygulama simgesinde sayı
-Shows how many habits are left for today.||Bugün kaç alışkanlık kaldığını gösterir.
 Welcome to Habit Tracker||Alışkanlık Takibi'ne hoş geldin
 Egg||Yumurta
 Baby||Bebek
@@ -513,3 +512,26 @@ times||kez
 %lld words||%lld kelime
 Run||Koşu
 Push-ups||Şınav
+%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them.||%@ fiyatı %lld kıvılcım, sende %lld var. %lld eksik. Kazanmak için alışkanlık işaretle.
+%@ costs %lld sparks. You have %lld.||%@ fiyatı %lld kıvılcım. Sende %lld var.
++1 spark every active day||Her aktif gün +1 kıvılcım
++2 sparks every active day||Her aktif gün +2 kıvılcım
++3 sparks every active day and +1 streak freeze a month||Her aktif gün +3 kıvılcım ve ayda +1 seri dondurma
++5 sparks every active day and +2 streak freezes a month||Her aktif gün +5 kıvılcım ve ayda +2 seri dondurma
+A grown pet brings up to +5 a day||Büyümüş evcil hayvan günde +5'e kadar getirir
+Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster.||Aktif gün: en az bir alışkanlık zamanında işaretlendi. Beslemek %lld XP verir, evcil hayvanın daha hızlı büyür.
+Avatar||Avatar
+Background||Arka plan
+Copied||Kopyalandı
+Copy message and address||Mesajı ve adresi kopyala
+Feeding||Besleme
+Hatches after a few check-ins||Birkaç işaretlemeden sonra yumurtadan çıkar
+Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@.||Bu iPhone'da Mail kurulu değil. Başka bir e-posta uygulaması aç ya da mesajı kopyalayıp %@ adresine gönder.
+Now||Şimdi
+Open mail app||E-posta uygulamasını aç
+Paste the message into any mail app and send it to %@.||Mesajı herhangi bir e-posta uygulamasına yapıştır ve %@ adresine gönder.
+Pet gifts||Evcil hayvan hediyeleri
+Profile section||Profil bölümü
+Send the message||Mesajı gönder
+Shows how many reminders came since you last opened the app.||Uygulamayı son açışından beri kaç hatırlatma geldiğini gösterir.
+What %@ gives you||%@ sana ne verir

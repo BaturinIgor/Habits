@@ -356,7 +356,6 @@ Add a note to 20 completed habits||Tambahkan catatan ke 20 kebiasaan yang selesa
 Swipe a card right to check it off, left for more actions. Press and hold to reorder.||Geser kartu ke kanan untuk mencentang, ke kiri untuk tindakan lain. Tekan lama untuk mengubah urutan.
 Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder.||Ketuk lingkaran atau geser ke kanan untuk mencentang. Geser ke kiri untuk melewati, menambah catatan, atau mengubah. Tekan lama untuk mengubah urutan.
 Number on the app icon||Angka di ikon aplikasi
-Shows how many habits are left for today.||Menunjukkan berapa kebiasaan yang tersisa hari ini.
 Welcome to Habit Tracker||Selamat datang di Pelacak Kebiasaan
 Egg||Telur
 Baby||Bayi
@@ -513,3 +512,26 @@ times||kali
 %lld words||%lld kata
 Run||Lari
 Push-ups||Push-up
+%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them.||Harga %@ %lld percikan, kamu punya %lld. Kurang %lld. Centang kebiasaan untuk mendapatkannya.
+%@ costs %lld sparks. You have %lld.||Harga %@ %lld percikan. Kamu punya %lld.
++1 spark every active day||+1 percikan setiap hari aktif
++2 sparks every active day||+2 percikan setiap hari aktif
++3 sparks every active day and +1 streak freeze a month||+3 percikan setiap hari aktif dan +1 pembekuan rangkaian per bulan
++5 sparks every active day and +2 streak freezes a month||+5 percikan setiap hari aktif dan +2 pembekuan rangkaian per bulan
+A grown pet brings up to +5 a day||Hewan yang sudah besar memberi hingga +5 per hari
+Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster.||Hari aktif: setidaknya satu kebiasaan dicentang tepat waktu. Memberi makan memberi %lld XP, jadi hewanmu tumbuh lebih cepat.
+Avatar||Avatar
+Background||Latar
+Copied||Disalin
+Copy message and address||Salin pesan dan alamat
+Feeding||Makan
+Hatches after a few check-ins||Menetas setelah beberapa centang
+Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@.||Mail belum diatur di iPhone ini. Buka aplikasi email lain, atau salin pesan dan kirim ke %@.
+Now||Sekarang
+Open mail app||Buka aplikasi email
+Paste the message into any mail app and send it to %@.||Tempel pesan di aplikasi email apa pun dan kirim ke %@.
+Pet gifts||Hadiah hewan
+Profile section||Bagian profil
+Send the message||Kirim pesan
+Shows how many reminders came since you last opened the app.||Menampilkan berapa pengingat yang masuk sejak terakhir kali kamu membuka aplikasi.
+What %@ gives you||Yang diberikan %@

@@ -554,7 +554,8 @@ struct DayProgressCard: View {
         }
         .card(padding: 18, cornerRadius: 26)
         .animation(.spring(response: 0.5, dampingFraction: 0.8), value: progress)
-        .sensoryFeedback(.success, trigger: allDone) { _, new in new }
+        // Только когда день закрыли сейчас, а не при переключении на уже выполненный день.
+        .sensoryFeedback(.success, trigger: allDone) { old, new in celebrate && new && !old }
         .onChange(of: allDone) { old, new in
             if celebrate && new && !old { confetti += 1 }
         }
@@ -694,7 +695,7 @@ struct HabitCard: View {
                 Label(reminder.text, systemImage: "bell.fill")
             }
             if target > 1 {
-                Label(amountText, systemImage: "drop.fill")
+                Label(amountText, systemImage: "target")
             }
             if let perDay = habit.wordsPerDay, habit.isWords {
                 Label(String(localized: "\(perDay) words"), systemImage: "character.book.closed.fill")

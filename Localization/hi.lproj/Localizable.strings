@@ -1,5 +1,7 @@
 "%@ / month" = "%@ / माह";
 "%@ / year" = "%@ / वर्ष";
+"%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: कीमत ✨ %lld, आपके पास: ✨ %lld। ✨ %lld और चाहिए। कमाने के लिए आदतें पूरी करें।";
+"%@ costs %lld sparks. You have %lld." = "%@: कीमत ✨ %lld। आपके पास: ✨ %lld।";
 "%lld min" = "%lld मिनट";
 "%lld more to %@" = "%@ तक %lld और";
 "%lld of %lld" = "%2$lld में से %1$lld";
@@ -11,14 +13,20 @@
 "+%lld for coming back after a miss" = "चूक के बाद लौटने पर +%lld";
 "+%lld for each achievement" = "हर उपलब्धि पर +%lld";
 "+%lld for every 7 days of a streak, +%lld for every 30" = "श्रृंखला के हर 7 दिन पर +%lld, हर 30 पर +%lld";
+"+1 spark every active day" = "हर सक्रिय दिन +1 चिंगारी";
+"+2 sparks every active day" = "हर सक्रिय दिन +2 चिंगारियाँ";
+"+3 sparks every active day and +1 streak freeze a month" = "हर सक्रिय दिन +3 चिंगारियाँ और हर महीने +1 स्ट्रीक फ़्रीज़";
+"+5 sparks every active day and +2 streak freezes a month" = "हर सक्रिय दिन +5 चिंगारियाँ और हर महीने +2 स्ट्रीक फ़्रीज़";
 "1 spark for each check-in, up to %lld a day" = "हर पूरी आदत पर 1 चिंगारी, दिन में अधिकतम %lld";
 "30 perfect days in a row" = "लगातार 30 परफ़ेक्ट दिन";
 "7 perfect days in a row" = "लगातार 7 परफ़ेक्ट दिन";
+"A grown pet brings up to +5 a day" = "बड़ा पालतू रोज़ +5 तक लाता है";
 "A week strong" = "एक मज़बूत हफ़्ता";
 "A whole year" = "पूरा एक साल";
 "Achievements" = "उपलब्धियाँ";
 "Achievements and rewards" = "उपलब्धियाँ और इनाम";
 "Active" = "सक्रिय";
+"Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "सक्रिय दिन: कम से कम एक आदत समय पर पूरी हो। खिलाने से %lld XP मिलता है और पालतू जल्दी बढ़ता है।";
 "Activity over %lld weeks" = "पिछले %lld हफ़्तों की गतिविधि";
 "Add a habit, pick days and a time, and I'll remind you." = "एक आदत जोड़ें, दिन और समय चुनें, और मैं आपको याद दिलाऊँगा।";
 "Add a note to 20 completed habits" = "20 पूरी की गई आदतों में नोट जोड़ें";
@@ -46,8 +54,10 @@
 "Archive (%lld)" = "संग्रह (%lld)";
 "Archived" = "संग्रहित";
 "Available" = "उपलब्ध";
+"Avatar" = "अवतार";
 "Avatars" = "अवतार";
 "Baby" = "बच्चा";
+"Background" = "पृष्ठभूमि";
 "Backgrounds" = "पृष्ठभूमि";
 "Backup" = "बैकअप";
 "Best current streak" = "अभी की सबसे लंबी लगातार";
@@ -94,8 +104,10 @@
 "Completion" = "पूरा होने की दर";
 "Consistency" = "निरंतरता";
 "Continue" = "आगे";
+"Copied" = "कॉपी हो गया";
 "Copy address" = "पता कॉपी करें";
 "Copy message" = "संदेश कॉपी करें";
+"Copy message and address" = "संदेश और पता कॉपी करें";
 "Couldn't read the file" = "फ़ाइल पढ़ी नहीं जा सकी";
 "Count glasses of water, pages or minutes toward a goal." = "पानी के गिलास, पन्ने या मिनट लक्ष्य तक गिनें।";
 "Create" = "बनाएँ";
@@ -159,6 +171,7 @@
 "Feed pet" = "पालतू को खिलाएँ";
 "Feed your pet" = "पालतू को खिलाएँ";
 "Feedback" = "प्रतिक्रिया";
+"Feeding" = "खाना";
 "Fifty" = "पचास";
 "Finance" = "पैसा";
 "First step" = "पहला कदम";
@@ -197,6 +210,7 @@
 "Half a thousand" = "पाँच सौ";
 "Happy" = "खुश";
 "Hard days and chains" = "मुश्किल दिन और जोड़";
+"Hatches after a few check-ins" = "कुछ बार पूरा करने पर अंडे से निकलेगा";
 "Have 30 perfect days" = "30 परफ़ेक्ट दिन पूरे करें";
 "Health" = "सेहत";
 "Hide keyboard" = "कीबोर्ड छिपाएँ";
@@ -253,6 +267,7 @@
 "Level %lld" = "लेवल %lld";
 "Listen" = "सुनें";
 "Listen to a podcast" = "पॉडकास्ट सुनें";
+"Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "इस iPhone पर Mail सेट नहीं है। कोई दूसरा मेल ऐप खोलें या संदेश कॉपी करके %@ पर भेजें।";
 "Make the bed" = "बिस्तर ठीक करें";
 "Mark as done" = "पूरा करें";
 "Mark habit" = "आदत पूरी करें";
@@ -311,6 +326,7 @@
 "Notification" = "सूचना";
 "Notifications" = "सूचनाएँ";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "iOS सेटिंग्स में सूचनाएँ बंद हैं, इसलिए रिमाइंडर नहीं आएँगे।";
+"Now" = "अभी";
 "Number on the app icon" = "ऐप आइकन पर संख्या";
 "OK" = "ठीक है";
 "Off" = "बंद";
@@ -326,6 +342,7 @@
 "One notification listing the habits not checked off yet." = "एक सूचना, जिसमें अभी बाकी आदतें होंगी।";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "केवल उसी दिन या अगले दिन की गई निशानियाँ गिनी जाती हैं। निशान हटाने पर चिंगारी वापस चली जाती है।";
 "Open iOS Settings" = "iOS सेटिंग्स खोलें";
+"Open mail app" = "मेल ऐप खोलें";
 "Open the app to adopt one." = "अपनाने के लिए ऐप खोलें।";
 "Order" = "क्रम";
 "Organization" = "व्यवस्था";
@@ -335,6 +352,7 @@
 "Panda" = "पांडा";
 "Part of day" = "दिन का समय";
 "Parts of day" = "दिन के हिस्सों में";
+"Paste the message into any mail app and send it to %@." = "संदेश किसी भी मेल ऐप में चिपकाएँ और %@ पर भेजें।";
 "Pause" = "विराम";
 "Paused until %@" = "%@ तक विराम";
 "Per week" = "प्रति हफ़्ता";
@@ -343,6 +361,7 @@
 "Perfect month" = "परफ़ेक्ट महीना";
 "Perfect week" = "परफ़ेक्ट हफ़्ता";
 "Pet" = "पालतू";
+"Pet gifts" = "पालतू के उपहार";
 "Phoenix" = "फ़ीनिक्स";
 "Pick a template or create your own." = "टेम्पलेट चुनें या अपनी बनाएँ।";
 "Plan the day" = "दिन की योजना बनाएँ";
@@ -355,6 +374,7 @@
 "Productivity" = "उत्पादकता";
 "Profile" = "प्रोफ़ाइल";
 "Profile and achievements" = "प्रोफ़ाइल और उपलब्धियाँ";
+"Profile section" = "प्रोफ़ाइल अनुभाग";
 "Purchase failed" = "खरीद विफल रही";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "खरीदारी केवल App Store संस्करण में काम करती है। इस बिल्ड में सेटिंग्स में परीक्षण के लिए Pro चालू किया जा सकता है।";
 "Push-ups" = "पुश-अप";
@@ -393,11 +413,12 @@
 "Schedule" = "समय-सारिणी";
 "Scheduled notifications" = "तय सूचनाएँ";
 "Send" = "भेजें";
+"Send the message" = "संदेश भेजें";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone पर मेल सेट करें या अपना संदेश %@ पर भेजें।";
 "Settings" = "सेटिंग्स";
 "Shared data" = "साझा डेटा";
 "Show introduction" = "परिचय दिखाएँ";
-"Shows how many habits are left for today." = "दिखाता है कि आज कितनी आदतें बाकी हैं।";
+"Shows how many reminders came since you last opened the app." = "दिखाता है कि पिछली बार ऐप खोलने के बाद कितने रिमाइंडर आए।";
 "Simple gestures" = "आसान इशारे";
 "Skin care" = "त्वचा की देखभाल";
 "Skip" = "छोड़ें";
@@ -487,6 +508,7 @@
 "Weekly hero" = "साप्ताहिक हीरो";
 "Weekly review" = "हफ़्ते की समीक्षा";
 "Welcome to Habit Tracker" = "आदत ट्रैकर में आपका स्वागत है";
+"What %@ gives you" = "%@ आपको क्या देता है";
 "What happened and what did you expect?" = "क्या हुआ और आपने क्या उम्मीद की थी?";
 "Widget" = "विजेट";
 "Words" = "शब्द";

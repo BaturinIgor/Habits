@@ -1,5 +1,7 @@
 "%@ / month" = "%@ / ay";
 "%@ / year" = "%@ / yıl";
+"%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@ fiyatı %lld kıvılcım, sende %lld var. %lld eksik. Kazanmak için alışkanlık işaretle.";
+"%@ costs %lld sparks. You have %lld." = "%@ fiyatı %lld kıvılcım. Sende %lld var.";
 "%lld min" = "%lld dk";
 "%lld more to %@" = "\"%@\" için %lld kaldı";
 "%lld of %lld" = "%lld/%lld";
@@ -11,14 +13,20 @@
 "+%lld for coming back after a miss" = "Kaçırdıktan sonra dönmek için +%lld";
 "+%lld for each achievement" = "Her başarı için +%lld";
 "+%lld for every 7 days of a streak, +%lld for every 30" = "Serinin her 7 günü için +%lld, her 30 günü için +%lld";
+"+1 spark every active day" = "Her aktif gün +1 kıvılcım";
+"+2 sparks every active day" = "Her aktif gün +2 kıvılcım";
+"+3 sparks every active day and +1 streak freeze a month" = "Her aktif gün +3 kıvılcım ve ayda +1 seri dondurma";
+"+5 sparks every active day and +2 streak freezes a month" = "Her aktif gün +5 kıvılcım ve ayda +2 seri dondurma";
 "1 spark for each check-in, up to %lld a day" = "Her işaretleme için 1 kıvılcım, günde en fazla %lld";
 "30 perfect days in a row" = "Üst üste 30 kusursuz gün";
 "7 perfect days in a row" = "Üst üste 7 kusursuz gün";
+"A grown pet brings up to +5 a day" = "Büyümüş evcil hayvan günde +5'e kadar getirir";
 "A week strong" = "Güçlü bir hafta";
 "A whole year" = "Koca bir yıl";
 "Achievements" = "Başarılar";
 "Achievements and rewards" = "Başarılar ve ödüller";
 "Active" = "Etkin";
+"Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Aktif gün: en az bir alışkanlık zamanında işaretlendi. Beslemek %lld XP verir, evcil hayvanın daha hızlı büyür.";
 "Activity over %lld weeks" = "Son %lld haftalık etkinlik";
 "Add a habit, pick days and a time, and I'll remind you." = "Bir alışkanlık ekle, günleri ve saati seç, ben de sana hatırlatayım.";
 "Add a note to 20 completed habits" = "Tamamlanan 20 alışkanlığa not ekle";
@@ -46,8 +54,10 @@
 "Archive (%lld)" = "Arşiv (%lld)";
 "Archived" = "Arşivde";
 "Available" = "Erişilebilir";
+"Avatar" = "Avatar";
 "Avatars" = "Avatarlar";
 "Baby" = "Bebek";
+"Background" = "Arka plan";
 "Backgrounds" = "Arka planlar";
 "Backup" = "Yedek";
 "Best current streak" = "Şu anki en iyi seri";
@@ -94,8 +104,10 @@
 "Completion" = "Tamamlanma";
 "Consistency" = "İstikrar";
 "Continue" = "Devam";
+"Copied" = "Kopyalandı";
 "Copy address" = "Adresi kopyala";
 "Copy message" = "Mesajı kopyala";
+"Copy message and address" = "Mesajı ve adresi kopyala";
 "Couldn't read the file" = "Dosya okunamadı";
 "Count glasses of water, pages or minutes toward a goal." = "Bir hedefe doğru bardak, sayfa veya dakika say.";
 "Create" = "Oluştur";
@@ -159,6 +171,7 @@
 "Feed pet" = "Evcil hayvanı besle";
 "Feed your pet" = "Evcil hayvanını besle";
 "Feedback" = "Geri bildirim";
+"Feeding" = "Besleme";
 "Fifty" = "Elli";
 "Finance" = "Finans";
 "First step" = "İlk adım";
@@ -197,6 +210,7 @@
 "Half a thousand" = "Beş yüz";
 "Happy" = "Mutlu";
 "Hard days and chains" = "Zor günler ve zincirler";
+"Hatches after a few check-ins" = "Birkaç işaretlemeden sonra yumurtadan çıkar";
 "Have 30 perfect days" = "30 kusursuz gün yaşa";
 "Health" = "Sağlık";
 "Hide keyboard" = "Klavyeyi gizle";
@@ -253,6 +267,7 @@
 "Level %lld" = "Seviye %lld";
 "Listen" = "Dinle";
 "Listen to a podcast" = "Podcast dinle";
+"Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Bu iPhone'da Mail kurulu değil. Başka bir e-posta uygulaması aç ya da mesajı kopyalayıp %@ adresine gönder.";
 "Make the bed" = "Yatağını topla";
 "Mark as done" = "Yapıldı olarak işaretle";
 "Mark habit" = "Alışkanlığı işaretle";
@@ -311,6 +326,7 @@
 "Notification" = "Bildirim";
 "Notifications" = "Bildirimler";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "Bildirimler iOS Ayarları'nda kapalı, bu yüzden hatırlatmalar gelmeyecek.";
+"Now" = "Şimdi";
 "Number on the app icon" = "Uygulama simgesinde sayı";
 "OK" = "Tamam";
 "Off" = "Kapalı";
@@ -326,6 +342,7 @@
 "One notification listing the habits not checked off yet." = "Henüz işaretlenmemiş alışkanlıkları listeleyen tek bildirim.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Yalnızca aynı gün veya ertesi gün yapılan işaretlemeler sayılır. İşareti kaldırmak kıvılcımı geri alır.";
 "Open iOS Settings" = "iOS Ayarları'nı aç";
+"Open mail app" = "E-posta uygulamasını aç";
 "Open the app to adopt one." = "Sahiplenmek için uygulamayı aç.";
 "Order" = "Sıra";
 "Organization" = "Düzen";
@@ -335,6 +352,7 @@
 "Panda" = "Panda";
 "Part of day" = "Günün bölümü";
 "Parts of day" = "Günün bölümleri";
+"Paste the message into any mail app and send it to %@." = "Mesajı herhangi bir e-posta uygulamasına yapıştır ve %@ adresine gönder.";
 "Pause" = "Mola";
 "Paused until %@" = "%@ tarihine kadar molada";
 "Per week" = "Haftada";
@@ -343,6 +361,7 @@
 "Perfect month" = "Kusursuz ay";
 "Perfect week" = "Kusursuz hafta";
 "Pet" = "Evcil hayvan";
+"Pet gifts" = "Evcil hayvan hediyeleri";
 "Phoenix" = "Anka kuşu";
 "Pick a template or create your own." = "Bir şablon seç ya da kendininkini oluştur.";
 "Plan the day" = "Günü planla";
@@ -355,6 +374,7 @@
 "Productivity" = "Verimlilik";
 "Profile" = "Profil";
 "Profile and achievements" = "Profil ve başarılar";
+"Profile section" = "Profil bölümü";
 "Purchase failed" = "Satın alma başarısız";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Satın almalar yalnızca App Store sürümünde çalışır. Bu sürümde Pro, test için Ayarlar'dan açılabilir.";
 "Push-ups" = "Şınav";
@@ -393,11 +413,12 @@
 "Schedule" = "Plan";
 "Scheduled notifications" = "Planlanan bildirimler";
 "Send" = "Gönder";
+"Send the message" = "Mesajı gönder";
 "Set up Mail on this iPhone or send your message to %@." = "Bu iPhone'da Mail'i ayarla veya mesajını %@ adresine gönder.";
 "Settings" = "Ayarlar";
 "Shared data" = "Paylaşılan veriler";
 "Show introduction" = "Tanıtımı göster";
-"Shows how many habits are left for today." = "Bugün kaç alışkanlık kaldığını gösterir.";
+"Shows how many reminders came since you last opened the app." = "Uygulamayı son açışından beri kaç hatırlatma geldiğini gösterir.";
 "Simple gestures" = "Basit hareketler";
 "Skin care" = "Cilt bakımı";
 "Skip" = "Atla";
@@ -487,6 +508,7 @@
 "Weekly hero" = "Haftanın kahramanı";
 "Weekly review" = "Haftalık değerlendirme";
 "Welcome to Habit Tracker" = "Alışkanlık Takibi'ne hoş geldin";
+"What %@ gives you" = "%@ sana ne verir";
 "What happened and what did you expect?" = "Ne oldu ve ne bekliyordun?";
 "Widget" = "Widget";
 "Words" = "Kelimeler";

@@ -356,7 +356,6 @@ Add a note to 20 completed habits||Dodaj notatkę do 20 wykonanych nawyków
 Swipe a card right to check it off, left for more actions. Press and hold to reorder.||Przesuń kartę w prawo, aby ją odhaczyć, w lewo, aby zobaczyć więcej akcji. Przytrzymaj, aby zmienić kolejność.
 Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder.||Stuknij kółko lub przesuń w prawo, aby odhaczyć. Przesuń w lewo, aby pominąć, dodać notatkę lub edytować. Przytrzymaj, aby zmienić kolejność.
 Number on the app icon||Liczba na ikonie aplikacji
-Shows how many habits are left for today.||Pokazuje, ile nawyków zostało na dziś.
 Welcome to Habit Tracker||Witaj w Trackerze Nawyków
 Egg||Jajko
 Baby||Maluch
@@ -513,3 +512,26 @@ times||razy
 %lld words||%lld słówek
 Run||Bieganie
 Push-ups||Pompki
+%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them.||%@ kosztuje %lld iskier, masz %lld. Brakuje %lld. Odhaczaj nawyki, aby je zdobyć.
+%@ costs %lld sparks. You have %lld.||%@ kosztuje %lld iskier. Masz %lld.
++1 spark every active day||+1 iskra za każdy aktywny dzień
++2 sparks every active day||+2 iskry za każdy aktywny dzień
++3 sparks every active day and +1 streak freeze a month||+3 iskry za każdy aktywny dzień i +1 zamrożenie serii w miesiącu
++5 sparks every active day and +2 streak freezes a month||+5 iskier za każdy aktywny dzień i +2 zamrożenia serii w miesiącu
+A grown pet brings up to +5 a day||Dorosły zwierzak przynosi do +5 dziennie
+Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster.||Aktywny dzień: co najmniej jeden nawyk odhaczony na czas. Karmienie daje %lld XP, więc zwierzak rośnie szybciej.
+Avatar||Awatar
+Background||Tło
+Copied||Skopiowano
+Copy message and address||Kopiuj wiadomość i adres
+Feeding||Karmienie
+Hatches after a few check-ins||Wykluje się po kilku odhaczeniach
+Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@.||Poczta nie jest skonfigurowana na tym iPhonie. Otwórz inną aplikację pocztową albo skopiuj wiadomość i wyślij ją na %@.
+Now||Teraz
+Open mail app||Otwórz aplikację pocztową
+Paste the message into any mail app and send it to %@.||Wklej wiadomość w dowolnej aplikacji pocztowej i wyślij na %@.
+Pet gifts||Prezenty od zwierzaka
+Profile section||Sekcja profilu
+Send the message||Wyślij wiadomość
+Shows how many reminders came since you last opened the app.||Pokazuje, ile przypomnień przyszło od ostatniego otwarcia aplikacji.
+What %@ gives you||Co daje ci %@

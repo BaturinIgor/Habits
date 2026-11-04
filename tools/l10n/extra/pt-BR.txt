@@ -356,7 +356,6 @@ Add a note to 20 completed habits||Adicione uma nota a 20 hábitos concluídos
 Swipe a card right to check it off, left for more actions. Press and hold to reorder.||Deslize um cartão para a direita para marcá-lo, para a esquerda para mais ações. Toque e segure para reordenar.
 Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder.||Toque no círculo ou deslize para a direita para marcar. Deslize para a esquerda para pular, adicionar uma nota ou editar. Toque e segure para reordenar.
 Number on the app icon||Número no ícone do app
-Shows how many habits are left for today.||Mostra quantos hábitos faltam hoje.
 Welcome to Habit Tracker||Boas-vindas ao Rastreador de Hábitos
 Egg||Ovo
 Baby||Filhote
@@ -513,3 +512,26 @@ times||vezes
 %lld words||%lld palavras
 Run||Correr
 Push-ups||Flexões
+%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them.||%@ custa %lld faíscas, você tem %lld. Faltam %lld. Marque hábitos para ganhá-las.
+%@ costs %lld sparks. You have %lld.||%@ custa %lld faíscas. Você tem %lld.
++1 spark every active day||+1 faísca a cada dia ativo
++2 sparks every active day||+2 faíscas a cada dia ativo
++3 sparks every active day and +1 streak freeze a month||+3 faíscas a cada dia ativo e +1 congelamento de sequência por mês
++5 sparks every active day and +2 streak freezes a month||+5 faíscas a cada dia ativo e +2 congelamentos de sequência por mês
+A grown pet brings up to +5 a day||Um bichinho crescido traz até +5 por dia
+Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster.||Dia ativo: pelo menos um hábito marcado a tempo. Alimentar dá %lld XP, e seu bichinho cresce mais rápido.
+Avatar||Avatar
+Background||Fundo
+Copied||Copiado
+Copy message and address||Copiar mensagem e endereço
+Feeding||Alimentação
+Hatches after a few check-ins||Nasce depois de algumas marcações
+Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@.||O Mail não está configurado neste iPhone. Abra outro app de e-mail ou copie a mensagem e envie para %@.
+Now||Agora
+Open mail app||Abrir app de e-mail
+Paste the message into any mail app and send it to %@.||Cole a mensagem em qualquer app de e-mail e envie para %@.
+Pet gifts||Presentes do bichinho
+Profile section||Seção do perfil
+Send the message||Enviar a mensagem
+Shows how many reminders came since you last opened the app.||Mostra quantos lembretes chegaram desde a última vez que você abriu o app.
+What %@ gives you||O que %@ te dá

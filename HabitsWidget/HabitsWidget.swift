@@ -198,13 +198,6 @@ struct WidgetProblemView: View {
             Text(problem == .noAccess ? "Reinstall the app and keep its extensions. Details are in Settings, Widget." : "The widget will update after unlocking.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
-            if problem == .noAccess {
-                Text(verbatim: AppGroup.diagnostics)
-                    .font(.system(size: 8, design: .monospaced))
-                    .foregroundStyle(.tertiary)
-                    .lineLimit(5)
-                    .minimumScaleFactor(0.6)
-            }
             Spacer(minLength: 0)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -471,7 +464,7 @@ struct PetProvider: TimelineProvider {
         guard let pet = data.wallet.pet else { return entry }
         entry.pet = pet
         entry.xp = Pets.xp(pet, data: data)
-        entry.stage = PetStage.stage(xp: entry.xp)
+        entry.stage = Pets.stage(pet, data: data)
         entry.mood = Pets.mood(pet, data: data, now: date)
         entry.feedsToday = pet.feeds[DayKey.make(date), default: 0]
         return entry

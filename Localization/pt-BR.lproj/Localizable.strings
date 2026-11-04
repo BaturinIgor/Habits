@@ -1,5 +1,7 @@
 "%@ / month" = "%@ / mês";
 "%@ / year" = "%@ / ano";
+"%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@ custa %lld faíscas, você tem %lld. Faltam %lld. Marque hábitos para ganhá-las.";
+"%@ costs %lld sparks. You have %lld." = "%@ custa %lld faíscas. Você tem %lld.";
 "%lld min" = "%lld min";
 "%lld more to %@" = "Faltam %lld para \"%@\"";
 "%lld of %lld" = "%lld de %lld";
@@ -11,14 +13,20 @@
 "+%lld for coming back after a miss" = "+%lld por voltar depois de uma falha";
 "+%lld for each achievement" = "+%lld por cada conquista";
 "+%lld for every 7 days of a streak, +%lld for every 30" = "+%lld a cada 7 dias de sequência, +%lld a cada 30";
+"+1 spark every active day" = "+1 faísca a cada dia ativo";
+"+2 sparks every active day" = "+2 faíscas a cada dia ativo";
+"+3 sparks every active day and +1 streak freeze a month" = "+3 faíscas a cada dia ativo e +1 congelamento de sequência por mês";
+"+5 sparks every active day and +2 streak freezes a month" = "+5 faíscas a cada dia ativo e +2 congelamentos de sequência por mês";
 "1 spark for each check-in, up to %lld a day" = "1 faísca por marcação, até %lld por dia";
 "30 perfect days in a row" = "30 dias perfeitos seguidos";
 "7 perfect days in a row" = "7 dias perfeitos seguidos";
+"A grown pet brings up to +5 a day" = "Um bichinho crescido traz até +5 por dia";
 "A week strong" = "Uma semana firme";
 "A whole year" = "Um ano inteiro";
 "Achievements" = "Conquistas";
 "Achievements and rewards" = "Conquistas e recompensas";
 "Active" = "Ativo";
+"Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Dia ativo: pelo menos um hábito marcado a tempo. Alimentar dá %lld XP, e seu bichinho cresce mais rápido.";
 "Activity over %lld weeks" = "Atividade nas últimas %lld semanas";
 "Add a habit, pick days and a time, and I'll remind you." = "Adicione um hábito, escolha os dias e o horário, e eu vou lembrar você.";
 "Add a note to 20 completed habits" = "Adicione uma nota a 20 hábitos concluídos";
@@ -46,8 +54,10 @@
 "Archive (%lld)" = "Arquivo (%lld)";
 "Archived" = "Arquivado";
 "Available" = "Disponível";
+"Avatar" = "Avatar";
 "Avatars" = "Avatares";
 "Baby" = "Filhote";
+"Background" = "Fundo";
 "Backgrounds" = "Fundos";
 "Backup" = "Backup";
 "Best current streak" = "Melhor sequência atual";
@@ -94,8 +104,10 @@
 "Completion" = "Conclusão";
 "Consistency" = "Constância";
 "Continue" = "Continuar";
+"Copied" = "Copiado";
 "Copy address" = "Copiar endereço";
 "Copy message" = "Copiar mensagem";
+"Copy message and address" = "Copiar mensagem e endereço";
 "Couldn't read the file" = "Não foi possível ler o arquivo";
 "Count glasses of water, pages or minutes toward a goal." = "Conte copos de água, páginas ou minutos até a meta.";
 "Create" = "Criar";
@@ -159,6 +171,7 @@
 "Feed pet" = "Alimentar bichinho";
 "Feed your pet" = "Alimente seu bichinho";
 "Feedback" = "Feedback";
+"Feeding" = "Alimentação";
 "Fifty" = "Cinquenta";
 "Finance" = "Finanças";
 "First step" = "Primeiro passo";
@@ -197,6 +210,7 @@
 "Half a thousand" = "Meio milhar";
 "Happy" = "Feliz";
 "Hard days and chains" = "Dias difíceis e cadeias";
+"Hatches after a few check-ins" = "Nasce depois de algumas marcações";
 "Have 30 perfect days" = "Tenha 30 dias perfeitos";
 "Health" = "Saúde";
 "Hide keyboard" = "Ocultar teclado";
@@ -253,6 +267,7 @@
 "Level %lld" = "Nível %lld";
 "Listen" = "Ouvir";
 "Listen to a podcast" = "Ouvir um podcast";
+"Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "O Mail não está configurado neste iPhone. Abra outro app de e-mail ou copie a mensagem e envie para %@.";
 "Make the bed" = "Arrumar a cama";
 "Mark as done" = "Marcar como feito";
 "Mark habit" = "Marcar hábito";
@@ -311,6 +326,7 @@
 "Notification" = "Notificação";
 "Notifications" = "Notificações";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "As notificações estão desativadas nos Ajustes do iOS, então os lembretes não vão chegar.";
+"Now" = "Agora";
 "Number on the app icon" = "Número no ícone do app";
 "OK" = "OK";
 "Off" = "Desligado";
@@ -326,6 +342,7 @@
 "One notification listing the habits not checked off yet." = "Uma notificação com os hábitos ainda não marcados.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Só contam marcações feitas no mesmo dia ou no dia seguinte. Desmarcar um hábito devolve a faísca.";
 "Open iOS Settings" = "Abrir Ajustes do iOS";
+"Open mail app" = "Abrir app de e-mail";
 "Open the app to adopt one." = "Abra o app para adotar um.";
 "Order" = "Ordem";
 "Organization" = "Organização";
@@ -335,6 +352,7 @@
 "Panda" = "Panda";
 "Part of day" = "Parte do dia";
 "Parts of day" = "Partes do dia";
+"Paste the message into any mail app and send it to %@." = "Cole a mensagem em qualquer app de e-mail e envie para %@.";
 "Pause" = "Pausa";
 "Paused until %@" = "Em pausa até %@";
 "Per week" = "Por semana";
@@ -343,6 +361,7 @@
 "Perfect month" = "Mês perfeito";
 "Perfect week" = "Semana perfeita";
 "Pet" = "Bichinho";
+"Pet gifts" = "Presentes do bichinho";
 "Phoenix" = "Fênix";
 "Pick a template or create your own." = "Escolha um modelo ou crie o seu.";
 "Plan the day" = "Planejar o dia";
@@ -355,6 +374,7 @@
 "Productivity" = "Produtividade";
 "Profile" = "Perfil";
 "Profile and achievements" = "Perfil e conquistas";
+"Profile section" = "Seção do perfil";
 "Purchase failed" = "A compra falhou";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Compras funcionam só na versão da App Store. Nesta versão, o Pro pode ser ativado para teste nos Ajustes.";
 "Push-ups" = "Flexões";
@@ -393,11 +413,12 @@
 "Schedule" = "Agenda";
 "Scheduled notifications" = "Notificações agendadas";
 "Send" = "Enviar";
+"Send the message" = "Enviar a mensagem";
 "Set up Mail on this iPhone or send your message to %@." = "Configure o Mail neste iPhone ou envie sua mensagem para %@.";
 "Settings" = "Ajustes";
 "Shared data" = "Dados compartilhados";
 "Show introduction" = "Mostrar introdução";
-"Shows how many habits are left for today." = "Mostra quantos hábitos faltam hoje.";
+"Shows how many reminders came since you last opened the app." = "Mostra quantos lembretes chegaram desde a última vez que você abriu o app.";
 "Simple gestures" = "Gestos simples";
 "Skin care" = "Cuidar da pele";
 "Skip" = "Pular";
@@ -487,6 +508,7 @@
 "Weekly hero" = "Herói da semana";
 "Weekly review" = "Revisão da semana";
 "Welcome to Habit Tracker" = "Boas-vindas ao Rastreador de Hábitos";
+"What %@ gives you" = "O que %@ te dá";
 "What happened and what did you expect?" = "O que aconteceu e o que você esperava?";
 "Widget" = "Widget";
 "Words" = "Palavras";

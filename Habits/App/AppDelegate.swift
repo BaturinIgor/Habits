@@ -17,6 +17,11 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
     ) {
+        // Уведомление пришло при открытом приложении: оно уже увидено, номера следующих сдвигаем.
+        Task { @MainActor in
+            await NotificationPlanner.markSeen()
+            await HabitStore.shared.reschedule()
+        }
         completionHandler([.banner, .list, .sound])
     }
 
