@@ -97,8 +97,10 @@
 "Completion" = "Cumplimiento";
 "Consistency" = "Constancia";
 "Continue" = "Continuar";
+"Copied" = "Copiado";
 "Copy address" = "Copiar dirección";
 "Copy message" = "Copiar mensaje";
+"Copy message and address" = "Copiar mensaje y dirección";
 "Couldn't read the file" = "No se pudo leer el archivo";
 "Count glasses of water, pages or minutes toward a goal." = "Cuenta vasos de agua, páginas o minutos hasta la meta.";
 "Create" = "Crear";
@@ -237,6 +239,7 @@
 "Let's keep the streak going!" = "¡Sigamos con la racha!";
 "Let's start with your first habit" = "Empecemos con tu primer hábito";
 "Level %lld" = "Nivel %lld";
+"Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Mail no está configurado en este iPhone. Abre otra app de correo o copia el mensaje y envíalo a %@.";
 "Mark as done" = "Marcar como hecho";
 "Mark habit" = "Marcar hábito";
 "Meditate" = "Meditar";
@@ -298,6 +301,7 @@
 "One notification listing the habits not checked off yet." = "Una notificación con los hábitos que aún no has marcado.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Solo cuentan las marcas del mismo día o del siguiente. Desmarcar un hábito devuelve su chispa.";
 "Open iOS Settings" = "Abrir Ajustes de iOS";
+"Open mail app" = "Abrir app de correo";
 "Open the app to adopt one." = "Abre la app para adoptar una.";
 "Order" = "Orden";
 "Organization" = "Organización";
@@ -307,6 +311,7 @@
 "Panda" = "Panda";
 "Part of day" = "Momento del día";
 "Parts of day" = "Por momento del día";
+"Paste the message into any mail app and send it to %@." = "Pega el mensaje en cualquier app de correo y envíalo a %@.";
 "Pause" = "Pausa";
 "Paused until %@" = "En pausa hasta el %@";
 "Per week" = "Por semana";
@@ -325,6 +330,7 @@
 "Pro: +%lld every month and up to %lld a day" = "Pro: +%lld cada mes y hasta %lld al día";
 "Profile" = "Perfil";
 "Profile and achievements" = "Perfil y logros";
+"Profile section" = "Sección del perfil";
 "Purchase failed" = "La compra falló";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Las compras solo funcionan en la versión de App Store. En esta compilación, Pro se puede activar para pruebas en Ajustes.";
 "Rate the app" = "Valorar la app";
@@ -358,11 +364,12 @@
 "Schedule" = "Horario";
 "Scheduled notifications" = "Notificaciones programadas";
 "Send" = "Enviar";
+"Send the message" = "Enviar el mensaje";
 "Set up Mail on this iPhone or send your message to %@." = "Configura Mail en el iPhone o envía tu mensaje a %@.";
 "Settings" = "Ajustes";
 "Shared data" = "Datos compartidos";
 "Show introduction" = "Ver la introducción";
-"Shows how many habits are left for today." = "Muestra cuántos hábitos quedan para hoy.";
+"Shows how many reminders came since you last opened the app." = "Muestra cuántos recordatorios llegaron desde la última vez que abriste la app.";
 "Simple gestures" = "Gestos sencillos";
 "Skip" = "Omitir";
 "Skipped" = "Omitido";

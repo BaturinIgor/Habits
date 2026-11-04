@@ -54,17 +54,6 @@ enum AppGroup {
         return groups.filter { !$0.contains("*") }
     }
 
-    /// Для диагностики: какие группы пробовали и какие доступны.
-    static var diagnostics: String {
-        let fm = FileManager.default
-        var seen = Set<String>()
-        let list = candidates.filter { seen.insert($0).inserted }.map { id in
-            (fm.containerURL(forSecurityApplicationGroupIdentifier: id) != nil ? "✓ " : "✗ ") + id
-        }
-        let own = (Bundle.main.object(forInfoDictionaryKey: "ALTAppGroups") as? [String]).map { "\($0.count)" } ?? "-"
-        return list.joined(separator: "\n") + "\nALTAppGroups: " + own + " · " + (Bundle.main.bundleIdentifier ?? "?")
-    }
-
     /// Идентификатор группы, которая реально доступна, или nil, если общего контейнера нет
     /// (тогда приложение и виджет не видят данные друг друга).
     static let resolvedIdentifier: String? = candidates.first {

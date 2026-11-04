@@ -97,8 +97,10 @@
 "Completion" = "पूरा होने की दर";
 "Consistency" = "निरंतरता";
 "Continue" = "आगे";
+"Copied" = "कॉपी हो गया";
 "Copy address" = "पता कॉपी करें";
 "Copy message" = "संदेश कॉपी करें";
+"Copy message and address" = "संदेश और पता कॉपी करें";
 "Couldn't read the file" = "फ़ाइल पढ़ी नहीं जा सकी";
 "Count glasses of water, pages or minutes toward a goal." = "पानी के गिलास, पन्ने या मिनट लक्ष्य तक गिनें।";
 "Create" = "बनाएँ";
@@ -237,6 +239,7 @@
 "Let's keep the streak going!" = "चलो श्रृंखला जारी रखें!";
 "Let's start with your first habit" = "चलिए पहली आदत से शुरू करें";
 "Level %lld" = "लेवल %lld";
+"Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "इस iPhone पर Mail सेट नहीं है। कोई दूसरा मेल ऐप खोलें या संदेश कॉपी करके %@ पर भेजें।";
 "Mark as done" = "पूरा करें";
 "Mark habit" = "आदत पूरी करें";
 "Meditate" = "ध्यान";
@@ -298,6 +301,7 @@
 "One notification listing the habits not checked off yet." = "एक सूचना, जिसमें अभी बाकी आदतें होंगी।";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "केवल उसी दिन या अगले दिन की गई निशानियाँ गिनी जाती हैं। निशान हटाने पर चिंगारी वापस चली जाती है।";
 "Open iOS Settings" = "iOS सेटिंग्स खोलें";
+"Open mail app" = "मेल ऐप खोलें";
 "Open the app to adopt one." = "अपनाने के लिए ऐप खोलें।";
 "Order" = "क्रम";
 "Organization" = "व्यवस्था";
@@ -307,6 +311,7 @@
 "Panda" = "पांडा";
 "Part of day" = "दिन का समय";
 "Parts of day" = "दिन के हिस्सों में";
+"Paste the message into any mail app and send it to %@." = "संदेश किसी भी मेल ऐप में चिपकाएँ और %@ पर भेजें।";
 "Pause" = "विराम";
 "Paused until %@" = "%@ तक विराम";
 "Per week" = "प्रति हफ़्ता";
@@ -325,6 +330,7 @@
 "Pro: +%lld every month and up to %lld a day" = "Pro: हर महीने +%lld और दिन में अधिकतम %lld";
 "Profile" = "प्रोफ़ाइल";
 "Profile and achievements" = "प्रोफ़ाइल और उपलब्धियाँ";
+"Profile section" = "प्रोफ़ाइल अनुभाग";
 "Purchase failed" = "खरीद विफल रही";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "खरीदारी केवल App Store संस्करण में काम करती है। इस बिल्ड में सेटिंग्स में परीक्षण के लिए Pro चालू किया जा सकता है।";
 "Rate the app" = "ऐप को रेटिंग दें";
@@ -358,11 +364,12 @@
 "Schedule" = "समय-सारिणी";
 "Scheduled notifications" = "तय सूचनाएँ";
 "Send" = "भेजें";
+"Send the message" = "संदेश भेजें";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone पर मेल सेट करें या अपना संदेश %@ पर भेजें।";
 "Settings" = "सेटिंग्स";
 "Shared data" = "साझा डेटा";
 "Show introduction" = "परिचय दिखाएँ";
-"Shows how many habits are left for today." = "दिखाता है कि आज कितनी आदतें बाकी हैं।";
+"Shows how many reminders came since you last opened the app." = "दिखाता है कि पिछली बार ऐप खोलने के बाद कितने रिमाइंडर आए।";
 "Simple gestures" = "आसान इशारे";
 "Skip" = "छोड़ें";
 "Skipped" = "छोड़ा";

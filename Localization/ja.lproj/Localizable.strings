@@ -97,8 +97,10 @@
 "Completion" = "達成率";
 "Consistency" = "継続は力";
 "Continue" = "次へ";
+"Copied" = "コピーしました";
 "Copy address" = "アドレスをコピー";
 "Copy message" = "メッセージをコピー";
+"Copy message and address" = "メッセージとアドレスをコピー";
 "Couldn't read the file" = "ファイルを読み込めませんでした";
 "Count glasses of water, pages or minutes toward a goal." = "水の杯数やページ数、分数を目標まで数えます。";
 "Create" = "作成";
@@ -237,6 +239,7 @@
 "Let's keep the streak going!" = "連続記録を続けよう！";
 "Let's start with your first habit" = "最初の習慣から始めましょう";
 "Level %lld" = "レベル %lld";
+"Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "このiPhoneではメールが設定されていません。別のメールアプリを開くか、メッセージをコピーして %@ に送ってください。";
 "Mark as done" = "完了にする";
 "Mark habit" = "習慣をチェック";
 "Meditate" = "瞑想";
@@ -298,6 +301,7 @@
 "One notification listing the habits not checked off yet." = "まだチェックしていない習慣を1件の通知でお知らせします。";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "当日か翌日のチェックだけが対象です。チェックを外すとスパークも戻ります。";
 "Open iOS Settings" = "iOSの設定を開く";
+"Open mail app" = "メールアプリを開く";
 "Open the app to adopt one." = "アプリを開いて迎えましょう。";
 "Order" = "並び順";
 "Organization" = "整理";
@@ -307,6 +311,7 @@
 "Panda" = "パンダ";
 "Part of day" = "時間帯";
 "Parts of day" = "時間帯別";
+"Paste the message into any mail app and send it to %@." = "メッセージを任意のメールアプリに貼り付けて %@ に送ってください。";
 "Pause" = "一時停止";
 "Paused until %@" = "%@まで一時停止";
 "Per week" = "週あたり";
@@ -325,6 +330,7 @@
 "Pro: +%lld every month and up to %lld a day" = "Pro：毎月+%lld、1日最大%lld";
 "Profile" = "プロフィール";
 "Profile and achievements" = "プロフィールと実績";
+"Profile section" = "プロフィールのセクション";
 "Purchase failed" = "購入できませんでした";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "購入は App Store 版でのみ利用できます。このビルドでは設定でテスト用に Pro をオンにできます。";
 "Rate the app" = "アプリを評価";
@@ -358,11 +364,12 @@
 "Schedule" = "スケジュール";
 "Scheduled notifications" = "予定された通知";
 "Send" = "送信";
+"Send the message" = "メッセージを送信";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone でメールを設定するか、%@ に送信してください。";
 "Settings" = "設定";
 "Shared data" = "共有データ";
 "Show introduction" = "紹介を表示";
-"Shows how many habits are left for today." = "今日残っている習慣の数を表示します。";
+"Shows how many reminders came since you last opened the app." = "前回アプリを開いてから届いたリマインダーの数を表示します。";
 "Simple gestures" = "かんたん操作";
 "Skip" = "スキップ";
 "Skipped" = "スキップ済み";
