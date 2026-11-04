@@ -171,7 +171,7 @@ struct SettingsView: View {
 
 // MARK: - Виджет
 
-/// Состояние виджета одной строкой. Технические подробности видны только при проблеме.
+/// Состояние виджета одной строкой. Подсказка видна только при проблеме.
 private struct WidgetStatusSection: View {
     @State private var widgetBeat = WidgetHeartbeat.read()
     @State private var spins = 0
@@ -211,14 +211,6 @@ private struct WidgetStatusSection: View {
                 }
                 .buttonStyle(.borderless)
                 .accessibilityLabel(Text("Refresh widgets"))
-            }
-            if !available {
-                DisclosureGroup("Technical details") {
-                    Text(verbatim: AppGroup.diagnostics)
-                        .font(.caption2.monospaced())
-                        .foregroundStyle(.secondary)
-                        .textSelection(.enabled)
-                }
             }
         } header: {
             Text("Widget")
