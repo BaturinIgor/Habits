@@ -145,12 +145,7 @@ struct SettingsView: View {
                 } header: {
                     Text("Widget")
                 } footer: {
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked.")
-                        Text(verbatim: AppGroup.diagnostics)
-                            .font(.caption2.monospaced())
-                            .textSelection(.enabled)
-                    }
+                    Text("If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked.")
                 }
 
                 Section {
@@ -158,7 +153,7 @@ struct SettingsView: View {
                         Label("Number on the app icon", systemImage: "app.badge.fill")
                     }
                 } footer: {
-                    Text("Shows how many habits are left for today.")
+                    Text("Shows how many reminders came since you last opened the app.")
                 }
 
                 Section("Today screen") {
