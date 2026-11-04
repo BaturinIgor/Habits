@@ -118,9 +118,13 @@ final class HabitStore {
         return facts
     }
 
+    /// Открытые ачивки. Однажды открытая ачивка остаётся навсегда (она запоминается
+    /// в seenAchievements), даже если удалить привычку, на которой она держалась.
     var unlockedAchievementIDs: Set<String> {
         let facts = achievementFacts
-        return Set(Achievements.all.filter { $0.isUnlocked(facts) }.map(\.id))
+        let known = Set(Achievements.all.map(\.id))
+        let kept = Set(data.settings.seenAchievements).intersection(known)
+        return Set(Achievements.all.filter { $0.isUnlocked(facts) }.map(\.id)).union(kept)
     }
 
     /// Заработанное и баланс, пересчитываются после изменений.
@@ -128,7 +132,7 @@ final class HabitStore {
         _ = revision
         if let cache = economyCache, cache.revision == revision { return cache.value }
         let facts = achievementFacts
-        let unlocked = Achievements.all.filter { $0.isUnlocked(facts) }.count
+        let unlocked = unlockedAchievementIDs.count
         let report = Sparks.report(data, facts: facts, unlockedAchievements: unlocked)
         let value = Economy(report: report, balance: Sparks.balance(earned: report.total, data: data))
         economyCache = (revision, value)
