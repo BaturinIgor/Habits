@@ -26,9 +26,16 @@ enum Freeze {
     /// Сколько пропусков в месяц не прерывают серию.
     static let perMonth = 2
 
-    /// Лимит на месяц с учётом докупленных за искры.
+    /// Лимит на месяц с учётом докупленных за искры и бонуса питомца.
     static func limit(year: Int, month: Int, data: AppData) -> Int {
-        perMonth + data.wallet.extraFreezes[String(format: "%04d-%02d", year, month), default: 0]
+        let key = String(format: "%04d-%02d", year, month)
+        return perMonth + data.wallet.extraFreezes[key, default: 0] + Pets.bonusFreezes(month: key, pet: data.wallet.pet)
+    }
+
+    /// Лимит на текущий месяц.
+    static func limitThisMonth(data: AppData, now: Date = Date(), calendar: Calendar = .app) -> Int {
+        let c = calendar.dateComponents([.year, .month], from: now)
+        return limit(year: c.year ?? 0, month: c.month ?? 0, data: data)
     }
 }
 

@@ -186,6 +186,24 @@ final class HabitStore {
         return true
     }
 
+    /// Запоминает, когда питомец впервые дошёл до каждой стадии: от этого
+    /// дня начинаются подарки и бонусные заморозки. Возвращает новую стадию, если она появилась.
+    @discardableResult
+    func syncPetStage() -> PetStage? {
+        guard var pet = data.wallet.pet else { return nil }
+        let current = PetStage.stage(xp: Pets.xp(pet, data: data))
+        let now = Date()
+        var reached: PetStage?
+        for stage in PetStage.allCases where stage > .egg && stage <= current && pet.stageReached[String(stage.rawValue)] == nil {
+            pet.stageReached[String(stage.rawValue)] = now
+            reached = stage
+        }
+        guard let reached else { return nil }
+        data.wallet.pet = pet
+        commit()
+        return reached
+    }
+
     /// Сменить вид питомца; платный вид сначала покупается.
     @discardableResult
     func setPetSpecies(_ species: PetSpecies) -> Bool {

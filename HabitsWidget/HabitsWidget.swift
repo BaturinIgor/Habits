@@ -471,7 +471,7 @@ struct PetProvider: TimelineProvider {
         guard let pet = data.wallet.pet else { return entry }
         entry.pet = pet
         entry.xp = Pets.xp(pet, data: data)
-        entry.stage = PetStage.stage(xp: entry.xp)
+        entry.stage = Pets.stage(pet, data: data)
         entry.mood = Pets.mood(pet, data: data, now: date)
         entry.feedsToday = pet.feeds[DayKey.make(date), default: 0]
         return entry

@@ -14,6 +14,12 @@ extension Sparks {
         r.comebacks = facts.comebacks * comebackBonus
         r.achievements = unlockedAchievements * achievementBonus
         r.gifts = data.wallet.proMonths.count * proMonthlyGift
+        if let pet = data.wallet.pet, !pet.stageReached.isEmpty {
+            let start = DayKey.make(pet.adoptedAt, calendar: calendar)
+            for (day, count) in perDay where count > 0 && day >= start {
+                r.pet += Pets.stage(onDay: day, pet: pet, calendar: calendar).dailyGift
+            }
+        }
         return r
     }
 

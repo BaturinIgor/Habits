@@ -1,5 +1,7 @@
 "%@ / month" = "%@ / 월";
 "%@ / year" = "%@ / 년";
+"%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: 가격 ✨ %lld, 보유: ✨ %lld. ✨ %lld 부족해요. 습관을 체크해서 모아요.";
+"%@ costs %lld sparks. You have %lld." = "%@: 가격 ✨ %lld. 보유: ✨ %lld.";
 "%lld min" = "%lld분";
 "%lld more to %@" = "%2$@까지 %1$lld 남음";
 "%lld of %lld" = "%lld / %lld";
@@ -10,14 +12,20 @@
 "+%lld for coming back after a miss" = "빠진 뒤 돌아오면 +%lld";
 "+%lld for each achievement" = "업적마다 +%lld";
 "+%lld for every 7 days of a streak, +%lld for every 30" = "연속 7일마다 +%lld, 30일마다 +%lld";
+"+1 spark every active day" = "활동한 날마다 스파크 +1";
+"+2 sparks every active day" = "활동한 날마다 스파크 +2";
+"+3 sparks every active day and +1 streak freeze a month" = "활동한 날마다 스파크 +3, 매달 연속 기록 동결 +1";
+"+5 sparks every active day and +2 streak freezes a month" = "활동한 날마다 스파크 +5, 매달 연속 기록 동결 +2";
 "1 spark for each check-in, up to %lld a day" = "체크마다 1 스파크, 하루 최대 %lld";
 "30 perfect days in a row" = "30일 연속 완벽한 날";
 "7 perfect days in a row" = "7일 연속 완벽한 하루";
+"A grown pet brings up to +5 a day" = "자란 펫은 하루 최대 +5를 가져와요";
 "A week strong" = "일주일 달성";
 "A whole year" = "꼬박 1년";
 "Achievements" = "업적";
 "Achievements and rewards" = "업적과 보상";
 "Active" = "활성";
+"Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "활동한 날: 습관을 하나 이상 제때 체크한 날. 먹이를 주면 경험치 %lld을 얻어 더 빨리 자라요.";
 "Activity over %lld weeks" = "최근 %lld주 활동";
 "Add a habit, pick days and a time, and I'll remind you." = "습관을 추가하고 요일과 시간을 고르면 알려 드릴게요.";
 "Add a note to 20 completed habits" = "완료한 습관 20개에 메모 추가";
@@ -44,8 +52,10 @@
 "Archive (%lld)" = "보관함 (%lld)";
 "Archived" = "보관됨";
 "Available" = "사용 가능";
+"Avatar" = "아바타";
 "Avatars" = "아바타";
 "Baby" = "아기";
+"Background" = "배경";
 "Backgrounds" = "배경";
 "Backup" = "백업";
 "Best current streak" = "현재 최고 연속";
@@ -147,6 +157,7 @@
 "Feed pet" = "펫 먹이 주기";
 "Feed your pet" = "펫 먹이 주기";
 "Feedback" = "피드백";
+"Feeding" = "먹이";
 "Fifty" = "50번";
 "First step" = "첫걸음";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "예: 물 8잔. 원을 탭할 때마다 1씩 늘어요.";
@@ -182,6 +193,7 @@
 "Half a thousand" = "500번";
 "Happy" = "행복해요";
 "Hard days and chains" = "힘든 날과 연결";
+"Hatches after a few check-ins" = "몇 번 체크하면 부화해요";
 "Have 30 perfect days" = "완벽한 날 30일";
 "Hide keyboard" = "키보드 숨기기";
 "How many habits are done today." = "오늘 완료한 습관 수.";
@@ -270,6 +282,7 @@
 "Notification" = "알림";
 "Notifications" = "알림";
 "Notifications are turned off in iOS Settings, so reminders won't arrive." = "iOS 설정에서 알림이 꺼져 있어 알림을 받을 수 없어요.";
+"Now" = "현재";
 "Number on the app icon" = "앱 아이콘 배지";
 "OK" = "확인";
 "Off" = "꺼짐";
@@ -302,6 +315,7 @@
 "Perfect month" = "완벽한 한 달";
 "Perfect week" = "완벽한 한 주";
 "Pet" = "펫";
+"Pet gifts" = "펫의 선물";
 "Phoenix" = "불사조";
 "Pick a template or create your own." = "템플릿을 고르거나 직접 만드세요.";
 "Privacy Policy" = "개인정보 처리방침";
@@ -424,6 +438,7 @@
 "Weekends" = "주말";
 "Weekly hero" = "주간 영웅";
 "Welcome to Habit Tracker" = "습관 트래커에 오신 걸 환영해요";
+"What %@ gives you" = "%@이(가) 주는 것";
 "What happened and what did you expect?" = "무슨 일이 있었고 어떻게 되길 기대했나요?";
 "Widget" = "위젯";
 "Workout" = "운동";

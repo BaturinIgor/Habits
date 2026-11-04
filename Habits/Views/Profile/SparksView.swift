@@ -4,7 +4,7 @@ import SwiftUI
 struct SparksView: View {
     @Environment(HabitStore.self) private var store
     @Environment(\.dismiss) private var dismiss
-    @State private var notEnough = false
+    @State private var purchase: SparkPurchase?
     @State private var showingPet = false
 
     var body: some View {
@@ -29,12 +29,15 @@ struct SparksView: View {
                     row("Streaks", r.streaks)
                     row("Comebacks", r.comebacks)
                     row("Achievements", r.achievements)
+                    if r.pet > 0 { row("Pet gifts", r.pet) }
                     if r.gifts > 0 { row("Pro gifts", r.gifts) }
                 }
 
                 Section {
                     Button {
-                        withAnimation { if !store.buyFreeze() { notEnough = true } }
+                        purchase = SparkPurchase(title: String(localized: "Extra freeze"), price: Sparks.freezePrice) {
+                            _ = store.buyFreeze()
+                        }
                     } label: {
                         HStack {
                             Label("Extra freeze", systemImage: "snowflake")
@@ -62,6 +65,7 @@ struct SparksView: View {
                     tip("flame.fill", "+\(Sparks.weekStreakBonus) for every 7 days of a streak, +\(Sparks.monthStreakBonus) for every 30")
                     tip("arrow.uturn.up.circle.fill", "+\(Sparks.comebackBonus) for coming back after a miss")
                     tip("trophy.fill", "+\(Sparks.achievementBonus) for each achievement")
+                    tip("pawprint.fill", "A grown pet brings up to +5 a day")
                     tip("crown.fill", "Pro: +\(Sparks.proMonthlyGift) every month and up to \(Sparks.proDailyCap) a day")
                 } header: {
                     Text("How to earn")
@@ -78,11 +82,7 @@ struct SparksView: View {
                 }
             }
             .sheet(isPresented: $showingPet) { PetView() }
-            .alert("Not enough sparks", isPresented: $notEnough) {
-                Button("OK", role: .cancel) {}
-            } message: {
-                Text("Check off habits to earn more.")
-            }
+            .sparkPurchaseAlert($purchase)
         }
     }
 

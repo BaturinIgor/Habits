@@ -11,7 +11,9 @@ struct SparkReport: Equatable {
     var comebacks = 0
     var achievements = 0
     var gifts = 0
-    var total: Int { checks + perfectDays + streaks + comebacks + achievements + gifts }
+    /// Подарки питомца за активные дни.
+    var pet = 0
+    var total: Int { checks + perfectDays + streaks + comebacks + achievements + gifts + pet }
 }
 
 enum Sparks {
@@ -27,6 +29,8 @@ enum Sparks {
     static let maxExtraFreezes = 2
     static let feedPrice = 5
     static let feedsPerDay = 3
+    /// Сколько опыта даёт одно кормление.
+    static let feedXP = 3
 
     /// Отметка честная, если поставлена в тот же день или на следующий.
     static func isOnTime(_ entry: CheckIn, day: String, calendar: Calendar = .app) -> Bool {
@@ -76,6 +80,9 @@ struct SparkBadge: View {
                 .contentTransition(.numericText())
         }
         .font(font)
+        .lineLimit(1)
+        // Не даём панели инструментов сжать число до одной цифры.
+        .fixedSize()
     }
 }
 
@@ -91,7 +98,9 @@ struct PetSpecies: Identifiable {
     let needsPro: Bool
 }
 
-enum PetStage: Int, CaseIterable {
+enum PetStage: Int, CaseIterable, Comparable {
+    static func < (a: PetStage, b: PetStage) -> Bool { a.rawValue < b.rawValue }
+
     case egg, baby, young, adult, legend
 
     var threshold: Int {
@@ -119,6 +128,37 @@ enum PetStage: Int, CaseIterable {
     }
 
     var next: PetStage? { PetStage(rawValue: rawValue + 1) }
+
+    /// Сколько искр питомец приносит каждый день, когда отмечена хотя бы одна привычка.
+    var dailyGift: Int {
+        switch self {
+        case .egg: 0
+        case .baby: 1
+        case .young: 2
+        case .adult: 3
+        case .legend: 5
+        }
+    }
+
+    /// Сколько дополнительных заморозок серии в месяц даёт питомец.
+    var bonusFreezes: Int {
+        switch self {
+        case .egg, .baby, .young: 0
+        case .adult: 1
+        case .legend: 2
+        }
+    }
+
+    /// Что даёт стадия, одной строкой.
+    var perks: String {
+        switch self {
+        case .egg: String(localized: "Hatches after a few check-ins")
+        case .baby: String(localized: "+1 spark every active day")
+        case .young: String(localized: "+2 sparks every active day")
+        case .adult: String(localized: "+3 sparks every active day and +1 streak freeze a month")
+        case .legend: String(localized: "+5 sparks every active day and +2 streak freezes a month")
+        }
+    }
 }
 
 enum PetMood {
@@ -167,9 +207,37 @@ enum Pets {
         return species.price == nil || data.wallet.ownedPets.contains(species.id)
     }
 
+    /// Стадия питомца. Достигнутая стадия не теряется, даже если снять отметки.
+    static func stage(_ pet: PetState, data: AppData) -> PetStage {
+        max(PetStage.stage(xp: xp(pet, data: data)), pet.highestReached ?? .egg)
+    }
+
+    /// Стадия, которая была у питомца в этот день (по датам достижения стадий).
+    static func stage(onDay day: String, pet: PetState, calendar: Calendar = .app) -> PetStage {
+        var result = PetStage.egg
+        for (raw, date) in pet.stageReached {
+            guard let stage = Int(raw).flatMap(PetStage.init(rawValue:)), stage > result,
+                  DayKey.make(date, calendar: calendar) <= day else { continue }
+            result = stage
+        }
+        return result
+    }
+
+    /// Дополнительные заморозки от питомца в месяце "yyyy-MM".
+    static func bonusFreezes(month: String, pet: PetState?, calendar: Calendar = .app) -> Int {
+        guard let pet else { return 0 }
+        var best = PetStage.egg
+        for (raw, date) in pet.stageReached {
+            guard let stage = Int(raw).flatMap(PetStage.init(rawValue:)), stage > best,
+                  Wallet.monthKey(date, calendar: calendar) <= month else { continue }
+            best = stage
+        }
+        return best.bonusFreezes
+    }
+
     /// Опыт: честные отметки с момента появления питомца плюс кормления.
     static func xp(_ pet: PetState, data: AppData) -> Int {
-        Sparks.checksPerDay(data, from: pet.adoptedAt).values.reduce(0, +) + pet.totalFeeds * 3
+        Sparks.checksPerDay(data, from: pet.adoptedAt).values.reduce(0, +) + pet.totalFeeds * Sparks.feedXP
     }
 
     static func mood(_ pet: PetState, data: AppData, now: Date = Date(), calendar: Calendar = .app) -> PetMood {
