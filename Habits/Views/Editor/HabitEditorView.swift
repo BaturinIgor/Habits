@@ -226,7 +226,7 @@ struct HabitEditorView: View {
         } header: {
             Text("Words")
         } footer: {
-            Text("Tap the habit to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.")
+            Text("Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.")
         }
     }
 

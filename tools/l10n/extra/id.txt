@@ -443,3 +443,73 @@ Never||Belum pernah
 Refresh widgets||Segarkan widget
 Widget||Widget
 If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked.||Jika data bersama tidak tersedia, widget tidak dapat melihat kebiasaanmu. Pasang ulang aplikasi melalui SideStore dan pertahankan ekstensinya saat ditanya.
+Added||Ditambahkan
+Break bad habits||Hentikan kebiasaan buruk
+Breathing exercise||Latihan pernapasan
+Brush and floss||Sikat gigi dan benang gigi
+Call family||Telepon keluarga
+Clear your inbox||Kosongkan kotak masuk
+Custom habit||Kebiasaan sendiri
+Cycling||Bersepeda
+Do a good deed||Berbuat baik
+Draw||Menggambar
+Eat vegetables and fruit||Makan sayur dan buah
+Finance||Keuangan
+Fitness||Olahraga
+Focus for an hour||Fokus satu jam
+Health||Kesehatan
+I know it||Sudah tahu
+In progress: %lld||Sedang dipelajari: %lld
+Keep a journal||Menulis jurnal
+Language to learn||Bahasa yang dipelajari
+Languages||Bahasa
+Learn %@||Belajar %@
+Learn words||Belajar kata
+Learned: %lld of %lld||Dipelajari: %lld dari %lld
+Learning||Belajar
+Less social media||Kurangi media sosial
+Listen||Dengarkan
+Listen to a podcast||Dengarkan podcast
+Make the bed||Rapikan tempat tidur
+Message a friend||Kirim pesan ke teman
+Mindfulness||Kesadaran diri
+More words||Kata lainnya
+Morning exercises||Senam pagi
+New word||Kata baru
+New words a day||Kata baru per hari
+No alcohol||Tanpa alkohol
+No fast food||Tanpa makanan cepat saji
+No impulse purchases||Tanpa belanja impulsif
+No phone before bed||Tanpa ponsel sebelum tidur
+No smoking||Tidak merokok
+No sweets||Tanpa makanan manis
+Plan the day||Rencanakan hari
+Practice an instrument||Latihan alat musik
+Productivity||Produktivitas
+Put money aside||Menabung
+Relationships||Hubungan
+Review||Ulangan
+Skin care||Perawatan kulit
+Spend time outdoors||Habiskan waktu di luar
+Still learning||Masih belajar
+Stretch||Peregangan
+Study for 30 minutes||Belajar 30 menit
+Swimming||Berenang
+Take vitamins||Minum vitamin
+Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.||Ketuk lingkaran kebiasaan untuk membuka kartu hari ini. Kata yang belum kamu tahu akan muncul lagi untuk diulang, dan kebiasaan dicentang otomatis setelah kartu hari ini selesai.
+Tap to see the translation||Ketuk untuk melihat terjemahan
+Tidy up for 10 minutes||Beres-beres 10 menit
+Track expenses||Catat pengeluaran
+Wake up early||Bangun pagi
+Walk 10,000 steps||Jalan 10.000 langkah
+Weekly review||Tinjauan mingguan
+Words||Kata
+Words for today are done||Kata hari ini selesai
+Write down 3 good things||Tulis 3 hal baik
+Yoga||Yoga
+You've gone through the whole dictionary||Kamu sudah menyelesaikan seluruh kamus
+Your own name, icon and schedule||Nama, ikon, dan jadwal sendiri
+times||kali
+%lld words||%lld kata
+Run||Lari
+Push-ups||Push-up

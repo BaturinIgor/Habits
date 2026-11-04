@@ -1,0 +1,81 @@
+food|water|вода|das Wasser|l'eau|el agua|a água|l'acqua|su|woda|air|水|水|물|पानी
+food|bread|хлеб|das Brot|le pain|el pan|o pão|il pane|ekmek|chleb|roti|面包|パン|빵|रोटी
+food|milk|молоко|die Milch|le lait|la leche|o leite|il latte|süt|mleko|susu|牛奶|牛乳|우유|दूध
+food|coffee|кофе|der Kaffee|le café|el café|o café|il caffè|kahve|kawa|kopi|咖啡|コーヒー|커피|कॉफ़ी
+food|tea|чай|der Tee|le thé|el té|o chá|il tè|çay|herbata|teh|茶|お茶|차|चाय
+food|juice|сок|der Saft|le jus|el zumo|o suco|il succo|meyve suyu|sok|jus|果汁|ジュース|주스|जूस
+food|wine|вино|der Wein|le vin|el vino|o vinho|il vino|şarap|wino|anggur (minuman)|葡萄酒|ワイン|와인|शराब
+food|beer|пиво|das Bier|la bière|la cerveza|a cerveja|la birra|bira|piwo|bir|啤酒|ビール|맥주|बीयर
+food|food|еда|das Essen|la nourriture|la comida|a comida|il cibo|yemek|jedzenie|makanan|食物|食べ物|음식|खाना
+food|breakfast|завтрак|das Frühstück|le petit-déjeuner|el desayuno|o café da manhã|la colazione|kahvaltı|śniadanie|sarapan|早饭|朝ごはん|아침 식사|नाश्ता
+food|lunch|обед|das Mittagessen|le déjeuner|el almuerzo|o almoço|il pranzo|öğle yemeği|obiad|makan siang|午饭|昼ごはん|점심|दोपहर का खाना
+food|dinner|ужин|das Abendessen|le dîner|la cena|o jantar|la cena|akşam yemeği|kolacja|makan malam|晚饭|晩ごはん|저녁 식사|रात का खाना
+food|meat|мясо|das Fleisch|la viande|la carne|a carne|la carne|et|mięso|daging|肉|肉|고기|मांस
+food|fish|рыба|der Fisch|le poisson|el pescado|o peixe|il pesce|balık|ryba|ikan|鱼|魚|생선|मछली
+food|chicken (food)|курица|das Hähnchen|le poulet|el pollo|o frango|il pollo|tavuk|kurczak|ayam|鸡肉|鶏肉|닭고기|चिकन
+food|egg|яйцо|das Ei|l'œuf|el huevo|o ovo|l'uovo|yumurta|jajko|telur|鸡蛋|卵|달걀|अंडा
+food|cheese|сыр|der Käse|le fromage|el queso|o queijo|il formaggio|peynir|ser|keju|奶酪|チーズ|치즈|पनीर
+food|butter|масло (сливочное)|die Butter|le beurre|la mantequilla|a manteiga|il burro|tereyağı|masło|mentega|黄油|バター|버터|मक्खन
+food|rice|рис|der Reis|le riz|el arroz|o arroz|il riso|pirinç|ryż|nasi|米饭|ご飯|밥|चावल
+food|soup|суп|die Suppe|la soupe|la sopa|a sopa|la zuppa|çorba|zupa|sup|汤|スープ|수프|सूप
+food|salt|соль|das Salz|le sel|la sal|o sal|il sale|tuz|sól|garam|盐|塩|소금|नमक
+food|sugar|сахар|der Zucker|le sucre|el azúcar|o açúcar|lo zucchero|şeker|cukier|gula|糖|砂糖|설탕|चीनी
+food|cake|торт|der Kuchen|le gâteau|el pastel|o bolo|la torta|pasta|ciasto|kue|蛋糕|ケーキ|케이크|केक
+food|chocolate|шоколад|die Schokolade|le chocolat|el chocolate|o chocolate|il cioccolato|çikolata|czekolada|cokelat|巧克力|チョコレート|초콜릿|चॉकलेट
+food|ice cream|мороженое|das Eis|la glace|el helado|o sorvete|il gelato|dondurma|lody|es krim|冰淇淋|アイスクリーム|아이스크림|आइसक्रीम
+food|restaurant|ресторан|das Restaurant|le restaurant|el restaurante|o restaurante|il ristorante|restoran|restauracja|restoran|餐厅|レストラン|식당|रेस्टोरेंट
+food|menu|меню|die Speisekarte|le menu|el menú|o cardápio|il menù|menü|menu|menu|菜单|メニュー|메뉴|मेन्यू
+food|bill|счёт|die Rechnung|l'addition|la cuenta|a conta|il conto|hesap|rachunek|tagihan|账单|お会計|계산서|बिल
+food|plate|тарелка|der Teller|l'assiette|el plato|o prato|il piatto|tabak|talerz|piring|盘子|皿|접시|प्लेट
+food|cup|чашка|die Tasse|la tasse|la taza|a xícara|la tazza|fincan|filiżanka|cangkir|杯子|カップ|컵|कप
+food|glass|стакан|das Glas|le verre|el vaso|o copo|il bicchiere|bardak|szklanka|gelas|玻璃杯|グラス|유리잔|गिलास
+food|knife|нож|das Messer|le couteau|el cuchillo|a faca|il coltello|bıçak|nóż|pisau|刀|ナイフ|칼|चाकू
+food|fork|вилка|die Gabel|la fourchette|el tenedor|o garfo|la forchetta|çatal|widelec|garpu|叉子|フォーク|포크|काँटा
+food|spoon|ложка|der Löffel|la cuillère|la cuchara|a colher|il cucchiaio|kaşık|łyżka|sendok|勺子|スプーン|숟가락|चम्मच
+fruit|apple|яблоко|der Apfel|la pomme|la manzana|a maçã|la mela|elma|jabłko|apel|苹果|りんご|사과|सेब
+fruit|banana|банан|die Banane|la banane|el plátano|a banana|la banana|muz|banan|pisang|香蕉|バナナ|바나나|केला
+fruit|orange|апельсин|die Orange|l'orange|la naranja|a laranja|l'arancia|portakal|pomarańcza|jeruk|橙子|オレンジ|오렌지|संतरा
+fruit|lemon|лимон|die Zitrone|le citron|el limón|o limão|il limone|limon|cytryna|lemon|柠檬|レモン|레몬|नींबू
+fruit|grape|виноград|die Traube|le raisin|la uva|a uva|l'uva|üzüm|winogrono|anggur|葡萄|ぶどう|포도|अंगूर
+fruit|strawberry|клубника|die Erdbeere|la fraise|la fresa|o morango|la fragola|çilek|truskawka|stroberi|草莓|いちご|딸기|स्ट्रॉबेरी
+fruit|watermelon|арбуз|die Wassermelone|la pastèque|la sandía|a melancia|l'anguria|karpuz|arbuz|semangka|西瓜|スイカ|수박|तरबूज़
+fruit|pear|груша|die Birne|la poire|la pera|a pera|la pera|armut|gruszka|pir|梨|梨|배 (과일)|नाशपाती
+fruit|cherry|вишня|die Kirsche|la cerise|la cereza|a cereja|la ciliegia|kiraz|wiśnia|ceri|樱桃|さくらんぼ|체리|चेरी
+fruit|peach|персик|der Pfirsich|la pêche|el melocotón|o pêssego|la pesca|şeftali|brzoskwinia|persik|桃子|桃|복숭아|आड़ू
+fruit|fruit|фрукт|das Obst|le fruit|la fruta|a fruta|la frutta|meyve|owoc|buah|水果|果物|과일|फल
+fruit|vegetable|овощ|das Gemüse|le légume|la verdura|o legume|la verdura|sebze|warzywo|sayuran|蔬菜|野菜|채소|सब्ज़ी
+fruit|potato|картофель|die Kartoffel|la pomme de terre|la patata|a batata|la patata|patates|ziemniak|kentang|土豆|じゃがいも|감자|आलू
+fruit|tomato|помидор|die Tomate|la tomate|el tomate|o tomate|il pomodoro|domates|pomidor|tomat|西红柿|トマト|토마토|टमाटर
+fruit|carrot|морковь|die Karotte|la carotte|la zanahoria|a cenoura|la carota|havuç|marchewka|wortel|胡萝卜|にんじん|당근|गाजर
+fruit|onion|лук|die Zwiebel|l'oignon|la cebolla|a cebola|la cipolla|soğan|cebula|bawang|洋葱|玉ねぎ|양파|प्याज़
+fruit|garlic|чеснок|der Knoblauch|l'ail|el ajo|o alho|l'aglio|sarımsak|czosnek|bawang putih|大蒜|にんにく|마늘|लहसुन
+fruit|cucumber|огурец|die Gurke|le concombre|el pepino|o pepino|il cetriolo|salatalık|ogórek|mentimun|黄瓜|きゅうり|오이|खीरा
+fruit|cabbage|капуста|der Kohl|le chou|la col|o repolho|il cavolo|lahana|kapusta|kubis|卷心菜|キャベツ|양배추|पत्तागोभी
+fruit|mushroom|гриб|der Pilz|le champignon|la seta|o cogumelo|il fungo|mantar|grzyb|jamur|蘑菇|きのこ|버섯|मशरूम
+fruit|nut|орех|die Nuss|la noix|la nuez|a noz|la noce|ceviz|orzech|kacang|坚果|ナッツ|견과|मेवा
+animals|dog|собака|der Hund|le chien|el perro|o cachorro|il cane|köpek|pies|anjing|狗|犬|개|कुत्ता
+animals|cat|кошка|die Katze|le chat|el gato|o gato|il gatto|kedi|kot|kucing|猫|猫|고양이|बिल्ली
+animals|bird|птица|der Vogel|l'oiseau|el pájaro|o pássaro|l'uccello|kuş|ptak|burung|鸟|鳥|새|पक्षी
+animals|horse|лошадь|das Pferd|le cheval|el caballo|o cavalo|il cavallo|at|koń|kuda|马|馬|말|घोड़ा
+animals|cow|корова|die Kuh|la vache|la vaca|a vaca|la mucca|inek|krowa|sapi|牛|牛|소|गाय
+animals|pig|свинья|das Schwein|le cochon|el cerdo|o porco|il maiale|domuz|świnia|babi|猪|豚|돼지|सूअर
+animals|sheep|овца|das Schaf|le mouton|la oveja|a ovelha|la pecora|koyun|owca|domba|羊|羊|양|भेड़
+animals|chicken|курица (птица)|das Huhn|la poule|la gallina|a galinha|la gallina|tavuk|kura|ayam (hewan)|鸡|鶏|닭|मुर्गी
+animals|mouse|мышь|die Maus|la souris|el ratón|o rato|il topo|fare|mysz|tikus|老鼠|ねずみ|쥐|चूहा
+animals|rabbit|кролик|das Kaninchen|le lapin|el conejo|o coelho|il coniglio|tavşan|królik|kelinci|兔子|うさぎ|토끼|ख़रगोश
+animals|bear|медведь|der Bär|l'ours|el oso|o urso|l'orso|ayı|niedźwiedź|beruang|熊|熊|곰|भालू
+animals|wolf|волк|der Wolf|le loup|el lobo|o lobo|il lupo|kurt|wilk|serigala|狼|オオカミ|늑대|भेड़िया
+animals|fox|лиса|der Fuchs|le renard|el zorro|a raposa|la volpe|tilki|lis|rubah|狐狸|キツネ|여우|लोमड़ी
+animals|lion|лев|der Löwe|le lion|el león|o leão|il leone|aslan|lew|singa|狮子|ライオン|사자|शेर
+animals|tiger|тигр|der Tiger|le tigre|el tigre|o tigre|la tigre|kaplan|tygrys|harimau|老虎|トラ|호랑이|बाघ
+animals|elephant|слон|der Elefant|l'éléphant|el elefante|o elefante|l'elefante|fil|słoń|gajah|大象|ゾウ|코끼리|हाथी
+animals|monkey|обезьяна|der Affe|le singe|el mono|o macaco|la scimmia|maymun|małpa|monyet|猴子|サル|원숭이|बंदर
+animals|snake|змея|die Schlange|le serpent|la serpiente|a cobra|il serpente|yılan|wąż|ular|蛇|ヘビ|뱀|साँप
+animals|frog|лягушка|der Frosch|la grenouille|la rana|o sapo|la rana|kurbağa|żaba|katak|青蛙|カエル|개구리|मेंढक
+animals|fly|муха|die Fliege|la mouche|la mosca|a mosca|la mosca|sinek|mucha|lalat|苍蝇|ハエ|파리|मक्खी
+animals|bee|пчела|die Biene|l'abeille|la abeja|a abelha|l'ape|arı|pszczoła|lebah|蜜蜂|ハチ|벌|मधुमक्खी
+animals|butterfly|бабочка|der Schmetterling|le papillon|la mariposa|a borboleta|la farfalla|kelebek|motyl|kupu-kupu|蝴蝶|チョウ|나비|तितली
+animals|duck|утка|die Ente|le canard|el pato|o pato|l'anatra|ördek|kaczka|bebek (hewan)|鸭子|アヒル|오리|बत्तख़
+animals|turtle|черепаха|die Schildkröte|la tortue|la tortuga|a tartaruga|la tartaruga|kaplumbağa|żółw|kura-kura|乌龟|カメ|거북이|कछुआ
+animals|whale|кит|der Wal|la baleine|la ballena|a baleia|la balena|balina|wieloryb|paus|鲸鱼|クジラ|고래|व्हेल
+animals|animal|животное|das Tier|l'animal|el animal|o animal|l'animale|hayvan|zwierzę|hewan|动物|動物|동물|जानवर

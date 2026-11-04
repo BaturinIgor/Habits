@@ -443,3 +443,73 @@ Never||Nunca
 Refresh widgets||Atualizar widgets
 Widget||Widget
 If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked.||Se os dados compartilhados não estiverem disponíveis, o widget não vê seus hábitos. Reinstale o app pelo SideStore e mantenha as extensões quando for perguntado.
+Added||Adicionado
+Break bad habits||Largar maus hábitos
+Breathing exercise||Exercício de respiração
+Brush and floss||Escovar e usar fio dental
+Call family||Ligar para a família
+Clear your inbox||Zerar a caixa de entrada
+Custom habit||Hábito próprio
+Cycling||Pedalar
+Do a good deed||Fazer uma boa ação
+Draw||Desenhar
+Eat vegetables and fruit||Comer frutas e legumes
+Finance||Finanças
+Fitness||Exercícios
+Focus for an hour||Uma hora de foco
+Health||Saúde
+I know it||Já sei
+In progress: %lld||Aprendendo: %lld
+Keep a journal||Escrever um diário
+Language to learn||Idioma para aprender
+Languages||Idiomas
+Learn %@||Aprender %@
+Learn words||Aprender palavras
+Learned: %lld of %lld||Aprendidas: %lld de %lld
+Learning||Aprendizado
+Less social media||Menos redes sociais
+Listen||Ouvir
+Listen to a podcast||Ouvir um podcast
+Make the bed||Arrumar a cama
+Message a friend||Mandar mensagem a um amigo
+Mindfulness||Atenção plena
+More words||Mais palavras
+Morning exercises||Exercícios matinais
+New word||Palavra nova
+New words a day||Palavras novas por dia
+No alcohol||Sem álcool
+No fast food||Sem fast food
+No impulse purchases||Sem compras por impulso
+No phone before bed||Sem celular antes de dormir
+No smoking||Não fumar
+No sweets||Sem doces
+Plan the day||Planejar o dia
+Practice an instrument||Praticar um instrumento
+Productivity||Produtividade
+Put money aside||Guardar dinheiro
+Relationships||Relacionamentos
+Review||Revisão
+Skin care||Cuidar da pele
+Spend time outdoors||Passar tempo ao ar livre
+Still learning||Ainda aprendendo
+Stretch||Alongamento
+Study for 30 minutes||Estudar 30 minutos
+Swimming||Natação
+Take vitamins||Tomar vitaminas
+Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.||Toque no círculo do hábito para abrir os cartões de hoje. Palavras que você ainda não sabe voltam para revisão, e o hábito é marcado quando os cartões do dia terminam.
+Tap to see the translation||Toque para ver a tradução
+Tidy up for 10 minutes||Arrumar por 10 minutos
+Track expenses||Anotar os gastos
+Wake up early||Acordar cedo
+Walk 10,000 steps||Andar 10 mil passos
+Weekly review||Revisão da semana
+Words||Palavras
+Words for today are done||As palavras de hoje acabaram
+Write down 3 good things||Anotar 3 coisas boas
+Yoga||Ioga
+You've gone through the whole dictionary||Você passou por todo o dicionário
+Your own name, icon and schedule||Nome, ícone e agenda do seu jeito
+times||vezes
+%lld words||%lld palavras
+Run||Correr
+Push-ups||Flexões

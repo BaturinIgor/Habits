@@ -185,7 +185,7 @@ for lang in ['en'] + LANGS + EXTRA:
     open(d + 'Localizable.stringsdict', 'w', encoding='utf-8').write('\n'.join(parts))
 
 # Check that every UI string in code has a translation
-STRING_ARGS = {'days', 'repeats', 'standard', 'event.summary ?? ""'}
+STRING_ARGS = {'days', 'repeats', 'standard', 'event.summary ?? ""', 'inlineName(code)'}
 lit = re.compile(r'"((?:[^"\\]|\\.|\\\([^)]*\))*)"')
 def to_key(v):
     def r(m):
@@ -196,7 +196,7 @@ ignore = {'ALTAppGroups', 'CFBundleShortVersionString', 'CFBundleVersion', 'EEEE
           'HABIT_SKIP', 'LLLLyyyy', 'PRO', 'ProgressWidget', 'TodayWidget', 'appex', 'dMMM', 'dMMMM', 'dMMMMyyyy',
           'habitID', 'habits-data.json', 'ungrouped', 'day', 'Habits Pro', 'AppleLanguages', 'all', 'appLanguage',
           'checkmark', 'de', 'en', 'es', 'fr', 'hi', 'ja', 'ko', 'ru', 'zh-Hans', 'pt-BR', 'it', 'tr', 'pl', 'id', 'system', 'summary', 'summary|%lld',
-          'habits-backup-%lld.json', 'English', 'Deutsch', 'Español', 'Français', 'Português (Brasil)', 'Italiano', 'Polski', 'Bahasa Indonesia', 'Not checked off yet: \\(event.summary ?? '}
+          'habits-backup-%lld.json', 'English', 'Deutsch', 'Español', 'Français', 'Português (Brasil)', 'Italiano', 'Türkçe', 'Polski', 'Bahasa Indonesia', 'Not checked off yet: \\(event.summary ?? '}
 known = set(rows) | set(P) | ignore
 missing = set()
 files = glob.glob(ROOT + 'Habits/**/*.swift', recursive=True) + glob.glob(ROOT + 'HabitsWidget/*.swift') + glob.glob(ROOT + 'Shared/*.swift')
@@ -214,7 +214,7 @@ for f in files:
                 continue
             if v in ('bicycle', 'calendar', 'globe', 'infinity', 'laptopcomputer', 'nosign', 'pencil', 'sparkles', 'target', 'timer'):
                 continue
-            if v.startswith('habits-data-broken'):
+            if v.startswith('habits-data-broken') or re.fullmatch(r'[a-z]{2}-[A-Z]{2}', v):
                 continue
             k = to_key(v)
             if k not in known:

@@ -1,0 +1,112 @@
+nature|sun|солнце|die Sonne|le soleil|el sol|o sol|il sole|güneş|słońce|matahari|太阳|太陽|태양|सूरज
+nature|moon|луна|der Mond|la lune|la luna|a lua|la luna|ay|księżyc|bulan|月亮|月|달|चाँद
+nature|star|звезда|der Stern|l'étoile|la estrella|a estrela|la stella|yıldız|gwiazda|bintang|星星|星|별|तारा
+nature|sky|небо|der Himmel|le ciel|el cielo|o céu|il cielo|gökyüzü|niebo|langit|天空|空|하늘|आसमान
+nature|cloud|облако|die Wolke|le nuage|la nube|a nuvem|la nuvola|bulut|chmura|awan|云|雲|구름|बादल
+nature|rain|дождь|der Regen|la pluie|la lluvia|a chuva|la pioggia|yağmur|deszcz|hujan|雨|雨|비|बारिश
+nature|snow|снег|der Schnee|la neige|la nieve|a neve|la neve|kar|śnieg|salju|雪|雪|눈 (날씨)|बर्फ़
+nature|wind|ветер|der Wind|le vent|el viento|o vento|il vento|rüzgar|wiatr|angin|风|風|바람|हवा
+nature|weather|погода|das Wetter|le temps|el tiempo|o tempo|il tempo|hava|pogoda|cuaca|天气|天気|날씨|मौसम
+nature|tree|дерево|der Baum|l'arbre|el árbol|a árvore|l'albero|ağaç|drzewo|pohon|树|木|나무|पेड़
+nature|flower|цветок|die Blume|la fleur|la flor|a flor|il fiore|çiçek|kwiat|bunga|花|花|꽃|फूल
+nature|grass|трава|das Gras|l'herbe|la hierba|a grama|l'erba|çimen|trawa|rumput|草|草|풀|घास
+nature|forest|лес|der Wald|la forêt|el bosque|a floresta|il bosco|orman|las|hutan|森林|森|숲|जंगल
+nature|mountain|гора|der Berg|la montagne|la montaña|a montanha|la montagna|dağ|góra|gunung|山|山|산|पहाड़
+nature|river|река|der Fluss|la rivière|el río|o rio|il fiume|nehir|rzeka|sungai|河|川|강|नदी
+nature|lake|озеро|der See|le lac|el lago|o lago|il lago|göl|jezioro|danau|湖|湖|호수|झील
+nature|sea|море|das Meer|la mer|el mar|o mar|il mare|deniz|morze|laut|海|海|바다|समुद्र
+nature|beach|пляж|der Strand|la plage|la playa|a praia|la spiaggia|plaj|plaża|pantai|海滩|ビーチ|해변|समुद्र तट
+nature|island|остров|die Insel|l'île|la isla|a ilha|l'isola|ada|wyspa|pulau|岛|島|섬|द्वीप
+nature|stone|камень|der Stein|la pierre|la piedra|a pedra|la pietra|taş|kamień|batu|石头|石|돌|पत्थर
+nature|fire|огонь|das Feuer|le feu|el fuego|o fogo|il fuoco|ateş|ogień|api|火|火|불|आग
+nature|earth|земля|die Erde|la terre|la tierra|a terra|la terra|toprak|ziemia|tanah|土地|土|땅|ज़मीन
+nature|air|воздух|die Luft|l'air|el aire|o ar|l'aria|hava (soluduğumuz)|powietrze|udara|空气|空気|공기|वायु
+nature|hot|жарко|heiß|chaud|caliente|quente|caldo|sıcak|gorący|panas|热|暑い|더운|गरम
+nature|cold|холодно|kalt|froid|frío|frio|freddo|soğuk|zimny|dingin|冷|寒い|추운|ठंडा
+nature|spring|весна|der Frühling|le printemps|la primavera|a primavera|la primavera|ilkbahar|wiosna|musim semi|春天|春|봄|वसंत
+nature|summer|лето|der Sommer|l'été|el verano|o verão|l'estate|yaz|lato|musim panas|夏天|夏|여름|गर्मी
+nature|autumn|осень|der Herbst|l'automne|el otoño|o outono|l'autunno|sonbahar|jesień|musim gugur|秋天|秋|가을|पतझड़
+nature|winter|зима|der Winter|l'hiver|el invierno|o inverno|l'inverno|kış|zima|musim dingin|冬天|冬|겨울|सर्दी
+time|time|время|die Zeit|le temps|el tiempo|o tempo|il tempo|zaman|czas|waktu|时间|時間|시간|समय
+time|day|день|der Tag|le jour|el día|o dia|il giorno|gün|dzień|hari|天|日|날|दिन
+time|night|ночь|die Nacht|la nuit|la noche|a noite|la notte|gece|noc|malam|夜|夜|밤|रात
+time|morning|утро|der Morgen|le matin|la mañana|a manhã|la mattina|sabah|rano|pagi|早上|朝|아침|सुबह
+time|evening|вечер|der Abend|le soir|la tarde|a noite|la sera|akşam|wieczór|sore|晚上|夕方|저녁|शाम
+time|week|неделя|die Woche|la semaine|la semana|a semana|la settimana|hafta|tydzień|minggu|星期|週|주|हफ़्ता
+time|month|месяц|der Monat|le mois|el mes|o mês|il mese|ay (takvim)|miesiąc|bulan (kalender)|月份|月 (つき)|달 (기간)|महीना
+time|year|год|das Jahr|l'année|el año|o ano|l'anno|yıl|rok|tahun|年|年|년|साल
+time|hour|час|die Stunde|l'heure|la hora|a hora|l'ora|saat (süre)|godzina|jam (waktu)|小时|時間 (じかん)|시간 (단위)|घंटा
+time|minute|минута|die Minute|la minute|el minuto|o minuto|il minuto|dakika|minuta|menit|分钟|分|분|मिनट
+time|today|сегодня|heute|aujourd'hui|hoy|hoje|oggi|bugün|dzisiaj|hari ini|今天|今日|오늘|आज
+time|tomorrow|завтра|morgen|demain|mañana|amanhã|domani|yarın|jutro|besok|明天|明日|내일|कल (आने वाला)
+time|yesterday|вчера|gestern|hier|ayer|ontem|ieri|dün|wczoraj|kemarin|昨天|昨日|어제|कल (बीता हुआ)
+time|now|сейчас|jetzt|maintenant|ahora|agora|adesso|şimdi|teraz|sekarang|现在|今|지금|अभी
+time|later|потом|später|plus tard|más tarde|mais tarde|più tardi|sonra|później|nanti|以后|後で|나중에|बाद में
+time|always|всегда|immer|toujours|siempre|sempre|sempre|her zaman|zawsze|selalu|总是|いつも|항상|हमेशा
+time|never|никогда|nie|jamais|nunca|nunca|mai|asla|nigdy|tidak pernah|从不|決して|절대|कभी नहीं
+time|often|часто|oft|souvent|a menudo|frequentemente|spesso|sık sık|często|sering|经常|よく|자주|अक्सर
+time|sometimes|иногда|manchmal|parfois|a veces|às vezes|a volte|bazen|czasami|kadang-kadang|有时|時々|가끔|कभी-कभी
+time|Monday|понедельник|der Montag|lundi|el lunes|a segunda-feira|il lunedì|pazartesi|poniedziałek|Senin|星期一|月曜日|월요일|सोमवार
+time|Tuesday|вторник|der Dienstag|mardi|el martes|a terça-feira|il martedì|salı|wtorek|Selasa|星期二|火曜日|화요일|मंगलवार
+time|Wednesday|среда|der Mittwoch|mercredi|el miércoles|a quarta-feira|il mercoledì|çarşamba|środa|Rabu|星期三|水曜日|수요일|बुधवार
+time|Thursday|четверг|der Donnerstag|jeudi|el jueves|a quinta-feira|il giovedì|perşembe|czwartek|Kamis|星期四|木曜日|목요일|गुरुवार
+time|Friday|пятница|der Freitag|vendredi|el viernes|a sexta-feira|il venerdì|cuma|piątek|Jumat|星期五|金曜日|금요일|शुक्रवार
+time|Saturday|суббота|der Samstag|samedi|el sábado|o sábado|il sabato|cumartesi|sobota|Sabtu|星期六|土曜日|토요일|शनिवार
+time|Sunday|воскресенье|der Sonntag|dimanche|el domingo|o domingo|la domenica|pazar (gün)|niedziela|Minggu (hari)|星期日|日曜日|일요일|रविवार
+time|birthday|день рождения|der Geburtstag|l'anniversaire|el cumpleaños|o aniversário|il compleanno|doğum günü|urodziny|ulang tahun|生日|誕生日|생일|जन्मदिन
+time|holiday|праздник|der Feiertag|la fête|la fiesta|o feriado|la festa|bayram|święto|hari libur|节日|祝日|공휴일|त्योहार
+time|vacation|отпуск|der Urlaub|les vacances|las vacaciones|as férias|le vacanze|tatil|urlop|liburan|假期|休暇|휴가|छुट्टी
+verbs|to be|быть|sein|être|ser|ser|essere|olmak|być|menjadi|是|である|이다|होना
+verbs|to have|иметь|haben|avoir|tener|ter|avere|sahip olmak|mieć|punya|有|持つ|가지다|रखना
+verbs|to do|делать|machen|faire|hacer|fazer|fare|yapmak|robić|melakukan|做|する|하다|करना
+verbs|to go|идти|gehen|aller|ir|ir|andare|gitmek|iść|pergi|去|行く|가다|जाना
+verbs|to come|приходить|kommen|venir|venir|vir|venire|gelmek|przychodzić|datang|来|来る|오다|आना
+verbs|to see|видеть|sehen|voir|ver|ver|vedere|görmek|widzieć|melihat|看见|見る|보다|देखना
+verbs|to hear|слышать|hören|entendre|oír|ouvir|sentire|duymak|słyszeć|mendengar|听见|聞く|듣다|सुनना
+verbs|to speak|говорить|sprechen|parler|hablar|falar|parlare|konuşmak|mówić|berbicara|说|話す|말하다|बोलना
+verbs|to say|сказать|sagen|dire|decir|dizer|dire|söylemek|powiedzieć|mengatakan|说出|言う|말하다 (전하다)|कहना
+verbs|to eat|есть|essen|manger|comer|comer|mangiare|yemek (fiil)|jeść|makan|吃|食べる|먹다|खाना (क्रिया)
+verbs|to drink|пить|trinken|boire|beber|beber|bere|içmek|pić|minum|喝|飲む|마시다|पीना
+verbs|to sleep|спать|schlafen|dormir|dormir|dormir|dormire|uyumak|spać|tidur (kata kerja)|睡觉|寝る|자다|सोना
+verbs|to read|читать|lesen|lire|leer|ler|leggere|okumak|czytać|membaca|读|読む|읽다|पढ़ना
+verbs|to write|писать|schreiben|écrire|escribir|escrever|scrivere|yazmak|pisać|menulis|写|書く|쓰다|लिखना
+verbs|to learn|учить|lernen|apprendre|aprender|aprender|imparare|öğrenmek|uczyć się|belajar|学习|学ぶ|배우다|सीखना
+verbs|to work|работать|arbeiten|travailler|trabajar|trabalhar|lavorare|çalışmak|pracować|bekerja|工作|働く|일하다|काम करना
+verbs|to know|знать|wissen|savoir|saber|saber|sapere|bilmek|wiedzieć|tahu|知道|知る|알다|जानना
+verbs|to think|думать|denken|penser|pensar|pensar|pensare|düşünmek|myśleć|berpikir|想|考える|생각하다|सोचना
+verbs|to want|хотеть|wollen|vouloir|querer|querer|volere|istemek|chcieć|mau|想要|欲しい|원하다|चाहना
+verbs|to love|любить|lieben|aimer|amar|amar|amare|sevmek|kochać|mencintai|爱|愛する|사랑하다|प्यार करना
+verbs|to like|нравиться|mögen|aimer bien|gustar|gostar|piacere|hoşlanmak|lubić|suka|喜欢|好き|좋아하다|पसंद करना
+verbs|to give|давать|geben|donner|dar|dar|dare|vermek|dawać|memberi|给|あげる|주다|देना
+verbs|to take|брать|nehmen|prendre|tomar|pegar|prendere|almak|brać|mengambil|拿|取る|가져가다|लेना
+verbs|to buy|покупать|kaufen|acheter|comprar|comprar|comprare|satın almak|kupować|membeli|买|買う|사다|ख़रीदना
+verbs|to sell|продавать|verkaufen|vendre|vender|vender|vendere|satmak|sprzedawać|menjual|卖|売る|팔다|बेचना
+verbs|to open|открывать|öffnen|ouvrir|abrir|abrir|aprire|açmak|otwierać|membuka|打开|開ける|열다|खोलना
+verbs|to close|закрывать|schließen|fermer|cerrar|fechar|chiudere|kapatmak|zamykać|menutup|关上|閉める|닫다|बंद करना
+verbs|to wait|ждать|warten|attendre|esperar|esperar|aspettare|beklemek|czekać|menunggu|等|待つ|기다리다|इंतज़ार करना
+verbs|to help|помогать|helfen|aider|ayudar|ajudar|aiutare|yardım etmek|pomagać|membantu|帮助|助ける|돕다|मदद करना
+verbs|to play|играть|spielen|jouer|jugar|jogar|giocare|oynamak|grać|bermain|玩|遊ぶ|놀다|खेलना
+verbs|to run|бегать|laufen|courir|correr|correr|correre|koşmak|biegać|berlari|跑|走る|달리다|दौड़ना
+verbs|to walk|гулять|spazieren gehen|se promener|pasear|passear|passeggiare|yürümek|spacerować|berjalan-jalan|散步|散歩する|산책하다|टहलना
+verbs|to swim|плавать|schwimmen|nager|nadar|nadar|nuotare|yüzmek|pływać|berenang|游泳|泳ぐ|수영하다|तैरना
+verbs|to cook|готовить|kochen|cuisiner|cocinar|cozinhar|cucinare|yemek pişirmek|gotować|memasak|做饭|料理する|요리하다|पकाना
+verbs|to wash|мыть|waschen|laver|lavar|lavar|lavare|yıkamak|myć|mencuci|洗|洗う|씻다|धोना
+verbs|to live|жить|leben|vivre|vivir|viver|vivere|yaşamak|żyć|hidup|生活|住む|살다|रहना
+verbs|to sit|сидеть|sitzen|être assis|estar sentado|estar sentado|stare seduto|oturmak|siedzieć|duduk|坐|座る|앉다|बैठना
+verbs|to stand|стоять|stehen|être debout|estar de pie|estar de pé|stare in piedi|ayakta durmak|stać|berdiri|站|立つ|서다|खड़ा होना
+verbs|to find|находить|finden|trouver|encontrar|encontrar|trovare|bulmak|znajdować|menemukan|找到|見つける|찾다|ढूँढ़ना
+verbs|to lose|терять|verlieren|perdre|perder|perder|perdere|kaybetmek|gubić|kehilangan|丢失|なくす|잃다|खोना
+verbs|to understand|понимать|verstehen|comprendre|entender|entender|capire|anlamak|rozumieć|mengerti|理解|分かる|이해하다|समझना
+verbs|to remember|помнить|sich erinnern|se souvenir|recordar|lembrar|ricordare|hatırlamak|pamiętać|ingat|记得|覚えている|기억하다|याद रखना
+verbs|to forget|забывать|vergessen|oublier|olvidar|esquecer|dimenticare|unutmak|zapominać|lupa|忘记|忘れる|잊다|भूलना
+verbs|to begin|начинать|beginnen|commencer|empezar|começar|cominciare|başlamak|zaczynać|mulai|开始|始める|시작하다|शुरू करना
+verbs|to finish|заканчивать|beenden|finir|terminar|terminar|finire|bitirmek|kończyć|menyelesaikan|完成|終える|끝내다|ख़त्म करना
+verbs|to ask|спрашивать|fragen|demander|preguntar|perguntar|chiedere|sormak|pytać|bertanya|问|尋ねる|묻다|पूछना
+verbs|to answer|отвечать|antworten|répondre|responder|responder|rispondere|cevap vermek|odpowiadać|menjawab|回答|答える|대답하다|जवाब देना
+verbs|to pay|платить|bezahlen|payer|pagar|pagar|pagare|ödemek|płacić|membayar|付钱|払う|지불하다|भुगतान करना
+verbs|to travel|путешествовать|reisen|voyager|viajar|viajar|viaggiare|seyahat etmek|podróżować|bepergian|旅行|旅行する|여행하다|यात्रा करना
+verbs|to smile|улыбаться|lächeln|sourire|sonreír|sorrir|sorridere|gülümsemek|uśmiechać się|tersenyum|微笑|微笑む|미소 짓다|मुस्कुराना
+verbs|to laugh|смеяться|lachen|rire|reír|rir|ridere|gülmek|śmiać się|tertawa|笑|笑う|웃다|हँसना
+verbs|to cry|плакать|weinen|pleurer|llorar|chorar|piangere|ağlamak|płakać|menangis|哭|泣く|울다|रोना
+verbs|to sing|петь|singen|chanter|cantar|cantar|cantare|şarkı söylemek|śpiewać|bernyanyi|唱歌|歌う|노래하다|गाना
+verbs|to dance|танцевать|tanzen|danser|bailar|dançar|ballare|dans etmek|tańczyć|menari|跳舞|踊る|춤추다|नाचना

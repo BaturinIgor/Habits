@@ -443,3 +443,73 @@ Never||Hiç
 Refresh widgets||Widget'ları yenile
 Widget||Widget
 If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked.||Paylaşılan veriler erişilebilir değilse widget alışkanlıklarını göremez. Uygulamayı SideStore ile yeniden yükle ve sorulduğunda uzantılarını koru.
+Added||Eklendi
+Break bad habits||Kötü alışkanlıkları bırak
+Breathing exercise||Nefes egzersizi
+Brush and floss||Diş fırçala ve diş ipi kullan
+Call family||Aileni ara
+Clear your inbox||Gelen kutusunu temizle
+Custom habit||Kendi alışkanlığın
+Cycling||Bisiklet
+Do a good deed||İyilik yap
+Draw||Resim çiz
+Eat vegetables and fruit||Sebze ve meyve ye
+Finance||Finans
+Fitness||Spor
+Focus for an hour||Bir saat odaklan
+Health||Sağlık
+I know it||Biliyorum
+In progress: %lld||Öğreniliyor: %lld
+Keep a journal||Günlük tut
+Language to learn||Öğrenilecek dil
+Languages||Diller
+Learn %@||%@ öğren
+Learn words||Kelime öğren
+Learned: %lld of %lld||Öğrenilen: %lld / %lld
+Learning||Öğrenme
+Less social media||Daha az sosyal medya
+Listen||Dinle
+Listen to a podcast||Podcast dinle
+Make the bed||Yatağını topla
+Message a friend||Bir arkadaşa yaz
+Mindfulness||Farkındalık
+More words||Daha fazla kelime
+Morning exercises||Sabah egzersizi
+New word||Yeni kelime
+New words a day||Günlük yeni kelime
+No alcohol||Alkol yok
+No fast food||Fast food yok
+No impulse purchases||Plansız alışveriş yok
+No phone before bed||Yatmadan önce telefon yok
+No smoking||Sigara yok
+No sweets||Tatlı yok
+Plan the day||Günü planla
+Practice an instrument||Enstrüman çal
+Productivity||Verimlilik
+Put money aside||Para biriktir
+Relationships||İlişkiler
+Review||Tekrar
+Skin care||Cilt bakımı
+Spend time outdoors||Dışarıda vakit geçir
+Still learning||Hâlâ öğreniyorum
+Stretch||Esneme
+Study for 30 minutes||30 dakika çalış
+Swimming||Yüzme
+Take vitamins||Vitamin al
+Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.||Bugünün kartlarını açmak için alışkanlığın dairesine dokun. Henüz bilmediğin kelimeler tekrar için geri gelir, günün kartları bitince alışkanlık kendiliğinden işaretlenir.
+Tap to see the translation||Çeviriyi görmek için dokun
+Tidy up for 10 minutes||10 dakika topla
+Track expenses||Harcamaları kaydet
+Wake up early||Erken kalk
+Walk 10,000 steps||10.000 adım yürü
+Weekly review||Haftalık değerlendirme
+Words||Kelimeler
+Words for today are done||Bugünün kelimeleri tamam
+Write down 3 good things||3 güzel şey yaz
+Yoga||Yoga
+You've gone through the whole dictionary||Tüm sözlüğü bitirdin
+Your own name, icon and schedule||Kendi adın, simgen ve planın
+times||kez
+%lld words||%lld kelime
+Run||Koşu
+Push-ups||Şınav

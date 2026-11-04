@@ -443,3 +443,73 @@ Never||Nigdy
 Refresh widgets||Odśwież widżety
 Widget||Widżet
 If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked.||Jeśli wspólne dane są niedostępne, widżet nie widzi twoich nawyków. Zainstaluj aplikację ponownie przez SideStore i zachowaj rozszerzenia, gdy pojawi się pytanie.
+Added||Dodano
+Break bad habits||Rzucanie złych nawyków
+Breathing exercise||Ćwiczenie oddechowe
+Brush and floss||Zęby i nić dentystyczna
+Call family||Zadzwonić do rodziny
+Clear your inbox||Opróżnić skrzynkę
+Custom habit||Własny nawyk
+Cycling||Rower
+Do a good deed||Zrobić dobry uczynek
+Draw||Rysować
+Eat vegetables and fruit||Jeść warzywa i owoce
+Finance||Finanse
+Fitness||Sport
+Focus for an hour||Godzina skupienia
+Health||Zdrowie
+I know it||Znam
+In progress: %lld||W trakcie: %lld
+Keep a journal||Prowadzić dziennik
+Language to learn||Język do nauki
+Languages||Języki
+Learn %@||Nauka: %@
+Learn words||Ucz się słówek
+Learned: %lld of %lld||Nauczone: %lld z %lld
+Learning||Nauka
+Less social media||Mniej mediów społecznościowych
+Listen||Posłuchaj
+Listen to a podcast||Słuchać podcastu
+Make the bed||Pościelić łóżko
+Message a friend||Napisać do przyjaciela
+Mindfulness||Uważność
+More words||Więcej słówek
+Morning exercises||Poranna gimnastyka
+New word||Nowe słowo
+New words a day||Nowych słówek dziennie
+No alcohol||Bez alkoholu
+No fast food||Bez fast foodów
+No impulse purchases||Bez zakupów pod wpływem impulsu
+No phone before bed||Bez telefonu przed snem
+No smoking||Nie palić
+No sweets||Bez słodyczy
+Plan the day||Zaplanować dzień
+Practice an instrument||Ćwiczyć na instrumencie
+Productivity||Produktywność
+Put money aside||Odkładać pieniądze
+Relationships||Relacje
+Review||Powtórka
+Skin care||Pielęgnacja skóry
+Spend time outdoors||Spędzić czas na dworze
+Still learning||Jeszcze się uczę
+Stretch||Rozciąganie
+Study for 30 minutes||Uczyć się 30 minut
+Swimming||Pływanie
+Take vitamins||Wziąć witaminy
+Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.||Stuknij kółko nawyku, aby otworzyć dzisiejsze karty. Słowa, których jeszcze nie znasz, wrócą do powtórki, a nawyk odhaczy się sam po przejściu wszystkich kart dnia.
+Tap to see the translation||Stuknij, aby zobaczyć tłumaczenie
+Tidy up for 10 minutes||Sprzątać 10 minut
+Track expenses||Zapisywać wydatki
+Wake up early||Wcześnie wstawać
+Walk 10,000 steps||Zrobić 10 000 kroków
+Weekly review||Podsumowanie tygodnia
+Words||Słówka
+Words for today are done||Słówka na dziś zrobione
+Write down 3 good things||Zapisać 3 dobre rzeczy
+Yoga||Joga
+You've gone through the whole dictionary||Przeszedłeś cały słownik
+Your own name, icon and schedule||Własna nazwa, ikona i harmonogram
+times||razy
+%lld words||%lld słówek
+Run||Bieganie
+Push-ups||Pompki

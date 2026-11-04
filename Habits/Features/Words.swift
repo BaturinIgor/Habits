@@ -138,7 +138,7 @@ enum WordPlan {
             }
         }
         let reviewLimit = max(perDay * 2, 10)
-        let due = reviews.sorted { $0.1 < $1.1 }.prefix(reviewLimit).map(\.0)
+        let due = reviews.sorted { $0.1 < $1.1 }.prefix(reviewLimit).map { $0.0 }
         let newCount = max(0, perDay + extraNew - introducedToday)
         return Array(due) + newWords.prefix(newCount)
     }

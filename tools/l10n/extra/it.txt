@@ -443,3 +443,73 @@ Never||Mai
 Refresh widgets||Aggiorna i widget
 Widget||Widget
 If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked.||Se i dati condivisi non sono disponibili, il widget non vede le tue abitudini. Reinstalla l'app tramite SideStore e mantieni le estensioni quando richiesto.
+Added||Aggiunta
+Break bad habits||Smettere le cattive abitudini
+Breathing exercise||Esercizio di respirazione
+Brush and floss||Denti e filo interdentale
+Call family||Chiamare la famiglia
+Clear your inbox||Svuotare la posta in arrivo
+Custom habit||Abitudine personale
+Cycling||Bicicletta
+Do a good deed||Fare una buona azione
+Draw||Disegnare
+Eat vegetables and fruit||Mangiare frutta e verdura
+Finance||Finanze
+Fitness||Sport
+Focus for an hour||Un'ora di concentrazione
+Health||Salute
+I know it||Lo so
+In progress: %lld||In corso: %lld
+Keep a journal||Tenere un diario
+Language to learn||Lingua da imparare
+Languages||Lingue
+Learn %@||Studiare %@
+Learn words||Imparare parole
+Learned: %lld of %lld||Imparate: %lld su %lld
+Learning||Apprendimento
+Less social media||Meno social
+Listen||Ascolta
+Listen to a podcast||Ascoltare un podcast
+Make the bed||Rifare il letto
+Message a friend||Scrivere a un amico
+Mindfulness||Consapevolezza
+More words||Altre parole
+Morning exercises||Ginnastica mattutina
+New word||Parola nuova
+New words a day||Parole nuove al giorno
+No alcohol||Niente alcol
+No fast food||Niente fast food
+No impulse purchases||Niente acquisti d'impulso
+No phone before bed||Niente telefono prima di dormire
+No smoking||Non fumare
+No sweets||Niente dolci
+Plan the day||Pianificare la giornata
+Practice an instrument||Suonare uno strumento
+Productivity||Produttività
+Put money aside||Mettere soldi da parte
+Relationships||Relazioni
+Review||Ripasso
+Skin care||Cura della pelle
+Spend time outdoors||Stare all'aria aperta
+Still learning||Lo sto imparando
+Stretch||Stretching
+Study for 30 minutes||Studiare 30 minuti
+Swimming||Nuoto
+Take vitamins||Prendere le vitamine
+Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.||Tocca il cerchio dell'abitudine per aprire le schede di oggi. Le parole che non conosci ancora tornano per il ripasso, e l'abitudine viene segnata quando finisci le schede del giorno.
+Tap to see the translation||Tocca per vedere la traduzione
+Tidy up for 10 minutes||Riordinare per 10 minuti
+Track expenses||Annotare le spese
+Wake up early||Svegliarsi presto
+Walk 10,000 steps||Fare 10.000 passi
+Weekly review||Bilancio settimanale
+Words||Parole
+Words for today are done||Le parole di oggi sono fatte
+Write down 3 good things||Scrivere 3 cose belle
+Yoga||Yoga
+You've gone through the whole dictionary||Hai completato tutto il dizionario
+Your own name, icon and schedule||Nome, icona e programma a tua scelta
+times||volte
+%lld words||%lld parole
+Run||Corsa
+Push-ups||Flessioni

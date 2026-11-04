@@ -444,3 +444,73 @@ Never||Никогда||Nie||Jamais||Nunca||从未||なし||없음||कभी न
 Refresh widgets||Обновить виджеты||Widgets aktualisieren||Actualiser les widgets||Actualizar widgets||刷新小组件||ウィジェットを更新||위젯 새로고침||विजेट रीफ़्रेश करें
 Widget||Виджет||Widget||Widget||Widget||小组件||ウィジェット||위젯||विजेट
 If shared data is not available, the widget can't see your habits. Reinstall the app through SideStore and keep its app extensions when asked.||Если общие данные недоступны, виджет не видит привычки. Переустанови приложение через SideStore и при вопросе оставь расширения приложения.||Sind gemeinsame Daten nicht verfügbar, sieht das Widget deine Gewohnheiten nicht. Installiere die App über SideStore neu und behalte die Erweiterungen.||Si les données partagées sont indisponibles, le widget ne voit pas tes habitudes. Réinstalle l'app via SideStore en gardant ses extensions.||Si los datos compartidos no están disponibles, el widget no ve tus hábitos. Reinstala la app con SideStore y conserva sus extensiones.||如果共享数据不可用，小组件就看不到你的习惯。请通过 SideStore 重新安装应用并保留扩展。||共有データが利用できないと、ウィジェットは習慣を表示できません。SideStore でアプリを再インストールし、拡張機能を残してください。||공유 데이터를 사용할 수 없으면 위젯이 습관을 볼 수 없어요. SideStore로 앱을 다시 설치하고 확장 프로그램을 유지하세요.||साझा डेटा उपलब्ध न हो तो विजेट आपकी आदतें नहीं देख सकता। SideStore से ऐप दोबारा इंस्टॉल करें और एक्सटेंशन रखें।
+Added||Добавлено||Hinzugefügt||Ajoutée||Añadido||已添加||追加済み||추가됨||जोड़ा गया
+Break bad habits||Отказ от вредного||Schlechte Gewohnheiten ablegen||Arrêter les mauvaises habitudes||Dejar malos hábitos||戒掉坏习惯||悪い習慣をやめる||나쁜 습관 끊기||बुरी आदतें छोड़ें
+Breathing exercise||Дыхательная практика||Atemübung||Exercice de respiration||Ejercicio de respiración||呼吸练习||呼吸法||호흡 운동||साँस का अभ्यास
+Brush and floss||Почистить зубы и нить||Zähne putzen und Zahnseide||Brosse et fil dentaire||Cepillarse y usar hilo dental||刷牙和用牙线||歯みがきとフロス||양치와 치실||ब्रश और फ़्लॉस
+Call family||Позвонить родным||Familie anrufen||Appeler la famille||Llamar a la familia||给家人打电话||家族に電話する||가족에게 전화하기||परिवार को फ़ोन करें
+Clear your inbox||Разобрать почту||Posteingang leeren||Vider sa boîte mail||Vaciar la bandeja de entrada||清空收件箱||受信トレイを片付ける||받은편지함 정리||इनबॉक्स ख़ाली करें
+Custom habit||Своя привычка||Eigene Gewohnheit||Habitude personnalisée||Hábito propio||自定义习惯||自分で作る||직접 만들기||अपनी आदत
+Cycling||Велосипед||Radfahren||Vélo||Ciclismo||骑自行车||サイクリング||자전거 타기||साइकिल चलाना
+Do a good deed||Сделать доброе дело||Etwas Gutes tun||Faire une bonne action||Hacer una buena obra||做一件好事||良いことをする||좋은 일 하기||कोई अच्छा काम करें
+Draw||Рисовать||Zeichnen||Dessiner||Dibujar||画画||絵を描く||그림 그리기||चित्र बनाएँ
+Eat vegetables and fruit||Есть овощи и фрукты||Obst und Gemüse essen||Manger fruits et légumes||Comer frutas y verduras||吃蔬菜水果||野菜と果物を食べる||채소와 과일 먹기||फल और सब्ज़ियाँ खाएँ
+Finance||Финансы||Finanzen||Finances||Finanzas||理财||お金||재정||पैसा
+Fitness||Спорт||Fitness||Sport||Deporte||运动||運動||운동||फ़िटनेस
+Focus for an hour||Час без отвлечений||Eine Stunde konzentriert arbeiten||Une heure de concentration||Una hora de concentración||专注一小时||1時間集中する||한 시간 집중하기||एक घंटा ध्यान से काम
+Health||Здоровье||Gesundheit||Santé||Salud||健康||健康||건강||सेहत
+I know it||Знаю||Kenne ich||Je connais||Lo sé||我会了||知ってる||알아요||मुझे पता है
+In progress: %lld||Учу: %lld||In Arbeit: %lld||En cours : %lld||Aprendiendo: %lld||学习中：%lld||学習中：%lld||학습 중: %lld||सीख रहे हैं: %lld
+Keep a journal||Вести дневник||Tagebuch schreiben||Tenir un journal||Escribir un diario||写日记||日記をつける||일기 쓰기||डायरी लिखें
+Language to learn||Язык для изучения||Zu lernende Sprache||Langue à apprendre||Idioma que aprender||要学的语言||学ぶ言語||배울 언어||सीखने की भाषा
+Languages||Языки||Sprachen||Langues||Idiomas||语言||言語||언어||भाषाएँ
+Learn %@||Учить %@||%@ lernen||Vocabulaire : %@||Aprender %@||学%@||%@を学ぶ||%@ 배우기||%@ सीखें
+Learn words||Учить слова||Wörter lernen||Apprendre des mots||Aprender palabras||学单词||単語を学ぶ||단어 배우기||शब्द सीखें
+Learned: %lld of %lld||Выучено: %lld из %lld||Gelernt: %lld von %lld||Appris : %lld sur %lld||Aprendidas: %lld de %lld||已掌握：%lld / %lld||覚えた単語：%lld / %lld||외운 단어: %lld / %lld||सीखे गए: %lld में से %lld
+Learning||Обучение||Lernen||Apprentissage||Aprendizaje||学习||学び||배움||सीखना
+Less social media||Меньше соцсетей||Weniger soziale Medien||Moins de réseaux sociaux||Menos redes sociales||少刷社交媒体||SNSを控える||SNS 줄이기||सोशल मीडिया कम
+Listen||Послушать||Anhören||Écouter||Escuchar||收听||聞く||듣기||सुनें
+Listen to a podcast||Слушать подкаст||Podcast hören||Écouter un podcast||Escuchar un pódcast||听播客||ポッドキャストを聴く||팟캐스트 듣기||पॉडकास्ट सुनें
+Make the bed||Заправить кровать||Bett machen||Faire son lit||Hacer la cama||整理床铺||ベッドを整える||침대 정리하기||बिस्तर ठीक करें
+Message a friend||Написать другу||Freund schreiben||Écrire à un ami||Escribir a un amigo||给朋友发消息||友達に連絡する||친구에게 연락하기||दोस्त को संदेश भेजें
+Mindfulness||Осознанность||Achtsamkeit||Pleine conscience||Atención plena||正念||マインドフルネス||마음 챙김||सजगता
+More words||Ещё слова||Mehr Wörter||Plus de mots||Más palabras||更多单词||もっと単語||단어 더 보기||और शब्द
+Morning exercises||Зарядка||Morgengymnastik||Gym du matin||Ejercicios matutinos||晨练||朝の体操||아침 체조||सुबह की कसरत
+New word||Новое слово||Neues Wort||Nouveau mot||Palabra nueva||新单词||新しい単語||새 단어||नया शब्द
+New words a day||Новых слов в день||Neue Wörter pro Tag||Nouveaux mots par jour||Palabras nuevas al día||每天新单词||1日の新しい単語||하루 새 단어||रोज़ नए शब्द
+No alcohol||Без алкоголя||Kein Alkohol||Pas d'alcool||Sin alcohol||不喝酒||お酒を飲まない||금주||शराब नहीं
+No fast food||Без фастфуда||Kein Fast Food||Pas de fast-food||Sin comida rápida||不吃快餐||ファストフードなし||패스트푸드 끊기||फ़ास्ट फ़ूड नहीं
+No impulse purchases||Без спонтанных покупок||Keine Spontankäufe||Pas d'achats impulsifs||Sin compras impulsivas||不冲动消费||衝動買いしない||충동구매 안 하기||बिना सोचे ख़रीदारी नहीं
+No phone before bed||Без телефона перед сном||Kein Handy vor dem Schlafen||Pas de téléphone avant de dormir||Sin móvil antes de dormir||睡前不玩手机||寝る前にスマホを見ない||자기 전 휴대폰 금지||सोने से पहले फ़ोन नहीं
+No smoking||Не курить||Nicht rauchen||Ne pas fumer||No fumar||不吸烟||禁煙||금연||धूम्रपान नहीं
+No sweets||Без сладкого||Keine Süßigkeiten||Pas de sucreries||Sin dulces||不吃甜食||甘いものを控える||단 것 끊기||मिठाई नहीं
+Plan the day||Спланировать день||Den Tag planen||Planifier sa journée||Planificar el día||规划一天||1日の計画を立てる||하루 계획하기||दिन की योजना बनाएँ
+Practice an instrument||Играть на инструменте||Instrument üben||Pratiquer un instrument||Practicar un instrumento||练习乐器||楽器の練習||악기 연습||वाद्य का अभ्यास
+Productivity||Продуктивность||Produktivität||Productivité||Productividad||效率||生産性||생산성||उत्पादकता
+Put money aside||Откладывать деньги||Geld zurücklegen||Mettre de l'argent de côté||Ahorrar dinero||存钱||貯金する||저축하기||पैसे बचाएँ
+Relationships||Отношения||Beziehungen||Relations||Relaciones||人际关系||人間関係||관계||रिश्ते
+Review||Повторение||Wiederholung||Révision||Repaso||复习||復習||복습||दोहराना
+Skin care||Уход за кожей||Hautpflege||Soin de la peau||Cuidado de la piel||护肤||スキンケア||피부 관리||त्वचा की देखभाल
+Spend time outdoors||Побыть на улице||Zeit draußen verbringen||Passer du temps dehors||Pasar tiempo al aire libre||户外活动||外で過ごす||야외에서 시간 보내기||बाहर समय बिताएँ
+Still learning||Ещё учу||Lerne ich noch||J'apprends encore||Aún aprendiendo||还在学||まだ覚えていない||아직 몰라요||अभी सीख रहा हूँ
+Stretch||Растяжка||Dehnen||Étirements||Estiramientos||拉伸||ストレッチ||스트레칭||स्ट्रेचिंग
+Study for 30 minutes||Заниматься 30 минут||30 Minuten lernen||Étudier 30 minutes||Estudiar 30 minutos||学习 30 分钟||30分勉強する||30분 공부하기||30 मिनट पढ़ाई
+Swimming||Плавание||Schwimmen||Natation||Natación||游泳||水泳||수영||तैराकी
+Take vitamins||Принять витамины||Vitamine nehmen||Prendre ses vitamines||Tomar vitaminas||吃维生素||ビタミンを飲む||비타민 먹기||विटामिन लें
+Tap the habit's circle to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.||Нажми на кружок привычки, чтобы открыть карточки на сегодня. Незнакомые слова вернутся на повторение, а привычка отметится сама, когда пройдёшь все карточки дня.||Tippe auf den Kreis der Gewohnheit, um die heutigen Karten zu öffnen. Unbekannte Wörter kommen zur Wiederholung zurück, und die Gewohnheit wird abgehakt, sobald alle Karten des Tages erledigt sind.||Touche le cercle de l'habitude pour ouvrir les cartes du jour. Les mots inconnus reviennent en révision, et l'habitude est cochée une fois toutes les cartes du jour terminées.||Toca el círculo del hábito para abrir las tarjetas de hoy. Las palabras que aún no sabes vuelven para repasar, y el hábito se marca al terminar las tarjetas del día.||点击习惯的圆圈打开今天的卡片。还不会的单词会再次复习，完成当天所有卡片后习惯会自动打勾。||習慣の丸をタップすると今日のカードが開きます。覚えていない単語は復習に戻り、その日のカードを終えると習慣に自動でチェックが付きます。||습관의 동그라미를 누르면 오늘의 카드가 열려요. 모르는 단어는 복습으로 다시 나오고, 오늘 카드를 모두 마치면 습관이 자동으로 체크돼요.||आज के कार्ड खोलने के लिए आदत के गोले पर टैप करें। जो शब्द अभी याद नहीं हैं वे दोहराने के लिए लौटेंगे, और दिन के सारे कार्ड पूरे होने पर आदत अपने आप पूरी हो जाएगी।
+Tap to see the translation||Нажми, чтобы увидеть перевод||Tippe für die Übersetzung||Touche pour voir la traduction||Toca para ver la traducción||点击查看翻译||タップして訳を表示||눌러서 뜻 보기||अनुवाद देखने के लिए टैप करें
+Tidy up for 10 minutes||Убраться 10 минут||10 Minuten aufräumen||Ranger 10 minutes||Ordenar 10 minutos||整理 10 分钟||10分片付ける||10분 정리하기||10 मिनट सफ़ाई
+Track expenses||Записать расходы||Ausgaben notieren||Noter ses dépenses||Anotar los gastos||记账||支出を記録する||지출 기록하기||ख़र्च लिखें
+Wake up early||Рано вставать||Früh aufstehen||Se lever tôt||Madrugar||早起||早起きする||일찍 일어나기||जल्दी उठें
+Walk 10,000 steps||Пройти 10 000 шагов||10.000 Schritte gehen||Marcher 10 000 pas||Caminar 10 000 pasos||走一万步||1万歩歩く||만 보 걷기||10,000 कदम चलें
+Weekly review||Итоги недели||Wochenrückblick||Bilan de la semaine||Repaso semanal||每周回顾||週の振り返り||주간 돌아보기||हफ़्ते की समीक्षा
+Words||Слова||Wörter||Mots||Palabras||单词||単語||단어||शब्द
+Words for today are done||Слова на сегодня пройдены||Die Wörter für heute sind geschafft||Les mots du jour sont faits||Las palabras de hoy están listas||今天的单词完成了||今日の単語は終わりです||오늘의 단어 완료||आज के शब्द पूरे हो गए
+Write down 3 good things||Записать 3 хороших события||3 schöne Dinge aufschreiben||Noter 3 bonnes choses||Anotar 3 cosas buenas||写下3件好事||良かったことを3つ書く||좋았던 일 3가지 쓰기||3 अच्छी बातें लिखें
+Yoga||Йога||Yoga||Yoga||Yoga||瑜伽||ヨガ||요가||योग
+You've gone through the whole dictionary||Ты прошёл весь словарь||Du hast das ganze Wörterbuch durch||Tu as parcouru tout le dictionnaire||Has recorrido todo el diccionario||你已学完整个词库||辞書の単語をすべて学びました||사전의 모든 단어를 학습했어요||आपने पूरा शब्दकोश पूरा कर लिया
+Your own name, icon and schedule||Своё название, иконка и расписание||Eigener Name, Symbol und Zeitplan||Ton nom, ton icône et ton planning||Tu nombre, icono y horario||自定名称、图标和计划||名前、アイコン、予定を自由に||이름, 아이콘, 일정을 직접||अपना नाम, आइकन और समय
+times||раз||Mal||fois||veces||次||回||회||बार
+%lld words||%lld слов||%lld Wörter||%lld mots||%lld palabras||%lld 个单词||%lld 語||%lld단어||%lld शब्द
+Run||Бег||Laufen||Course à pied||Correr||跑步||ランニング||달리기||दौड़
+Push-ups||Отжимания||Liegestütze||Pompes||Flexiones||俯卧撑||腕立て伏せ||팔굽혀펴기||पुश-अप
