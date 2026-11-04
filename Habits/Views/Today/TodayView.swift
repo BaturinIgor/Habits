@@ -18,7 +18,8 @@ struct TodayView: View {
     @State private var anchorToday: Date = Calendar.app.startOfDay(for: Date())
     @State private var path: [UUID] = []
     @State private var groupFilter: UUID?
-    @State private var showingNewHabit = false
+    @State private var showingCatalog = false
+    @State private var wordsHabit: Habit?
     @State private var showingPaywall = false
     @State private var editingHabit: Habit?
     @State private var templateHabit: Habit?
@@ -118,8 +119,11 @@ struct TodayView: View {
                 HabitDetailView(habitID: id)
                     .navigationTransition(.zoom(sourceID: id, in: zoom))
             }
-            .sheet(isPresented: $showingNewHabit) {
-                HabitEditorView(habit: nil)
+            .sheet(isPresented: $showingCatalog) {
+                HabitCatalogView()
+            }
+            .fullScreenCover(item: $wordsHabit) { habit in
+                WordsSessionView(habitID: habit.id)
             }
             .sheet(isPresented: $showingPaywall) {
                 PaywallView()
@@ -193,7 +197,7 @@ struct TodayView: View {
         if let template {
             templateHabit = template
         } else {
-            showingNewHabit = true
+            showingCatalog = true
         }
     }
 
@@ -313,6 +317,11 @@ struct TodayView: View {
             zoom: zoom,
             onOpen: { path.append(habit.id) },
             onToggle: {
+                // Слова учатся только сегодня: касание открывает карточки, а отметка ставится после них.
+                if habit.isWords && isToday && status == nil {
+                    wordsHabit = habit
+                    return
+                }
                 withAnimation(.spring(response: 0.35, dampingFraction: 0.7)) {
                     store.toggleDone(habit.id, on: selectedDay)
                 }
@@ -686,6 +695,9 @@ struct HabitCard: View {
             }
             if target > 1 {
                 Label(amountText, systemImage: "drop.fill")
+            }
+            if let perDay = habit.wordsPerDay, habit.isWords {
+                Label(String(localized: "\(perDay) words"), systemImage: "character.book.closed.fill")
             }
             if let weekDone {
                 Label(String(localized: "\(weekDone) of \(habit.schedule.timesPerWeek) this week"), systemImage: "calendar")

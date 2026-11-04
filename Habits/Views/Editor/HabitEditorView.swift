@@ -114,10 +114,15 @@ struct HabitEditorView: View {
         NavigationStack {
             Form {
                 headerSection
+                if draft.isWords {
+                    wordsSection
+                }
                 appearanceSection
                 scheduleSection
                 reminderSection
-                goalSection
+                if !draft.isWords {
+                    goalSection
+                }
                 flexibilitySection
                 groupSection
                 pauseSection
@@ -193,6 +198,35 @@ struct HabitEditorView: View {
             .padding(.vertical, 6)
             TextField("Description or motivation (optional)", text: $draft.details, axis: .vertical)
                 .lineLimit(1...4)
+        }
+    }
+
+    private var wordsLanguage: Binding<String> {
+        Binding(get: { draft.wordsLanguage ?? WordLanguage.suggested }, set: { code in
+            // Название, придуманное приложением, меняется вместе с языком.
+            if let old = draft.wordsLanguage, draft.name == WordLanguage.habitName(old) {
+                draft.name = WordLanguage.habitName(code)
+            }
+            draft.wordsLanguage = code
+        })
+    }
+
+    private var wordsSection: some View {
+        Section {
+            Picker("Language to learn", selection: wordsLanguage) {
+                ForEach(WordLanguage.codes.filter { $0 != WordLanguage.interface || $0 == draft.wordsLanguage }, id: \.self) { code in
+                    Text(WordLanguage.name(code)).tag(code)
+                }
+            }
+            Picker("New words a day", selection: Binding(get: { draft.wordsPerDay ?? 10 }, set: { draft.wordsPerDay = $0 })) {
+                ForEach(WordPlan.perDayOptions, id: \.self) { count in
+                    Text(verbatim: "\(count)").tag(count)
+                }
+            }
+        } header: {
+            Text("Words")
+        } footer: {
+            Text("Tap the habit to open today's cards. Words you don't know yet come back for review, and the habit is checked off once today's cards are done.")
         }
     }
 
