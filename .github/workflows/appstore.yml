@@ -15,6 +15,10 @@ on:
         description: "Загрузить в App Store Connect"
         type: boolean
         default: true
+      free_release:
+        description: "Бесплатная версия без покупок (все функции Pro открыты)"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -116,8 +120,15 @@ jobs:
           install_profile "$PROFILE_WIDGET" "$APP_ID.widget" WIDGET_PROFILE_NAME
 
       - name: Archive
+        env:
+          FREE_RELEASE: ${{ inputs.free_release }}
         run: |
           set +e
+          CONDITIONS='$(inherited)'
+          if [ "$FREE_RELEASE" = "true" ]; then
+            CONDITIONS='$(inherited) FREE_RELEASE'
+            echo "Сборка без покупок: FREE_RELEASE"
+          fi
           xcodebuild \
             -project Habits.xcodeproj \
             -scheme Habits \
@@ -134,6 +145,7 @@ jobs:
             OTHER_CODE_SIGN_FLAGS="--keychain $KEYCHAIN" \
             MARKETING_VERSION="$VERSION" \
             CURRENT_PROJECT_VERSION="$BUILD_NUMBER" \
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS="$CONDITIONS" \
             archive > archive.log 2>&1
           status=$?
           echo "---- errors ----"

@@ -23,6 +23,10 @@ final class ProStore {
     private init() {}
 
     func start() {
+        #if FREE_RELEASE
+        // В бесплатной версии покупок нет, StoreKit не трогаем.
+        return
+        #else
         guard updatesTask == nil else { return }
         updatesTask = Task { [weak self] in
             for await result in Transaction.updates {
@@ -36,6 +40,7 @@ final class ProStore {
             await loadProducts()
             await refreshEntitlements()
         }
+        #endif
     }
 
     func loadProducts() async {
@@ -52,7 +57,7 @@ final class ProStore {
 
     /// Проверяет активные покупки и записывает результат в настройки (их читает и виджет).
     func refreshEntitlements() async {
-        #if SIDELOAD
+        #if SIDELOAD || FREE_RELEASE
         return
         #else
         var active = false
