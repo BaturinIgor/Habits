@@ -228,8 +228,9 @@ extension AppData {
         let key = WordPlan.key(language, wordID)
         let isNew = words[key] == nil
         var card = words[key] ?? WordCard(box: 0, due: day, introduced: day, lastSeen: day)
-        // Новое слово, которое уже знаешь, сразу уходит на повтор через несколько дней.
-        card.box = known ? card.box + (isNew ? 2 : 1) : 1
+        // Новое слово, которое уже знаешь, сразу считается выученным и вернётся на проверку
+        // через пару недель. Если тогда ответить "ещё учу", оно вернётся в начало.
+        card.box = known ? (isNew ? WordPlan.learnedBox : card.box + 1) : 1
         let today = DayKey.date(day, calendar: calendar) ?? Date()
         let next = calendar.date(byAdding: .day, value: WordPlan.interval(box: card.box), to: today) ?? today
         card.due = DayKey.make(next, calendar: calendar)
