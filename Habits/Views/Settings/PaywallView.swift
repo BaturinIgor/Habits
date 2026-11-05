@@ -249,9 +249,6 @@ extension PaywallView {
 /// Небольшая метка "PRO" рядом с платными функциями.
 struct ProBadge: View {
     var body: some View {
-        #if FREE_RELEASE
-        EmptyView()
-        #else
         Text(verbatim: "PRO")
             .font(.caption2.weight(.heavy))
             .foregroundStyle(.white)
@@ -261,6 +258,5 @@ struct ProBadge: View {
                 colors: [Color(red: 1, green: 0.62, blue: 0.26), Color(red: 0.92, green: 0.23, blue: 0.35)],
                 startPoint: .leading, endPoint: .trailing
             )))
-        #endif
     }
 }

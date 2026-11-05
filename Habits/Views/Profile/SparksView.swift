@@ -67,9 +67,7 @@ struct SparksView: View {
                     tip("arrow.uturn.up.circle.fill", "+\(Sparks.comebackBonus) for coming back after a miss")
                     tip("trophy.fill", "+\(Sparks.achievementBonus) for each achievement")
                     tip("pawprint.fill", "A grown pet brings up to +5 a day")
-                    #if !FREE_RELEASE
                     tip("crown.fill", "Pro: +\(Sparks.proMonthlyGift) every month and up to \(Sparks.proDailyCap) a day")
-                    #endif
                 } header: {
                     Text("How to earn")
                 } footer: {

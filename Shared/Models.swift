@@ -418,12 +418,7 @@ struct WordCard: Codable, Hashable {
 extension AppData {
     static let freeHabitLimit = 5
 
-    #if FREE_RELEASE
-    /// Бесплатная версия для App Store без покупок: все функции Pro открыты.
-    var isPro: Bool { true }
-    #else
     var isPro: Bool { settings.proUnlocked }
-    #endif
 
     /// Можно ли добавить ещё одну активную привычку. Архивные не считаются.
     var canAddHabit: Bool { isPro || activeHabits.count < Self.freeHabitLimit }
