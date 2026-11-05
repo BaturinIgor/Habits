@@ -128,7 +128,6 @@ jobs:
             CODE_SIGNING_REQUIRED=YES \
             CODE_SIGN_STYLE=Manual \
             CODE_SIGN_IDENTITY="Apple Distribution" \
-            "CODE_SIGN_IDENTITY[sdk=iphoneos*]=Apple Distribution" \
             DEVELOPMENT_TEAM="$TEAM_ID" \
             APP_PROFILE_NAME="$APP_PROFILE_NAME" \
             WIDGET_PROFILE_NAME="$WIDGET_PROFILE_NAME" \
