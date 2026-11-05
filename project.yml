@@ -45,6 +45,8 @@ targets:
         UILaunchScreen: {}
         UIApplicationSupportsIndirectInputEvents: true
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        # Приложение только для iPhone, но App Store Connect проверяет ключ для iPad (ошибка 90474).
+        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
         UIBackgroundModes: [fetch]
         BGTaskSchedulerPermittedIdentifiers: [com.personal.habits.refresh]
         ITSAppUsesNonExemptEncryption: false
@@ -52,6 +54,8 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.personal.habits
         PRODUCT_NAME: Habits
+        # Пресет XcodeGen для iOS ставит на уровне таргета "1,2" (iPhone и iPad), поэтому повторяем здесь.
+        TARGETED_DEVICE_FAMILY: "1"
         # Профиль подписи для App Store передаёт workflow appstore.yml, в сборке для SideStore он пустой.
         PROVISIONING_PROFILE_SPECIFIER: $(APP_PROFILE_NAME)
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
@@ -85,6 +89,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.personal.habits.widget
         PRODUCT_NAME: HabitsWidget
+        TARGETED_DEVICE_FAMILY: "1"
         PROVISIONING_PROFILE_SPECIFIER: $(WIDGET_PROFILE_NAME)
         SKIP_INSTALL: "YES"
 
