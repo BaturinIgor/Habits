@@ -6,8 +6,8 @@ import UIKit
 /// Настройки обратной связи. Адрес задаётся здесь один раз.
 enum AppInfo {
     static let supportEmail = "zdrgvretrsyhtrse@mail.ru"
-    /// Числовой Apple ID приложения из App Store Connect, появится после создания карточки.
-    static let appStoreID = ""
+    /// Числовой Apple ID приложения из App Store Connect.
+    static let appStoreID = "6831041474"
     static let privacyURL = URL(string: "https://baturinigor.github.io/Habits/privacy.html")!
     static let termsURL = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
     static var reviewURL: URL? {
