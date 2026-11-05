@@ -31,6 +31,10 @@
 
 Скачай новый `Habits.ipa` из Releases и установи его поверх через SideStore. Данные сохранятся.
 
+## App Store
+
+Всё для публикации лежит в [docs/appstore](docs/appstore/README.md): пошаговая инструкция, тексты на 14 языках, ответы для анкет и план скриншотов. Сборка для App Store запускается вручную: Actions -> App Store -> Run workflow.
+
 ## Android
 
 Исходники в папке `android/` (Kotlin, Jetpack Compose, Glance для виджета). Каждый push в `android/**` собирает подписанный `Habits.apk` и публикует его в Releases с тегом `android-N`.
