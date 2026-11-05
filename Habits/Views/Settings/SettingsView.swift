@@ -53,6 +53,7 @@ struct SettingsView: View {
                             Image(systemName: "trophy.fill").foregroundStyle(.yellow)
                         }
                     }
+                    #if !FREE_RELEASE
                     Button {
                         showingPaywall = true
                     } label: {
@@ -66,6 +67,7 @@ struct SettingsView: View {
                             }
                         }
                     }
+                    #endif
                     #if SIDELOAD
                     Toggle("Pro test mode", isOn: store.settingBinding(\.proUnlocked))
                     #endif

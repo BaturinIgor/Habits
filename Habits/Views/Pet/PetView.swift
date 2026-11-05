@@ -328,9 +328,11 @@ struct PetView: View {
                     .padding(.vertical, 6)
             }
             .buttonStyle(.glassProminent)
+            #if !FREE_RELEASE
             Text("More species are available for sparks and with Pro.")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
+            #endif
         }
     }
 }
