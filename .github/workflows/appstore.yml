@@ -1,0 +1,215 @@
+name: App Store
+
+# Сборка для App Store и загрузка в App Store Connect (оттуда в TestFlight и на ревью).
+# Запускается вручную: Actions -> App Store -> Run workflow.
+# Что положить в Secrets и Variables, описано в docs/appstore/README.md, шаг 5.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Версия для пользователей (MARKETING_VERSION), например 1.0"
+        required: true
+        default: "1.0"
+      upload:
+        description: "Загрузить в App Store Connect"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: appstore
+  cancel-in-progress: false
+
+jobs:
+  appstore:
+    runs-on: macos-26
+    timeout-minutes: 60
+    env:
+      APP_ID: ${{ vars.APP_BUNDLE_ID || 'com.baturinigor.zenhab' }}
+      TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      VERSION: ${{ inputs.version }}
+      # Номер сборки должен расти с каждой загрузкой, поэтому берём номер запуска workflow.
+      BUILD_NUMBER: ${{ github.run_number }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check secrets
+        env:
+          DIST_CERT_P12: ${{ secrets.DIST_CERT_P12 }}
+          DIST_CERT_PASSWORD: ${{ secrets.DIST_CERT_PASSWORD }}
+          PROFILE_APP: ${{ secrets.PROFILE_APP }}
+          PROFILE_WIDGET: ${{ secrets.PROFILE_WIDGET }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+        run: |
+          missing=0
+          for name in TEAM_ID DIST_CERT_P12 DIST_CERT_PASSWORD PROFILE_APP PROFILE_WIDGET ASC_KEY_ID ASC_ISSUER_ID ASC_KEY_P8; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Не задан секрет ${name/TEAM_ID/APPLE_TEAM_ID}"
+              missing=1
+            fi
+          done
+          exit $missing
+
+      - name: Install tools
+        run: |
+          brew install xcodegen
+          xcodebuild -version
+
+      - name: Apply App Store identifiers
+        run: tools/appstore/set_bundle_id.sh "$APP_ID"
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Install certificate and profiles
+        env:
+          DIST_CERT_P12: ${{ secrets.DIST_CERT_P12 }}
+          DIST_CERT_PASSWORD: ${{ secrets.DIST_CERT_PASSWORD }}
+          PROFILE_APP: ${{ secrets.PROFILE_APP }}
+          PROFILE_WIDGET: ${{ secrets.PROFILE_WIDGET }}
+        run: |
+          set -euo pipefail
+          KEYCHAIN="$RUNNER_TEMP/appstore.keychain-db"
+          KEYCHAIN_PASSWORD="$(uuidgen)"
+          echo "KEYCHAIN=$KEYCHAIN" >> "$GITHUB_ENV"
+
+          echo "$DIST_CERT_P12" | base64 --decode > "$RUNNER_TEMP/cert.p12"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security import "$RUNNER_TEMP/cert.p12" -P "$DIST_CERT_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN"
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN" > /dev/null
+          security list-keychains -d user -s "$KEYCHAIN" $(security list-keychains -d user | tr -d '"')
+          rm -f "$RUNNER_TEMP/cert.p12"
+          # Промежуточный сертификат Apple, без него подпись может считаться недоверенной.
+          curl -fsSL https://www.apple.com/certificateauthority/AppleWWDRCAG3.cer -o "$RUNNER_TEMP/wwdr.cer"
+          security import "$RUNNER_TEMP/wwdr.cer" -k "$KEYCHAIN" || true
+          echo "Сертификаты в связке:"
+          security find-identity -v -p codesigning "$KEYCHAIN"
+
+          install_profile() {
+            local data="$1" expected="$2" var="$3"
+            local file="$RUNNER_TEMP/$var.mobileprovision" plist="$RUNNER_TEMP/$var.plist"
+            echo "$data" | base64 --decode > "$file"
+            security cms -D -i "$file" > "$plist"
+            local name uuid appid
+            name=$(/usr/libexec/PlistBuddy -c "Print :Name" "$plist")
+            uuid=$(/usr/libexec/PlistBuddy -c "Print :UUID" "$plist")
+            appid=$(/usr/libexec/PlistBuddy -c "Print :Entitlements:application-identifier" "$plist")
+            echo "$var: \"$name\" для $appid"
+            if [ "$appid" != "$TEAM_ID.$expected" ]; then
+              echo "::error::Профиль $var выписан на $appid, а нужен $TEAM_ID.$expected"
+              exit 1
+            fi
+            for dir in "$HOME/Library/MobileDevice/Provisioning Profiles" "$HOME/Library/Developer/Xcode/UserData/Provisioning Profiles"; do
+              mkdir -p "$dir"
+              cp "$file" "$dir/$uuid.mobileprovision"
+            done
+            echo "$var=$name" >> "$GITHUB_ENV"
+          }
+          install_profile "$PROFILE_APP" "$APP_ID" APP_PROFILE_NAME
+          install_profile "$PROFILE_WIDGET" "$APP_ID.widget" WIDGET_PROFILE_NAME
+
+      - name: Archive
+        run: |
+          set +e
+          xcodebuild \
+            -project Habits.xcodeproj \
+            -scheme Habits \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath "$RUNNER_TEMP/Habits.xcarchive" \
+            CODE_SIGNING_ALLOWED=YES \
+            CODE_SIGNING_REQUIRED=YES \
+            CODE_SIGN_STYLE=Manual \
+            CODE_SIGN_IDENTITY="Apple Distribution" \
+            "CODE_SIGN_IDENTITY[sdk=iphoneos*]=Apple Distribution" \
+            DEVELOPMENT_TEAM="$TEAM_ID" \
+            APP_PROFILE_NAME="$APP_PROFILE_NAME" \
+            WIDGET_PROFILE_NAME="$WIDGET_PROFILE_NAME" \
+            OTHER_CODE_SIGN_FLAGS="--keychain $KEYCHAIN" \
+            MARKETING_VERSION="$VERSION" \
+            CURRENT_PROJECT_VERSION="$BUILD_NUMBER" \
+            archive > archive.log 2>&1
+          status=$?
+          echo "---- errors ----"
+          grep -E "error:|fatal error" archive.log | sort -u | head -150
+          echo "---- tail ----"
+          tail -40 archive.log
+          exit $status
+
+      - name: Export IPA
+        run: |
+          set -euo pipefail
+          OPTIONS="$RUNNER_TEMP/ExportOptions.plist"
+          cat > "$OPTIONS" <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key><string>app-store-connect</string>
+            <key>destination</key><string>export</string>
+            <key>teamID</key><string>$TEAM_ID</string>
+            <key>signingStyle</key><string>manual</string>
+            <key>signingCertificate</key><string>Apple Distribution</string>
+            <key>provisioningProfiles</key>
+            <dict>
+              <key>$APP_ID</key><string>$APP_PROFILE_NAME</string>
+              <key>$APP_ID.widget</key><string>$WIDGET_PROFILE_NAME</string>
+            </dict>
+            <key>uploadSymbols</key><true/>
+            <key>manageAppVersionAndBuildNumber</key><false/>
+          </dict>
+          </plist>
+          EOF
+          xcodebuild -exportArchive \
+            -archivePath "$RUNNER_TEMP/Habits.xcarchive" \
+            -exportPath "$RUNNER_TEMP/export" \
+            -exportOptionsPlist "$OPTIONS"
+          mv "$RUNNER_TEMP/export/"*.ipa ZenHab-AppStore.ipa
+          ls -lh ZenHab-AppStore.ipa
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: appstore-logs
+          path: archive.log
+          if-no-files-found: ignore
+
+      - name: Keep IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: ZenHab-AppStore-${{ inputs.version }}-${{ github.run_number }}
+          path: ZenHab-AppStore.ipa
+
+      - name: Upload to App Store Connect
+        if: inputs.upload
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+        run: |
+          set -euo pipefail
+          KEY_DIR="$HOME/.appstoreconnect/private_keys"
+          mkdir -p "$KEY_DIR"
+          # Ключ можно положить в секрет как есть (текст .p8) или в base64.
+          if printf '%s' "$ASC_KEY_P8" | grep -q "BEGIN PRIVATE KEY"; then
+            printf '%s\n' "$ASC_KEY_P8" > "$KEY_DIR/AuthKey_$ASC_KEY_ID.p8"
+          else
+            printf '%s' "$ASC_KEY_P8" | base64 --decode > "$KEY_DIR/AuthKey_$ASC_KEY_ID.p8"
+          fi
+          xcrun altool --upload-app -f ZenHab-AppStore.ipa -t ios \
+            --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID"
+          echo "Сборка $VERSION ($BUILD_NUMBER) загружена. Через 10-30 минут она появится в App Store Connect -> TestFlight."
+
+      - name: Clean up
+        if: always()
+        run: |
+          [ -n "${KEYCHAIN:-}" ] && security delete-keychain "$KEYCHAIN" || true
+          rm -rf "$HOME/.appstoreconnect/private_keys"

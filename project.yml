@@ -35,7 +35,7 @@ targets:
     info:
       path: Habits/Info.plist
       properties:
-        CFBundleDisplayName: Habits
+        CFBundleDisplayName: ZenHab
         CFBundleDevelopmentRegion: en
         CFBundleLocalizations: [en, ru, de, fr, es, pt-BR, it, tr, pl, id, zh-Hans, ja, ko, hi]
         CFBundleAllowMixedLocalizations: true
@@ -52,6 +52,8 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.personal.habits
         PRODUCT_NAME: Habits
+        # Профиль подписи для App Store передаёт workflow appstore.yml, в сборке для SideStore он пустой.
+        PROVISIONING_PROFILE_SPECIFIER: $(APP_PROFILE_NAME)
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
     dependencies:
@@ -73,7 +75,7 @@ targets:
     info:
       path: HabitsWidget/Info.plist
       properties:
-        CFBundleDisplayName: Habits
+        CFBundleDisplayName: ZenHab
         CFBundleDevelopmentRegion: en
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
@@ -83,6 +85,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.personal.habits.widget
         PRODUCT_NAME: HabitsWidget
+        PROVISIONING_PROFILE_SPECIFIER: $(WIDGET_PROFILE_NAME)
         SKIP_INSTALL: "YES"
 
 schemes:

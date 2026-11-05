@@ -145,9 +145,9 @@ for key, forms in P_EXTRA.items():
     P[key].update(forms)
 
 # Короткое название под иконкой. Внутри приложения используется полное: "Трекер привычек".
-NAMES = {'en': 'Habits', 'ru': 'Привычки', 'de': 'Gewohnheiten', 'fr': 'Habitudes',
-         'es': 'Hábitos', 'zh-Hans': '习惯', 'ja': '習慣', 'ko': '습관', 'hi': 'आदतें',
-         'pt-BR': 'Hábitos', 'it': 'Abitudini', 'tr': 'Alışkanlıklar', 'pl': 'Nawyki', 'id': 'Kebiasaan'}
+NAMES = {'en': 'ZenHab', 'ru': 'ZenHab', 'de': 'ZenHab', 'fr': 'ZenHab',
+         'es': 'ZenHab', 'zh-Hans': 'ZenHab', 'ja': 'ZenHab', 'ko': 'ZenHab', 'hi': 'ZenHab',
+         'pt-BR': 'ZenHab', 'it': 'ZenHab', 'tr': 'ZenHab', 'pl': 'ZenHab', 'id': 'ZenHab'}
 
 def esc(s):
     return s.replace('\\', '\\\\').replace('"', '\\"')
