@@ -138,7 +138,8 @@ struct FeedbackView: View {
             }
             .sheet(isPresented: $showingMail, onDismiss: { if sent { dismiss() } }) {
                 MailComposer(recipient: AppInfo.supportEmail, subject: subject, body: body_) { result in
-                    sent = result == .sent || result == .saved
+                    // «Сохранить черновик» не отправляет письмо: форму оставляем открытой.
+                    sent = result == .sent
                 }
                 .ignoresSafeArea()
             }
