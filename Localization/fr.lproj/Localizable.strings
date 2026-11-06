@@ -55,6 +55,7 @@
 "Archive" = "Archiver";
 "Archive (%lld)" = "Archives (%lld)";
 "Archived" = "Archivée";
+"Attach a screenshot" = "Joindre une capture";
 "Available" = "Disponibles";
 "Avatar" = "Avatar";
 "Avatars" = "Avatars";
@@ -91,6 +92,7 @@
 "Check off habits on 30 different days" = "Valide des habitudes 30 jours différents";
 "Check off habits on 365 different days" = "Valide des habitudes 365 jours différents";
 "Check off habits to earn more." = "Valide des habitudes pour en gagner plus.";
+"Check your internet connection and try again, or send it by email." = "Vérifie ta connexion Internet et réessaie, ou envoie-le par e-mail.";
 "Check-ins" = "Validations";
 "Chick" = "Poussin";
 "Choose how many times and how often each reminder repeats." = "Choisis combien de fois et à quelle fréquence chaque rappel se répète.";
@@ -112,6 +114,7 @@
 "Copy message" = "Copier le message";
 "Copy message and address" = "Copier le message et l'adresse";
 "Couldn't read the file" = "Impossible de lire le fichier";
+"Couldn't send the message" = "Impossible d'envoyer le message";
 "Count glasses of water, pages or minutes toward a goal." = "Compte les verres d'eau, les pages ou les minutes jusqu'à l'objectif.";
 "Create" = "Créer";
 "Create 10 habits" = "Crée 10 habitudes";
@@ -402,6 +405,7 @@
 "Rename" = "Renommer";
 "Repeats" = "Répétitions";
 "Replace all data?" = "Remplacer toutes les données ?";
+"Replace screenshot" = "Remplacer la capture";
 "Report a bug" = "Signaler un bug";
 "Reset" = "Réinitialiser";
 "Resilient" = "Résilient";
@@ -419,6 +423,7 @@
 "Schedule" = "Planning";
 "Scheduled notifications" = "Notifications planifiées";
 "Send" = "Envoyer";
+"Send by email" = "Envoyer par e-mail";
 "Send the message" = "Envoyer le message";
 "Set up Mail on this iPhone or send your message to %@." = "Configure Mail sur l'iPhone ou envoie ton message à %@.";
 "Settings" = "Réglages";
@@ -442,6 +447,7 @@
 "Statistics" = "Statistiques";
 "Statistics will appear once you start checking off habits." = "Les statistiques apparaîtront dès que tu valideras des habitudes.";
 "Status" = "Statut";
+"Steps to reproduce help a lot." = "Les étapes pour reproduire aident beaucoup.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Les étapes pour reproduire aident beaucoup. Tu peux joindre une capture dans l'e-mail.";
 "Still learning" = "J'apprends encore";
 "Streaks" = "Séries";
@@ -465,6 +471,7 @@
 "Tap to see the translation" = "Touche pour voir la traduction";
 "Tell us what you think" = "Dis-nous ce que tu en penses";
 "Terms of Use" = "Conditions";
+"Thank you!" = "Merci !";
 "The free version has up to 5 active habits." = "La version gratuite permet jusqu'à 5 habitudes actives.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "La version minimale compte comme faite et garde ta série. Une habitude enchaînée te le rappelle juste après la précédente.";
 "The new language will apply after you close the app and open it again." = "La nouvelle langue s'appliquera quand tu fermeras et rouvriras l'app.";
@@ -485,6 +492,7 @@
 "Total check-ins" = "Validations au total";
 "Track expenses" = "Noter ses dépenses";
 "Track habits, get gentle reminders and watch your streaks grow." = "Suis tes habitudes, reçois des rappels doux et regarde tes séries grandir.";
+"Try again" = "Réessayer";
 "Turtle" = "Tortue";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Deux ratés par mois ne cassent pas ta série, et les jours difficiles la version minimale compte aussi.";
 "Two weeks" = "Deux semaines";
@@ -531,6 +539,7 @@
 "You're doing great!" = "Tu t'en sors très bien !";
 "You've gone through the whole dictionary" = "Tu as parcouru tout le dictionnaire";
 "Young" = "Jeune";
+"Your message has been sent." = "Ton message a été envoyé.";
 "Your own emoji from the keyboard" = "Ton émoji depuis le clavier";
 "Your own name, icon and schedule" = "Ton nom, ton icône et ton planning";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Ton compagnon grandit à chaque habitude validée et devient triste si tu disparais quelques jours.";

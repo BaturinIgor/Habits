@@ -55,6 +55,7 @@
 "Archive" = "संग्रहित करें";
 "Archive (%lld)" = "संग्रह (%lld)";
 "Archived" = "संग्रहित";
+"Attach a screenshot" = "स्क्रीनशॉट जोड़ें";
 "Available" = "उपलब्ध";
 "Avatar" = "अवतार";
 "Avatars" = "अवतार";
@@ -91,6 +92,7 @@
 "Check off habits on 30 different days" = "30 अलग-अलग दिनों में आदतें पूरी करें";
 "Check off habits on 365 different days" = "365 अलग-अलग दिनों में आदतें पूरी करें";
 "Check off habits to earn more." = "और कमाने के लिए आदतें पूरी करें।";
+"Check your internet connection and try again, or send it by email." = "इंटरनेट कनेक्शन जाँचें और फिर से कोशिश करें, या ईमेल से भेजें।";
 "Check-ins" = "पूरी की गई आदतें";
 "Chick" = "चूज़ा";
 "Choose how many times and how often each reminder repeats." = "हर रिमाइंडर कितनी बार और कितने अंतराल पर दोहराए, यह चुनें।";
@@ -112,6 +114,7 @@
 "Copy message" = "संदेश कॉपी करें";
 "Copy message and address" = "संदेश और पता कॉपी करें";
 "Couldn't read the file" = "फ़ाइल पढ़ी नहीं जा सकी";
+"Couldn't send the message" = "संदेश भेजा नहीं जा सका";
 "Count glasses of water, pages or minutes toward a goal." = "पानी के गिलास, पन्ने या मिनट लक्ष्य तक गिनें।";
 "Create" = "बनाएँ";
 "Create 10 habits" = "10 आदतें बनाएँ";
@@ -402,6 +405,7 @@
 "Rename" = "नाम बदलें";
 "Repeats" = "दोहराव";
 "Replace all data?" = "सारा डेटा बदलें?";
+"Replace screenshot" = "स्क्रीनशॉट बदलें";
 "Report a bug" = "बग की सूचना दें";
 "Reset" = "रीसेट";
 "Resilient" = "अटल";
@@ -419,6 +423,7 @@
 "Schedule" = "समय-सारिणी";
 "Scheduled notifications" = "तय सूचनाएँ";
 "Send" = "भेजें";
+"Send by email" = "ईमेल से भेजें";
 "Send the message" = "संदेश भेजें";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone पर मेल सेट करें या अपना संदेश %@ पर भेजें।";
 "Settings" = "सेटिंग्स";
@@ -442,6 +447,7 @@
 "Statistics" = "आँकड़े";
 "Statistics will appear once you start checking off habits." = "आदतें पूरी करना शुरू करते ही आँकड़े दिखेंगे।";
 "Status" = "स्थिति";
+"Steps to reproduce help a lot." = "दोहराने के चरण बहुत मदद करते हैं।";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "दोहराने के चरण बहुत मदद करते हैं। ईमेल में स्क्रीनशॉट जोड़ सकते हैं।";
 "Still learning" = "अभी सीख रहा हूँ";
 "Streaks" = "श्रृंखलाएँ";
@@ -465,6 +471,7 @@
 "Tap to see the translation" = "अनुवाद देखने के लिए टैप करें";
 "Tell us what you think" = "अपनी राय बताएँ";
 "Terms of Use" = "उपयोग की शर्तें";
+"Thank you!" = "धन्यवाद!";
 "The free version has up to 5 active habits." = "मुफ़्त संस्करण में 5 सक्रिय आदतें तक।";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "न्यूनतम रूप भी पूरा माना जाता है और लगातार गिनती बचाता है। जुड़ी आदत पिछली पूरी होते ही याद दिलाती है।";
 "The new language will apply after you close the app and open it again." = "ऐप बंद करके फिर खोलने पर नई भाषा लागू होगी।";
@@ -485,6 +492,7 @@
 "Total check-ins" = "कुल बार पूरी";
 "Track expenses" = "ख़र्च लिखें";
 "Track habits, get gentle reminders and watch your streaks grow." = "आदतें दर्ज करें, हल्के रिमाइंडर पाएँ और अपनी लगातार गिनती बढ़ते देखें।";
+"Try again" = "फिर से कोशिश करें";
 "Turtle" = "कछुआ";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "महीने में दो चूक से लगातार गिनती नहीं टूटेगी, और मुश्किल दिन न्यूनतम रूप भी गिना जाएगा।";
 "Two weeks" = "दो हफ़्ते";
@@ -531,6 +539,7 @@
 "You're doing great!" = "आप बहुत अच्छा कर रहे हैं!";
 "You've gone through the whole dictionary" = "आपने पूरा शब्दकोश पूरा कर लिया";
 "Young" = "किशोर";
+"Your message has been sent." = "आपका संदेश भेज दिया गया।";
 "Your own emoji from the keyboard" = "कीबोर्ड से अपना इमोजी";
 "Your own name, icon and schedule" = "अपना नाम, आइकन और समय";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "हर पूरी की गई आदत के साथ आपका पालतू बढ़ता है और कुछ दिन गायब रहने पर उदास हो जाता है।";

@@ -55,6 +55,7 @@
 "Archive" = "アーカイブ";
 "Archive (%lld)" = "アーカイブ (%lld)";
 "Archived" = "アーカイブ済み";
+"Attach a screenshot" = "スクリーンショットを添付";
 "Available" = "利用可能";
 "Avatar" = "アバター";
 "Avatars" = "アバター";
@@ -91,6 +92,7 @@
 "Check off habits on 30 different days" = "30日間チェック";
 "Check off habits on 365 different days" = "365日間チェック";
 "Check off habits to earn more." = "習慣をチェックしてもっと集めよう。";
+"Check your internet connection and try again, or send it by email." = "インターネット接続を確認してもう一度お試しいただくか、メールで送信してください。";
 "Check-ins" = "チェック";
 "Chick" = "ひよこ";
 "Choose how many times and how often each reminder repeats." = "各リマインダーの繰り返し回数と間隔を設定できます。";
@@ -112,6 +114,7 @@
 "Copy message" = "メッセージをコピー";
 "Copy message and address" = "メッセージとアドレスをコピー";
 "Couldn't read the file" = "ファイルを読み込めませんでした";
+"Couldn't send the message" = "メッセージを送信できませんでした";
 "Count glasses of water, pages or minutes toward a goal." = "水の杯数やページ数、分数を目標まで数えます。";
 "Create" = "作成";
 "Create 10 habits" = "習慣を10個作成";
@@ -402,6 +405,7 @@
 "Rename" = "名前を変更";
 "Repeats" = "繰り返し回数";
 "Replace all data?" = "すべてのデータを置き換えますか？";
+"Replace screenshot" = "スクリーンショットを変更";
 "Report a bug" = "不具合を報告";
 "Reset" = "リセット";
 "Resilient" = "不屈";
@@ -419,6 +423,7 @@
 "Schedule" = "スケジュール";
 "Scheduled notifications" = "予定された通知";
 "Send" = "送信";
+"Send by email" = "メールで送信";
 "Send the message" = "メッセージを送信";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone でメールを設定するか、%@ に送信してください。";
 "Settings" = "設定";
@@ -442,6 +447,7 @@
 "Statistics" = "統計";
 "Statistics will appear once you start checking off habits." = "習慣をチェックし始めると統計が表示されます。";
 "Status" = "状態";
+"Steps to reproduce help a lot." = "再現手順があるととても助かります。";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "再現手順があるととても助かります。スクリーンショットはメールに添付できます。";
 "Still learning" = "まだ覚えていない";
 "Streaks" = "連続記録";
@@ -465,6 +471,7 @@
 "Tap to see the translation" = "タップして訳を表示";
 "Tell us what you think" = "ご意見をお聞かせください";
 "Terms of Use" = "利用規約";
+"Thank you!" = "ありがとうございます！";
 "The free version has up to 5 active habits." = "無料版はアクティブな習慣が5つまでです。";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "ミニマム版も達成扱いで連続記録が続きます。連鎖した習慣は前の習慣をチェックした直後に通知します。";
 "The new language will apply after you close the app and open it again." = "アプリを閉じて開き直すと新しい言語になります。";
@@ -485,6 +492,7 @@
 "Total check-ins" = "合計チェック数";
 "Track expenses" = "支出を記録する";
 "Track habits, get gentle reminders and watch your streaks grow." = "習慣を記録し、やさしい通知を受け取り、連続記録を伸ばしましょう。";
+"Try again" = "再試行";
 "Turtle" = "カメ";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "月2回までは休んでも連続記録は途切れず、つらい日はミニマム版でもOK。";
 "Two weeks" = "2週間";
@@ -531,6 +539,7 @@
 "You're doing great!" = "すごくいい調子！";
 "You've gone through the whole dictionary" = "辞書の単語をすべて学びました";
 "Young" = "子ども";
+"Your message has been sent." = "メッセージを送信しました。";
 "Your own emoji from the keyboard" = "キーボードから絵文字を入力";
 "Your own name, icon and schedule" = "名前、アイコン、予定を自由に";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "習慣をチェックするたびにペットは成長し、数日いなくなると寂しがります。";

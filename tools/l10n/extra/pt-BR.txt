@@ -542,3 +542,12 @@ Everyday basics||O básico do dia a dia
 Work, travel and conversation||Trabalho, viagens e conversa
 Abstract ideas and news||Ideias abstratas e notícias
 Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept.||Toque no círculo do hábito para abrir os cartões de hoje. As palavras novas vêm em ordem aleatória do nível escolhido. Palavras que você ainda não sabe voltam para revisão, e o hábito é marcado quando os cartões do dia terminam. Você pode mudar o nível quando quiser, as palavras aprendidas ficam salvas.
+Steps to reproduce help a lot.||Passos para reproduzir ajudam muito.
+Attach a screenshot||Anexar captura de tela
+Replace screenshot||Trocar captura de tela
+Thank you!||Obrigado!
+Your message has been sent.||Sua mensagem foi enviada.
+Couldn't send the message||Não foi possível enviar a mensagem
+Check your internet connection and try again, or send it by email.||Verifique sua conexão com a internet e tente de novo, ou envie por e-mail.
+Try again||Tentar de novo
+Send by email||Enviar por e-mail

@@ -1,4 +1,5 @@
 import MessageUI
+import PhotosUI
 import StoreKit
 import SwiftUI
 import UIKit
@@ -54,6 +55,11 @@ struct FeedbackView: View {
     @State private var showingSendOptions = false
     @State private var copied = false
     @State private var sent = false
+    @State private var screenshotItem: PhotosPickerItem?
+    @State private var screenshot: Data?
+    @State private var sending = false
+    @State private var showingThanks = false
+    @State private var showingSendFailed = false
     @FocusState private var focused: Bool
 
     private var subject: String {
@@ -99,7 +105,40 @@ struct FeedbackView: View {
                         .focused($focused)
                 } footer: {
                     if kind == .bug {
-                        Text("Steps to reproduce help a lot. You can attach a screenshot in the email.")
+                        if TelegramFeedback.isConfigured {
+                            Text("Steps to reproduce help a lot.")
+                        } else {
+                            Text("Steps to reproduce help a lot. You can attach a screenshot in the email.")
+                        }
+                    }
+                }
+
+                if TelegramFeedback.isConfigured {
+                    Section {
+                        PhotosPicker(selection: $screenshotItem, matching: .images) {
+                            if screenshot == nil {
+                                Label("Attach a screenshot", systemImage: "photo")
+                            } else {
+                                Label("Replace screenshot", systemImage: "photo")
+                            }
+                        }
+                        if let screenshot, let image = UIImage(data: screenshot) {
+                            HStack {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(maxHeight: 160)
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                                Spacer()
+                                Button("Delete", role: .destructive) {
+                                    self.screenshot = nil
+                                    screenshotItem = nil
+                                }
+                            }
+                        }
+                    }
+                    .onChange(of: screenshotItem) { _, item in
+                        Task { screenshot = try? await item?.loadTransferable(type: Data.self) }
                     }
                 }
 
@@ -113,10 +152,15 @@ struct FeedbackView: View {
                     Button {
                         send()
                     } label: {
-                        Label("Send", systemImage: "paperplane.fill")
-                            .frame(maxWidth: .infinity)
+                        if sending {
+                            ProgressView()
+                                .frame(maxWidth: .infinity)
+                        } else {
+                            Label("Send", systemImage: "paperplane.fill")
+                                .frame(maxWidth: .infinity)
+                        }
                     }
-                    .disabled(message.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                    .disabled(sending || message.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                 }
             }
             .scrollDismissesKeyboard(.interactively)
@@ -158,6 +202,18 @@ struct FeedbackView: View {
             } message: {
                 Text("Paste the message into any mail app and send it to \(AppInfo.supportEmail).")
             }
+            .alert("Thank you!", isPresented: $showingThanks) {
+                Button("OK", role: .cancel) { dismiss() }
+            } message: {
+                Text("Your message has been sent.")
+            }
+            .alert("Couldn't send the message", isPresented: $showingSendFailed) {
+                Button("Try again") { send() }
+                Button("Send by email") { sendByEmail() }
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("Check your internet connection and try again, or send it by email.")
+            }
             .alert("No mail account", isPresented: $showingNoMail) {
                 Button("Copy address") {
                     UIPasteboard.general.string = AppInfo.supportEmail
@@ -173,6 +229,26 @@ struct FeedbackView: View {
     }
 
     private func send() {
+        focused = false
+        guard TelegramFeedback.isConfigured else {
+            sendByEmail()
+            return
+        }
+        sending = true
+        let text = "\(subject)\n\n\(body_)"
+        let photo = screenshot
+        Task {
+            do {
+                try await TelegramFeedback.send(text: text, screenshot: photo)
+                showingThanks = true
+            } catch {
+                showingSendFailed = true
+            }
+            sending = false
+        }
+    }
+
+    private func sendByEmail() {
         focused = false
         if MFMailComposeViewController.canSendMail() {
             showingMail = true
