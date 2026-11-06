@@ -57,7 +57,7 @@ struct FeedbackView: View {
     @FocusState private var focused: Bool
 
     private var subject: String {
-        "\(String(localized: "Habit Tracker")): \(kind.title)"
+        "ZenHab: \(kind.title)"
     }
 
     private var diagnostics: String {
