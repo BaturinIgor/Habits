@@ -117,7 +117,7 @@ struct TodayView: View {
             }
             .navigationDestination(for: UUID.self) { id in
                 HabitDetailView(habitID: id)
-                    .navigationTransition(.zoom(sourceID: id, in: zoom))
+                    .zoomTransition(sourceID: id, in: zoom)
             }
             .sheet(isPresented: $showingCatalog) {
                 HabitCatalogView()
@@ -634,7 +634,7 @@ struct HabitCard: View {
             Button(action: onOpen) {
                 HStack(spacing: 14) {
                     HabitIconView(icon: habit.icon, color: color, size: 46)
-                        .matchedTransitionSource(id: habit.id, in: zoom)
+                        .zoomSource(id: habit.id, in: zoom)
                         .saturation(status == .skipped ? 0.2 : 1)
 
                     VStack(alignment: .leading, spacing: 4) {

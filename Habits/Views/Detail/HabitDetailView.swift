@@ -170,14 +170,14 @@ struct MonthCalendarCard: View {
                         .font(.body.weight(.semibold))
                         .frame(width: 34, height: 34)
                 }
-                .buttonStyle(.glass)
+                .glassButtonStyle()
                 .buttonBorderShape(.circle)
                 Button { shift(1) } label: {
                     Image(systemName: "chevron.right")
                         .font(.body.weight(.semibold))
                         .frame(width: 34, height: 34)
                 }
-                .buttonStyle(.glass)
+                .glassButtonStyle()
                 .buttonBorderShape(.circle)
             }
 
@@ -433,7 +433,7 @@ struct WordsProgressCard: View {
                     .font(.body.weight(.semibold))
                     .frame(maxWidth: .infinity, minHeight: 44)
             }
-            .buttonStyle(.glassProminent)
+            .glassButtonStyle(prominent: true)
             .tint(color)
         }
         .card(padding: 16, cornerRadius: 24)

@@ -125,7 +125,7 @@ struct EmptyStateView: View {
                         .padding(.horizontal, 8)
                         .padding(.vertical, 4)
                 }
-                .buttonStyle(.glassProminent)
+                .glassButtonStyle(prominent: true)
                 .padding(.top, 6)
             }
         }
