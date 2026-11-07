@@ -173,7 +173,7 @@ struct PetView: View {
             .padding(.vertical, 6)
             .padding(.horizontal, 4)
         }
-        .buttonStyle(.glassProminent)
+        .glassButtonStyle(prominent: true)
         .disabled(store.feedsToday >= Sparks.feedsPerDay)
 
         perksSection(current: stage, name: pet.name)
@@ -327,7 +327,7 @@ struct PetView: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 6)
             }
-            .buttonStyle(.glassProminent)
+            .glassButtonStyle(prominent: true)
             Text("More species are available for sparks and with Pro.")
                 .font(.footnote)
                 .foregroundStyle(.secondary)

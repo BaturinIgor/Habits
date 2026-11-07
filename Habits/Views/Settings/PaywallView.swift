@@ -147,7 +147,7 @@ extension PaywallView {
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 6)
             }
-            .buttonStyle(.glassProminent)
+            .glassButtonStyle(prominent: true)
             .disabled(shop.products.isEmpty || shop.isPurchasing)
 
             Text("Subscriptions renew automatically until cancelled. Cancel anytime in Settings, Apple Account, Subscriptions, at least 24 hours before the period ends.")

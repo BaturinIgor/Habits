@@ -59,7 +59,7 @@ struct ProfileView: View {
                             SparkBadge(amount: store.economy.balance, font: .headline)
                                 .padding(.horizontal, 14).padding(.vertical, 7)
                         }
-                        .buttonStyle(.glass)
+                        .glassButtonStyle()
                     }
                     .padding(.top, 8)
 

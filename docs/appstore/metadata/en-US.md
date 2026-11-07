@@ -72,4 +72,6 @@ Privacy Policy: https://baturinigor.github.io/Habits/privacy.html
 The app is available in 14 languages: English, Russian, German, French, Spanish, Portuguese, Italian, Turkish, Polish, Indonesian, Chinese, Japanese, Korean and Hindi.
 
 ## What's New
-First release of ZenHab. Thank you for trying it! Write to us from Settings if you have an idea or find a bug.
+• ZenHab now runs on iOS 17 and later.
+• Send feedback right from the app, with a screenshot if you like.
+• Fixed the "Add habit" button on the empty Today screen.

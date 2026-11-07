@@ -68,7 +68,7 @@ struct OnboardingView: View {
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 8)
                 }
-                .buttonStyle(.glassProminent)
+                .glassButtonStyle(prominent: true)
                 if page < pages.count - 1 {
                     Button("Skip") { finish() }
                         .foregroundStyle(.secondary)

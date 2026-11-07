@@ -154,7 +154,7 @@ struct WordsSessionView: View {
                     .font(.body.weight(.semibold))
                     .frame(maxWidth: .infinity, minHeight: 50)
             }
-            .buttonStyle(.glass)
+            .glassButtonStyle()
 
             Button {
                 answer(word, known: true)
@@ -163,7 +163,7 @@ struct WordsSessionView: View {
                     .font(.body.weight(.semibold))
                     .frame(maxWidth: .infinity, minHeight: 50)
             }
-            .buttonStyle(.glassProminent)
+            .glassButtonStyle(prominent: true)
             .tint(color)
         }
     }
@@ -194,7 +194,7 @@ struct WordsSessionView: View {
                         .font(.body.weight(.semibold))
                         .frame(maxWidth: .infinity, minHeight: 50)
                 }
-                .buttonStyle(.glass)
+                .glassButtonStyle()
             }
             Button {
                 dismiss()
@@ -203,7 +203,7 @@ struct WordsSessionView: View {
                     .font(.body.weight(.semibold))
                     .frame(maxWidth: .infinity, minHeight: 50)
             }
-            .buttonStyle(.glassProminent)
+            .glassButtonStyle(prominent: true)
             .tint(color)
         }
     }

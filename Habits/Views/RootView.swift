@@ -24,20 +24,20 @@ struct RootView: View {
 
     var body: some View {
         TabView(selection: $selection) {
-            Tab("Today", systemImage: "checkmark.circle.fill", value: AppTab.today) {
-                TodayView()
-            }
-            Tab("Habits", systemImage: "square.stack.fill", value: AppTab.habits) {
-                HabitsListView()
-            }
-            Tab("Statistics", systemImage: "chart.bar.fill", value: AppTab.stats) {
-                StatsView()
-            }
-            Tab("Settings", systemImage: "gearshape.fill", value: AppTab.settings) {
-                SettingsView()
-            }
+            TodayView()
+                .tabItem { Label("Today", systemImage: "checkmark.circle.fill") }
+                .tag(AppTab.today)
+            HabitsListView()
+                .tabItem { Label("Habits", systemImage: "square.stack.fill") }
+                .tag(AppTab.habits)
+            StatsView()
+                .tabItem { Label("Statistics", systemImage: "chart.bar.fill") }
+                .tag(AppTab.stats)
+            SettingsView()
+                .tabItem { Label("Settings", systemImage: "gearshape.fill") }
+                .tag(AppTab.settings)
         }
-        .tabBarMinimizeBehavior(.onScrollDown)
+        .minimizeTabBarOnScroll()
         .overlay(alignment: .top) {
             if let banner {
                 AchievementBanner(achievement: banner.achievement, more: banner.more)
@@ -53,7 +53,7 @@ struct RootView: View {
                 }
                 .font(.headline)
                 .padding(.horizontal, 14).padding(.vertical, 8)
-                .glassEffect(.regular, in: .capsule)
+                .glassBackground(in: Capsule())
                 .padding(.bottom, 96)
                 .transition(.move(edge: .bottom).combined(with: .opacity))
                 .id(gain.id)

@@ -46,4 +46,6 @@ Kullanım Koşulları: https://www.apple.com/legal/internet-services/itunes/dev/
 Gizlilik: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-ZenHab'in ilk sürümü. Denediğin için teşekkürler! Fikirlerini ve hataları Ayarlar'dan gönderebilirsin.
+• ZenHab artık iOS 17 ve sonrasında çalışıyor.
+• Geri bildirimini doğrudan uygulamadan, istersen ekran görüntüsüyle gönder.
+• Boş Bugün ekranındaki "Alışkanlık ekle" düğmesi düzeltildi.

@@ -46,4 +46,6 @@ Pro 提供按月或按年订阅，或一次性永久购买。确认购买时将�
 隐私政策：https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-ZenHab 首个版本。感谢试用！如有想法或发现问题，可在设置中联系我们。
+• ZenHab 现已支持 iOS 17 及更高版本。
+• 可直接在 App 内发送反馈，还能附上截图。
+• 修复了“今天”页面为空时“添加习惯”按钮的显示问题。

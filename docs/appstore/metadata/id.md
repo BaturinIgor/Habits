@@ -46,4 +46,6 @@ Ketentuan Penggunaan: https://www.apple.com/legal/internet-services/itunes/dev/s
 Privasi: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-Rilis pertama ZenHab. Terima kasih sudah mencoba! Kirim ide atau laporan bug dari Pengaturan.
+• ZenHab kini berjalan di iOS 17 dan yang lebih baru.
+• Kirim masukan langsung dari aplikasi, bisa dengan tangkapan layar.
+• Tombol "Tambah kebiasaan" di layar Hari Ini yang kosong sudah diperbaiki.
