@@ -46,4 +46,6 @@ Termos de uso: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacidade: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-Primeira versão do ZenHab. Obrigado por experimentar! Envie ideias ou erros pelos Ajustes.
+• O ZenHab agora funciona no iOS 17 ou posterior.
+• Envie feedback direto do app, com captura de tela se quiser.
+• Corrigido o botão "Adicionar hábito" na tela Hoje vazia.

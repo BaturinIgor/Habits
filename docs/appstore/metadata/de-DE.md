@@ -46,4 +46,6 @@ Nutzungsbedingungen: https://www.apple.com/legal/internet-services/itunes/dev/st
 Datenschutz: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-Erste Version von ZenHab. Danke fürs Ausprobieren! Ideen und Fehler kannst du uns in den Einstellungen senden.
+• ZenHab läuft jetzt ab iOS 17.
+• Feedback direkt aus der App senden, auf Wunsch mit Screenshot.
+• Die Taste „Gewohnheit hinzufügen“ auf dem leeren Heute-Bildschirm wurde korrigiert.
