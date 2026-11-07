@@ -55,6 +55,7 @@
 "Archive" = "Archivar";
 "Archive (%lld)" = "Archivo (%lld)";
 "Archived" = "Archivado";
+"Attach a screenshot" = "Adjuntar una captura";
 "Available" = "Disponibles";
 "Avatar" = "Avatar";
 "Avatars" = "Avatares";
@@ -91,6 +92,7 @@
 "Check off habits on 30 different days" = "Marca hábitos en 30 días distintos";
 "Check off habits on 365 different days" = "Marca hábitos en 365 días distintos";
 "Check off habits to earn more." = "Marca hábitos para ganar más.";
+"Check your internet connection and try again, or send it by email." = "Revisa tu conexión a internet e inténtalo de nuevo, o envíalo por correo.";
 "Check-ins" = "Marcas";
 "Chick" = "Pollito";
 "Choose how many times and how often each reminder repeats." = "Elige cuántas veces y con qué frecuencia se repite cada recordatorio.";
@@ -112,6 +114,7 @@
 "Copy message" = "Copiar mensaje";
 "Copy message and address" = "Copiar mensaje y dirección";
 "Couldn't read the file" = "No se pudo leer el archivo";
+"Couldn't send the message" = "No se pudo enviar el mensaje";
 "Count glasses of water, pages or minutes toward a goal." = "Cuenta vasos de agua, páginas o minutos hasta la meta.";
 "Create" = "Crear";
 "Create 10 habits" = "Crea 10 hábitos";
@@ -402,6 +405,7 @@
 "Rename" = "Renombrar";
 "Repeats" = "Repeticiones";
 "Replace all data?" = "¿Sustituir todos los datos?";
+"Replace screenshot" = "Cambiar la captura";
 "Report a bug" = "Informar de un error";
 "Reset" = "Restablecer";
 "Resilient" = "Resiliente";
@@ -419,6 +423,7 @@
 "Schedule" = "Horario";
 "Scheduled notifications" = "Notificaciones programadas";
 "Send" = "Enviar";
+"Send by email" = "Enviar por correo";
 "Send the message" = "Enviar el mensaje";
 "Set up Mail on this iPhone or send your message to %@." = "Configura Mail en el iPhone o envía tu mensaje a %@.";
 "Settings" = "Ajustes";
@@ -442,6 +447,7 @@
 "Statistics" = "Estadísticas";
 "Statistics will appear once you start checking off habits." = "Las estadísticas aparecerán cuando empieces a marcar hábitos.";
 "Status" = "Estado";
+"Steps to reproduce help a lot." = "Los pasos para reproducirlo ayudan mucho.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Los pasos para reproducirlo ayudan mucho. Puedes adjuntar una captura en el correo.";
 "Still learning" = "Aún aprendiendo";
 "Streaks" = "Rachas";
@@ -465,6 +471,7 @@
 "Tap to see the translation" = "Toca para ver la traducción";
 "Tell us what you think" = "Cuéntanos qué piensas";
 "Terms of Use" = "Términos de uso";
+"Thank you!" = "¡Gracias!";
 "The free version has up to 5 active habits." = "La versión gratuita permite hasta 5 hábitos activos.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "La versión mínima cuenta como hecha y mantiene tu racha. Un hábito encadenado te avisa justo después de marcar el anterior.";
 "The new language will apply after you close the app and open it again." = "El nuevo idioma se aplicará cuando cierres la app y la vuelvas a abrir.";
@@ -485,6 +492,7 @@
 "Total check-ins" = "Total de marcas";
 "Track expenses" = "Anotar los gastos";
 "Track habits, get gentle reminders and watch your streaks grow." = "Registra hábitos, recibe recordatorios suaves y mira crecer tus rachas.";
+"Try again" = "Reintentar";
 "Turtle" = "Tortuga";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Dos fallos al mes no rompen tu racha, y en días difíciles también cuenta la versión mínima.";
 "Two weeks" = "Dos semanas";
@@ -531,6 +539,7 @@
 "You're doing great!" = "¡Lo estás haciendo genial!";
 "You've gone through the whole dictionary" = "Has recorrido todo el diccionario";
 "Young" = "Joven";
+"Your message has been sent." = "Tu mensaje se ha enviado.";
 "Your own emoji from the keyboard" = "Tu emoji desde el teclado";
 "Your own name, icon and schedule" = "Tu nombre, icono y horario";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Tu mascota crece con cada hábito que marcas y se pone triste si desapareces unos días.";

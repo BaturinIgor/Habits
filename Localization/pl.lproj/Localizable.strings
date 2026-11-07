@@ -55,6 +55,7 @@
 "Archive" = "Archiwizuj";
 "Archive (%lld)" = "Archiwum (%lld)";
 "Archived" = "W archiwum";
+"Attach a screenshot" = "Dołącz zrzut ekranu";
 "Available" = "Dostępne";
 "Avatar" = "Awatar";
 "Avatars" = "Awatary";
@@ -91,6 +92,7 @@
 "Check off habits on 30 different days" = "Odhaczaj nawyki w 30 różnych dniach";
 "Check off habits on 365 different days" = "Odhaczaj nawyki w 365 różnych dniach";
 "Check off habits to earn more." = "Odhaczaj nawyki, aby zdobyć więcej.";
+"Check your internet connection and try again, or send it by email." = "Sprawdź połączenie z internetem i spróbuj ponownie albo wyślij e-mailem.";
 "Check-ins" = "Odhaczenia";
 "Chick" = "Kurczątko";
 "Choose how many times and how often each reminder repeats." = "Wybierz, ile razy i jak często powtarza się każde przypomnienie.";
@@ -112,6 +114,7 @@
 "Copy message" = "Kopiuj wiadomość";
 "Copy message and address" = "Kopiuj wiadomość i adres";
 "Couldn't read the file" = "Nie udało się odczytać pliku";
+"Couldn't send the message" = "Nie udało się wysłać wiadomości";
 "Count glasses of water, pages or minutes toward a goal." = "Licz szklanki wody, strony lub minuty do celu.";
 "Create" = "Utwórz";
 "Create 10 habits" = "Utwórz 10 nawyków";
@@ -402,6 +405,7 @@
 "Rename" = "Zmień nazwę";
 "Repeats" = "Powtórzenia";
 "Replace all data?" = "Zastąpić wszystkie dane?";
+"Replace screenshot" = "Zmień zrzut ekranu";
 "Report a bug" = "Zgłoś błąd";
 "Reset" = "Resetuj";
 "Resilient" = "Wytrwały";
@@ -419,6 +423,7 @@
 "Schedule" = "Harmonogram";
 "Scheduled notifications" = "Zaplanowane powiadomienia";
 "Send" = "Wyślij";
+"Send by email" = "Wyślij e-mailem";
 "Send the message" = "Wyślij wiadomość";
 "Set up Mail on this iPhone or send your message to %@." = "Skonfiguruj Mail na tym iPhonie lub wyślij wiadomość na %@.";
 "Settings" = "Ustawienia";
@@ -442,6 +447,7 @@
 "Statistics" = "Statystyki";
 "Statistics will appear once you start checking off habits." = "Statystyki pojawią się, gdy zaczniesz odhaczać nawyki.";
 "Status" = "Status";
+"Steps to reproduce help a lot." = "Kroki do odtworzenia bardzo pomagają.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Kroki do odtworzenia bardzo pomagają. Możesz załączyć zrzut ekranu w e-mailu.";
 "Still learning" = "Jeszcze się uczę";
 "Streaks" = "Serie";
@@ -465,6 +471,7 @@
 "Tap to see the translation" = "Stuknij, aby zobaczyć tłumaczenie";
 "Tell us what you think" = "Powiedz, co myślisz";
 "Terms of Use" = "Warunki korzystania";
+"Thank you!" = "Dziękujemy!";
 "The free version has up to 5 active habits." = "Wersja darmowa ma do 5 aktywnych nawyków.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Wersja minimum liczy się jako wykonanie i podtrzymuje serię. Nawyk w łańcuchu przypomina o sobie zaraz po odhaczeniu poprzedniego.";
 "The new language will apply after you close the app and open it again." = "Nowy język zacznie działać po zamknięciu i ponownym otwarciu aplikacji.";
@@ -485,6 +492,7 @@
 "Total check-ins" = "Wszystkie odhaczenia";
 "Track expenses" = "Zapisywać wydatki";
 "Track habits, get gentle reminders and watch your streaks grow." = "Śledź nawyki, otrzymuj delikatne przypomnienia i patrz, jak rosną twoje serie.";
+"Try again" = "Spróbuj ponownie";
 "Turtle" = "Żółw";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Dwa pominięcia w miesiącu nie przerwą serii, a w trudne dni liczy się też wersja minimum.";
 "Two weeks" = "Dwa tygodnie";
@@ -531,6 +539,7 @@
 "You're doing great!" = "Świetnie ci idzie!";
 "You've gone through the whole dictionary" = "Przeszedłeś cały słownik";
 "Young" = "Młody";
+"Your message has been sent." = "Wiadomość została wysłana.";
 "Your own emoji from the keyboard" = "Własne emoji z klawiatury";
 "Your own name, icon and schedule" = "Własna nazwa, ikona i harmonogram";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Twój zwierzak rośnie z każdym odhaczonym nawykiem i smutnieje, gdy znikasz na kilka dni.";

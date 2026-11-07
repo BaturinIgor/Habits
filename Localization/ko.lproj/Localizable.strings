@@ -55,6 +55,7 @@
 "Archive" = "보관";
 "Archive (%lld)" = "보관함 (%lld)";
 "Archived" = "보관됨";
+"Attach a screenshot" = "스크린샷 첨부";
 "Available" = "사용 가능";
 "Avatar" = "아바타";
 "Avatars" = "아바타";
@@ -91,6 +92,7 @@
 "Check off habits on 30 different days" = "30일 동안 체크";
 "Check off habits on 365 different days" = "365일 동안 체크";
 "Check off habits to earn more." = "습관을 체크해서 더 모아요.";
+"Check your internet connection and try again, or send it by email." = "인터넷 연결을 확인하고 다시 시도하거나 메일로 보내 주세요.";
 "Check-ins" = "체크";
 "Chick" = "병아리";
 "Choose how many times and how often each reminder repeats." = "각 알림의 반복 횟수와 간격을 정할 수 있어요.";
@@ -112,6 +114,7 @@
 "Copy message" = "메시지 복사";
 "Copy message and address" = "메시지와 주소 복사";
 "Couldn't read the file" = "파일을 읽을 수 없어요";
+"Couldn't send the message" = "메시지를 보내지 못했어요";
 "Count glasses of water, pages or minutes toward a goal." = "물 잔 수, 페이지, 시간을 목표까지 세어 보세요.";
 "Create" = "만들기";
 "Create 10 habits" = "습관 10개 만들기";
@@ -402,6 +405,7 @@
 "Rename" = "이름 변경";
 "Repeats" = "반복 횟수";
 "Replace all data?" = "모든 데이터를 바꿀까요?";
+"Replace screenshot" = "스크린샷 바꾸기";
 "Report a bug" = "버그 신고";
 "Reset" = "초기화";
 "Resilient" = "불굴";
@@ -419,6 +423,7 @@
 "Schedule" = "일정";
 "Scheduled notifications" = "예약된 알림";
 "Send" = "보내기";
+"Send by email" = "메일로 보내기";
 "Send the message" = "메시지 보내기";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone에서 메일을 설정하거나 %@(으)로 보내 주세요.";
 "Settings" = "설정";
@@ -442,6 +447,7 @@
 "Statistics" = "통계";
 "Statistics will appear once you start checking off habits." = "습관을 체크하기 시작하면 통계가 표시돼요.";
 "Status" = "상태";
+"Steps to reproduce help a lot." = "재현 단계가 큰 도움이 돼요.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "재현 단계가 큰 도움이 돼요. 스크린샷은 메일에 첨부할 수 있어요.";
 "Still learning" = "아직 몰라요";
 "Streaks" = "연속 기록";
@@ -465,6 +471,7 @@
 "Tap to see the translation" = "눌러서 뜻 보기";
 "Tell us what you think" = "생각을 들려주세요";
 "Terms of Use" = "이용 약관";
+"Thank you!" = "감사합니다!";
 "The free version has up to 5 active habits." = "무료 버전은 활성 습관 5개까지예요.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "최소 버전도 완료로 인정돼 연속 기록이 유지돼요. 연결된 습관은 앞 습관을 체크하면 바로 알려 드려요.";
 "The new language will apply after you close the app and open it again." = "앱을 닫았다가 다시 열면 새 언어가 적용돼요.";
@@ -485,6 +492,7 @@
 "Total check-ins" = "총 체크 수";
 "Track expenses" = "지출 기록하기";
 "Track habits, get gentle reminders and watch your streaks grow." = "습관을 기록하고, 부드러운 알림을 받고, 연속 기록이 늘어나는 걸 보세요.";
+"Try again" = "다시 시도";
 "Turtle" = "거북이";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "한 달에 두 번 놓쳐도 연속 기록은 이어지고, 힘든 날엔 최소 버전도 인정돼요.";
 "Two weeks" = "2주";
@@ -531,6 +539,7 @@
 "You're doing great!" = "정말 잘하고 있어요!";
 "You've gone through the whole dictionary" = "사전의 모든 단어를 학습했어요";
 "Young" = "청소년";
+"Your message has been sent." = "메시지를 보냈어요.";
 "Your own emoji from the keyboard" = "키보드로 이모지 입력";
 "Your own name, icon and schedule" = "이름, 아이콘, 일정을 직접";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "습관을 체크할 때마다 펫이 자라고, 며칠 사라지면 슬퍼해요.";

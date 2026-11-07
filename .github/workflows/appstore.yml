@@ -66,6 +66,12 @@ jobs:
       - name: Generate Xcode project
         run: xcodegen generate
 
+      - name: Add feedback bot secrets
+        env:
+          FEEDBACK_BOT_TOKEN: ${{ secrets.FEEDBACK_BOT_TOKEN }}
+          FEEDBACK_CHAT_ID: ${{ secrets.FEEDBACK_CHAT_ID }}
+        run: tools/feedback/inject_secrets.sh Habits/Info.plist
+
       - name: Install certificate and profiles
         env:
           DIST_CERT_P12: ${{ secrets.DIST_CERT_P12 }}

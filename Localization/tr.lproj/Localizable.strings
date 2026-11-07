@@ -55,6 +55,7 @@
 "Archive" = "Arşivle";
 "Archive (%lld)" = "Arşiv (%lld)";
 "Archived" = "Arşivde";
+"Attach a screenshot" = "Ekran görüntüsü ekle";
 "Available" = "Erişilebilir";
 "Avatar" = "Avatar";
 "Avatars" = "Avatarlar";
@@ -91,6 +92,7 @@
 "Check off habits on 30 different days" = "30 farklı günde alışkanlık işaretle";
 "Check off habits on 365 different days" = "365 farklı günde alışkanlık işaretle";
 "Check off habits to earn more." = "Daha fazla kazanmak için alışkanlık işaretle.";
+"Check your internet connection and try again, or send it by email." = "İnternet bağlantını kontrol edip tekrar dene ya da e-postayla gönder.";
 "Check-ins" = "İşaretlemeler";
 "Chick" = "Civciv";
 "Choose how many times and how often each reminder repeats." = "Her hatırlatmanın kaç kez ve ne sıklıkla tekrarlanacağını seç.";
@@ -112,6 +114,7 @@
 "Copy message" = "Mesajı kopyala";
 "Copy message and address" = "Mesajı ve adresi kopyala";
 "Couldn't read the file" = "Dosya okunamadı";
+"Couldn't send the message" = "Mesaj gönderilemedi";
 "Count glasses of water, pages or minutes toward a goal." = "Bir hedefe doğru bardak, sayfa veya dakika say.";
 "Create" = "Oluştur";
 "Create 10 habits" = "10 alışkanlık oluştur";
@@ -402,6 +405,7 @@
 "Rename" = "Yeniden adlandır";
 "Repeats" = "Tekrarlar";
 "Replace all data?" = "Tüm veriler değiştirilsin mi?";
+"Replace screenshot" = "Ekran görüntüsünü değiştir";
 "Report a bug" = "Hata bildir";
 "Reset" = "Sıfırla";
 "Resilient" = "Dayanıklı";
@@ -419,6 +423,7 @@
 "Schedule" = "Plan";
 "Scheduled notifications" = "Planlanan bildirimler";
 "Send" = "Gönder";
+"Send by email" = "E-postayla gönder";
 "Send the message" = "Mesajı gönder";
 "Set up Mail on this iPhone or send your message to %@." = "Bu iPhone'da Mail'i ayarla veya mesajını %@ adresine gönder.";
 "Settings" = "Ayarlar";
@@ -442,6 +447,7 @@
 "Statistics" = "İstatistikler";
 "Statistics will appear once you start checking off habits." = "Alışkanlıkları işaretlemeye başladığında istatistikler görünecek.";
 "Status" = "Durum";
+"Steps to reproduce help a lot." = "Tekrarlama adımları çok yardımcı olur.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Tekrarlama adımları çok yardımcı olur. E-postaya ekran görüntüsü ekleyebilirsin.";
 "Still learning" = "Hâlâ öğreniyorum";
 "Streaks" = "Seriler";
@@ -465,6 +471,7 @@
 "Tap to see the translation" = "Çeviriyi görmek için dokun";
 "Tell us what you think" = "Ne düşündüğünü söyle";
 "Terms of Use" = "Kullanım Koşulları";
+"Thank you!" = "Teşekkürler!";
 "The free version has up to 5 active habits." = "Ücretsiz sürümde en fazla 5 etkin alışkanlık olabilir.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Minimum sürüm yapılmış sayılır ve serini korur. Zincirli alışkanlık, öncekini işaretlediğin anda sana hatırlatılır.";
 "The new language will apply after you close the app and open it again." = "Yeni dil, uygulamayı kapatıp yeniden açtıktan sonra uygulanacak.";
@@ -485,6 +492,7 @@
 "Total check-ins" = "Toplam işaretleme";
 "Track expenses" = "Harcamaları kaydet";
 "Track habits, get gentle reminders and watch your streaks grow." = "Alışkanlıklarını takip et, nazik hatırlatmalar al ve serilerinin büyüdüğünü izle.";
+"Try again" = "Tekrar dene";
 "Turtle" = "Kaplumbağa";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Ayda iki kaçırma serini bozmaz, zor günlerde minimum sürüm de sayılır.";
 "Two weeks" = "İki hafta";
@@ -531,6 +539,7 @@
 "You're doing great!" = "Harika gidiyorsun!";
 "You've gone through the whole dictionary" = "Tüm sözlüğü bitirdin";
 "Young" = "Genç";
+"Your message has been sent." = "Mesajın gönderildi.";
 "Your own emoji from the keyboard" = "Klavyeden kendi emojin";
 "Your own name, icon and schedule" = "Kendi adın, simgen ve planın";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Evcil hayvanın işaretlediğin her alışkanlıkla büyür, birkaç gün ortadan kaybolursan üzülür.";

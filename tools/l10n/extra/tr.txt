@@ -542,3 +542,12 @@ Everyday basics||Günlük temel kelimeler
 Work, travel and conversation||İş, seyahat ve sohbet
 Abstract ideas and news||Soyut kavramlar ve haberler
 Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept.||Bugünün kartlarını açmak için alışkanlığın dairesine dokun. Yeni kelimeler seçilen seviyeden rastgele sırayla gelir. Henüz bilmediğin kelimeler tekrar için geri gelir, günün kartları bitince alışkanlık kendiliğinden işaretlenir. Seviyeyi istediğin zaman değiştirebilirsin, öğrendiğin kelimeler korunur.
+Steps to reproduce help a lot.||Tekrarlama adımları çok yardımcı olur.
+Attach a screenshot||Ekran görüntüsü ekle
+Replace screenshot||Ekran görüntüsünü değiştir
+Thank you!||Teşekkürler!
+Your message has been sent.||Mesajın gönderildi.
+Couldn't send the message||Mesaj gönderilemedi
+Check your internet connection and try again, or send it by email.||İnternet bağlantını kontrol edip tekrar dene ya da e-postayla gönder.
+Try again||Tekrar dene
+Send by email||E-postayla gönder

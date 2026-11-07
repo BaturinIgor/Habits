@@ -55,6 +55,7 @@
 "Archive" = "В архив";
 "Archive (%lld)" = "Архив (%lld)";
 "Archived" = "В архиве";
+"Attach a screenshot" = "Приложить скриншот";
 "Available" = "Доступны";
 "Avatar" = "Аватарка";
 "Avatars" = "Аватарки";
@@ -91,6 +92,7 @@
 "Check off habits on 30 different days" = "Отмечай привычки 30 разных дней";
 "Check off habits on 365 different days" = "Отмечай привычки 365 разных дней";
 "Check off habits to earn more." = "Отмечай привычки, чтобы заработать ещё.";
+"Check your internet connection and try again, or send it by email." = "Проверь подключение к интернету и попробуй ещё раз или отправь письмом.";
 "Check-ins" = "Отметки";
 "Chick" = "Цыплёнок";
 "Choose how many times and how often each reminder repeats." = "Выбирай, сколько раз и как часто повторяется каждое напоминание.";
@@ -112,6 +114,7 @@
 "Copy message" = "Скопировать сообщение";
 "Copy message and address" = "Скопировать сообщение и адрес";
 "Couldn't read the file" = "Не удалось прочитать файл";
+"Couldn't send the message" = "Не удалось отправить сообщение";
 "Count glasses of water, pages or minutes toward a goal." = "Считай стаканы воды, страницы или минуты до цели.";
 "Create" = "Создать";
 "Create 10 habits" = "Создай 10 привычек";
@@ -402,6 +405,7 @@
 "Rename" = "Переименовать";
 "Repeats" = "Повторы";
 "Replace all data?" = "Заменить все данные?";
+"Replace screenshot" = "Заменить скриншот";
 "Report a bug" = "Сообщить об ошибке";
 "Reset" = "Сбросить";
 "Resilient" = "Несгибаемый";
@@ -419,6 +423,7 @@
 "Schedule" = "Расписание";
 "Scheduled notifications" = "Запланировано уведомлений";
 "Send" = "Отправить";
+"Send by email" = "Отправить письмом";
 "Send the message" = "Отправка сообщения";
 "Set up Mail on this iPhone or send your message to %@." = "Настрой Почту на iPhone или отправь сообщение на %@.";
 "Settings" = "Настройки";
@@ -442,6 +447,7 @@
 "Statistics" = "Статистика";
 "Statistics will appear once you start checking off habits." = "Статистика появится, когда ты начнёшь отмечать привычки.";
 "Status" = "Статус";
+"Steps to reproduce help a lot." = "Шаги, как повторить ошибку, очень помогают.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Шаги, как повторить ошибку, очень помогают. Скриншот можно приложить в письме.";
 "Still learning" = "Ещё учу";
 "Streaks" = "Серии";
@@ -465,6 +471,7 @@
 "Tap to see the translation" = "Нажми, чтобы увидеть перевод";
 "Tell us what you think" = "Расскажи, что думаешь";
 "Terms of Use" = "Условия";
+"Thank you!" = "Спасибо!";
 "The free version has up to 5 active habits." = "В бесплатной версии до 5 активных привычек.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Минимальная версия засчитывается как выполнение и сохраняет серию. Привычка в связке напомнит о себе сразу после отметки предыдущей.";
 "The new language will apply after you close the app and open it again." = "Новый язык включится, когда ты закроешь приложение и откроешь его снова.";
@@ -485,6 +492,7 @@
 "Total check-ins" = "Всего отметок";
 "Track expenses" = "Записать расходы";
 "Track habits, get gentle reminders and watch your streaks grow." = "Отмечай привычки, получай мягкие напоминания и смотри, как растут серии.";
+"Try again" = "Попробовать ещё раз";
 "Turtle" = "Черепаха";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Два пропуска в месяц не обнулят серию, а в тяжёлый день засчитается и минимальная версия.";
 "Two weeks" = "Две недели";
@@ -531,6 +539,7 @@
 "You're doing great!" = "У тебя отлично получается!";
 "You've gone through the whole dictionary" = "Ты прошёл весь словарь";
 "Young" = "Подросток";
+"Your message has been sent." = "Сообщение отправлено.";
 "Your own emoji from the keyboard" = "Свой эмодзи с клавиатуры";
 "Your own name, icon and schedule" = "Своё название, иконка и расписание";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Питомец растёт с каждой отмеченной привычкой и грустит, если ты пропадаешь на несколько дней.";

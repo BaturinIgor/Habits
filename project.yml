@@ -50,6 +50,10 @@ targets:
         UIBackgroundModes: [fetch]
         BGTaskSchedulerPermittedIdentifiers: [com.personal.habits.refresh]
         ITSAppUsesNonExemptEncryption: false
+        # Telegram-бот для отзывов. Значения подставляет tools/feedback/inject_secrets.sh
+        # из секретов FEEDBACK_BOT_TOKEN и FEEDBACK_CHAT_ID; без них отзывы идут через почту.
+        FeedbackBotToken: ""
+        FeedbackChatID: ""
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.personal.habits

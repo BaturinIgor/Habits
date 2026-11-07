@@ -55,6 +55,7 @@
 "Archive" = "Archivia";
 "Archive (%lld)" = "Archivio (%lld)";
 "Archived" = "Archiviata";
+"Attach a screenshot" = "Allega uno screenshot";
 "Available" = "Disponibili";
 "Avatar" = "Avatar";
 "Avatars" = "Avatar";
@@ -91,6 +92,7 @@
 "Check off habits on 30 different days" = "Segna abitudini in 30 giorni diversi";
 "Check off habits on 365 different days" = "Segna abitudini in 365 giorni diversi";
 "Check off habits to earn more." = "Segna abitudini per guadagnarne altre.";
+"Check your internet connection and try again, or send it by email." = "Controlla la connessione a internet e riprova, oppure invialo via e-mail.";
 "Check-ins" = "Spunte";
 "Chick" = "Pulcino";
 "Choose how many times and how often each reminder repeats." = "Scegli quante volte e ogni quanto si ripete ogni promemoria.";
@@ -112,6 +114,7 @@
 "Copy message" = "Copia messaggio";
 "Copy message and address" = "Copia messaggio e indirizzo";
 "Couldn't read the file" = "Impossibile leggere il file";
+"Couldn't send the message" = "Impossibile inviare il messaggio";
 "Count glasses of water, pages or minutes toward a goal." = "Conta bicchieri d'acqua, pagine o minuti verso un obiettivo.";
 "Create" = "Crea";
 "Create 10 habits" = "Crea 10 abitudini";
@@ -402,6 +405,7 @@
 "Rename" = "Rinomina";
 "Repeats" = "Ripetizioni";
 "Replace all data?" = "Sostituire tutti i dati?";
+"Replace screenshot" = "Sostituisci screenshot";
 "Report a bug" = "Segnala un errore";
 "Reset" = "Ripristina";
 "Resilient" = "Resiliente";
@@ -419,6 +423,7 @@
 "Schedule" = "Programma";
 "Scheduled notifications" = "Notifiche programmate";
 "Send" = "Invia";
+"Send by email" = "Invia via e-mail";
 "Send the message" = "Invia il messaggio";
 "Set up Mail on this iPhone or send your message to %@." = "Configura Mail su questo iPhone o invia il messaggio a %@.";
 "Settings" = "Impostazioni";
@@ -442,6 +447,7 @@
 "Statistics" = "Statistiche";
 "Statistics will appear once you start checking off habits." = "Le statistiche compariranno quando inizierai a segnare le abitudini.";
 "Status" = "Stato";
+"Steps to reproduce help a lot." = "I passaggi per riprodurlo aiutano molto.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "I passaggi per riprodurre aiutano molto. Puoi allegare uno screenshot nell'email.";
 "Still learning" = "Lo sto imparando";
 "Streaks" = "Serie";
@@ -465,6 +471,7 @@
 "Tap to see the translation" = "Tocca per vedere la traduzione";
 "Tell us what you think" = "Dicci cosa ne pensi";
 "Terms of Use" = "Condizioni d'uso";
+"Thank you!" = "Grazie!";
 "The free version has up to 5 active habits." = "La versione gratuita ha fino a 5 abitudini attive.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "La versione minima conta come fatta e mantiene la serie. Un'abitudine in catena te la ricorda subito dopo aver segnato quella precedente.";
 "The new language will apply after you close the app and open it again." = "La nuova lingua verrà applicata dopo aver chiuso e riaperto l'app.";
@@ -485,6 +492,7 @@
 "Total check-ins" = "Spunte totali";
 "Track expenses" = "Annotare le spese";
 "Track habits, get gentle reminders and watch your streaks grow." = "Segui le abitudini, ricevi promemoria gentili e guarda crescere le tue serie.";
+"Try again" = "Riprova";
 "Turtle" = "Tartaruga";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Due salti al mese non interrompono la serie, e nei giorni difficili conta anche la versione minima.";
 "Two weeks" = "Due settimane";
@@ -531,6 +539,7 @@
 "You're doing great!" = "Stai andando alla grande!";
 "You've gone through the whole dictionary" = "Hai completato tutto il dizionario";
 "Young" = "Giovane";
+"Your message has been sent." = "Il tuo messaggio è stato inviato.";
 "Your own emoji from the keyboard" = "La tua emoji dalla tastiera";
 "Your own name, icon and schedule" = "Nome, icona e programma a tua scelta";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Il tuo cucciolo cresce con ogni abitudine segnata e si intristisce se sparisci per qualche giorno.";

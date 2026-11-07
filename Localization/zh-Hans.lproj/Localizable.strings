@@ -55,6 +55,7 @@
 "Archive" = "归档";
 "Archive (%lld)" = "归档 (%lld)";
 "Archived" = "已归档";
+"Attach a screenshot" = "附上截图";
 "Available" = "可用";
 "Avatar" = "头像";
 "Avatars" = "头像";
@@ -91,6 +92,7 @@
 "Check off habits on 30 different days" = "在 30 个不同的日子打卡";
 "Check off habits on 365 different days" = "在 365 个不同的日子打卡";
 "Check off habits to earn more." = "完成习惯即可获得更多。";
+"Check your internet connection and try again, or send it by email." = "请检查网络连接后重试，或通过邮件发送。";
 "Check-ins" = "打卡";
 "Chick" = "小鸡";
 "Choose how many times and how often each reminder repeats." = "自行设置每个提醒重复的次数和间隔。";
@@ -112,6 +114,7 @@
 "Copy message" = "复制内容";
 "Copy message and address" = "复制消息和地址";
 "Couldn't read the file" = "无法读取文件";
+"Couldn't send the message" = "无法发送消息";
 "Count glasses of water, pages or minutes toward a goal." = "记录喝水杯数、阅读页数或分钟数，直到达成目标。";
 "Create" = "创建";
 "Create 10 habits" = "创建 10 个习惯";
@@ -402,6 +405,7 @@
 "Rename" = "重命名";
 "Repeats" = "重复次数";
 "Replace all data?" = "替换所有数据？";
+"Replace screenshot" = "更换截图";
 "Report a bug" = "报告问题";
 "Reset" = "重置";
 "Resilient" = "坚韧不拔";
@@ -419,6 +423,7 @@
 "Schedule" = "计划";
 "Scheduled notifications" = "已安排的通知";
 "Send" = "发送";
+"Send by email" = "通过邮件发送";
 "Send the message" = "发送消息";
 "Set up Mail on this iPhone or send your message to %@." = "请在 iPhone 上设置“邮件”，或将消息发送至 %@。";
 "Settings" = "设置";
@@ -442,6 +447,7 @@
 "Statistics" = "统计";
 "Statistics will appear once you start checking off habits." = "开始打卡后就会显示统计。";
 "Status" = "状态";
+"Steps to reproduce help a lot." = "复现步骤非常有帮助。";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "复现步骤非常有帮助。可以在邮件中附上截图。";
 "Still learning" = "还在学";
 "Streaks" = "连续";
@@ -465,6 +471,7 @@
 "Tap to see the translation" = "点击查看翻译";
 "Tell us what you think" = "说说你的想法";
 "Terms of Use" = "使用条款";
+"Thank you!" = "谢谢！";
 "The free version has up to 5 active habits." = "免费版最多 5 个进行中的习惯。";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "最低版本也算完成，并保持连续记录。链中的习惯会在你完成上一个后立即提醒。";
 "The new language will apply after you close the app and open it again." = "关闭并重新打开应用后，新语言才会生效。";
@@ -485,6 +492,7 @@
 "Total check-ins" = "累计打卡";
 "Track expenses" = "记账";
 "Track habits, get gentle reminders and watch your streaks grow." = "记录习惯，接收温和提醒，看着连续记录不断增长。";
+"Try again" = "重试";
 "Turtle" = "乌龟";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "每月两次错过不会中断连续记录，艰难的日子里最低版本也算数。";
 "Two weeks" = "两周";
@@ -531,6 +539,7 @@
 "You're doing great!" = "你做得很棒！";
 "You've gone through the whole dictionary" = "你已学完整个词库";
 "Young" = "少年";
+"Your message has been sent." = "消息已发送。";
 "Your own emoji from the keyboard" = "用键盘输入表情";
 "Your own name, icon and schedule" = "自定名称、图标和计划";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "每完成一个习惯，宠物就会成长；你消失几天，它会难过。";

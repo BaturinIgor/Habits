@@ -542,3 +542,12 @@ Everyday basics||Le basi di tutti i giorni
 Work, travel and conversation||Lavoro, viaggi e conversazione
 Abstract ideas and news||Idee astratte e notizie
 Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept.||Tocca il cerchio dell'abitudine per aprire le schede di oggi. Le parole nuove arrivano in ordine casuale dal livello scelto. Quelle che non conosci ancora tornano per il ripasso, e l'abitudine viene segnata quando finisci le schede del giorno. Puoi cambiare livello quando vuoi, le parole imparate restano.
+Steps to reproduce help a lot.||I passaggi per riprodurlo aiutano molto.
+Attach a screenshot||Allega uno screenshot
+Replace screenshot||Sostituisci screenshot
+Thank you!||Grazie!
+Your message has been sent.||Il tuo messaggio è stato inviato.
+Couldn't send the message||Impossibile inviare il messaggio
+Check your internet connection and try again, or send it by email.||Controlla la connessione a internet e riprova, oppure invialo via e-mail.
+Try again||Riprova
+Send by email||Invia via e-mail

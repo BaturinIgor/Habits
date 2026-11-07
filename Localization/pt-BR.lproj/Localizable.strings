@@ -55,6 +55,7 @@
 "Archive" = "Arquivar";
 "Archive (%lld)" = "Arquivo (%lld)";
 "Archived" = "Arquivado";
+"Attach a screenshot" = "Anexar captura de tela";
 "Available" = "Disponível";
 "Avatar" = "Avatar";
 "Avatars" = "Avatares";
@@ -91,6 +92,7 @@
 "Check off habits on 30 different days" = "Marque hábitos em 30 dias diferentes";
 "Check off habits on 365 different days" = "Marque hábitos em 365 dias diferentes";
 "Check off habits to earn more." = "Marque hábitos para ganhar mais.";
+"Check your internet connection and try again, or send it by email." = "Verifique sua conexão com a internet e tente de novo, ou envie por e-mail.";
 "Check-ins" = "Marcações";
 "Chick" = "Pintinho";
 "Choose how many times and how often each reminder repeats." = "Escolha quantas vezes e com que frequência cada lembrete se repete.";
@@ -112,6 +114,7 @@
 "Copy message" = "Copiar mensagem";
 "Copy message and address" = "Copiar mensagem e endereço";
 "Couldn't read the file" = "Não foi possível ler o arquivo";
+"Couldn't send the message" = "Não foi possível enviar a mensagem";
 "Count glasses of water, pages or minutes toward a goal." = "Conte copos de água, páginas ou minutos até a meta.";
 "Create" = "Criar";
 "Create 10 habits" = "Crie 10 hábitos";
@@ -402,6 +405,7 @@
 "Rename" = "Renomear";
 "Repeats" = "Repetições";
 "Replace all data?" = "Substituir todos os dados?";
+"Replace screenshot" = "Trocar captura de tela";
 "Report a bug" = "Relatar um erro";
 "Reset" = "Redefinir";
 "Resilient" = "Resiliente";
@@ -419,6 +423,7 @@
 "Schedule" = "Agenda";
 "Scheduled notifications" = "Notificações agendadas";
 "Send" = "Enviar";
+"Send by email" = "Enviar por e-mail";
 "Send the message" = "Enviar a mensagem";
 "Set up Mail on this iPhone or send your message to %@." = "Configure o Mail neste iPhone ou envie sua mensagem para %@.";
 "Settings" = "Ajustes";
@@ -442,6 +447,7 @@
 "Statistics" = "Estatísticas";
 "Statistics will appear once you start checking off habits." = "As estatísticas vão aparecer quando você começar a marcar hábitos.";
 "Status" = "Status";
+"Steps to reproduce help a lot." = "Passos para reproduzir ajudam muito.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Passos para reproduzir ajudam muito. Você pode anexar uma captura de tela no e-mail.";
 "Still learning" = "Ainda aprendendo";
 "Streaks" = "Sequências";
@@ -465,6 +471,7 @@
 "Tap to see the translation" = "Toque para ver a tradução";
 "Tell us what you think" = "Diga o que você acha";
 "Terms of Use" = "Termos de Uso";
+"Thank you!" = "Obrigado!";
 "The free version has up to 5 active habits." = "A versão gratuita tem até 5 hábitos ativos.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "A versão mínima conta como feita e mantém a sequência. Um hábito em cadeia lembra você logo depois de marcar o anterior.";
 "The new language will apply after you close the app and open it again." = "O novo idioma será aplicado depois que você fechar e abrir o app de novo.";
@@ -485,6 +492,7 @@
 "Total check-ins" = "Total de marcações";
 "Track expenses" = "Anotar os gastos";
 "Track habits, get gentle reminders and watch your streaks grow." = "Acompanhe hábitos, receba lembretes gentis e veja suas sequências crescerem.";
+"Try again" = "Tentar de novo";
 "Turtle" = "Tartaruga";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Duas falhas por mês não quebram a sequência, e a versão mínima conta nos dias difíceis.";
 "Two weeks" = "Duas semanas";
@@ -531,6 +539,7 @@
 "You're doing great!" = "Você está indo muito bem!";
 "You've gone through the whole dictionary" = "Você passou por todo o dicionário";
 "Young" = "Jovem";
+"Your message has been sent." = "Sua mensagem foi enviada.";
 "Your own emoji from the keyboard" = "Seu próprio emoji do teclado";
 "Your own name, icon and schedule" = "Nome, ícone e agenda do seu jeito";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Seu bichinho cresce a cada hábito marcado e fica triste quando você some por alguns dias.";
