@@ -115,8 +115,13 @@ struct EmptyStateView: View {
                 .multilineTextAlignment(.center)
             if let buttonTitle, let action {
                 Button(action: action) {
-                    Label(buttonTitle, systemImage: "plus")
-                        .font(.body.weight(.semibold))
+                    // Label внутри .glassProminent оставлял место под иконку,
+                    // но не рисовал её: текст съезжал вправо. Собираем вручную.
+                    HStack(spacing: 6) {
+                        Image(systemName: "plus")
+                        Text(buttonTitle)
+                    }
+                    .font(.body.weight(.semibold))
                         .padding(.horizontal, 8)
                         .padding(.vertical, 4)
                 }
