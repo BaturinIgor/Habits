@@ -86,6 +86,7 @@
 "Cancel" = "Batal";
 "Cat" = "Kucing";
 "Chain reaction" = "Reaksi berantai";
+"Changes sync through iCloud with everyone in the group." = "Perubahan disinkronkan lewat iCloud dengan semua anggota grup.";
 "Check off 10 habits after 10 pm" = "Centang 10 kebiasaan setelah pukul 22.00";
 "Check off 10 habits before 8 am" = "Centang 10 kebiasaan sebelum pukul 08.00";
 "Check off 30 habits on weekends" = "Centang 30 kebiasaan di akhir pekan";
@@ -120,6 +121,7 @@
 "Copy address" = "Salin alamat";
 "Copy message" = "Salin pesan";
 "Copy message and address" = "Salin pesan dan alamat";
+"Couldn't create an invitation link. Try again later." = "Tidak bisa membuat tautan undangan. Coba lagi nanti.";
 "Couldn't read the file" = "Tidak dapat membaca file";
 "Couldn't send the message" = "Pesan tidak dapat dikirim";
 "Count glasses of water, pages or minutes toward a goal." = "Hitung gelas air, halaman, atau menit menuju target.";
@@ -190,6 +192,8 @@
 "Extra freeze" = "Pembekuan tambahan";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Pembekuan tambahan bulan ini: %lld/%lld. Avatar dan latar dengan percikan ada di profilmu.";
 "Family" = "Keluarga";
+"Family groups work in the App Store version of ZenHab." = "Grup keluarga berfungsi di versi ZenHab dari App Store.";
+"Family members will lose this group. The habits stay with you." = "Keluarga akan kehilangan grup ini. Kebiasaannya tetap ada di Anda.";
 "Feed" = "Beri makan";
 "Feed pet" = "Beri makan hewan";
 "Feed your pet" = "Beri makan hewanmu";
@@ -257,6 +261,7 @@
 "Include technical info" = "Sertakan info teknis";
 "Intermediate" = "Menengah";
 "Interval" = "Jeda";
+"Invite family" = "Undang keluarga";
 "Iron will" = "Tekad baja";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "Harganya %lld percikan, kamu punya %lld. Centang kebiasaan untuk mendapat lebih banyak.";
 "It costs %lld sparks. You have %lld." = "Harganya %lld percikan. Kamu punya %lld.";
@@ -264,6 +269,7 @@
 "It hatches from an egg and grows with every habit you check off. Feed it with sparks and don't leave it alone for long." = "Ia menetas dari telur dan tumbuh setiap kali kamu mencentang kebiasaan. Beri makan dengan percikan dan jangan tinggalkan terlalu lama.";
 "Its check-in history will be deleted too." = "Riwayat centangnya juga akan dihapus.";
 "Its check-in history will be deleted too. To keep the history, archive the habit instead." = "Riwayat centangnya juga akan dihapus. Untuk menyimpan riwayat, arsipkan kebiasaan ini.";
+"Join my group in ZenHab" = "Gabung ke grup saya di ZenHab";
 "Keep a 100-day streak" = "Jaga rentetan 100 hari";
 "Keep a 14-day streak" = "Jaga rentetan 14 hari";
 "Keep a 200-day streak" = "Jaga rentetan 200 hari";
@@ -284,6 +290,8 @@
 "Learn words" = "Belajar kata";
 "Learned: %lld of %lld" = "Dipelajari: %lld dari %lld";
 "Learning" = "Belajar";
+"Leave group" = "Keluar dari grup";
+"Leave group?" = "Keluar dari grup?";
 "Left for today: %@." = "Tersisa hari ini: %@.";
 "Legend" = "Legenda";
 "Less" = "Sedikit";
@@ -333,6 +341,7 @@
 "Night owl" = "Burung hantu malam";
 "No access to app data" = "Tidak ada akses ke data aplikasi";
 "No alcohol" = "Tanpa alkohol";
+"No connection to iCloud. Changes will sync later." = "Tidak ada koneksi ke iCloud. Perubahan akan disinkronkan nanti.";
 "No fast food" = "Tanpa makanan cepat saji";
 "No group" = "Tanpa grup";
 "No habits" = "Tidak ada kebiasaan";
@@ -452,10 +461,13 @@
 "Send the message" = "Kirim pesan";
 "Set up Mail on this iPhone or send your message to %@." = "Atur Mail di iPhone ini atau kirim pesanmu ke %@.";
 "Settings" = "Pengaturan";
+"Share with family" = "Bagikan dengan keluarga";
 "Shared data" = "Data bersama";
+"Shared with you" = "Dibagikan dengan Anda";
 "Show all habits or only one group." = "Semua kebiasaan atau hanya satu grup.";
 "Show introduction" = "Tampilkan pengenalan";
 "Shows how many reminders came since you last opened the app." = "Menampilkan berapa pengingat yang masuk sejak terakhir kali kamu membuka aplikasi.";
+"Sign in to iCloud in Settings to share groups with your family." = "Masuk ke iCloud di Pengaturan untuk berbagi grup dengan keluarga.";
 "Simple gestures" = "Gerakan sederhana";
 "Skin care" = "Perawatan kulit";
 "Skip" = "Lewati";
@@ -479,6 +491,8 @@
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Langkah untuk mengulang masalah sangat membantu. Kamu bisa melampirkan tangkapan layar di email.";
 "Still learning" = "Masih belajar";
 "Stop" = "Berhenti";
+"Stop sharing" = "Berhenti berbagi";
+"Stop sharing?" = "Berhenti berbagi?";
 "Streaks" = "Rentetan";
 "Stretch" = "Peregangan";
 "Study for 30 minutes" = "Belajar 30 menit";
@@ -503,11 +517,14 @@
 "Thank you!" = "Terima kasih!";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "Versi gratis sudah mencapai batas kebiasaan. Buka ZenHab untuk mendapatkan Pro.";
 "The free version has up to 5 active habits." = "Versi gratis memiliki hingga 5 kebiasaan aktif.";
+"The group wasn't found." = "Grup tidak ditemukan.";
+"The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "Kebiasaan grup dan centangnya dibagikan lewat iCloud. Siapa pun dengan tautan undangan bisa bergabung dan mencentang. Setiap orang mendapat pengingatnya sendiri.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Versi minimum dihitung selesai dan menjaga rentetan. Kebiasaan berantai mengingatkanmu tepat setelah kamu mencentang yang sebelumnya.";
 "The new language will apply after you close the app and open it again." = "Bahasa baru akan berlaku setelah kamu menutup dan membuka lagi aplikasi.";
 "The purchase could not be verified." = "Pembelian tidak dapat diverifikasi.";
 "The widget will update after unlocking." = "Widget akan diperbarui setelah kunci dibuka.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "Belum ada pembelian: sakelar ini menyalakan fitur Pro untuk pengujian.";
+"This group and its habits will be removed from this iPhone." = "Grup ini dan kebiasaannya akan dihapus dari iPhone ini.";
 "Tidy up for 10 minutes" = "Beres-beres 10 menit";
 "Time" = "Jam";
 "Time for your habit" = "Waktunya kebiasaanmu";
@@ -583,6 +600,7 @@
 "Your photo" = "Fotomu";
 "from %@" = "sejak %@";
 "glasses" = "gelas";
+"iCloud storage is full." = "Penyimpanan iCloud penuh.";
 "iPhone permission" = "Izin iPhone";
 "of %lld" = "dari %lld";
 "times" = "kali";

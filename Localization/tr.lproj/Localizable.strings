@@ -86,6 +86,7 @@
 "Cancel" = "Vazgeç";
 "Cat" = "Kedi";
 "Chain reaction" = "Zincirleme tepki";
+"Changes sync through iCloud with everyone in the group." = "Değişiklikler iCloud üzerinden gruptaki herkesle eşitlenir.";
 "Check off 10 habits after 10 pm" = "Saat 22'den sonra 10 alışkanlık işaretle";
 "Check off 10 habits before 8 am" = "Saat 8'den önce 10 alışkanlık işaretle";
 "Check off 30 habits on weekends" = "Hafta sonları 30 alışkanlık işaretle";
@@ -120,6 +121,7 @@
 "Copy address" = "Adresi kopyala";
 "Copy message" = "Mesajı kopyala";
 "Copy message and address" = "Mesajı ve adresi kopyala";
+"Couldn't create an invitation link. Try again later." = "Davet bağlantısı oluşturulamadı. Daha sonra tekrar deneyin.";
 "Couldn't read the file" = "Dosya okunamadı";
 "Couldn't send the message" = "Mesaj gönderilemedi";
 "Count glasses of water, pages or minutes toward a goal." = "Bir hedefe doğru bardak, sayfa veya dakika say.";
@@ -190,6 +192,8 @@
 "Extra freeze" = "Ek dondurma";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Bu ayki ek dondurmalar: %lld/%lld. Kıvılcımla alınan avatar ve arka planlar profilinde.";
 "Family" = "Aile";
+"Family groups work in the App Store version of ZenHab." = "Aile grupları ZenHab'ın App Store sürümünde çalışır.";
+"Family members will lose this group. The habits stay with you." = "Aileniz bu grubu kaybeder. Alışkanlıklar sizde kalır.";
 "Feed" = "Besle";
 "Feed pet" = "Evcil hayvanı besle";
 "Feed your pet" = "Evcil hayvanını besle";
@@ -257,6 +261,7 @@
 "Include technical info" = "Teknik bilgileri ekle";
 "Intermediate" = "Orta";
 "Interval" = "Aralık";
+"Invite family" = "Aileyi davet et";
 "Iron will" = "Demir irade";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "Fiyatı %lld kıvılcım, sende %lld var. Daha fazla kazanmak için alışkanlık işaretle.";
 "It costs %lld sparks. You have %lld." = "Fiyatı %lld kıvılcım. Sende %lld var.";
@@ -264,6 +269,7 @@
 "It hatches from an egg and grows with every habit you check off. Feed it with sparks and don't leave it alone for long." = "Yumurtadan çıkar ve işaretlediğin her alışkanlıkla büyür. Onu kıvılcımlarla besle ve uzun süre yalnız bırakma.";
 "Its check-in history will be deleted too." = "İşaretleme geçmişi de silinecek.";
 "Its check-in history will be deleted too. To keep the history, archive the habit instead." = "İşaretleme geçmişi de silinecek. Geçmişi korumak için alışkanlığı arşivle.";
+"Join my group in ZenHab" = "ZenHab'daki grubuma katıl";
 "Keep a 100-day streak" = "100 günlük seri yap";
 "Keep a 14-day streak" = "14 günlük seri yap";
 "Keep a 200-day streak" = "200 günlük seri yap";
@@ -284,6 +290,8 @@
 "Learn words" = "Kelime öğren";
 "Learned: %lld of %lld" = "Öğrenilen: %lld / %lld";
 "Learning" = "Öğrenme";
+"Leave group" = "Gruptan ayrıl";
+"Leave group?" = "Gruptan ayrılsın mı?";
 "Left for today: %@." = "Bugün kalan: %@.";
 "Legend" = "Efsane";
 "Less" = "Az";
@@ -333,6 +341,7 @@
 "Night owl" = "Gece kuşu";
 "No access to app data" = "Uygulama verilerine erişim yok";
 "No alcohol" = "Alkol yok";
+"No connection to iCloud. Changes will sync later." = "iCloud bağlantısı yok. Değişiklikler daha sonra eşitlenecek.";
 "No fast food" = "Fast food yok";
 "No group" = "Grup yok";
 "No habits" = "Alışkanlık yok";
@@ -452,10 +461,13 @@
 "Send the message" = "Mesajı gönder";
 "Set up Mail on this iPhone or send your message to %@." = "Bu iPhone'da Mail'i ayarla veya mesajını %@ adresine gönder.";
 "Settings" = "Ayarlar";
+"Share with family" = "Aileyle paylaş";
 "Shared data" = "Paylaşılan veriler";
+"Shared with you" = "Sizinle paylaşıldı";
 "Show all habits or only one group." = "Tüm alışkanlıklar ya da yalnızca bir grup.";
 "Show introduction" = "Tanıtımı göster";
 "Shows how many reminders came since you last opened the app." = "Uygulamayı son açışından beri kaç hatırlatma geldiğini gösterir.";
+"Sign in to iCloud in Settings to share groups with your family." = "Gruplarınızı ailenizle paylaşmak için Ayarlar'da iCloud'a giriş yapın.";
 "Simple gestures" = "Basit hareketler";
 "Skin care" = "Cilt bakımı";
 "Skip" = "Atla";
@@ -479,6 +491,8 @@
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Tekrarlama adımları çok yardımcı olur. E-postaya ekran görüntüsü ekleyebilirsin.";
 "Still learning" = "Hâlâ öğreniyorum";
 "Stop" = "Durdur";
+"Stop sharing" = "Paylaşımı durdur";
+"Stop sharing?" = "Paylaşım durdurulsun mu?";
 "Streaks" = "Seriler";
 "Stretch" = "Esneme";
 "Study for 30 minutes" = "30 dakika çalış";
@@ -503,11 +517,14 @@
 "Thank you!" = "Teşekkürler!";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "Ücretsiz sürüm alışkanlık sınırına ulaştı. Pro için ZenHab'ı açın.";
 "The free version has up to 5 active habits." = "Ücretsiz sürümde en fazla 5 etkin alışkanlık olabilir.";
+"The group wasn't found." = "Grup bulunamadı.";
+"The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "Grubun alışkanlıkları ve işaretleri iCloud ile paylaşılır. Davet bağlantısı olan herkes katılıp işaretleyebilir. Herkes kendi hatırlatmalarını alır.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Minimum sürüm yapılmış sayılır ve serini korur. Zincirli alışkanlık, öncekini işaretlediğin anda sana hatırlatılır.";
 "The new language will apply after you close the app and open it again." = "Yeni dil, uygulamayı kapatıp yeniden açtıktan sonra uygulanacak.";
 "The purchase could not be verified." = "Satın alma doğrulanamadı.";
 "The widget will update after unlocking." = "Widget kilit açıldıktan sonra güncellenecek.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "Henüz satın alma yok: bu anahtar Pro özelliklerini test için açar.";
+"This group and its habits will be removed from this iPhone." = "Bu grup ve alışkanlıkları bu iPhone'dan kaldırılacak.";
 "Tidy up for 10 minutes" = "10 dakika topla";
 "Time" = "Saat";
 "Time for your habit" = "Alışkanlık zamanı";
@@ -583,6 +600,7 @@
 "Your photo" = "Fotoğrafın";
 "from %@" = "%@ tarihinden";
 "glasses" = "bardak";
+"iCloud storage is full." = "iCloud depolama alanı dolu.";
 "iPhone permission" = "iPhone izni";
 "of %lld" = "/ %lld";
 "times" = "kez";

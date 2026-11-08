@@ -86,6 +86,7 @@
 "Cancel" = "取消";
 "Cat" = "小猫";
 "Chain reaction" = "连锁反应";
+"Changes sync through iCloud with everyone in the group." = "更改会通过 iCloud 同步给组内所有人。";
 "Check off 10 habits after 10 pm" = "在 22 点后打卡 10 次";
 "Check off 10 habits before 8 am" = "在 8 点前打卡 10 次";
 "Check off 30 habits on weekends" = "周末打卡 30 次";
@@ -120,6 +121,7 @@
 "Copy address" = "复制地址";
 "Copy message" = "复制内容";
 "Copy message and address" = "复制消息和地址";
+"Couldn't create an invitation link. Try again later." = "无法创建邀请链接，请稍后再试。";
 "Couldn't read the file" = "无法读取文件";
 "Couldn't send the message" = "无法发送消息";
 "Count glasses of water, pages or minutes toward a goal." = "记录喝水杯数、阅读页数或分钟数，直到达成目标。";
@@ -190,6 +192,8 @@
 "Extra freeze" = "额外冻结";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "本月额外冻结：%lld/%lld。可用火花购买的头像和背景在个人资料中。";
 "Family" = "家庭";
+"Family groups work in the App Store version of ZenHab." = "家庭分组仅在 App Store 版 ZenHab 中可用。";
+"Family members will lose this group. The habits stay with you." = "家人将失去这个分组，习惯会保留在你这里。";
 "Feed" = "喂食";
 "Feed pet" = "喂宠物";
 "Feed your pet" = "喂宠物";
@@ -257,6 +261,7 @@
 "Include technical info" = "附带技术信息";
 "Intermediate" = "中级";
 "Interval" = "间隔";
+"Invite family" = "邀请家人";
 "Iron will" = "钢铁意志";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "价格：✨ %lld，你有：✨ %lld。完成习惯即可获得更多。";
 "It costs %lld sparks. You have %lld." = "价格：✨ %lld。你有：✨ %lld。";
@@ -264,6 +269,7 @@
 "It hatches from an egg and grows with every habit you check off. Feed it with sparks and don't leave it alone for long." = "它从蛋里孵化，每完成一个习惯就会长大。用火花喂它，别让它孤单太久。";
 "Its check-in history will be deleted too." = "打卡记录也会被删除。";
 "Its check-in history will be deleted too. To keep the history, archive the habit instead." = "打卡记录也会被删除。如需保留记录，请改为归档。";
+"Join my group in ZenHab" = "加入我在 ZenHab 的分组";
 "Keep a 100-day streak" = "连续 100 天";
 "Keep a 14-day streak" = "保持 14 天连续";
 "Keep a 200-day streak" = "保持 200 天连续";
@@ -284,6 +290,8 @@
 "Learn words" = "学单词";
 "Learned: %lld of %lld" = "已掌握：%lld / %lld";
 "Learning" = "学习";
+"Leave group" = "退出分组";
+"Leave group?" = "退出分组？";
 "Left for today: %@." = "今天还剩：%@。";
 "Legend" = "传奇";
 "Less" = "少";
@@ -333,6 +341,7 @@
 "Night owl" = "夜猫子";
 "No access to app data" = "无法访问应用数据";
 "No alcohol" = "不喝酒";
+"No connection to iCloud. Changes will sync later." = "无法连接 iCloud，更改稍后会同步。";
 "No fast food" = "不吃快餐";
 "No group" = "未分组";
 "No habits" = "没有习惯";
@@ -452,10 +461,13 @@
 "Send the message" = "发送消息";
 "Set up Mail on this iPhone or send your message to %@." = "请在 iPhone 上设置“邮件”，或将消息发送至 %@。";
 "Settings" = "设置";
+"Share with family" = "与家人共享";
 "Shared data" = "共享数据";
+"Shared with you" = "与你共享";
 "Show all habits or only one group." = "显示全部习惯或仅一个分组。";
 "Show introduction" = "查看引导";
 "Shows how many reminders came since you last opened the app." = "显示自上次打开应用以来收到了多少条提醒。";
+"Sign in to iCloud in Settings to share groups with your family." = "请在“设置”中登录 iCloud，才能与家人共享分组。";
 "Simple gestures" = "简单手势";
 "Skin care" = "护肤";
 "Skip" = "跳过";
@@ -479,6 +491,8 @@
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "复现步骤非常有帮助。可以在邮件中附上截图。";
 "Still learning" = "还在学";
 "Stop" = "停止";
+"Stop sharing" = "停止共享";
+"Stop sharing?" = "停止共享？";
 "Streaks" = "连续";
 "Stretch" = "拉伸";
 "Study for 30 minutes" = "学习 30 分钟";
@@ -503,11 +517,14 @@
 "Thank you!" = "谢谢！";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "免费版的习惯数量已达上限。打开 ZenHab 获取 Pro。";
 "The free version has up to 5 active habits." = "免费版最多 5 个进行中的习惯。";
+"The group wasn't found." = "未找到该分组。";
+"The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "分组的习惯和打卡通过 iCloud 共享。拥有邀请链接的人都可以加入并打卡。每个人都会收到自己的提醒。";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "最低版本也算完成，并保持连续记录。链中的习惯会在你完成上一个后立即提醒。";
 "The new language will apply after you close the app and open it again." = "关闭并重新打开应用后，新语言才会生效。";
 "The purchase could not be verified." = "无法验证此次购买。";
 "The widget will update after unlocking." = "解锁后小组件会更新。";
 "There are no purchases yet: this switch turns Pro features on for testing." = "暂无购买功能：此开关用于测试 Pro 功能。";
+"This group and its habits will be removed from this iPhone." = "该分组及其习惯将从此 iPhone 移除。";
 "Tidy up for 10 minutes" = "整理 10 分钟";
 "Time" = "时间";
 "Time for your habit" = "该完成习惯了";
@@ -583,6 +600,7 @@
 "Your photo" = "自己的照片";
 "from %@" = "%@起";
 "glasses" = "杯";
+"iCloud storage is full." = "iCloud 储存空间已满。";
 "iPhone permission" = "iPhone 权限";
 "of %lld" = "共 %lld";
 "times" = "次";

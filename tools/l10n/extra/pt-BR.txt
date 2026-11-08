@@ -587,3 +587,21 @@ What's left today||O que falta hoje
 Which habit?||Qual hábito?
 Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group.||O progresso do dia e a marcação rápida na tela de início. Toque e segure o widget para escolher um grupo.
 Show all habits or only one group.||Todos os hábitos ou só um grupo.
+Changes sync through iCloud with everyone in the group.||As alterações são sincronizadas pelo iCloud com todos do grupo.
+Family groups work in the App Store version of ZenHab.||Grupos familiares funcionam na versão do ZenHab da App Store.
+Family members will lose this group. The habits stay with you.||Sua família perderá este grupo. Os hábitos ficam com você.
+Invite family||Convidar a família
+Join my group in ZenHab||Entre no meu grupo no ZenHab
+Leave group||Sair do grupo
+Leave group?||Sair do grupo?
+Share with family||Compartilhar com a família
+Shared with you||Compartilhado com você
+Stop sharing||Parar de compartilhar
+Stop sharing?||Parar de compartilhar?
+The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders.||Os hábitos e marcações do grupo são compartilhados pelo iCloud. Quem tiver o link de convite pode entrar e marcar hábitos. Cada um recebe seus lembretes.
+This group and its habits will be removed from this iPhone.||O grupo e seus hábitos serão removidos deste iPhone.
+The group wasn't found.||Grupo não encontrado.
+Sign in to iCloud in Settings to share groups with your family.||Entre no iCloud em Ajustes para compartilhar grupos com a família.
+Couldn't create an invitation link. Try again later.||Não foi possível criar o link de convite. Tente mais tarde.
+No connection to iCloud. Changes will sync later.||Sem conexão com o iCloud. As alterações serão sincronizadas depois.
+iCloud storage is full.||O armazenamento do iCloud está cheio.

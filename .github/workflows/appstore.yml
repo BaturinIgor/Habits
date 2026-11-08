@@ -60,6 +60,9 @@ jobs:
           brew install xcodegen
           xcodebuild -version
 
+      - name: Enable family groups (iCloud)
+        run: tools/appstore/enable_family.sh
+
       - name: Apply App Store identifiers
         run: tools/appstore/set_bundle_id.sh "$APP_ID"
 
@@ -167,6 +170,7 @@ jobs:
               <key>$APP_ID</key><string>$APP_PROFILE_NAME</string>
               <key>$APP_ID.widget</key><string>$WIDGET_PROFILE_NAME</string>
             </dict>
+            <key>iCloudContainerEnvironment</key><string>Production</string>
             <key>uploadSymbols</key><true/>
             <key>manageAppVersionAndBuildNumber</key><false/>
           </dict>

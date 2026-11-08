@@ -86,6 +86,7 @@
 "Cancel" = "रद्द करें";
 "Cat" = "बिल्ली";
 "Chain reaction" = "चेन रिएक्शन";
+"Changes sync through iCloud with everyone in the group." = "बदलाव iCloud के ज़रिए समूह के सभी लोगों के साथ सिंक होते हैं।";
 "Check off 10 habits after 10 pm" = "रात 10 बजे के बाद 10 आदतें पूरी करें";
 "Check off 10 habits before 8 am" = "सुबह 8 बजे से पहले 10 आदतें पूरी करें";
 "Check off 30 habits on weekends" = "वीकेंड पर 30 आदतें पूरी करें";
@@ -120,6 +121,7 @@
 "Copy address" = "पता कॉपी करें";
 "Copy message" = "संदेश कॉपी करें";
 "Copy message and address" = "संदेश और पता कॉपी करें";
+"Couldn't create an invitation link. Try again later." = "आमंत्रण लिंक नहीं बन सका। बाद में फिर कोशिश करें।";
 "Couldn't read the file" = "फ़ाइल पढ़ी नहीं जा सकी";
 "Couldn't send the message" = "संदेश भेजा नहीं जा सका";
 "Count glasses of water, pages or minutes toward a goal." = "पानी के गिलास, पन्ने या मिनट लक्ष्य तक गिनें।";
@@ -190,6 +192,8 @@
 "Extra freeze" = "अतिरिक्त फ़्रीज़";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "इस महीने अतिरिक्त फ़्रीज़: %lld/%lld। चिंगारियों वाले अवतार और बैकग्राउंड प्रोफ़ाइल में हैं।";
 "Family" = "परिवार";
+"Family groups work in the App Store version of ZenHab." = "फ़ैमिली समूह ZenHab के App Store संस्करण में काम करते हैं।";
+"Family members will lose this group. The habits stay with you." = "परिवार के लोगों से यह समूह हट जाएगा। आदतें आपके पास रहेंगी।";
 "Feed" = "खिलाएँ";
 "Feed pet" = "पालतू को खिलाएँ";
 "Feed your pet" = "पालतू को खिलाएँ";
@@ -257,6 +261,7 @@
 "Include technical info" = "तकनीकी जानकारी जोड़ें";
 "Intermediate" = "मध्यम";
 "Interval" = "अंतराल";
+"Invite family" = "परिवार को आमंत्रित करें";
 "Iron will" = "फ़ौलादी इरादा";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "कीमत: ✨ %lld, आपके पास: ✨ %lld। और कमाने के लिए आदतें पूरी करें।";
 "It costs %lld sparks. You have %lld." = "कीमत: ✨ %lld। आपके पास: ✨ %lld।";
@@ -264,6 +269,7 @@
 "It hatches from an egg and grows with every habit you check off. Feed it with sparks and don't leave it alone for long." = "यह अंडे से निकलता है और हर पूरी आदत के साथ बढ़ता है। इसे चिंगारियों से खिलाएँ और ज़्यादा देर अकेला न छोड़ें।";
 "Its check-in history will be deleted too." = "इसका इतिहास भी हट जाएगा।";
 "Its check-in history will be deleted too. To keep the history, archive the habit instead." = "इसका इतिहास भी हट जाएगा। इतिहास रखने के लिए आदत को संग्रहित करें।";
+"Join my group in ZenHab" = "ZenHab में मेरे समूह से जुड़ें";
 "Keep a 100-day streak" = "100 दिन लगातार";
 "Keep a 14-day streak" = "14 दिन की लगातार श्रृंखला रखें";
 "Keep a 200-day streak" = "200 दिन की लगातार श्रृंखला रखें";
@@ -284,6 +290,8 @@
 "Learn words" = "शब्द सीखें";
 "Learned: %lld of %lld" = "सीखे गए: %lld में से %lld";
 "Learning" = "सीखना";
+"Leave group" = "समूह छोड़ें";
+"Leave group?" = "समूह छोड़ें?";
 "Left for today: %@." = "आज के लिए बाकी: %@।";
 "Legend" = "दिग्गज";
 "Less" = "कम";
@@ -333,6 +341,7 @@
 "Night owl" = "रात का उल्लू";
 "No access to app data" = "ऐप डेटा तक पहुँच नहीं";
 "No alcohol" = "शराब नहीं";
+"No connection to iCloud. Changes will sync later." = "iCloud से कनेक्शन नहीं है। बदलाव बाद में सिंक होंगे।";
 "No fast food" = "फ़ास्ट फ़ूड नहीं";
 "No group" = "बिना समूह";
 "No habits" = "कोई आदत नहीं";
@@ -452,10 +461,13 @@
 "Send the message" = "संदेश भेजें";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone पर मेल सेट करें या अपना संदेश %@ पर भेजें।";
 "Settings" = "सेटिंग्स";
+"Share with family" = "परिवार के साथ साझा करें";
 "Shared data" = "साझा डेटा";
+"Shared with you" = "आपके साथ साझा";
 "Show all habits or only one group." = "सभी आदतें या केवल एक समूह।";
 "Show introduction" = "परिचय दिखाएँ";
 "Shows how many reminders came since you last opened the app." = "दिखाता है कि पिछली बार ऐप खोलने के बाद कितने रिमाइंडर आए।";
+"Sign in to iCloud in Settings to share groups with your family." = "परिवार के साथ समूह साझा करने के लिए सेटिंग्स में iCloud में साइन इन करें।";
 "Simple gestures" = "आसान इशारे";
 "Skin care" = "त्वचा की देखभाल";
 "Skip" = "छोड़ें";
@@ -479,6 +491,8 @@
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "दोहराने के चरण बहुत मदद करते हैं। ईमेल में स्क्रीनशॉट जोड़ सकते हैं।";
 "Still learning" = "अभी सीख रहा हूँ";
 "Stop" = "रोकें";
+"Stop sharing" = "साझा करना बंद करें";
+"Stop sharing?" = "साझा करना बंद करें?";
 "Streaks" = "श्रृंखलाएँ";
 "Stretch" = "स्ट्रेचिंग";
 "Study for 30 minutes" = "30 मिनट पढ़ाई";
@@ -503,11 +517,14 @@
 "Thank you!" = "धन्यवाद!";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "मुफ़्त संस्करण में आदतों की सीमा पूरी हो गई। Pro के लिए ZenHab खोलें।";
 "The free version has up to 5 active habits." = "मुफ़्त संस्करण में 5 सक्रिय आदतें तक।";
+"The group wasn't found." = "समूह नहीं मिला।";
+"The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "समूह की आदतें और चेक-इन iCloud से साझा होते हैं। आमंत्रण लिंक वाला कोई भी जुड़कर आदतें मार्क कर सकता है। सबको अपने रिमाइंडर मिलते हैं।";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "न्यूनतम रूप भी पूरा माना जाता है और लगातार गिनती बचाता है। जुड़ी आदत पिछली पूरी होते ही याद दिलाती है।";
 "The new language will apply after you close the app and open it again." = "ऐप बंद करके फिर खोलने पर नई भाषा लागू होगी।";
 "The purchase could not be verified." = "खरीद की पुष्टि नहीं हो सकी।";
 "The widget will update after unlocking." = "अनलॉक करने के बाद विजेट अपडेट होगा।";
 "There are no purchases yet: this switch turns Pro features on for testing." = "अभी खरीदारी नहीं है: यह स्विच टेस्ट के लिए Pro सुविधाएँ चालू करता है।";
+"This group and its habits will be removed from this iPhone." = "यह समूह और इसकी आदतें इस iPhone से हटा दी जाएँगी।";
 "Tidy up for 10 minutes" = "10 मिनट सफ़ाई";
 "Time" = "समय";
 "Time for your habit" = "आपकी आदत का समय";
@@ -583,6 +600,7 @@
 "Your photo" = "आपकी फ़ोटो";
 "from %@" = "%@ से";
 "glasses" = "गिलास";
+"iCloud storage is full." = "iCloud स्टोरेज भर गया है।";
 "iPhone permission" = "iPhone अनुमति";
 "of %lld" = "%lld में से";
 "times" = "बार";

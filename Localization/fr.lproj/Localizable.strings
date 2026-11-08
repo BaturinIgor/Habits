@@ -86,6 +86,7 @@
 "Cancel" = "Annuler";
 "Cat" = "Chat";
 "Chain reaction" = "Réaction en chaîne";
+"Changes sync through iCloud with everyone in the group." = "Les modifications se synchronisent via iCloud avec tout le groupe.";
 "Check off 10 habits after 10 pm" = "Valide 10 habitudes après 22 h";
 "Check off 10 habits before 8 am" = "Valide 10 habitudes avant 8 h";
 "Check off 30 habits on weekends" = "Valide 30 habitudes le week-end";
@@ -120,6 +121,7 @@
 "Copy address" = "Copier l'adresse";
 "Copy message" = "Copier le message";
 "Copy message and address" = "Copier le message et l'adresse";
+"Couldn't create an invitation link. Try again later." = "Impossible de créer le lien d'invitation. Réessaie plus tard.";
 "Couldn't read the file" = "Impossible de lire le fichier";
 "Couldn't send the message" = "Impossible d'envoyer le message";
 "Count glasses of water, pages or minutes toward a goal." = "Compte les verres d'eau, les pages ou les minutes jusqu'à l'objectif.";
@@ -190,6 +192,8 @@
 "Extra freeze" = "Gel supplémentaire";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Gels supplémentaires ce mois-ci : %lld/%lld. Avatars et fonds contre des étincelles dans ton profil.";
 "Family" = "Famille";
+"Family groups work in the App Store version of ZenHab." = "Les groupes famille fonctionnent dans la version App Store de ZenHab.";
+"Family members will lose this group. The habits stay with you." = "Ta famille perdra ce groupe. Les habitudes restent chez toi.";
 "Feed" = "Nourrir";
 "Feed pet" = "Nourrir le compagnon";
 "Feed your pet" = "Nourrir ton compagnon";
@@ -257,6 +261,7 @@
 "Include technical info" = "Inclure les infos techniques";
 "Intermediate" = "Intermédiaire";
 "Interval" = "Intervalle";
+"Invite family" = "Inviter la famille";
 "Iron will" = "Volonté de fer";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "Prix : ✨ %lld, tu as : ✨ %lld. Valide des habitudes pour en gagner plus.";
 "It costs %lld sparks. You have %lld." = "Prix : ✨ %lld. Tu as : ✨ %lld.";
@@ -264,6 +269,7 @@
 "It hatches from an egg and grows with every habit you check off. Feed it with sparks and don't leave it alone for long." = "Il éclot d'un œuf et grandit à chaque habitude validée. Nourris-le avec des étincelles et ne le laisse pas seul trop longtemps.";
 "Its check-in history will be deleted too." = "Son historique sera aussi supprimé.";
 "Its check-in history will be deleted too. To keep the history, archive the habit instead." = "Son historique sera aussi supprimé. Pour le garder, archive plutôt l'habitude.";
+"Join my group in ZenHab" = "Rejoins mon groupe dans ZenHab";
 "Keep a 100-day streak" = "Tiens une série de 100 jours";
 "Keep a 14-day streak" = "Tiens une série de 14 jours";
 "Keep a 200-day streak" = "Tiens une série de 200 jours";
@@ -284,6 +290,8 @@
 "Learn words" = "Apprendre des mots";
 "Learned: %lld of %lld" = "Appris : %lld sur %lld";
 "Learning" = "Apprentissage";
+"Leave group" = "Quitter le groupe";
+"Leave group?" = "Quitter le groupe ?";
 "Left for today: %@." = "Reste pour aujourd'hui : %@.";
 "Legend" = "Légende";
 "Less" = "Moins";
@@ -333,6 +341,7 @@
 "Night owl" = "Oiseau de nuit";
 "No access to app data" = "Pas d'accès aux données";
 "No alcohol" = "Pas d'alcool";
+"No connection to iCloud. Changes will sync later." = "Pas de connexion à iCloud. Les modifications se synchroniseront plus tard.";
 "No fast food" = "Pas de fast-food";
 "No group" = "Sans groupe";
 "No habits" = "Aucune habitude";
@@ -452,10 +461,13 @@
 "Send the message" = "Envoyer le message";
 "Set up Mail on this iPhone or send your message to %@." = "Configure Mail sur l'iPhone ou envoie ton message à %@.";
 "Settings" = "Réglages";
+"Share with family" = "Partager avec la famille";
 "Shared data" = "Données partagées";
+"Shared with you" = "Partagé avec toi";
 "Show all habits or only one group." = "Toutes les habitudes ou un seul groupe.";
 "Show introduction" = "Revoir l'introduction";
 "Shows how many reminders came since you last opened the app." = "Indique combien de rappels sont arrivés depuis la dernière ouverture de l'app.";
+"Sign in to iCloud in Settings to share groups with your family." = "Connecte-toi à iCloud dans Réglages pour partager des groupes avec ta famille.";
 "Simple gestures" = "Gestes simples";
 "Skin care" = "Soin de la peau";
 "Skip" = "Passer";
@@ -479,6 +491,8 @@
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Les étapes pour reproduire aident beaucoup. Tu peux joindre une capture dans l'e-mail.";
 "Still learning" = "J'apprends encore";
 "Stop" = "Arrêter";
+"Stop sharing" = "Arrêter le partage";
+"Stop sharing?" = "Arrêter le partage ?";
 "Streaks" = "Séries";
 "Stretch" = "Étirements";
 "Study for 30 minutes" = "Étudier 30 minutes";
@@ -503,11 +517,14 @@
 "Thank you!" = "Merci !";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "La version gratuite a atteint sa limite d'habitudes. Ouvre ZenHab pour passer à Pro.";
 "The free version has up to 5 active habits." = "La version gratuite permet jusqu'à 5 habitudes actives.";
+"The group wasn't found." = "Groupe introuvable.";
+"The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "Les habitudes du groupe et les coches sont partagées via iCloud. Toute personne ayant le lien d'invitation peut rejoindre et cocher. Chacun reçoit ses rappels.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "La version minimale compte comme faite et garde ta série. Une habitude enchaînée te le rappelle juste après la précédente.";
 "The new language will apply after you close the app and open it again." = "La nouvelle langue s'appliquera quand tu fermeras et rouvriras l'app.";
 "The purchase could not be verified." = "L'achat n'a pas pu être vérifié.";
 "The widget will update after unlocking." = "Le widget se mettra à jour après le déverrouillage.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "Pas encore d'achats : cet interrupteur active les fonctions Pro pour les tester.";
+"This group and its habits will be removed from this iPhone." = "Le groupe et ses habitudes seront supprimés de cet iPhone.";
 "Tidy up for 10 minutes" = "Ranger 10 minutes";
 "Time" = "Heure";
 "Time for your habit" = "C'est l'heure de ton habitude";
@@ -583,6 +600,7 @@
 "Your photo" = "Ta photo";
 "from %@" = "à partir du %@";
 "glasses" = "verres";
+"iCloud storage is full." = "Le stockage iCloud est plein.";
 "iPhone permission" = "Autorisation iPhone";
 "of %lld" = "sur %lld";
 "times" = "fois";

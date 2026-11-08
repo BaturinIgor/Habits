@@ -587,3 +587,21 @@ What's left today||Bugün ne kaldı
 Which habit?||Hangi alışkanlık?
 Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group.||Ana ekrandan günün ilerlemesi ve hızlı işaretleme. Grup seçmek için widget'a basılı tutun.
 Show all habits or only one group.||Tüm alışkanlıklar ya da yalnızca bir grup.
+Changes sync through iCloud with everyone in the group.||Değişiklikler iCloud üzerinden gruptaki herkesle eşitlenir.
+Family groups work in the App Store version of ZenHab.||Aile grupları ZenHab'ın App Store sürümünde çalışır.
+Family members will lose this group. The habits stay with you.||Aileniz bu grubu kaybeder. Alışkanlıklar sizde kalır.
+Invite family||Aileyi davet et
+Join my group in ZenHab||ZenHab'daki grubuma katıl
+Leave group||Gruptan ayrıl
+Leave group?||Gruptan ayrılsın mı?
+Share with family||Aileyle paylaş
+Shared with you||Sizinle paylaşıldı
+Stop sharing||Paylaşımı durdur
+Stop sharing?||Paylaşım durdurulsun mu?
+The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders.||Grubun alışkanlıkları ve işaretleri iCloud ile paylaşılır. Davet bağlantısı olan herkes katılıp işaretleyebilir. Herkes kendi hatırlatmalarını alır.
+This group and its habits will be removed from this iPhone.||Bu grup ve alışkanlıkları bu iPhone'dan kaldırılacak.
+The group wasn't found.||Grup bulunamadı.
+Sign in to iCloud in Settings to share groups with your family.||Gruplarınızı ailenizle paylaşmak için Ayarlar'da iCloud'a giriş yapın.
+Couldn't create an invitation link. Try again later.||Davet bağlantısı oluşturulamadı. Daha sonra tekrar deneyin.
+No connection to iCloud. Changes will sync later.||iCloud bağlantısı yok. Değişiklikler daha sonra eşitlenecek.
+iCloud storage is full.||iCloud depolama alanı dolu.

@@ -301,6 +301,18 @@ struct HabitGroup: Identifiable, Hashable, Codable {
     var id: UUID = UUID()
     var name: String
     var sortOrder: Int = 0
+    /// Группа общая с семьёй через iCloud.
+    var family: FamilyShare? = nil
+}
+
+/// Где в iCloud лежит общая группа.
+struct FamilyShare: Codable, Hashable {
+    var zoneName: String
+    var ownerName: String
+    /// Группу создал этот человек (у остальных она в общей базе).
+    var isOwner: Bool
+    /// Ссылка-приглашение.
+    var url: URL?
 }
 
 // MARK: - Отметка

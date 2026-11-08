@@ -86,6 +86,7 @@
 "Cancel" = "Отмена";
 "Cat" = "Котик";
 "Chain reaction" = "Цепная реакция";
+"Changes sync through iCloud with everyone in the group." = "Изменения синхронизируются через iCloud со всеми в группе.";
 "Check off 10 habits after 10 pm" = "Отметь 10 привычек после 22:00";
 "Check off 10 habits before 8 am" = "Отметь 10 привычек до 8:00";
 "Check off 30 habits on weekends" = "Отметь 30 привычек в выходные";
@@ -120,6 +121,7 @@
 "Copy address" = "Скопировать адрес";
 "Copy message" = "Скопировать сообщение";
 "Copy message and address" = "Скопировать сообщение и адрес";
+"Couldn't create an invitation link. Try again later." = "Не удалось создать ссылку-приглашение. Попробуй позже.";
 "Couldn't read the file" = "Не удалось прочитать файл";
 "Couldn't send the message" = "Не удалось отправить сообщение";
 "Count glasses of water, pages or minutes toward a goal." = "Считай стаканы воды, страницы или минуты до цели.";
@@ -190,6 +192,8 @@
 "Extra freeze" = "Дополнительная заморозка";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Дополнительных заморозок в этом месяце: %lld/%lld. Аватарки и фоны за искры есть в профиле.";
 "Family" = "Семья";
+"Family groups work in the App Store version of ZenHab." = "Семейные группы работают в версии ZenHab из App Store.";
+"Family members will lose this group. The habits stay with you." = "У родных эта группа пропадёт. Привычки останутся у тебя.";
 "Feed" = "Покормить";
 "Feed pet" = "Покормить питомца";
 "Feed your pet" = "Покормить питомца";
@@ -257,6 +261,7 @@
 "Include technical info" = "Добавить техническую информацию";
 "Intermediate" = "Средний";
 "Interval" = "Интервал";
+"Invite family" = "Пригласить родных";
 "Iron will" = "Железная воля";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "Цена: ✨ %lld, у тебя: ✨ %lld. Отмечай привычки, чтобы заработать ещё.";
 "It costs %lld sparks. You have %lld." = "Цена: ✨ %lld. У тебя: ✨ %lld.";
@@ -264,6 +269,7 @@
 "It hatches from an egg and grows with every habit you check off. Feed it with sparks and don't leave it alone for long." = "Он вылупится из яйца и будет расти с каждой отмеченной привычкой. Корми его искрами и не оставляй надолго одного.";
 "Its check-in history will be deleted too." = "История отметок тоже будет удалена.";
 "Its check-in history will be deleted too. To keep the history, archive the habit instead." = "История отметок тоже будет удалена. Если хочешь сохранить историю, перемести привычку в архив.";
+"Join my group in ZenHab" = "Присоединяйся к моей группе в ZenHab";
 "Keep a 100-day streak" = "Держи серию 100 дней";
 "Keep a 14-day streak" = "Продержи серию 14 дней";
 "Keep a 200-day streak" = "Продержи серию 200 дней";
@@ -284,6 +290,8 @@
 "Learn words" = "Учить слова";
 "Learned: %lld of %lld" = "Выучено: %lld из %lld";
 "Learning" = "Обучение";
+"Leave group" = "Выйти из группы";
+"Leave group?" = "Выйти из группы?";
 "Left for today: %@." = "На сегодня осталось: %@.";
 "Legend" = "Легенда";
 "Less" = "Меньше";
@@ -333,6 +341,7 @@
 "Night owl" = "Сова";
 "No access to app data" = "Нет доступа к данным";
 "No alcohol" = "Без алкоголя";
+"No connection to iCloud. Changes will sync later." = "Нет связи с iCloud. Изменения синхронизируются позже.";
 "No fast food" = "Без фастфуда";
 "No group" = "Без группы";
 "No habits" = "Привычек нет";
@@ -452,10 +461,13 @@
 "Send the message" = "Отправка сообщения";
 "Set up Mail on this iPhone or send your message to %@." = "Настрой Почту на iPhone или отправь сообщение на %@.";
 "Settings" = "Настройки";
+"Share with family" = "Поделиться с семьёй";
 "Shared data" = "Общие данные";
+"Shared with you" = "С тобой поделились";
 "Show all habits or only one group." = "Все привычки или только одна группа.";
 "Show introduction" = "Показать знакомство";
 "Shows how many reminders came since you last opened the app." = "Показывает, сколько напоминаний пришло с последнего открытия приложения.";
+"Sign in to iCloud in Settings to share groups with your family." = "Войди в iCloud в Настройках, чтобы делиться группами с семьёй.";
 "Simple gestures" = "Простые жесты";
 "Skin care" = "Уход за кожей";
 "Skip" = "Пропустить";
@@ -479,6 +491,8 @@
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Шаги, как повторить ошибку, очень помогают. Скриншот можно приложить в письме.";
 "Still learning" = "Ещё учу";
 "Stop" = "Стоп";
+"Stop sharing" = "Перестать делиться";
+"Stop sharing?" = "Перестать делиться?";
 "Streaks" = "Серии";
 "Stretch" = "Растяжка";
 "Study for 30 minutes" = "Заниматься 30 минут";
@@ -503,11 +517,14 @@
 "Thank you!" = "Спасибо!";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "В бесплатной версии больше нет места для привычек. Открой ZenHab, чтобы подключить Pro.";
 "The free version has up to 5 active habits." = "В бесплатной версии до 5 активных привычек.";
+"The group wasn't found." = "Группа не найдена.";
+"The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "Привычки группы и отметки общие через iCloud. Вступить может любой, у кого есть ссылка-приглашение, и отмечать привычки. Напоминания приходят каждому.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Минимальная версия засчитывается как выполнение и сохраняет серию. Привычка в связке напомнит о себе сразу после отметки предыдущей.";
 "The new language will apply after you close the app and open it again." = "Новый язык включится, когда ты закроешь приложение и откроешь его снова.";
 "The purchase could not be verified." = "Не удалось проверить покупку.";
 "The widget will update after unlocking." = "Виджет обновится после разблокировки.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "Покупок пока нет: этот переключатель включает функции Pro для проверки.";
+"This group and its habits will be removed from this iPhone." = "Группа и её привычки будут удалены с этого iPhone.";
 "Tidy up for 10 minutes" = "Убраться 10 минут";
 "Time" = "Время";
 "Time for your habit" = "Пора выполнить привычку";
@@ -583,6 +600,7 @@
 "Your photo" = "Своё фото";
 "from %@" = "с %@";
 "glasses" = "стаканов";
+"iCloud storage is full." = "Хранилище iCloud заполнено.";
 "iPhone permission" = "Разрешение iPhone";
 "of %lld" = "из %lld";
 "times" = "раз";

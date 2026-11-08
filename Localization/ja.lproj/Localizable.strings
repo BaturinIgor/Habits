@@ -86,6 +86,7 @@
 "Cancel" = "キャンセル";
 "Cat" = "ネコ";
 "Chain reaction" = "連鎖反応";
+"Changes sync through iCloud with everyone in the group." = "変更はiCloudでグループ全員に同期されます。";
 "Check off 10 habits after 10 pm" = "22時以降に10回チェック";
 "Check off 10 habits before 8 am" = "8時前に10回チェック";
 "Check off 30 habits on weekends" = "週末に30回チェック";
@@ -120,6 +121,7 @@
 "Copy address" = "アドレスをコピー";
 "Copy message" = "メッセージをコピー";
 "Copy message and address" = "メッセージとアドレスをコピー";
+"Couldn't create an invitation link. Try again later." = "招待リンクを作成できませんでした。後でもう一度お試しください。";
 "Couldn't read the file" = "ファイルを読み込めませんでした";
 "Couldn't send the message" = "メッセージを送信できませんでした";
 "Count glasses of water, pages or minutes toward a goal." = "水の杯数やページ数、分数を目標まで数えます。";
@@ -190,6 +192,8 @@
 "Extra freeze" = "追加フリーズ";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "今月の追加フリーズ：%lld/%lld。スパークで買えるアバターと背景はプロフィールにあります。";
 "Family" = "ファミリー";
+"Family groups work in the App Store version of ZenHab." = "ファミリーグループはApp Store版のZenHabで使えます。";
+"Family members will lose this group. The habits stay with you." = "家族からこのグループが消えます。習慣はあなたの手元に残ります。";
 "Feed" = "ごはんをあげる";
 "Feed pet" = "ペットにごはん";
 "Feed your pet" = "ペットにごはん";
@@ -257,6 +261,7 @@
 "Include technical info" = "技術情報を含める";
 "Intermediate" = "中級";
 "Interval" = "間隔";
+"Invite family" = "家族を招待";
 "Iron will" = "鉄の意志";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "価格：✨ %lld、所持：✨ %lld。習慣をチェックしてもっと集めよう。";
 "It costs %lld sparks. You have %lld." = "価格：✨ %lld。所持：✨ %lld。";
@@ -264,6 +269,7 @@
 "It hatches from an egg and grows with every habit you check off. Feed it with sparks and don't leave it alone for long." = "たまごから生まれ、習慣をチェックするたびに成長します。スパークでごはんをあげて、長くひとりにしないでね。";
 "Its check-in history will be deleted too." = "記録も削除されます。";
 "Its check-in history will be deleted too. To keep the history, archive the habit instead." = "記録も削除されます。記録を残すにはアーカイブしてください。";
+"Join my group in ZenHab" = "ZenHabの私のグループに参加してね";
 "Keep a 100-day streak" = "100日連続";
 "Keep a 14-day streak" = "14日連続を達成";
 "Keep a 200-day streak" = "200日連続を達成";
@@ -284,6 +290,8 @@
 "Learn words" = "単語を学ぶ";
 "Learned: %lld of %lld" = "覚えた単語：%lld / %lld";
 "Learning" = "学び";
+"Leave group" = "グループから退出";
+"Leave group?" = "グループから退出しますか？";
 "Left for today: %@." = "今日の残り：%@。";
 "Legend" = "レジェンド";
 "Less" = "少";
@@ -333,6 +341,7 @@
 "Night owl" = "夜型";
 "No access to app data" = "アプリのデータにアクセスできません";
 "No alcohol" = "お酒を飲まない";
+"No connection to iCloud. Changes will sync later." = "iCloudに接続できません。変更は後で同期されます。";
 "No fast food" = "ファストフードなし";
 "No group" = "グループなし";
 "No habits" = "習慣なし";
@@ -452,10 +461,13 @@
 "Send the message" = "メッセージを送信";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone でメールを設定するか、%@ に送信してください。";
 "Settings" = "設定";
+"Share with family" = "家族と共有";
 "Shared data" = "共有データ";
+"Shared with you" = "あなたと共有中";
 "Show all habits or only one group." = "すべての習慣、または1つのグループだけを表示。";
 "Show introduction" = "紹介を表示";
 "Shows how many reminders came since you last opened the app." = "前回アプリを開いてから届いたリマインダーの数を表示します。";
+"Sign in to iCloud in Settings to share groups with your family." = "家族とグループを共有するには、設定でiCloudにサインインしてください。";
 "Simple gestures" = "かんたん操作";
 "Skin care" = "スキンケア";
 "Skip" = "スキップ";
@@ -479,6 +491,8 @@
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "再現手順があるととても助かります。スクリーンショットはメールに添付できます。";
 "Still learning" = "まだ覚えていない";
 "Stop" = "停止";
+"Stop sharing" = "共有を停止";
+"Stop sharing?" = "共有を停止しますか？";
 "Streaks" = "連続記録";
 "Stretch" = "ストレッチ";
 "Study for 30 minutes" = "30分勉強する";
@@ -503,11 +517,14 @@
 "Thank you!" = "ありがとうございます！";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "無料版の習慣数の上限に達しました。ZenHabを開いてProにしてください。";
 "The free version has up to 5 active habits." = "無料版はアクティブな習慣が5つまでです。";
+"The group wasn't found." = "グループが見つかりません。";
+"The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "グループの習慣とチェックはiCloudで共有されます。招待リンクを持つ人は誰でも参加してチェックできます。リマインダーは各自に届きます。";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "ミニマム版も達成扱いで連続記録が続きます。連鎖した習慣は前の習慣をチェックした直後に通知します。";
 "The new language will apply after you close the app and open it again." = "アプリを閉じて開き直すと新しい言語になります。";
 "The purchase could not be verified." = "購入を確認できませんでした。";
 "The widget will update after unlocking." = "ロック解除後にウィジェットが更新されます。";
 "There are no purchases yet: this switch turns Pro features on for testing." = "まだ購入機能はありません。このスイッチでPro機能をテストできます。";
+"This group and its habits will be removed from this iPhone." = "このグループと習慣はこのiPhoneから削除されます。";
 "Tidy up for 10 minutes" = "10分片付ける";
 "Time" = "時刻";
 "Time for your habit" = "習慣の時間です";
@@ -583,6 +600,7 @@
 "Your photo" = "自分の写真";
 "from %@" = "%@から";
 "glasses" = "杯";
+"iCloud storage is full." = "iCloudストレージがいっぱいです。";
 "iPhone permission" = "iPhoneの許可";
 "of %lld" = "/ %lld";
 "times" = "回";

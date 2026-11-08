@@ -47,7 +47,12 @@ targets:
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         # Приложение только для iPhone, но App Store Connect проверяет ключ для iPad (ошибка 90474).
         UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
-        UIBackgroundModes: [fetch]
+        UIBackgroundModes: [fetch, remote-notification]
+        # Семейные группы через iCloud. В сборке для App Store tools/appstore/enable_family.sh
+        # включает FamilySharingEnabled и добавляет права iCloud; у SideStore iCloud нет.
+        CKSharingSupported: true
+        CloudKitContainer: iCloud.com.personal.habits
+        FamilySharingEnabled: false
         BGTaskSchedulerPermittedIdentifiers: [com.personal.habits.refresh]
         ITSAppUsesNonExemptEncryption: false
         # Голосовой ввод привычки. Переводы в Localization/*.lproj/InfoPlist.strings.

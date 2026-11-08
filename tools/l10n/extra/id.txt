@@ -587,3 +587,21 @@ What's left today||Yang tersisa hari ini
 Which habit?||Kebiasaan yang mana?
 Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group.||Progres hari ini dan centang cepat langsung dari Layar Utama. Tahan widget untuk memilih grup.
 Show all habits or only one group.||Semua kebiasaan atau hanya satu grup.
+Changes sync through iCloud with everyone in the group.||Perubahan disinkronkan lewat iCloud dengan semua anggota grup.
+Family groups work in the App Store version of ZenHab.||Grup keluarga berfungsi di versi ZenHab dari App Store.
+Family members will lose this group. The habits stay with you.||Keluarga akan kehilangan grup ini. Kebiasaannya tetap ada di Anda.
+Invite family||Undang keluarga
+Join my group in ZenHab||Gabung ke grup saya di ZenHab
+Leave group||Keluar dari grup
+Leave group?||Keluar dari grup?
+Share with family||Bagikan dengan keluarga
+Shared with you||Dibagikan dengan Anda
+Stop sharing||Berhenti berbagi
+Stop sharing?||Berhenti berbagi?
+The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders.||Kebiasaan grup dan centangnya dibagikan lewat iCloud. Siapa pun dengan tautan undangan bisa bergabung dan mencentang. Setiap orang mendapat pengingatnya sendiri.
+This group and its habits will be removed from this iPhone.||Grup ini dan kebiasaannya akan dihapus dari iPhone ini.
+The group wasn't found.||Grup tidak ditemukan.
+Sign in to iCloud in Settings to share groups with your family.||Masuk ke iCloud di Pengaturan untuk berbagi grup dengan keluarga.
+Couldn't create an invitation link. Try again later.||Tidak bisa membuat tautan undangan. Coba lagi nanti.
+No connection to iCloud. Changes will sync later.||Tidak ada koneksi ke iCloud. Perubahan akan disinkronkan nanti.
+iCloud storage is full.||Penyimpanan iCloud penuh.

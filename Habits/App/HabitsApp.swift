@@ -28,6 +28,7 @@ struct HabitsApp: App {
                     await NotificationPlanner.markSeen()
                     await store.reschedule()
                     await ProStore.shared.refreshEntitlements()
+                    await FamilySync.shared.syncAll()
                 }
             case .background:
                 BackgroundRefresh.schedule()
@@ -56,6 +57,7 @@ enum BackgroundRefresh {
     static func run() async {
         schedule()
         HabitStore.shared.reloadFromDisk()
+        await FamilySync.shared.syncAll()
         await HabitStore.shared.reschedule()
     }
 }

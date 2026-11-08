@@ -26,7 +26,7 @@ final class HabitStore {
     /// Растёт при каждом сохранении, чтобы экраны могли реагировать на любые изменения.
     private(set) var revision = 0
 
-    private func commit() {
+    private func commit(syncFamily: Bool = true) {
         revision += 1
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()
@@ -34,6 +34,9 @@ final class HabitStore {
         Task { await NotificationPlanner.reschedule(data: snapshot) }
         // Siri узнаёт новые названия привычек для фраз вроде «Отметь Зарядку».
         HabitsShortcuts.updateAppShortcutParameters()
+        if syncFamily {
+            FamilySync.shared.scheduleSync()
+        }
     }
 
     func reschedule() async {
@@ -276,6 +279,44 @@ final class HabitStore {
             data.habits[index].groupID = nil
         }
         commit()
+    }
+
+    // MARK: Семейные группы
+
+    /// Изменения, пришедшие из iCloud. Обратно в iCloud их не отправляем.
+    func applyFamilyChanges(_ change: (inout AppData) -> Void) {
+        change(&data)
+        commit(syncFamily: false)
+    }
+
+    func setFamily(_ family: FamilyShare?, for groupID: UUID) {
+        guard let index = data.groups.firstIndex(where: { $0.id == groupID }) else { return }
+        data.groups[index].family = family
+        commit(syncFamily: false)
+    }
+
+    /// Группа, в которую пригласили. id совпадает с id группы у владельца.
+    func addFamilyGroup(id: UUID, name: String, family: FamilyShare) {
+        if let index = data.groups.firstIndex(where: { $0.id == id }) {
+            data.groups[index].family = family
+        } else {
+            data.groups.append(HabitGroup(
+                id: id,
+                name: name,
+                sortOrder: (data.groups.map(\.sortOrder).max() ?? -1) + 1,
+                family: family
+            ))
+        }
+        commit(syncFamily: false)
+    }
+
+    /// Выход из чужой группы: её привычки уходят вместе с ней.
+    func removeGroupWithHabits(_ id: UUID) {
+        let ids = data.habits.filter { $0.groupID == id }.map(\.id)
+        data.habits.removeAll { $0.groupID == id }
+        for habitID in ids { data.removeCheckIns(for: habitID) }
+        data.groups.removeAll { $0.id == id }
+        commit(syncFamily: false)
     }
 
     func moveGroups(from source: IndexSet, to destination: Int) {
