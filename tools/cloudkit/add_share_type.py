@@ -9,7 +9,7 @@
 import sys
 
 SHARE = '''
-    RECORD TYPE cloudkit.share (
+    RECORD TYPE "cloudkit.share" (
         "___createTime" TIMESTAMP,
         "___createdBy"  REFERENCE,
         "___etag"       STRING,
@@ -50,7 +50,7 @@ for name in FAMILY_TYPES:
     if f'RECORD TYPE {name} ' not in text and f'RECORD TYPE {name}(' not in text:
         print(f'add {name}')
         text += TYPE.format(name=name)
-if 'RECORD TYPE cloudkit.share' not in text:
+if 'cloudkit.share' not in text.replace('"', ''):
     print('add cloudkit.share')
     text += SHARE
 else:
