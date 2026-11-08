@@ -99,6 +99,12 @@ struct HabitSchedule: Codable, Hashable {
         case repeating
         case weekly
         case once
+        /// Каждые N дней от даты начала ("через день" = 2).
+        case everyNDays
+        /// Раз в месяц, в то же число, что и дата начала.
+        case monthly
+        /// Раз в год, в тот же день и месяц, что и дата начала.
+        case yearly
     }
 
     var kind: Kind
@@ -109,23 +115,27 @@ struct HabitSchedule: Codable, Hashable {
     var onceDate: Date
     /// Для вида "N раз в неделю".
     var timesPerWeek: Int
+    /// Для вида "каждые N дней".
+    var intervalDays: Int
 
     init(kind: Kind = .repeating,
          weekdays: Set<Int> = Set(1...7),
          startDate: Date = Calendar.app.startOfDay(for: Date()),
          endDate: Date? = nil,
          onceDate: Date = Calendar.app.startOfDay(for: Date()),
-         timesPerWeek: Int = 3) {
+         timesPerWeek: Int = 3,
+         intervalDays: Int = 2) {
         self.kind = kind
         self.weekdays = weekdays
         self.startDate = startDate
         self.endDate = endDate
         self.onceDate = onceDate
         self.timesPerWeek = timesPerWeek
+        self.intervalDays = intervalDays
     }
 
     enum CodingKeys: String, CodingKey {
-        case kind, weekdays, startDate, endDate, onceDate, timesPerWeek
+        case kind, weekdays, startDate, endDate, onceDate, timesPerWeek, intervalDays
     }
 
     init(from decoder: Decoder) throws {
@@ -137,6 +147,7 @@ struct HabitSchedule: Codable, Hashable {
         endDate = try c.decodeIfPresent(Date.self, forKey: .endDate)
         onceDate = try c.decodeIfPresent(Date.self, forKey: .onceDate) ?? today
         timesPerWeek = try c.decodeIfPresent(Int.self, forKey: .timesPerWeek) ?? 3
+        intervalDays = max(2, try c.decodeIfPresent(Int.self, forKey: .intervalDays) ?? 2)
     }
 }
 
@@ -290,6 +301,18 @@ struct HabitGroup: Identifiable, Hashable, Codable {
     var id: UUID = UUID()
     var name: String
     var sortOrder: Int = 0
+    /// Группа общая с семьёй через iCloud.
+    var family: FamilyShare? = nil
+}
+
+/// Где в iCloud лежит общая группа.
+struct FamilyShare: Codable, Hashable {
+    var zoneName: String
+    var ownerName: String
+    /// Группу создал этот человек (у остальных она в общей базе).
+    var isOwner: Bool
+    /// Ссылка-приглашение.
+    var url: URL?
 }
 
 // MARK: - Отметка
@@ -322,6 +345,8 @@ enum HomeLayout: String, Codable, Hashable, CaseIterable {
     case partsOfDay
     /// Один список: с напоминанием по времени, остальные после.
     case byTime
+    /// Секции по группам привычек, внутри по времени.
+    case byGroup
 }
 
 struct AppSettings: Codable, Hashable {
@@ -346,12 +371,14 @@ struct AppSettings: Codable, Hashable {
     var avatarID = "sprout"
     /// Ачивки, о которых уже показали поздравление.
     var seenAchievements: [String] = []
+    /// Версия, для которой уже показали экран «Что нового».
+    var whatsNewSeen: String = ""
 
     init() {}
 
     enum CodingKeys: String, CodingKey {
         case proUnlocked, remindersEnabled, homeLayout, doneToBottom, summaryEnabled, summaryTime
-        case onboardingDone, gestureHintShown, backgroundID, avatarID, seenAchievements, badgeEnabled
+        case onboardingDone, gestureHintShown, backgroundID, avatarID, seenAchievements, badgeEnabled, whatsNewSeen
     }
 
     init(from decoder: Decoder) throws {
@@ -368,6 +395,7 @@ struct AppSettings: Codable, Hashable {
         avatarID = try c.decodeIfPresent(String.self, forKey: .avatarID) ?? "sprout"
         seenAchievements = try c.decodeIfPresent([String].self, forKey: .seenAchievements) ?? []
         badgeEnabled = try c.decodeIfPresent(Bool.self, forKey: .badgeEnabled) ?? true
+        whatsNewSeen = try c.decodeIfPresent(String.self, forKey: .whatsNewSeen) ?? ""
     }
 }
 

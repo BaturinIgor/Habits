@@ -1,0 +1,8 @@
+"Check off ${habit} in ${applicationName}" = "${applicationName} içinde ${habit} işaretle";
+"Mark ${habit} in ${applicationName}" = "${applicationName}'da ${habit} tamamla";
+"Check off a habit in ${applicationName}" = "${applicationName} içinde alışkanlık işaretle";
+"Add a habit in ${applicationName}" = "${applicationName} içine alışkanlık ekle";
+"Add a reminder in ${applicationName}" = "${applicationName} içine hatırlatma ekle";
+"New habit in ${applicationName}" = "${applicationName} yeni alışkanlık";
+"What's left in ${applicationName}" = "${applicationName}'da ne kaldı";
+"What's left today in ${applicationName}" = "${applicationName}'da bugün ne kaldı";

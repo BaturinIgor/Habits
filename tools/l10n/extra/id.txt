@@ -551,3 +551,71 @@ Couldn't send the message||Pesan tidak dapat dikirim
 Check your internet connection and try again, or send it by email.||Periksa koneksi internet dan coba lagi, atau kirim lewat email.
 Try again||Coba lagi
 Send by email||Kirim lewat email
+Once a month||Sebulan sekali
+Once a year||Setahun sekali
+Every N days||Setiap N hari
+Every||Setiap
+Every %@||Setiap %@
+Every other day||Selang sehari
+First time||Pertama kali
+Every month, on day %lld||Setiap bulan, tanggal %lld
+Every year, %@||Setiap tahun, %@
+By group||Per grup
+%@ is already done today.||%@ sudah selesai hari ini.
+Add a habit||Tambah kebiasaan
+Added %@: %@, at %@.||“%@” ditambahkan: %@, pukul %@.
+Added %@: %@.||“%@” ditambahkan: %@.
+Allow the microphone and speech recognition for ZenHab in Settings.||Izinkan mikrofon dan pengenalan suara untuk ZenHab di Pengaturan.
+Check off a habit||Centang kebiasaan
+Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”.||Membuat kebiasaan dari nama yang Anda ucapkan.
+Done: %@||Selesai: %@
+Everything is done for today.||Semua sudah selesai hari ini.
+Habit not found.||Kebiasaan tidak ditemukan.
+Left for today: %@.||Tersisa hari ini: %@.
+Listening…||Mendengarkan…
+Lists the habits that aren't checked off today.||Menyebutkan kebiasaan yang belum dicentang hari ini.
+Marks a habit as done for today.||Menandai kebiasaan selesai hari ini.
+Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”.||Ucapkan nama kebiasaan, misalnya “Minum air”.
+Speak||Bicara
+Speech recognition isn't available right now.||Pengenalan suara sedang tidak tersedia.
+Stop||Berhenti
+The free version has reached its habit limit. Open ZenHab to get Pro.||Versi gratis sudah mencapai batas kebiasaan. Buka ZenHab untuk mendapatkan Pro.
+Voice input||Input suara
+What should I add?||Apa yang ingin ditambahkan?
+What to add||Yang ditambahkan
+What's left today||Yang tersisa hari ini
+Which habit?||Kebiasaan yang mana?
+Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group.||Progres hari ini dan centang cepat langsung dari Layar Utama. Tahan widget untuk memilih grup.
+Show all habits or only one group.||Semua kebiasaan atau hanya satu grup.
+Changes sync through iCloud with everyone in the group.||Perubahan disinkronkan lewat iCloud dengan semua anggota grup.
+Family groups work in the App Store version of ZenHab.||Grup keluarga berfungsi di versi ZenHab dari App Store.
+Family members will lose this group. The habits stay with you.||Keluarga akan kehilangan grup ini. Kebiasaannya tetap ada di Anda.
+Invite family||Undang keluarga
+Join my group in ZenHab||Gabung ke grup saya di ZenHab
+Leave group||Keluar dari grup
+Leave group?||Keluar dari grup?
+Share with family||Bagikan dengan keluarga
+Shared with you||Dibagikan dengan Anda
+Stop sharing||Berhenti berbagi
+Stop sharing?||Berhenti berbagi?
+The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders.||Kebiasaan grup dan centangnya dibagikan lewat iCloud. Siapa pun dengan tautan undangan bisa bergabung dan mencentang. Setiap orang mendapat pengingatnya sendiri.
+This group and its habits will be removed from this iPhone.||Grup ini dan kebiasaannya akan dihapus dari iPhone ini.
+The group wasn't found.||Grup tidak ditemukan.
+Sign in to iCloud in Settings to share groups with your family.||Masuk ke iCloud di Pengaturan untuk berbagi grup dengan keluarga.
+Couldn't create an invitation link. Try again later.||Tidak bisa membuat tautan undangan. Coba lagi nanti.
+No connection to iCloud. Changes will sync later.||Tidak ada koneksi ke iCloud. Perubahan akan disinkronkan nanti.
+iCloud storage is full.||Penyimpanan iCloud penuh.
+Create habits by voice||Kebiasaan lewat suara
+Every other day, every N days, once a month and once a year: for pills, bills and birthdays.||Selang sehari, setiap N hari, sebulan sekali, dan setahun sekali: untuk obat, tagihan, dan ulang tahun.
+Family groups||Grup keluarga
+Groups on the Today screen and in the widget||Grup di layar Hari Ini dan di widget
+New schedules||Jadwal baru
+Open groups||Buka grup
+Put the habit in a group to share it with your family.||Masukkan kebiasaan ke grup untuk membagikannya dengan keluarga.
+Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”.||Ucapkan ke Siri: “Check off a habit in ZenHab”, “Add a habit in ZenHab”, atau “What's left in ZenHab”.
+Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders.||Bagikan grup dengan keluarga, misalnya “Anjing” atau “Rumah”. Semua melihat kebiasaan yang sama, mencentangnya, dan mendapat pengingat.
+Siri||Siri
+Sort the Today screen by groups in Settings, and hold the Today widget to show one group.||Urutkan layar Hari Ini per grup di Pengaturan, dan tahan widget Hari Ini untuk menampilkan satu grup.
+Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”.||Ketuk mikrofon di kebiasaan baru dan ucapkan namanya.
+Try it||Coba
+What's new||Yang baru

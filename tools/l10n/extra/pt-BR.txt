@@ -551,3 +551,71 @@ Couldn't send the message||Não foi possível enviar a mensagem
 Check your internet connection and try again, or send it by email.||Verifique sua conexão com a internet e tente de novo, ou envie por e-mail.
 Try again||Tentar de novo
 Send by email||Enviar por e-mail
+Once a month||Uma vez por mês
+Once a year||Uma vez por ano
+Every N days||A cada N dias
+Every||A cada
+Every %@||A cada %@
+Every other day||Dia sim, dia não
+First time||Primeira vez
+Every month, on day %lld||Todo mês, no dia %lld
+Every year, %@||Todo ano, em %@
+By group||Por grupo
+%@ is already done today.||%@ já foi feito hoje.
+Add a habit||Adicionar hábito
+Added %@: %@, at %@.||“%@” adicionado: %@, às %@.
+Added %@: %@.||“%@” adicionado: %@.
+Allow the microphone and speech recognition for ZenHab in Settings.||Permita o microfone e o reconhecimento de fala para o ZenHab em Ajustes.
+Check off a habit||Marcar hábito
+Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”.||Cria um hábito com o nome que você disser.
+Done: %@||Feito: %@
+Everything is done for today.||Tudo feito por hoje.
+Habit not found.||Hábito não encontrado.
+Left for today: %@.||Falta hoje: %@.
+Listening…||Ouvindo…
+Lists the habits that aren't checked off today.||Lista os hábitos ainda não marcados hoje.
+Marks a habit as done for today.||Marca um hábito como feito hoje.
+Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”.||Diga o nome do hábito, por exemplo “Beber água”.
+Speak||Falar
+Speech recognition isn't available right now.||O reconhecimento de fala não está disponível agora.
+Stop||Parar
+The free version has reached its habit limit. Open ZenHab to get Pro.||A versão gratuita atingiu o limite de hábitos. Abra o ZenHab para assinar o Pro.
+Voice input||Entrada por voz
+What should I add?||O que devo adicionar?
+What to add||O que adicionar
+What's left today||O que falta hoje
+Which habit?||Qual hábito?
+Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group.||O progresso do dia e a marcação rápida na tela de início. Toque e segure o widget para escolher um grupo.
+Show all habits or only one group.||Todos os hábitos ou só um grupo.
+Changes sync through iCloud with everyone in the group.||As alterações são sincronizadas pelo iCloud com todos do grupo.
+Family groups work in the App Store version of ZenHab.||Grupos familiares funcionam na versão do ZenHab da App Store.
+Family members will lose this group. The habits stay with you.||Sua família perderá este grupo. Os hábitos ficam com você.
+Invite family||Convidar a família
+Join my group in ZenHab||Entre no meu grupo no ZenHab
+Leave group||Sair do grupo
+Leave group?||Sair do grupo?
+Share with family||Compartilhar com a família
+Shared with you||Compartilhado com você
+Stop sharing||Parar de compartilhar
+Stop sharing?||Parar de compartilhar?
+The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders.||Os hábitos e marcações do grupo são compartilhados pelo iCloud. Quem tiver o link de convite pode entrar e marcar hábitos. Cada um recebe seus lembretes.
+This group and its habits will be removed from this iPhone.||O grupo e seus hábitos serão removidos deste iPhone.
+The group wasn't found.||Grupo não encontrado.
+Sign in to iCloud in Settings to share groups with your family.||Entre no iCloud em Ajustes para compartilhar grupos com a família.
+Couldn't create an invitation link. Try again later.||Não foi possível criar o link de convite. Tente mais tarde.
+No connection to iCloud. Changes will sync later.||Sem conexão com o iCloud. As alterações serão sincronizadas depois.
+iCloud storage is full.||O armazenamento do iCloud está cheio.
+Create habits by voice||Hábitos por voz
+Every other day, every N days, once a month and once a year: for pills, bills and birthdays.||Dia sim, dia não, a cada N dias, uma vez por mês e uma vez por ano: para remédios, contas e aniversários.
+Family groups||Grupos familiares
+Groups on the Today screen and in the widget||Grupos na tela Hoje e no widget
+New schedules||Novas frequências
+Open groups||Abrir grupos
+Put the habit in a group to share it with your family.||Coloque o hábito em um grupo para compartilhá-lo com a família.
+Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”.||Diga “Marque um hábito no ZenHab”, “Adicione um hábito no ZenHab” ou “O que falta no ZenHab”.
+Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders.||Compartilhe um grupo com a família, por exemplo “Cachorro” ou “Casa”. Todos veem os mesmos hábitos, marcam e recebem lembretes.
+Siri||Siri
+Sort the Today screen by groups in Settings, and hold the Today widget to show one group.||Organize a tela Hoje por grupos em Ajustes e toque e segure o widget Hoje para mostrar um grupo.
+Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”.||Toque no microfone em um novo hábito e diga o nome.
+Try it||Experimentar
+What's new||Novidades

@@ -45,6 +45,11 @@ enum Fmt {
         formatter("LLLLyyyy").string(from: date).capitalizedFirst
     }
 
+    /// День и месяц без года, для ежегодных привычек.
+    static func dayMonthNoYear(_ date: Date) -> String {
+        formatter("dMMMM").string(from: date)
+    }
+
     static func shortDate(_ date: Date) -> String {
         formatter("dMMM").string(from: date)
     }
@@ -125,19 +130,42 @@ extension Habit {
         switch schedule.kind {
         case .once:
             return calendar.isDate(day, inSameDayAs: schedule.onceDate)
-        case .repeating, .weekly:
-            if day < calendar.startOfDay(for: schedule.startDate) { return false }
+        case .repeating, .weekly, .everyNDays, .monthly, .yearly:
+            let start = calendar.startOfDay(for: schedule.startDate)
+            if day < start { return false }
             if let end = schedule.endDate, day > calendar.startOfDay(for: end) { return false }
-            if schedule.kind == .weekly { return true }
-            return schedule.weekdays.contains(calendar.component(.weekday, from: day))
+            switch schedule.kind {
+            case .weekly:
+                return true
+            case .everyNDays:
+                let offset = calendar.dateComponents([.day], from: start, to: day).day ?? 0
+                return offset % max(2, schedule.intervalDays) == 0
+            case .monthly:
+                return Self.matchesDayOfMonth(day, anchor: start, calendar: calendar)
+            case .yearly:
+                guard calendar.component(.month, from: day) == calendar.component(.month, from: start) else { return false }
+                return Self.matchesDayOfMonth(day, anchor: start, calendar: calendar)
+            default:
+                return schedule.weekdays.contains(calendar.component(.weekday, from: day))
+            }
         }
+    }
+
+    /// То же число месяца, что у даты начала. Если в месяце нет такого числа (31-е, 29 февраля),
+    /// подходит последний день месяца.
+    private static func matchesDayOfMonth(_ day: Date, anchor: Date, calendar: Calendar) -> Bool {
+        let target = calendar.component(.day, from: anchor)
+        let current = calendar.component(.day, from: day)
+        if current == target { return true }
+        guard let length = calendar.range(of: .day, in: .month, for: day)?.count else { return false }
+        return target > length && current == length
     }
 
     /// Первый день, с которого действует привычка.
     func firstDay(calendar: Calendar = .app) -> Date {
         switch schedule.kind {
         case .once: return calendar.startOfDay(for: schedule.onceDate)
-        case .repeating, .weekly: return calendar.startOfDay(for: schedule.startDate)
+        default: return calendar.startOfDay(for: schedule.startDate)
         }
     }
 
@@ -145,7 +173,7 @@ extension Habit {
     func lastDay(calendar: Calendar = .app) -> Date? {
         switch schedule.kind {
         case .once: return calendar.startOfDay(for: schedule.onceDate)
-        case .repeating, .weekly: return schedule.endDate.map { calendar.startOfDay(for: $0) }
+        default: return schedule.endDate.map { calendar.startOfDay(for: $0) }
         }
     }
 
@@ -162,6 +190,14 @@ extension Habit {
             return String(localized: "Once, \(Fmt.dayMonth(schedule.onceDate))")
         case .weekly:
             text = Fmt.timesPerWeek(schedule.timesPerWeek)
+        case .everyNDays:
+            let n = max(2, schedule.intervalDays)
+            text = n == 2 ? String(localized: "Every other day") : String(localized: "Every \(Fmt.days(n))")
+        case .monthly:
+            let d = Calendar.app.component(.day, from: schedule.startDate)
+            text = String(localized: "Every month, on day \(d)")
+        case .yearly:
+            text = String(localized: "Every year, \(Fmt.dayMonthNoYear(schedule.startDate))")
         case .repeating:
             let days = schedule.weekdays
             if days == Weekdays.all {
@@ -194,7 +230,7 @@ struct HabitSection: Identifiable {
     let habits: [Habit]
 }
 
-/// Секции главного экрана: по частям дня или один список по времени.
+/// Секции главного экрана: по частям дня, по группам или один список по времени.
 func todaySections(_ habits: [Habit], data: AppData, day: String) -> [HabitSection] {
     func finish(_ items: [Habit]) -> [Habit] {
         guard data.settings.doneToBottom else { return items }
@@ -205,6 +241,10 @@ func todaySections(_ habits: [Habit], data: AppData, day: String) -> [HabitSecti
     switch data.settings.homeLayout {
     case .byTime:
         return [HabitSection(id: "all", title: "", habits: finish(habits.sortedForDisplay()))]
+    case .byGroup:
+        return makeSections(habits, data: data).map {
+            HabitSection(id: $0.id, title: $0.title, habits: finish($0.habits.sortedForDisplay()))
+        }
     case .partsOfDay:
         return PartOfDay.allCases.compactMap { part in
             let items = habits.filter { $0.effectivePartOfDay == part }.sorted(by: Habit.manualOrder)

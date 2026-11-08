@@ -46,6 +46,8 @@ Conditions d'utilisation : https://www.apple.com/legal/internet-services/itunes/
 Confidentialité : https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab fonctionne désormais à partir d'iOS 17.
-• Envoie ton avis directement depuis l'app, avec une capture d'écran si tu veux.
-• Correction du bouton « Ajouter une habitude » sur l'écran Aujourd'hui vide.
+• Groupes famille : partage un groupe via iCloud, et chacun peut cocher ses habitudes et recevoir des rappels.
+• Nouveaux rythmes : un jour sur deux, tous les N jours, une fois par mois et une fois par an.
+• Crée une habitude à la voix : dis simplement son nom.
+• Siri et Raccourcis : coche une habitude, ajoutes-en une ou demande ce qu'il reste aujourd'hui.
+• Le widget Aujourd'hui peut afficher un seul groupe, et l'écran Aujourd'hui peut être trié par groupes.

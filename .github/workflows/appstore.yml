@@ -10,7 +10,7 @@ on:
       version:
         description: "Версия для пользователей (MARKETING_VERSION), например 1.0"
         required: true
-        default: "1.2"
+        default: "1.3"
       upload:
         description: "Загрузить в App Store Connect"
         type: boolean
@@ -59,6 +59,9 @@ jobs:
         run: |
           brew install xcodegen
           xcodebuild -version
+
+      - name: Enable family groups (iCloud)
+        run: tools/appstore/enable_family.sh
 
       - name: Apply App Store identifiers
         run: tools/appstore/set_bundle_id.sh "$APP_ID"
@@ -167,6 +170,7 @@ jobs:
               <key>$APP_ID</key><string>$APP_PROFILE_NAME</string>
               <key>$APP_ID.widget</key><string>$WIDGET_PROFILE_NAME</string>
             </dict>
+            <key>iCloudContainerEnvironment</key><string>Production</string>
             <key>uploadSymbols</key><true/>
             <key>manageAppVersionAndBuildNumber</key><false/>
           </dict>

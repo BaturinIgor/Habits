@@ -46,6 +46,8 @@ Kullanım Koşulları: https://www.apple.com/legal/internet-services/itunes/dev/
 Gizlilik: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab artık iOS 17 ve sonrasında çalışıyor.
-• Geri bildirimini doğrudan uygulamadan, istersen ekran görüntüsüyle gönder.
-• Boş Bugün ekranındaki "Alışkanlık ekle" düğmesi düzeltildi.
+• Aile grupları: Bir grubu iCloud ile paylaş, gruptaki herkes alışkanlıkları işaretleyebilir ve hatırlatma alır.
+• Yeni programlar: gün aşırı, N günde bir, ayda bir ve yılda bir.
+• Sesle alışkanlık oluştur: sadece adını söyle.
+• Siri ve Kestirmeler: alışkanlığı işaretle, yenisini ekle ya da bugün ne kaldığını sor.
+• Bugün widget'ı tek bir grubu gösterebilir, Bugün ekranı gruplara göre sıralanabilir.

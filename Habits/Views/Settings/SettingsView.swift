@@ -342,6 +342,7 @@ struct TodayScreenSettingsView: View {
                 Picker("Order", selection: store.settingBinding(\.homeLayout)) {
                     Text("Parts of day").tag(HomeLayout.partsOfDay)
                     Text("By time").tag(HomeLayout.byTime)
+                    Text("By group").tag(HomeLayout.byGroup)
                 }
                 Toggle("Done habits at the bottom", isOn: store.settingBinding(\.doneToBottom))
             }
@@ -426,8 +427,6 @@ struct GroupsView: View {
     @Environment(HabitStore.self) private var store
     @State private var showingNew = false
     @State private var newName = ""
-    @State private var renaming: HabitGroup?
-    @State private var renameText = ""
 
     var body: some View {
         List {
@@ -437,14 +436,13 @@ struct GroupsView: View {
             }
             ForEach(store.data.sortedGroups) { group in
                 let count = store.data.habits.filter { $0.groupID == group.id }.count
-                Button {
-                    renameText = group.name
-                    renaming = group
+                NavigationLink {
+                    GroupDetailView(groupID: group.id)
                 } label: {
                     LabeledContent {
                         Text("\(count)")
                     } label: {
-                        Label(group.name, systemImage: "folder")
+                        Label(group.name, systemImage: group.family == nil ? "folder" : "person.2.fill")
                             .foregroundStyle(Color.primary)
                     }
                 }
@@ -452,7 +450,16 @@ struct GroupsView: View {
             .onDelete { offsets in
                 let groups = store.data.sortedGroups
                 for index in offsets {
-                    store.deleteGroup(groups[index].id)
+                    let group = groups[index]
+                    if group.family != nil {
+                        // Общую группу сначала убираем из iCloud.
+                        Task {
+                            try? await FamilySync.shared.endSharing(groupID: group.id)
+                            store.deleteGroup(group.id)
+                        }
+                    } else {
+                        store.deleteGroup(group.id)
+                    }
                 }
             }
             .onMove { source, destination in
@@ -479,17 +486,126 @@ struct GroupsView: View {
             Button("Cancel", role: .cancel) {}
             Button("Create") { store.addGroup(name: newName) }
         }
-        .alert(
-            "Rename",
-            isPresented: Binding(
-                get: { renaming != nil },
-                set: { if !$0 { renaming = nil } }
-            ),
-            presenting: renaming
-        ) { group in
-            TextField("Name", text: $renameText)
+    }
+}
+
+// MARK: - Группа и семья
+
+struct GroupDetailView: View {
+    let groupID: UUID
+    @Environment(HabitStore.self) private var store
+    @Environment(\.dismiss) private var dismiss
+    @State private var name = ""
+    @State private var working = false
+    @State private var errorText: String?
+    @State private var confirmEnd = false
+
+    private var group: HabitGroup? { store.data.group(groupID) }
+    private var family: FamilyShare? { group?.family }
+
+    var body: some View {
+        Form {
+            Section("Name") {
+                TextField("Name", text: $name)
+                    .submitLabel(.done)
+                    .onSubmit(saveName)
+            }
+            familySection
+        }
+        .appBackground()
+        .navigationTitle(group?.name ?? "")
+        .navigationBarTitleDisplayMode(.inline)
+        .onAppear { name = group?.name ?? "" }
+        .onDisappear(perform: saveName)
+        .confirmationDialog(
+            family?.isOwner == false ? String(localized: "Leave group?") : String(localized: "Stop sharing?"),
+            isPresented: $confirmEnd,
+            titleVisibility: .visible
+        ) {
+            Button(family?.isOwner == false ? String(localized: "Leave group") : String(localized: "Stop sharing"), role: .destructive) {
+                Task { await endSharing() }
+            }
             Button("Cancel", role: .cancel) {}
-            Button("Save") { store.renameGroup(group.id, to: renameText) }
+        } message: {
+            Text(family?.isOwner == false
+                 ? String(localized: "This group and its habits will be removed from this iPhone.")
+                 : String(localized: "Family members will lose this group. The habits stay with you."))
+        }
+    }
+
+    @ViewBuilder
+    private var familySection: some View {
+        Section {
+            if !FamilySync.isAvailable {
+                Text("Family groups work in the App Store version of ZenHab.")
+                    .foregroundStyle(.secondary)
+            } else if let family {
+                if family.isOwner, let url = family.url {
+                    ShareLink(item: url, subject: Text(group?.name ?? ""), message: Text("Join my group in ZenHab")) {
+                        Label("Invite family", systemImage: "person.badge.plus")
+                    }
+                } else if !family.isOwner {
+                    Label("Shared with you", systemImage: "person.2.fill")
+                }
+                Button(family.isOwner ? String(localized: "Stop sharing") : String(localized: "Leave group"), role: .destructive) {
+                    confirmEnd = true
+                }
+            } else {
+                Button {
+                    Task { await startSharing() }
+                } label: {
+                    HStack {
+                        Label("Share with family", systemImage: "person.2.fill")
+                        if working {
+                            Spacer()
+                            ProgressView()
+                        }
+                    }
+                }
+                .disabled(working)
+            }
+            if let errorText {
+                Text(errorText)
+                    .font(.footnote)
+                    .foregroundStyle(.red)
+            }
+        } header: {
+            Text("Family")
+        } footer: {
+            if FamilySync.isAvailable {
+                Text(family?.isOwner == false
+                     ? String(localized: "Changes sync through iCloud with everyone in the group.")
+                     : String(localized: "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders."))
+            }
+        }
+    }
+
+    private func saveName() {
+        let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty, trimmed != group?.name else { return }
+        store.renameGroup(groupID, to: trimmed)
+    }
+
+    @MainActor
+    private func startSharing() async {
+        working = true
+        errorText = nil
+        do {
+            _ = try await FamilySync.shared.share(groupID: groupID)
+        } catch {
+            errorText = error.localizedDescription
+        }
+        working = false
+    }
+
+    @MainActor
+    private func endSharing() async {
+        let leaving = family?.isOwner == false
+        do {
+            try await FamilySync.shared.endSharing(groupID: groupID)
+            if leaving { dismiss() }
+        } catch {
+            errorText = error.localizedDescription
         }
     }
 }

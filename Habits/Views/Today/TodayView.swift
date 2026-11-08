@@ -275,7 +275,7 @@ struct TodayView: View {
         }
         for habit in habits {
             let zone = settings.doneToBottom && store.data.status(habit.id, day: dayKey) != nil
-            let movable = !(settings.homeLayout == .byTime && habit.reminder != nil)
+            let movable = !(settings.homeLayout != .partsOfDay && habit.reminder != nil)
             if let key = currentKey, key.zone == zone, key.movable == movable {
                 current.append(habit)
             } else {

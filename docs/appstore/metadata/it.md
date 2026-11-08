@@ -46,6 +46,8 @@ Termini d'uso: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacy: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab ora funziona da iOS 17 in poi.
-• Invia un feedback direttamente dall'app, anche con uno screenshot.
-• Corretto il pulsante «Aggiungi abitudine» nella schermata Oggi vuota.
+• Gruppi famiglia: condividi un gruppo tramite iCloud e tutti potranno spuntare le abitudini e ricevere promemoria.
+• Nuove frequenze: a giorni alterni, ogni N giorni, una volta al mese e una volta all'anno.
+• Crea un'abitudine con la voce: basta dirne il nome.
+• Siri e Comandi rapidi: spunta un'abitudine, aggiungine una o chiedi cosa resta oggi.
+• Il widget Oggi può mostrare un solo gruppo e la schermata Oggi si può ordinare per gruppi.

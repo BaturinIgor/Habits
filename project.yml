@@ -9,7 +9,7 @@ options:
 settings:
   base:
     SWIFT_VERSION: "5.0"
-    MARKETING_VERSION: "1.2"
+    MARKETING_VERSION: "1.3"
     CURRENT_PROJECT_VERSION: "1"
     TARGETED_DEVICE_FAMILY: "1"
     CODE_SIGN_STYLE: Manual
@@ -47,9 +47,17 @@ targets:
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         # Приложение только для iPhone, но App Store Connect проверяет ключ для iPad (ошибка 90474).
         UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
-        UIBackgroundModes: [fetch]
+        UIBackgroundModes: [fetch, remote-notification]
+        # Семейные группы через iCloud. В сборке для App Store tools/appstore/enable_family.sh
+        # включает FamilySharingEnabled и добавляет права iCloud; у SideStore iCloud нет.
+        CKSharingSupported: true
+        CloudKitContainer: iCloud.com.personal.habits
+        FamilySharingEnabled: false
         BGTaskSchedulerPermittedIdentifiers: [com.personal.habits.refresh]
         ITSAppUsesNonExemptEncryption: false
+        # Голосовой ввод привычки. Переводы в Localization/*.lproj/InfoPlist.strings.
+        NSMicrophoneUsageDescription: ZenHab uses the microphone so you can create a habit by voice.
+        NSSpeechRecognitionUsageDescription: ZenHab turns your words into a habit with a schedule and a reminder time.
         # Telegram-бот для отзывов. Значения подставляет tools/feedback/inject_secrets.sh
         # из секретов FEEDBACK_BOT_TOKEN и FEEDBACK_CHAT_ID; без них отзывы идут через почту.
         FeedbackBotToken: ""
@@ -75,6 +83,9 @@ targets:
       - path: HabitsWidget
       - path: Shared
       - path: Localization
+        # Фразы Siri нужны только приложению.
+        excludes:
+          - "**/AppShortcuts.strings"
     entitlements:
       path: HabitsWidget/HabitsWidget.entitlements
       properties:
