@@ -551,3 +551,12 @@ Couldn't send the message||Pesan tidak dapat dikirim
 Check your internet connection and try again, or send it by email.||Periksa koneksi internet dan coba lagi, atau kirim lewat email.
 Try again||Coba lagi
 Send by email||Kirim lewat email
+Once a month||Sebulan sekali
+Once a year||Setahun sekali
+Every N days||Setiap N hari
+Every||Setiap
+Every %@||Setiap %@
+Every other day||Selang sehari
+First time||Pertama kali
+Every month, on day %lld||Setiap bulan, tanggal %lld
+Every year, %@||Setiap tahun, %@

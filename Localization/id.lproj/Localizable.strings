@@ -166,7 +166,13 @@
 "Ended" = "Berakhir";
 "Evening" = "Malam";
 "Evening summary" = "Ringkasan malam";
+"Every" = "Setiap";
+"Every %@" = "Setiap %@";
+"Every N days" = "Setiap N hari";
 "Every day" = "Setiap hari";
+"Every month, on day %lld" = "Setiap bulan, tanggal %lld";
+"Every other day" = "Selang sehari";
+"Every year, %@" = "Setiap tahun, %@";
 "Everyday basics" = "Dasar sehari-hari";
 "Exclusive avatars and backgrounds" = "Avatar dan latar eksklusif";
 "Exclusive pets and more sparks" = "Hewan eksklusif dan lebih banyak percikan";
@@ -182,6 +188,7 @@
 "Fifty" = "Lima puluh";
 "Finance" = "Keuangan";
 "First step" = "Langkah pertama";
+"First time" = "Pertama kali";
 "Fitness" = "Olahraga";
 "Focus for an hour" = "Fokus satu jam";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "Misalnya 8 gelas air. Setiap ketukan pada lingkaran menambah satu.";
@@ -345,6 +352,8 @@
 "On weekdays" = "Di hari kerja";
 "On weekends" = "Di akhir pekan";
 "Once" = "Sekali";
+"Once a month" = "Sebulan sekali";
+"Once a year" = "Setahun sekali";
 "Once, %@" = "Sekali, %@";
 "One more habit?" = "Satu kebiasaan lagi?";
 "One notification at the chosen time." = "Satu notifikasi pada jam yang dipilih.";

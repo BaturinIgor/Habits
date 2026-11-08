@@ -166,7 +166,13 @@
 "Ended" = "終了";
 "Evening" = "夜";
 "Evening summary" = "夜のまとめ";
+"Every" = "間隔";
+"Every %@" = "%@ごと";
+"Every N days" = "N日ごと";
 "Every day" = "毎日";
+"Every month, on day %lld" = "毎月%lld日";
+"Every other day" = "1日おき";
+"Every year, %@" = "毎年%@";
 "Everyday basics" = "毎日の基本単語";
 "Exclusive avatars and backgrounds" = "限定アバターと背景";
 "Exclusive pets and more sparks" = "限定ペットとスパーク増量";
@@ -182,6 +188,7 @@
 "Fifty" = "50回";
 "Finance" = "お金";
 "First step" = "最初の一歩";
+"First time" = "初回";
 "Fitness" = "運動";
 "Focus for an hour" = "1時間集中する";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "例：水8杯。丸をタップするたびに1つ増えます。";
@@ -345,6 +352,8 @@
 "On weekdays" = "平日";
 "On weekends" = "週末";
 "Once" = "1回";
+"Once a month" = "月に1回";
+"Once a year" = "年に1回";
 "Once, %@" = "1回、%@";
 "One more habit?" = "もうひとつ習慣やる？";
 "One notification at the chosen time." = "選んだ時刻に1回通知します。";

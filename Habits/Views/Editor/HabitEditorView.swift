@@ -21,6 +21,7 @@ struct HabitEditorView: View {
     @State private var repeatInterval: Int
     @State private var showingPaywall = false
     @State private var timesPerWeek: Int
+    @State private var intervalDays: Int
     @State private var partOfDay: PartOfDay
     @State private var hasTarget: Bool
     @State private var target: Int
@@ -37,6 +38,9 @@ struct HabitEditorView: View {
         case daily
         case days
         case weekly
+        case everyNDays
+        case monthly
+        case yearly
         case once
     }
 
@@ -69,6 +73,9 @@ struct HabitEditorView: View {
         case .once: _frequency = State(initialValue: .once)
         case .weekly: _frequency = State(initialValue: .weekly)
         case .repeating: _frequency = State(initialValue: everyDay ? .daily : .days)
+        case .everyNDays: _frequency = State(initialValue: .everyNDays)
+        case .monthly: _frequency = State(initialValue: .monthly)
+        case .yearly: _frequency = State(initialValue: .yearly)
         }
         // В режиме "По дням" выбор начинается с пустого: нажимаешь дни, когда привычка нужна.
         _customDays = State(initialValue: everyDay ? [] : base.schedule.weekdays)
@@ -76,6 +83,7 @@ struct HabitEditorView: View {
         _repeatCount = State(initialValue: base.repeatCount ?? RepeatRule.standard.count)
         _repeatInterval = State(initialValue: base.repeatInterval ?? RepeatRule.standard.interval)
         _timesPerWeek = State(initialValue: base.schedule.timesPerWeek)
+        _intervalDays = State(initialValue: max(2, base.schedule.intervalDays))
         _partOfDay = State(initialValue: base.partOfDay ?? .anytime)
         _hasTarget = State(initialValue: (base.target ?? 0) > 1)
         _target = State(initialValue: max(2, base.target ?? 8))
@@ -264,6 +272,9 @@ struct HabitEditorView: View {
                 Text("Every day").tag(Frequency.daily)
                 Text("Some days").tag(Frequency.days)
                 Text("N times a week").tag(Frequency.weekly)
+                Text("Every N days").tag(Frequency.everyNDays)
+                Text("Once a month").tag(Frequency.monthly)
+                Text("Once a year").tag(Frequency.yearly)
                 Text("Once").tag(Frequency.once)
             }
 
@@ -278,7 +289,16 @@ struct HabitEditorView: View {
                         LabeledContent("Per week", value: "\(timesPerWeek)")
                     }
                 }
-                DatePicker("Start", selection: $draft.schedule.startDate, displayedComponents: .date)
+                if frequency == .everyNDays {
+                    Stepper(value: $intervalDays, in: 2...90) {
+                        LabeledContent("Every", value: Fmt.days(intervalDays))
+                    }
+                }
+                DatePicker(
+                    frequency == .monthly || frequency == .yearly ? LocalizedStringKey("First time") : LocalizedStringKey("Start"),
+                    selection: $draft.schedule.startDate,
+                    displayedComponents: .date
+                )
                 Toggle("End date", isOn: $hasEndDate.animation(.snappy))
                 if hasEndDate {
                     DatePicker(
@@ -468,10 +488,20 @@ struct HabitEditorView: View {
         case .weekly:
             habit.schedule.kind = .weekly
             habit.schedule.weekdays = Weekdays.all
+        case .everyNDays:
+            habit.schedule.kind = .everyNDays
+            habit.schedule.weekdays = Weekdays.all
+        case .monthly:
+            habit.schedule.kind = .monthly
+            habit.schedule.weekdays = Weekdays.all
+        case .yearly:
+            habit.schedule.kind = .yearly
+            habit.schedule.weekdays = Weekdays.all
         case .once:
             habit.schedule.kind = .once
         }
         habit.schedule.timesPerWeek = timesPerWeek
+        habit.schedule.intervalDays = intervalDays
         let cleanMinimum = minimumVersion.trimmingCharacters(in: .whitespacesAndNewlines)
         habit.minimumVersion = cleanMinimum.isEmpty ? nil : cleanMinimum
         habit.chainAfter = chainAfter

@@ -166,7 +166,13 @@
 "Ended" = "Zakończony";
 "Evening" = "Wieczór";
 "Evening summary" = "Wieczorne podsumowanie";
+"Every" = "Co";
+"Every %@" = "Co %@";
+"Every N days" = "Co N dni";
 "Every day" = "Codziennie";
+"Every month, on day %lld" = "Co miesiąc, %lld. dnia";
+"Every other day" = "Co drugi dzień";
+"Every year, %@" = "Co roku, %@";
 "Everyday basics" = "Podstawy na co dzień";
 "Exclusive avatars and backgrounds" = "Ekskluzywne awatary i tła";
 "Exclusive pets and more sparks" = "Ekskluzywne zwierzaki i więcej iskier";
@@ -182,6 +188,7 @@
 "Fifty" = "Pięćdziesiątka";
 "Finance" = "Finanse";
 "First step" = "Pierwszy krok";
+"First time" = "Pierwszy raz";
 "Fitness" = "Sport";
 "Focus for an hour" = "Godzina skupienia";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "Na przykład 8 szklanek wody. Każde stuknięcie w kółko dodaje jedną.";
@@ -345,6 +352,8 @@
 "On weekdays" = "W dni robocze";
 "On weekends" = "W weekendy";
 "Once" = "Raz";
+"Once a month" = "Raz w miesiącu";
+"Once a year" = "Raz w roku";
 "Once, %@" = "Raz, %@";
 "One more habit?" = "Jeszcze jeden nawyk?";
 "One notification at the chosen time." = "Jedno powiadomienie o wybranej godzinie.";

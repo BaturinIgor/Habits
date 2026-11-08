@@ -551,3 +551,12 @@ Couldn't send the message||Mesaj gönderilemedi
 Check your internet connection and try again, or send it by email.||İnternet bağlantını kontrol edip tekrar dene ya da e-postayla gönder.
 Try again||Tekrar dene
 Send by email||E-postayla gönder
+Once a month||Ayda bir
+Once a year||Yılda bir
+Every N days||N günde bir
+Every||Her
+Every %@||Her %@
+Every other day||Gün aşırı
+First time||İlk kez
+Every month, on day %lld||Her ay %lld. gün
+Every year, %@||Her yıl %@

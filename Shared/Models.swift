@@ -99,6 +99,12 @@ struct HabitSchedule: Codable, Hashable {
         case repeating
         case weekly
         case once
+        /// Каждые N дней от даты начала ("через день" = 2).
+        case everyNDays
+        /// Раз в месяц, в то же число, что и дата начала.
+        case monthly
+        /// Раз в год, в тот же день и месяц, что и дата начала.
+        case yearly
     }
 
     var kind: Kind
@@ -109,23 +115,27 @@ struct HabitSchedule: Codable, Hashable {
     var onceDate: Date
     /// Для вида "N раз в неделю".
     var timesPerWeek: Int
+    /// Для вида "каждые N дней".
+    var intervalDays: Int
 
     init(kind: Kind = .repeating,
          weekdays: Set<Int> = Set(1...7),
          startDate: Date = Calendar.app.startOfDay(for: Date()),
          endDate: Date? = nil,
          onceDate: Date = Calendar.app.startOfDay(for: Date()),
-         timesPerWeek: Int = 3) {
+         timesPerWeek: Int = 3,
+         intervalDays: Int = 2) {
         self.kind = kind
         self.weekdays = weekdays
         self.startDate = startDate
         self.endDate = endDate
         self.onceDate = onceDate
         self.timesPerWeek = timesPerWeek
+        self.intervalDays = intervalDays
     }
 
     enum CodingKeys: String, CodingKey {
-        case kind, weekdays, startDate, endDate, onceDate, timesPerWeek
+        case kind, weekdays, startDate, endDate, onceDate, timesPerWeek, intervalDays
     }
 
     init(from decoder: Decoder) throws {
@@ -137,6 +147,7 @@ struct HabitSchedule: Codable, Hashable {
         endDate = try c.decodeIfPresent(Date.self, forKey: .endDate)
         onceDate = try c.decodeIfPresent(Date.self, forKey: .onceDate) ?? today
         timesPerWeek = try c.decodeIfPresent(Int.self, forKey: .timesPerWeek) ?? 3
+        intervalDays = max(2, try c.decodeIfPresent(Int.self, forKey: .intervalDays) ?? 2)
     }
 }
 

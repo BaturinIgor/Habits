@@ -551,3 +551,12 @@ Couldn't send the message||Não foi possível enviar a mensagem
 Check your internet connection and try again, or send it by email.||Verifique sua conexão com a internet e tente de novo, ou envie por e-mail.
 Try again||Tentar de novo
 Send by email||Enviar por e-mail
+Once a month||Uma vez por mês
+Once a year||Uma vez por ano
+Every N days||A cada N dias
+Every||A cada
+Every %@||A cada %@
+Every other day||Dia sim, dia não
+First time||Primeira vez
+Every month, on day %lld||Todo mês, no dia %lld
+Every year, %@||Todo ano, em %@

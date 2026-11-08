@@ -166,7 +166,13 @@
 "Ended" = "종료됨";
 "Evening" = "저녁";
 "Evening summary" = "저녁 요약";
+"Every" = "간격";
+"Every %@" = "%@마다";
+"Every N days" = "N일마다";
 "Every day" = "매일";
+"Every month, on day %lld" = "매월 %lld일";
+"Every other day" = "이틀에 한 번";
+"Every year, %@" = "매년 %@";
 "Everyday basics" = "일상 기본 단어";
 "Exclusive avatars and backgrounds" = "전용 아바타와 배경";
 "Exclusive pets and more sparks" = "전용 펫과 더 많은 스파크";
@@ -182,6 +188,7 @@
 "Fifty" = "50번";
 "Finance" = "재정";
 "First step" = "첫걸음";
+"First time" = "첫 날짜";
 "Fitness" = "운동";
 "Focus for an hour" = "한 시간 집중하기";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "예: 물 8잔. 원을 탭할 때마다 1씩 늘어요.";
@@ -345,6 +352,8 @@
 "On weekdays" = "평일";
 "On weekends" = "주말";
 "Once" = "한 번";
+"Once a month" = "한 달에 한 번";
+"Once a year" = "1년에 한 번";
 "Once, %@" = "한 번, %@";
 "One more habit?" = "습관 하나 더?";
 "One notification at the chosen time." = "선택한 시간에 한 번 알려요.";

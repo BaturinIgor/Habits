@@ -166,7 +166,13 @@
 "Ended" = "Завершена";
 "Evening" = "Вечер";
 "Evening summary" = "Вечерняя сводка";
+"Every" = "Раз в";
+"Every %@" = "Раз в %@";
+"Every N days" = "Раз в N дней";
 "Every day" = "Каждый день";
+"Every month, on day %lld" = "Каждый месяц, %lld-го числа";
+"Every other day" = "Через день";
+"Every year, %@" = "Каждый год, %@";
 "Everyday basics" = "Самые нужные слова на каждый день";
 "Exclusive avatars and backgrounds" = "Эксклюзивные аватарки и фоны";
 "Exclusive pets and more sparks" = "Особые питомцы и больше искр";
@@ -182,6 +188,7 @@
 "Fifty" = "Полсотни";
 "Finance" = "Финансы";
 "First step" = "Первый шаг";
+"First time" = "Первый раз";
 "Fitness" = "Спорт";
 "Focus for an hour" = "Час без отвлечений";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "Например, 8 стаканов воды. Каждое нажатие на кружок добавляет один.";
@@ -345,6 +352,8 @@
 "On weekdays" = "По будням";
 "On weekends" = "По выходным";
 "Once" = "Один раз";
+"Once a month" = "Раз в месяц";
+"Once a year" = "Раз в год";
 "Once, %@" = "Один раз, %@";
 "One more habit?" = "Ещё одну привычку?";
 "One notification at the chosen time." = "Одно уведомление в выбранное время.";

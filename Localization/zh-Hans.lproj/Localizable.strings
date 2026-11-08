@@ -166,7 +166,13 @@
 "Ended" = "已结束";
 "Evening" = "晚上";
 "Evening summary" = "晚间小结";
+"Every" = "每隔";
+"Every %@" = "每 %@";
+"Every N days" = "每 N 天";
 "Every day" = "每天";
+"Every month, on day %lld" = "每月 %lld 日";
+"Every other day" = "隔天";
+"Every year, %@" = "每年 %@";
 "Everyday basics" = "日常基础词汇";
 "Exclusive avatars and backgrounds" = "专属头像和背景";
 "Exclusive pets and more sparks" = "专属宠物和更多火花";
@@ -182,6 +188,7 @@
 "Fifty" = "五十";
 "Finance" = "理财";
 "First step" = "第一步";
+"First time" = "首次";
 "Fitness" = "运动";
 "Focus for an hour" = "专注一小时";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "例如每天 8 杯水。每点一下圆圈加一。";
@@ -345,6 +352,8 @@
 "On weekdays" = "工作日";
 "On weekends" = "周末";
 "Once" = "一次";
+"Once a month" = "每月一次";
+"Once a year" = "每年一次";
 "Once, %@" = "一次，%@";
 "One more habit?" = "再来一个习惯？";
 "One notification at the chosen time." = "在所选时间发送一次通知。";

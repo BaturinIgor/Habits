@@ -166,7 +166,13 @@
 "Ended" = "समाप्त";
 "Evening" = "शाम";
 "Evening summary" = "शाम का सारांश";
+"Every" = "हर";
+"Every %@" = "हर %@";
+"Every N days" = "हर N दिन";
 "Every day" = "हर दिन";
+"Every month, on day %lld" = "हर महीने की %lld तारीख";
+"Every other day" = "एक दिन छोड़कर";
+"Every year, %@" = "हर साल %@";
 "Everyday basics" = "रोज़मर्रा के बुनियादी शब्द";
 "Exclusive avatars and backgrounds" = "ख़ास अवतार और पृष्ठभूमि";
 "Exclusive pets and more sparks" = "ख़ास पालतू और ज़्यादा चिंगारियाँ";
@@ -182,6 +188,7 @@
 "Fifty" = "पचास";
 "Finance" = "पैसा";
 "First step" = "पहला कदम";
+"First time" = "पहली बार";
 "Fitness" = "फ़िटनेस";
 "Focus for an hour" = "एक घंटा ध्यान से काम";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "जैसे, 8 गिलास पानी। गोले पर हर टैप से एक जुड़ता है।";
@@ -345,6 +352,8 @@
 "On weekdays" = "कार्यदिवसों में";
 "On weekends" = "सप्ताहांत में";
 "Once" = "एक बार";
+"Once a month" = "महीने में एक बार";
+"Once a year" = "साल में एक बार";
 "Once, %@" = "एक बार, %@";
 "One more habit?" = "एक और आदत?";
 "One notification at the chosen time." = "चुने गए समय पर एक सूचना।";

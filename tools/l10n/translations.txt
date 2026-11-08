@@ -552,3 +552,12 @@ Couldn't send the message||Не удалось отправить сообщен
 Check your internet connection and try again, or send it by email.||Проверь подключение к интернету и попробуй ещё раз или отправь письмом.||Prüfe deine Internetverbindung und versuche es erneut, oder sende sie per E-Mail.||Vérifie ta connexion Internet et réessaie, ou envoie-le par e-mail.||Revisa tu conexión a internet e inténtalo de nuevo, o envíalo por correo.||请检查网络连接后重试，或通过邮件发送。||インターネット接続を確認してもう一度お試しいただくか、メールで送信してください。||인터넷 연결을 확인하고 다시 시도하거나 메일로 보내 주세요.||इंटरनेट कनेक्शन जाँचें और फिर से कोशिश करें, या ईमेल से भेजें।
 Try again||Попробовать ещё раз||Erneut versuchen||Réessayer||Reintentar||重试||再試行||다시 시도||फिर से कोशिश करें
 Send by email||Отправить письмом||Per E-Mail senden||Envoyer par e-mail||Enviar por correo||通过邮件发送||メールで送信||메일로 보내기||ईमेल से भेजें
+Once a month||Раз в месяц||Einmal im Monat||Une fois par mois||Una vez al mes||每月一次||月に1回||한 달에 한 번||महीने में एक बार
+Once a year||Раз в год||Einmal im Jahr||Une fois par an||Una vez al año||每年一次||年に1回||1년에 한 번||साल में एक बार
+Every N days||Раз в N дней||Alle N Tage||Tous les N jours||Cada N días||每 N 天||N日ごと||N일마다||हर N दिन
+Every||Раз в||Alle||Tous les||Cada||每隔||間隔||간격||हर
+Every %@||Раз в %@||Alle %@||Tous les %@||Cada %@||每 %@||%@ごと||%@마다||हर %@
+Every other day||Через день||Jeden zweiten Tag||Un jour sur deux||Cada dos días||隔天||1日おき||이틀에 한 번||एक दिन छोड़कर
+First time||Первый раз||Erstes Mal||Première fois||Primera vez||首次||初回||첫 날짜||पहली बार
+Every month, on day %lld||Каждый месяц, %lld-го числа||Monatlich am %lld.||Chaque mois, le %lld||Cada mes, el día %lld||每月 %lld 日||毎月%lld日||매월 %lld일||हर महीने की %lld तारीख
+Every year, %@||Каждый год, %@||Jährlich am %@||Chaque année, le %@||Cada año, el %@||每年 %@||毎年%@||매년 %@||हर साल %@

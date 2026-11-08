@@ -166,7 +166,13 @@
 "Ended" = "Sona erdi";
 "Evening" = "Akşam";
 "Evening summary" = "Akşam özeti";
+"Every" = "Her";
+"Every %@" = "Her %@";
+"Every N days" = "N günde bir";
 "Every day" = "Her gün";
+"Every month, on day %lld" = "Her ay %lld. gün";
+"Every other day" = "Gün aşırı";
+"Every year, %@" = "Her yıl %@";
 "Everyday basics" = "Günlük temel kelimeler";
 "Exclusive avatars and backgrounds" = "Özel avatarlar ve arka planlar";
 "Exclusive pets and more sparks" = "Özel evcil hayvanlar ve daha çok kıvılcım";
@@ -182,6 +188,7 @@
 "Fifty" = "Elli";
 "Finance" = "Finans";
 "First step" = "İlk adım";
+"First time" = "İlk kez";
 "Fitness" = "Spor";
 "Focus for an hour" = "Bir saat odaklan";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "Örneğin 8 bardak su. Daireye her dokunuş bir ekler.";
@@ -345,6 +352,8 @@
 "On weekdays" = "Hafta içi";
 "On weekends" = "Hafta sonu";
 "Once" = "Bir kez";
+"Once a month" = "Ayda bir";
+"Once a year" = "Yılda bir";
 "Once, %@" = "Bir kez, %@";
 "One more habit?" = "Bir alışkanlık daha?";
 "One notification at the chosen time." = "Seçilen saatte tek bildirim.";
