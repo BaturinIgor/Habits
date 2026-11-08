@@ -453,6 +453,7 @@
 "Set up Mail on this iPhone or send your message to %@." = "Skonfiguruj Mail na tym iPhonie lub wyślij wiadomość na %@.";
 "Settings" = "Ustawienia";
 "Shared data" = "Wspólne dane";
+"Show all habits or only one group." = "Wszystkie nawyki albo tylko jedna grupa.";
 "Show introduction" = "Pokaż wprowadzenie";
 "Shows how many reminders came since you last opened the app." = "Pokazuje, ile przypomnień przyszło od ostatniego otwarcia aplikacji.";
 "Simple gestures" = "Proste gesty";
@@ -516,6 +517,7 @@
 "Today screen" = "Ekran Dziś";
 "Today's habits" = "Dzisiejsze nawyki";
 "Today's progress and quick check-off right from the Home Screen." = "Dzisiejszy postęp i szybkie odhaczanie prosto z ekranu początkowego.";
+"Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "Postęp dnia i szybkie odhaczanie na ekranie początkowym. Przytrzymaj widżet, aby wybrać grupę.";
 "Tomorrow" = "Jutro";
 "Topic" = "Temat";
 "Total check-ins" = "Wszystkie odhaczenia";

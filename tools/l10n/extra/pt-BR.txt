@@ -585,3 +585,5 @@ What should I add?||O que devo adicionar?
 What to add||O que adicionar
 What's left today||O que falta hoje
 Which habit?||Qual hábito?
+Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group.||O progresso do dia e a marcação rápida na tela de início. Toque e segure o widget para escolher um grupo.
+Show all habits or only one group.||Todos os hábitos ou só um grupo.

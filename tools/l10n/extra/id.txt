@@ -585,3 +585,5 @@ What should I add?||Apa yang ingin ditambahkan?
 What to add||Yang ditambahkan
 What's left today||Yang tersisa hari ini
 Which habit?||Kebiasaan yang mana?
+Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group.||Progres hari ini dan centang cepat langsung dari Layar Utama. Tahan widget untuk memilih grup.
+Show all habits or only one group.||Semua kebiasaan atau hanya satu grup.

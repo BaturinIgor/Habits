@@ -453,6 +453,7 @@
 "Set up Mail on this iPhone or send your message to %@." = "Bu iPhone'da Mail'i ayarla veya mesajını %@ adresine gönder.";
 "Settings" = "Ayarlar";
 "Shared data" = "Paylaşılan veriler";
+"Show all habits or only one group." = "Tüm alışkanlıklar ya da yalnızca bir grup.";
 "Show introduction" = "Tanıtımı göster";
 "Shows how many reminders came since you last opened the app." = "Uygulamayı son açışından beri kaç hatırlatma geldiğini gösterir.";
 "Simple gestures" = "Basit hareketler";
@@ -516,6 +517,7 @@
 "Today screen" = "Bugün ekranı";
 "Today's habits" = "Bugünün alışkanlıkları";
 "Today's progress and quick check-off right from the Home Screen." = "Bugünün ilerlemesi ve Ana Ekran'dan hızlı işaretleme.";
+"Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "Ana ekrandan günün ilerlemesi ve hızlı işaretleme. Grup seçmek için widget'a basılı tutun.";
 "Tomorrow" = "Yarın";
 "Topic" = "Konu";
 "Total check-ins" = "Toplam işaretleme";

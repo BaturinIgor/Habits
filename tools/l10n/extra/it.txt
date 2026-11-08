@@ -585,3 +585,5 @@ What should I add?||Cosa devo aggiungere?
 What to add||Cosa aggiungere
 What's left today||Cosa resta oggi
 Which habit?||Quale abitudine?
+Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group.||I progressi del giorno e la spunta rapida dalla schermata Home. Tieni premuto il widget per scegliere un gruppo.
+Show all habits or only one group.||Tutte le abitudini o solo un gruppo.

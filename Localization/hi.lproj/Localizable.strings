@@ -453,6 +453,7 @@
 "Set up Mail on this iPhone or send your message to %@." = "iPhone पर मेल सेट करें या अपना संदेश %@ पर भेजें।";
 "Settings" = "सेटिंग्स";
 "Shared data" = "साझा डेटा";
+"Show all habits or only one group." = "सभी आदतें या केवल एक समूह।";
 "Show introduction" = "परिचय दिखाएँ";
 "Shows how many reminders came since you last opened the app." = "दिखाता है कि पिछली बार ऐप खोलने के बाद कितने रिमाइंडर आए।";
 "Simple gestures" = "आसान इशारे";
@@ -516,6 +517,7 @@
 "Today screen" = "'आज' स्क्रीन";
 "Today's habits" = "आज की आदतें";
 "Today's progress and quick check-off right from the Home Screen." = "होम स्क्रीन से आज की प्रगति देखें और तुरंत निशान लगाएँ।";
+"Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "होम स्क्रीन से ही आज की प्रगति और तुरंत मार्क करें। समूह चुनने के लिए विजेट को दबाकर रखें।";
 "Tomorrow" = "कल";
 "Topic" = "विषय";
 "Total check-ins" = "कुल बार पूरी";

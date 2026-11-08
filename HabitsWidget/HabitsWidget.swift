@@ -32,6 +32,8 @@ struct HabitsEntry: TimelineEntry {
     let dayKey: String
     let items: [WidgetHabit]
     var problem: WidgetProblem? = nil
+    /// Название группы, если виджет показывает одну группу.
+    var title: String? = nil
 
     var done: Int { items.filter { $0.status == .done }.count }
     var total: Int { items.filter { $0.status != .skipped && ($0.countsInTotal || $0.status == .done) }.count }
@@ -76,28 +78,38 @@ struct HabitsProvider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<HabitsEntry>) -> Void) {
+        completion(Self.timeline(groupID: nil))
+    }
+
+    /// Записи на сегодня и завтра. С groupID показывается только эта группа.
+    static func timeline(groupID: UUID?) -> Timeline<HabitsEntry> {
         let (data, problem) = Self.load()
         if let problem {
             // Попробуем снова через 15 минут: возможно, телефон разблокируют.
-            var entry = Self.entry(for: Date(), data: data)
-            entry.problem = problem
-            completion(Timeline(entries: [entry], policy: .after(Date().addingTimeInterval(15 * 60))))
-            return
+            var first = Self.entry(for: Date(), data: data, groupID: groupID)
+            first.problem = problem
+            return Timeline(entries: [first], policy: .after(Date().addingTimeInterval(15 * 60)))
         }
         let calendar = Calendar.app
         let now = Date()
         let tomorrow = calendar.date(byAdding: .day, value: 1, to: calendar.startOfDay(for: now)) ?? now.addingTimeInterval(86400)
         let entries = [
-            Self.entry(for: now, data: data),
-            Self.entry(for: tomorrow, data: data)
+            Self.entry(for: now, data: data, groupID: groupID),
+            Self.entry(for: tomorrow, data: data, groupID: groupID)
         ]
-        completion(Timeline(entries: entries, policy: .after(tomorrow.addingTimeInterval(60))))
+        return Timeline(entries: entries, policy: .after(tomorrow.addingTimeInterval(60)))
     }
 
-    static func entry(for date: Date, data: AppData) -> HabitsEntry {
+    static func entry(for date: Date, data: AppData, groupID: UUID? = nil) -> HabitsEntry {
         let calendar = Calendar.app
         let key = DayKey.make(date, calendar: calendar)
-        let ordered = todaySections(data.habits(on: date, calendar: calendar), data: data, day: key).flatMap(\.habits)
+        // Если группу удалили, показываем все привычки.
+        let group = data.group(groupID)
+        var planned = data.habits(on: date, calendar: calendar)
+        if let group {
+            planned = planned.filter { $0.groupID == group.id }
+        }
+        let ordered = todaySections(planned, data: data, day: key).flatMap(\.habits)
         let position = Dictionary(uniqueKeysWithValues: ordered.enumerated().map { ($1.id, $0) })
         let items = ordered
             .map { habit in
@@ -121,7 +133,7 @@ struct HabitsProvider: TimelineProvider {
                 if l != r { return l < r }
                 return (position[lhs.id] ?? 0) < (position[rhs.id] ?? 0)
             }
-        return HabitsEntry(date: date, dayKey: key, items: items)
+        return HabitsEntry(date: date, dayKey: key, items: items, title: group?.name)
     }
 
     private static func widgetProgress(_ habit: Habit, data: AppData, key: String) -> Double {
@@ -153,7 +165,7 @@ struct TodayWidget: Widget {
     let kind = "TodayWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: HabitsProvider()) { entry in
+        AppIntentConfiguration(kind: kind, intent: TodayWidgetConfiguration.self, provider: GroupHabitsProvider()) { entry in
             Group {
                 if let problem = entry.problem {
                     WidgetProblemView(problem: problem)
@@ -164,7 +176,7 @@ struct TodayWidget: Widget {
             .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("Today's habits")
-        .description("Today's progress and quick check-off right from the Home Screen.")
+        .description("Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group.")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
@@ -287,8 +299,9 @@ private struct MediumView: View {
         HStack(spacing: 16) {
             VStack(alignment: .leading, spacing: 6) {
                 RingSummary(entry: entry, size: 70, lineWidth: 9)
-                Text("Today")
+                Text(entry.title ?? String(localized: "Today"))
                     .font(.caption.weight(.semibold))
+                    .lineLimit(1)
                     .foregroundStyle(.secondary)
             }
             ListWidgetView(entry: entry, limit: 3, showsHeader: false)
@@ -307,8 +320,9 @@ private struct ListWidgetView: View {
                 HStack(spacing: 12) {
                     RingSummary(entry: entry, size: 48, lineWidth: 6)
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Today")
+                        Text(entry.title ?? String(localized: "Today"))
                             .font(.headline)
+                            .lineLimit(1)
                         Text(entry.total == 0 ? String(localized: "No habits") : String(localized: "\(entry.done) of \(entry.total) done"))
                             .font(.caption)
                             .foregroundStyle(.secondary)

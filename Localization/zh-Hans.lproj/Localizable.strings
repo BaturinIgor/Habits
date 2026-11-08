@@ -453,6 +453,7 @@
 "Set up Mail on this iPhone or send your message to %@." = "请在 iPhone 上设置“邮件”，或将消息发送至 %@。";
 "Settings" = "设置";
 "Shared data" = "共享数据";
+"Show all habits or only one group." = "显示全部习惯或仅一个分组。";
 "Show introduction" = "查看引导";
 "Shows how many reminders came since you last opened the app." = "显示自上次打开应用以来收到了多少条提醒。";
 "Simple gestures" = "简单手势";
@@ -516,6 +517,7 @@
 "Today screen" = "“今天”页面";
 "Today's habits" = "今日习惯";
 "Today's progress and quick check-off right from the Home Screen." = "在主屏幕查看今日进度并快速打卡。";
+"Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "在主屏幕查看今日进度并快速打卡。长按小组件可选择分组。";
 "Tomorrow" = "明天";
 "Topic" = "主题";
 "Total check-ins" = "累计打卡";

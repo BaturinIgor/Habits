@@ -453,6 +453,7 @@
 "Set up Mail on this iPhone or send your message to %@." = "Настрой Почту на iPhone или отправь сообщение на %@.";
 "Settings" = "Настройки";
 "Shared data" = "Общие данные";
+"Show all habits or only one group." = "Все привычки или только одна группа.";
 "Show introduction" = "Показать знакомство";
 "Shows how many reminders came since you last opened the app." = "Показывает, сколько напоминаний пришло с последнего открытия приложения.";
 "Simple gestures" = "Простые жесты";
@@ -516,6 +517,7 @@
 "Today screen" = "Главный экран";
 "Today's habits" = "Привычки на сегодня";
 "Today's progress and quick check-off right from the Home Screen." = "Прогресс дня и отметка привычек прямо с экрана Домой.";
+"Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "Прогресс дня и отметка прямо с экрана «Домой». Зажми виджет, чтобы выбрать группу.";
 "Tomorrow" = "Завтра";
 "Topic" = "Тема";
 "Total check-ins" = "Всего отметок";

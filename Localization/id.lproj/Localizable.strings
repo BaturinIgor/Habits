@@ -453,6 +453,7 @@
 "Set up Mail on this iPhone or send your message to %@." = "Atur Mail di iPhone ini atau kirim pesanmu ke %@.";
 "Settings" = "Pengaturan";
 "Shared data" = "Data bersama";
+"Show all habits or only one group." = "Semua kebiasaan atau hanya satu grup.";
 "Show introduction" = "Tampilkan pengenalan";
 "Shows how many reminders came since you last opened the app." = "Menampilkan berapa pengingat yang masuk sejak terakhir kali kamu membuka aplikasi.";
 "Simple gestures" = "Gerakan sederhana";
@@ -516,6 +517,7 @@
 "Today screen" = "Layar Hari Ini";
 "Today's habits" = "Kebiasaan hari ini";
 "Today's progress and quick check-off right from the Home Screen." = "Progres hari ini dan centang cepat langsung dari Layar Utama.";
+"Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "Progres hari ini dan centang cepat langsung dari Layar Utama. Tahan widget untuk memilih grup.";
 "Tomorrow" = "Besok";
 "Topic" = "Topik";
 "Total check-ins" = "Total centang";

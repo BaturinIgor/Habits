@@ -585,3 +585,5 @@ What should I add?||Ne ekleyeyim?
 What to add||Ne eklenecek
 What's left today||Bugün ne kaldı
 Which habit?||Hangi alışkanlık?
+Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group.||Ana ekrandan günün ilerlemesi ve hızlı işaretleme. Grup seçmek için widget'a basılı tutun.
+Show all habits or only one group.||Tüm alışkanlıklar ya da yalnızca bir grup.

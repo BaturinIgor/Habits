@@ -453,6 +453,7 @@
 "Set up Mail on this iPhone or send your message to %@." = "iPhone でメールを設定するか、%@ に送信してください。";
 "Settings" = "設定";
 "Shared data" = "共有データ";
+"Show all habits or only one group." = "すべての習慣、または1つのグループだけを表示。";
 "Show introduction" = "紹介を表示";
 "Shows how many reminders came since you last opened the app." = "前回アプリを開いてから届いたリマインダーの数を表示します。";
 "Simple gestures" = "かんたん操作";
@@ -516,6 +517,7 @@
 "Today screen" = "「今日」画面";
 "Today's habits" = "今日の習慣";
 "Today's progress and quick check-off right from the Home Screen." = "ホーム画面で今日の進み具合を確認し、すぐにチェック。";
+"Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "ホーム画面で今日の進み具合を確認してすぐにチェック。ウィジェットを長押しするとグループを選べます。";
 "Tomorrow" = "明日";
 "Topic" = "トピック";
 "Total check-ins" = "合計チェック数";
