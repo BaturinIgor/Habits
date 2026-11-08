@@ -46,6 +46,8 @@ Ketentuan Penggunaan: https://www.apple.com/legal/internet-services/itunes/dev/s
 Privasi: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab kini berjalan di iOS 17 dan yang lebih baru.
-• Kirim masukan langsung dari aplikasi, bisa dengan tangkapan layar.
-• Tombol "Tambah kebiasaan" di layar Hari Ini yang kosong sudah diperbaiki.
+• Grup keluarga: bagikan grup lewat iCloud, semua anggota bisa mencentang kebiasaan dan mendapat pengingat.
+• Jadwal baru: selang sehari, setiap N hari, sebulan sekali, dan setahun sekali.
+• Buat kebiasaan dengan suara: cukup ucapkan namanya.
+• Siri dan Pintasan: centang kebiasaan, tambah yang baru, atau tanya apa yang tersisa hari ini.
+• Widget Hari Ini bisa menampilkan satu grup, dan layar Hari Ini bisa diurutkan per grup.

@@ -46,6 +46,8 @@ Nutzungsbedingungen: https://www.apple.com/legal/internet-services/itunes/dev/st
 Datenschutz: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab läuft jetzt ab iOS 17.
-• Feedback direkt aus der App senden, auf Wunsch mit Screenshot.
-• Die Taste „Gewohnheit hinzufügen“ auf dem leeren Heute-Bildschirm wurde korrigiert.
+• Familiengruppen: Teile eine Gruppe über iCloud, und alle darin können abhaken und bekommen Erinnerungen.
+• Neue Zeitpläne: jeden zweiten Tag, alle N Tage, einmal im Monat und einmal im Jahr.
+• Gewohnheiten per Sprache anlegen: Sag einfach den Namen.
+• Siri und Kurzbefehle: Gewohnheit abhaken, neue hinzufügen oder fragen, was heute noch offen ist.
+• Das Heute-Widget kann eine Gruppe zeigen, und der Heute-Bildschirm lässt sich nach Gruppen ordnen.

@@ -46,6 +46,8 @@ Termos de uso: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacidade: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• O ZenHab agora funciona no iOS 17 ou posterior.
-• Envie feedback direto do app, com captura de tela se quiser.
-• Corrigido o botão "Adicionar hábito" na tela Hoje vazia.
+• Grupos familiares: compartilhe um grupo pelo iCloud e todos podem marcar os hábitos e receber lembretes.
+• Novas frequências: dia sim, dia não, a cada N dias, uma vez por mês e uma vez por ano.
+• Crie um hábito por voz: basta dizer o nome.
+• Siri e Atalhos: marque um hábito, adicione um novo ou pergunte o que falta hoje.
+• O widget Hoje pode mostrar um só grupo, e a tela Hoje pode ser organizada por grupos.

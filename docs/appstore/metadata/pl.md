@@ -46,6 +46,8 @@ Warunki korzystania: https://www.apple.com/legal/internet-services/itunes/dev/st
 Prywatność: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab działa teraz od iOS 17.
-• Opinię wyślesz prosto z aplikacji, także ze zrzutem ekranu.
-• Poprawiono przycisk „Dodaj nawyk” na pustym ekranie Dziś.
+• Grupy rodzinne: udostępnij grupę przez iCloud, a wszyscy w niej mogą odhaczać nawyki i dostają przypomnienia.
+• Nowe harmonogramy: co drugi dzień, co N dni, raz w miesiącu i raz w roku.
+• Twórz nawyki głosem: wystarczy powiedzieć nazwę.
+• Siri i Skróty: odhacz nawyk, dodaj nowy lub zapytaj, co zostało na dziś.
+• Widżet Dziś może pokazywać jedną grupę, a ekran Dziś można ułożyć według grup.
