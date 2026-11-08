@@ -33,7 +33,9 @@ jobs:
           set -euo pipefail
           if [ -z "$CK_TOKEN" ]; then echo "Нет секрета CLOUDKIT_MANAGEMENT_TOKEN"; exit 1; fi
           xcrun cktool version || true
-          printf '%s\n' "$CK_TOKEN" | xcrun cktool save-token --type management --method file
+          # Токен передаём аргументом: в CI cktool не может спросить его интерактивно.
+          xcrun cktool save-token "$CK_TOKEN" --type management --method file \
+            || { xcrun cktool save-token --help; exit 1; }
 
       - name: Export current schema
         run: |
