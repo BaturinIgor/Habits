@@ -1,0 +1,62 @@
+name: CloudKit schema
+
+# Добавляет в Development-схему iCloud типы семейных групп и системный тип cloudkit.share,
+# без которого нельзя создать приглашение. После запуска схему нужно выкатить
+# в Production в CloudKit Console: Deploy Schema Changes.
+# Нужен секрет CLOUDKIT_MANAGEMENT_TOKEN: CloudKit Console -> Settings -> Tokens & Keys ->
+# New Management Token.
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Загрузить схему (без галочки только проверка)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  schema:
+    runs-on: macos-26
+    timeout-minutes: 15
+    env:
+      TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      CONTAINER: iCloud.${{ vars.APP_BUNDLE_ID || 'com.baturinigor.zenhab' }}
+      CK_TOKEN: ${{ secrets.CLOUDKIT_MANAGEMENT_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Save management token
+        run: |
+          set -euo pipefail
+          if [ -z "$CK_TOKEN" ]; then echo "Нет секрета CLOUDKIT_MANAGEMENT_TOKEN"; exit 1; fi
+          xcrun cktool version || true
+          printf '%s\n' "$CK_TOKEN" | xcrun cktool save-token --type management --method file
+
+      - name: Export current schema
+        run: |
+          set -euo pipefail
+          xcrun cktool export-schema --team-id "$TEAM_ID" --container-id "$CONTAINER" \
+            --environment development --output-file current.ckdb
+          echo "---- current development schema ----"
+          cat current.ckdb
+
+      - name: Add family and share types
+        run: |
+          python3 tools/cloudkit/add_share_type.py current.ckdb new.ckdb
+          echo "---- new schema ----"
+          cat new.ckdb
+
+      - name: Validate
+        run: |
+          xcrun cktool validate-schema --team-id "$TEAM_ID" --container-id "$CONTAINER" \
+            --environment development --file new.ckdb
+
+      - name: Import into development
+        if: inputs.apply
+        run: |
+          xcrun cktool import-schema --team-id "$TEAM_ID" --container-id "$CONTAINER" \
+            --environment development --file new.ckdb
+          echo "Готово. Теперь CloudKit Console -> Deploy Schema Changes -> Deploy."
