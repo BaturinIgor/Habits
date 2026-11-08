@@ -32,6 +32,8 @@ final class HabitStore {
         WidgetCenter.shared.reloadAllTimelines()
         let snapshot = data
         Task { await NotificationPlanner.reschedule(data: snapshot) }
+        // Siri узнаёт новые названия привычек для фраз вроде «Отметь Зарядку».
+        HabitsShortcuts.updateAppShortcutParameters()
     }
 
     func reschedule() async {

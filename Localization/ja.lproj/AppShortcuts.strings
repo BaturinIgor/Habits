@@ -1,0 +1,8 @@
+"Check off ${habit} in ${applicationName}" = "${applicationName}で${habit}をチェック";
+"Mark ${habit} in ${applicationName}" = "${applicationName}で${habit}を完了";
+"Check off a habit in ${applicationName}" = "${applicationName}で習慣をチェック";
+"Add a habit in ${applicationName}" = "${applicationName}で習慣を追加";
+"Add a reminder in ${applicationName}" = "${applicationName}でリマインダーを追加";
+"New habit in ${applicationName}" = "${applicationName}で新しい習慣";
+"What's left in ${applicationName}" = "${applicationName}で残りは";
+"What's left today in ${applicationName}" = "${applicationName}で今日の残りは";

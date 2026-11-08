@@ -20,6 +20,7 @@ struct HabitEditorView: View {
     @State private var repeatCount: Int
     @State private var repeatInterval: Int
     @State private var showingPaywall = false
+    @State private var showingVoice = false
     @State private var timesPerWeek: Int
     @State private var intervalDays: Int
     @State private var partOfDay: PartOfDay
@@ -190,6 +191,9 @@ struct HabitEditorView: View {
             .sheet(isPresented: $showingPaywall) {
                 PaywallView()
             }
+            .sheet(isPresented: $showingVoice) {
+                VoiceHabitSheet { apply($0) }
+            }
         }
     }
 
@@ -204,6 +208,18 @@ struct HabitEditorView: View {
                     .font(.title3.weight(.semibold))
                     .focused($nameFocused)
                     .submitLabel(.done)
+                if original == nil {
+                    Button {
+                        nameFocused = false
+                        showingVoice = true
+                    } label: {
+                        Image(systemName: "mic.fill")
+                            .font(.title3)
+                            .foregroundStyle(color)
+                    }
+                    .buttonStyle(.borderless)
+                    .accessibilityLabel("Voice input")
+                }
             }
             .padding(.vertical, 6)
             TextField("Description or motivation (optional)", text: $draft.details, axis: .vertical)
@@ -471,6 +487,45 @@ struct HabitEditorView: View {
             }
         } footer: {
             Text("An archived habit is hidden from the Today screen and sends no notifications, but its history is kept.")
+        }
+    }
+
+    // MARK: Голосовой ввод
+
+    /// Заполняет поля из распознанной фразы. Остальные настройки остаются как были.
+    private func apply(_ voice: VoiceHabit) {
+        withAnimation(.snappy) {
+            draft.name = voice.name
+            if voice.hasSchedule {
+                let schedule = voice.schedule
+                draft.schedule.startDate = schedule.startDate
+                draft.schedule.onceDate = schedule.onceDate
+                switch schedule.kind {
+                case .once:
+                    frequency = .once
+                case .weekly:
+                    frequency = .weekly
+                    timesPerWeek = schedule.timesPerWeek
+                case .everyNDays:
+                    frequency = .everyNDays
+                    intervalDays = schedule.intervalDays
+                case .monthly:
+                    frequency = .monthly
+                case .yearly:
+                    frequency = .yearly
+                case .repeating:
+                    if schedule.weekdays == Weekdays.all {
+                        frequency = .daily
+                    } else {
+                        frequency = .days
+                        customDays = schedule.weekdays
+                    }
+                }
+            }
+            if let reminder = voice.reminder {
+                hasReminder = true
+                reminderDate = reminder.dateToday
+            }
         }
     }
 

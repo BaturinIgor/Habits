@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / 年";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@：价格 ✨ %lld，你有：✨ %lld。还差 ✨ %lld。完成习惯即可获得。";
 "%@ costs %lld sparks. You have %lld." = "%@：价格 ✨ %lld。你有：✨ %lld。";
+"%@ is already done today." = "%@ 今天已完成。";
 "%lld min" = "%lld 分钟";
 "%lld more to %@" = "再 %lld 点到达%@";
 "%lld of %lld" = "%lld / %lld";
@@ -29,11 +30,14 @@
 "Active" = "已启用";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "活跃日：至少按时完成一个习惯。喂食可获得 %lld 经验，宠物长得更快。";
 "Activity over %lld weeks" = "近 %lld 周活动";
+"Add a habit" = "添加习惯";
 "Add a habit, pick days and a time, and I'll remind you." = "添加一个习惯，选择日期和时间，我会提醒你。";
 "Add a note to 20 completed habits" = "为 20 个已完成的习惯添加备注";
 "Add habit" = "添加习惯";
 "Add note" = "添加备注";
 "Added" = "已添加";
+"Added %@: %@, at %@." = "已添加“%@”：%@，%@。";
+"Added %@: %@." = "已添加“%@”：%@。";
 "Adopt" = "领养";
 "Adopt a pet" = "领养一只宠物";
 "Advanced" = "高级";
@@ -45,6 +49,7 @@
 "All done" = "全部完成";
 "All done!" = "全部完成！";
 "Allow notifications" = "允许通知";
+"Allow the microphone and speech recognition for ZenHab in Settings." = "请在“设置”中允许 ZenHab 使用麦克风和语音识别。";
 "Allowed" = "已允许";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "归档的习惯不会显示在“今天”页面，也不会发送通知，但历史记录会保留。";
 "And %lld more" = "还有 %lld 个";
@@ -85,6 +90,7 @@
 "Check off 10 habits before 8 am" = "在 8 点前打卡 10 次";
 "Check off 30 habits on weekends" = "周末打卡 30 次";
 "Check off 50 habits before 8 am" = "早上 8 点前打卡 50 次";
+"Check off a habit" = "打卡习惯";
 "Check off a habit for the first time" = "第一次打卡";
 "Check off habits 100 times" = "打卡 100 次";
 "Check off habits 1000 times" = "打卡 1000 次";
@@ -122,6 +128,7 @@
 "Create 3 groups" = "创建 3 个分组";
 "Create 5 habits" = "创建 5 个习惯";
 "Create your first one and it will appear here." = "创建第一个习惯，它会显示在这里。";
+"Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "根据你说的名称创建习惯。";
 "Current habits and history will be replaced with the data from the file." = "当前的习惯和记录将被文件中的数据替换。";
 "Current streak" = "当前连续";
 "Custom habit" = "自定义习惯";
@@ -146,6 +153,7 @@
 "Don't forget about me!" = "别忘了我哦！";
 "Done" = "完成";
 "Done habits at the bottom" = "已完成的放到底部";
+"Done: %@" = "已完成：%@";
 "Dragon" = "龙";
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "龙、独角兽和凤凰，每月赠送 100 火花，每日上限更高。";
 "Draw" = "画画";
@@ -175,6 +183,7 @@
 "Every other day" = "隔天";
 "Every year, %@" = "每年 %@";
 "Everyday basics" = "日常基础词汇";
+"Everything is done for today." = "今天的都完成了。";
 "Exclusive avatars and backgrounds" = "专属头像和背景";
 "Exclusive pets and more sparks" = "专属宠物和更多火花";
 "Export data" = "导出数据";
@@ -216,6 +225,7 @@
 "Habit Tracker Pro" = "习惯追踪 Pro";
 "Habit deleted" = "习惯已删除";
 "Habit name" = "习惯名称";
+"Habit not found." = "未找到该习惯。";
 "Habit order" = "习惯顺序";
 "Habit progress" = "习惯进度";
 "Habits" = "习惯";
@@ -274,6 +284,7 @@
 "Learn words" = "学单词";
 "Learned: %lld of %lld" = "已掌握：%lld / %lld";
 "Learning" = "学习";
+"Left for today: %@." = "今天还剩：%@。";
 "Legend" = "传奇";
 "Less" = "少";
 "Less social media" = "少刷社交媒体";
@@ -284,10 +295,13 @@
 "Level %lld" = "等级 %lld";
 "Listen" = "收听";
 "Listen to a podcast" = "听播客";
+"Listening…" = "正在聆听…";
+"Lists the habits that aren't checked off today." = "列出今天还没打卡的习惯。";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "这台 iPhone 未设置“邮件”。请打开其他邮件应用，或复制消息发送到 %@。";
 "Make the bed" = "整理床铺";
 "Mark as done" = "标记为完成";
 "Mark habit" = "打卡习惯";
+"Marks a habit as done for today." = "将习惯标记为今天已完成。";
 "Meditate" = "冥想";
 "Message a friend" = "给朋友发消息";
 "Mindfulness" = "正念";
@@ -430,6 +444,7 @@
 "Save" = "保存";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "将副本保存到“文件”或 iCloud 云盘。导入会替换当前所有数据。";
 "Save a streak with a freeze" = "用冻结保住连续记录";
+"Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "说出习惯名称，例如“喝水”。";
 "Schedule" = "计划";
 "Scheduled notifications" = "已安排的通知";
 "Send" = "发送";
@@ -450,7 +465,9 @@
 "Some days" = "指定日";
 "Sparks" = "火花";
 "Sparks and a pet" = "火花与宠物";
+"Speak" = "说话";
 "Species" = "种类";
+"Speech recognition isn't available right now." = "语音识别暂不可用。";
 "Spend" = "使用";
 "Spend time outdoors" = "户外活动";
 "Start" = "开始";
@@ -460,6 +477,7 @@
 "Steps to reproduce help a lot." = "复现步骤非常有帮助。";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "复现步骤非常有帮助。可以在邮件中附上截图。";
 "Still learning" = "还在学";
+"Stop" = "停止";
 "Streaks" = "连续";
 "Stretch" = "拉伸";
 "Study for 30 minutes" = "学习 30 分钟";
@@ -482,6 +500,7 @@
 "Tell us what you think" = "说说你的想法";
 "Terms of Use" = "使用条款";
 "Thank you!" = "谢谢！";
+"The free version has reached its habit limit. Open ZenHab to get Pro." = "免费版的习惯数量已达上限。打开 ZenHab 获取 Pro。";
 "The free version has up to 5 active habits." = "免费版最多 5 个进行中的习惯。";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "最低版本也算完成，并保持连续记录。链中的习惯会在你完成上一个后立即提醒。";
 "The new language will apply after you close the app and open it again." = "关闭并重新打开应用后，新语言才会生效。";
@@ -520,6 +539,7 @@
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "习惯未打卡时，提醒会重复：%@。点击通知中的“完成”或“跳过”可停止当天的重复。";
 "Version" = "版本";
 "Veteran" = "老将";
+"Voice input" = "语音输入";
 "Waiting for you" = "在等你";
 "Wake up early" = "早起";
 "Walk" = "散步";
@@ -534,6 +554,10 @@
 "Welcome to Habit Tracker" = "欢迎使用习惯追踪";
 "What %@ gives you" = "%@ 能带给你什么";
 "What happened and what did you expect?" = "发生了什么？你原本期望什么？";
+"What should I add?" = "要添加什么？";
+"What to add" = "添加内容";
+"What's left today" = "今天还剩什么";
+"Which habit?" = "哪个习惯？";
 "Widget" = "小组件";
 "Words" = "单词";
 "Words for today are done" = "今天的单词完成了";

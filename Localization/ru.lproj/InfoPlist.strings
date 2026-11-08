@@ -1,2 +1,4 @@
 "CFBundleDisplayName" = "ZenHab";
 "CFBundleName" = "ZenHab";
+"NSMicrophoneUsageDescription" = "ZenHab использует микрофон, чтобы создавать привычки голосом.";
+"NSSpeechRecognitionUsageDescription" = "ZenHab превращает твои слова в привычку с расписанием и временем напоминания.";

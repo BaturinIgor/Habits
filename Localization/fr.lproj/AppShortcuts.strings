@@ -1,0 +1,8 @@
+"Check off ${habit} in ${applicationName}" = "Coche ${habit} dans ${applicationName}";
+"Mark ${habit} in ${applicationName}" = "Marque ${habit} dans ${applicationName}";
+"Check off a habit in ${applicationName}" = "Coche une habitude dans ${applicationName}";
+"Add a habit in ${applicationName}" = "Ajoute une habitude dans ${applicationName}";
+"Add a reminder in ${applicationName}" = "Ajoute un rappel dans ${applicationName}";
+"New habit in ${applicationName}" = "Nouvelle habitude dans ${applicationName}";
+"What's left in ${applicationName}" = "Qu'est-ce qui reste dans ${applicationName}";
+"What's left today in ${applicationName}" = "Qu'est-ce qui reste aujourd'hui dans ${applicationName}";

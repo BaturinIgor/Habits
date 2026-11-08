@@ -561,3 +561,27 @@ First time||Primeira vez
 Every month, on day %lld||Todo mês, no dia %lld
 Every year, %@||Todo ano, em %@
 By group||Por grupo
+%@ is already done today.||%@ já foi feito hoje.
+Add a habit||Adicionar hábito
+Added %@: %@, at %@.||“%@” adicionado: %@, às %@.
+Added %@: %@.||“%@” adicionado: %@.
+Allow the microphone and speech recognition for ZenHab in Settings.||Permita o microfone e o reconhecimento de fala para o ZenHab em Ajustes.
+Check off a habit||Marcar hábito
+Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”.||Cria um hábito com o nome que você disser.
+Done: %@||Feito: %@
+Everything is done for today.||Tudo feito por hoje.
+Habit not found.||Hábito não encontrado.
+Left for today: %@.||Falta hoje: %@.
+Listening…||Ouvindo…
+Lists the habits that aren't checked off today.||Lista os hábitos ainda não marcados hoje.
+Marks a habit as done for today.||Marca um hábito como feito hoje.
+Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”.||Diga o nome do hábito, por exemplo “Beber água”.
+Speak||Falar
+Speech recognition isn't available right now.||O reconhecimento de fala não está disponível agora.
+Stop||Parar
+The free version has reached its habit limit. Open ZenHab to get Pro.||A versão gratuita atingiu o limite de hábitos. Abra o ZenHab para assinar o Pro.
+Voice input||Entrada por voz
+What should I add?||O que devo adicionar?
+What to add||O que adicionar
+What's left today||O que falta hoje
+Which habit?||Qual hábito?

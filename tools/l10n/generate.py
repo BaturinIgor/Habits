@@ -149,6 +149,86 @@ NAMES = {'en': 'ZenHab', 'ru': 'ZenHab', 'de': 'ZenHab', 'fr': 'ZenHab',
          'es': 'ZenHab', 'zh-Hans': 'ZenHab', 'ja': 'ZenHab', 'ko': 'ZenHab', 'hi': 'ZenHab',
          'pt-BR': 'ZenHab', 'it': 'ZenHab', 'tr': 'ZenHab', 'pl': 'ZenHab', 'id': 'ZenHab'}
 
+# Тексты запросов доступа (Info.plist) для голосового ввода.
+PERMISSIONS = {
+ 'NSMicrophoneUsageDescription': {
+  'en': 'ZenHab uses the microphone so you can create a habit by voice.',
+  'ru': 'ZenHab использует микрофон, чтобы создавать привычки голосом.',
+  'de': 'ZenHab nutzt das Mikrofon, damit du Gewohnheiten per Sprache anlegen kannst.',
+  'fr': 'ZenHab utilise le micro pour que tu puisses créer une habitude à la voix.',
+  'es': 'ZenHab usa el micrófono para que puedas crear hábitos con la voz.',
+  'zh-Hans': 'ZenHab 使用麦克风，让你可以用语音创建习惯。',
+  'ja': 'ZenHabはマイクを使って、声で習慣を作成できるようにします。',
+  'ko': 'ZenHab은 음성으로 습관을 만들 수 있도록 마이크를 사용합니다.',
+  'hi': 'ZenHab माइक्रोफ़ोन का उपयोग करता है ताकि आप आवाज़ से आदत बना सकें।',
+  'pt-BR': 'O ZenHab usa o microfone para você criar hábitos por voz.',
+  'it': 'ZenHab usa il microfono per permetterti di creare abitudini con la voce.',
+  'tr': 'ZenHab, sesle alışkanlık oluşturabilmeniz için mikrofonu kullanır.',
+  'pl': 'ZenHab używa mikrofonu, aby można było tworzyć nawyki głosem.',
+  'id': 'ZenHab menggunakan mikrofon agar Anda bisa membuat kebiasaan dengan suara.',
+ },
+ 'NSSpeechRecognitionUsageDescription': {
+  'en': 'ZenHab turns your words into a habit with a schedule and a reminder time.',
+  'ru': 'ZenHab превращает твои слова в привычку с расписанием и временем напоминания.',
+  'de': 'ZenHab macht aus deinen Worten eine Gewohnheit mit Zeitplan und Erinnerung.',
+  'fr': 'ZenHab transforme tes mots en habitude avec un horaire et un rappel.',
+  'es': 'ZenHab convierte tus palabras en un hábito con horario y recordatorio.',
+  'zh-Hans': 'ZenHab 会把你说的话变成带有日程和提醒时间的习惯。',
+  'ja': 'ZenHabは話した内容を、スケジュールとリマインダー付きの習慣にします。',
+  'ko': 'ZenHab은 말한 내용을 일정과 알림 시간이 있는 습관으로 만듭니다.',
+  'hi': 'ZenHab आपके शब्दों को समय-सारणी और रिमाइंडर वाली आदत में बदलता है।',
+  'pt-BR': 'O ZenHab transforma suas palavras em um hábito com agenda e lembrete.',
+  'it': 'ZenHab trasforma le tue parole in un\'abitudine con programma e promemoria.',
+  'tr': 'ZenHab sözlerinizi programı ve hatırlatma saati olan bir alışkanlığa dönüştürür.',
+  'pl': 'ZenHab zamienia Twoje słowa w nawyk z harmonogramem i przypomnieniem.',
+  'id': 'ZenHab mengubah ucapan Anda menjadi kebiasaan dengan jadwal dan pengingat.',
+ },
+}
+
+# Фразы Siri из Habits/Features/SiriIntents.swift (HabitsShortcuts), в том же порядке.
+SHORTCUT_KEYS = [
+ 'Check off ${habit} in ${applicationName}',
+ 'Mark ${habit} in ${applicationName}',
+ 'Check off a habit in ${applicationName}',
+ 'Add a habit in ${applicationName}',
+ 'Add a reminder in ${applicationName}',
+ 'New habit in ${applicationName}',
+ "What's left in ${applicationName}",
+ "What's left today in ${applicationName}",
+]
+SHORTCUTS = {
+ 'ru': ['Отметь ${habit} в ${applicationName}', 'Готово ${habit} в ${applicationName}', 'Отметь привычку в ${applicationName}',
+        'Добавь привычку в ${applicationName}', 'Добавь напоминание в ${applicationName}', 'Новая привычка в ${applicationName}',
+        'Что осталось в ${applicationName}', 'Что осталось на сегодня в ${applicationName}'],
+ 'de': ['Hake ${habit} in ${applicationName} ab', 'Markiere ${habit} in ${applicationName}', 'Hake eine Gewohnheit in ${applicationName} ab',
+        'Füge eine Gewohnheit in ${applicationName} hinzu', 'Füge eine Erinnerung in ${applicationName} hinzu', 'Neue Gewohnheit in ${applicationName}',
+        'Was ist offen in ${applicationName}', 'Was ist heute offen in ${applicationName}'],
+ 'fr': ['Coche ${habit} dans ${applicationName}', 'Marque ${habit} dans ${applicationName}', 'Coche une habitude dans ${applicationName}',
+        'Ajoute une habitude dans ${applicationName}', 'Ajoute un rappel dans ${applicationName}', 'Nouvelle habitude dans ${applicationName}',
+        "Qu'est-ce qui reste dans ${applicationName}", "Qu'est-ce qui reste aujourd'hui dans ${applicationName}"],
+ 'es': ['Marca ${habit} en ${applicationName}', 'Completa ${habit} en ${applicationName}', 'Marca un hábito en ${applicationName}',
+        'Añade un hábito en ${applicationName}', 'Añade un recordatorio en ${applicationName}', 'Nuevo hábito en ${applicationName}',
+        'Qué me queda en ${applicationName}', 'Qué me queda hoy en ${applicationName}'],
+ 'pt-BR': ['Marque ${habit} no ${applicationName}', 'Conclua ${habit} no ${applicationName}', 'Marque um hábito no ${applicationName}',
+           'Adicione um hábito no ${applicationName}', 'Adicione um lembrete no ${applicationName}', 'Novo hábito no ${applicationName}',
+           'O que falta no ${applicationName}', 'O que falta hoje no ${applicationName}'],
+ 'it': ['Spunta ${habit} in ${applicationName}', 'Segna ${habit} in ${applicationName}', "Spunta un'abitudine in ${applicationName}",
+        "Aggiungi un'abitudine in ${applicationName}", 'Aggiungi un promemoria in ${applicationName}', 'Nuova abitudine in ${applicationName}',
+        'Cosa resta in ${applicationName}', 'Cosa resta oggi in ${applicationName}'],
+ 'tr': ['${applicationName} içinde ${habit} işaretle', "${applicationName}'da ${habit} tamamla", '${applicationName} içinde alışkanlık işaretle',
+        '${applicationName} içine alışkanlık ekle', '${applicationName} içine hatırlatma ekle', '${applicationName} yeni alışkanlık',
+        "${applicationName}'da ne kaldı", "${applicationName}'da bugün ne kaldı"],
+ 'zh-Hans': ['在${applicationName}中打卡${habit}', '在${applicationName}中完成${habit}', '在${applicationName}中打卡习惯',
+             '在${applicationName}中添加习惯', '在${applicationName}中添加提醒', '${applicationName}新习惯',
+             '${applicationName}还剩什么', '${applicationName}今天还剩什么'],
+ 'ja': ['${applicationName}で${habit}をチェック', '${applicationName}で${habit}を完了', '${applicationName}で習慣をチェック',
+        '${applicationName}で習慣を追加', '${applicationName}でリマインダーを追加', '${applicationName}で新しい習慣',
+        '${applicationName}で残りは', '${applicationName}で今日の残りは'],
+ 'ko': ['${applicationName}에서 ${habit} 체크', '${applicationName}에서 ${habit} 완료', '${applicationName}에서 습관 체크',
+        '${applicationName}에서 습관 추가', '${applicationName}에서 알림 추가', '${applicationName} 새 습관',
+        '${applicationName}에서 뭐가 남았어', '${applicationName}에서 오늘 뭐가 남았어'],
+}
+
 def esc(s):
     return s.replace('\\', '\\\\').replace('"', '\\"')
 
@@ -158,7 +238,14 @@ def xml(s):
 for lang in ['en'] + LANGS + EXTRA:
     d = OUT + lang + '.lproj/'
     os.makedirs(d, exist_ok=True)
-    open(d + 'InfoPlist.strings', 'w', encoding='utf-8').write(f'"CFBundleDisplayName" = "{esc(NAMES[lang])}";\n"CFBundleName" = "{esc(NAMES[lang])}";\n')
+    info = f'"CFBundleDisplayName" = "{esc(NAMES[lang])}";\n"CFBundleName" = "{esc(NAMES[lang])}";\n'
+    for key, texts in PERMISSIONS.items():
+        info += f'"{key}" = "{esc(texts[lang])}";\n'
+    open(d + 'InfoPlist.strings', 'w', encoding='utf-8').write(info)
+    if lang in SHORTCUTS:
+        with open(d + 'AppShortcuts.strings', 'w', encoding='utf-8') as f:
+            for key, value in zip(SHORTCUT_KEYS, SHORTCUTS[lang]):
+                f.write(f'"{esc(key)}" = "{esc(value)}";\n')
     if lang != 'en':
         with open(d + 'Localizable.strings', 'w', encoding='utf-8') as f:
             for k in sorted(rows):
@@ -185,7 +272,7 @@ for lang in ['en'] + LANGS + EXTRA:
     open(d + 'Localizable.stringsdict', 'w', encoding='utf-8').write('\n'.join(parts))
 
 # Check that every UI string in code has a translation
-STRING_ARGS = {'days', 'repeats', 'standard', 'event.summary ?? ""', 'inlineName(code)'}
+STRING_ARGS = {'habitName', 'summary', 'time', 'names', 'text', 'days', 'repeats', 'standard', 'event.summary ?? ""', 'inlineName(code)'}
 lit = re.compile(r'"((?:[^"\\]|\\.|\\\([^)]*\))*)"')
 def to_key(v):
     def r(m):

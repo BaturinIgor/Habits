@@ -1,2 +1,4 @@
 "CFBundleDisplayName" = "ZenHab";
 "CFBundleName" = "ZenHab";
+"NSMicrophoneUsageDescription" = "ZenHab 使用麦克风，让你可以用语音创建习惯。";
+"NSSpeechRecognitionUsageDescription" = "ZenHab 会把你说的话变成带有日程和提醒时间的习惯。";

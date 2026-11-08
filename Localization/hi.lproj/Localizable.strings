@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / वर्ष";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: कीमत ✨ %lld, आपके पास: ✨ %lld। ✨ %lld और चाहिए। कमाने के लिए आदतें पूरी करें।";
 "%@ costs %lld sparks. You have %lld." = "%@: कीमत ✨ %lld। आपके पास: ✨ %lld।";
+"%@ is already done today." = "%@ आज पहले ही पूरा हो चुका है।";
 "%lld min" = "%lld मिनट";
 "%lld more to %@" = "%@ तक %lld और";
 "%lld of %lld" = "%2$lld में से %1$lld";
@@ -29,11 +30,14 @@
 "Active" = "सक्रिय";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "सक्रिय दिन: कम से कम एक आदत समय पर पूरी हो। खिलाने से %lld XP मिलता है और पालतू जल्दी बढ़ता है।";
 "Activity over %lld weeks" = "पिछले %lld हफ़्तों की गतिविधि";
+"Add a habit" = "आदत जोड़ें";
 "Add a habit, pick days and a time, and I'll remind you." = "एक आदत जोड़ें, दिन और समय चुनें, और मैं आपको याद दिलाऊँगा।";
 "Add a note to 20 completed habits" = "20 पूरी की गई आदतों में नोट जोड़ें";
 "Add habit" = "आदत जोड़ें";
 "Add note" = "नोट जोड़ें";
 "Added" = "जोड़ा गया";
+"Added %@: %@, at %@." = "“%@” जोड़ा गया: %@, %@ बजे।";
+"Added %@: %@." = "“%@” जोड़ा गया: %@।";
 "Adopt" = "अपनाएँ";
 "Adopt a pet" = "एक पालतू अपनाएँ";
 "Advanced" = "उन्नत";
@@ -45,6 +49,7 @@
 "All done" = "सब पूरा";
 "All done!" = "सब पूरा!";
 "Allow notifications" = "सूचनाओं की अनुमति दें";
+"Allow the microphone and speech recognition for ZenHab in Settings." = "सेटिंग्स में ZenHab को माइक्रोफ़ोन और वाणी पहचान की अनुमति दें।";
 "Allowed" = "अनुमति है";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "संग्रहित आदत 'आज' स्क्रीन पर नहीं दिखती और सूचनाएँ नहीं भेजती, लेकिन उसका इतिहास बना रहता है।";
 "And %lld more" = "और %lld";
@@ -85,6 +90,7 @@
 "Check off 10 habits before 8 am" = "सुबह 8 बजे से पहले 10 आदतें पूरी करें";
 "Check off 30 habits on weekends" = "वीकेंड पर 30 आदतें पूरी करें";
 "Check off 50 habits before 8 am" = "सुबह 8 बजे से पहले 50 आदतें पूरी करें";
+"Check off a habit" = "आदत पूरी करें";
 "Check off a habit for the first time" = "पहली बार कोई आदत पूरी करें";
 "Check off habits 100 times" = "100 बार आदतें पूरी करें";
 "Check off habits 1000 times" = "1000 बार आदतें पूरी करें";
@@ -122,6 +128,7 @@
 "Create 3 groups" = "3 समूह बनाएँ";
 "Create 5 habits" = "5 आदतें बनाएँ";
 "Create your first one and it will appear here." = "अपनी पहली आदत बनाएँ, वह यहाँ दिखेगी।";
+"Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "आप जो नाम बोलें, उससे आदत बनाता है।";
 "Current habits and history will be replaced with the data from the file." = "मौजूदा आदतें और इतिहास फ़ाइल के डेटा से बदल दिए जाएँगे।";
 "Current streak" = "मौजूदा लगातार";
 "Custom habit" = "अपनी आदत";
@@ -146,6 +153,7 @@
 "Don't forget about me!" = "मुझे मत भूलना!";
 "Done" = "हो गया";
 "Done habits at the bottom" = "पूरी आदतें नीचे";
+"Done: %@" = "पूरा: %@";
 "Dragon" = "ड्रैगन";
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "ड्रैगन, यूनिकॉर्न और फ़ीनिक्स, हर महीने 100 चिंगारियाँ उपहार और ज़्यादा दैनिक सीमा।";
 "Draw" = "चित्र बनाएँ";
@@ -175,6 +183,7 @@
 "Every other day" = "एक दिन छोड़कर";
 "Every year, %@" = "हर साल %@";
 "Everyday basics" = "रोज़मर्रा के बुनियादी शब्द";
+"Everything is done for today." = "आज के लिए सब पूरा हो गया।";
 "Exclusive avatars and backgrounds" = "ख़ास अवतार और पृष्ठभूमि";
 "Exclusive pets and more sparks" = "ख़ास पालतू और ज़्यादा चिंगारियाँ";
 "Export data" = "डेटा निर्यात करें";
@@ -216,6 +225,7 @@
 "Habit Tracker Pro" = "आदत ट्रैकर Pro";
 "Habit deleted" = "आदत हटा दी गई";
 "Habit name" = "आदत का नाम";
+"Habit not found." = "आदत नहीं मिली।";
 "Habit order" = "आदतों का क्रम";
 "Habit progress" = "आदतों की प्रगति";
 "Habits" = "आदतें";
@@ -274,6 +284,7 @@
 "Learn words" = "शब्द सीखें";
 "Learned: %lld of %lld" = "सीखे गए: %lld में से %lld";
 "Learning" = "सीखना";
+"Left for today: %@." = "आज के लिए बाकी: %@।";
 "Legend" = "दिग्गज";
 "Less" = "कम";
 "Less social media" = "सोशल मीडिया कम";
@@ -284,10 +295,13 @@
 "Level %lld" = "लेवल %lld";
 "Listen" = "सुनें";
 "Listen to a podcast" = "पॉडकास्ट सुनें";
+"Listening…" = "सुन रहा हूँ…";
+"Lists the habits that aren't checked off today." = "आज जो आदतें अभी पूरी नहीं हुईं, उन्हें बताता है।";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "इस iPhone पर Mail सेट नहीं है। कोई दूसरा मेल ऐप खोलें या संदेश कॉपी करके %@ पर भेजें।";
 "Make the bed" = "बिस्तर ठीक करें";
 "Mark as done" = "पूरा करें";
 "Mark habit" = "आदत पूरी करें";
+"Marks a habit as done for today." = "आदत को आज के लिए पूरा मार्क करता है।";
 "Meditate" = "ध्यान";
 "Message a friend" = "दोस्त को संदेश भेजें";
 "Mindfulness" = "सजगता";
@@ -430,6 +444,7 @@
 "Save" = "सहेजें";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "एक कॉपी Files या iCloud Drive में सहेजें। आयात करने से मौजूदा सारा डेटा बदल जाता है।";
 "Save a streak with a freeze" = "फ़्रीज़ से लगातार गिनती बचाएँ";
+"Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "आदत का नाम बोलें, जैसे “पानी पीना”।";
 "Schedule" = "समय-सारिणी";
 "Scheduled notifications" = "तय सूचनाएँ";
 "Send" = "भेजें";
@@ -450,7 +465,9 @@
 "Some days" = "कुछ दिन";
 "Sparks" = "चिंगारियाँ";
 "Sparks and a pet" = "चिंगारियाँ और पालतू";
+"Speak" = "बोलें";
 "Species" = "प्रजाति";
+"Speech recognition isn't available right now." = "वाणी पहचान अभी उपलब्ध नहीं है।";
 "Spend" = "खर्च करें";
 "Spend time outdoors" = "बाहर समय बिताएँ";
 "Start" = "शुरुआत";
@@ -460,6 +477,7 @@
 "Steps to reproduce help a lot." = "दोहराने के चरण बहुत मदद करते हैं।";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "दोहराने के चरण बहुत मदद करते हैं। ईमेल में स्क्रीनशॉट जोड़ सकते हैं।";
 "Still learning" = "अभी सीख रहा हूँ";
+"Stop" = "रोकें";
 "Streaks" = "श्रृंखलाएँ";
 "Stretch" = "स्ट्रेचिंग";
 "Study for 30 minutes" = "30 मिनट पढ़ाई";
@@ -482,6 +500,7 @@
 "Tell us what you think" = "अपनी राय बताएँ";
 "Terms of Use" = "उपयोग की शर्तें";
 "Thank you!" = "धन्यवाद!";
+"The free version has reached its habit limit. Open ZenHab to get Pro." = "मुफ़्त संस्करण में आदतों की सीमा पूरी हो गई। Pro के लिए ZenHab खोलें।";
 "The free version has up to 5 active habits." = "मुफ़्त संस्करण में 5 सक्रिय आदतें तक।";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "न्यूनतम रूप भी पूरा माना जाता है और लगातार गिनती बचाता है। जुड़ी आदत पिछली पूरी होते ही याद दिलाती है।";
 "The new language will apply after you close the app and open it again." = "ऐप बंद करके फिर खोलने पर नई भाषा लागू होगी।";
@@ -520,6 +539,7 @@
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "आदत पूरी होने तक रिमाइंडर दोहराया जाता है: %@। सूचना में 'हो गया' या 'छोड़ें' दबाने से उस दिन का दोहराव रुक जाता है।";
 "Version" = "संस्करण";
 "Veteran" = "अनुभवी";
+"Voice input" = "आवाज़ से इनपुट";
 "Waiting for you" = "आपका इंतज़ार कर रहा है";
 "Wake up early" = "जल्दी उठें";
 "Walk" = "टहलना";
@@ -534,6 +554,10 @@
 "Welcome to Habit Tracker" = "आदत ट्रैकर में आपका स्वागत है";
 "What %@ gives you" = "%@ आपको क्या देता है";
 "What happened and what did you expect?" = "क्या हुआ और आपने क्या उम्मीद की थी?";
+"What should I add?" = "क्या जोड़ूँ?";
+"What to add" = "क्या जोड़ना है";
+"What's left today" = "आज क्या बाकी है";
+"Which habit?" = "कौन-सी आदत?";
 "Widget" = "विजेट";
 "Words" = "शब्द";
 "Words for today are done" = "आज के शब्द पूरे हो गए";

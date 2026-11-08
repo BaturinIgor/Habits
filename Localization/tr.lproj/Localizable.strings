@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / yıl";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@ fiyatı %lld kıvılcım, sende %lld var. %lld eksik. Kazanmak için alışkanlık işaretle.";
 "%@ costs %lld sparks. You have %lld." = "%@ fiyatı %lld kıvılcım. Sende %lld var.";
+"%@ is already done today." = "%@ bugün zaten yapıldı.";
 "%lld min" = "%lld dk";
 "%lld more to %@" = "\"%@\" için %lld kaldı";
 "%lld of %lld" = "%lld/%lld";
@@ -29,11 +30,14 @@
 "Active" = "Etkin";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Aktif gün: en az bir alışkanlık zamanında işaretlendi. Beslemek %lld XP verir, evcil hayvanın daha hızlı büyür.";
 "Activity over %lld weeks" = "Son %lld haftalık etkinlik";
+"Add a habit" = "Alışkanlık ekle";
 "Add a habit, pick days and a time, and I'll remind you." = "Bir alışkanlık ekle, günleri ve saati seç, ben de sana hatırlatayım.";
 "Add a note to 20 completed habits" = "Tamamlanan 20 alışkanlığa not ekle";
 "Add habit" = "Alışkanlık ekle";
 "Add note" = "Not ekle";
 "Added" = "Eklendi";
+"Added %@: %@, at %@." = "“%@” eklendi: %@, saat %@.";
+"Added %@: %@." = "“%@” eklendi: %@.";
 "Adopt" = "Sahiplen";
 "Adopt a pet" = "Evcil hayvan sahiplen";
 "Advanced" = "İleri";
@@ -45,6 +49,7 @@
 "All done" = "Hepsi tamam";
 "All done!" = "Hepsi tamam!";
 "Allow notifications" = "Bildirimlere izin ver";
+"Allow the microphone and speech recognition for ZenHab in Settings." = "Ayarlar'da ZenHab için mikrofona ve konuşma tanımaya izin verin.";
 "Allowed" = "İzin verildi";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "Arşivlenen alışkanlık Bugün ekranında görünmez ve bildirim göndermez, ama geçmişi saklanır.";
 "And %lld more" = "Ve %lld tane daha";
@@ -85,6 +90,7 @@
 "Check off 10 habits before 8 am" = "Saat 8'den önce 10 alışkanlık işaretle";
 "Check off 30 habits on weekends" = "Hafta sonları 30 alışkanlık işaretle";
 "Check off 50 habits before 8 am" = "Saat 8'den önce 50 alışkanlık işaretle";
+"Check off a habit" = "Alışkanlığı işaretle";
 "Check off a habit for the first time" = "İlk kez bir alışkanlık işaretle";
 "Check off habits 100 times" = "Alışkanlıkları 100 kez işaretle";
 "Check off habits 1000 times" = "Alışkanlıkları 1000 kez işaretle";
@@ -122,6 +128,7 @@
 "Create 3 groups" = "3 grup oluştur";
 "Create 5 habits" = "5 alışkanlık oluştur";
 "Create your first one and it will appear here." = "İlkini oluştur, burada görünecek.";
+"Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "Söylediğiniz adla bir alışkanlık oluşturur.";
 "Current habits and history will be replaced with the data from the file." = "Mevcut alışkanlıklar ve geçmiş, dosyadaki verilerle değiştirilecek.";
 "Current streak" = "Mevcut seri";
 "Custom habit" = "Kendi alışkanlığın";
@@ -146,6 +153,7 @@
 "Don't forget about me!" = "Beni unutma!";
 "Done" = "Bitti";
 "Done habits at the bottom" = "Yapılanlar en altta";
+"Done: %@" = "Tamamlandı: %@";
 "Dragon" = "Ejderha";
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "Ejderha, tek boynuzlu at ve anka kuşu, her ay 100 kıvılcım hediye ve daha yüksek günlük sınır.";
 "Draw" = "Resim çiz";
@@ -175,6 +183,7 @@
 "Every other day" = "Gün aşırı";
 "Every year, %@" = "Her yıl %@";
 "Everyday basics" = "Günlük temel kelimeler";
+"Everything is done for today." = "Bugünlük her şey tamam.";
 "Exclusive avatars and backgrounds" = "Özel avatarlar ve arka planlar";
 "Exclusive pets and more sparks" = "Özel evcil hayvanlar ve daha çok kıvılcım";
 "Export data" = "Verileri dışa aktar";
@@ -216,6 +225,7 @@
 "Habit Tracker Pro" = "Alışkanlık Takibi Pro";
 "Habit deleted" = "Alışkanlık silindi";
 "Habit name" = "Alışkanlık adı";
+"Habit not found." = "Alışkanlık bulunamadı.";
 "Habit order" = "Alışkanlık sırası";
 "Habit progress" = "Alışkanlık ilerlemesi";
 "Habits" = "Alışkanlıklar";
@@ -274,6 +284,7 @@
 "Learn words" = "Kelime öğren";
 "Learned: %lld of %lld" = "Öğrenilen: %lld / %lld";
 "Learning" = "Öğrenme";
+"Left for today: %@." = "Bugün kalan: %@.";
 "Legend" = "Efsane";
 "Less" = "Az";
 "Less social media" = "Daha az sosyal medya";
@@ -284,10 +295,13 @@
 "Level %lld" = "Seviye %lld";
 "Listen" = "Dinle";
 "Listen to a podcast" = "Podcast dinle";
+"Listening…" = "Dinliyorum…";
+"Lists the habits that aren't checked off today." = "Bugün henüz işaretlenmemiş alışkanlıkları sayar.";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Bu iPhone'da Mail kurulu değil. Başka bir e-posta uygulaması aç ya da mesajı kopyalayıp %@ adresine gönder.";
 "Make the bed" = "Yatağını topla";
 "Mark as done" = "Yapıldı olarak işaretle";
 "Mark habit" = "Alışkanlığı işaretle";
+"Marks a habit as done for today." = "Alışkanlığı bugün için yapıldı olarak işaretler.";
 "Meditate" = "Meditasyon yap";
 "Message a friend" = "Bir arkadaşa yaz";
 "Mindfulness" = "Farkındalık";
@@ -430,6 +444,7 @@
 "Save" = "Kaydet";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "Dosyalar'a veya iCloud Drive'a bir kopya kaydet. İçe aktarma mevcut tüm verilerin yerine geçer.";
 "Save a streak with a freeze" = "Bir seriyi dondurmayla kurtar";
+"Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Alışkanlığın adını söyleyin, örneğin “Su içmek”.";
 "Schedule" = "Plan";
 "Scheduled notifications" = "Planlanan bildirimler";
 "Send" = "Gönder";
@@ -450,7 +465,9 @@
 "Some days" = "Bazı günler";
 "Sparks" = "Kıvılcımlar";
 "Sparks and a pet" = "Kıvılcımlar ve evcil hayvan";
+"Speak" = "Konuş";
 "Species" = "Tür";
+"Speech recognition isn't available right now." = "Konuşma tanıma şu anda kullanılamıyor.";
 "Spend" = "Harca";
 "Spend time outdoors" = "Dışarıda vakit geçir";
 "Start" = "Başlangıç";
@@ -460,6 +477,7 @@
 "Steps to reproduce help a lot." = "Tekrarlama adımları çok yardımcı olur.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Tekrarlama adımları çok yardımcı olur. E-postaya ekran görüntüsü ekleyebilirsin.";
 "Still learning" = "Hâlâ öğreniyorum";
+"Stop" = "Durdur";
 "Streaks" = "Seriler";
 "Stretch" = "Esneme";
 "Study for 30 minutes" = "30 dakika çalış";
@@ -482,6 +500,7 @@
 "Tell us what you think" = "Ne düşündüğünü söyle";
 "Terms of Use" = "Kullanım Koşulları";
 "Thank you!" = "Teşekkürler!";
+"The free version has reached its habit limit. Open ZenHab to get Pro." = "Ücretsiz sürüm alışkanlık sınırına ulaştı. Pro için ZenHab'ı açın.";
 "The free version has up to 5 active habits." = "Ücretsiz sürümde en fazla 5 etkin alışkanlık olabilir.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Minimum sürüm yapılmış sayılır ve serini korur. Zincirli alışkanlık, öncekini işaretlediğin anda sana hatırlatılır.";
 "The new language will apply after you close the app and open it again." = "Yeni dil, uygulamayı kapatıp yeniden açtıktan sonra uygulanacak.";
@@ -520,6 +539,7 @@
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "Alışkanlık işaretlenene kadar hatırlatma tekrarlanır: %@. Bildirimdeki \"Bitti\" ve \"Atla\" o günün tekrarlarını durdurur.";
 "Version" = "Sürüm";
 "Veteran" = "Kıdemli";
+"Voice input" = "Sesli giriş";
 "Waiting for you" = "Seni bekliyor";
 "Wake up early" = "Erken kalk";
 "Walk" = "Yürüyüş";
@@ -534,6 +554,10 @@
 "Welcome to Habit Tracker" = "Alışkanlık Takibi'ne hoş geldin";
 "What %@ gives you" = "%@ sana ne verir";
 "What happened and what did you expect?" = "Ne oldu ve ne bekliyordun?";
+"What should I add?" = "Ne ekleyeyim?";
+"What to add" = "Ne eklenecek";
+"What's left today" = "Bugün ne kaldı";
+"Which habit?" = "Hangi alışkanlık?";
 "Widget" = "Widget";
 "Words" = "Kelimeler";
 "Words for today are done" = "Bugünün kelimeleri tamam";

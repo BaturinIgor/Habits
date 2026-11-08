@@ -1,0 +1,8 @@
+"Check off ${habit} in ${applicationName}" = "在${applicationName}中打卡${habit}";
+"Mark ${habit} in ${applicationName}" = "在${applicationName}中完成${habit}";
+"Check off a habit in ${applicationName}" = "在${applicationName}中打卡习惯";
+"Add a habit in ${applicationName}" = "在${applicationName}中添加习惯";
+"Add a reminder in ${applicationName}" = "在${applicationName}中添加提醒";
+"New habit in ${applicationName}" = "${applicationName}新习惯";
+"What's left in ${applicationName}" = "${applicationName}还剩什么";
+"What's left today in ${applicationName}" = "${applicationName}今天还剩什么";

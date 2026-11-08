@@ -561,3 +561,27 @@ First time||Pertama kali
 Every month, on day %lld||Setiap bulan, tanggal %lld
 Every year, %@||Setiap tahun, %@
 By group||Per grup
+%@ is already done today.||%@ sudah selesai hari ini.
+Add a habit||Tambah kebiasaan
+Added %@: %@, at %@.||“%@” ditambahkan: %@, pukul %@.
+Added %@: %@.||“%@” ditambahkan: %@.
+Allow the microphone and speech recognition for ZenHab in Settings.||Izinkan mikrofon dan pengenalan suara untuk ZenHab di Pengaturan.
+Check off a habit||Centang kebiasaan
+Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”.||Membuat kebiasaan dari nama yang Anda ucapkan.
+Done: %@||Selesai: %@
+Everything is done for today.||Semua sudah selesai hari ini.
+Habit not found.||Kebiasaan tidak ditemukan.
+Left for today: %@.||Tersisa hari ini: %@.
+Listening…||Mendengarkan…
+Lists the habits that aren't checked off today.||Menyebutkan kebiasaan yang belum dicentang hari ini.
+Marks a habit as done for today.||Menandai kebiasaan selesai hari ini.
+Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”.||Ucapkan nama kebiasaan, misalnya “Minum air”.
+Speak||Bicara
+Speech recognition isn't available right now.||Pengenalan suara sedang tidak tersedia.
+Stop||Berhenti
+The free version has reached its habit limit. Open ZenHab to get Pro.||Versi gratis sudah mencapai batas kebiasaan. Buka ZenHab untuk mendapatkan Pro.
+Voice input||Input suara
+What should I add?||Apa yang ingin ditambahkan?
+What to add||Yang ditambahkan
+What's left today||Yang tersisa hari ini
+Which habit?||Kebiasaan yang mana?

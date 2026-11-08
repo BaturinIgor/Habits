@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / Jahr";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: Preis ✨ %lld, du hast: ✨ %lld. Es fehlen ✨ %lld. Hake Gewohnheiten ab, um sie zu verdienen.";
 "%@ costs %lld sparks. You have %lld." = "%@: Preis ✨ %lld. Du hast: ✨ %lld.";
+"%@ is already done today." = "%@ ist heute schon erledigt.";
 "%lld min" = "%lld Min.";
 "%lld more to %@" = "Noch %lld bis %@";
 "%lld of %lld" = "%lld von %lld";
@@ -29,11 +30,14 @@
 "Active" = "Aktiv";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Aktiver Tag: mindestens eine Gewohnheit rechtzeitig abgehakt. Füttern gibt %lld EP, so wächst dein Haustier schneller.";
 "Activity over %lld weeks" = "Aktivität der letzten %lld Wochen";
+"Add a habit" = "Gewohnheit hinzufügen";
 "Add a habit, pick days and a time, and I'll remind you." = "Füge eine Gewohnheit hinzu, wähle Tage und Uhrzeit, und ich erinnere dich daran.";
 "Add a note to 20 completed habits" = "Füge 20 erledigten Gewohnheiten eine Notiz hinzu";
 "Add habit" = "Gewohnheit hinzufügen";
 "Add note" = "Notiz hinzufügen";
 "Added" = "Hinzugefügt";
+"Added %@: %@, at %@." = "„%@“ hinzugefügt: %@, um %@.";
+"Added %@: %@." = "„%@“ hinzugefügt: %@.";
 "Adopt" = "Aufnehmen";
 "Adopt a pet" = "Hol dir ein Haustier";
 "Advanced" = "Fortgeschritten";
@@ -45,6 +49,7 @@
 "All done" = "Alles erledigt";
 "All done!" = "Alles erledigt!";
 "Allow notifications" = "Mitteilungen erlauben";
+"Allow the microphone and speech recognition for ZenHab in Settings." = "Erlaube ZenHab in den Einstellungen Mikrofon und Spracherkennung.";
 "Allowed" = "Erlaubt";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "Eine archivierte Gewohnheit wird auf dem Heute-Bildschirm ausgeblendet und sendet keine Mitteilungen, ihr Verlauf bleibt aber erhalten.";
 "And %lld more" = "Und %lld weitere";
@@ -85,6 +90,7 @@
 "Check off 10 habits before 8 am" = "Hake 10 Gewohnheiten vor 8 Uhr ab";
 "Check off 30 habits on weekends" = "Hake 30 Gewohnheiten am Wochenende ab";
 "Check off 50 habits before 8 am" = "Hake 50 Gewohnheiten vor 8 Uhr ab";
+"Check off a habit" = "Gewohnheit abhaken";
 "Check off a habit for the first time" = "Hake zum ersten Mal eine Gewohnheit ab";
 "Check off habits 100 times" = "Hake 100-mal Gewohnheiten ab";
 "Check off habits 1000 times" = "Hake 1000-mal Gewohnheiten ab";
@@ -122,6 +128,7 @@
 "Create 3 groups" = "Erstelle 3 Gruppen";
 "Create 5 habits" = "Erstelle 5 Gewohnheiten";
 "Create your first one and it will appear here." = "Erstelle deine erste, dann erscheint sie hier.";
+"Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "Erstellt eine Gewohnheit aus dem Namen, den du sagst.";
 "Current habits and history will be replaced with the data from the file." = "Aktuelle Gewohnheiten und Verlauf werden durch die Daten aus der Datei ersetzt.";
 "Current streak" = "Aktuelle Serie";
 "Custom habit" = "Eigene Gewohnheit";
@@ -146,6 +153,7 @@
 "Don't forget about me!" = "Vergiss mich nicht!";
 "Done" = "Fertig";
 "Done habits at the bottom" = "Erledigte nach unten";
+"Done: %@" = "Erledigt: %@";
 "Dragon" = "Drache";
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "Drache, Einhorn und Phönix, monatlich 100 Funken geschenkt und ein höheres Tageslimit.";
 "Draw" = "Zeichnen";
@@ -175,6 +183,7 @@
 "Every other day" = "Jeden zweiten Tag";
 "Every year, %@" = "Jährlich am %@";
 "Everyday basics" = "Grundwortschatz für den Alltag";
+"Everything is done for today." = "Für heute ist alles erledigt.";
 "Exclusive avatars and backgrounds" = "Exklusive Avatare und Hintergründe";
 "Exclusive pets and more sparks" = "Exklusive Haustiere und mehr Funken";
 "Export data" = "Daten exportieren";
@@ -216,6 +225,7 @@
 "Habit Tracker Pro" = "Gewohnheitstracker Pro";
 "Habit deleted" = "Gewohnheit gelöscht";
 "Habit name" = "Name der Gewohnheit";
+"Habit not found." = "Gewohnheit nicht gefunden.";
 "Habit order" = "Reihenfolge";
 "Habit progress" = "Fortschritt";
 "Habits" = "Gewohnheiten";
@@ -274,6 +284,7 @@
 "Learn words" = "Wörter lernen";
 "Learned: %lld of %lld" = "Gelernt: %lld von %lld";
 "Learning" = "Lernen";
+"Left for today: %@." = "Heute noch offen: %@.";
 "Legend" = "Legende";
 "Less" = "Weniger";
 "Less social media" = "Weniger soziale Medien";
@@ -284,10 +295,13 @@
 "Level %lld" = "Level %lld";
 "Listen" = "Anhören";
 "Listen to a podcast" = "Podcast hören";
+"Listening…" = "Ich höre zu…";
+"Lists the habits that aren't checked off today." = "Nennt die Gewohnheiten, die heute noch offen sind.";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Mail ist auf diesem iPhone nicht eingerichtet. Öffne eine andere Mail-App oder kopiere die Nachricht und sende sie an %@.";
 "Make the bed" = "Bett machen";
 "Mark as done" = "Als erledigt markieren";
 "Mark habit" = "Gewohnheit abhaken";
+"Marks a habit as done for today." = "Hakt eine Gewohnheit für heute ab.";
 "Meditate" = "Meditieren";
 "Message a friend" = "Freund schreiben";
 "Mindfulness" = "Achtsamkeit";
@@ -430,6 +444,7 @@
 "Save" = "Sichern";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "Sichere eine Kopie in Dateien oder iCloud Drive. Beim Import werden alle aktuellen Daten ersetzt.";
 "Save a streak with a freeze" = "Rette eine Serie mit einem Freeze";
+"Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Sag den Namen der Gewohnheit, zum Beispiel „Wasser trinken“.";
 "Schedule" = "Zeitplan";
 "Scheduled notifications" = "Geplante Mitteilungen";
 "Send" = "Senden";
@@ -450,7 +465,9 @@
 "Some days" = "Bestimmte Tage";
 "Sparks" = "Funken";
 "Sparks and a pet" = "Funken und ein Haustier";
+"Speak" = "Sprechen";
 "Species" = "Art";
+"Speech recognition isn't available right now." = "Spracherkennung ist gerade nicht verfügbar.";
 "Spend" = "Ausgeben";
 "Spend time outdoors" = "Zeit draußen verbringen";
 "Start" = "Beginn";
@@ -460,6 +477,7 @@
 "Steps to reproduce help a lot." = "Schritte zum Nachstellen helfen sehr.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Schritte zum Nachstellen helfen sehr. Einen Screenshot kannst du in der E-Mail anhängen.";
 "Still learning" = "Lerne ich noch";
+"Stop" = "Stopp";
 "Streaks" = "Serien";
 "Stretch" = "Dehnen";
 "Study for 30 minutes" = "30 Minuten lernen";
@@ -482,6 +500,7 @@
 "Tell us what you think" = "Sag uns deine Meinung";
 "Terms of Use" = "Nutzungsbedingungen";
 "Thank you!" = "Danke!";
+"The free version has reached its habit limit. Open ZenHab to get Pro." = "Die kostenlose Version hat ihr Gewohnheitslimit erreicht. Öffne ZenHab, um Pro zu holen.";
 "The free version has up to 5 active habits." = "Die kostenlose Version erlaubt bis zu 5 aktive Gewohnheiten.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Die Minimalversion zählt als erledigt und hält deine Serie. Eine verkettete Gewohnheit erinnert dich direkt nach dem Abhaken der vorherigen.";
 "The new language will apply after you close the app and open it again." = "Die neue Sprache gilt, sobald du die App schließt und wieder öffnest.";
@@ -520,6 +539,7 @@
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "Bis eine Gewohnheit abgehakt ist, wird ihre Erinnerung wiederholt: %@. „Fertig\" und „Überspringen\" in der Mitteilung stoppen die Wiederholungen für diesen Tag.";
 "Version" = "Version";
 "Veteran" = "Veteran";
+"Voice input" = "Spracheingabe";
 "Waiting for you" = "Wartet auf dich";
 "Wake up early" = "Früh aufstehen";
 "Walk" = "Spaziergang";
@@ -534,6 +554,10 @@
 "Welcome to Habit Tracker" = "Willkommen beim Gewohnheitstracker";
 "What %@ gives you" = "Was %@ dir bringt";
 "What happened and what did you expect?" = "Was ist passiert und was hast du erwartet?";
+"What should I add?" = "Was soll ich hinzufügen?";
+"What to add" = "Was hinzufügen";
+"What's left today" = "Was heute noch offen ist";
+"Which habit?" = "Welche Gewohnheit?";
 "Widget" = "Widget";
 "Words" = "Wörter";
 "Words for today are done" = "Die Wörter für heute sind geschafft";

@@ -1,0 +1,8 @@
+"Check off ${habit} in ${applicationName}" = "Отметь ${habit} в ${applicationName}";
+"Mark ${habit} in ${applicationName}" = "Готово ${habit} в ${applicationName}";
+"Check off a habit in ${applicationName}" = "Отметь привычку в ${applicationName}";
+"Add a habit in ${applicationName}" = "Добавь привычку в ${applicationName}";
+"Add a reminder in ${applicationName}" = "Добавь напоминание в ${applicationName}";
+"New habit in ${applicationName}" = "Новая привычка в ${applicationName}";
+"What's left in ${applicationName}" = "Что осталось в ${applicationName}";
+"What's left today in ${applicationName}" = "Что осталось на сегодня в ${applicationName}";

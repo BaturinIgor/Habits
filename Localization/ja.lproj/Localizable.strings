@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / 年";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@：価格 ✨ %lld、所持：✨ %lld。あと ✨ %lld 必要です。習慣をチェックして集めよう。";
 "%@ costs %lld sparks. You have %lld." = "%@：価格 ✨ %lld。所持：✨ %lld。";
+"%@ is already done today." = "%@は今日もう完了しています。";
 "%lld min" = "%lld分";
 "%lld more to %@" = "%2$@まであと%1$lld";
 "%lld of %lld" = "%lld / %lld";
@@ -29,11 +30,14 @@
 "Active" = "有効";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "アクティブな日：少なくとも1つの習慣を期限内にチェック。ごはんで %lld XP もらえ、早く育ちます。";
 "Activity over %lld weeks" = "過去%lld週間の記録";
+"Add a habit" = "習慣を追加";
 "Add a habit, pick days and a time, and I'll remind you." = "習慣を追加して曜日と時刻を選ぶと、お知らせします。";
 "Add a note to 20 completed habits" = "完了した習慣20件にメモを追加";
 "Add habit" = "習慣を追加";
 "Add note" = "メモを追加";
 "Added" = "追加済み";
+"Added %@: %@, at %@." = "「%@」を追加しました：%@、%@。";
+"Added %@: %@." = "「%@」を追加しました：%@。";
 "Adopt" = "迎える";
 "Adopt a pet" = "ペットを迎えよう";
 "Advanced" = "上級";
@@ -45,6 +49,7 @@
 "All done" = "すべて完了";
 "All done!" = "すべて完了！";
 "Allow notifications" = "通知を許可";
+"Allow the microphone and speech recognition for ZenHab in Settings." = "設定でZenHabのマイクと音声認識を許可してください。";
 "Allowed" = "許可済み";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "アーカイブした習慣は「今日」に表示されず通知も届きませんが、履歴は残ります。";
 "And %lld more" = "ほか%lld件";
@@ -85,6 +90,7 @@
 "Check off 10 habits before 8 am" = "8時前に10回チェック";
 "Check off 30 habits on weekends" = "週末に30回チェック";
 "Check off 50 habits before 8 am" = "朝8時前に50回チェック";
+"Check off a habit" = "習慣をチェック";
 "Check off a habit for the first time" = "初めて習慣をチェック";
 "Check off habits 100 times" = "100回チェック";
 "Check off habits 1000 times" = "1000回チェック";
@@ -122,6 +128,7 @@
 "Create 3 groups" = "グループを3つ作成";
 "Create 5 habits" = "習慣を5つ作成";
 "Create your first one and it will appear here." = "最初の習慣を作成すると、ここに表示されます。";
+"Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "話した名前で習慣を作成します。";
 "Current habits and history will be replaced with the data from the file." = "現在の習慣と記録はファイルのデータに置き換えられます。";
 "Current streak" = "現在の連続";
 "Custom habit" = "自分で作る";
@@ -146,6 +153,7 @@
 "Don't forget about me!" = "わたしのこと忘れないでね！";
 "Done" = "完了";
 "Done habits at the bottom" = "完了した習慣を下へ";
+"Done: %@" = "完了：%@";
 "Dragon" = "ドラゴン";
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "ドラゴン、ユニコーン、フェニックス、毎月100スパークのプレゼントと1日の上限アップ。";
 "Draw" = "絵を描く";
@@ -175,6 +183,7 @@
 "Every other day" = "1日おき";
 "Every year, %@" = "毎年%@";
 "Everyday basics" = "毎日の基本単語";
+"Everything is done for today." = "今日の分はすべて完了です。";
 "Exclusive avatars and backgrounds" = "限定アバターと背景";
 "Exclusive pets and more sparks" = "限定ペットとスパーク増量";
 "Export data" = "データを書き出す";
@@ -216,6 +225,7 @@
 "Habit Tracker Pro" = "習慣トラッカー Pro";
 "Habit deleted" = "習慣は削除されました";
 "Habit name" = "習慣の名前";
+"Habit not found." = "習慣が見つかりません。";
 "Habit order" = "習慣の順序";
 "Habit progress" = "習慣の進み具合";
 "Habits" = "習慣";
@@ -274,6 +284,7 @@
 "Learn words" = "単語を学ぶ";
 "Learned: %lld of %lld" = "覚えた単語：%lld / %lld";
 "Learning" = "学び";
+"Left for today: %@." = "今日の残り：%@。";
 "Legend" = "レジェンド";
 "Less" = "少";
 "Less social media" = "SNSを控える";
@@ -284,10 +295,13 @@
 "Level %lld" = "レベル %lld";
 "Listen" = "聞く";
 "Listen to a podcast" = "ポッドキャストを聴く";
+"Listening…" = "聞いています…";
+"Lists the habits that aren't checked off today." = "今日まだチェックしていない習慣を読み上げます。";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "このiPhoneではメールが設定されていません。別のメールアプリを開くか、メッセージをコピーして %@ に送ってください。";
 "Make the bed" = "ベッドを整える";
 "Mark as done" = "完了にする";
 "Mark habit" = "習慣をチェック";
+"Marks a habit as done for today." = "習慣を今日の完了にします。";
 "Meditate" = "瞑想";
 "Message a friend" = "友達に連絡する";
 "Mindfulness" = "マインドフルネス";
@@ -430,6 +444,7 @@
 "Save" = "保存";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "コピーを「ファイル」やiCloud Driveに保存できます。読み込むと現在のデータはすべて置き換わります。";
 "Save a streak with a freeze" = "フリーズで連続記録を守る";
+"Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "習慣の名前を話してください。例：「水を飲む」";
 "Schedule" = "スケジュール";
 "Scheduled notifications" = "予定された通知";
 "Send" = "送信";
@@ -450,7 +465,9 @@
 "Some days" = "曜日指定";
 "Sparks" = "スパーク";
 "Sparks and a pet" = "スパークとペット";
+"Speak" = "話す";
 "Species" = "種類";
+"Speech recognition isn't available right now." = "現在、音声認識を利用できません。";
 "Spend" = "使う";
 "Spend time outdoors" = "外で過ごす";
 "Start" = "開始";
@@ -460,6 +477,7 @@
 "Steps to reproduce help a lot." = "再現手順があるととても助かります。";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "再現手順があるととても助かります。スクリーンショットはメールに添付できます。";
 "Still learning" = "まだ覚えていない";
+"Stop" = "停止";
 "Streaks" = "連続記録";
 "Stretch" = "ストレッチ";
 "Study for 30 minutes" = "30分勉強する";
@@ -482,6 +500,7 @@
 "Tell us what you think" = "ご意見をお聞かせください";
 "Terms of Use" = "利用規約";
 "Thank you!" = "ありがとうございます！";
+"The free version has reached its habit limit. Open ZenHab to get Pro." = "無料版の習慣数の上限に達しました。ZenHabを開いてProにしてください。";
 "The free version has up to 5 active habits." = "無料版はアクティブな習慣が5つまでです。";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "ミニマム版も達成扱いで連続記録が続きます。連鎖した習慣は前の習慣をチェックした直後に通知します。";
 "The new language will apply after you close the app and open it again." = "アプリを閉じて開き直すと新しい言語になります。";
@@ -520,6 +539,7 @@
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "チェックするまでリマインダーが繰り返されます：%@。通知の「完了」か「スキップ」でその日の繰り返しを止められます。";
 "Version" = "バージョン";
 "Veteran" = "ベテラン";
+"Voice input" = "音声入力";
 "Waiting for you" = "あなたを待っている";
 "Wake up early" = "早起きする";
 "Walk" = "散歩";
@@ -534,6 +554,10 @@
 "Welcome to Habit Tracker" = "習慣トラッカーへようこそ";
 "What %@ gives you" = "%@ がくれるもの";
 "What happened and what did you expect?" = "何が起きて、どうなるはずでしたか？";
+"What should I add?" = "何を追加しますか？";
+"What to add" = "追加する内容";
+"What's left today" = "今日の残り";
+"Which habit?" = "どの習慣ですか？";
 "Widget" = "ウィジェット";
 "Words" = "単語";
 "Words for today are done" = "今日の単語は終わりです";

@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / tahun";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "Harga %@ %lld percikan, kamu punya %lld. Kurang %lld. Centang kebiasaan untuk mendapatkannya.";
 "%@ costs %lld sparks. You have %lld." = "Harga %@ %lld percikan. Kamu punya %lld.";
+"%@ is already done today." = "%@ sudah selesai hari ini.";
 "%lld min" = "%lld mnt";
 "%lld more to %@" = "%lld lagi menuju \"%@\"";
 "%lld of %lld" = "%lld dari %lld";
@@ -29,11 +30,14 @@
 "Active" = "Aktif";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Hari aktif: setidaknya satu kebiasaan dicentang tepat waktu. Memberi makan memberi %lld XP, jadi hewanmu tumbuh lebih cepat.";
 "Activity over %lld weeks" = "Aktivitas %lld minggu terakhir";
+"Add a habit" = "Tambah kebiasaan";
 "Add a habit, pick days and a time, and I'll remind you." = "Tambahkan kebiasaan, pilih hari dan jam, dan aku akan mengingatkanmu.";
 "Add a note to 20 completed habits" = "Tambahkan catatan ke 20 kebiasaan yang selesai";
 "Add habit" = "Tambah kebiasaan";
 "Add note" = "Tambah catatan";
 "Added" = "Ditambahkan";
+"Added %@: %@, at %@." = "“%@” ditambahkan: %@, pukul %@.";
+"Added %@: %@." = "“%@” ditambahkan: %@.";
 "Adopt" = "Adopsi";
 "Adopt a pet" = "Adopsi hewan";
 "Advanced" = "Mahir";
@@ -45,6 +49,7 @@
 "All done" = "Semua selesai";
 "All done!" = "Semua selesai!";
 "Allow notifications" = "Izinkan notifikasi";
+"Allow the microphone and speech recognition for ZenHab in Settings." = "Izinkan mikrofon dan pengenalan suara untuk ZenHab di Pengaturan.";
 "Allowed" = "Diizinkan";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "Kebiasaan yang diarsipkan tidak tampil di layar Hari Ini dan tidak mengirim notifikasi, tetapi riwayatnya tetap disimpan.";
 "And %lld more" = "Dan %lld lagi";
@@ -85,6 +90,7 @@
 "Check off 10 habits before 8 am" = "Centang 10 kebiasaan sebelum pukul 08.00";
 "Check off 30 habits on weekends" = "Centang 30 kebiasaan di akhir pekan";
 "Check off 50 habits before 8 am" = "Centang 50 kebiasaan sebelum pukul 08.00";
+"Check off a habit" = "Centang kebiasaan";
 "Check off a habit for the first time" = "Centang kebiasaan untuk pertama kali";
 "Check off habits 100 times" = "Centang kebiasaan 100 kali";
 "Check off habits 1000 times" = "Centang kebiasaan 1000 kali";
@@ -122,6 +128,7 @@
 "Create 3 groups" = "Buat 3 grup";
 "Create 5 habits" = "Buat 5 kebiasaan";
 "Create your first one and it will appear here." = "Buat yang pertama dan akan muncul di sini.";
+"Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "Membuat kebiasaan dari nama yang Anda ucapkan.";
 "Current habits and history will be replaced with the data from the file." = "Kebiasaan dan riwayat saat ini akan diganti dengan data dari file.";
 "Current streak" = "Rentetan saat ini";
 "Custom habit" = "Kebiasaan sendiri";
@@ -146,6 +153,7 @@
 "Don't forget about me!" = "Jangan lupakan aku!";
 "Done" = "Selesai";
 "Done habits at the bottom" = "Kebiasaan selesai di bawah";
+"Done: %@" = "Selesai: %@";
 "Dragon" = "Naga";
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "Naga, unicorn, dan phoenix, hadiah bulanan 100 percikan, dan batas harian lebih tinggi.";
 "Draw" = "Menggambar";
@@ -175,6 +183,7 @@
 "Every other day" = "Selang sehari";
 "Every year, %@" = "Setiap tahun, %@";
 "Everyday basics" = "Dasar sehari-hari";
+"Everything is done for today." = "Semua sudah selesai hari ini.";
 "Exclusive avatars and backgrounds" = "Avatar dan latar eksklusif";
 "Exclusive pets and more sparks" = "Hewan eksklusif dan lebih banyak percikan";
 "Export data" = "Ekspor data";
@@ -216,6 +225,7 @@
 "Habit Tracker Pro" = "Pelacak Kebiasaan Pro";
 "Habit deleted" = "Kebiasaan dihapus";
 "Habit name" = "Nama kebiasaan";
+"Habit not found." = "Kebiasaan tidak ditemukan.";
 "Habit order" = "Urutan kebiasaan";
 "Habit progress" = "Progres kebiasaan";
 "Habits" = "Kebiasaan";
@@ -274,6 +284,7 @@
 "Learn words" = "Belajar kata";
 "Learned: %lld of %lld" = "Dipelajari: %lld dari %lld";
 "Learning" = "Belajar";
+"Left for today: %@." = "Tersisa hari ini: %@.";
 "Legend" = "Legenda";
 "Less" = "Sedikit";
 "Less social media" = "Kurangi media sosial";
@@ -284,10 +295,13 @@
 "Level %lld" = "Level %lld";
 "Listen" = "Dengarkan";
 "Listen to a podcast" = "Dengarkan podcast";
+"Listening…" = "Mendengarkan…";
+"Lists the habits that aren't checked off today." = "Menyebutkan kebiasaan yang belum dicentang hari ini.";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Mail belum diatur di iPhone ini. Buka aplikasi email lain, atau salin pesan dan kirim ke %@.";
 "Make the bed" = "Rapikan tempat tidur";
 "Mark as done" = "Tandai selesai";
 "Mark habit" = "Centang kebiasaan";
+"Marks a habit as done for today." = "Menandai kebiasaan selesai hari ini.";
 "Meditate" = "Bermeditasi";
 "Message a friend" = "Kirim pesan ke teman";
 "Mindfulness" = "Kesadaran diri";
@@ -430,6 +444,7 @@
 "Save" = "Simpan";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "Simpan salinan ke File atau iCloud Drive. Impor akan mengganti semua data saat ini.";
 "Save a streak with a freeze" = "Selamatkan rentetan dengan pembekuan";
+"Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Ucapkan nama kebiasaan, misalnya “Minum air”.";
 "Schedule" = "Jadwal";
 "Scheduled notifications" = "Notifikasi terjadwal";
 "Send" = "Kirim";
@@ -450,7 +465,9 @@
 "Some days" = "Beberapa hari";
 "Sparks" = "Percikan";
 "Sparks and a pet" = "Percikan dan hewan peliharaan";
+"Speak" = "Bicara";
 "Species" = "Jenis";
+"Speech recognition isn't available right now." = "Pengenalan suara sedang tidak tersedia.";
 "Spend" = "Belanjakan";
 "Spend time outdoors" = "Habiskan waktu di luar";
 "Start" = "Mulai";
@@ -460,6 +477,7 @@
 "Steps to reproduce help a lot." = "Langkah untuk mengulangi masalah sangat membantu.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Langkah untuk mengulang masalah sangat membantu. Kamu bisa melampirkan tangkapan layar di email.";
 "Still learning" = "Masih belajar";
+"Stop" = "Berhenti";
 "Streaks" = "Rentetan";
 "Stretch" = "Peregangan";
 "Study for 30 minutes" = "Belajar 30 menit";
@@ -482,6 +500,7 @@
 "Tell us what you think" = "Ceritakan pendapatmu";
 "Terms of Use" = "Ketentuan Penggunaan";
 "Thank you!" = "Terima kasih!";
+"The free version has reached its habit limit. Open ZenHab to get Pro." = "Versi gratis sudah mencapai batas kebiasaan. Buka ZenHab untuk mendapatkan Pro.";
 "The free version has up to 5 active habits." = "Versi gratis memiliki hingga 5 kebiasaan aktif.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Versi minimum dihitung selesai dan menjaga rentetan. Kebiasaan berantai mengingatkanmu tepat setelah kamu mencentang yang sebelumnya.";
 "The new language will apply after you close the app and open it again." = "Bahasa baru akan berlaku setelah kamu menutup dan membuka lagi aplikasi.";
@@ -520,6 +539,7 @@
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "Selama kebiasaan belum dicentang, pengingat diulang: %@. \"Selesai\" dan \"Lewati\" di notifikasi menghentikan pengulangan untuk hari itu.";
 "Version" = "Versi";
 "Veteran" = "Veteran";
+"Voice input" = "Input suara";
 "Waiting for you" = "Menunggumu";
 "Wake up early" = "Bangun pagi";
 "Walk" = "Jalan kaki";
@@ -534,6 +554,10 @@
 "Welcome to Habit Tracker" = "Selamat datang di Pelacak Kebiasaan";
 "What %@ gives you" = "Yang diberikan %@";
 "What happened and what did you expect?" = "Apa yang terjadi dan apa yang kamu harapkan?";
+"What should I add?" = "Apa yang ingin ditambahkan?";
+"What to add" = "Yang ditambahkan";
+"What's left today" = "Yang tersisa hari ini";
+"Which habit?" = "Kebiasaan yang mana?";
 "Widget" = "Widget";
 "Words" = "Kata";
 "Words for today are done" = "Kata hari ini selesai";

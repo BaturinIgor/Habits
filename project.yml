@@ -50,6 +50,9 @@ targets:
         UIBackgroundModes: [fetch]
         BGTaskSchedulerPermittedIdentifiers: [com.personal.habits.refresh]
         ITSAppUsesNonExemptEncryption: false
+        # Голосовой ввод привычки. Переводы в Localization/*.lproj/InfoPlist.strings.
+        NSMicrophoneUsageDescription: ZenHab uses the microphone so you can create a habit by voice.
+        NSSpeechRecognitionUsageDescription: ZenHab turns your words into a habit with a schedule and a reminder time.
         # Telegram-бот для отзывов. Значения подставляет tools/feedback/inject_secrets.sh
         # из секретов FEEDBACK_BOT_TOKEN и FEEDBACK_CHAT_ID; без них отзывы идут через почту.
         FeedbackBotToken: ""
@@ -75,6 +78,9 @@ targets:
       - path: HabitsWidget
       - path: Shared
       - path: Localization
+        # Фразы Siri нужны только приложению.
+        excludes:
+          - "**/AppShortcuts.strings"
     entitlements:
       path: HabitsWidget/HabitsWidget.entitlements
       properties:

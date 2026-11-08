@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / 년";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: 가격 ✨ %lld, 보유: ✨ %lld. ✨ %lld 부족해요. 습관을 체크해서 모아요.";
 "%@ costs %lld sparks. You have %lld." = "%@: 가격 ✨ %lld. 보유: ✨ %lld.";
+"%@ is already done today." = "%@ 오늘 이미 완료했어요.";
 "%lld min" = "%lld분";
 "%lld more to %@" = "%2$@까지 %1$lld 남음";
 "%lld of %lld" = "%lld / %lld";
@@ -29,11 +30,14 @@
 "Active" = "활성";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "활동한 날: 습관을 하나 이상 제때 체크한 날. 먹이를 주면 경험치 %lld을 얻어 더 빨리 자라요.";
 "Activity over %lld weeks" = "최근 %lld주 활동";
+"Add a habit" = "습관 추가";
 "Add a habit, pick days and a time, and I'll remind you." = "습관을 추가하고 요일과 시간을 고르면 알려 드릴게요.";
 "Add a note to 20 completed habits" = "완료한 습관 20개에 메모 추가";
 "Add habit" = "습관 추가";
 "Add note" = "메모 추가";
 "Added" = "추가됨";
+"Added %@: %@, at %@." = "'%@' 추가됨: %@, %@.";
+"Added %@: %@." = "'%@' 추가됨: %@.";
 "Adopt" = "데려오기";
 "Adopt a pet" = "펫을 데려와요";
 "Advanced" = "고급";
@@ -45,6 +49,7 @@
 "All done" = "모두 완료";
 "All done!" = "모두 완료!";
 "Allow notifications" = "알림 허용";
+"Allow the microphone and speech recognition for ZenHab in Settings." = "설정에서 ZenHab의 마이크와 음성 인식을 허용하세요.";
 "Allowed" = "허용됨";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "보관된 습관은 오늘 화면에 표시되지 않고 알림도 오지 않지만 기록은 유지됩니다.";
 "And %lld more" = "외 %lld개";
@@ -85,6 +90,7 @@
 "Check off 10 habits before 8 am" = "오전 8시 전에 10번 체크";
 "Check off 30 habits on weekends" = "주말에 30번 체크";
 "Check off 50 habits before 8 am" = "오전 8시 전에 50번 체크";
+"Check off a habit" = "습관 체크";
 "Check off a habit for the first time" = "처음으로 습관 체크";
 "Check off habits 100 times" = "습관을 100번 체크";
 "Check off habits 1000 times" = "습관을 1000번 체크";
@@ -122,6 +128,7 @@
 "Create 3 groups" = "그룹 3개 만들기";
 "Create 5 habits" = "습관 5개 만들기";
 "Create your first one and it will appear here." = "첫 습관을 만들면 여기에 표시돼요.";
+"Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "말한 이름으로 습관을 만들어요.";
 "Current habits and history will be replaced with the data from the file." = "현재 습관과 기록이 파일의 데이터로 바뀌어요.";
 "Current streak" = "현재 연속";
 "Custom habit" = "직접 만들기";
@@ -146,6 +153,7 @@
 "Don't forget about me!" = "날 잊지 말아요!";
 "Done" = "완료";
 "Done habits at the bottom" = "완료한 습관은 아래로";
+"Done: %@" = "완료: %@";
 "Dragon" = "용";
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "용, 유니콘, 불사조, 매달 100 스파크 선물과 더 높은 일일 한도.";
 "Draw" = "그림 그리기";
@@ -175,6 +183,7 @@
 "Every other day" = "이틀에 한 번";
 "Every year, %@" = "매년 %@";
 "Everyday basics" = "일상 기본 단어";
+"Everything is done for today." = "오늘 할 일을 모두 끝냈어요.";
 "Exclusive avatars and backgrounds" = "전용 아바타와 배경";
 "Exclusive pets and more sparks" = "전용 펫과 더 많은 스파크";
 "Export data" = "데이터 내보내기";
@@ -216,6 +225,7 @@
 "Habit Tracker Pro" = "습관 트래커 Pro";
 "Habit deleted" = "습관이 삭제됨";
 "Habit name" = "습관 이름";
+"Habit not found." = "습관을 찾을 수 없어요.";
 "Habit order" = "습관 순서";
 "Habit progress" = "습관 진행률";
 "Habits" = "습관";
@@ -274,6 +284,7 @@
 "Learn words" = "단어 배우기";
 "Learned: %lld of %lld" = "외운 단어: %lld / %lld";
 "Learning" = "배움";
+"Left for today: %@." = "오늘 남은 것: %@.";
 "Legend" = "전설";
 "Less" = "적음";
 "Less social media" = "SNS 줄이기";
@@ -284,10 +295,13 @@
 "Level %lld" = "레벨 %lld";
 "Listen" = "듣기";
 "Listen to a podcast" = "팟캐스트 듣기";
+"Listening…" = "듣고 있어요…";
+"Lists the habits that aren't checked off today." = "오늘 아직 체크하지 않은 습관을 알려 줘요.";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "이 iPhone에 메일이 설정되어 있지 않아요. 다른 메일 앱을 열거나 메시지를 복사해 %@ 으로 보내세요.";
 "Make the bed" = "침대 정리하기";
 "Mark as done" = "완료로 표시";
 "Mark habit" = "습관 체크";
+"Marks a habit as done for today." = "습관을 오늘 완료로 표시해요.";
 "Meditate" = "명상";
 "Message a friend" = "친구에게 연락하기";
 "Mindfulness" = "마음 챙김";
@@ -430,6 +444,7 @@
 "Save" = "저장";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "파일 앱이나 iCloud Drive에 사본을 저장하세요. 가져오면 현재 데이터가 모두 바뀌어요.";
 "Save a streak with a freeze" = "프리즈로 연속 기록 지키기";
+"Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "습관 이름을 말하세요. 예: '물 마시기'";
 "Schedule" = "일정";
 "Scheduled notifications" = "예약된 알림";
 "Send" = "보내기";
@@ -450,7 +465,9 @@
 "Some days" = "요일 선택";
 "Sparks" = "스파크";
 "Sparks and a pet" = "스파크와 펫";
+"Speak" = "말하기";
 "Species" = "종류";
+"Speech recognition isn't available right now." = "지금은 음성 인식을 사용할 수 없어요.";
 "Spend" = "사용하기";
 "Spend time outdoors" = "야외에서 시간 보내기";
 "Start" = "시작";
@@ -460,6 +477,7 @@
 "Steps to reproduce help a lot." = "재현 단계가 큰 도움이 돼요.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "재현 단계가 큰 도움이 돼요. 스크린샷은 메일에 첨부할 수 있어요.";
 "Still learning" = "아직 몰라요";
+"Stop" = "중지";
 "Streaks" = "연속 기록";
 "Stretch" = "스트레칭";
 "Study for 30 minutes" = "30분 공부하기";
@@ -482,6 +500,7 @@
 "Tell us what you think" = "생각을 들려주세요";
 "Terms of Use" = "이용 약관";
 "Thank you!" = "감사합니다!";
+"The free version has reached its habit limit. Open ZenHab to get Pro." = "무료 버전의 습관 한도에 도달했어요. ZenHab을 열어 Pro를 이용하세요.";
 "The free version has up to 5 active habits." = "무료 버전은 활성 습관 5개까지예요.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "최소 버전도 완료로 인정돼 연속 기록이 유지돼요. 연결된 습관은 앞 습관을 체크하면 바로 알려 드려요.";
 "The new language will apply after you close the app and open it again." = "앱을 닫았다가 다시 열면 새 언어가 적용돼요.";
@@ -520,6 +539,7 @@
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "습관을 체크할 때까지 알림이 반복돼요: %@. 알림의 '완료'나 '건너뛰기'를 누르면 그날 반복이 멈춰요.";
 "Version" = "버전";
 "Veteran" = "베테랑";
+"Voice input" = "음성 입력";
 "Waiting for you" = "기다리고 있어요";
 "Wake up early" = "일찍 일어나기";
 "Walk" = "산책";
@@ -534,6 +554,10 @@
 "Welcome to Habit Tracker" = "습관 트래커에 오신 걸 환영해요";
 "What %@ gives you" = "%@이(가) 주는 것";
 "What happened and what did you expect?" = "무슨 일이 있었고 어떻게 되길 기대했나요?";
+"What should I add?" = "무엇을 추가할까요?";
+"What to add" = "추가할 내용";
+"What's left today" = "오늘 남은 것";
+"Which habit?" = "어떤 습관인가요?";
 "Widget" = "위젯";
 "Words" = "단어";
 "Words for today are done" = "오늘의 단어 완료";

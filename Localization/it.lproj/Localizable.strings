@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / anno";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@ costa %lld scintille, ne hai %lld. Te ne mancano %lld. Segna abitudini per guadagnarle.";
 "%@ costs %lld sparks. You have %lld." = "%@ costa %lld scintille. Ne hai %lld.";
+"%@ is already done today." = "%@ è già fatto oggi.";
 "%lld min" = "%lld min";
 "%lld more to %@" = "Ancora %lld per \"%@\"";
 "%lld of %lld" = "%lld di %lld";
@@ -29,11 +30,14 @@
 "Active" = "Attivo";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Giorno attivo: almeno un'abitudine segnata in tempo. Nutrirlo dà %lld XP, così il cucciolo cresce più in fretta.";
 "Activity over %lld weeks" = "Attività nelle ultime %lld settimane";
+"Add a habit" = "Aggiungi abitudine";
 "Add a habit, pick days and a time, and I'll remind you." = "Aggiungi un'abitudine, scegli i giorni e l'ora, e te la ricorderò.";
 "Add a note to 20 completed habits" = "Aggiungi una nota a 20 abitudini completate";
 "Add habit" = "Aggiungi abitudine";
 "Add note" = "Aggiungi nota";
 "Added" = "Aggiunta";
+"Added %@: %@, at %@." = "“%@” aggiunto: %@, alle %@.";
+"Added %@: %@." = "“%@” aggiunto: %@.";
 "Adopt" = "Adotta";
 "Adopt a pet" = "Adotta un cucciolo";
 "Advanced" = "Avanzato";
@@ -45,6 +49,7 @@
 "All done" = "Tutto fatto";
 "All done!" = "Tutto fatto!";
 "Allow notifications" = "Consenti notifiche";
+"Allow the microphone and speech recognition for ZenHab in Settings." = "Consenti a ZenHab microfono e riconoscimento vocale in Impostazioni.";
 "Allowed" = "Consentite";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "Un'abitudine archiviata non compare nella schermata Oggi e non invia notifiche, ma la sua cronologia resta.";
 "And %lld more" = "E altre %lld";
@@ -85,6 +90,7 @@
 "Check off 10 habits before 8 am" = "Segna 10 abitudini prima delle 8";
 "Check off 30 habits on weekends" = "Segna 30 abitudini nel weekend";
 "Check off 50 habits before 8 am" = "Segna 50 abitudini prima delle 8";
+"Check off a habit" = "Spunta un'abitudine";
 "Check off a habit for the first time" = "Segna un'abitudine per la prima volta";
 "Check off habits 100 times" = "Segna abitudini 100 volte";
 "Check off habits 1000 times" = "Segna abitudini 1000 volte";
@@ -122,6 +128,7 @@
 "Create 3 groups" = "Crea 3 gruppi";
 "Create 5 habits" = "Crea 5 abitudini";
 "Create your first one and it will appear here." = "Crea la prima e comparirà qui.";
+"Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "Crea un'abitudine con il nome che dici.";
 "Current habits and history will be replaced with the data from the file." = "Le abitudini e la cronologia attuali saranno sostituite dai dati del file.";
 "Current streak" = "Serie attuale";
 "Custom habit" = "Abitudine personale";
@@ -146,6 +153,7 @@
 "Don't forget about me!" = "Non dimenticarti di me!";
 "Done" = "Fine";
 "Done habits at the bottom" = "Abitudini fatte in fondo";
+"Done: %@" = "Fatto: %@";
 "Dragon" = "Drago";
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "Drago, unicorno e fenice, un regalo mensile di 100 scintille e un limite giornaliero più alto.";
 "Draw" = "Disegnare";
@@ -175,6 +183,7 @@
 "Every other day" = "A giorni alterni";
 "Every year, %@" = "Ogni anno, il %@";
 "Everyday basics" = "Le basi di tutti i giorni";
+"Everything is done for today." = "Per oggi è tutto fatto.";
 "Exclusive avatars and backgrounds" = "Avatar e sfondi esclusivi";
 "Exclusive pets and more sparks" = "Cuccioli esclusivi e più scintille";
 "Export data" = "Esporta dati";
@@ -216,6 +225,7 @@
 "Habit Tracker Pro" = "Tracker di Abitudini Pro";
 "Habit deleted" = "Abitudine eliminata";
 "Habit name" = "Nome dell'abitudine";
+"Habit not found." = "Abitudine non trovata.";
 "Habit order" = "Ordine delle abitudini";
 "Habit progress" = "Progressi delle abitudini";
 "Habits" = "Abitudini";
@@ -274,6 +284,7 @@
 "Learn words" = "Imparare parole";
 "Learned: %lld of %lld" = "Imparate: %lld su %lld";
 "Learning" = "Apprendimento";
+"Left for today: %@." = "Restano per oggi: %@.";
 "Legend" = "Leggenda";
 "Less" = "Meno";
 "Less social media" = "Meno social";
@@ -284,10 +295,13 @@
 "Level %lld" = "Livello %lld";
 "Listen" = "Ascolta";
 "Listen to a podcast" = "Ascoltare un podcast";
+"Listening…" = "In ascolto…";
+"Lists the habits that aren't checked off today." = "Elenca le abitudini non ancora spuntate oggi.";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Mail non è configurata su questo iPhone. Apri un'altra app di posta o copia il messaggio e invialo a %@.";
 "Make the bed" = "Rifare il letto";
 "Mark as done" = "Segna come fatta";
 "Mark habit" = "Segna abitudine";
+"Marks a habit as done for today." = "Segna un'abitudine come fatta oggi.";
 "Meditate" = "Meditare";
 "Message a friend" = "Scrivere a un amico";
 "Mindfulness" = "Consapevolezza";
@@ -430,6 +444,7 @@
 "Save" = "Salva";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "Salva una copia in File o su iCloud Drive. L'importazione sostituisce tutti i dati attuali.";
 "Save a streak with a freeze" = "Salva una serie con un congelamento";
+"Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Di' il nome dell'abitudine, per esempio “Bere acqua”.";
 "Schedule" = "Programma";
 "Scheduled notifications" = "Notifiche programmate";
 "Send" = "Invia";
@@ -450,7 +465,9 @@
 "Some days" = "Alcuni giorni";
 "Sparks" = "Scintille";
 "Sparks and a pet" = "Scintille e un cucciolo";
+"Speak" = "Parla";
 "Species" = "Specie";
+"Speech recognition isn't available right now." = "Il riconoscimento vocale non è disponibile ora.";
 "Spend" = "Spendi";
 "Spend time outdoors" = "Stare all'aria aperta";
 "Start" = "Inizio";
@@ -460,6 +477,7 @@
 "Steps to reproduce help a lot." = "I passaggi per riprodurlo aiutano molto.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "I passaggi per riprodurre aiutano molto. Puoi allegare uno screenshot nell'email.";
 "Still learning" = "Lo sto imparando";
+"Stop" = "Ferma";
 "Streaks" = "Serie";
 "Stretch" = "Stretching";
 "Study for 30 minutes" = "Studiare 30 minuti";
@@ -482,6 +500,7 @@
 "Tell us what you think" = "Dicci cosa ne pensi";
 "Terms of Use" = "Condizioni d'uso";
 "Thank you!" = "Grazie!";
+"The free version has reached its habit limit. Open ZenHab to get Pro." = "La versione gratuita ha raggiunto il limite di abitudini. Apri ZenHab per passare a Pro.";
 "The free version has up to 5 active habits." = "La versione gratuita ha fino a 5 abitudini attive.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "La versione minima conta come fatta e mantiene la serie. Un'abitudine in catena te la ricorda subito dopo aver segnato quella precedente.";
 "The new language will apply after you close the app and open it again." = "La nuova lingua verrà applicata dopo aver chiuso e riaperto l'app.";
@@ -520,6 +539,7 @@
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "Finché l'abitudine non è segnata, il promemoria si ripete: %@. \"Fatto\" e \"Salta\" nella notifica fermano le ripetizioni per quel giorno.";
 "Version" = "Versione";
 "Veteran" = "Veterano";
+"Voice input" = "Input vocale";
 "Waiting for you" = "Ti aspetta";
 "Wake up early" = "Svegliarsi presto";
 "Walk" = "Camminare";
@@ -534,6 +554,10 @@
 "Welcome to Habit Tracker" = "Benvenuto in Tracker di Abitudini";
 "What %@ gives you" = "Cosa ti dà %@";
 "What happened and what did you expect?" = "Cosa è successo e cosa ti aspettavi?";
+"What should I add?" = "Cosa devo aggiungere?";
+"What to add" = "Cosa aggiungere";
+"What's left today" = "Cosa resta oggi";
+"Which habit?" = "Quale abitudine?";
 "Widget" = "Widget";
 "Words" = "Parole";
 "Words for today are done" = "Le parole di oggi sono fatte";

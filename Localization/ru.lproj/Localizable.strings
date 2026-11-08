@@ -2,6 +2,7 @@
 "%@ / year" = "%@ в год";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: цена ✨ %lld, у тебя: ✨ %lld. Не хватает ✨ %lld. Отмечай привычки, чтобы заработать.";
 "%@ costs %lld sparks. You have %lld." = "%@: цена ✨ %lld. У тебя: ✨ %lld.";
+"%@ is already done today." = "%@ уже выполнено сегодня.";
 "%lld min" = "%lld мин";
 "%lld more to %@" = "Ещё %lld до стадии \"%@\"";
 "%lld of %lld" = "%lld из %lld";
@@ -29,11 +30,14 @@
 "Active" = "Активен";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Активный день: хотя бы одна привычка отмечена вовремя. Кормление даёт %lld опыта, и питомец растёт быстрее.";
 "Activity over %lld weeks" = "Активность за %lld недель";
+"Add a habit" = "Добавить привычку";
 "Add a habit, pick days and a time, and I'll remind you." = "Добавь привычку, выбери дни и время, и я напомню о ней.";
 "Add a note to 20 completed habits" = "Добавь заметку к 20 выполненным привычкам";
 "Add habit" = "Добавить привычку";
 "Add note" = "Добавить заметку";
 "Added" = "Добавлено";
+"Added %@: %@, at %@." = "Добавил «%@»: %@, в %@.";
+"Added %@: %@." = "Добавил «%@»: %@.";
 "Adopt" = "Завести";
 "Adopt a pet" = "Заведи питомца";
 "Advanced" = "Продвинутый";
@@ -45,6 +49,7 @@
 "All done" = "Всё выполнено";
 "All done!" = "Всё выполнено!";
 "Allow notifications" = "Разрешить уведомления";
+"Allow the microphone and speech recognition for ZenHab in Settings." = "Разреши ZenHab доступ к микрофону и распознаванию речи в Настройках.";
 "Allowed" = "Разрешены";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "Архивная привычка не показывается на главном экране и не присылает уведомления, но её история сохраняется.";
 "And %lld more" = "И ещё %lld";
@@ -85,6 +90,7 @@
 "Check off 10 habits before 8 am" = "Отметь 10 привычек до 8:00";
 "Check off 30 habits on weekends" = "Отметь 30 привычек в выходные";
 "Check off 50 habits before 8 am" = "Отметь 50 привычек до 8 утра";
+"Check off a habit" = "Отметить привычку";
 "Check off a habit for the first time" = "Впервые отметь привычку";
 "Check off habits 100 times" = "Отметь привычки 100 раз";
 "Check off habits 1000 times" = "Отметь привычки 1000 раз";
@@ -122,6 +128,7 @@
 "Create 3 groups" = "Создай 3 группы";
 "Create 5 habits" = "Создай 5 привычек";
 "Create your first one and it will appear here." = "Создай первую, и она появится здесь.";
+"Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "Создаёт привычку или напоминание по фразе, например «Таблетки собаке раз в месяц 15 числа в 9 утра».";
 "Current habits and history will be replaced with the data from the file." = "Текущие привычки и история будут заменены данными из файла.";
 "Current streak" = "Текущая серия";
 "Custom habit" = "Своя привычка";
@@ -146,6 +153,7 @@
 "Don't forget about me!" = "Не забывай про меня!";
 "Done" = "Готово";
 "Done habits at the bottom" = "Выполненные вниз";
+"Done: %@" = "Готово: %@";
 "Dragon" = "Дракон";
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "Дракон, единорог и феникс, подарок 100 искр каждый месяц и выше дневной лимит.";
 "Draw" = "Рисовать";
@@ -175,6 +183,7 @@
 "Every other day" = "Через день";
 "Every year, %@" = "Каждый год, %@";
 "Everyday basics" = "Самые нужные слова на каждый день";
+"Everything is done for today." = "На сегодня всё выполнено.";
 "Exclusive avatars and backgrounds" = "Эксклюзивные аватарки и фоны";
 "Exclusive pets and more sparks" = "Особые питомцы и больше искр";
 "Export data" = "Экспорт данных";
@@ -216,6 +225,7 @@
 "Habit Tracker Pro" = "Трекер привычек Pro";
 "Habit deleted" = "Привычка удалена";
 "Habit name" = "Название привычки";
+"Habit not found." = "Привычка не найдена.";
 "Habit order" = "Порядок привычек";
 "Habit progress" = "Прогресс привычек";
 "Habits" = "Привычки";
@@ -274,6 +284,7 @@
 "Learn words" = "Учить слова";
 "Learned: %lld of %lld" = "Выучено: %lld из %lld";
 "Learning" = "Обучение";
+"Left for today: %@." = "На сегодня осталось: %@.";
 "Legend" = "Легенда";
 "Less" = "Меньше";
 "Less social media" = "Меньше соцсетей";
@@ -284,10 +295,13 @@
 "Level %lld" = "Уровень %lld";
 "Listen" = "Послушать";
 "Listen to a podcast" = "Слушать подкаст";
+"Listening…" = "Слушаю…";
+"Lists the habits that aren't checked off today." = "Называет привычки, которые сегодня ещё не отмечены.";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "В Почте на этом iPhone нет ящика. Открой другое почтовое приложение или скопируй сообщение и отправь его на %@.";
 "Make the bed" = "Заправить кровать";
 "Mark as done" = "Выполнено";
 "Mark habit" = "Отметить привычку";
+"Marks a habit as done for today." = "Отмечает привычку выполненной за сегодня.";
 "Meditate" = "Медитация";
 "Message a friend" = "Написать другу";
 "Mindfulness" = "Осознанность";
@@ -430,6 +444,7 @@
 "Save" = "Сохранить";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "Сохрани копию в Файлы или iCloud Drive. Загрузка заменяет все текущие данные.";
 "Save a streak with a freeze" = "Спаси серию заморозкой";
+"Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Скажи, например: «Таблетки собаке раз в месяц 15 числа в 9 утра» или «Читать через день вечером».";
 "Schedule" = "Расписание";
 "Scheduled notifications" = "Запланировано уведомлений";
 "Send" = "Отправить";
@@ -450,7 +465,9 @@
 "Some days" = "По дням";
 "Sparks" = "Искры";
 "Sparks and a pet" = "Искры и питомец";
+"Speak" = "Говорить";
 "Species" = "Вид";
+"Speech recognition isn't available right now." = "Распознавание речи сейчас недоступно.";
 "Spend" = "Потратить";
 "Spend time outdoors" = "Побыть на улице";
 "Start" = "Начало";
@@ -460,6 +477,7 @@
 "Steps to reproduce help a lot." = "Шаги, как повторить ошибку, очень помогают.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Шаги, как повторить ошибку, очень помогают. Скриншот можно приложить в письме.";
 "Still learning" = "Ещё учу";
+"Stop" = "Стоп";
 "Streaks" = "Серии";
 "Stretch" = "Растяжка";
 "Study for 30 minutes" = "Заниматься 30 минут";
@@ -482,6 +500,7 @@
 "Tell us what you think" = "Расскажи, что думаешь";
 "Terms of Use" = "Условия";
 "Thank you!" = "Спасибо!";
+"The free version has reached its habit limit. Open ZenHab to get Pro." = "В бесплатной версии больше нет места для привычек. Открой ZenHab, чтобы подключить Pro.";
 "The free version has up to 5 active habits." = "В бесплатной версии до 5 активных привычек.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Минимальная версия засчитывается как выполнение и сохраняет серию. Привычка в связке напомнит о себе сразу после отметки предыдущей.";
 "The new language will apply after you close the app and open it again." = "Новый язык включится, когда ты закроешь приложение и откроешь его снова.";
@@ -520,6 +539,7 @@
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "Пока привычка не отмечена, напоминание повторяется: %@. Кнопки \"Готово\" и \"Пропустить\" в уведомлении останавливают повторы на этот день.";
 "Version" = "Версия";
 "Veteran" = "Ветеран";
+"Voice input" = "Голосовой ввод";
 "Waiting for you" = "Ждёт тебя";
 "Wake up early" = "Рано вставать";
 "Walk" = "Прогулка";
@@ -534,6 +554,10 @@
 "Welcome to Habit Tracker" = "Добро пожаловать в Трекер привычек";
 "What %@ gives you" = "Что даёт %@";
 "What happened and what did you expect?" = "Что произошло и что ты ожидал увидеть?";
+"What should I add?" = "Что добавить?";
+"What to add" = "Что добавить";
+"What's left today" = "Что осталось на сегодня";
+"Which habit?" = "Какую привычку?";
 "Widget" = "Виджет";
 "Words" = "Слова";
 "Words for today are done" = "Слова на сегодня пройдены";

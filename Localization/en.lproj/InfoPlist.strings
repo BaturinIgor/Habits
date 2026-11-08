@@ -1,2 +1,4 @@
 "CFBundleDisplayName" = "ZenHab";
 "CFBundleName" = "ZenHab";
+"NSMicrophoneUsageDescription" = "ZenHab uses the microphone so you can create a habit by voice.";
+"NSSpeechRecognitionUsageDescription" = "ZenHab turns your words into a habit with a schedule and a reminder time.";

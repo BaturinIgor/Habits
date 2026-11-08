@@ -561,3 +561,27 @@ First time||İlk kez
 Every month, on day %lld||Her ay %lld. gün
 Every year, %@||Her yıl %@
 By group||Gruba göre
+%@ is already done today.||%@ bugün zaten yapıldı.
+Add a habit||Alışkanlık ekle
+Added %@: %@, at %@.||“%@” eklendi: %@, saat %@.
+Added %@: %@.||“%@” eklendi: %@.
+Allow the microphone and speech recognition for ZenHab in Settings.||Ayarlar'da ZenHab için mikrofona ve konuşma tanımaya izin verin.
+Check off a habit||Alışkanlığı işaretle
+Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”.||Söylediğiniz adla bir alışkanlık oluşturur.
+Done: %@||Tamamlandı: %@
+Everything is done for today.||Bugünlük her şey tamam.
+Habit not found.||Alışkanlık bulunamadı.
+Left for today: %@.||Bugün kalan: %@.
+Listening…||Dinliyorum…
+Lists the habits that aren't checked off today.||Bugün henüz işaretlenmemiş alışkanlıkları sayar.
+Marks a habit as done for today.||Alışkanlığı bugün için yapıldı olarak işaretler.
+Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”.||Alışkanlığın adını söyleyin, örneğin “Su içmek”.
+Speak||Konuş
+Speech recognition isn't available right now.||Konuşma tanıma şu anda kullanılamıyor.
+Stop||Durdur
+The free version has reached its habit limit. Open ZenHab to get Pro.||Ücretsiz sürüm alışkanlık sınırına ulaştı. Pro için ZenHab'ı açın.
+Voice input||Sesli giriş
+What should I add?||Ne ekleyeyim?
+What to add||Ne eklenecek
+What's left today||Bugün ne kaldı
+Which habit?||Hangi alışkanlık?
