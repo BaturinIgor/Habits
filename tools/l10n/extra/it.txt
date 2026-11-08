@@ -560,3 +560,4 @@ Every other day||A giorni alterni
 First time||Prima volta
 Every month, on day %lld||Ogni mese, il giorno %lld
 Every year, %@||Ogni anno, il %@
+By group||Per gruppo

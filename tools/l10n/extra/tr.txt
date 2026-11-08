@@ -560,3 +560,4 @@ Every other day||Gün aşırı
 First time||İlk kez
 Every month, on day %lld||Her ay %lld. gün
 Every year, %@||Her yıl %@
+By group||Gruba göre

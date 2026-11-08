@@ -560,3 +560,4 @@ Every other day||Selang sehari
 First time||Pertama kali
 Every month, on day %lld||Setiap bulan, tanggal %lld
 Every year, %@||Setiap tahun, %@
+By group||Per grup

@@ -342,6 +342,7 @@ struct TodayScreenSettingsView: View {
                 Picker("Order", selection: store.settingBinding(\.homeLayout)) {
                     Text("Parts of day").tag(HomeLayout.partsOfDay)
                     Text("By time").tag(HomeLayout.byTime)
+                    Text("By group").tag(HomeLayout.byGroup)
                 }
                 Toggle("Done habits at the bottom", isOn: store.settingBinding(\.doneToBottom))
             }

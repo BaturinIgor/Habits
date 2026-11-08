@@ -561,3 +561,4 @@ Every other day||Через день||Jeden zweiten Tag||Un jour sur deux||Cada 
 First time||Первый раз||Erstes Mal||Première fois||Primera vez||首次||初回||첫 날짜||पहली बार
 Every month, on day %lld||Каждый месяц, %lld-го числа||Monatlich am %lld.||Chaque mois, le %lld||Cada mes, el día %lld||每月 %lld 日||毎月%lld日||매월 %lld일||हर महीने की %lld तारीख
 Every year, %@||Каждый год, %@||Jährlich am %@||Chaque année, le %@||Cada año, el %@||每年 %@||毎年%@||매년 %@||हर साल %@
+By group||По группам||Nach Gruppe||Par groupe||Por grupo||按分组||グループ別||그룹별||समूह के अनुसार

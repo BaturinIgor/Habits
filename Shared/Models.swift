@@ -333,6 +333,8 @@ enum HomeLayout: String, Codable, Hashable, CaseIterable {
     case partsOfDay
     /// Один список: с напоминанием по времени, остальные после.
     case byTime
+    /// Секции по группам привычек, внутри по времени.
+    case byGroup
 }
 
 struct AppSettings: Codable, Hashable {

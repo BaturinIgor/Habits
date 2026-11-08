@@ -230,7 +230,7 @@ struct HabitSection: Identifiable {
     let habits: [Habit]
 }
 
-/// Секции главного экрана: по частям дня или один список по времени.
+/// Секции главного экрана: по частям дня, по группам или один список по времени.
 func todaySections(_ habits: [Habit], data: AppData, day: String) -> [HabitSection] {
     func finish(_ items: [Habit]) -> [Habit] {
         guard data.settings.doneToBottom else { return items }
@@ -241,6 +241,10 @@ func todaySections(_ habits: [Habit], data: AppData, day: String) -> [HabitSecti
     switch data.settings.homeLayout {
     case .byTime:
         return [HabitSection(id: "all", title: "", habits: finish(habits.sortedForDisplay()))]
+    case .byGroup:
+        return makeSections(habits, data: data).map {
+            HabitSection(id: $0.id, title: $0.title, habits: finish($0.habits.sortedForDisplay()))
+        }
     case .partsOfDay:
         return PartOfDay.allCases.compactMap { part in
             let items = habits.filter { $0.effectivePartOfDay == part }.sorted(by: Habit.manualOrder)
