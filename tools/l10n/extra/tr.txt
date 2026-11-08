@@ -605,3 +605,17 @@ Sign in to iCloud in Settings to share groups with your family.||Gruplarınızı
 Couldn't create an invitation link. Try again later.||Davet bağlantısı oluşturulamadı. Daha sonra tekrar deneyin.
 No connection to iCloud. Changes will sync later.||iCloud bağlantısı yok. Değişiklikler daha sonra eşitlenecek.
 iCloud storage is full.||iCloud depolama alanı dolu.
+Create habits by voice||Sesle alışkanlık
+Every other day, every N days, once a month and once a year: for pills, bills and birthdays.||Gün aşırı, N günde bir, ayda bir ve yılda bir: ilaçlar, faturalar ve doğum günleri için.
+Family groups||Aile grupları
+Groups on the Today screen and in the widget||Bugün ekranında ve widget'ta gruplar
+New schedules||Yeni programlar
+Open groups||Grupları aç
+Put the habit in a group to share it with your family.||Ailenizle paylaşmak için alışkanlığı bir gruba koyun.
+Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”.||“ZenHab içinde alışkanlık işaretle”, “ZenHab içine alışkanlık ekle” ya da “ZenHab'da ne kaldı” deyin.
+Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders.||Bir grubu ailenizle paylaşın, örneğin “Köpek” ya da “Ev”. Herkes aynı alışkanlıkları görür, işaretler ve hatırlatma alır.
+Siri||Siri
+Sort the Today screen by groups in Settings, and hold the Today widget to show one group.||Ayarlar'da Bugün ekranını gruplara göre sıralayın, tek bir grup göstermek için Bugün widget'ına basılı tutun.
+Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”.||Yeni bir alışkanlıkta mikrofona dokunun ve adını söyleyin.
+Try it||Dene
+What's new||Yenilikler

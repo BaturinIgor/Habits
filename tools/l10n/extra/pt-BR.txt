@@ -605,3 +605,17 @@ Sign in to iCloud in Settings to share groups with your family.||Entre no iCloud
 Couldn't create an invitation link. Try again later.||Não foi possível criar o link de convite. Tente mais tarde.
 No connection to iCloud. Changes will sync later.||Sem conexão com o iCloud. As alterações serão sincronizadas depois.
 iCloud storage is full.||O armazenamento do iCloud está cheio.
+Create habits by voice||Hábitos por voz
+Every other day, every N days, once a month and once a year: for pills, bills and birthdays.||Dia sim, dia não, a cada N dias, uma vez por mês e uma vez por ano: para remédios, contas e aniversários.
+Family groups||Grupos familiares
+Groups on the Today screen and in the widget||Grupos na tela Hoje e no widget
+New schedules||Novas frequências
+Open groups||Abrir grupos
+Put the habit in a group to share it with your family.||Coloque o hábito em um grupo para compartilhá-lo com a família.
+Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”.||Diga “Marque um hábito no ZenHab”, “Adicione um hábito no ZenHab” ou “O que falta no ZenHab”.
+Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders.||Compartilhe um grupo com a família, por exemplo “Cachorro” ou “Casa”. Todos veem os mesmos hábitos, marcam e recebem lembretes.
+Siri||Siri
+Sort the Today screen by groups in Settings, and hold the Today widget to show one group.||Organize a tela Hoje por grupos em Ajustes e toque e segure o widget Hoje para mostrar um grupo.
+Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”.||Toque no microfone em um novo hábito e diga o nome.
+Try it||Experimentar
+What's new||Novidades

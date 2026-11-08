@@ -129,6 +129,7 @@
 "Create 10 habits" = "Buat 10 kebiasaan";
 "Create 3 groups" = "Buat 3 grup";
 "Create 5 habits" = "Buat 5 kebiasaan";
+"Create habits by voice" = "Kebiasaan lewat suara";
 "Create your first one and it will appear here." = "Buat yang pertama dan akan muncul di sini.";
 "Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "Membuat kebiasaan dari nama yang Anda ucapkan.";
 "Current habits and history will be replaced with the data from the file." = "Kebiasaan dan riwayat saat ini akan diganti dengan data dari file.";
@@ -183,6 +184,7 @@
 "Every day" = "Setiap hari";
 "Every month, on day %lld" = "Setiap bulan, tanggal %lld";
 "Every other day" = "Selang sehari";
+"Every other day, every N days, once a month and once a year: for pills, bills and birthdays." = "Selang sehari, setiap N hari, sebulan sekali, dan setahun sekali: untuk obat, tagihan, dan ulang tahun.";
 "Every year, %@" = "Setiap tahun, %@";
 "Everyday basics" = "Dasar sehari-hari";
 "Everything is done for today." = "Semua sudah selesai hari ini.";
@@ -192,6 +194,7 @@
 "Extra freeze" = "Pembekuan tambahan";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Pembekuan tambahan bulan ini: %lld/%lld. Avatar dan latar dengan percikan ada di profilmu.";
 "Family" = "Keluarga";
+"Family groups" = "Grup keluarga";
 "Family groups work in the App Store version of ZenHab." = "Grup keluarga berfungsi di versi ZenHab dari App Store.";
 "Family members will lose this group. The habits stay with you." = "Keluarga akan kehilangan grup ini. Kebiasaannya tetap ada di Anda.";
 "Feed" = "Beri makan";
@@ -223,6 +226,7 @@
 "Group" = "Grup";
 "Groups" = "Grup";
 "Groups help sort habits by topic: morning, health, work." = "Grup membantu mengelompokkan kebiasaan menurut topik: pagi, kesehatan, kerja.";
+"Groups on the Today screen and in the widget" = "Grup di layar Hari Ini dan di widget";
 "Grown-up" = "Dewasa";
 "Habit" = "Kebiasaan";
 "Habit Tracker" = "Pelacak Kebiasaan";
@@ -334,6 +338,7 @@
 "New achievement!" = "Pencapaian baru!";
 "New group" = "Grup baru";
 "New habit" = "Kebiasaan baru";
+"New schedules" = "Jadwal baru";
 "New word" = "Kata baru";
 "New words a day" = "Kata baru per hari";
 "Next" = "Lanjut";
@@ -383,6 +388,7 @@
 "One notification at the chosen time." = "Satu notifikasi pada jam yang dipilih.";
 "One notification listing the habits not checked off yet." = "Satu notifikasi berisi kebiasaan yang belum dicentang.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Hanya centang di hari yang sama atau keesokan harinya yang dihitung. Membatalkan centang mengambil kembali percikannya.";
+"Open groups" = "Buka grup";
 "Open iOS Settings" = "Buka Pengaturan iOS";
 "Open mail app" = "Buka aplikasi email";
 "Open the app to adopt one." = "Buka aplikasi untuk mengadopsi.";
@@ -421,6 +427,7 @@
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Pembelian hanya berfungsi di versi App Store. Di versi ini, Pro bisa dinyalakan untuk pengujian di Pengaturan.";
 "Push-ups" = "Push-up";
 "Put money aside" = "Menabung";
+"Put the habit in a group to share it with your family." = "Masukkan kebiasaan ke grup untuk membagikannya dengan keluarga.";
 "Rate the app" = "Beri nilai aplikasi";
 "Reach a daily goal 20 times" = "Capai target harian 20 kali";
 "Reach a weekly goal 4 times" = "Capai target mingguan 4 kali";
@@ -453,6 +460,7 @@
 "Save" = "Simpan";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "Simpan salinan ke File atau iCloud Drive. Impor akan mengganti semua data saat ini.";
 "Save a streak with a freeze" = "Selamatkan rentetan dengan pembekuan";
+"Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Ucapkan ke Siri: “Check off a habit in ZenHab”, “Add a habit in ZenHab”, atau “What's left in ZenHab”.";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Ucapkan nama kebiasaan, misalnya “Minum air”.";
 "Schedule" = "Jadwal";
 "Scheduled notifications" = "Notifikasi terjadwal";
@@ -461,6 +469,7 @@
 "Send the message" = "Kirim pesan";
 "Set up Mail on this iPhone or send your message to %@." = "Atur Mail di iPhone ini atau kirim pesanmu ke %@.";
 "Settings" = "Pengaturan";
+"Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "Bagikan grup dengan keluarga, misalnya “Anjing” atau “Rumah”. Semua melihat kebiasaan yang sama, mencentangnya, dan mendapat pengingat.";
 "Share with family" = "Bagikan dengan keluarga";
 "Shared data" = "Data bersama";
 "Shared with you" = "Dibagikan dengan Anda";
@@ -469,6 +478,7 @@
 "Shows how many reminders came since you last opened the app." = "Menampilkan berapa pengingat yang masuk sejak terakhir kali kamu membuka aplikasi.";
 "Sign in to iCloud in Settings to share groups with your family." = "Masuk ke iCloud di Pengaturan untuk berbagi grup dengan keluarga.";
 "Simple gestures" = "Gerakan sederhana";
+"Siri" = "Siri";
 "Skin care" = "Perawatan kulit";
 "Skip" = "Lewati";
 "Skipped" = "Dilewati";
@@ -476,6 +486,7 @@
 "Small steps add up." = "Langkah kecil akan bertambah.";
 "Small steps every day" = "Langkah kecil setiap hari";
 "Some days" = "Beberapa hari";
+"Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Urutkan layar Hari Ini per grup di Pengaturan, dan tahan widget Hari Ini untuk menampilkan satu grup.";
 "Sparks" = "Percikan";
 "Sparks and a pet" = "Percikan dan hewan peliharaan";
 "Speak" = "Bicara";
@@ -511,6 +522,7 @@
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Ketuk lingkaran atau geser ke kanan untuk mencentang. Geser ke kiri untuk melewati, menambah catatan, atau mengubah. Tekan lama untuk mengubah urutan.";
 "Tap the days when the habit should be done" = "Ketuk hari saat kebiasaan harus dilakukan";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "Ketuk lingkaran kebiasaan untuk membuka kartu hari ini. Kata baru muncul acak dari tingkat yang dipilih. Kata yang belum kamu tahu akan muncul lagi untuk diulang, dan kebiasaan dicentang otomatis setelah kartu hari ini selesai. Tingkat bisa diubah kapan saja, kata yang sudah dipelajari tetap tersimpan.";
+"Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "Ketuk mikrofon di kebiasaan baru dan ucapkan namanya.";
 "Tap to see the translation" = "Ketuk untuk melihat terjemahan";
 "Tell us what you think" = "Ceritakan pendapatmu";
 "Terms of Use" = "Ketentuan Penggunaan";
@@ -541,6 +553,7 @@
 "Track expenses" = "Catat pengeluaran";
 "Track habits, get gentle reminders and watch your streaks grow." = "Lacak kebiasaan, dapatkan pengingat yang lembut, dan lihat rentetanmu bertambah.";
 "Try again" = "Coba lagi";
+"Try it" = "Coba";
 "Turtle" = "Kura-kura";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Dua kali terlewat sebulan tidak memutus rentetan, dan versi minimum tetap dihitung di hari sulit.";
 "Two weeks" = "Dua minggu";
@@ -576,6 +589,7 @@
 "What should I add?" = "Apa yang ingin ditambahkan?";
 "What to add" = "Yang ditambahkan";
 "What's left today" = "Yang tersisa hari ini";
+"What's new" = "Yang baru";
 "Which habit?" = "Kebiasaan yang mana?";
 "Widget" = "Widget";
 "Words" = "Kata";

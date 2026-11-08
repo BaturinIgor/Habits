@@ -68,6 +68,12 @@ struct MarkHabitDoneIntent: AppIntent {
     @Parameter(title: "Habit", requestValueDialog: "Which habit?")
     var habit: HabitEntity
 
+    init() {}
+
+    init(habit: HabitEntity) {
+        self.habit = habit
+    }
+
     @MainActor
     func perform() async throws -> some IntentResult & ProvidesDialog {
         let store = HabitStore.shared

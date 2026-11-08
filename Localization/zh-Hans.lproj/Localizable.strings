@@ -129,6 +129,7 @@
 "Create 10 habits" = "创建 10 个习惯";
 "Create 3 groups" = "创建 3 个分组";
 "Create 5 habits" = "创建 5 个习惯";
+"Create habits by voice" = "语音创建习惯";
 "Create your first one and it will appear here." = "创建第一个习惯，它会显示在这里。";
 "Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "根据你说的名称创建习惯。";
 "Current habits and history will be replaced with the data from the file." = "当前的习惯和记录将被文件中的数据替换。";
@@ -183,6 +184,7 @@
 "Every day" = "每天";
 "Every month, on day %lld" = "每月 %lld 日";
 "Every other day" = "隔天";
+"Every other day, every N days, once a month and once a year: for pills, bills and birthdays." = "隔天、每 N 天、每月一次、每年一次：适合吃药、缴费和生日。";
 "Every year, %@" = "每年 %@";
 "Everyday basics" = "日常基础词汇";
 "Everything is done for today." = "今天的都完成了。";
@@ -192,6 +194,7 @@
 "Extra freeze" = "额外冻结";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "本月额外冻结：%lld/%lld。可用火花购买的头像和背景在个人资料中。";
 "Family" = "家庭";
+"Family groups" = "家庭分组";
 "Family groups work in the App Store version of ZenHab." = "家庭分组仅在 App Store 版 ZenHab 中可用。";
 "Family members will lose this group. The habits stay with you." = "家人将失去这个分组，习惯会保留在你这里。";
 "Feed" = "喂食";
@@ -223,6 +226,7 @@
 "Group" = "分组";
 "Groups" = "分组";
 "Groups help sort habits by topic: morning, health, work." = "分组可按主题整理习惯：早晨、健康、工作。";
+"Groups on the Today screen and in the widget" = "“今天”页面和小组件中的分组";
 "Grown-up" = "成年";
 "Habit" = "习惯";
 "Habit Tracker" = "习惯打卡";
@@ -334,6 +338,7 @@
 "New achievement!" = "新成就！";
 "New group" = "新分组";
 "New habit" = "新习惯";
+"New schedules" = "新的频率";
 "New word" = "新单词";
 "New words a day" = "每天新单词";
 "Next" = "下一个";
@@ -383,6 +388,7 @@
 "One notification at the chosen time." = "在所选时间发送一次通知。";
 "One notification listing the habits not checked off yet." = "一条通知，列出尚未打卡的习惯。";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "只有当天或第二天的打卡才算数。取消打卡会收回火花。";
+"Open groups" = "打开分组";
 "Open iOS Settings" = "打开 iOS 设置";
 "Open mail app" = "打开邮件应用";
 "Open the app to adopt one." = "打开应用来领养一只。";
@@ -421,6 +427,7 @@
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "仅 App Store 版本支持购买。此版本可在设置中开启 Pro 进行测试。";
 "Push-ups" = "俯卧撑";
 "Put money aside" = "存钱";
+"Put the habit in a group to share it with your family." = "把习惯放进分组，就能与家人共享。";
 "Rate the app" = "给应用评分";
 "Reach a daily goal 20 times" = "完成每日目标 20 次";
 "Reach a weekly goal 4 times" = "完成 4 次每周目标";
@@ -453,6 +460,7 @@
 "Save" = "保存";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "将副本保存到“文件”或 iCloud 云盘。导入会替换当前所有数据。";
 "Save a streak with a freeze" = "用冻结保住连续记录";
+"Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "说“在ZenHab中打卡习惯”、“在ZenHab中添加习惯”或“ZenHab还剩什么”。";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "说出习惯名称，例如“喝水”。";
 "Schedule" = "计划";
 "Scheduled notifications" = "已安排的通知";
@@ -461,6 +469,7 @@
 "Send the message" = "发送消息";
 "Set up Mail on this iPhone or send your message to %@." = "请在 iPhone 上设置“邮件”，或将消息发送至 %@。";
 "Settings" = "设置";
+"Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "与家人共享一个分组，比如“狗狗”或“家务”。大家看到相同的习惯，都能打卡并收到提醒。";
 "Share with family" = "与家人共享";
 "Shared data" = "共享数据";
 "Shared with you" = "与你共享";
@@ -469,6 +478,7 @@
 "Shows how many reminders came since you last opened the app." = "显示自上次打开应用以来收到了多少条提醒。";
 "Sign in to iCloud in Settings to share groups with your family." = "请在“设置”中登录 iCloud，才能与家人共享分组。";
 "Simple gestures" = "简单手势";
+"Siri" = "Siri";
 "Skin care" = "护肤";
 "Skip" = "跳过";
 "Skipped" = "已跳过";
@@ -476,6 +486,7 @@
 "Small steps add up." = "小步积累成大进步。";
 "Small steps every day" = "每天一小步";
 "Some days" = "指定日";
+"Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "在设置中按分组排列“今天”页面；长按“今天”小组件可只显示一个分组。";
 "Sparks" = "火花";
 "Sparks and a pet" = "火花与宠物";
 "Speak" = "说话";
@@ -511,6 +522,7 @@
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "点圆圈或向右滑动即可打卡。向左滑动可跳过、写备注或编辑。长按可调整顺序。";
 "Tap the days when the habit should be done" = "点选需要执行习惯的日子";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "点击习惯的圆圈打开今天的卡片。新单词从所选水平中随机出现。还不会的单词会再次复习，完成当天所有卡片后习惯会自动打勾。可以随时更改水平，已学的单词会保留。";
+"Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "在新习惯中点按麦克风，说出它的名称。";
 "Tap to see the translation" = "点击查看翻译";
 "Tell us what you think" = "说说你的想法";
 "Terms of Use" = "使用条款";
@@ -541,6 +553,7 @@
 "Track expenses" = "记账";
 "Track habits, get gentle reminders and watch your streaks grow." = "记录习惯，接收温和提醒，看着连续记录不断增长。";
 "Try again" = "重试";
+"Try it" = "试一试";
 "Turtle" = "乌龟";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "每月两次错过不会中断连续记录，艰难的日子里最低版本也算数。";
 "Two weeks" = "两周";
@@ -576,6 +589,7 @@
 "What should I add?" = "要添加什么？";
 "What to add" = "添加内容";
 "What's left today" = "今天还剩什么";
+"What's new" = "新功能";
 "Which habit?" = "哪个习惯？";
 "Widget" = "小组件";
 "Words" = "单词";

@@ -1,3 +1,4 @@
+import AppIntents
 import Charts
 import SwiftUI
 import UIKit
@@ -11,6 +12,8 @@ struct HabitDetailView: View {
     @State private var editingHabit: Habit?
     @State private var noteTarget: NoteTarget?
     @State private var showingWords = false
+    /// Подсказку Siri показываем, пока человек её не закроет.
+    @AppStorage("siriTipHabitDetail") private var showSiriTip = true
 
     var body: some View {
         Group {
@@ -32,6 +35,10 @@ struct HabitDetailView: View {
         return ScrollView {
             VStack(spacing: 16) {
                 header(habit, color: color)
+
+                if showSiriTip && !habit.isArchived {
+                    SiriTipView(intent: MarkHabitDoneIntent(habit: HabitEntity(habit)), isVisible: $showSiriTip)
+                }
 
                 if let language = habit.wordsLanguage {
                     WordsProgressCard(language: language, level: habit.wordsLevel ?? 0, color: color) { showingWords = true }

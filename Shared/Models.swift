@@ -371,12 +371,14 @@ struct AppSettings: Codable, Hashable {
     var avatarID = "sprout"
     /// Ачивки, о которых уже показали поздравление.
     var seenAchievements: [String] = []
+    /// Версия, для которой уже показали экран «Что нового».
+    var whatsNewSeen: String = ""
 
     init() {}
 
     enum CodingKeys: String, CodingKey {
         case proUnlocked, remindersEnabled, homeLayout, doneToBottom, summaryEnabled, summaryTime
-        case onboardingDone, gestureHintShown, backgroundID, avatarID, seenAchievements, badgeEnabled
+        case onboardingDone, gestureHintShown, backgroundID, avatarID, seenAchievements, badgeEnabled, whatsNewSeen
     }
 
     init(from decoder: Decoder) throws {
@@ -393,6 +395,7 @@ struct AppSettings: Codable, Hashable {
         avatarID = try c.decodeIfPresent(String.self, forKey: .avatarID) ?? "sprout"
         seenAchievements = try c.decodeIfPresent([String].self, forKey: .seenAchievements) ?? []
         badgeEnabled = try c.decodeIfPresent(Bool.self, forKey: .badgeEnabled) ?? true
+        whatsNewSeen = try c.decodeIfPresent(String.self, forKey: .whatsNewSeen) ?? ""
     }
 }
 

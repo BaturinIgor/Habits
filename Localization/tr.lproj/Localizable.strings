@@ -129,6 +129,7 @@
 "Create 10 habits" = "10 alışkanlık oluştur";
 "Create 3 groups" = "3 grup oluştur";
 "Create 5 habits" = "5 alışkanlık oluştur";
+"Create habits by voice" = "Sesle alışkanlık";
 "Create your first one and it will appear here." = "İlkini oluştur, burada görünecek.";
 "Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "Söylediğiniz adla bir alışkanlık oluşturur.";
 "Current habits and history will be replaced with the data from the file." = "Mevcut alışkanlıklar ve geçmiş, dosyadaki verilerle değiştirilecek.";
@@ -183,6 +184,7 @@
 "Every day" = "Her gün";
 "Every month, on day %lld" = "Her ay %lld. gün";
 "Every other day" = "Gün aşırı";
+"Every other day, every N days, once a month and once a year: for pills, bills and birthdays." = "Gün aşırı, N günde bir, ayda bir ve yılda bir: ilaçlar, faturalar ve doğum günleri için.";
 "Every year, %@" = "Her yıl %@";
 "Everyday basics" = "Günlük temel kelimeler";
 "Everything is done for today." = "Bugünlük her şey tamam.";
@@ -192,6 +194,7 @@
 "Extra freeze" = "Ek dondurma";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Bu ayki ek dondurmalar: %lld/%lld. Kıvılcımla alınan avatar ve arka planlar profilinde.";
 "Family" = "Aile";
+"Family groups" = "Aile grupları";
 "Family groups work in the App Store version of ZenHab." = "Aile grupları ZenHab'ın App Store sürümünde çalışır.";
 "Family members will lose this group. The habits stay with you." = "Aileniz bu grubu kaybeder. Alışkanlıklar sizde kalır.";
 "Feed" = "Besle";
@@ -223,6 +226,7 @@
 "Group" = "Grup";
 "Groups" = "Gruplar";
 "Groups help sort habits by topic: morning, health, work." = "Gruplar alışkanlıkları konuya göre ayırmaya yardım eder: sabah, sağlık, iş.";
+"Groups on the Today screen and in the widget" = "Bugün ekranında ve widget'ta gruplar";
 "Grown-up" = "Yetişkin";
 "Habit" = "Alışkanlık";
 "Habit Tracker" = "Alışkanlık Takibi";
@@ -334,6 +338,7 @@
 "New achievement!" = "Yeni başarı!";
 "New group" = "Yeni grup";
 "New habit" = "Yeni alışkanlık";
+"New schedules" = "Yeni programlar";
 "New word" = "Yeni kelime";
 "New words a day" = "Günlük yeni kelime";
 "Next" = "İleri";
@@ -383,6 +388,7 @@
 "One notification at the chosen time." = "Seçilen saatte tek bildirim.";
 "One notification listing the habits not checked off yet." = "Henüz işaretlenmemiş alışkanlıkları listeleyen tek bildirim.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Yalnızca aynı gün veya ertesi gün yapılan işaretlemeler sayılır. İşareti kaldırmak kıvılcımı geri alır.";
+"Open groups" = "Grupları aç";
 "Open iOS Settings" = "iOS Ayarları'nı aç";
 "Open mail app" = "E-posta uygulamasını aç";
 "Open the app to adopt one." = "Sahiplenmek için uygulamayı aç.";
@@ -421,6 +427,7 @@
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Satın almalar yalnızca App Store sürümünde çalışır. Bu sürümde Pro, test için Ayarlar'dan açılabilir.";
 "Push-ups" = "Şınav";
 "Put money aside" = "Para biriktir";
+"Put the habit in a group to share it with your family." = "Ailenizle paylaşmak için alışkanlığı bir gruba koyun.";
 "Rate the app" = "Uygulamayı değerlendir";
 "Reach a daily goal 20 times" = "Günlük hedefe 20 kez ulaş";
 "Reach a weekly goal 4 times" = "Haftalık hedefe 4 kez ulaş";
@@ -453,6 +460,7 @@
 "Save" = "Kaydet";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "Dosyalar'a veya iCloud Drive'a bir kopya kaydet. İçe aktarma mevcut tüm verilerin yerine geçer.";
 "Save a streak with a freeze" = "Bir seriyi dondurmayla kurtar";
+"Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "“ZenHab içinde alışkanlık işaretle”, “ZenHab içine alışkanlık ekle” ya da “ZenHab'da ne kaldı” deyin.";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Alışkanlığın adını söyleyin, örneğin “Su içmek”.";
 "Schedule" = "Plan";
 "Scheduled notifications" = "Planlanan bildirimler";
@@ -461,6 +469,7 @@
 "Send the message" = "Mesajı gönder";
 "Set up Mail on this iPhone or send your message to %@." = "Bu iPhone'da Mail'i ayarla veya mesajını %@ adresine gönder.";
 "Settings" = "Ayarlar";
+"Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "Bir grubu ailenizle paylaşın, örneğin “Köpek” ya da “Ev”. Herkes aynı alışkanlıkları görür, işaretler ve hatırlatma alır.";
 "Share with family" = "Aileyle paylaş";
 "Shared data" = "Paylaşılan veriler";
 "Shared with you" = "Sizinle paylaşıldı";
@@ -469,6 +478,7 @@
 "Shows how many reminders came since you last opened the app." = "Uygulamayı son açışından beri kaç hatırlatma geldiğini gösterir.";
 "Sign in to iCloud in Settings to share groups with your family." = "Gruplarınızı ailenizle paylaşmak için Ayarlar'da iCloud'a giriş yapın.";
 "Simple gestures" = "Basit hareketler";
+"Siri" = "Siri";
 "Skin care" = "Cilt bakımı";
 "Skip" = "Atla";
 "Skipped" = "Atlandı";
@@ -476,6 +486,7 @@
 "Small steps add up." = "Küçük adımlar birikir.";
 "Small steps every day" = "Her gün küçük adımlar";
 "Some days" = "Bazı günler";
+"Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Ayarlar'da Bugün ekranını gruplara göre sıralayın, tek bir grup göstermek için Bugün widget'ına basılı tutun.";
 "Sparks" = "Kıvılcımlar";
 "Sparks and a pet" = "Kıvılcımlar ve evcil hayvan";
 "Speak" = "Konuş";
@@ -511,6 +522,7 @@
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "İşaretlemek için daireye dokun veya sağa kaydır. Atlamak, not eklemek veya düzenlemek için sola kaydır. Sıralamak için basılı tut.";
 "Tap the days when the habit should be done" = "Alışkanlığın yapılacağı günlere dokun";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "Bugünün kartlarını açmak için alışkanlığın dairesine dokun. Yeni kelimeler seçilen seviyeden rastgele sırayla gelir. Henüz bilmediğin kelimeler tekrar için geri gelir, günün kartları bitince alışkanlık kendiliğinden işaretlenir. Seviyeyi istediğin zaman değiştirebilirsin, öğrendiğin kelimeler korunur.";
+"Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "Yeni bir alışkanlıkta mikrofona dokunun ve adını söyleyin.";
 "Tap to see the translation" = "Çeviriyi görmek için dokun";
 "Tell us what you think" = "Ne düşündüğünü söyle";
 "Terms of Use" = "Kullanım Koşulları";
@@ -541,6 +553,7 @@
 "Track expenses" = "Harcamaları kaydet";
 "Track habits, get gentle reminders and watch your streaks grow." = "Alışkanlıklarını takip et, nazik hatırlatmalar al ve serilerinin büyüdüğünü izle.";
 "Try again" = "Tekrar dene";
+"Try it" = "Dene";
 "Turtle" = "Kaplumbağa";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Ayda iki kaçırma serini bozmaz, zor günlerde minimum sürüm de sayılır.";
 "Two weeks" = "İki hafta";
@@ -576,6 +589,7 @@
 "What should I add?" = "Ne ekleyeyim?";
 "What to add" = "Ne eklenecek";
 "What's left today" = "Bugün ne kaldı";
+"What's new" = "Yenilikler";
 "Which habit?" = "Hangi alışkanlık?";
 "Widget" = "Widget";
 "Words" = "Kelimeler";

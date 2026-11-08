@@ -81,7 +81,7 @@ struct OnboardingView: View {
     }
 
     private func finish() {
-        store.updateSettings { $0.onboardingDone = true }
+        store.updateSettings { $0.onboardingDone = true; $0.whatsNewSeen = WhatsNewView.version }
         Task {
             await NotificationPlanner.requestAuthorizationIfNeeded()
             await store.reschedule()

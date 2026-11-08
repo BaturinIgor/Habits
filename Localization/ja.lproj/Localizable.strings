@@ -129,6 +129,7 @@
 "Create 10 habits" = "習慣を10個作成";
 "Create 3 groups" = "グループを3つ作成";
 "Create 5 habits" = "習慣を5つ作成";
+"Create habits by voice" = "声で習慣を作成";
 "Create your first one and it will appear here." = "最初の習慣を作成すると、ここに表示されます。";
 "Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "話した名前で習慣を作成します。";
 "Current habits and history will be replaced with the data from the file." = "現在の習慣と記録はファイルのデータに置き換えられます。";
@@ -183,6 +184,7 @@
 "Every day" = "毎日";
 "Every month, on day %lld" = "毎月%lld日";
 "Every other day" = "1日おき";
+"Every other day, every N days, once a month and once a year: for pills, bills and birthdays." = "1日おき、N日ごと、月に1回、年に1回。薬、支払い、誕生日に。";
 "Every year, %@" = "毎年%@";
 "Everyday basics" = "毎日の基本単語";
 "Everything is done for today." = "今日の分はすべて完了です。";
@@ -192,6 +194,7 @@
 "Extra freeze" = "追加フリーズ";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "今月の追加フリーズ：%lld/%lld。スパークで買えるアバターと背景はプロフィールにあります。";
 "Family" = "ファミリー";
+"Family groups" = "ファミリーグループ";
 "Family groups work in the App Store version of ZenHab." = "ファミリーグループはApp Store版のZenHabで使えます。";
 "Family members will lose this group. The habits stay with you." = "家族からこのグループが消えます。習慣はあなたの手元に残ります。";
 "Feed" = "ごはんをあげる";
@@ -223,6 +226,7 @@
 "Group" = "グループ";
 "Groups" = "グループ";
 "Groups help sort habits by topic: morning, health, work." = "グループで習慣をテーマ別に整理できます（朝、健康、仕事など）。";
+"Groups on the Today screen and in the widget" = "「今日」画面とウィジェットのグループ";
 "Grown-up" = "おとな";
 "Habit" = "習慣";
 "Habit Tracker" = "習慣トラッカー";
@@ -334,6 +338,7 @@
 "New achievement!" = "新しい実績！";
 "New group" = "新しいグループ";
 "New habit" = "新しい習慣";
+"New schedules" = "新しいスケジュール";
 "New word" = "新しい単語";
 "New words a day" = "1日の新しい単語";
 "Next" = "次";
@@ -383,6 +388,7 @@
 "One notification at the chosen time." = "選んだ時刻に1回通知します。";
 "One notification listing the habits not checked off yet." = "まだチェックしていない習慣を1件の通知でお知らせします。";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "当日か翌日のチェックだけが対象です。チェックを外すとスパークも戻ります。";
+"Open groups" = "グループを開く";
 "Open iOS Settings" = "iOSの設定を開く";
 "Open mail app" = "メールアプリを開く";
 "Open the app to adopt one." = "アプリを開いて迎えましょう。";
@@ -421,6 +427,7 @@
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "購入は App Store 版でのみ利用できます。このビルドでは設定でテスト用に Pro をオンにできます。";
 "Push-ups" = "腕立て伏せ";
 "Put money aside" = "貯金する";
+"Put the habit in a group to share it with your family." = "家族と共有するには、習慣をグループに入れてください。";
 "Rate the app" = "アプリを評価";
 "Reach a daily goal 20 times" = "1日の目標を20回達成";
 "Reach a weekly goal 4 times" = "週の目標を4回達成";
@@ -453,6 +460,7 @@
 "Save" = "保存";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "コピーを「ファイル」やiCloud Driveに保存できます。読み込むと現在のデータはすべて置き換わります。";
 "Save a streak with a freeze" = "フリーズで連続記録を守る";
+"Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "「ZenHabで習慣をチェック」「ZenHabで習慣を追加」「ZenHabで残りは」と話しかけてください。";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "習慣の名前を話してください。例：「水を飲む」";
 "Schedule" = "スケジュール";
 "Scheduled notifications" = "予定された通知";
@@ -461,6 +469,7 @@
 "Send the message" = "メッセージを送信";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone でメールを設定するか、%@ に送信してください。";
 "Settings" = "設定";
+"Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "「犬」や「家」などのグループを家族と共有できます。全員が同じ習慣を見てチェックでき、リマインダーも届きます。";
 "Share with family" = "家族と共有";
 "Shared data" = "共有データ";
 "Shared with you" = "あなたと共有中";
@@ -469,6 +478,7 @@
 "Shows how many reminders came since you last opened the app." = "前回アプリを開いてから届いたリマインダーの数を表示します。";
 "Sign in to iCloud in Settings to share groups with your family." = "家族とグループを共有するには、設定でiCloudにサインインしてください。";
 "Simple gestures" = "かんたん操作";
+"Siri" = "Siri";
 "Skin care" = "スキンケア";
 "Skip" = "スキップ";
 "Skipped" = "スキップ済み";
@@ -476,6 +486,7 @@
 "Small steps add up." = "小さな一歩が積み重なる。";
 "Small steps every day" = "毎日の小さな一歩";
 "Some days" = "曜日指定";
+"Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "設定で「今日」画面をグループ別に並べられます。「今日」ウィジェットを長押しすると1つのグループを表示できます。";
 "Sparks" = "スパーク";
 "Sparks and a pet" = "スパークとペット";
 "Speak" = "話す";
@@ -511,6 +522,7 @@
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "丸をタップか右スワイプでチェック。左スワイプでスキップ、メモ、編集。長押しで並べ替え。";
 "Tap the days when the habit should be done" = "習慣を行う曜日をタップ";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "習慣の丸をタップすると今日のカードが開きます。新しい単語は選んだレベルからランダムに出ます。覚えていない単語は復習に戻り、その日のカードを終えると自動でチェックが付きます。レベルはいつでも変更でき、覚えた単語は残ります。";
+"Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "新しい習慣でマイクをタップして、名前を話してください。";
 "Tap to see the translation" = "タップして訳を表示";
 "Tell us what you think" = "ご意見をお聞かせください";
 "Terms of Use" = "利用規約";
@@ -541,6 +553,7 @@
 "Track expenses" = "支出を記録する";
 "Track habits, get gentle reminders and watch your streaks grow." = "習慣を記録し、やさしい通知を受け取り、連続記録を伸ばしましょう。";
 "Try again" = "再試行";
+"Try it" = "試してみる";
 "Turtle" = "カメ";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "月2回までは休んでも連続記録は途切れず、つらい日はミニマム版でもOK。";
 "Two weeks" = "2週間";
@@ -576,6 +589,7 @@
 "What should I add?" = "何を追加しますか？";
 "What to add" = "追加する内容";
 "What's left today" = "今日の残り";
+"What's new" = "新機能";
 "Which habit?" = "どの習慣ですか？";
 "Widget" = "ウィジェット";
 "Words" = "単語";

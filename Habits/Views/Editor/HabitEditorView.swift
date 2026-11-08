@@ -447,7 +447,7 @@ struct HabitEditorView: View {
     }
 
     private var groupSection: some View {
-        Section("Group") {
+        Section {
             Picker("Group", selection: $draft.groupID) {
                 Text("No group").tag(UUID?.none)
                 ForEach(store.data.sortedGroups) { group in
@@ -458,6 +458,22 @@ struct HabitEditorView: View {
                 showingNewGroup = true
             } label: {
                 Label("New group", systemImage: "folder.badge.plus")
+            }
+            if FamilySync.isAvailable, let groupID = draft.groupID, let group = store.data.group(groupID) {
+                NavigationLink {
+                    GroupDetailView(groupID: groupID)
+                } label: {
+                    Label(
+                        group.family == nil ? String(localized: "Share with family") : String(localized: "Family"),
+                        systemImage: "person.2.fill"
+                    )
+                }
+            }
+        } header: {
+            Text("Group")
+        } footer: {
+            if FamilySync.isAvailable && draft.groupID == nil {
+                Text("Put the habit in a group to share it with your family.")
             }
         }
     }

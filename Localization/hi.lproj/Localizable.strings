@@ -129,6 +129,7 @@
 "Create 10 habits" = "10 आदतें बनाएँ";
 "Create 3 groups" = "3 समूह बनाएँ";
 "Create 5 habits" = "5 आदतें बनाएँ";
+"Create habits by voice" = "आवाज़ से आदतें";
 "Create your first one and it will appear here." = "अपनी पहली आदत बनाएँ, वह यहाँ दिखेगी।";
 "Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "आप जो नाम बोलें, उससे आदत बनाता है।";
 "Current habits and history will be replaced with the data from the file." = "मौजूदा आदतें और इतिहास फ़ाइल के डेटा से बदल दिए जाएँगे।";
@@ -183,6 +184,7 @@
 "Every day" = "हर दिन";
 "Every month, on day %lld" = "हर महीने की %lld तारीख";
 "Every other day" = "एक दिन छोड़कर";
+"Every other day, every N days, once a month and once a year: for pills, bills and birthdays." = "एक दिन छोड़कर, हर N दिन, महीने में एक बार और साल में एक बार: दवा, बिल और जन्मदिन के लिए।";
 "Every year, %@" = "हर साल %@";
 "Everyday basics" = "रोज़मर्रा के बुनियादी शब्द";
 "Everything is done for today." = "आज के लिए सब पूरा हो गया।";
@@ -192,6 +194,7 @@
 "Extra freeze" = "अतिरिक्त फ़्रीज़";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "इस महीने अतिरिक्त फ़्रीज़: %lld/%lld। चिंगारियों वाले अवतार और बैकग्राउंड प्रोफ़ाइल में हैं।";
 "Family" = "परिवार";
+"Family groups" = "फ़ैमिली समूह";
 "Family groups work in the App Store version of ZenHab." = "फ़ैमिली समूह ZenHab के App Store संस्करण में काम करते हैं।";
 "Family members will lose this group. The habits stay with you." = "परिवार के लोगों से यह समूह हट जाएगा। आदतें आपके पास रहेंगी।";
 "Feed" = "खिलाएँ";
@@ -223,6 +226,7 @@
 "Group" = "समूह";
 "Groups" = "समूह";
 "Groups help sort habits by topic: morning, health, work." = "समूह आदतों को विषय के अनुसार बाँटते हैं: सुबह, सेहत, काम।";
+"Groups on the Today screen and in the widget" = "\"आज\" स्क्रीन और विजेट में समूह";
 "Grown-up" = "वयस्क";
 "Habit" = "आदत";
 "Habit Tracker" = "आदत ट्रैकर";
@@ -334,6 +338,7 @@
 "New achievement!" = "नई उपलब्धि!";
 "New group" = "नया समूह";
 "New habit" = "नई आदत";
+"New schedules" = "नई समय-सारणी";
 "New word" = "नया शब्द";
 "New words a day" = "रोज़ नए शब्द";
 "Next" = "अगली";
@@ -383,6 +388,7 @@
 "One notification at the chosen time." = "चुने गए समय पर एक सूचना।";
 "One notification listing the habits not checked off yet." = "एक सूचना, जिसमें अभी बाकी आदतें होंगी।";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "केवल उसी दिन या अगले दिन की गई निशानियाँ गिनी जाती हैं। निशान हटाने पर चिंगारी वापस चली जाती है।";
+"Open groups" = "समूह खोलें";
 "Open iOS Settings" = "iOS सेटिंग्स खोलें";
 "Open mail app" = "मेल ऐप खोलें";
 "Open the app to adopt one." = "अपनाने के लिए ऐप खोलें।";
@@ -421,6 +427,7 @@
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "खरीदारी केवल App Store संस्करण में काम करती है। इस बिल्ड में सेटिंग्स में परीक्षण के लिए Pro चालू किया जा सकता है।";
 "Push-ups" = "पुश-अप";
 "Put money aside" = "पैसे बचाएँ";
+"Put the habit in a group to share it with your family." = "परिवार के साथ साझा करने के लिए आदत को किसी समूह में रखें।";
 "Rate the app" = "ऐप को रेटिंग दें";
 "Reach a daily goal 20 times" = "दैनिक लक्ष्य 20 बार पूरा करें";
 "Reach a weekly goal 4 times" = "4 बार साप्ताहिक लक्ष्य पूरा करें";
@@ -453,6 +460,7 @@
 "Save" = "सहेजें";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "एक कॉपी Files या iCloud Drive में सहेजें। आयात करने से मौजूदा सारा डेटा बदल जाता है।";
 "Save a streak with a freeze" = "फ़्रीज़ से लगातार गिनती बचाएँ";
+"Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Siri से कहें: “Check off a habit in ZenHab”, “Add a habit in ZenHab” या “What's left in ZenHab”。";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "आदत का नाम बोलें, जैसे “पानी पीना”।";
 "Schedule" = "समय-सारिणी";
 "Scheduled notifications" = "तय सूचनाएँ";
@@ -461,6 +469,7 @@
 "Send the message" = "संदेश भेजें";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone पर मेल सेट करें या अपना संदेश %@ पर भेजें।";
 "Settings" = "सेटिंग्स";
+"Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "परिवार के साथ कोई समूह साझा करें, जैसे “कुत्ता” या “घर”। सभी एक जैसी आदतें देखते हैं, उन्हें मार्क करते हैं और रिमाइंडर पाते हैं।";
 "Share with family" = "परिवार के साथ साझा करें";
 "Shared data" = "साझा डेटा";
 "Shared with you" = "आपके साथ साझा";
@@ -469,6 +478,7 @@
 "Shows how many reminders came since you last opened the app." = "दिखाता है कि पिछली बार ऐप खोलने के बाद कितने रिमाइंडर आए।";
 "Sign in to iCloud in Settings to share groups with your family." = "परिवार के साथ समूह साझा करने के लिए सेटिंग्स में iCloud में साइन इन करें।";
 "Simple gestures" = "आसान इशारे";
+"Siri" = "Siri";
 "Skin care" = "त्वचा की देखभाल";
 "Skip" = "छोड़ें";
 "Skipped" = "छोड़ा";
@@ -476,6 +486,7 @@
 "Small steps add up." = "छोटे कदम मिलकर बड़े बनते हैं।";
 "Small steps every day" = "हर दिन छोटे कदम";
 "Some days" = "कुछ दिन";
+"Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "सेटिंग्स में \"आज\" स्क्रीन को समूहों के अनुसार सजाएँ, और एक समूह दिखाने के लिए \"आज\" विजेट को दबाकर रखें।";
 "Sparks" = "चिंगारियाँ";
 "Sparks and a pet" = "चिंगारियाँ और पालतू";
 "Speak" = "बोलें";
@@ -511,6 +522,7 @@
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "पूरा करने के लिए गोले पर टैप करें या दाएँ स्वाइप करें। छोड़ने, नोट या बदलाव के लिए बाएँ स्वाइप करें। क्रम बदलने के लिए दबाकर रखें।";
 "Tap the days when the habit should be done" = "जिन दिनों आदत करनी है, उन पर टैप करें";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "आज के कार्ड खोलने के लिए आदत के गोले पर टैप करें। नए शब्द चुने गए स्तर से किसी भी क्रम में आते हैं। जो शब्द अभी याद नहीं हैं वे दोहराने के लिए लौटेंगे, और दिन के सारे कार्ड पूरे होने पर आदत अपने आप पूरी हो जाएगी। स्तर कभी भी बदला जा सकता है, सीखे हुए शब्द बने रहेंगे।";
+"Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "नई आदत में माइक्रोफ़ोन पर टैप करें और उसका नाम बोलें।";
 "Tap to see the translation" = "अनुवाद देखने के लिए टैप करें";
 "Tell us what you think" = "अपनी राय बताएँ";
 "Terms of Use" = "उपयोग की शर्तें";
@@ -541,6 +553,7 @@
 "Track expenses" = "ख़र्च लिखें";
 "Track habits, get gentle reminders and watch your streaks grow." = "आदतें दर्ज करें, हल्के रिमाइंडर पाएँ और अपनी लगातार गिनती बढ़ते देखें।";
 "Try again" = "फिर से कोशिश करें";
+"Try it" = "आज़माएँ";
 "Turtle" = "कछुआ";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "महीने में दो चूक से लगातार गिनती नहीं टूटेगी, और मुश्किल दिन न्यूनतम रूप भी गिना जाएगा।";
 "Two weeks" = "दो हफ़्ते";
@@ -576,6 +589,7 @@
 "What should I add?" = "क्या जोड़ूँ?";
 "What to add" = "क्या जोड़ना है";
 "What's left today" = "आज क्या बाकी है";
+"What's new" = "नया क्या है";
 "Which habit?" = "कौन-सी आदत?";
 "Widget" = "विजेट";
 "Words" = "शब्द";

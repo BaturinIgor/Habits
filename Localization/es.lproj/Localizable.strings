@@ -129,6 +129,7 @@
 "Create 10 habits" = "Crea 10 hábitos";
 "Create 3 groups" = "Crea 3 grupos";
 "Create 5 habits" = "Crea 5 hábitos";
+"Create habits by voice" = "Hábitos con la voz";
 "Create your first one and it will appear here." = "Crea el primero y aparecerá aquí.";
 "Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "Crea un hábito con el nombre que digas.";
 "Current habits and history will be replaced with the data from the file." = "Los hábitos y el historial actuales se sustituirán por los datos del archivo.";
@@ -183,6 +184,7 @@
 "Every day" = "Cada día";
 "Every month, on day %lld" = "Cada mes, el día %lld";
 "Every other day" = "Cada dos días";
+"Every other day, every N days, once a month and once a year: for pills, bills and birthdays." = "Cada dos días, cada N días, una vez al mes y una vez al año: para pastillas, facturas y cumpleaños.";
 "Every year, %@" = "Cada año, el %@";
 "Everyday basics" = "Lo básico del día a día";
 "Everything is done for today." = "Hoy ya está todo hecho.";
@@ -192,6 +194,7 @@
 "Extra freeze" = "Congelación extra";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Congelaciones extra este mes: %lld/%lld. Avatares y fondos por chispas en tu perfil.";
 "Family" = "Familia";
+"Family groups" = "Grupos familiares";
 "Family groups work in the App Store version of ZenHab." = "Los grupos familiares funcionan en la versión de ZenHab de la App Store.";
 "Family members will lose this group. The habits stay with you." = "Tu familia perderá este grupo. Los hábitos se quedan contigo.";
 "Feed" = "Alimentar";
@@ -223,6 +226,7 @@
 "Group" = "Grupo";
 "Groups" = "Grupos";
 "Groups help sort habits by topic: morning, health, work." = "Los grupos ordenan los hábitos por tema: mañana, salud, trabajo.";
+"Groups on the Today screen and in the widget" = "Grupos en la pantalla Hoy y en el widget";
 "Grown-up" = "Adulto";
 "Habit" = "Hábito";
 "Habit Tracker" = "Rastreador de hábitos";
@@ -334,6 +338,7 @@
 "New achievement!" = "¡Nuevo logro!";
 "New group" = "Nuevo grupo";
 "New habit" = "Nuevo hábito";
+"New schedules" = "Nuevos horarios";
 "New word" = "Palabra nueva";
 "New words a day" = "Palabras nuevas al día";
 "Next" = "Siguiente";
@@ -383,6 +388,7 @@
 "One notification at the chosen time." = "Una notificación a la hora elegida.";
 "One notification listing the habits not checked off yet." = "Una notificación con los hábitos que aún no has marcado.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Solo cuentan las marcas del mismo día o del siguiente. Desmarcar un hábito devuelve su chispa.";
+"Open groups" = "Abrir grupos";
 "Open iOS Settings" = "Abrir Ajustes de iOS";
 "Open mail app" = "Abrir app de correo";
 "Open the app to adopt one." = "Abre la app para adoptar una.";
@@ -421,6 +427,7 @@
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Las compras solo funcionan en la versión de App Store. En esta compilación, Pro se puede activar para pruebas en Ajustes.";
 "Push-ups" = "Flexiones";
 "Put money aside" = "Ahorrar dinero";
+"Put the habit in a group to share it with your family." = "Pon el hábito en un grupo para compartirlo con tu familia.";
 "Rate the app" = "Valorar la app";
 "Reach a daily goal 20 times" = "Alcanza una meta diaria 20 veces";
 "Reach a weekly goal 4 times" = "Cumple una meta semanal 4 veces";
@@ -453,6 +460,7 @@
 "Save" = "Guardar";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "Guarda una copia en Archivos o iCloud Drive. Importar sustituye todos los datos actuales.";
 "Save a streak with a freeze" = "Salva una racha con una congelación";
+"Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Di «Marca un hábito en ZenHab», «Añade un hábito en ZenHab» o «Qué me queda en ZenHab».";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Di el nombre del hábito, por ejemplo «Beber agua».";
 "Schedule" = "Horario";
 "Scheduled notifications" = "Notificaciones programadas";
@@ -461,6 +469,7 @@
 "Send the message" = "Enviar el mensaje";
 "Set up Mail on this iPhone or send your message to %@." = "Configura Mail en el iPhone o envía tu mensaje a %@.";
 "Settings" = "Ajustes";
+"Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "Comparte un grupo con tu familia, por ejemplo «Perro» o «Casa». Todos ven los mismos hábitos, los marcan y reciben recordatorios.";
 "Share with family" = "Compartir con la familia";
 "Shared data" = "Datos compartidos";
 "Shared with you" = "Compartido contigo";
@@ -469,6 +478,7 @@
 "Shows how many reminders came since you last opened the app." = "Muestra cuántos recordatorios llegaron desde la última vez que abriste la app.";
 "Sign in to iCloud in Settings to share groups with your family." = "Inicia sesión en iCloud en Ajustes para compartir grupos con tu familia.";
 "Simple gestures" = "Gestos sencillos";
+"Siri" = "Siri";
 "Skin care" = "Cuidado de la piel";
 "Skip" = "Omitir";
 "Skipped" = "Omitido";
@@ -476,6 +486,7 @@
 "Small steps add up." = "Los pequeños pasos suman.";
 "Small steps every day" = "Pequeños pasos cada día";
 "Some days" = "Algunos días";
+"Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Ordena la pantalla Hoy por grupos en Ajustes y mantén pulsado el widget Hoy para mostrar un grupo.";
 "Sparks" = "Chispas";
 "Sparks and a pet" = "Chispas y mascota";
 "Speak" = "Hablar";
@@ -511,6 +522,7 @@
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Toca el círculo o desliza a la derecha para marcar. Desliza a la izquierda para omitir, anotar o editar. Mantén pulsado para reordenar.";
 "Tap the days when the habit should be done" = "Toca los días en que quieres hacer el hábito";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "Toca el círculo del hábito para abrir las tarjetas de hoy. Las palabras nuevas salen en orden aleatorio del nivel elegido. Las que aún no sabes vuelven para repasar, y el hábito se marca al terminar las tarjetas del día. Puedes cambiar de nivel cuando quieras, las palabras aprendidas se conservan.";
+"Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "Toca el micrófono en un hábito nuevo y di su nombre.";
 "Tap to see the translation" = "Toca para ver la traducción";
 "Tell us what you think" = "Cuéntanos qué piensas";
 "Terms of Use" = "Términos de uso";
@@ -541,6 +553,7 @@
 "Track expenses" = "Anotar los gastos";
 "Track habits, get gentle reminders and watch your streaks grow." = "Registra hábitos, recibe recordatorios suaves y mira crecer tus rachas.";
 "Try again" = "Reintentar";
+"Try it" = "Probar";
 "Turtle" = "Tortuga";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Dos fallos al mes no rompen tu racha, y en días difíciles también cuenta la versión mínima.";
 "Two weeks" = "Dos semanas";
@@ -576,6 +589,7 @@
 "What should I add?" = "¿Qué añado?";
 "What to add" = "Qué añadir";
 "What's left today" = "Lo que queda hoy";
+"What's new" = "Novedades";
 "Which habit?" = "¿Qué hábito?";
 "Widget" = "Widget";
 "Words" = "Palabras";

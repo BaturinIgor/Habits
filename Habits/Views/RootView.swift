@@ -16,6 +16,8 @@ struct RootView: View {
     @State private var hideTask: Task<Void, Never>?
     @State private var lastBalance: Int?
     @State private var sparkGain: (id: Int, amount: Int)?
+    @State private var showingWhatsNew = false
+    @State private var showingNewHabit = false
 
     private var onboardingBinding: Binding<Bool> {
         Binding(get: { !store.data.settings.onboardingDone },
@@ -63,6 +65,29 @@ struct RootView: View {
         .sensoryFeedback(.success, trigger: banner?.achievement.id)
         .fullScreenCover(isPresented: onboardingBinding) {
             OnboardingView()
+        }
+        .sheet(isPresented: $showingWhatsNew, onDismiss: {
+            store.updateSettings { $0.whatsNewSeen = WhatsNewView.version }
+        }) {
+            WhatsNewView {
+                showingWhatsNew = false
+                // Окно новой привычки открываем после закрытия этого.
+                Task {
+                    try? await Task.sleep(for: .milliseconds(450))
+                    showingNewHabit = true
+                }
+            }
+        }
+        .sheet(isPresented: $showingNewHabit) {
+            HabitEditorView(habit: nil)
+        }
+        .task {
+            // Тем, кто обновился, один раз показываем новые возможности.
+            let settings = store.data.settings
+            if settings.onboardingDone && settings.whatsNewSeen != WhatsNewView.version {
+                try? await Task.sleep(for: .seconds(1))
+                showingWhatsNew = true
+            }
         }
         .task(id: store.revision) {
             checkAchievements()

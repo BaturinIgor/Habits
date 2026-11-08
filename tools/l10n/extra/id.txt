@@ -605,3 +605,17 @@ Sign in to iCloud in Settings to share groups with your family.||Masuk ke iCloud
 Couldn't create an invitation link. Try again later.||Tidak bisa membuat tautan undangan. Coba lagi nanti.
 No connection to iCloud. Changes will sync later.||Tidak ada koneksi ke iCloud. Perubahan akan disinkronkan nanti.
 iCloud storage is full.||Penyimpanan iCloud penuh.
+Create habits by voice||Kebiasaan lewat suara
+Every other day, every N days, once a month and once a year: for pills, bills and birthdays.||Selang sehari, setiap N hari, sebulan sekali, dan setahun sekali: untuk obat, tagihan, dan ulang tahun.
+Family groups||Grup keluarga
+Groups on the Today screen and in the widget||Grup di layar Hari Ini dan di widget
+New schedules||Jadwal baru
+Open groups||Buka grup
+Put the habit in a group to share it with your family.||Masukkan kebiasaan ke grup untuk membagikannya dengan keluarga.
+Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”.||Ucapkan ke Siri: “Check off a habit in ZenHab”, “Add a habit in ZenHab”, atau “What's left in ZenHab”.
+Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders.||Bagikan grup dengan keluarga, misalnya “Anjing” atau “Rumah”. Semua melihat kebiasaan yang sama, mencentangnya, dan mendapat pengingat.
+Siri||Siri
+Sort the Today screen by groups in Settings, and hold the Today widget to show one group.||Urutkan layar Hari Ini per grup di Pengaturan, dan tahan widget Hari Ini untuk menampilkan satu grup.
+Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”.||Ketuk mikrofon di kebiasaan baru dan ucapkan namanya.
+Try it||Coba
+What's new||Yang baru

@@ -129,6 +129,7 @@
 "Create 10 habits" = "Создай 10 привычек";
 "Create 3 groups" = "Создай 3 группы";
 "Create 5 habits" = "Создай 5 привычек";
+"Create habits by voice" = "Привычки голосом";
 "Create your first one and it will appear here." = "Создай первую, и она появится здесь.";
 "Creates a habit or a reminder from a phrase, for example “Dog pills once a month on the 15th at 9 am”." = "Создаёт привычку или напоминание по фразе, например «Таблетки собаке раз в месяц 15 числа в 9 утра».";
 "Current habits and history will be replaced with the data from the file." = "Текущие привычки и история будут заменены данными из файла.";
@@ -183,6 +184,7 @@
 "Every day" = "Каждый день";
 "Every month, on day %lld" = "Каждый месяц, %lld-го числа";
 "Every other day" = "Через день";
+"Every other day, every N days, once a month and once a year: for pills, bills and birthdays." = "Через день, раз в N дней, раз в месяц и раз в год: для таблеток, счетов и дней рождения.";
 "Every year, %@" = "Каждый год, %@";
 "Everyday basics" = "Самые нужные слова на каждый день";
 "Everything is done for today." = "На сегодня всё выполнено.";
@@ -192,6 +194,7 @@
 "Extra freeze" = "Дополнительная заморозка";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Дополнительных заморозок в этом месяце: %lld/%lld. Аватарки и фоны за искры есть в профиле.";
 "Family" = "Семья";
+"Family groups" = "Семейные группы";
 "Family groups work in the App Store version of ZenHab." = "Семейные группы работают в версии ZenHab из App Store.";
 "Family members will lose this group. The habits stay with you." = "У родных эта группа пропадёт. Привычки останутся у тебя.";
 "Feed" = "Покормить";
@@ -223,6 +226,7 @@
 "Group" = "Группа";
 "Groups" = "Группы";
 "Groups help sort habits by topic: morning, health, work." = "Группы помогают разложить привычки по темам: утро, здоровье, работа.";
+"Groups on the Today screen and in the widget" = "Группы на экране «Сегодня» и в виджете";
 "Grown-up" = "Взрослый";
 "Habit" = "Привычка";
 "Habit Tracker" = "Трекер привычек";
@@ -334,6 +338,7 @@
 "New achievement!" = "Новая ачивка!";
 "New group" = "Новая группа";
 "New habit" = "Новая привычка";
+"New schedules" = "Новые расписания";
 "New word" = "Новое слово";
 "New words a day" = "Новых слов в день";
 "Next" = "Дальше";
@@ -383,6 +388,7 @@
 "One notification at the chosen time." = "Одно уведомление в выбранное время.";
 "One notification listing the habits not checked off yet." = "Одно уведомление со списком привычек, которые ещё не отмечены.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Засчитываются только отметки, поставленные в тот же день или на следующий. Если снять отметку, искра вернётся обратно.";
+"Open groups" = "Открыть группы";
 "Open iOS Settings" = "Открыть настройки iOS";
 "Open mail app" = "Открыть почтовое приложение";
 "Open the app to adopt one." = "Открой приложение, чтобы завести.";
@@ -421,6 +427,7 @@
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Покупки работают только в версии из App Store. В этой сборке Pro можно включить для теста в настройках.";
 "Push-ups" = "Отжимания";
 "Put money aside" = "Откладывать деньги";
+"Put the habit in a group to share it with your family." = "Чтобы поделиться привычкой с семьёй, положи её в группу.";
 "Rate the app" = "Оценить приложение";
 "Reach a daily goal 20 times" = "Выполни дневную цель 20 раз";
 "Reach a weekly goal 4 times" = "Выполни недельную цель 4 раза";
@@ -453,6 +460,7 @@
 "Save" = "Сохранить";
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "Сохрани копию в Файлы или iCloud Drive. Загрузка заменяет все текущие данные.";
 "Save a streak with a freeze" = "Спаси серию заморозкой";
+"Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Скажи: «Отметь привычку в ZenHab», «Добавь привычку в ZenHab» или «Что осталось в ZenHab».";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Скажи, например: «Таблетки собаке раз в месяц 15 числа в 9 утра» или «Читать через день вечером».";
 "Schedule" = "Расписание";
 "Scheduled notifications" = "Запланировано уведомлений";
@@ -461,6 +469,7 @@
 "Send the message" = "Отправка сообщения";
 "Set up Mail on this iPhone or send your message to %@." = "Настрой Почту на iPhone или отправь сообщение на %@.";
 "Settings" = "Настройки";
+"Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "Поделись группой с семьёй, например «Собака» или «Дом». Все видят одни и те же привычки, отмечают их и получают напоминания.";
 "Share with family" = "Поделиться с семьёй";
 "Shared data" = "Общие данные";
 "Shared with you" = "С тобой поделились";
@@ -469,6 +478,7 @@
 "Shows how many reminders came since you last opened the app." = "Показывает, сколько напоминаний пришло с последнего открытия приложения.";
 "Sign in to iCloud in Settings to share groups with your family." = "Войди в iCloud в Настройках, чтобы делиться группами с семьёй.";
 "Simple gestures" = "Простые жесты";
+"Siri" = "Siri";
 "Skin care" = "Уход за кожей";
 "Skip" = "Пропустить";
 "Skipped" = "Пропущено";
@@ -476,6 +486,7 @@
 "Small steps add up." = "Маленькие шаги складываются в большие.";
 "Small steps every day" = "Маленькие шаги каждый день";
 "Some days" = "По дням";
+"Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Разложи экран «Сегодня» по группам в Настройках, а виджет «Сегодня» зажми, чтобы выбрать одну группу.";
 "Sparks" = "Искры";
 "Sparks and a pet" = "Искры и питомец";
 "Speak" = "Говорить";
@@ -511,6 +522,7 @@
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Нажми на кружок или смахни вправо, чтобы отметить. Смахни влево, чтобы пропустить, добавить заметку или изменить. Удерживай, чтобы поменять порядок.";
 "Tap the days when the habit should be done" = "Нажми на дни, в которые нужно выполнять привычку";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "Нажми на кружок привычки, чтобы открыть карточки на сегодня. Новые слова идут вразброс из выбранного уровня. Незнакомые слова вернутся на повторение, а привычка отметится сама, когда пройдёшь все карточки дня. Уровень можно поменять в любой момент, выученные слова сохранятся.";
+"Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "Нажми на микрофон в новой привычке и скажи, например: «Таблетки собаке раз в месяц 15 числа в 9 утра».";
 "Tap to see the translation" = "Нажми, чтобы увидеть перевод";
 "Tell us what you think" = "Расскажи, что думаешь";
 "Terms of Use" = "Условия";
@@ -541,6 +553,7 @@
 "Track expenses" = "Записать расходы";
 "Track habits, get gentle reminders and watch your streaks grow." = "Отмечай привычки, получай мягкие напоминания и смотри, как растут серии.";
 "Try again" = "Попробовать ещё раз";
+"Try it" = "Попробовать";
 "Turtle" = "Черепаха";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Два пропуска в месяц не обнулят серию, а в тяжёлый день засчитается и минимальная версия.";
 "Two weeks" = "Две недели";
@@ -576,6 +589,7 @@
 "What should I add?" = "Что добавить?";
 "What to add" = "Что добавить";
 "What's left today" = "Что осталось на сегодня";
+"What's new" = "Что нового";
 "Which habit?" = "Какую привычку?";
 "Widget" = "Виджет";
 "Words" = "Слова";

@@ -279,7 +279,7 @@ def to_key(v):
         e = m.group(1)
         return '%@' if (e in STRING_ARGS or e.startswith('Fmt.')) else '%lld'
     return re.sub(r'\\\(([^)]*\)?)\)', r, v)
-ignore = {'ALTAppGroups', 'folder', 'CFBundleShortVersionString', 'CFBundleVersion', 'EEEEdMMMM', 'HABIT_DONE', 'HABIT_REMINDER',
+ignore = {'ALTAppGroups', 'folder', 'siriTipHabitDetail', 'waveform', 'CFBundleShortVersionString', 'CFBundleVersion', 'EEEEdMMMM', 'HABIT_DONE', 'HABIT_REMINDER',
           'HABIT_SKIP', 'LLLLyyyy', 'PRO', 'ProgressWidget', 'TodayWidget', 'appex', 'dMMM', 'dMMMM', 'dMMMMyyyy',
           'habitID', 'habits-data.json', 'ungrouped', 'day', 'Habits Pro', 'AppleLanguages', 'all', 'appLanguage',
           'checkmark', 'de', 'en', 'es', 'fr', 'hi', 'ja', 'ko', 'ru', 'zh-Hans', 'pt-BR', 'it', 'tr', 'pl', 'id', 'system', 'summary', 'summary|%lld',
