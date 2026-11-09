@@ -110,10 +110,6 @@ final class FamilySync {
         let key = Self.stateKey(zoneID)
         var state = states[key] ?? ZoneState()
 
-        let before = Self.localRecords(groupID: groupID, data: store.data)
-        let dirty = Set(before.filter { state.synced[$0.key] != $0.value.json }.keys)
-        let locallyDeleted = Set(state.synced.keys).subtracting(before.keys)
-
         do {
             // 1. Что изменилось в iCloud.
             var fetched: Fetched
@@ -127,22 +123,32 @@ final class FamilySync {
             let deleted = fetched.deleted
             let token = fetched.token
 
-            // 2. Применяем чужие изменения. Если запись поменяли и здесь, побеждает телефон.
+            // 2. Применяем чужие изменения. Если запись поменяли или удалили и здесь, побеждает телефон.
+            // Локальные правки считаем только сейчас, после загрузки: пока шёл запрос,
+            // человек мог удалить привычку, и старая копия из iCloud не должна её вернуть.
+            let lastSynced = state.synced
+            var fromCloud = Set<String>()
             store.applyFamilyChanges { data in
+                let current = Self.localRecords(groupID: groupID, data: data)
+                let editedHere = Set(current.filter { lastSynced[$0.key] != $0.value.json }.keys)
+                let deletedHere = Set(lastSynced.keys).subtracting(current.keys)
                 for record in changed {
                     let name = record.recordID.recordName
                     guard let json = record["json"] as? Data,
-                          !dirty.contains(name), !locallyDeleted.contains(name) else { continue }
+                          !editedHere.contains(name), !deletedHere.contains(name) else { continue }
                     Self.apply(name: name, type: record.recordType, json: json, groupID: groupID, to: &data)
+                    fromCloud.insert(name)
                 }
-                for name in deleted where !dirty.contains(name) {
+                for name in deleted where !editedHere.contains(name) {
                     Self.remove(name: name, groupID: groupID, from: &data)
+                    fromCloud.insert(name)
                 }
             }
 
-            // 3. Отправляем свои изменения.
+            // 3. Отправляем свои изменения (всё, что отличается от прошлой синхронизации и пришло не из iCloud).
             let after = Self.localRecords(groupID: groupID, data: store.data)
-            let toSave = dirty.filter { after[$0] != nil }
+            let toSave = Set(after.filter { lastSynced[$0.key] != $0.value.json }.keys).subtracting(fromCloud)
+            let locallyDeleted = Set(lastSynced.keys).subtracting(after.keys).subtracting(fromCloud)
             let rootName = groupID.uuidString
             let toDelete = locallyDeleted.filter { $0 != rootName }
             var failed = Set<String>()
@@ -161,8 +167,9 @@ final class FamilySync {
             for (name, record) in after where !failed.contains(name) {
                 synced[name] = record.json
             }
+            // Неудачные сохранения и удаления оставляем в старом виде, чтобы повторить в следующий раз.
             for name in failed {
-                if let old = state.synced[name] { synced[name] = old }
+                if let old = lastSynced[name] { synced[name] = old } else { synced[name] = nil }
             }
             state.synced = synced
             state.token = token.flatMap(Self.archiveToken)
@@ -202,7 +209,7 @@ final class FamilySync {
         return fetched
     }
 
-    /// Сохраняет и удаляет записи. Возвращает имена, которые не удалось сохранить.
+    /// Сохраняет и удаляет записи. Возвращает имена, которые не удалось сохранить или удалить.
     private func push(
         save items: [(String, LocalRecord)],
         delete names: [String],
@@ -240,7 +247,13 @@ final class FamilySync {
         }
         for chunk in names.chunked(into: 200) {
             let ids = chunk.map { CKRecord.ID(recordName: $0, zoneID: zoneID) }
-            _ = try await database.modifyRecords(saving: [], deleting: ids, savePolicy: .changedKeys, atomically: false)
+            let (_, deleteResults) = try await database.modifyRecords(saving: [], deleting: ids, savePolicy: .changedKeys, atomically: false)
+            for (id, result) in deleteResults {
+                // Уже удалённая запись — это успех.
+                if case .failure(let error) = result, (error as? CKError)?.code != .unknownItem {
+                    failed.insert(id.recordName)
+                }
+            }
         }
         return failed
     }
