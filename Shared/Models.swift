@@ -149,6 +149,20 @@ struct HabitSchedule: Codable, Hashable {
         timesPerWeek = try c.decodeIfPresent(Int.self, forKey: .timesPerWeek) ?? 3
         intervalDays = max(2, try c.decodeIfPresent(Int.self, forKey: .intervalDays) ?? 2)
     }
+
+    /// Дни недели пишем по порядку. Порядок элементов Set случайный, и без сортировки одна и та же
+    /// привычка каждый раз давала другой JSON: семейная синхронизация считала её изменённой
+    /// и бесконечно отправляла туда-обратно между телефонами.
+    func encode(to encoder: Encoder) throws {
+        var c = encoder.container(keyedBy: CodingKeys.self)
+        try c.encode(kind, forKey: .kind)
+        try c.encode(weekdays.sorted(), forKey: .weekdays)
+        try c.encode(startDate, forKey: .startDate)
+        try c.encodeIfPresent(endDate, forKey: .endDate)
+        try c.encode(onceDate, forKey: .onceDate)
+        try c.encode(timesPerWeek, forKey: .timesPerWeek)
+        try c.encode(intervalDays, forKey: .intervalDays)
+    }
 }
 
 // MARK: - Привычка
