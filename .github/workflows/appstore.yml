@@ -10,7 +10,7 @@ on:
       version:
         description: "Версия для пользователей (MARKETING_VERSION), например 1.0"
         required: true
-        default: "1.3"
+        default: "1.3.1"
       upload:
         description: "Загрузить в App Store Connect"
         type: boolean
