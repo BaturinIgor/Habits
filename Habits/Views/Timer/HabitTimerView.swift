@@ -31,10 +31,12 @@ struct HabitTimerView: View {
             }
             .padding(24)
             .frame(maxWidth: .infinity)
+            .uiTestScreen("timer")
             .background(AppBackground())
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Close") { dismiss() }
+                        .accessibilityIdentifier("sheet.close")
                 }
             }
         }
@@ -88,6 +90,7 @@ struct HabitTimerView: View {
                 .buttonStyle(.borderedProminent)
                 .tint(color)
                 .controlSize(.large)
+                .accessibilityIdentifier("timer.finish")
 
                 Button(role: .destructive) {
                     Task { await timer.cancel() }
@@ -97,6 +100,7 @@ struct HabitTimerView: View {
                 }
                 .buttonStyle(.bordered)
                 .controlSize(.large)
+                .accessibilityIdentifier("timer.stop")
             }
         } else {
             VStack(spacing: 12) {
@@ -109,6 +113,7 @@ struct HabitTimerView: View {
                 .buttonStyle(.borderedProminent)
                 .tint(color)
                 .controlSize(.large)
+                .accessibilityIdentifier("timer.start")
 
                 Button {
                     store.setStatus(.done, for: habit.id, on: Date())

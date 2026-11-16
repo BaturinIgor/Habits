@@ -178,6 +178,7 @@ struct TodayView: View {
                         Image(systemName: "plus")
                     }
                     .accessibilityLabel("New habit")
+                    .accessibilityIdentifier("today.add")
                 }
             }
             .navigationDestination(for: UUID.self) { id in
@@ -784,6 +785,7 @@ struct HabitCard: View {
                 .contentShape(Rectangle())
             }
             .buttonStyle(PressableStyle())
+            .accessibilityIdentifier("habit.open.\(habit.id.uuidString)")
 
             Button(action: onToggle) {
                 CheckMark(
@@ -796,6 +798,7 @@ struct HabitCard: View {
                 .symbolEffect(.bounce, value: isDone)
             }
             .buttonStyle(PressableStyle(scale: 0.82))
+            .accessibilityIdentifier("habit.toggle.\(habit.id.uuidString)")
             .disabled(!canToggle)
             .opacity(canToggle ? 1 : 0.35)
             .sensoryFeedback(trigger: count) { _, _ in isDone ? .success : .selection }

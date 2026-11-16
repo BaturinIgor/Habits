@@ -142,3 +142,11 @@ struct NoteTarget: Identifiable, Hashable {
     let day: String
     var id: String { habitID.uuidString + day }
 }
+
+extension View {
+    /// Экран для автотестов: элементы внутри ищутся и проверяются отдельно от того, что под шторкой.
+    func uiTestScreen(_ name: String) -> some View {
+        accessibilityElement(children: .contain)
+            .accessibilityIdentifier("screen.\(name)")
+    }
+}

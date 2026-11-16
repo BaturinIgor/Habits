@@ -104,6 +104,8 @@ enum NotificationPlanner {
 
     @discardableResult
     static func requestAuthorization() async -> Bool {
+        // В автотестах системный запрос закрыл бы экран.
+        if TestMode.isUITest { return false }
         do {
             return try await UNUserNotificationCenter.current()
                 .requestAuthorization(options: [.alert, .sound, .badge])

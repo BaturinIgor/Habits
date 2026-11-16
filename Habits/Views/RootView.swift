@@ -63,6 +63,11 @@ struct RootView: View {
             }
         }
         .sensoryFeedback(.success, trigger: banner?.achievement.id)
+        #if DEBUG
+        .overlay(alignment: .topLeading) {
+            if TestMode.isUITest { HangReport() }
+        }
+        #endif
         .fullScreenCover(isPresented: onboardingBinding) {
             OnboardingView()
         }

@@ -103,12 +103,14 @@ struct WhatsNewView: View {
                     }
                 }
                 .padding(20)
+                .uiTestScreen("whatsnew")
             }
             .appBackground()
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }
                         .fontWeight(.semibold)
+                        .accessibilityIdentifier("sheet.close")
                 }
             }
         }

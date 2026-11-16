@@ -53,6 +53,7 @@ struct HabitCatalogView: View {
                 }
                 .padding(16)
                 .padding(.bottom, 24)
+                .uiTestScreen("catalog")
             }
             .scrollIndicators(.hidden)
             .scrollDismissesKeyboard(.interactively)
@@ -64,6 +65,7 @@ struct HabitCatalogView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }
                         .fontWeight(.semibold)
+                        .accessibilityIdentifier("sheet.close")
                 }
             }
             .sensoryFeedback(.success, trigger: added)

@@ -12,6 +12,9 @@ struct HabitsApp: App {
             RootView()
                 .environment(store)
                 .task {
+                    #if DEBUG
+                    if TestMode.isUITest { HangWatchdog.shared.start() }
+                    #endif
                     ProStore.shared.start()
                     if store.data.settings.onboardingDone {
                         await NotificationPlanner.requestAuthorizationIfNeeded()

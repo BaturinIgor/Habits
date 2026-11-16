@@ -133,6 +133,7 @@ struct WeeklyRecapView: View {
                     }
                 }
                 .padding(20)
+                .uiTestScreen("recap")
             }
             .background(AppBackground())
             .navigationTitle("Week in review")
@@ -140,6 +141,7 @@ struct WeeklyRecapView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Close") { dismiss() }
+                        .accessibilityIdentifier("sheet.close")
                 }
             }
         }

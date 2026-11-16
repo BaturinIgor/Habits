@@ -12,6 +12,14 @@ final class HabitStore {
     private(set) var data: AppData
 
     private init() {
+        #if DEBUG
+        if TestMode.isUITest {
+            // Автотесты: каждый запуск с одних и тех же демо-данных.
+            data = UITestSupport.demoData()
+            DataFile.save(data)
+            return
+        }
+        #endif
         data = DataFile.load()
     }
 

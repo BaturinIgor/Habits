@@ -74,11 +74,13 @@ struct OnboardingView: View {
                 if page < pages.count - 1 {
                     Button("Skip") { finish() }
                         .foregroundStyle(.secondary)
+                        .accessibilityIdentifier("onboarding.skip")
                 }
             }
             .padding(.horizontal, 24)
             .padding(.bottom, 24)
         }
+        .uiTestScreen("onboarding")
         .background(AppBackground())
         .task {
             // Новый телефон или переустановка: предлагаем вернуть копию из iCloud.

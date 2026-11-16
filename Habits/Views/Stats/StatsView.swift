@@ -68,6 +68,7 @@ struct StatsView: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(PressableStyle())
+        .accessibilityIdentifier("stats.recap")
     }
 
     private var summary: some View {

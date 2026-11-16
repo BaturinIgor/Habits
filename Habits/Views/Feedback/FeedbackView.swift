@@ -327,6 +327,7 @@ enum RatingPrompt {
     @MainActor
     static func maybeAsk(data: AppData, facts: AchievementFacts, petGrew: Bool, requestReview: RequestReviewAction) async {
         if petGrew { petGrewAt = Date() }
+        if TestMode.isUITest { return }
         let defaults = UserDefaults.standard
         let firstUse = data.habits.map(\.createdAt).min() ?? Date()
         guard Date().timeIntervalSince(firstUse) > 2 * 86400, facts.totalDone >= 5 else { return }
