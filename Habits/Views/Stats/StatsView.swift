@@ -4,6 +4,7 @@ import UIKit
 
 struct StatsView: View {
     @Environment(HabitStore.self) private var store
+    @State private var showingRecap = false
 
     var body: some View {
         NavigationStack {
@@ -17,6 +18,7 @@ struct StatsView: View {
                         )
                     } else {
                         summary
+                        recapButton
                         WeekChartCard(days: Stats.lastDays(7, in: store.data))
                         HeatmapCard(data: store.data)
                         habitsCard
@@ -31,7 +33,41 @@ struct StatsView: View {
             .navigationDestination(for: UUID.self) { id in
                 HabitDetailView(habitID: id)
             }
+            .sheet(isPresented: $showingRecap) {
+                WeeklyRecapView(recap: WeeklyRecap.lastWeek(in: store.data))
+            }
         }
+    }
+
+    private var recapButton: some View {
+        Button {
+            showingRecap = true
+        } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "calendar.badge.checkmark")
+                    .font(.title3)
+                    .foregroundStyle(.indigo)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Week in review")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(Color.primary)
+                    Text("Last week's results as a card you can share")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(.tertiary)
+            }
+            .padding(14)
+            .background {
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(Color(uiColor: .secondarySystemGroupedBackground))
+            }
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(PressableStyle())
     }
 
     private var summary: some View {

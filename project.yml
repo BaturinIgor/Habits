@@ -57,6 +57,8 @@ targets:
         HealthEnabled: false
         NSHealthShareUsageDescription: ZenHab reads steps, sleep, water, exercise and mindful minutes to check off linked habits for you.
         BGTaskSchedulerPermittedIdentifiers: [com.personal.habits.refresh]
+        # Таймер привычки на экране блокировки (Live Activity).
+        NSSupportsLiveActivities: true
         ITSAppUsesNonExemptEncryption: false
         # Голосовой ввод привычки. Переводы в Localization/*.lproj/InfoPlist.strings.
         NSMicrophoneUsageDescription: ZenHab uses the microphone so you can create a habit by voice.

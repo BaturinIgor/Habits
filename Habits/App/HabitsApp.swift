@@ -26,6 +26,8 @@ struct HabitsApp: App {
                 Task {
                     // Пользователь в приложении: новые уведомления увидены, счётчик на иконке с нуля.
                     await NotificationPlanner.markSeen()
+                    // Таймер мог закончиться, пока приложение было закрыто.
+                    await HabitTimer.shared.checkFinished()
                     await store.reschedule()
                     await ProStore.shared.refreshEntitlements()
                     await FamilySync.shared.syncAll()
@@ -64,6 +66,7 @@ enum BackgroundRefresh {
         HabitStore.shared.reloadFromDisk()
         await FamilySync.shared.syncAll()
         await HealthSync.shared.sync()
+        await HabitTimer.shared.checkFinished()
         await HabitStore.shared.reschedule()
         await CloudBackup.shared.backupIfNeeded()
     }

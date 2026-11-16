@@ -158,6 +158,7 @@ struct HabitsWidgetBundle: WidgetBundle {
         TodayWidget()
         PetWidget()
         ProgressWidget()
+        HabitTimerLiveActivity()
         if #available(iOSApplicationExtension 18.0, *) {
             HabitControl()
         }
