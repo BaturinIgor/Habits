@@ -218,7 +218,7 @@ final class HabitStore {
 
     @discardableResult
     func repairStreak(_ habitID: UUID) -> Bool {
-        guard let habit = habit(habitID), let repair = streakRepair(for: habit), spend(Sparks.repairPrice) else { return false }
+        guard let habit = self.habit(habitID), let repair = streakRepair(for: habit), spend(Sparks.repairPrice) else { return false }
         data.wallet.repairs.append(AppData.key(habitID, repair.day))
         // Старые починки больше не влияют на текущие серии, но нужны для лучшей серии.
         if data.wallet.repairs.count > 500 { data.wallet.repairs.removeFirst(data.wallet.repairs.count - 500) }
