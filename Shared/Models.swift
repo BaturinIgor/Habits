@@ -199,6 +199,8 @@ struct Habit: Identifiable, Hashable, Codable {
     var wordsPerDay: Int?
     /// Уровень слов: 0 начальный, 1 средний, 2 продвинутый.
     var wordsLevel: Int?
+    /// Вредная привычка, которую человек бросает: вместо отметок счётчик дней без неё.
+    var quit: QuitInfo?
 
     init(id: UUID = UUID(),
          name: String = "",
@@ -239,7 +241,7 @@ struct Habit: Identifiable, Hashable, Codable {
     enum CodingKeys: String, CodingKey {
         case id, name, details, icon, colorIndex, groupID, schedule, reminder, createdAt, isArchived, sortOrder
         case repeatCount, repeatInterval, partOfDay, pausedFrom, pausedUntil, target, unit, minimumVersion, chainAfter
-        case wordsLanguage, wordsPerDay, wordsLevel
+        case wordsLanguage, wordsPerDay, wordsLevel, quit
     }
 
     init(from decoder: Decoder) throws {
@@ -267,7 +269,11 @@ struct Habit: Identifiable, Hashable, Codable {
         wordsLanguage = try c.decodeIfPresent(String.self, forKey: .wordsLanguage)
         wordsPerDay = try c.decodeIfPresent(Int.self, forKey: .wordsPerDay)
         wordsLevel = try c.decodeIfPresent(Int.self, forKey: .wordsLevel)
+        quit = try? c.decodeIfPresent(QuitInfo.self, forKey: .quit)
     }
+
+    /// Бросаю: счётчик дней без привычки вместо ежедневных отметок.
+    var isQuit: Bool { quit != nil }
 
     /// Привычка "учить слова": отметка ставится сама, когда пройдены слова дня.
     var isWords: Bool { wordsLanguage != nil }
@@ -297,6 +303,80 @@ struct Habit: Identifiable, Hashable, Codable {
     var effectivePartOfDay: PartOfDay {
         if let reminder { return PartOfDay(time: reminder) }
         return partOfDay ?? .anytime
+    }
+}
+
+// MARK: - Бросаю вредную привычку
+
+struct QuitInfo: Codable, Hashable {
+    /// Когда начал бросать.
+    var startedAt: Date
+    /// Начало текущего периода без привычки: старт или последний срыв.
+    var since: Date
+    /// Сколько уходило на привычку в день (Pro), в валюте телефона.
+    var dailyCost: Double?
+    /// Все срывы, от старых к новым.
+    var relapses: [Date] = []
+    /// Лучший период без привычки до последнего срыва, в днях.
+    var bestDays: Int = 0
+
+    init(startedAt: Date = Date(), dailyCost: Double? = nil) {
+        self.startedAt = startedAt
+        self.since = startedAt
+        self.dailyCost = dailyCost
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case startedAt, since, dailyCost, relapses, bestDays
+    }
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        startedAt = try c.decodeIfPresent(Date.self, forKey: .startedAt) ?? Date()
+        since = try c.decodeIfPresent(Date.self, forKey: .since) ?? startedAt
+        dailyCost = try c.decodeIfPresent(Double.self, forKey: .dailyCost)
+        relapses = try c.decodeIfPresent([Date].self, forKey: .relapses) ?? []
+        bestDays = try c.decodeIfPresent(Int.self, forKey: .bestDays) ?? 0
+    }
+
+    /// Полных дней без привычки в текущем периоде.
+    func days(now: Date = Date(), calendar: Calendar = .app) -> Int {
+        max(0, calendar.dateComponents([.day], from: since, to: now).day ?? 0)
+    }
+
+    /// Рекорд с учётом текущего периода.
+    func best(now: Date = Date()) -> Int { max(bestDays, days(now: now)) }
+
+    /// Всего дней без привычки с начала: каждый срыв отнимает один день.
+    func totalDays(now: Date = Date(), calendar: Calendar = .app) -> Int {
+        let all = max(0, calendar.dateComponents([.day], from: startedAt, to: now).day ?? 0)
+        return max(0, all - relapses.count)
+    }
+
+    /// Сколько сэкономлено с начала.
+    func saved(now: Date = Date()) -> Double? {
+        guard let dailyCost, dailyCost > 0 else { return nil }
+        return dailyCost * Double(totalDays(now: now))
+    }
+
+    /// Сорвался: запоминаем рекорд и начинаем новый период.
+    mutating func relapse(at date: Date = Date()) {
+        bestDays = best(now: date)
+        relapses.append(date)
+        since = date
+    }
+
+    /// Вехи: 1 день, 3 дня, неделя, 2 недели, месяц, 3 месяца, полгода, год.
+    static let milestones = [1, 3, 7, 14, 30, 90, 180, 365]
+
+    /// Следующая веха и доля пути к ней (после года - каждый следующий год).
+    func nextMilestone(now: Date = Date()) -> (days: Int, progress: Double) {
+        let current = days(now: now)
+        let previous = Self.milestones.last { $0 <= current } ?? 0
+        let next = Self.milestones.first { $0 > current } ?? ((current / 365) + 1) * 365
+        let start = current >= 365 ? (current / 365) * 365 : previous
+        let span = max(1, next - start)
+        return (next, Double(current - start) / Double(span))
     }
 }
 
@@ -581,6 +661,11 @@ extension AppData {
 
     var activeHabits: [Habit] {
         habits.filter { !$0.isArchived }.sorted(by: Habit.manualOrder)
+    }
+
+    /// Активные привычки с отметками (без тех, что бросают): для статистики.
+    var trackedHabits: [Habit] {
+        activeHabits.filter { !$0.isQuit }
     }
 
     var archivedHabits: [Habit] {

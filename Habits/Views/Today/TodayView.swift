@@ -49,6 +49,14 @@ struct TodayView: View {
     private var isFuture: Bool { selectedDay > calendar.startOfDay(for: Date()) }
     private var dayKey: String { DayKey.make(selectedDay) }
 
+    /// Привычки, которые человек бросает: счётчики дней показываем только на сегодня.
+    private var quitHabits: [Habit] {
+        guard isToday else { return [] }
+        let all = store.data.activeHabits.filter(\.isQuit)
+        guard let groupFilter, store.data.group(groupFilter) != nil else { return all }
+        return all.filter { $0.groupID == groupFilter }
+    }
+
     private var visibleHabits: [Habit] {
         let all = store.data.habits(on: selectedDay)
         guard let groupFilter, store.data.group(groupFilter) != nil else { return all }
@@ -82,6 +90,7 @@ struct TodayView: View {
                 }
 
                 content
+                quitSection
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
@@ -232,7 +241,7 @@ struct TodayView: View {
                         )
                         TemplatesGrid { addHabit(template: $0) }
                     }
-                } else {
+                } else if quitHabits.isEmpty {
                     EmptyStateView(
                         systemImage: "sun.max.fill",
                         title: "Free day",
@@ -265,6 +274,38 @@ struct TodayView: View {
                             .textCase(.uppercase)
                     }
                 }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var quitSection: some View {
+        let habits = quitHabits
+        if !habits.isEmpty {
+            Section {
+                ForEach(habits) { habit in
+                    QuitCard(habit: habit, showMoney: store.data.isPro) { path.append(habit.id) }
+                        .plainRow()
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button {
+                                habitToDelete = habit
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                            .tint(.red)
+                            Button {
+                                editingHabit = habit
+                            } label: {
+                                Label("Edit", systemImage: "pencil")
+                            }
+                            .tint(.gray)
+                        }
+                }
+            } header: {
+                Text("Quitting")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .textCase(.uppercase)
             }
         }
     }

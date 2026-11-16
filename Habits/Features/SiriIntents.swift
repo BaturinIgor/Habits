@@ -32,7 +32,7 @@ struct HabitEntityQuery: EntityStringQuery {
     func entities(for identifiers: [UUID]) async throws -> [HabitEntity] {
         await MainActor.run {
             HabitStore.shared.reloadFromDisk()
-            return HabitStore.shared.data.activeHabits
+            return HabitStore.shared.data.trackedHabits
                 .filter { identifiers.contains($0.id) }
                 .map(HabitEntity.init)
         }
@@ -41,7 +41,7 @@ struct HabitEntityQuery: EntityStringQuery {
     func entities(matching string: String) async throws -> [HabitEntity] {
         await MainActor.run {
             HabitStore.shared.reloadFromDisk()
-            return HabitStore.shared.data.activeHabits
+            return HabitStore.shared.data.trackedHabits
                 .filter { $0.name.localizedStandardContains(string) }
                 .map(HabitEntity.init)
         }
@@ -53,7 +53,7 @@ struct HabitEntityQuery: EntityStringQuery {
             let data = HabitStore.shared.data
             // Сначала то, что запланировано на сегодня.
             let today = data.habits(on: Date())
-            let rest = data.activeHabits.filter { habit in !today.contains { $0.id == habit.id } }
+            let rest = data.trackedHabits.filter { habit in !today.contains { $0.id == habit.id } }
             return (today + rest).map(HabitEntity.init)
         }
     }

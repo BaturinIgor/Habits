@@ -33,6 +33,10 @@ struct HabitEditorView: View {
     @State private var pausedUntil: Date
     @State private var minimumVersion: String
     @State private var chainAfter: UUID?
+    /// Бросаю: счётчик дней без привычки вместо расписания и отметок.
+    @State private var isQuit: Bool
+    @State private var quitSince: Date
+    @State private var dailyCost: String
     @FocusState private var nameFocused: Bool
 
     private enum Frequency: Hashable {
@@ -95,6 +99,9 @@ struct HabitEditorView: View {
         // Связка с удалённой или архивной привычкой не показывается в списке и не работает.
         let chainParent = base.chainAfter.flatMap { id in HabitStore.shared.data.activeHabits.first { $0.id == id } }
         _chainAfter = State(initialValue: chainParent?.id)
+        _isQuit = State(initialValue: base.quit != nil)
+        _quitSince = State(initialValue: base.quit?.since ?? Date())
+        _dailyCost = State(initialValue: base.quit?.dailyCost.map { $0.formatted(.number.grouping(.never)) } ?? "")
         _isPaused = State(initialValue: pauseActive)
         _pauseWasActive = State(initialValue: pauseActive)
         _pausedUntil = State(initialValue: pauseActive ? (base.pausedUntil ?? today)
@@ -106,7 +113,7 @@ struct HabitEditorView: View {
     private var canSave: Bool {
         let name = draft.name.trimmingCharacters(in: .whitespacesAndNewlines)
         if name.isEmpty { return false }
-        if frequency == .days && customDays.isEmpty { return false }
+        if !isQuit && frequency == .days && customDays.isEmpty { return false }
         return true
     }
 
@@ -128,15 +135,22 @@ struct HabitEditorView: View {
                 if draft.isWords {
                     wordsSection
                 }
-                appearanceSection
-                scheduleSection
-                reminderSection
                 if !draft.isWords {
-                    goalSection
+                    quitSection
                 }
-                flexibilitySection
+                appearanceSection
+                if !isQuit {
+                    scheduleSection
+                    reminderSection
+                    if !draft.isWords {
+                        goalSection
+                    }
+                    flexibilitySection
+                }
                 groupSection
-                pauseSection
+                if !isQuit {
+                    pauseSection
+                }
                 if original != nil {
                     dangerSection
                 }
@@ -395,6 +409,38 @@ struct HabitEditorView: View {
         }
     }
 
+    private var quitSection: some View {
+        Section {
+            Toggle(isOn: $isQuit.animation(.snappy)) {
+                Label("I'm quitting this habit", systemImage: "nosign")
+            }
+            if isQuit {
+                DatePicker("Without it since", selection: $quitSince, in: ...Date())
+                if store.data.isPro {
+                    HStack(spacing: 8) {
+                        Text("Spent a day")
+                        ProBadge()
+                        Spacer()
+                        TextField("0", text: $dailyCost)
+                            .keyboardType(.decimalPad)
+                            .multilineTextAlignment(.trailing)
+                            .frame(maxWidth: 120)
+                        Text(Locale.current.currency?.identifier ?? "")
+                            .foregroundStyle(.secondary)
+                    }
+                } else {
+                    lockedRow("Money saved")
+                }
+            }
+        } footer: {
+            if isQuit {
+                Text("Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept.")
+            } else {
+                Text("For bad habits: smoking, sweets, alcohol, scrolling.")
+            }
+        }
+    }
+
     private var flexibilitySection: some View {
         Section {
             TextField("Minimum version, for example 5 squats", text: $minimumVersion)
@@ -549,6 +595,11 @@ struct HabitEditorView: View {
 
     private func save() {
         var habit = draft
+        if isQuit {
+            saveQuit(habit)
+            return
+        }
+        habit.quit = nil
         switch frequency {
         case .daily:
             habit.schedule.kind = .repeating
@@ -614,6 +665,37 @@ struct HabitEditorView: View {
                 await store.reschedule()
             }
         }
+        dismiss()
+    }
+}
+
+// MARK: - Бросаю
+
+extension HabitEditorView {
+    /// Привычка, которую бросают: без расписания, напоминаний, цели и паузы.
+    fileprivate func saveQuit(_ base: Habit) {
+        var habit = base
+        var quit = habit.quit ?? QuitInfo(startedAt: quitSince)
+        if quit.since != quitSince {
+            quit.since = quitSince
+            // Пока срывов не было, начало и текущий период совпадают.
+            if quit.relapses.isEmpty || quitSince < quit.startedAt { quit.startedAt = quitSince }
+        }
+        if store.data.isPro {
+            let clean = dailyCost.trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ",", with: ".")
+            quit.dailyCost = Double(clean).flatMap { $0 > 0 ? $0 : nil }
+        }
+        habit.quit = quit
+        habit.name = habit.name.trimmingCharacters(in: .whitespacesAndNewlines)
+        habit.details = habit.details.trimmingCharacters(in: .whitespacesAndNewlines)
+        habit.reminder = nil
+        habit.target = nil
+        habit.unit = nil
+        habit.pausedFrom = nil
+        habit.pausedUntil = nil
+        habit.chainAfter = nil
+        habit.minimumVersion = nil
+        store.upsert(habit)
         dismiss()
     }
 }

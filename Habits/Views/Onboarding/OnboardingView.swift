@@ -96,7 +96,7 @@ struct OnboardingView: View {
             }
             Button("Start over", role: .cancel) {}
         } message: { copy in
-            Text("There's a backup in your iCloud from \(Fmt.backupDate(copy.info.date)) with \(copy.info.habits) habits.")
+            Text("There's a backup in your iCloud from \(Fmt.backupDate(copy.info.date)). Habits in it: \(copy.info.habits).")
         }
     }
 

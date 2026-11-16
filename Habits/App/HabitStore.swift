@@ -78,6 +78,13 @@ final class HabitStore {
         Task { await NotificationPlanner.clearDelivered(habitID: id) }
     }
 
+    /// Срыв у привычки, которую бросают: счёт дней начинается заново, рекорд запоминается.
+    func relapse(_ id: UUID) {
+        guard let index = data.habits.firstIndex(where: { $0.id == id }), data.habits[index].quit != nil else { return }
+        data.habits[index].quit?.relapse()
+        commit()
+    }
+
     func setArchived(_ id: UUID, _ archived: Bool) {
         guard let index = data.habits.firstIndex(where: { $0.id == id }) else { return }
         data.habits[index].isArchived = archived

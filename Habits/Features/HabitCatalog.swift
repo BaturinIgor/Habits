@@ -26,12 +26,18 @@ enum HabitCatalog {
                              schedule: HabitSchedule = HabitSchedule(),
                              reminder: ReminderTime? = nil,
                              part: PartOfDay = .anytime,
-                             target: Int? = nil, unit: String? = nil, isPro: Bool) -> Item {
-        Item(id: id, habit: Habit(
+                             target: Int? = nil, unit: String? = nil, quit: Bool = false, isPro: Bool) -> Item {
+        var habit = Habit(
             name: name, icon: .symbol(symbol), colorIndex: color, schedule: schedule,
             reminder: reminder, partOfDay: reminder == nil ? part : nil,
             target: isPro ? target : nil, unit: isPro ? unit : nil
-        ))
+        )
+        // Вредные привычки: счётчик дней без них с момента добавления.
+        if quit {
+            habit.quit = QuitInfo()
+            habit.reminder = nil
+        }
+        return Item(id: id, habit: habit)
     }
 
     /// Привычка изучения слов для выбранного языка.
@@ -97,11 +103,11 @@ enum HabitCatalog {
                 item("impulse", String(localized: "No impulse purchases"), "cart.badge.minus", 10, isPro: p),
             ]),
             Category(id: "quit", title: String(localized: "Break bad habits"), symbol: "nosign", items: [
-                item("smoking", String(localized: "No smoking"), "nosign", 10, isPro: p),
-                item("alcohol", String(localized: "No alcohol"), "wineglass.fill", 10, isPro: p),
-                item("sweets", String(localized: "No sweets"), "birthday.cake.fill", 9, isPro: p),
-                item("social", String(localized: "Less social media"), "hand.raised.fill", 11, isPro: p),
-                item("fastfood", String(localized: "No fast food"), "takeoutbag.and.cup.and.straw.fill", 1, isPro: p),
+                item("smoking", String(localized: "No smoking"), "nosign", 10, quit: true, isPro: p),
+                item("alcohol", String(localized: "No alcohol"), "wineglass.fill", 10, quit: true, isPro: p),
+                item("sweets", String(localized: "No sweets"), "birthday.cake.fill", 9, quit: true, isPro: p),
+                item("social", String(localized: "Less social media"), "hand.raised.fill", 11, quit: true, isPro: p),
+                item("fastfood", String(localized: "No fast food"), "takeoutbag.and.cup.and.straw.fill", 1, quit: true, isPro: p),
             ]),
             Category(id: "people", title: String(localized: "Relationships"), symbol: "person.2.fill", items: [
                 item("family", String(localized: "Call family"), "phone.fill", 3, schedule: weekly(2), isPro: p),

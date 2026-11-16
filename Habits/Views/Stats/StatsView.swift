@@ -9,7 +9,7 @@ struct StatsView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 16) {
-                    if store.data.activeHabits.isEmpty {
+                    if store.data.trackedHabits.isEmpty {
                         EmptyStateView(
                             systemImage: "chart.bar.fill",
                             title: "Nothing to count yet",
@@ -36,7 +36,7 @@ struct StatsView: View {
 
     private var summary: some View {
         let data = store.data
-        let allStats = data.activeHabits.map { Stats.habit($0, in: data) }
+        let allStats = data.trackedHabits.map { Stats.habit($0, in: data) }
         let today = Stats.day(Date(), in: data)
         let rate30 = Stats.overallRate(days: 30, in: data)
         // У привычек "N раз в неделю" серия в неделях, в днях её сравнивать нельзя.
@@ -55,7 +55,7 @@ struct StatsView: View {
         return VStack(alignment: .leading, spacing: 14) {
             Text("By habit")
                 .font(.headline)
-            ForEach(data.activeHabits) { habit in
+            ForEach(data.trackedHabits) { habit in
                 let stats = Stats.habit(habit, in: data)
                 let color = Palette.color(habit.colorIndex)
                 NavigationLink(value: habit.id) {

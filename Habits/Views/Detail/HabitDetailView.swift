@@ -36,35 +36,10 @@ struct HabitDetailView: View {
             VStack(spacing: 16) {
                 header(habit, color: color)
 
-                if showSiriTip && !habit.isArchived {
-                    SiriTipView(intent: MarkHabitDoneIntent(habit: HabitEntity(habit)), isVisible: $showSiriTip)
-                }
-
-                if let language = habit.wordsLanguage {
-                    WordsProgressCard(language: language, level: habit.wordsLevel ?? 0, color: color) { showingWords = true }
-                }
-
-                LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
-                    StatTile(title: "Current streak", value: stats.isWeekly ? Fmt.weeks(stats.currentStreak) : Fmt.days(stats.currentStreak), systemImage: "flame.fill", color: .orange)
-                    StatTile(title: "Best streak", value: stats.isWeekly ? Fmt.weeks(stats.bestStreak) : Fmt.days(stats.bestStreak), systemImage: "trophy.fill", color: .yellow)
-                    StatTile(title: "Completion", value: "\(Int((stats.completionRate * 100).rounded()))%", systemImage: "chart.pie.fill", color: color)
-                    StatTile(title: "Total check-ins", value: "\(stats.totalDone)", systemImage: "checkmark.circle.fill", color: .green)
-                    if !stats.isWeekly {
-                        StatTile(title: "Last 30 days", value: "\(stats.last30Done)/\(stats.last30Total)", systemImage: "calendar", color: .blue)
-                        StatTile(title: "Freezes this month", value: "\(freezesThisMonth(stats))/\(Freeze.limitThisMonth(data: store.data))", systemImage: "snowflake", color: .cyan)
-                    }
-                }
-
-                MonthCalendarCard(habit: habit, month: $month) { day in
-                    noteTarget = NoteTarget(habitID: habit.id, day: DayKey.make(day))
-                }
-
-                if habit.schedule.kind != .once {
-                    WeeklyChartCard(habit: habit, data: store.data)
-                }
-
-                NotesCard(habit: habit, data: store.data) { day in
-                    noteTarget = NoteTarget(habitID: habit.id, day: day)
+                if habit.isQuit {
+                    QuitDetailSection(habit: habit)
+                } else {
+                    regularContent(habit, color: color, stats: stats)
                 }
             }
             .padding(16)
@@ -86,6 +61,41 @@ struct HabitDetailView: View {
         }
         .sheet(item: $noteTarget) { target in
             NoteEditorView(target: target)
+        }
+    }
+
+    /// Обычная привычка: подсказка Siri, статистика, календарь, график и заметки.
+    @ViewBuilder
+    private func regularContent(_ habit: Habit, color: Color, stats: HabitStats) -> some View {
+        if showSiriTip && !habit.isArchived {
+            SiriTipView(intent: MarkHabitDoneIntent(habit: HabitEntity(habit)), isVisible: $showSiriTip)
+        }
+
+        if let language = habit.wordsLanguage {
+            WordsProgressCard(language: language, level: habit.wordsLevel ?? 0, color: color) { showingWords = true }
+        }
+
+        LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
+            StatTile(title: "Current streak", value: stats.isWeekly ? Fmt.weeks(stats.currentStreak) : Fmt.days(stats.currentStreak), systemImage: "flame.fill", color: .orange)
+            StatTile(title: "Best streak", value: stats.isWeekly ? Fmt.weeks(stats.bestStreak) : Fmt.days(stats.bestStreak), systemImage: "trophy.fill", color: .yellow)
+            StatTile(title: "Completion", value: "\(Int((stats.completionRate * 100).rounded()))%", systemImage: "chart.pie.fill", color: color)
+            StatTile(title: "Total check-ins", value: "\(stats.totalDone)", systemImage: "checkmark.circle.fill", color: .green)
+            if !stats.isWeekly {
+                StatTile(title: "Last 30 days", value: "\(stats.last30Done)/\(stats.last30Total)", systemImage: "calendar", color: .blue)
+                StatTile(title: "Freezes this month", value: "\(freezesThisMonth(stats))/\(Freeze.limitThisMonth(data: store.data))", systemImage: "snowflake", color: .cyan)
+            }
+        }
+
+        MonthCalendarCard(habit: habit, month: $month) { day in
+            noteTarget = NoteTarget(habitID: habit.id, day: DayKey.make(day))
+        }
+
+        if habit.schedule.kind != .once {
+            WeeklyChartCard(habit: habit, data: store.data)
+        }
+
+        NotesCard(habit: habit, data: store.data) { day in
+            noteTarget = NoteTarget(habitID: habit.id, day: day)
         }
     }
 
