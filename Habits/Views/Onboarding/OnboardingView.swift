@@ -4,6 +4,8 @@ import SwiftUI
 struct OnboardingView: View {
     @Environment(HabitStore.self) private var store
     @State private var page = 0
+    /// Копия в iCloud, найденная при первом запуске (например, на новом телефоне).
+    @State private var cloudCopy: (info: CloudBackup.Info, data: AppData)?
 
     private struct Page {
         let icon: String
@@ -78,6 +80,24 @@ struct OnboardingView: View {
             .padding(.bottom, 24)
         }
         .background(AppBackground())
+        .task {
+            // Новый телефон или переустановка: предлагаем вернуть копию из iCloud.
+            guard CloudBackup.isAvailable, store.data.habits.isEmpty else { return }
+            cloudCopy = try? await CloudBackup.shared.fetchLatest()
+        }
+        .alert(
+            "Restore your habits?",
+            isPresented: Binding(get: { cloudCopy != nil }, set: { if !$0 { cloudCopy = nil } }),
+            presenting: cloudCopy
+        ) { copy in
+            Button("Restore") {
+                CloudBackup.shared.restore(copy.data)
+                finish()
+            }
+            Button("Start over", role: .cancel) {}
+        } message: { copy in
+            Text("There's a backup in your iCloud from \(Fmt.backupDate(copy.info.date)) with \(copy.info.habits) habits.")
+        }
     }
 
     private func finish() {

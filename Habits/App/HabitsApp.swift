@@ -34,6 +34,7 @@ struct HabitsApp: App {
                 FamilySync.shared.startLiveUpdates()
             case .background:
                 FamilySync.shared.flushBeforeBackground()
+                CloudBackup.shared.backupBeforeBackground()
                 BackgroundRefresh.schedule()
             default:
                 break
@@ -62,5 +63,6 @@ enum BackgroundRefresh {
         HabitStore.shared.reloadFromDisk()
         await FamilySync.shared.syncAll()
         await HabitStore.shared.reschedule()
+        await CloudBackup.shared.backupIfNeeded()
     }
 }

@@ -1,6 +1,6 @@
 name: CloudKit schema
 
-# Добавляет в Development-схему iCloud типы семейных групп и системный тип cloudkit.share,
+# Добавляет в Development-схему iCloud типы семейных групп, резервной копии (Backup) и системный тип cloudkit.share,
 # без которого нельзя создать приглашение. После запуска схему нужно выкатить
 # в Production в CloudKit Console: Deploy Schema Changes.
 # Нужен секрет CLOUDKIT_MANAGEMENT_TOKEN: CloudKit Console -> Settings -> Tokens & Keys ->

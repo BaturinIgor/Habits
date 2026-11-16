@@ -430,9 +430,14 @@ final class HabitStore {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         guard let imported = try? decoder.decode(AppData.self, from: raw) else { return false }
+        replaceAll(with: imported)
+        return true
+    }
+
+    /// Заменяет все данные (импорт файла или копия из iCloud).
+    func replaceAll(with imported: AppData) {
         data = imported
         commit()
-        return true
     }
 
     /// Возвращает false, если вернуть из архива нельзя из-за лимита бесплатной версии.
