@@ -30,6 +30,10 @@ final class HabitStore {
         revision += 1
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()
+        if #available(iOS 18.0, *) {
+            // Кнопки привычек в Пункте управления показывают, отмечена ли привычка.
+            ControlCenter.shared.reloadAllControls()
+        }
         let snapshot = data
         Task { await NotificationPlanner.reschedule(data: snapshot) }
         // Siri узнаёт новые названия привычек для фраз вроде «Отметь Зарядку».

@@ -158,6 +158,9 @@ struct HabitsWidgetBundle: WidgetBundle {
         TodayWidget()
         PetWidget()
         ProgressWidget()
+        if #available(iOSApplicationExtension 18.0, *) {
+            HabitControl()
+        }
     }
 }
 
