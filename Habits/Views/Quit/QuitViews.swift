@@ -78,6 +78,7 @@ struct QuitCard: View {
         }
         .buttonStyle(PressableStyle())
         .accessibilityElement(children: .combine)
+        .accessibilityIdentifier("quit.open.\(habit.id.uuidString)")
     }
 }
 

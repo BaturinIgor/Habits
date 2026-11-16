@@ -51,6 +51,7 @@ struct HabitDetailView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Edit") { editingHabit = habit }
+                    .accessibilityIdentifier("detail.edit")
             }
         }
         .fullScreenCover(isPresented: $showingWords) {

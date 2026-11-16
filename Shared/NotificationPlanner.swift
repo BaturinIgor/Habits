@@ -104,6 +104,8 @@ enum NotificationPlanner {
 
     @discardableResult
     static func requestAuthorization() async -> Bool {
+        // В автотестах системный запрос закрыл бы экран.
+        if TestMode.isUITest { return false }
         do {
             return try await UNUserNotificationCenter.current()
                 .requestAuthorization(options: [.alert, .sound, .badge])
@@ -131,8 +133,10 @@ enum NotificationPlanner {
         guard status == .authorized || status == .provisional || status == .ephemeral else { return }
 
         let center = UNUserNotificationCenter.current()
-        // Уведомления по связке (index 99) живут несколько секунд, их не трогаем.
-        let stale = await center.pendingNotificationRequests().map(\.identifier).filter { !$0.hasSuffix("|99") }
+        // Уведомления по связке (index 99) живут несколько секунд, а конец таймера (index 98)
+        // ставит сам таймер: их не трогаем.
+        let stale = await center.pendingNotificationRequests().map(\.identifier)
+            .filter { !$0.hasSuffix("|99") && !$0.hasSuffix("|98") }
         guard token == generation else { return }
         center.removePendingNotificationRequests(withIdentifiers: stale)
         let unseen = await updateBadge(data: data)

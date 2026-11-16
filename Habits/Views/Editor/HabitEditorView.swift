@@ -170,12 +170,14 @@ struct HabitEditorView: View {
                 }
             }
             .scrollDismissesKeyboard(.interactively)
+            .uiTestScreen("editor")
             .appBackground()
             .navigationTitle(original == nil ? String(localized: "New habit") : String(localized: "Edit habit"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                        .accessibilityIdentifier("editor.cancel")
                 }
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()

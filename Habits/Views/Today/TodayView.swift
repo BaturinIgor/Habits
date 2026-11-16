@@ -37,6 +37,10 @@ struct TodayView: View {
     @State private var groupFilter: UUID?
     @State private var showingCatalog = false
     @State private var wordsHabit: Habit?
+    @State private var timerHabit: Habit?
+    @State private var showingRecap = false
+    /// Неделя, итоги которой уже закрыли на «Сегодня».
+    @AppStorage("weeklyRecapDismissed") private var recapDismissed = ""
     @State private var showingPaywall = false
     @State private var editingHabit: Habit?
     @State private var templateHabit: Habit?
@@ -61,6 +65,17 @@ struct TodayView: View {
     }
 
     /// Первая привычка, чью вчерашнюю серию можно вернуть за искры.
+    /// Итоги прошлой недели: первые три дня новой недели, пока их не закрыли.
+    private var weeklyRecap: WeeklyRecap? {
+        let calendar = Calendar.app
+        let weekStart = Stats.startOfWeek(Date(), calendar: calendar)
+        let daysIn = calendar.dateComponents([.day], from: weekStart, to: calendar.startOfDay(for: Date())).day ?? 0
+        guard daysIn < 3 else { return nil }
+        let recap = WeeklyRecap.lastWeek(in: store.data, calendar: calendar)
+        guard recap.hasData, recap.key != recapDismissed else { return nil }
+        return recap
+    }
+
     private var streakRepair: (Habit, (day: String, streak: Int))? {
         for habit in store.data.trackedHabits {
             if let repair = store.streakRepair(for: habit) { return (habit, repair) }
@@ -98,6 +113,15 @@ struct TodayView: View {
                         withAnimation { store.updateSettings { $0.gestureHintShown = true } }
                     }
                     .plainRow(top: 2, bottom: 2)
+                }
+
+                if isToday, let recap = weeklyRecap {
+                    WeeklyRecapBanner(recap: recap) {
+                        showingRecap = true
+                    } onClose: {
+                        withAnimation { recapDismissed = recap.key }
+                    }
+                    .plainRow(top: 4, bottom: 6)
                 }
 
                 if isToday, let item = streakRepair {
@@ -154,6 +178,7 @@ struct TodayView: View {
                         Image(systemName: "plus")
                     }
                     .accessibilityLabel("New habit")
+                    .accessibilityIdentifier("today.add")
                 }
             }
             .navigationDestination(for: UUID.self) { id in
@@ -165,6 +190,12 @@ struct TodayView: View {
             }
             .fullScreenCover(item: $wordsHabit) { habit in
                 WordsSessionView(habitID: habit.id)
+            }
+            .sheet(item: $timerHabit) { habit in
+                HabitTimerView(habit: habit)
+            }
+            .sheet(isPresented: $showingRecap) {
+                WeeklyRecapView(recap: WeeklyRecap.lastWeek(in: store.data))
             }
             .sheet(isPresented: $showingPaywall) {
                 PaywallView()
@@ -374,6 +405,15 @@ struct TodayView: View {
         return link.metric.format(value) + "/" + link.metric.format(link.goal)
     }
 
+    /// Таймер на карточке: идёт (время до конца) или просто длительность.
+    private func timerInfo(for habit: Habit, status: CheckStatus?) -> HabitCard.TimerInfo? {
+        guard isToday, store.data.isPro, let minutes = habit.timerMinutes, status == nil else { return nil }
+        if let running = HabitTimer.shared.running, running.habitID == habit.id {
+            return .running(running.start...running.end)
+        }
+        return .idle(minutes)
+    }
+
     private func row(for habit: Habit) -> some View {
         let data = store.data
         let status = data.status(habit.id, day: dayKey)
@@ -394,6 +434,7 @@ struct TodayView: View {
             isMinimum: data.checkIn(habit.id, day: dayKey)?.isMinimum == true,
             chainName: habit.chainAfter.flatMap { id in data.habits.first { $0.id == id }?.name },
             healthText: healthText(for: habit),
+            timer: timerInfo(for: habit, status: status),
             canToggle: canToggle,
             zoom: zoom,
             onOpen: { path.append(habit.id) },
@@ -401,6 +442,12 @@ struct TodayView: View {
                 // Слова учатся только сегодня: касание открывает карточки, а отметка ставится после них.
                 if habit.isWords && isToday && status == nil {
                     wordsHabit = habit
+                    return
+                }
+                // Привычка с таймером: касание открывает таймер, отметка ставится, когда время выйдет.
+                if isToday, data.isPro, habit.timerMinutes != nil,
+                   status == nil || HabitTimer.shared.isRunning(habit.id) {
+                    timerHabit = habit
                     return
                 }
                 withAnimation(.spring(response: 0.35, dampingFraction: 0.7)) {
@@ -693,6 +740,11 @@ struct ConfettiBurst: View {
 // MARK: - Карточка привычки
 
 struct HabitCard: View {
+    enum TimerInfo: Equatable {
+        case running(ClosedRange<Date>)
+        case idle(Int)
+    }
+
     let habit: Habit
     let status: CheckStatus?
     let hasNote: Bool
@@ -703,6 +755,7 @@ struct HabitCard: View {
     var isMinimum: Bool = false
     var chainName: String? = nil
     var healthText: String? = nil
+    var timer: TimerInfo? = nil
     let canToggle: Bool
     let zoom: Namespace.ID
     var onOpen: () -> Void
@@ -732,6 +785,7 @@ struct HabitCard: View {
                 .contentShape(Rectangle())
             }
             .buttonStyle(PressableStyle())
+            .accessibilityIdentifier("habit.open.\(habit.id.uuidString)")
 
             Button(action: onToggle) {
                 CheckMark(
@@ -744,6 +798,7 @@ struct HabitCard: View {
                 .symbolEffect(.bounce, value: isDone)
             }
             .buttonStyle(PressableStyle(scale: 0.82))
+            .accessibilityIdentifier("habit.toggle.\(habit.id.uuidString)")
             .disabled(!canToggle)
             .opacity(canToggle ? 1 : 0.35)
             .sensoryFeedback(trigger: count) { _, _ in isDone ? .success : .selection }
@@ -783,6 +838,20 @@ struct HabitCard: View {
             }
             if let healthText, let link = habit.health {
                 Label(healthText, systemImage: link.metric.symbol)
+            }
+            switch timer {
+            case .running(let range):
+                Label {
+                    Text(timerInterval: range, countsDown: true)
+                        .monospacedDigit()
+                } icon: {
+                    Image(systemName: "timer")
+                }
+                .foregroundStyle(Palette.color(habit.colorIndex))
+            case .idle(let minutes):
+                Label(String(localized: "\(minutes) min"), systemImage: "timer")
+            case nil:
+                EmptyView()
             }
             if let perDay = habit.wordsPerDay, habit.isWords {
                 Label(String(localized: "\(perDay) words"), systemImage: "character.book.closed.fill")

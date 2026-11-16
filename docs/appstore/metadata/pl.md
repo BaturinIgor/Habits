@@ -51,3 +51,6 @@ Prywatność: https://baturinigor.github.io/Habits/privacy.html
 • Opuściłeś dzień? Następnego dnia odzyskasz serię za iskry.
 • Grupy rodzinne odświeżają się teraz w kilka sekund, gdy aplikacja jest otwarta.
 • Odhaczaj nawyk z centrum sterowania, ekranu blokady lub przyciskiem czynności (iOS 18).
+• Apple Health (Pro): połącz nawyk z krokami, snem, wodą, treningami lub uważnością, a odhaczy się sam po osiągnięciu celu.
+• Minutnik nawyku (Pro): odliczanie na ekranie blokady i w Dynamic Island, które na koniec odhacza nawyk.
+• Podsumowanie tygodnia: wyniki z zeszłego tygodnia w skrócie, gotowe do udostępnienia jako obrazek.

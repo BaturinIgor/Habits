@@ -24,6 +24,7 @@
 "7 perfect days in a row" = "7日連続でパーフェクト";
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "アプリを閉じると、習慣と履歴のコピーが自動で iCloud に保存されます。機種変更でもデータは失われません。";
 "A grown pet brings up to +5 a day" = "育ったペットは1日最大 +5 くれます";
+"A solid week. A little more and it'll be perfect." = "いい1週間でした。あと少しで完璧です。";
 "A week strong" = "1週間達成";
 "A whole year" = "まる1年";
 "Abstract ideas and news" = "抽象的な概念とニュース";
@@ -54,6 +55,7 @@
 "Allow notifications" = "通知を許可";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "設定でZenHabのマイクと音声認識を許可してください。";
 "Allowed" = "許可済み";
+"An amazing week. Keep it going!" = "すばらしい1週間でした。この調子で！";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "アーカイブした習慣は「今日」に表示されず通知も届きませんが、履歴は残ります。";
 "And %lld more" = "ほか%lld件";
 "Anytime" = "いつでも";
@@ -64,6 +66,7 @@
 "Archive" = "アーカイブ";
 "Archive (%lld)" = "アーカイブ (%lld)";
 "Archived" = "アーカイブ済み";
+"At the start of each week, see how the last one went and share it as a picture." = "毎週のはじめに先週の結果を確認し、画像でシェアできます。";
 "Attach a screenshot" = "スクリーンショットを添付";
 "Automatic iCloud backup" = "iCloud 自動バックアップ";
 "Available" = "利用可能";
@@ -115,8 +118,10 @@
 "Check off habits on 30 different days" = "30日間チェック";
 "Check off habits on 365 different days" = "365日間チェック";
 "Check off habits to earn more." = "習慣をチェックしてもっと集めよう。";
+"Check off without the timer" = "タイマーなしでチェック";
 "Check your internet connection and try again, or send it by email." = "インターネット接続を確認してもう一度お試しいただくか、メールで送信してください。";
 "Check-ins" = "チェック";
+"Checked off" = "チェック済み";
 "Chick" = "ひよこ";
 "Choose how many times and how often each reminder repeats." = "各リマインダーの繰り返し回数と間隔を設定できます。";
 "Chronicler" = "記録者";
@@ -201,6 +206,7 @@
 "Every" = "間隔";
 "Every %@" = "%@ごと";
 "Every N days" = "N日ごと";
+"Every check-in counts. The new week is a fresh start." = "チェックひとつひとつに意味があります。新しい週は新しいスタート。";
 "Every day" = "毎日";
 "Every month, on day %lld" = "毎月%lld日";
 "Every other day" = "1日おき";
@@ -226,6 +232,7 @@
 "Feeding" = "ごはん";
 "Fifty" = "50回";
 "Finance" = "お金";
+"Finish and check off" = "終了してチェック";
 "First step" = "最初の一歩";
 "First time" = "初回";
 "Fitness" = "運動";
@@ -259,6 +266,7 @@
 "Habit not found." = "習慣が見つかりません。";
 "Habit order" = "習慣の順序";
 "Habit progress" = "習慣の進み具合";
+"Habit timer" = "習慣タイマー";
 "Habits" = "習慣";
 "Habits %lld/%lld" = "習慣 %lld/%lld";
 "Habits Pro" = "習慣 Pro";
@@ -318,6 +326,7 @@
 "Last 30 days" = "過去30日間";
 "Last 7 days" = "過去7日間";
 "Last backup" = "前回のバックアップ";
+"Last week's results as a card you can share" = "先週の結果を共有できるカードで";
 "Last widget update" = "ウィジェットの最終更新";
 "Learn %@" = "%@を学ぶ";
 "Learn words" = "単語を学ぶ";
@@ -363,7 +372,9 @@
 "More words" = "もっと単語";
 "Morning" = "朝";
 "Morning exercises" = "朝の体操";
+"Most steady: %@, %lld of %lld" = "いちばん安定：%@、%lld/%lld";
 "Move to archive" = "アーカイブへ移動";
+"My week" = "私の1週間";
 "N times a week" = "週N回";
 "Name" = "名前";
 "Never" = "なし";
@@ -443,6 +454,7 @@
 "Per week" = "週あたり";
 "Perfect day" = "パーフェクトな日";
 "Perfect days" = "完璧な日";
+"Perfect days: %lld" = "パーフェクトな日：%lld";
 "Perfect month" = "完璧な1か月";
 "Perfect week" = "パーフェクトな週";
 "Pet" = "ペット";
@@ -515,6 +527,7 @@
 "Send the message" = "メッセージを送信";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone でメールを設定するか、%@ に送信してください。";
 "Settings" = "設定";
+"Share" = "共有";
 "Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "「犬」や「家」などのグループを家族と共有できます。全員が同じ習慣を見てチェックでき、リマインダーも届きます。";
 "Share with family" = "家族と共有";
 "Shared data" = "共有データ";
@@ -556,6 +569,7 @@
 "Stop" = "停止";
 "Stop sharing" = "共有を停止";
 "Stop sharing?" = "共有を停止しますか？";
+"Stop timer" = "タイマーを止める";
 "Streaks" = "連続記録";
 "Stretch" = "ストレッチ";
 "Study for 30 minutes" = "30分勉強する";
@@ -598,6 +612,7 @@
 "Time" = "時刻";
 "Time for your habit" = "習慣の時間です";
 "Time to rest" = "ひと休みしましょう";
+"Time's up. Well done!" = "時間です。よくできました！";
 "Timer" = "タイマー";
 "Today" = "今日";
 "Today is a good day." = "今日はいい日だね。";
@@ -639,6 +654,7 @@
 "Warming up" = "ウォームアップ";
 "Water, liters" = "水分（リットル）";
 "Week" = "週";
+"Week in review" = "今週のふり返り";
 "Weekdays" = "平日";
 "Weekend warrior" = "週末の戦士";
 "Weekends" = "週末";
@@ -653,6 +669,8 @@
 "What's new" = "新機能";
 "Which habit?" = "どの習慣ですか？";
 "Widget" = "ウィジェット";
+"With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "Proなら習慣に時間を設定できます。カウントダウンはロック画面とDynamic Islandに表示され、終わると習慣がチェックされます。";
+"With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "Proなら、習慣を歩数・睡眠・水分・ワークアウト・マインドフルネスと連携でき、目標に達すると自動でチェックされます。";
 "Without it since" = "やめた日時";
 "Words" = "単語";
 "Words for today are done" = "今日の単語は終わりです";
@@ -676,6 +694,7 @@
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "習慣をチェックするたびにペットは成長し、数日いなくなると寂しがります。";
 "Your pet's mood and feeding right from the Home Screen." = "ホーム画面でペットの様子を見てごはんをあげられます。";
 "Your photo" = "自分の写真";
+"Your week in review" = "あなたの1週間";
 "a month" = "1か月";
 "a week" = "1週間";
 "a year" = "1年";
@@ -685,6 +704,7 @@
 "iCloud storage is full." = "iCloudストレージがいっぱいです。";
 "iPhone permission" = "iPhoneの許可";
 "of %lld" = "/ %lld";
+"of habits done" = "の習慣を達成";
 "three months" = "3か月";
 "times" = "回";
 "two weeks" = "2週間";

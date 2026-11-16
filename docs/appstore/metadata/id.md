@@ -51,3 +51,6 @@ Privasi: https://baturinigor.github.io/Habits/privacy.html
 • Melewatkan sehari? Kembalikan rentetan keesokan harinya dengan percikan.
 • Grup keluarga kini diperbarui dalam hitungan detik saat aplikasi terbuka.
 • Centang kebiasaan dari Pusat Kontrol, Layar Terkunci, atau tombol Tindakan (iOS 18).
+• Apple Health (Pro): hubungkan kebiasaan ke langkah, tidur, air, latihan, atau menit kesadaran, dan kebiasaan tercentang otomatis saat target tercapai.
+• Pengatur waktu kebiasaan (Pro): hitung mundur di Layar Terkunci dan Dynamic Island yang mencentang kebiasaan saat waktu habis.
+• Ringkasan minggu: hasil minggu lalu sekilas, siap dibagikan sebagai gambar.

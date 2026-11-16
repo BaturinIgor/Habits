@@ -51,3 +51,6 @@ Confidentialité : https://baturinigor.github.io/Habits/privacy.html
 • Un jour manqué ? Récupère ta série le lendemain contre des étincelles.
 • Les groupes famille se mettent à jour en quelques secondes quand l'app est ouverte.
 • Coche une habitude depuis le Centre de contrôle, l'écran verrouillé ou le bouton Action (iOS 18).
+• Apple Health (Pro) : relie une habitude aux pas, au sommeil, à l'eau, aux séances ou à la pleine conscience, elle se coche toute seule à l'objectif.
+• Minuteur d'habitude (Pro) : un compte à rebours sur l'écran verrouillé et dans la Dynamic Island qui coche l'habitude à la fin.
+• Bilan de la semaine : les résultats de la semaine passée en un coup d'œil, à partager en image.

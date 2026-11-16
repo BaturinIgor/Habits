@@ -51,3 +51,6 @@ Privacy: https://baturinigor.github.io/Habits/privacy.html
 • Hai saltato un giorno? Recupera la serie il giorno dopo con le scintille.
 • I gruppi di famiglia si aggiornano in pochi secondi con l'app aperta.
 • Spunta un'abitudine dal Centro di Controllo, dalla schermata di blocco o dal tasto Azione (iOS 18).
+• Apple Health (Pro): collega un'abitudine a passi, sonno, acqua, allenamenti o consapevolezza, e si spunta da sola al raggiungimento dell'obiettivo.
+• Timer delle abitudini (Pro): conto alla rovescia sulla schermata di blocco e nella Dynamic Island che spunta l'abitudine alla fine.
+• Riepilogo della settimana: i risultati della settimana scorsa in un colpo d'occhio, da condividere come immagine.

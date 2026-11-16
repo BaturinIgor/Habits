@@ -1,0 +1,129 @@
+name: Tests
+
+# Автотесты на симуляторе iPhone:
+# - HabitsTests: логика (серии, итоги недели, «Бросаю», таймер, формат данных);
+# - HabitsUITests: обход всех экранов на демо-данных, поиск наездов элементов,
+#   время переходов и подвисания главного потока, снимки экранов.
+# Снимки и отчёт лежат в артефакте ui-screenshots.
+
+on:
+  pull_request:
+    paths-ignore:
+      - "android/**"
+      - ".github/workflows/android.yml"
+      - "README.md"
+      - "docs/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tools
+        run: |
+          brew install xcodegen
+          xcodebuild -version
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Pick simulator
+        id: sim
+        run: |
+          set -euo pipefail
+          UDID=$(xcrun simctl list devices available -j | python3 -c '
+          import json, sys, re
+          data = json.load(sys.stdin)["devices"]
+          best = None
+          for runtime, devices in data.items():
+              m = re.search(r"iOS-(\d+)-(\d+)", runtime)
+              if not m:
+                  continue
+              version = (int(m.group(1)), int(m.group(2)))
+              for d in devices:
+                  name = d["name"]
+                  # Обычный iPhone среднего размера: не Max/Plus/Air и не SE/mini.
+                  if not name.startswith("iPhone") or re.search(r"Max|Plus|Air|SE|mini|e$", name):
+                      continue
+                  key = (version, "Pro" not in name, name)
+                  if best is None or key > best[0]:
+                      best = (key, d["udid"], name, runtime)
+          print(best[1])
+          print(best[2], best[3], file=sys.stderr)
+          ')
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+          xcrun simctl boot "$UDID" || true
+          xcrun simctl bootstatus "$UDID" -b
+
+      - name: Run tests
+        env:
+          TEST_RUNNER_SCREENSHOTS_DIR: ${{ github.workspace }}/screenshots
+        run: |
+          set +e
+          mkdir -p screenshots
+          xcodebuild test \
+            -project Habits.xcodeproj \
+            -scheme Habits \
+            -destination "id=${{ steps.sim.outputs.udid }}" \
+            -resultBundlePath TestResults.xcresult \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=YES \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=- \
+            > test.log 2>&1
+          status=$?
+          echo "---- errors ----"
+          grep -E "error:|fatal error" test.log | sort -u | head -80
+          echo "---- results ----"
+          grep -E "Test Case .* (passed|failed)|Executed [0-9]+ test" test.log | head -80
+          echo "---- failures ----"
+          grep -E "XCTAssert|XCTFail|failed -|: error: -" test.log | head -120
+          echo "---- UI reports ----"
+          sed -n '/==== UI REPORT/,/==== END UI REPORT/p' test.log
+          {
+            echo "## UI test reports"
+            echo '```'
+            sed -n '/==== UI REPORT/,/==== END UI REPORT/p' test.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          ls screenshots | head -100
+          exit $status
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-screenshots
+          path: screenshots
+          if-no-files-found: ignore
+
+      - name: Upload test log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-log
+          path: |
+            test.log
+          if-no-files-found: ignore
+
+      - name: Upload result bundle
+        if: failure()
+        run: zip -qry TestResults.zip TestResults.xcresult || true
+
+      - name: Upload result bundle artifact
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: TestResults.zip
+          if-no-files-found: ignore

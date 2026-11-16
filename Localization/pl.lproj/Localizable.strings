@@ -24,6 +24,7 @@
 "7 perfect days in a row" = "7 idealnych dni z rzędu";
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "Kopia nawyków i historii zapisuje się sama w Twoim iCloud, gdy wychodzisz z aplikacji. Przy zmianie telefonu nic nie zginie.";
 "A grown pet brings up to +5 a day" = "Dorosły zwierzak przynosi do +5 dziennie";
+"A solid week. A little more and it'll be perfect." = "Dobry tydzień. Jeszcze trochę i będzie idealnie.";
 "A week strong" = "Mocny tydzień";
 "A whole year" = "Cały rok";
 "Abstract ideas and news" = "Pojęcia abstrakcyjne i wiadomości";
@@ -54,6 +55,7 @@
 "Allow notifications" = "Zezwól na powiadomienia";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "Zezwól ZenHab na mikrofon i rozpoznawanie mowy w Ustawieniach.";
 "Allowed" = "Dozwolone";
+"An amazing week. Keep it going!" = "Świetny tydzień. Tak trzymaj!";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "Zarchiwizowany nawyk nie jest widoczny na ekranie Dziś i nie wysyła powiadomień, ale jego historia zostaje.";
 "And %lld more" = "I jeszcze %lld";
 "Anytime" = "O dowolnej porze";
@@ -64,6 +66,7 @@
 "Archive" = "Archiwizuj";
 "Archive (%lld)" = "Archiwum (%lld)";
 "Archived" = "W archiwum";
+"At the start of each week, see how the last one went and share it as a picture." = "Na początku każdego tygodnia zobacz, jak minął poprzedni, i udostępnij go jako obrazek.";
 "Attach a screenshot" = "Dołącz zrzut ekranu";
 "Automatic iCloud backup" = "Automatyczna kopia w iCloud";
 "Available" = "Dostępne";
@@ -115,8 +118,10 @@
 "Check off habits on 30 different days" = "Odhaczaj nawyki w 30 różnych dniach";
 "Check off habits on 365 different days" = "Odhaczaj nawyki w 365 różnych dniach";
 "Check off habits to earn more." = "Odhaczaj nawyki, aby zdobyć więcej.";
+"Check off without the timer" = "Odhacz bez minutnika";
 "Check your internet connection and try again, or send it by email." = "Sprawdź połączenie z internetem i spróbuj ponownie albo wyślij e-mailem.";
 "Check-ins" = "Odhaczenia";
+"Checked off" = "Odhaczone";
 "Chick" = "Kurczątko";
 "Choose how many times and how often each reminder repeats." = "Wybierz, ile razy i jak często powtarza się każde przypomnienie.";
 "Chronicler" = "Kronikarz";
@@ -201,6 +206,7 @@
 "Every" = "Co";
 "Every %@" = "Co %@";
 "Every N days" = "Co N dni";
+"Every check-in counts. The new week is a fresh start." = "Każde odhaczenie się liczy. Nowy tydzień to nowy start.";
 "Every day" = "Codziennie";
 "Every month, on day %lld" = "Co miesiąc, %lld. dnia";
 "Every other day" = "Co drugi dzień";
@@ -226,6 +232,7 @@
 "Feeding" = "Karmienie";
 "Fifty" = "Pięćdziesiątka";
 "Finance" = "Finanse";
+"Finish and check off" = "Zakończ i odhacz";
 "First step" = "Pierwszy krok";
 "First time" = "Pierwszy raz";
 "Fitness" = "Sport";
@@ -259,6 +266,7 @@
 "Habit not found." = "Nie znaleziono nawyku.";
 "Habit order" = "Kolejność nawyków";
 "Habit progress" = "Postęp nawyków";
+"Habit timer" = "Minutnik nawyku";
 "Habits" = "Nawyki";
 "Habits %lld/%lld" = "Nawyki %lld/%lld";
 "Habits Pro" = "Nawyki Pro";
@@ -318,6 +326,7 @@
 "Last 30 days" = "Ostatnie 30 dni";
 "Last 7 days" = "Ostatnie 7 dni";
 "Last backup" = "Ostatnia kopia";
+"Last week's results as a card you can share" = "Wyniki z zeszłego tygodnia na karcie do udostępnienia";
 "Last widget update" = "Ostatnia aktualizacja widżetu";
 "Learn %@" = "Nauka: %@";
 "Learn words" = "Ucz się słówek";
@@ -363,7 +372,9 @@
 "More words" = "Więcej słówek";
 "Morning" = "Rano";
 "Morning exercises" = "Poranna gimnastyka";
+"Most steady: %@, %lld of %lld" = "Najbardziej regularny: %@, %lld z %lld";
 "Move to archive" = "Przenieś do archiwum";
+"My week" = "Mój tydzień";
 "N times a week" = "N razy w tygodniu";
 "Name" = "Nazwa";
 "Never" = "Nigdy";
@@ -443,6 +454,7 @@
 "Per week" = "W tygodniu";
 "Perfect day" = "Idealny dzień";
 "Perfect days" = "Idealne dni";
+"Perfect days: %lld" = "Idealne dni: %lld";
 "Perfect month" = "Idealny miesiąc";
 "Perfect week" = "Idealny tydzień";
 "Pet" = "Zwierzak";
@@ -515,6 +527,7 @@
 "Send the message" = "Wyślij wiadomość";
 "Set up Mail on this iPhone or send your message to %@." = "Skonfiguruj Mail na tym iPhonie lub wyślij wiadomość na %@.";
 "Settings" = "Ustawienia";
+"Share" = "Udostępnij";
 "Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "Udostępnij grupę rodzinie, na przykład „Pies” albo „Dom”. Wszyscy widzą te same nawyki, odhaczają je i dostają przypomnienia.";
 "Share with family" = "Udostępnij rodzinie";
 "Shared data" = "Wspólne dane";
@@ -556,6 +569,7 @@
 "Stop" = "Zatrzymaj";
 "Stop sharing" = "Przestań udostępniać";
 "Stop sharing?" = "Przestać udostępniać?";
+"Stop timer" = "Zatrzymaj minutnik";
 "Streaks" = "Serie";
 "Stretch" = "Rozciąganie";
 "Study for 30 minutes" = "Uczyć się 30 minut";
@@ -598,6 +612,7 @@
 "Time" = "Godzina";
 "Time for your habit" = "Czas na twój nawyk";
 "Time to rest" = "Czas odpocząć";
+"Time's up. Well done!" = "Czas minął. Brawo!";
 "Timer" = "Minutnik";
 "Today" = "Dziś";
 "Today is a good day." = "Dziś jest dobry dzień.";
@@ -639,6 +654,7 @@
 "Warming up" = "Rozgrzewka";
 "Water, liters" = "Woda, litry";
 "Week" = "Tydzień";
+"Week in review" = "Podsumowanie tygodnia";
 "Weekdays" = "Dni robocze";
 "Weekend warrior" = "Weekendowy wojownik";
 "Weekends" = "Weekendy";
@@ -653,6 +669,8 @@
 "What's new" = "Co nowego";
 "Which habit?" = "Który nawyk?";
 "Widget" = "Widżet";
+"With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "Z Pro nadasz nawykowi czas trwania. Odliczanie widać na ekranie blokady i w Dynamic Island, a na koniec nawyk się odhacza.";
+"With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "Z Pro połączysz nawyk z krokami, snem, wodą, treningami lub uważnością, a odhaczy się sam, gdy osiągniesz cel.";
 "Without it since" = "Bez tego od";
 "Words" = "Słówka";
 "Words for today are done" = "Słówka na dziś zrobione";
@@ -676,6 +694,7 @@
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Twój zwierzak rośnie z każdym odhaczonym nawykiem i smutnieje, gdy znikasz na kilka dni.";
 "Your pet's mood and feeding right from the Home Screen." = "Nastrój i karmienie zwierzaka prosto z ekranu początkowego.";
 "Your photo" = "Twoje zdjęcie";
+"Your week in review" = "Twoje podsumowanie tygodnia";
 "a month" = "miesiąc";
 "a week" = "tydzień";
 "a year" = "rok";
@@ -685,6 +704,7 @@
 "iCloud storage is full." = "Miejsce w iCloud jest pełne.";
 "iPhone permission" = "Zgoda iPhone’a";
 "of %lld" = "z %lld";
+"of habits done" = "nawyków wykonanych";
 "three months" = "trzy miesiące";
 "times" = "razy";
 "two weeks" = "dwa tygodnie";

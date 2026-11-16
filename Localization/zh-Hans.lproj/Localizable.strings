@@ -24,6 +24,7 @@
 "7 perfect days in a row" = "连续 7 个完美日";
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "离开应用时，习惯和历史记录的副本会自动保存到你的 iCloud，换手机也不会丢失。";
 "A grown pet brings up to +5 a day" = "长大的宠物每天最多带来 +5";
+"A solid week. A little more and it'll be perfect." = "不错的一周，再加把劲就完美了。";
 "A week strong" = "坚持一周";
 "A whole year" = "整整一年";
 "Abstract ideas and news" = "抽象概念和新闻";
@@ -54,6 +55,7 @@
 "Allow notifications" = "允许通知";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "请在“设置”中允许 ZenHab 使用麦克风和语音识别。";
 "Allowed" = "已允许";
+"An amazing week. Keep it going!" = "了不起的一周，继续保持！";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "归档的习惯不会显示在“今天”页面，也不会发送通知，但历史记录会保留。";
 "And %lld more" = "还有 %lld 个";
 "Anytime" = "随时";
@@ -64,6 +66,7 @@
 "Archive" = "归档";
 "Archive (%lld)" = "归档 (%lld)";
 "Archived" = "已归档";
+"At the start of each week, see how the last one went and share it as a picture." = "每周开始时，查看上周的表现，并以图片形式分享。";
 "Attach a screenshot" = "附上截图";
 "Automatic iCloud backup" = "自动 iCloud 备份";
 "Available" = "可用";
@@ -115,8 +118,10 @@
 "Check off habits on 30 different days" = "在 30 个不同的日子打卡";
 "Check off habits on 365 different days" = "在 365 个不同的日子打卡";
 "Check off habits to earn more." = "完成习惯即可获得更多。";
+"Check off without the timer" = "不计时直接打卡";
 "Check your internet connection and try again, or send it by email." = "请检查网络连接后重试，或通过邮件发送。";
 "Check-ins" = "打卡";
+"Checked off" = "已打卡";
 "Chick" = "小鸡";
 "Choose how many times and how often each reminder repeats." = "自行设置每个提醒重复的次数和间隔。";
 "Chronicler" = "编年史家";
@@ -201,6 +206,7 @@
 "Every" = "每隔";
 "Every %@" = "每 %@";
 "Every N days" = "每 N 天";
+"Every check-in counts. The new week is a fresh start." = "每次打卡都算数，新的一周是新的开始。";
 "Every day" = "每天";
 "Every month, on day %lld" = "每月 %lld 日";
 "Every other day" = "隔天";
@@ -226,6 +232,7 @@
 "Feeding" = "喂食";
 "Fifty" = "五十";
 "Finance" = "理财";
+"Finish and check off" = "结束并打卡";
 "First step" = "第一步";
 "First time" = "首次";
 "Fitness" = "运动";
@@ -259,6 +266,7 @@
 "Habit not found." = "未找到该习惯。";
 "Habit order" = "习惯顺序";
 "Habit progress" = "习惯进度";
+"Habit timer" = "习惯计时器";
 "Habits" = "习惯";
 "Habits %lld/%lld" = "习惯 %lld/%lld";
 "Habits Pro" = "习惯 Pro";
@@ -318,6 +326,7 @@
 "Last 30 days" = "最近 30 天";
 "Last 7 days" = "最近 7 天";
 "Last backup" = "上次备份";
+"Last week's results as a card you can share" = "上周成果卡片，可分享";
 "Last widget update" = "小组件上次更新";
 "Learn %@" = "学%@";
 "Learn words" = "学单词";
@@ -363,7 +372,9 @@
 "More words" = "更多单词";
 "Morning" = "早上";
 "Morning exercises" = "晨练";
+"Most steady: %@, %lld of %lld" = "最稳定：%@，%lld/%lld";
 "Move to archive" = "移至归档";
+"My week" = "我的一周";
 "N times a week" = "每周 N 次";
 "Name" = "名称";
 "Never" = "从未";
@@ -443,6 +454,7 @@
 "Per week" = "每周";
 "Perfect day" = "完美的一天";
 "Perfect days" = "完美日";
+"Perfect days: %lld" = "完美天数：%lld";
 "Perfect month" = "完美一月";
 "Perfect week" = "完美的一周";
 "Pet" = "宠物";
@@ -515,6 +527,7 @@
 "Send the message" = "发送消息";
 "Set up Mail on this iPhone or send your message to %@." = "请在 iPhone 上设置“邮件”，或将消息发送至 %@。";
 "Settings" = "设置";
+"Share" = "分享";
 "Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "与家人共享一个分组，比如“狗狗”或“家务”。大家看到相同的习惯，都能打卡并收到提醒。";
 "Share with family" = "与家人共享";
 "Shared data" = "共享数据";
@@ -556,6 +569,7 @@
 "Stop" = "停止";
 "Stop sharing" = "停止共享";
 "Stop sharing?" = "停止共享？";
+"Stop timer" = "停止计时";
 "Streaks" = "连续";
 "Stretch" = "拉伸";
 "Study for 30 minutes" = "学习 30 分钟";
@@ -598,6 +612,7 @@
 "Time" = "时间";
 "Time for your habit" = "该完成习惯了";
 "Time to rest" = "好好休息";
+"Time's up. Well done!" = "时间到了，做得好！";
 "Timer" = "计时器";
 "Today" = "今天";
 "Today is a good day." = "今天是美好的一天。";
@@ -639,6 +654,7 @@
 "Warming up" = "热身";
 "Water, liters" = "饮水（升）";
 "Week" = "周";
+"Week in review" = "一周回顾";
 "Weekdays" = "工作日";
 "Weekend warrior" = "周末战士";
 "Weekends" = "周末";
@@ -653,6 +669,8 @@
 "What's new" = "新功能";
 "Which habit?" = "哪个习惯？";
 "Widget" = "小组件";
+"With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "开通 Pro 后，可为习惯设定时长。倒计时显示在锁定屏幕和灵动岛上，时间到后自动打卡。";
+"With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "开通 Pro 后，可将习惯与步数、睡眠、饮水、体能训练或正念分钟数关联，达到目标即自动打卡。";
 "Without it since" = "戒除开始于";
 "Words" = "单词";
 "Words for today are done" = "今天的单词完成了";
@@ -676,6 +694,7 @@
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "每完成一个习惯，宠物就会成长；你消失几天，它会难过。";
 "Your pet's mood and feeding right from the Home Screen." = "直接在主屏幕查看宠物心情并喂食。";
 "Your photo" = "自己的照片";
+"Your week in review" = "你的一周回顾";
 "a month" = "一个月";
 "a week" = "一周";
 "a year" = "一年";
@@ -685,6 +704,7 @@
 "iCloud storage is full." = "iCloud 储存空间已满。";
 "iPhone permission" = "iPhone 权限";
 "of %lld" = "共 %lld";
+"of habits done" = "的习惯已完成";
 "three months" = "三个月";
 "times" = "次";
 "two weeks" = "两周";

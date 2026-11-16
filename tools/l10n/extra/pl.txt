@@ -690,3 +690,23 @@ The habit is checked off by itself when the goal is reached in the Health app: s
 Timer||Minutnik
 Duration||Czas trwania
 Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up.||Dotknij kółka, aby włączyć minutnik. Odlicza na ekranie blokady i odhacza nawyk, gdy czas minie.
+Time's up. Well done!||Czas minął. Brawo!
+Finish and check off||Zakończ i odhacz
+Stop timer||Zatrzymaj minutnik
+Check off without the timer||Odhacz bez minutnika
+My week||Mój tydzień
+of habits done||nawyków wykonanych
+Checked off||Odhaczone
+Most steady: %@, %lld of %lld||Najbardziej regularny: %@, %lld z %lld
+Share||Udostępnij
+Week in review||Podsumowanie tygodnia
+An amazing week. Keep it going!||Świetny tydzień. Tak trzymaj!
+A solid week. A little more and it'll be perfect.||Dobry tydzień. Jeszcze trochę i będzie idealnie.
+Every check-in counts. The new week is a fresh start.||Każde odhaczenie się liczy. Nowy tydzień to nowy start.
+Your week in review||Twoje podsumowanie tygodnia
+Perfect days: %lld||Idealne dni: %lld
+Last week's results as a card you can share||Wyniki z zeszłego tygodnia na karcie do udostępnienia
+With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal.||Z Pro połączysz nawyk z krokami, snem, wodą, treningami lub uważnością, a odhaczy się sam, gdy osiągniesz cel.
+Habit timer||Minutnik nawyku
+With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up.||Z Pro nadasz nawykowi czas trwania. Odliczanie widać na ekranie blokady i w Dynamic Island, a na koniec nawyk się odhacza.
+At the start of each week, see how the last one went and share it as a picture.||Na początku każdego tygodnia zobacz, jak minął poprzedni, i udostępnij go jako obrazek.

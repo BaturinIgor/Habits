@@ -57,6 +57,8 @@ targets:
         HealthEnabled: false
         NSHealthShareUsageDescription: ZenHab reads steps, sleep, water, exercise and mindful minutes to check off linked habits for you.
         BGTaskSchedulerPermittedIdentifiers: [com.personal.habits.refresh]
+        # Таймер привычки на экране блокировки (Live Activity).
+        NSSupportsLiveActivities: true
         ITSAppUsesNonExemptEncryption: false
         # Голосовой ввод привычки. Переводы в Localization/*.lproj/InfoPlist.strings.
         NSMicrophoneUsageDescription: ZenHab uses the microphone so you can create a habit by voice.
@@ -111,6 +113,35 @@ targets:
         PROVISIONING_PROFILE_SPECIFIER: $(WIDGET_PROFILE_NAME)
         SKIP_INSTALL: "YES"
 
+  # Автотесты: логика (HabitsTests) и интерфейс на симуляторе (HabitsUITests).
+  # Запускает workflow tests.yml.
+  HabitsTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: HabitsTests
+    dependencies:
+      - target: Habits
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.personal.habits.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TEST_HOST: $(BUILT_PRODUCTS_DIR)/Habits.app/Habits
+        BUNDLE_LOADER: $(TEST_HOST)
+
+  HabitsUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: HabitsUITests
+    dependencies:
+      - target: Habits
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.personal.habits.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TEST_TARGET_NAME: Habits
+
 schemes:
   Habits:
     build:
@@ -119,5 +150,11 @@ schemes:
         HabitsWidget: all
     run:
       config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: false
+      targets:
+        - HabitsTests
+        - HabitsUITests
     archive:
       config: Release

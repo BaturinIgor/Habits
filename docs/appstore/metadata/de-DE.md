@@ -51,3 +51,6 @@ Datenschutz: https://baturinigor.github.io/Habits/privacy.html
 • Einen Tag verpasst? Hol dir die Serie am nächsten Tag für Funken zurück.
 • Familiengruppen aktualisieren sich jetzt in Sekunden, solange die App offen ist.
 • Gewohnheit im Kontrollzentrum, auf dem Sperrbildschirm oder mit der Aktionstaste abhaken (iOS 18).
+• Apple Health (Pro): Verknüpfe eine Gewohnheit mit Schritten, Schlaf, Wasser, Workouts oder Achtsamkeit, und sie wird beim Erreichen des Ziels von selbst abgehakt.
+• Gewohnheits-Timer (Pro): Countdown auf dem Sperrbildschirm und in der Dynamic Island, der die Gewohnheit am Ende abhakt.
+• Wochenrückblick: die Ergebnisse der letzten Woche auf einen Blick, zum Teilen als Bild.

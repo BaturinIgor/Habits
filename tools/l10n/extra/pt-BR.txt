@@ -690,3 +690,23 @@ The habit is checked off by itself when the goal is reached in the Health app: s
 Timer||Timer
 Duration||Duração
 Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up.||Toque no círculo para iniciar o timer. Ele corre na Tela Bloqueada e marca o hábito quando o tempo acaba.
+Time's up. Well done!||Tempo esgotado. Mandou bem!
+Finish and check off||Encerrar e marcar
+Stop timer||Parar timer
+Check off without the timer||Marcar sem timer
+My week||Minha semana
+of habits done||dos hábitos feitos
+Checked off||Marcados
+Most steady: %@, %lld of %lld||A mais constante: %@, %lld de %lld
+Share||Compartilhar
+Week in review||Resumo da semana
+An amazing week. Keep it going!||Uma semana incrível. Continue assim!
+A solid week. A little more and it'll be perfect.||Uma boa semana. Mais um pouco e fica perfeita.
+Every check-in counts. The new week is a fresh start.||Cada marcação conta. A nova semana é um novo começo.
+Your week in review||Seu resumo da semana
+Perfect days: %lld||Dias perfeitos: %lld
+Last week's results as a card you can share||Os resultados da semana passada em um cartão para compartilhar
+With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal.||Com o Pro, vincule um hábito a passos, sono, água, treinos ou atenção plena, e ele é marcado sozinho quando você atinge a meta.
+Habit timer||Timer de hábito
+With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up.||Com o Pro, dê uma duração a um hábito. A contagem regressiva aparece na Tela Bloqueada e na Dynamic Island e marca o hábito no final.
+At the start of each week, see how the last one went and share it as a picture.||No começo de cada semana, veja como foi a anterior e compartilhe como imagem.
