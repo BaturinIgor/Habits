@@ -53,3 +53,6 @@ Privacidad: https://baturinigor.github.io/Habits/privacy.html
 • ¿Fallaste un día? Recupera la racha al día siguiente con chispas.
 • Los grupos familiares se actualizan en segundos mientras la app está abierta.
 • Marca un hábito desde el Centro de control, la pantalla bloqueada o el botón de acción (iOS 18).
+• Apple Health (Pro): vincula un hábito a pasos, sueño, agua, entrenamientos o atención plena, y se marca solo al alcanzar la meta.
+• Temporizador de hábito (Pro): cuenta atrás en la pantalla bloqueada y en la Dynamic Island que marca el hábito al terminar.
+• Resumen semanal: los resultados de la semana pasada de un vistazo, listos para compartir como imagen.

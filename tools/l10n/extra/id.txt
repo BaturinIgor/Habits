@@ -690,3 +690,23 @@ The habit is checked off by itself when the goal is reached in the Health app: s
 Timer||Pengatur waktu
 Duration||Durasi
 Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up.||Ketuk lingkaran untuk memulai pengatur waktu. Hitung mundur tampil di Layar Terkunci dan kebiasaan tercentang saat waktu habis.
+Time's up. Well done!||Waktu habis. Kerja bagus!
+Finish and check off||Selesai dan centang
+Stop timer||Hentikan pengatur waktu
+Check off without the timer||Centang tanpa pengatur waktu
+My week||Mingguku
+of habits done||kebiasaan selesai
+Checked off||Dicentang
+Most steady: %@, %lld of %lld||Paling konsisten: %@, %lld dari %lld
+Share||Bagikan
+Week in review||Ringkasan minggu
+An amazing week. Keep it going!||Minggu yang luar biasa. Pertahankan!
+A solid week. A little more and it'll be perfect.||Minggu yang bagus. Sedikit lagi dan akan sempurna.
+Every check-in counts. The new week is a fresh start.||Setiap centang berarti. Minggu baru adalah awal yang baru.
+Your week in review||Ringkasan minggumu
+Perfect days: %lld||Hari sempurna: %lld
+Last week's results as a card you can share||Hasil minggu lalu dalam kartu yang bisa dibagikan
+With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal.||Dengan Pro, hubungkan kebiasaan ke langkah, tidur, air, latihan, atau menit kesadaran, dan kebiasaan tercentang otomatis saat target tercapai.
+Habit timer||Pengatur waktu kebiasaan
+With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up.||Dengan Pro, beri durasi pada kebiasaan. Hitung mundur tampil di Layar Terkunci dan Dynamic Island, lalu kebiasaan tercentang saat waktu habis.
+At the start of each week, see how the last one went and share it as a picture.||Di awal setiap minggu, lihat bagaimana minggu lalu dan bagikan sebagai gambar.

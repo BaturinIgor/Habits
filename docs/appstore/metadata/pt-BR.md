@@ -51,3 +51,6 @@ Privacidade: https://baturinigor.github.io/Habits/privacy.html
 • Perdeu um dia? Recupere a sequência no dia seguinte com faíscas.
 • Os grupos de família agora atualizam em segundos com o app aberto.
 • Marque um hábito pela Central de Controle, Tela Bloqueada ou botão de Ação (iOS 18).
+• Apple Health (Pro): vincule um hábito a passos, sono, água, treinos ou atenção plena, e ele é marcado sozinho ao atingir a meta.
+• Timer de hábito (Pro): contagem regressiva na Tela Bloqueada e na Dynamic Island que marca o hábito no final.
+• Resumo da semana: os resultados da semana passada num relance, prontos para compartilhar como imagem.

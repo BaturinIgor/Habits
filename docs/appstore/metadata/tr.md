@@ -51,3 +51,6 @@ Gizlilik: https://baturinigor.github.io/Habits/privacy.html
 • Bir gün mü kaçırdın? Ertesi gün seriyi kıvılcımlarla geri al.
 • Aile grupları uygulama açıkken artık saniyeler içinde güncellenir.
 • Alışkanlığı Denetim Merkezi'nden, Kilit Ekranı'ndan veya Eylem düğmesinden işaretle (iOS 18).
+• Apple Health (Pro): bir alışkanlığı adım, uyku, su, antrenman veya farkındalık dakikalarına bağla; hedefe ulaşınca kendiliğinden işaretlenir.
+• Alışkanlık zamanlayıcısı (Pro): Kilit Ekranı'nda ve Dynamic Island'da geri sayım, süre bitince alışkanlık işaretlenir.
+• Hafta özeti: geçen haftanın sonuçları tek bakışta, resim olarak paylaşmaya hazır.

@@ -690,3 +690,23 @@ The habit is checked off by itself when the goal is reached in the Health app: s
 Timer||Zamanlayıcı
 Duration||Süre
 Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up.||Zamanlayıcıyı başlatmak için daireye dokun. Kilit ekranında geri sayar ve süre bitince alışkanlığı işaretler.
+Time's up. Well done!||Süre doldu. Aferin!
+Finish and check off||Bitir ve işaretle
+Stop timer||Zamanlayıcıyı durdur
+Check off without the timer||Zamanlayıcı olmadan işaretle
+My week||Haftam
+of habits done||alışkanlık tamamlandı
+Checked off||İşaretlendi
+Most steady: %@, %lld of %lld||En istikrarlı: %@, %lld/%lld
+Share||Paylaş
+Week in review||Hafta özeti
+An amazing week. Keep it going!||Harika bir hafta. Böyle devam!
+A solid week. A little more and it'll be perfect.||İyi bir hafta. Biraz daha ve mükemmel olacak.
+Every check-in counts. The new week is a fresh start.||Her işaret önemli. Yeni hafta yeni bir başlangıç.
+Your week in review||Haftanın özeti
+Perfect days: %lld||Mükemmel gün: %lld
+Last week's results as a card you can share||Geçen haftanın sonuçları, paylaşılabilir bir kartta
+With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal.||Pro ile bir alışkanlığı adım, uyku, su, antrenman veya farkındalık dakikalarına bağla; hedefe ulaştığında kendiliğinden işaretlenir.
+Habit timer||Alışkanlık zamanlayıcısı
+With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up.||Pro ile bir alışkanlığa süre ver. Geri sayım Kilit Ekranı'nda ve Dynamic Island'da görünür, süre bitince alışkanlık işaretlenir.
+At the start of each week, see how the last one went and share it as a picture.||Her haftanın başında geçen haftanın nasıl geçtiğini gör ve resim olarak paylaş.

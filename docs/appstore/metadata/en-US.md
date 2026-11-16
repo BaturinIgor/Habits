@@ -77,3 +77,6 @@ The app is available in 14 languages: English, Russian, German, French, Spanish,
 • Missed a day? Bring back a broken streak for sparks the next day.
 • Family groups now update within seconds while the app is open.
 • Check off a habit from Control Center, the Lock Screen or the Action button (iOS 18).
+• Apple Health (Pro): link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal.
+• Habit timer (Pro): a countdown on the Lock Screen and in the Dynamic Island that checks the habit off when time is up.
+• Week in review: last week's results at a glance, ready to share as a picture.

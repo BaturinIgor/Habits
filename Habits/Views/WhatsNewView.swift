@@ -42,6 +42,35 @@ struct WhatsNewView: View {
                         Button("Try it", action: onTryVoice)
                     }
 
+                    if HealthSync.isAvailable {
+                        card(
+                            icon: "heart.fill",
+                            color: .red,
+                            title: "Apple Health",
+                            text: "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal."
+                        ) {
+                            EmptyView()
+                        }
+                    }
+
+                    card(
+                        icon: "timer",
+                        color: .purple,
+                        title: "Habit timer",
+                        text: "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up."
+                    ) {
+                        EmptyView()
+                    }
+
+                    card(
+                        icon: "calendar.badge.checkmark",
+                        color: .indigo,
+                        title: "Week in review",
+                        text: "At the start of each week, see how the last one went and share it as a picture."
+                    ) {
+                        EmptyView()
+                    }
+
                     card(
                         icon: "flame.fill",
                         color: .orange,

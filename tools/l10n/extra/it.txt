@@ -690,3 +690,23 @@ The habit is checked off by itself when the goal is reached in the Health app: s
 Timer||Timer
 Duration||Durata
 Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up.||Tocca il cerchio per avviare il timer. Scorre sulla schermata di blocco e spunta l'abitudine allo scadere.
+Time's up. Well done!||Tempo scaduto. Ben fatto!
+Finish and check off||Termina e spunta
+Stop timer||Ferma il timer
+Check off without the timer||Spunta senza timer
+My week||La mia settimana
+of habits done||delle abitudini fatte
+Checked off||Spuntate
+Most steady: %@, %lld of %lld||La più costante: %@, %lld su %lld
+Share||Condividi
+Week in review||Riepilogo della settimana
+An amazing week. Keep it going!||Una settimana fantastica. Continua così!
+A solid week. A little more and it'll be perfect.||Una buona settimana. Ancora un po' e sarà perfetta.
+Every check-in counts. The new week is a fresh start.||Ogni spunta conta. La nuova settimana è un nuovo inizio.
+Your week in review||Il riepilogo della tua settimana
+Perfect days: %lld||Giorni perfetti: %lld
+Last week's results as a card you can share||I risultati della settimana scorsa in una scheda da condividere
+With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal.||Con Pro, collega un'abitudine a passi, sonno, acqua, allenamenti o consapevolezza: si spunta da sola quando raggiungi l'obiettivo.
+Habit timer||Timer delle abitudini
+With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up.||Con Pro, dai una durata a un'abitudine. Il conto alla rovescia scorre sulla schermata di blocco e nella Dynamic Island e spunta l'abitudine alla fine.
+At the start of each week, see how the last one went and share it as a picture.||All'inizio di ogni settimana, guarda com'è andata la precedente e condividila come immagine.
