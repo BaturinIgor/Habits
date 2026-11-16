@@ -11,6 +11,20 @@ extension View {
     }
 }
 
+/// Потянуть список вниз: сразу забрать изменения родных из iCloud.
+/// Только если есть семейные группы, иначе тянуть нечего.
+private struct FamilyRefresh: ViewModifier {
+    let enabled: Bool
+
+    func body(content: Content) -> some View {
+        if enabled {
+            content.refreshable { await FamilySync.shared.syncAll() }
+        } else {
+            content
+        }
+    }
+}
+
 struct TodayView: View {
     @Environment(HabitStore.self) private var store
     @Environment(\.scenePhase) private var scenePhase
@@ -73,6 +87,7 @@ struct TodayView: View {
             .scrollContentBackground(.hidden)
             .scrollIndicators(.hidden)
             .background(AppBackground())
+            .modifier(FamilyRefresh(enabled: FamilySync.isAvailable && store.data.groups.contains { $0.family != nil }))
             .onChange(of: scenePhase) { _, phase in
                 if phase == .active { rollOverDay() }
             }

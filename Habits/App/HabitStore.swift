@@ -460,5 +460,8 @@ final class HabitStore {
         if action == NotificationPlanner.doneAction, let date = DayKey.date(day) {
             notifyChain(after: habitID, day: date)
         }
+        // Отметка из уведомления сразу уходит родным: приложение в фоне, и само
+        // оно синхронизировалось бы только при следующем открытии.
+        await FamilySync.shared.syncAll(reload: false)
     }
 }

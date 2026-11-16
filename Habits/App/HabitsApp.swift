@@ -30,7 +30,10 @@ struct HabitsApp: App {
                     await ProStore.shared.refreshEntitlements()
                     await FamilySync.shared.syncAll()
                 }
+                // Пока приложение открыто, изменения родных подтягиваем сами, не дожидаясь push.
+                FamilySync.shared.startLiveUpdates()
             case .background:
+                FamilySync.shared.flushBeforeBackground()
                 BackgroundRefresh.schedule()
             default:
                 break
