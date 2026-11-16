@@ -97,8 +97,8 @@ struct TodayView: View {
                     .plainRow(top: 2, bottom: 2)
                 }
 
-                if isToday, let (habit, repair) = streakRepair {
-                    StreakRepairCard(habit: habit, repair: repair, showName: true)
+                if isToday, let item = streakRepair {
+                    StreakRepairCard(habit: item.0, repair: item.1, showName: true)
                         .plainRow(top: 4, bottom: 6)
                 }
 
