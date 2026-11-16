@@ -678,3 +678,15 @@ Faster family groups||Gruppi di famiglia più veloci
 Changes from your family now show up within seconds while the app is open. Pull down on Today to update right away.||Con l'app aperta, le modifiche della famiglia arrivano in pochi secondi. Trascina in basso Oggi per aggiornare subito.
 Control Center||Centro di Controllo
 Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap.||Aggiungi un pulsante abitudine al Centro di Controllo, alla schermata di blocco o al tasto Azione e spuntala con un tocco.
+Apple Health||Apple Health
+Check off by||Spunta in base a
+Steps||Passi
+Exercise minutes||Minuti di esercizio
+Mindful minutes||Minuti di consapevolezza
+Hours of sleep||Ore di sonno
+Water, liters||Acqua, litri
+Workouts||Allenamenti
+The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes.||L'abitudine si spunta da sola quando raggiungi l'obiettivo in Salute: passi, sonno, acqua, esercizio o consapevolezza.
+Timer||Timer
+Duration||Durata
+Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up.||Tocca il cerchio per avviare il timer. Scorre sulla schermata di blocco e spunta l'abitudine allo scadere.

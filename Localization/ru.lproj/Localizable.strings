@@ -59,6 +59,7 @@
 "Anytime" = "В любое время";
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "Версия приложения и iOS, модель устройства и язык. Привычки и заметки не отправляются.";
 "Appearance" = "Оформление";
+"Apple Health" = "Apple Health";
 "Architect" = "Архитектор";
 "Archive" = "В архив";
 "Archive (%lld)" = "Архив (%lld)";
@@ -106,6 +107,7 @@
 "Check off a habit" = "Отметить привычку";
 "Check off a habit for the first time" = "Впервые отметь привычку";
 "Check off a habit right from Control Center or the Action button." = "Отмечай привычку прямо из Пункта управления или кнопкой действия.";
+"Check off by" = "Отмечать по";
 "Check off habits 100 times" = "Отметь привычки 100 раз";
 "Check off habits 1000 times" = "Отметь привычки 1000 раз";
 "Check off habits 50 times" = "Отметь привычки 50 раз";
@@ -178,6 +180,7 @@
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "Дракон, единорог и феникс, подарок 100 искр каждый месяц и выше дневной лимит.";
 "Draw" = "Рисовать";
 "Drink water" = "Выпить воду";
+"Duration" = "Длительность";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "Во время паузы привычка скрыта и не напоминает о себе, а серия сохраняется.";
 "Early bird" = "Ранняя пташка";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "Получай ачивки, открывай аватарки и фоны, а с каждой отметкой расти в уровне.";
@@ -207,6 +210,7 @@
 "Everything is done for today." = "На сегодня всё выполнено.";
 "Exclusive avatars and backgrounds" = "Эксклюзивные аватарки и фоны";
 "Exclusive pets and more sparks" = "Особые питомцы и больше искр";
+"Exercise minutes" = "Минуты упражнений";
 "Export data" = "Экспорт данных";
 "Extra freeze" = "Дополнительная заморозка";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Дополнительных заморозок в этом месяце: %lld/%lld. Аватарки и фоны за искры есть в профиле.";
@@ -266,6 +270,7 @@
 "Have 30 perfect days" = "Набери 30 идеальных дней";
 "Health" = "Здоровье";
 "Hide keyboard" = "Скрыть клавиатуру";
+"Hours of sleep" = "Часы сна";
 "How many habits are done today." = "Сколько привычек выполнено сегодня.";
 "How often" = "Как часто";
 "How to earn" = "Как заработать";
@@ -340,6 +345,7 @@
 "Marks a habit as done for today." = "Отмечает привычку выполненной за сегодня.";
 "Meditate" = "Медитация";
 "Message a friend" = "Написать другу";
+"Mindful minutes" = "Минуты осознанности";
 "Mindfulness" = "Осознанность";
 "Minimum" = "Минимум";
 "Minimum version, for example 5 squats" = "Минимальная версия, например 5 приседаний";
@@ -543,6 +549,7 @@
 "Statistics" = "Статистика";
 "Statistics will appear once you start checking off habits." = "Статистика появится, когда ты начнёшь отмечать привычки.";
 "Status" = "Статус";
+"Steps" = "Шаги";
 "Steps to reproduce help a lot." = "Шаги, как повторить ошибку, очень помогают.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Шаги, как повторить ошибку, очень помогают. Скриншот можно приложить в письме.";
 "Still learning" = "Ещё учу";
@@ -565,6 +572,7 @@
 "Take vitamins" = "Принять витамины";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Нажми на день, чтобы отметить. Удерживай, чтобы пропустить или добавить заметку.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Нажми на кружок или смахни вправо, чтобы отметить. Смахни влево, чтобы пропустить, добавить заметку или изменить. Удерживай, чтобы поменять порядок.";
+"Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Нажми на кружок, чтобы запустить таймер. Он идёт на экране блокировки и отметит привычку, когда время выйдет.";
 "Tap the days when the habit should be done" = "Нажми на дни, в которые нужно выполнять привычку";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "Нажми на кружок привычки, чтобы открыть карточки на сегодня. Новые слова идут вразброс из выбранного уровня. Незнакомые слова вернутся на повторение, а привычка отметится сама, когда пройдёшь все карточки дня. Уровень можно поменять в любой момент, выученные слова сохранятся.";
 "Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "Нажми на микрофон в новой привычке и скажи, например: «Таблетки собаке раз в месяц 15 числа в 9 утра».";
@@ -577,6 +585,7 @@
 "The free version has up to 5 active habits." = "В бесплатной версии до 5 активных привычек.";
 "The group wasn't found." = "Группа не найдена.";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "Привычки группы и отметки общие через iCloud. Вступить может любой, у кого есть ссылка-приглашение, и отмечать привычки. Напоминания приходят каждому.";
+"The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "Привычка отметится сама, когда в «Здоровье» наберётся цель: шаги, сон, вода, упражнения или минуты осознанности.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Минимальная версия засчитывается как выполнение и сохраняет серию. Привычка в связке напомнит о себе сразу после отметки предыдущей.";
 "The new language will apply after you close the app and open it again." = "Новый язык включится, когда ты закроешь приложение и откроешь его снова.";
 "The purchase could not be verified." = "Не удалось проверить покупку.";
@@ -589,6 +598,7 @@
 "Time" = "Время";
 "Time for your habit" = "Пора выполнить привычку";
 "Time to rest" = "Можно отдохнуть";
+"Timer" = "Таймер";
 "Today" = "Сегодня";
 "Today is a good day." = "Сегодня хороший день.";
 "Today screen" = "Главный экран";
@@ -627,6 +637,7 @@
 "Walk" = "Прогулка";
 "Walk 10,000 steps" = "Пройти 10 000 шагов";
 "Warming up" = "Разминка";
+"Water, liters" = "Вода, литры";
 "Week" = "Неделя";
 "Weekdays" = "Будни";
 "Weekend warrior" = "Герой выходных";
@@ -647,6 +658,7 @@
 "Words for today are done" = "Слова на сегодня пройдены";
 "Work, travel and conversation" = "Работа, путешествия и разговоры";
 "Workout" = "Тренировка";
+"Workouts" = "Тренировки";
 "Write 10 notes" = "Напиши 10 заметок";
 "Write 50 notes" = "Напиши 50 заметок";
 "Write down 3 good things" = "Записать 3 хороших события";

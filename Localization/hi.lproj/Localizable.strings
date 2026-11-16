@@ -59,6 +59,7 @@
 "Anytime" = "कभी भी";
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "ऐप और iOS संस्करण, डिवाइस मॉडल और भाषा। आपकी आदतें और नोट्स कभी नहीं भेजे जाते।";
 "Appearance" = "रूप";
+"Apple Health" = "Apple Health";
 "Architect" = "वास्तुकार";
 "Archive" = "संग्रहित करें";
 "Archive (%lld)" = "संग्रह (%lld)";
@@ -106,6 +107,7 @@
 "Check off a habit" = "आदत पूरी करें";
 "Check off a habit for the first time" = "पहली बार कोई आदत पूरी करें";
 "Check off a habit right from Control Center or the Action button." = "कंट्रोल सेंटर या ऐक्शन बटन से सीधे आदत पूरी करें।";
+"Check off by" = "इसके आधार पर पूरा करें";
 "Check off habits 100 times" = "100 बार आदतें पूरी करें";
 "Check off habits 1000 times" = "1000 बार आदतें पूरी करें";
 "Check off habits 50 times" = "आदतें 50 बार पूरी करें";
@@ -178,6 +180,7 @@
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "ड्रैगन, यूनिकॉर्न और फ़ीनिक्स, हर महीने 100 चिंगारियाँ उपहार और ज़्यादा दैनिक सीमा।";
 "Draw" = "चित्र बनाएँ";
 "Drink water" = "पानी पिएँ";
+"Duration" = "अवधि";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "विराम के दौरान आदत छिपी रहती है, रिमाइंडर नहीं आते और आपकी लगातार गिनती बनी रहती है।";
 "Early bird" = "जल्दी उठने वाला";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "उपलब्धियाँ पाएँ, अवतार और पृष्ठभूमि खोलें, और हर बार पूरा करने पर लेवल बढ़ाएँ।";
@@ -207,6 +210,7 @@
 "Everything is done for today." = "आज के लिए सब पूरा हो गया।";
 "Exclusive avatars and backgrounds" = "ख़ास अवतार और पृष्ठभूमि";
 "Exclusive pets and more sparks" = "ख़ास पालतू और ज़्यादा चिंगारियाँ";
+"Exercise minutes" = "व्यायाम के मिनट";
 "Export data" = "डेटा निर्यात करें";
 "Extra freeze" = "अतिरिक्त फ़्रीज़";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "इस महीने अतिरिक्त फ़्रीज़: %lld/%lld। चिंगारियों वाले अवतार और बैकग्राउंड प्रोफ़ाइल में हैं।";
@@ -266,6 +270,7 @@
 "Have 30 perfect days" = "30 परफ़ेक्ट दिन पूरे करें";
 "Health" = "सेहत";
 "Hide keyboard" = "कीबोर्ड छिपाएँ";
+"Hours of sleep" = "नींद के घंटे";
 "How many habits are done today." = "आज कितनी आदतें पूरी हुईं।";
 "How often" = "कितनी बार";
 "How to earn" = "कैसे कमाएँ";
@@ -340,6 +345,7 @@
 "Marks a habit as done for today." = "आदत को आज के लिए पूरा मार्क करता है।";
 "Meditate" = "ध्यान";
 "Message a friend" = "दोस्त को संदेश भेजें";
+"Mindful minutes" = "माइंडफ़ुल मिनट";
 "Mindfulness" = "सजगता";
 "Minimum" = "न्यूनतम";
 "Minimum version, for example 5 squats" = "न्यूनतम रूप, जैसे 5 स्क्वॉट";
@@ -543,6 +549,7 @@
 "Statistics" = "आँकड़े";
 "Statistics will appear once you start checking off habits." = "आदतें पूरी करना शुरू करते ही आँकड़े दिखेंगे।";
 "Status" = "स्थिति";
+"Steps" = "कदम";
 "Steps to reproduce help a lot." = "दोहराने के चरण बहुत मदद करते हैं।";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "दोहराने के चरण बहुत मदद करते हैं। ईमेल में स्क्रीनशॉट जोड़ सकते हैं।";
 "Still learning" = "अभी सीख रहा हूँ";
@@ -565,6 +572,7 @@
 "Take vitamins" = "विटामिन लें";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "दिन पर टैप करके पूरा करें। छोड़ने या नोट जोड़ने के लिए दबाकर रखें।";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "पूरा करने के लिए गोले पर टैप करें या दाएँ स्वाइप करें। छोड़ने, नोट या बदलाव के लिए बाएँ स्वाइप करें। क्रम बदलने के लिए दबाकर रखें।";
+"Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "टाइमर शुरू करने के लिए गोले पर टैप करें। यह लॉक स्क्रीन पर चलता है और समय पूरा होने पर आदत पूरी कर देता है।";
 "Tap the days when the habit should be done" = "जिन दिनों आदत करनी है, उन पर टैप करें";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "आज के कार्ड खोलने के लिए आदत के गोले पर टैप करें। नए शब्द चुने गए स्तर से किसी भी क्रम में आते हैं। जो शब्द अभी याद नहीं हैं वे दोहराने के लिए लौटेंगे, और दिन के सारे कार्ड पूरे होने पर आदत अपने आप पूरी हो जाएगी। स्तर कभी भी बदला जा सकता है, सीखे हुए शब्द बने रहेंगे।";
 "Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "नई आदत में माइक्रोफ़ोन पर टैप करें और उसका नाम बोलें।";
@@ -577,6 +585,7 @@
 "The free version has up to 5 active habits." = "मुफ़्त संस्करण में 5 सक्रिय आदतें तक।";
 "The group wasn't found." = "समूह नहीं मिला।";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "समूह की आदतें और चेक-इन iCloud से साझा होते हैं। आमंत्रण लिंक वाला कोई भी जुड़कर आदतें मार्क कर सकता है। सबको अपने रिमाइंडर मिलते हैं।";
+"The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "Health ऐप में लक्ष्य पूरा होते ही आदत अपने आप पूरी हो जाती है: कदम, नींद, पानी, व्यायाम या माइंडफ़ुल मिनट।";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "न्यूनतम रूप भी पूरा माना जाता है और लगातार गिनती बचाता है। जुड़ी आदत पिछली पूरी होते ही याद दिलाती है।";
 "The new language will apply after you close the app and open it again." = "ऐप बंद करके फिर खोलने पर नई भाषा लागू होगी।";
 "The purchase could not be verified." = "खरीद की पुष्टि नहीं हो सकी।";
@@ -589,6 +598,7 @@
 "Time" = "समय";
 "Time for your habit" = "आपकी आदत का समय";
 "Time to rest" = "आराम का समय";
+"Timer" = "टाइमर";
 "Today" = "आज";
 "Today is a good day." = "आज अच्छा दिन है।";
 "Today screen" = "'आज' स्क्रीन";
@@ -627,6 +637,7 @@
 "Walk" = "टहलना";
 "Walk 10,000 steps" = "10,000 कदम चलें";
 "Warming up" = "वार्म-अप";
+"Water, liters" = "पानी, लीटर";
 "Week" = "हफ़्ता";
 "Weekdays" = "कार्यदिवस";
 "Weekend warrior" = "वीकेंड योद्धा";
@@ -647,6 +658,7 @@
 "Words for today are done" = "आज के शब्द पूरे हो गए";
 "Work, travel and conversation" = "काम, यात्रा और बातचीत";
 "Workout" = "कसरत";
+"Workouts" = "वर्कआउट";
 "Write 10 notes" = "10 नोट लिखें";
 "Write 50 notes" = "50 नोट लिखें";
 "Write down 3 good things" = "3 अच्छी बातें लिखें";

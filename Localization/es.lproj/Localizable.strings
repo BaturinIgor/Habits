@@ -59,6 +59,7 @@
 "Anytime" = "En cualquier momento";
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "Versión de la app y de iOS, modelo y idioma. Tus hábitos y notas nunca se envían.";
 "Appearance" = "Apariencia";
+"Apple Health" = "Apple Health";
 "Architect" = "Arquitecto";
 "Archive" = "Archivar";
 "Archive (%lld)" = "Archivo (%lld)";
@@ -106,6 +107,7 @@
 "Check off a habit" = "Marcar un hábito";
 "Check off a habit for the first time" = "Marca un hábito por primera vez";
 "Check off a habit right from Control Center or the Action button." = "Marca un hábito desde el Centro de control o el botón de acción.";
+"Check off by" = "Marcar según";
 "Check off habits 100 times" = "Marca hábitos 100 veces";
 "Check off habits 1000 times" = "Marca hábitos 1000 veces";
 "Check off habits 50 times" = "Marca hábitos 50 veces";
@@ -178,6 +180,7 @@
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "Dragón, unicornio y fénix, 100 chispas de regalo cada mes y un límite diario mayor.";
 "Draw" = "Dibujar";
 "Drink water" = "Beber agua";
+"Duration" = "Duración";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "Durante una pausa, el hábito se oculta y no envía recordatorios, y tu racha se mantiene.";
 "Early bird" = "Madrugador";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "Consigue logros para desbloquear avatares y fondos, y sube de nivel con cada marca.";
@@ -207,6 +210,7 @@
 "Everything is done for today." = "Hoy ya está todo hecho.";
 "Exclusive avatars and backgrounds" = "Avatares y fondos exclusivos";
 "Exclusive pets and more sparks" = "Mascotas exclusivas y más chispas";
+"Exercise minutes" = "Minutos de ejercicio";
 "Export data" = "Exportar datos";
 "Extra freeze" = "Congelación extra";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Congelaciones extra este mes: %lld/%lld. Avatares y fondos por chispas en tu perfil.";
@@ -266,6 +270,7 @@
 "Have 30 perfect days" = "Consigue 30 días perfectos";
 "Health" = "Salud";
 "Hide keyboard" = "Ocultar teclado";
+"Hours of sleep" = "Horas de sueño";
 "How many habits are done today." = "Cuántos hábitos has hecho hoy.";
 "How often" = "Frecuencia";
 "How to earn" = "Cómo ganar";
@@ -340,6 +345,7 @@
 "Marks a habit as done for today." = "Marca un hábito como hecho hoy.";
 "Meditate" = "Meditar";
 "Message a friend" = "Escribir a un amigo";
+"Mindful minutes" = "Minutos de atención plena";
 "Mindfulness" = "Atención plena";
 "Minimum" = "Mínimo";
 "Minimum version, for example 5 squats" = "Versión mínima, por ejemplo 5 sentadillas";
@@ -543,6 +549,7 @@
 "Statistics" = "Estadísticas";
 "Statistics will appear once you start checking off habits." = "Las estadísticas aparecerán cuando empieces a marcar hábitos.";
 "Status" = "Estado";
+"Steps" = "Pasos";
 "Steps to reproduce help a lot." = "Los pasos para reproducirlo ayudan mucho.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Los pasos para reproducirlo ayudan mucho. Puedes adjuntar una captura en el correo.";
 "Still learning" = "Aún aprendiendo";
@@ -565,6 +572,7 @@
 "Take vitamins" = "Tomar vitaminas";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Toca un día para marcarlo. Mantén pulsado para omitirlo o añadir una nota.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Toca el círculo o desliza a la derecha para marcar. Desliza a la izquierda para omitir, anotar o editar. Mantén pulsado para reordenar.";
+"Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Toca el círculo para iniciar el temporizador. Corre en la pantalla bloqueada y marca el hábito al terminar.";
 "Tap the days when the habit should be done" = "Toca los días en que quieres hacer el hábito";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "Toca el círculo del hábito para abrir las tarjetas de hoy. Las palabras nuevas salen en orden aleatorio del nivel elegido. Las que aún no sabes vuelven para repasar, y el hábito se marca al terminar las tarjetas del día. Puedes cambiar de nivel cuando quieras, las palabras aprendidas se conservan.";
 "Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "Toca el micrófono en un hábito nuevo y di su nombre.";
@@ -577,6 +585,7 @@
 "The free version has up to 5 active habits." = "La versión gratuita permite hasta 5 hábitos activos.";
 "The group wasn't found." = "No se encontró el grupo.";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "Los hábitos del grupo y sus marcas se comparten por iCloud. Cualquiera con el enlace de invitación puede unirse y marcar hábitos. Cada uno recibe sus recordatorios.";
+"The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "El hábito se marca solo cuando alcanzas la meta en Salud: pasos, sueño, agua, ejercicio o atención plena.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "La versión mínima cuenta como hecha y mantiene tu racha. Un hábito encadenado te avisa justo después de marcar el anterior.";
 "The new language will apply after you close the app and open it again." = "El nuevo idioma se aplicará cuando cierres la app y la vuelvas a abrir.";
 "The purchase could not be verified." = "No se pudo verificar la compra.";
@@ -589,6 +598,7 @@
 "Time" = "Hora";
 "Time for your habit" = "Es hora de tu hábito";
 "Time to rest" = "Hora de descansar";
+"Timer" = "Temporizador";
 "Today" = "Hoy";
 "Today is a good day." = "Hoy es un buen día.";
 "Today screen" = "Pantalla Hoy";
@@ -627,6 +637,7 @@
 "Walk" = "Paseo";
 "Walk 10,000 steps" = "Caminar 10 000 pasos";
 "Warming up" = "Calentando";
+"Water, liters" = "Agua, litros";
 "Week" = "Semana";
 "Weekdays" = "Entre semana";
 "Weekend warrior" = "Guerrero de fin de semana";
@@ -647,6 +658,7 @@
 "Words for today are done" = "Las palabras de hoy están listas";
 "Work, travel and conversation" = "Trabajo, viajes y conversación";
 "Workout" = "Entrenamiento";
+"Workouts" = "Entrenamientos";
 "Write 10 notes" = "Escribe 10 notas";
 "Write 50 notes" = "Escribe 50 notas";
 "Write down 3 good things" = "Anotar 3 cosas buenas";

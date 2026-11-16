@@ -53,6 +53,9 @@ targets:
         CKSharingSupported: true
         CloudKitContainer: iCloud.com.personal.habits
         FamilySharingEnabled: false
+        # Apple Health (чтение). Права HealthKit добавляет tools/appstore/enable_family.sh в сборке для App Store.
+        HealthEnabled: false
+        NSHealthShareUsageDescription: ZenHab reads steps, sleep, water, exercise and mindful minutes to check off linked habits for you.
         BGTaskSchedulerPermittedIdentifiers: [com.personal.habits.refresh]
         ITSAppUsesNonExemptEncryption: false
         # Голосовой ввод привычки. Переводы в Localization/*.lproj/InfoPlist.strings.

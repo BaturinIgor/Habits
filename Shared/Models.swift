@@ -201,6 +201,10 @@ struct Habit: Identifiable, Hashable, Codable {
     var wordsLevel: Int?
     /// Вредная привычка, которую человек бросает: вместо отметок счётчик дней без неё.
     var quit: QuitInfo?
+    /// Автоотметка по данным Apple Health (Pro): например, 10 000 шагов.
+    var health: HealthLink?
+    /// Таймер (Pro): привычка на время, например «Медитация 10 мин».
+    var timerMinutes: Int?
 
     init(id: UUID = UUID(),
          name: String = "",
@@ -241,7 +245,7 @@ struct Habit: Identifiable, Hashable, Codable {
     enum CodingKeys: String, CodingKey {
         case id, name, details, icon, colorIndex, groupID, schedule, reminder, createdAt, isArchived, sortOrder
         case repeatCount, repeatInterval, partOfDay, pausedFrom, pausedUntil, target, unit, minimumVersion, chainAfter
-        case wordsLanguage, wordsPerDay, wordsLevel, quit
+        case wordsLanguage, wordsPerDay, wordsLevel, quit, health, timerMinutes
     }
 
     init(from decoder: Decoder) throws {
@@ -270,6 +274,8 @@ struct Habit: Identifiable, Hashable, Codable {
         wordsPerDay = try c.decodeIfPresent(Int.self, forKey: .wordsPerDay)
         wordsLevel = try c.decodeIfPresent(Int.self, forKey: .wordsLevel)
         quit = try? c.decodeIfPresent(QuitInfo.self, forKey: .quit)
+        health = try? c.decodeIfPresent(HealthLink.self, forKey: .health)
+        timerMinutes = try c.decodeIfPresent(Int.self, forKey: .timerMinutes)
     }
 
     /// Бросаю: счётчик дней без привычки вместо ежедневных отметок.
@@ -304,6 +310,89 @@ struct Habit: Identifiable, Hashable, Codable {
         if let reminder { return PartOfDay(time: reminder) }
         return partOfDay ?? .anytime
     }
+}
+
+// MARK: - Apple Health
+
+/// Связь привычки с показателем Apple Health: когда показатель за день дошёл до цели,
+/// привычка отмечается сама.
+struct HealthLink: Codable, Hashable {
+    enum Metric: String, Codable, CaseIterable, Identifiable {
+        case steps
+        case exerciseMinutes
+        case mindfulMinutes
+        case sleepHours
+        case water
+        case workouts
+
+        var id: String { rawValue }
+
+        var title: String {
+            switch self {
+            case .steps: String(localized: "Steps")
+            case .exerciseMinutes: String(localized: "Exercise minutes")
+            case .mindfulMinutes: String(localized: "Mindful minutes")
+            case .sleepHours: String(localized: "Hours of sleep")
+            case .water: String(localized: "Water, liters")
+            case .workouts: String(localized: "Workouts")
+            }
+        }
+
+        var symbol: String {
+            switch self {
+            case .steps: "figure.walk"
+            case .exerciseMinutes: "flame.fill"
+            case .mindfulMinutes: "brain.head.profile"
+            case .sleepHours: "bed.double.fill"
+            case .water: "drop.fill"
+            case .workouts: "dumbbell.fill"
+            }
+        }
+
+        var defaultGoal: Double {
+            switch self {
+            case .steps: 10_000
+            case .exerciseMinutes: 30
+            case .mindfulMinutes: 10
+            case .sleepHours: 7
+            case .water: 2
+            case .workouts: 1
+            }
+        }
+
+        /// Шаг изменения цели в редакторе.
+        var step: Double {
+            switch self {
+            case .steps: 500
+            case .exerciseMinutes, .mindfulMinutes: 5
+            case .sleepHours, .water: 0.5
+            case .workouts: 1
+            }
+        }
+
+        var range: ClosedRange<Double> {
+            switch self {
+            case .steps: 500...50_000
+            case .exerciseMinutes: 5...300
+            case .mindfulMinutes: 1...120
+            case .sleepHours: 4...12
+            case .water: 0.5...5
+            case .workouts: 1...5
+            }
+        }
+
+        func format(_ value: Double) -> String {
+            switch self {
+            case .sleepHours, .water:
+                value.formatted(.number.precision(.fractionLength(0...1)))
+            default:
+                Int(value.rounded(.down)).formatted()
+            }
+        }
+    }
+
+    var metric: Metric
+    var goal: Double
 }
 
 // MARK: - Бросаю вредную привычку

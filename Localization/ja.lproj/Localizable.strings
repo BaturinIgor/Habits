@@ -59,6 +59,7 @@
 "Anytime" = "いつでも";
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "アプリと iOS のバージョン、機種、言語。習慣やメモは送信されません。";
 "Appearance" = "外観";
+"Apple Health" = "Apple Health";
 "Architect" = "建築家";
 "Archive" = "アーカイブ";
 "Archive (%lld)" = "アーカイブ (%lld)";
@@ -106,6 +107,7 @@
 "Check off a habit" = "習慣をチェック";
 "Check off a habit for the first time" = "初めて習慣をチェック";
 "Check off a habit right from Control Center or the Action button." = "コントロールセンターやアクションボタンから習慣をチェック。";
+"Check off by" = "自動チェックの基準";
 "Check off habits 100 times" = "100回チェック";
 "Check off habits 1000 times" = "1000回チェック";
 "Check off habits 50 times" = "習慣を50回チェック";
@@ -178,6 +180,7 @@
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "ドラゴン、ユニコーン、フェニックス、毎月100スパークのプレゼントと1日の上限アップ。";
 "Draw" = "絵を描く";
 "Drink water" = "水を飲む";
+"Duration" = "時間";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "一時停止中は習慣が非表示になり通知も届かず、連続記録は保たれます。";
 "Early bird" = "早起き";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "実績でアバターや背景を解放し、チェックするたびにレベルアップ。";
@@ -207,6 +210,7 @@
 "Everything is done for today." = "今日の分はすべて完了です。";
 "Exclusive avatars and backgrounds" = "限定アバターと背景";
 "Exclusive pets and more sparks" = "限定ペットとスパーク増量";
+"Exercise minutes" = "エクササイズ（分）";
 "Export data" = "データを書き出す";
 "Extra freeze" = "追加フリーズ";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "今月の追加フリーズ：%lld/%lld。スパークで買えるアバターと背景はプロフィールにあります。";
@@ -266,6 +270,7 @@
 "Have 30 perfect days" = "完璧な日を30日";
 "Health" = "健康";
 "Hide keyboard" = "キーボードを隠す";
+"Hours of sleep" = "睡眠時間";
 "How many habits are done today." = "今日完了した習慣の数。";
 "How often" = "頻度";
 "How to earn" = "集め方";
@@ -340,6 +345,7 @@
 "Marks a habit as done for today." = "習慣を今日の完了にします。";
 "Meditate" = "瞑想";
 "Message a friend" = "友達に連絡する";
+"Mindful minutes" = "マインドフルネス（分）";
 "Mindfulness" = "マインドフルネス";
 "Minimum" = "ミニマム";
 "Minimum version, for example 5 squats" = "ミニマム版（例：スクワット5回）";
@@ -543,6 +549,7 @@
 "Statistics" = "統計";
 "Statistics will appear once you start checking off habits." = "習慣をチェックし始めると統計が表示されます。";
 "Status" = "状態";
+"Steps" = "歩数";
 "Steps to reproduce help a lot." = "再現手順があるととても助かります。";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "再現手順があるととても助かります。スクリーンショットはメールに添付できます。";
 "Still learning" = "まだ覚えていない";
@@ -565,6 +572,7 @@
 "Take vitamins" = "ビタミンを飲む";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "日付をタップでチェック、長押しでスキップやメモ追加。";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "丸をタップか右スワイプでチェック。左スワイプでスキップ、メモ、編集。長押しで並べ替え。";
+"Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "丸をタップするとタイマーが始まります。ロック画面でカウントダウンし、終わると習慣がチェックされます。";
 "Tap the days when the habit should be done" = "習慣を行う曜日をタップ";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "習慣の丸をタップすると今日のカードが開きます。新しい単語は選んだレベルからランダムに出ます。覚えていない単語は復習に戻り、その日のカードを終えると自動でチェックが付きます。レベルはいつでも変更でき、覚えた単語は残ります。";
 "Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "新しい習慣でマイクをタップして、名前を話してください。";
@@ -577,6 +585,7 @@
 "The free version has up to 5 active habits." = "無料版はアクティブな習慣が5つまでです。";
 "The group wasn't found." = "グループが見つかりません。";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "グループの習慣とチェックはiCloudで共有されます。招待リンクを持つ人は誰でも参加してチェックできます。リマインダーは各自に届きます。";
+"The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "「ヘルスケア」で目標に達すると自動でチェックされます：歩数、睡眠、水分、エクササイズ、マインドフルネス。";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "ミニマム版も達成扱いで連続記録が続きます。連鎖した習慣は前の習慣をチェックした直後に通知します。";
 "The new language will apply after you close the app and open it again." = "アプリを閉じて開き直すと新しい言語になります。";
 "The purchase could not be verified." = "購入を確認できませんでした。";
@@ -589,6 +598,7 @@
 "Time" = "時刻";
 "Time for your habit" = "習慣の時間です";
 "Time to rest" = "ひと休みしましょう";
+"Timer" = "タイマー";
 "Today" = "今日";
 "Today is a good day." = "今日はいい日だね。";
 "Today screen" = "「今日」画面";
@@ -627,6 +637,7 @@
 "Walk" = "散歩";
 "Walk 10,000 steps" = "1万歩歩く";
 "Warming up" = "ウォームアップ";
+"Water, liters" = "水分（リットル）";
 "Week" = "週";
 "Weekdays" = "平日";
 "Weekend warrior" = "週末の戦士";
@@ -647,6 +658,7 @@
 "Words for today are done" = "今日の単語は終わりです";
 "Work, travel and conversation" = "仕事、旅行、会話";
 "Workout" = "運動";
+"Workouts" = "ワークアウト";
 "Write 10 notes" = "メモを10件書く";
 "Write 50 notes" = "メモを50件書く";
 "Write down 3 good things" = "良かったことを3つ書く";

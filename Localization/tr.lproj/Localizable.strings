@@ -59,6 +59,7 @@
 "Anytime" = "Herhangi bir zaman";
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "Uygulama sürümü, iOS sürümü, cihaz modeli ve dil. Alışkanlıkların ve notların asla gönderilmez.";
 "Appearance" = "Görünüm";
+"Apple Health" = "Apple Health";
 "Architect" = "Mimar";
 "Archive" = "Arşivle";
 "Archive (%lld)" = "Arşiv (%lld)";
@@ -106,6 +107,7 @@
 "Check off a habit" = "Alışkanlığı işaretle";
 "Check off a habit for the first time" = "İlk kez bir alışkanlık işaretle";
 "Check off a habit right from Control Center or the Action button." = "Bir alışkanlığı doğrudan Denetim Merkezi'nden veya Eylem düğmesinden işaretle.";
+"Check off by" = "Şuna göre işaretle";
 "Check off habits 100 times" = "Alışkanlıkları 100 kez işaretle";
 "Check off habits 1000 times" = "Alışkanlıkları 1000 kez işaretle";
 "Check off habits 50 times" = "Alışkanlıkları 50 kez işaretle";
@@ -178,6 +180,7 @@
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "Ejderha, tek boynuzlu at ve anka kuşu, her ay 100 kıvılcım hediye ve daha yüksek günlük sınır.";
 "Draw" = "Resim çiz";
 "Drink water" = "Su iç";
+"Duration" = "Süre";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "Mola sırasında alışkanlık gizlenir ve hatırlatma göndermez, serin korunur.";
 "Early bird" = "Erkenci";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "Avatar ve arka plan açmak için başarı kazan, her işaretlemeyle seviye atla.";
@@ -207,6 +210,7 @@
 "Everything is done for today." = "Bugünlük her şey tamam.";
 "Exclusive avatars and backgrounds" = "Özel avatarlar ve arka planlar";
 "Exclusive pets and more sparks" = "Özel evcil hayvanlar ve daha çok kıvılcım";
+"Exercise minutes" = "Egzersiz dakikası";
 "Export data" = "Verileri dışa aktar";
 "Extra freeze" = "Ek dondurma";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Bu ayki ek dondurmalar: %lld/%lld. Kıvılcımla alınan avatar ve arka planlar profilinde.";
@@ -266,6 +270,7 @@
 "Have 30 perfect days" = "30 kusursuz gün yaşa";
 "Health" = "Sağlık";
 "Hide keyboard" = "Klavyeyi gizle";
+"Hours of sleep" = "Uyku saati";
 "How many habits are done today." = "Bugün kaç alışkanlık yapıldı.";
 "How often" = "Sıklık";
 "How to earn" = "Nasıl kazanılır";
@@ -340,6 +345,7 @@
 "Marks a habit as done for today." = "Alışkanlığı bugün için yapıldı olarak işaretler.";
 "Meditate" = "Meditasyon yap";
 "Message a friend" = "Bir arkadaşa yaz";
+"Mindful minutes" = "Farkındalık dakikası";
 "Mindfulness" = "Farkındalık";
 "Minimum" = "Minimum";
 "Minimum version, for example 5 squats" = "Minimum sürüm, örneğin 5 squat";
@@ -543,6 +549,7 @@
 "Statistics" = "İstatistikler";
 "Statistics will appear once you start checking off habits." = "Alışkanlıkları işaretlemeye başladığında istatistikler görünecek.";
 "Status" = "Durum";
+"Steps" = "Adım";
 "Steps to reproduce help a lot." = "Tekrarlama adımları çok yardımcı olur.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Tekrarlama adımları çok yardımcı olur. E-postaya ekran görüntüsü ekleyebilirsin.";
 "Still learning" = "Hâlâ öğreniyorum";
@@ -565,6 +572,7 @@
 "Take vitamins" = "Vitamin al";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "İşaretlemek için bir güne dokun. Atlamak veya not eklemek için basılı tut.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "İşaretlemek için daireye dokun veya sağa kaydır. Atlamak, not eklemek veya düzenlemek için sola kaydır. Sıralamak için basılı tut.";
+"Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Zamanlayıcıyı başlatmak için daireye dokun. Kilit ekranında geri sayar ve süre bitince alışkanlığı işaretler.";
 "Tap the days when the habit should be done" = "Alışkanlığın yapılacağı günlere dokun";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "Bugünün kartlarını açmak için alışkanlığın dairesine dokun. Yeni kelimeler seçilen seviyeden rastgele sırayla gelir. Henüz bilmediğin kelimeler tekrar için geri gelir, günün kartları bitince alışkanlık kendiliğinden işaretlenir. Seviyeyi istediğin zaman değiştirebilirsin, öğrendiğin kelimeler korunur.";
 "Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "Yeni bir alışkanlıkta mikrofona dokunun ve adını söyleyin.";
@@ -577,6 +585,7 @@
 "The free version has up to 5 active habits." = "Ücretsiz sürümde en fazla 5 etkin alışkanlık olabilir.";
 "The group wasn't found." = "Grup bulunamadı.";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "Grubun alışkanlıkları ve işaretleri iCloud ile paylaşılır. Davet bağlantısı olan herkes katılıp işaretleyebilir. Herkes kendi hatırlatmalarını alır.";
+"The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "Sağlık uygulamasında hedefe ulaşıldığında alışkanlık kendiliğinden işaretlenir: adım, uyku, su, egzersiz veya farkındalık.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Minimum sürüm yapılmış sayılır ve serini korur. Zincirli alışkanlık, öncekini işaretlediğin anda sana hatırlatılır.";
 "The new language will apply after you close the app and open it again." = "Yeni dil, uygulamayı kapatıp yeniden açtıktan sonra uygulanacak.";
 "The purchase could not be verified." = "Satın alma doğrulanamadı.";
@@ -589,6 +598,7 @@
 "Time" = "Saat";
 "Time for your habit" = "Alışkanlık zamanı";
 "Time to rest" = "Dinlenme zamanı";
+"Timer" = "Zamanlayıcı";
 "Today" = "Bugün";
 "Today is a good day." = "Bugün güzel bir gün.";
 "Today screen" = "Bugün ekranı";
@@ -627,6 +637,7 @@
 "Walk" = "Yürüyüş";
 "Walk 10,000 steps" = "10.000 adım yürü";
 "Warming up" = "Isınma";
+"Water, liters" = "Su, litre";
 "Week" = "Hafta";
 "Weekdays" = "Hafta içi";
 "Weekend warrior" = "Hafta sonu savaşçısı";
@@ -647,6 +658,7 @@
 "Words for today are done" = "Bugünün kelimeleri tamam";
 "Work, travel and conversation" = "İş, seyahat ve sohbet";
 "Workout" = "Antrenman";
+"Workouts" = "Antrenmanlar";
 "Write 10 notes" = "10 not yaz";
 "Write 50 notes" = "50 not yaz";
 "Write down 3 good things" = "3 güzel şey yaz";

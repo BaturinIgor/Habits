@@ -11,14 +11,17 @@ extension View {
     }
 }
 
-/// Потянуть список вниз: сразу забрать изменения родных из iCloud.
-/// Только если есть семейные группы, иначе тянуть нечего.
+/// Потянуть список вниз: сразу забрать изменения родных из iCloud и данные Apple Health.
+/// Только если есть семейные группы или привычки с Apple Health, иначе тянуть нечего.
 private struct FamilyRefresh: ViewModifier {
     let enabled: Bool
 
     func body(content: Content) -> some View {
         if enabled {
-            content.refreshable { await FamilySync.shared.syncAll() }
+            content.refreshable {
+                await FamilySync.shared.syncAll()
+                await HealthSync.shared.sync()
+            }
         } else {
             content
         }
@@ -109,7 +112,8 @@ struct TodayView: View {
             .scrollContentBackground(.hidden)
             .scrollIndicators(.hidden)
             .background(AppBackground())
-            .modifier(FamilyRefresh(enabled: FamilySync.isAvailable && store.data.groups.contains { $0.family != nil }))
+            .modifier(FamilyRefresh(enabled: (FamilySync.isAvailable && store.data.groups.contains { $0.family != nil })
+                                    || (HealthSync.isAvailable && store.data.isPro && store.data.activeHabits.contains { $0.health != nil })))
             .onChange(of: scenePhase) { _, phase in
                 if phase == .active { rollOverDay() }
             }
@@ -363,6 +367,13 @@ struct TodayView: View {
         store.applyManualOrder(ids)
     }
 
+    /// Прогресс по Apple Health за сегодня: "6 240/10 000".
+    private func healthText(for habit: Habit) -> String? {
+        guard isToday, let link = habit.health, store.data.isPro, HealthSync.isAvailable,
+              let value = HealthSync.shared.today[habit.id] else { return nil }
+        return link.metric.format(value) + "/" + link.metric.format(link.goal)
+    }
+
     private func row(for habit: Habit) -> some View {
         let data = store.data
         let status = data.status(habit.id, day: dayKey)
@@ -382,6 +393,7 @@ struct TodayView: View {
             weekDone: habit.schedule.kind == .weekly ? data.weekDoneCount(habit, weekOf: selectedDay) : nil,
             isMinimum: data.checkIn(habit.id, day: dayKey)?.isMinimum == true,
             chainName: habit.chainAfter.flatMap { id in data.habits.first { $0.id == id }?.name },
+            healthText: healthText(for: habit),
             canToggle: canToggle,
             zoom: zoom,
             onOpen: { path.append(habit.id) },
@@ -690,6 +702,7 @@ struct HabitCard: View {
     let weekDone: Int?
     var isMinimum: Bool = false
     var chainName: String? = nil
+    var healthText: String? = nil
     let canToggle: Bool
     let zoom: Namespace.ID
     var onOpen: () -> Void
@@ -767,6 +780,9 @@ struct HabitCard: View {
             }
             if target > 1 {
                 Label(amountText, systemImage: "target")
+            }
+            if let healthText, let link = habit.health {
+                Label(healthText, systemImage: link.metric.symbol)
             }
             if let perDay = habit.wordsPerDay, habit.isWords {
                 Label(String(localized: "\(perDay) words"), systemImage: "character.book.closed.fill")

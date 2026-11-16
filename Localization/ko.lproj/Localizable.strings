@@ -59,6 +59,7 @@
 "Anytime" = "언제든지";
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "앱 및 iOS 버전, 기기 모델, 언어. 습관과 메모는 전송되지 않아요.";
 "Appearance" = "모양";
+"Apple Health" = "Apple Health";
 "Architect" = "건축가";
 "Archive" = "보관";
 "Archive (%lld)" = "보관함 (%lld)";
@@ -106,6 +107,7 @@
 "Check off a habit" = "습관 체크";
 "Check off a habit for the first time" = "처음으로 습관 체크";
 "Check off a habit right from Control Center or the Action button." = "제어 센터나 동작 버튼에서 바로 습관을 체크하세요.";
+"Check off by" = "자동 체크 기준";
 "Check off habits 100 times" = "습관을 100번 체크";
 "Check off habits 1000 times" = "습관을 1000번 체크";
 "Check off habits 50 times" = "습관 50번 체크";
@@ -178,6 +180,7 @@
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "용, 유니콘, 불사조, 매달 100 스파크 선물과 더 높은 일일 한도.";
 "Draw" = "그림 그리기";
 "Drink water" = "물 마시기";
+"Duration" = "시간";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "일시 정지 중에는 습관이 숨겨지고 알림이 오지 않으며 연속 기록은 유지돼요.";
 "Early bird" = "얼리버드";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "업적으로 아바타와 배경을 열고, 체크할 때마다 레벨업하세요.";
@@ -207,6 +210,7 @@
 "Everything is done for today." = "오늘 할 일을 모두 끝냈어요.";
 "Exclusive avatars and backgrounds" = "전용 아바타와 배경";
 "Exclusive pets and more sparks" = "전용 펫과 더 많은 스파크";
+"Exercise minutes" = "운동 시간(분)";
 "Export data" = "데이터 내보내기";
 "Extra freeze" = "추가 프리즈";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "이번 달 추가 프리즈: %lld/%lld. 스파크로 살 수 있는 아바타와 배경은 프로필에 있어요.";
@@ -266,6 +270,7 @@
 "Have 30 perfect days" = "완벽한 날 30일";
 "Health" = "건강";
 "Hide keyboard" = "키보드 숨기기";
+"Hours of sleep" = "수면 시간";
 "How many habits are done today." = "오늘 완료한 습관 수.";
 "How often" = "빈도";
 "How to earn" = "모으는 방법";
@@ -340,6 +345,7 @@
 "Marks a habit as done for today." = "습관을 오늘 완료로 표시해요.";
 "Meditate" = "명상";
 "Message a friend" = "친구에게 연락하기";
+"Mindful minutes" = "마음챙김 시간(분)";
 "Mindfulness" = "마음 챙김";
 "Minimum" = "최소";
 "Minimum version, for example 5 squats" = "최소 버전, 예: 스쿼트 5회";
@@ -543,6 +549,7 @@
 "Statistics" = "통계";
 "Statistics will appear once you start checking off habits." = "습관을 체크하기 시작하면 통계가 표시돼요.";
 "Status" = "상태";
+"Steps" = "걸음 수";
 "Steps to reproduce help a lot." = "재현 단계가 큰 도움이 돼요.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "재현 단계가 큰 도움이 돼요. 스크린샷은 메일에 첨부할 수 있어요.";
 "Still learning" = "아직 몰라요";
@@ -565,6 +572,7 @@
 "Take vitamins" = "비타민 먹기";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "날짜를 탭하면 체크, 길게 누르면 건너뛰기나 메모 추가.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "원을 탭하거나 오른쪽으로 밀어 체크하세요. 왼쪽으로 밀면 건너뛰기, 메모, 편집. 길게 눌러 순서 변경.";
+"Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "동그라미를 눌러 타이머를 시작하세요. 잠금 화면에서 카운트다운되고 시간이 끝나면 습관이 체크돼요.";
 "Tap the days when the habit should be done" = "습관을 실천할 요일을 탭하세요";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "습관의 동그라미를 누르면 오늘의 카드가 열려요. 새 단어는 선택한 수준에서 무작위로 나와요. 모르는 단어는 복습으로 다시 나오고, 오늘 카드를 모두 마치면 습관이 자동으로 체크돼요. 수준은 언제든 바꿀 수 있고 외운 단어는 유지돼요.";
 "Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "새 습관에서 마이크를 탭하고 이름을 말하세요.";
@@ -577,6 +585,7 @@
 "The free version has up to 5 active habits." = "무료 버전은 활성 습관 5개까지예요.";
 "The group wasn't found." = "그룹을 찾을 수 없어요.";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "그룹의 습관과 체크는 iCloud로 공유돼요. 초대 링크가 있는 사람은 누구나 참여해 체크할 수 있어요. 알림은 각자에게 와요.";
+"The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "건강 앱에서 목표에 도달하면 습관이 자동으로 체크돼요: 걸음 수, 수면, 물, 운동, 마음챙김.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "최소 버전도 완료로 인정돼 연속 기록이 유지돼요. 연결된 습관은 앞 습관을 체크하면 바로 알려 드려요.";
 "The new language will apply after you close the app and open it again." = "앱을 닫았다가 다시 열면 새 언어가 적용돼요.";
 "The purchase could not be verified." = "구매를 확인할 수 없어요.";
@@ -589,6 +598,7 @@
 "Time" = "시간";
 "Time for your habit" = "습관을 실천할 시간이에요";
 "Time to rest" = "쉬어도 돼요";
+"Timer" = "타이머";
 "Today" = "오늘";
 "Today is a good day." = "오늘은 좋은 날이에요.";
 "Today screen" = "오늘 화면";
@@ -627,6 +637,7 @@
 "Walk" = "산책";
 "Walk 10,000 steps" = "만 보 걷기";
 "Warming up" = "워밍업";
+"Water, liters" = "물(리터)";
 "Week" = "주";
 "Weekdays" = "평일";
 "Weekend warrior" = "주말 전사";
@@ -647,6 +658,7 @@
 "Words for today are done" = "오늘의 단어 완료";
 "Work, travel and conversation" = "일, 여행, 대화";
 "Workout" = "운동";
+"Workouts" = "운동";
 "Write 10 notes" = "메모 10개 쓰기";
 "Write 50 notes" = "메모 50개 작성";
 "Write down 3 good things" = "좋았던 일 3가지 쓰기";

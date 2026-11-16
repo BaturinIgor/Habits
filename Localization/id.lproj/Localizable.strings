@@ -59,6 +59,7 @@
 "Anytime" = "Kapan saja";
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "Versi aplikasi, versi iOS, model perangkat, dan bahasa. Kebiasaan dan catatanmu tidak pernah dikirim.";
 "Appearance" = "Tampilan";
+"Apple Health" = "Apple Health";
 "Architect" = "Arsitek";
 "Archive" = "Arsipkan";
 "Archive (%lld)" = "Arsip (%lld)";
@@ -106,6 +107,7 @@
 "Check off a habit" = "Centang kebiasaan";
 "Check off a habit for the first time" = "Centang kebiasaan untuk pertama kali";
 "Check off a habit right from Control Center or the Action button." = "Centang kebiasaan langsung dari Pusat Kontrol atau tombol Tindakan.";
+"Check off by" = "Centang berdasarkan";
 "Check off habits 100 times" = "Centang kebiasaan 100 kali";
 "Check off habits 1000 times" = "Centang kebiasaan 1000 kali";
 "Check off habits 50 times" = "Centang kebiasaan 50 kali";
@@ -178,6 +180,7 @@
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "Naga, unicorn, dan phoenix, hadiah bulanan 100 percikan, dan batas harian lebih tinggi.";
 "Draw" = "Menggambar";
 "Drink water" = "Minum air";
+"Duration" = "Durasi";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "Selama jeda, kebiasaan disembunyikan dan tidak mengirim pengingat, dan rentetanmu tetap terjaga.";
 "Early bird" = "Bangun pagi";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "Raih pencapaian untuk membuka avatar dan latar, dan naik level setiap kali mencentang.";
@@ -207,6 +210,7 @@
 "Everything is done for today." = "Semua sudah selesai hari ini.";
 "Exclusive avatars and backgrounds" = "Avatar dan latar eksklusif";
 "Exclusive pets and more sparks" = "Hewan eksklusif dan lebih banyak percikan";
+"Exercise minutes" = "Menit olahraga";
 "Export data" = "Ekspor data";
 "Extra freeze" = "Pembekuan tambahan";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Pembekuan tambahan bulan ini: %lld/%lld. Avatar dan latar dengan percikan ada di profilmu.";
@@ -266,6 +270,7 @@
 "Have 30 perfect days" = "Raih 30 hari sempurna";
 "Health" = "Kesehatan";
 "Hide keyboard" = "Sembunyikan papan ketik";
+"Hours of sleep" = "Jam tidur";
 "How many habits are done today." = "Berapa kebiasaan yang selesai hari ini.";
 "How often" = "Seberapa sering";
 "How to earn" = "Cara mendapatkan";
@@ -340,6 +345,7 @@
 "Marks a habit as done for today." = "Menandai kebiasaan selesai hari ini.";
 "Meditate" = "Bermeditasi";
 "Message a friend" = "Kirim pesan ke teman";
+"Mindful minutes" = "Menit kesadaran";
 "Mindfulness" = "Kesadaran diri";
 "Minimum" = "Minimum";
 "Minimum version, for example 5 squats" = "Versi minimum, misalnya 5 squat";
@@ -543,6 +549,7 @@
 "Statistics" = "Statistik";
 "Statistics will appear once you start checking off habits." = "Statistik akan muncul setelah kamu mulai mencentang kebiasaan.";
 "Status" = "Status";
+"Steps" = "Langkah";
 "Steps to reproduce help a lot." = "Langkah untuk mengulangi masalah sangat membantu.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Langkah untuk mengulang masalah sangat membantu. Kamu bisa melampirkan tangkapan layar di email.";
 "Still learning" = "Masih belajar";
@@ -565,6 +572,7 @@
 "Take vitamins" = "Minum vitamin";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Ketuk hari untuk mencentangnya. Tekan lama untuk melewati atau menambah catatan.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Ketuk lingkaran atau geser ke kanan untuk mencentang. Geser ke kiri untuk melewati, menambah catatan, atau mengubah. Tekan lama untuk mengubah urutan.";
+"Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Ketuk lingkaran untuk memulai pengatur waktu. Hitung mundur tampil di Layar Terkunci dan kebiasaan tercentang saat waktu habis.";
 "Tap the days when the habit should be done" = "Ketuk hari saat kebiasaan harus dilakukan";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "Ketuk lingkaran kebiasaan untuk membuka kartu hari ini. Kata baru muncul acak dari tingkat yang dipilih. Kata yang belum kamu tahu akan muncul lagi untuk diulang, dan kebiasaan dicentang otomatis setelah kartu hari ini selesai. Tingkat bisa diubah kapan saja, kata yang sudah dipelajari tetap tersimpan.";
 "Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "Ketuk mikrofon di kebiasaan baru dan ucapkan namanya.";
@@ -577,6 +585,7 @@
 "The free version has up to 5 active habits." = "Versi gratis memiliki hingga 5 kebiasaan aktif.";
 "The group wasn't found." = "Grup tidak ditemukan.";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "Kebiasaan grup dan centangnya dibagikan lewat iCloud. Siapa pun dengan tautan undangan bisa bergabung dan mencentang. Setiap orang mendapat pengingatnya sendiri.";
+"The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "Kebiasaan tercentang otomatis saat target di app Kesehatan tercapai: langkah, tidur, air, olahraga, atau menit kesadaran.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Versi minimum dihitung selesai dan menjaga rentetan. Kebiasaan berantai mengingatkanmu tepat setelah kamu mencentang yang sebelumnya.";
 "The new language will apply after you close the app and open it again." = "Bahasa baru akan berlaku setelah kamu menutup dan membuka lagi aplikasi.";
 "The purchase could not be verified." = "Pembelian tidak dapat diverifikasi.";
@@ -589,6 +598,7 @@
 "Time" = "Jam";
 "Time for your habit" = "Waktunya kebiasaanmu";
 "Time to rest" = "Waktunya istirahat";
+"Timer" = "Pengatur waktu";
 "Today" = "Hari Ini";
 "Today is a good day." = "Hari ini hari yang baik.";
 "Today screen" = "Layar Hari Ini";
@@ -627,6 +637,7 @@
 "Walk" = "Jalan kaki";
 "Walk 10,000 steps" = "Jalan 10.000 langkah";
 "Warming up" = "Pemanasan";
+"Water, liters" = "Air, liter";
 "Week" = "Minggu";
 "Weekdays" = "Hari kerja";
 "Weekend warrior" = "Pejuang akhir pekan";
@@ -647,6 +658,7 @@
 "Words for today are done" = "Kata hari ini selesai";
 "Work, travel and conversation" = "Kerja, perjalanan, dan percakapan";
 "Workout" = "Olahraga";
+"Workouts" = "Latihan";
 "Write 10 notes" = "Tulis 10 catatan";
 "Write 50 notes" = "Tulis 50 catatan";
 "Write down 3 good things" = "Tulis 3 hal baik";

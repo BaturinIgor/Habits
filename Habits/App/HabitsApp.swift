@@ -29,6 +29,7 @@ struct HabitsApp: App {
                     await store.reschedule()
                     await ProStore.shared.refreshEntitlements()
                     await FamilySync.shared.syncAll()
+                    await HealthSync.shared.sync()
                 }
                 // Пока приложение открыто, изменения родных подтягиваем сами, не дожидаясь push.
                 FamilySync.shared.startLiveUpdates()
@@ -62,6 +63,7 @@ enum BackgroundRefresh {
         schedule()
         HabitStore.shared.reloadFromDisk()
         await FamilySync.shared.syncAll()
+        await HealthSync.shared.sync()
         await HabitStore.shared.reschedule()
         await CloudBackup.shared.backupIfNeeded()
     }

@@ -2,3 +2,4 @@
 "CFBundleName" = "ZenHab";
 "NSMicrophoneUsageDescription" = "ZenHab nutzt das Mikrofon, damit du Gewohnheiten per Sprache anlegen kannst.";
 "NSSpeechRecognitionUsageDescription" = "ZenHab macht aus deinen Worten eine Gewohnheit mit Zeitplan und Erinnerung.";
+"NSHealthShareUsageDescription" = "ZenHab liest Schritte, Schlaf, Wasser, Training und Achtsamkeitsminuten, um verknüpfte Gewohnheiten für dich abzuhaken.";

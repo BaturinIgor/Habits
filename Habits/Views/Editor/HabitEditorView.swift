@@ -37,6 +37,12 @@ struct HabitEditorView: View {
     @State private var isQuit: Bool
     @State private var quitSince: Date
     @State private var dailyCost: String
+    /// Apple Health (Pro).
+    @State private var healthMetric: HealthLink.Metric?
+    @State private var healthGoal: Double
+    /// Таймер (Pro).
+    @State private var hasTimer: Bool
+    @State private var timerMinutes: Int
     @FocusState private var nameFocused: Bool
 
     private enum Frequency: Hashable {
@@ -102,6 +108,10 @@ struct HabitEditorView: View {
         _isQuit = State(initialValue: base.quit != nil)
         _quitSince = State(initialValue: base.quit?.since ?? Date())
         _dailyCost = State(initialValue: base.quit?.dailyCost.map { $0.formatted(.number.grouping(.never)) } ?? "")
+        _healthMetric = State(initialValue: base.health?.metric)
+        _healthGoal = State(initialValue: base.health?.goal ?? HealthLink.Metric.steps.defaultGoal)
+        _hasTimer = State(initialValue: (base.timerMinutes ?? 0) > 0)
+        _timerMinutes = State(initialValue: base.timerMinutes ?? 10)
         _isPaused = State(initialValue: pauseActive)
         _pauseWasActive = State(initialValue: pauseActive)
         _pausedUntil = State(initialValue: pauseActive ? (base.pausedUntil ?? today)
@@ -144,6 +154,10 @@ struct HabitEditorView: View {
                     reminderSection
                     if !draft.isWords {
                         goalSection
+                        timerSection
+                        if HealthSync.isAvailable {
+                            healthSection
+                        }
                     }
                     flexibilitySection
                 }
@@ -409,6 +423,63 @@ struct HabitEditorView: View {
         }
     }
 
+    private var healthSection: some View {
+        Section {
+            if store.data.isPro {
+                Picker(selection: Binding(get: { healthMetric }, set: { metric in
+                    healthMetric = metric
+                    if let metric {
+                        healthGoal = metric.defaultGoal
+                        Task { await HealthSync.shared.requestAccess(for: metric) }
+                    }
+                })) {
+                    Text("None").tag(HealthLink.Metric?.none)
+                    ForEach(HealthLink.Metric.allCases) { metric in
+                        Label(metric.title, systemImage: metric.symbol).tag(Optional(metric))
+                    }
+                } label: {
+                    HStack(spacing: 8) {
+                        Text("Check off by")
+                        ProBadge()
+                    }
+                }
+                if let metric = healthMetric {
+                    Stepper(value: $healthGoal, in: metric.range, step: metric.step) {
+                        LabeledContent("Goal", value: metric.format(healthGoal))
+                    }
+                }
+            } else {
+                lockedRow("Apple Health")
+            }
+        } header: {
+            Text("Apple Health")
+        } footer: {
+            Text("The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes.")
+        }
+    }
+
+    private var timerSection: some View {
+        Section {
+            if store.data.isPro {
+                Toggle(isOn: $hasTimer.animation(.snappy)) {
+                    HStack(spacing: 8) {
+                        Text("Timer")
+                        ProBadge()
+                    }
+                }
+                if hasTimer {
+                    Stepper(value: $timerMinutes, in: 1...180) {
+                        LabeledContent("Duration", value: String(localized: "\(timerMinutes) min"))
+                    }
+                }
+            } else {
+                lockedRow("Timer")
+            }
+        } footer: {
+            Text("Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up.")
+        }
+    }
+
     private var quitSection: some View {
         Section {
             Toggle(isOn: $isQuit.animation(.snappy)) {
@@ -600,6 +671,10 @@ struct HabitEditorView: View {
             return
         }
         habit.quit = nil
+        if store.data.isPro {
+            habit.health = healthMetric.map { HealthLink(metric: $0, goal: healthGoal) }
+            habit.timerMinutes = hasTimer && !habit.isWords ? timerMinutes : nil
+        }
         switch frequency {
         case .daily:
             habit.schedule.kind = .repeating
@@ -695,6 +770,8 @@ extension HabitEditorView {
         habit.pausedUntil = nil
         habit.chainAfter = nil
         habit.minimumVersion = nil
+        habit.health = nil
+        habit.timerMinutes = nil
         store.upsert(habit)
         dismiss()
     }

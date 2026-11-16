@@ -678,3 +678,15 @@ Faster family groups||Daha hızlı aile grupları
 Changes from your family now show up within seconds while the app is open. Pull down on Today to update right away.||Uygulama açıkken ailenin değişiklikleri artık saniyeler içinde görünür. Hemen güncellemek için Bugün'ü aşağı çek.
 Control Center||Denetim Merkezi
 Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap.||Denetim Merkezi'ne, Kilit Ekranı'na veya Eylem düğmesine bir alışkanlık düğmesi ekle ve tek dokunuşla işaretle.
+Apple Health||Apple Health
+Check off by||Şuna göre işaretle
+Steps||Adım
+Exercise minutes||Egzersiz dakikası
+Mindful minutes||Farkındalık dakikası
+Hours of sleep||Uyku saati
+Water, liters||Su, litre
+Workouts||Antrenmanlar
+The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes.||Sağlık uygulamasında hedefe ulaşıldığında alışkanlık kendiliğinden işaretlenir: adım, uyku, su, egzersiz veya farkındalık.
+Timer||Zamanlayıcı
+Duration||Süre
+Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up.||Zamanlayıcıyı başlatmak için daireye dokun. Kilit ekranında geri sayar ve süre bitince alışkanlığı işaretler.

@@ -59,6 +59,7 @@
 "Anytime" = "随时";
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "应用和 iOS 版本、设备型号及语言。你的习惯和备注不会被发送。";
 "Appearance" = "外观";
+"Apple Health" = "Apple Health";
 "Architect" = "建筑师";
 "Archive" = "归档";
 "Archive (%lld)" = "归档 (%lld)";
@@ -106,6 +107,7 @@
 "Check off a habit" = "打卡习惯";
 "Check off a habit for the first time" = "第一次打卡";
 "Check off a habit right from Control Center or the Action button." = "直接在控制中心或操作按钮中打卡习惯。";
+"Check off by" = "自动打卡依据";
 "Check off habits 100 times" = "打卡 100 次";
 "Check off habits 1000 times" = "打卡 1000 次";
 "Check off habits 50 times" = "打卡 50 次";
@@ -178,6 +180,7 @@
 "Dragon, unicorn and phoenix, a monthly gift of 100 sparks and a higher daily limit." = "龙、独角兽和凤凰，每月赠送 100 火花，每日上限更高。";
 "Draw" = "画画";
 "Drink water" = "喝水";
+"Duration" = "时长";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "暂停期间习惯会隐藏且不提醒，连续记录会保留。";
 "Early bird" = "早起鸟";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "获得成就解锁头像和背景，每次打卡都会升级。";
@@ -207,6 +210,7 @@
 "Everything is done for today." = "今天的都完成了。";
 "Exclusive avatars and backgrounds" = "专属头像和背景";
 "Exclusive pets and more sparks" = "专属宠物和更多火花";
+"Exercise minutes" = "锻炼分钟数";
 "Export data" = "导出数据";
 "Extra freeze" = "额外冻结";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "本月额外冻结：%lld/%lld。可用火花购买的头像和背景在个人资料中。";
@@ -266,6 +270,7 @@
 "Have 30 perfect days" = "累计 30 个完美日";
 "Health" = "健康";
 "Hide keyboard" = "隐藏键盘";
+"Hours of sleep" = "睡眠小时数";
 "How many habits are done today." = "今天完成了多少习惯。";
 "How often" = "频率";
 "How to earn" = "如何获得";
@@ -340,6 +345,7 @@
 "Marks a habit as done for today." = "将习惯标记为今天已完成。";
 "Meditate" = "冥想";
 "Message a friend" = "给朋友发消息";
+"Mindful minutes" = "正念分钟数";
 "Mindfulness" = "正念";
 "Minimum" = "最低版";
 "Minimum version, for example 5 squats" = "最低版本，例如 5 个深蹲";
@@ -543,6 +549,7 @@
 "Statistics" = "统计";
 "Statistics will appear once you start checking off habits." = "开始打卡后就会显示统计。";
 "Status" = "状态";
+"Steps" = "步数";
 "Steps to reproduce help a lot." = "复现步骤非常有帮助。";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "复现步骤非常有帮助。可以在邮件中附上截图。";
 "Still learning" = "还在学";
@@ -565,6 +572,7 @@
 "Take vitamins" = "吃维生素";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "点按某天即可打卡，长按可跳过或添加备注。";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "点圆圈或向右滑动即可打卡。向左滑动可跳过、写备注或编辑。长按可调整顺序。";
+"Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "点按圆圈启动计时器。它会在锁定屏幕上倒计时，时间到后自动打卡。";
 "Tap the days when the habit should be done" = "点选需要执行习惯的日子";
 "Tap the habit's circle to open today's cards. New words come in random order from the chosen level. Words you don't know yet come back for review, and the habit is checked off once today's cards are done. You can change the level at any time, learned words are kept." = "点击习惯的圆圈打开今天的卡片。新单词从所选水平中随机出现。还不会的单词会再次复习，完成当天所有卡片后习惯会自动打勾。可以随时更改水平，已学的单词会保留。";
 "Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”." = "在新习惯中点按麦克风，说出它的名称。";
@@ -577,6 +585,7 @@
 "The free version has up to 5 active habits." = "免费版最多 5 个进行中的习惯。";
 "The group wasn't found." = "未找到该分组。";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "分组的习惯和打卡通过 iCloud 共享。拥有邀请链接的人都可以加入并打卡。每个人都会收到自己的提醒。";
+"The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "当“健康”App 中的数据达到目标时，习惯会自动打卡：步数、睡眠、饮水、锻炼或正念分钟数。";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "最低版本也算完成，并保持连续记录。链中的习惯会在你完成上一个后立即提醒。";
 "The new language will apply after you close the app and open it again." = "关闭并重新打开应用后，新语言才会生效。";
 "The purchase could not be verified." = "无法验证此次购买。";
@@ -589,6 +598,7 @@
 "Time" = "时间";
 "Time for your habit" = "该完成习惯了";
 "Time to rest" = "好好休息";
+"Timer" = "计时器";
 "Today" = "今天";
 "Today is a good day." = "今天是美好的一天。";
 "Today screen" = "“今天”页面";
@@ -627,6 +637,7 @@
 "Walk" = "散步";
 "Walk 10,000 steps" = "走一万步";
 "Warming up" = "热身";
+"Water, liters" = "饮水（升）";
 "Week" = "周";
 "Weekdays" = "工作日";
 "Weekend warrior" = "周末战士";
@@ -647,6 +658,7 @@
 "Words for today are done" = "今天的单词完成了";
 "Work, travel and conversation" = "工作、旅行和交谈";
 "Workout" = "锻炼";
+"Workouts" = "体能训练";
 "Write 10 notes" = "写 10 条备注";
 "Write 50 notes" = "写 50 条备注";
 "Write down 3 good things" = "写下3件好事";

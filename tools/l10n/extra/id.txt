@@ -678,3 +678,15 @@ Faster family groups||Grup keluarga lebih cepat
 Changes from your family now show up within seconds while the app is open. Pull down on Today to update right away.||Perubahan dari keluargamu kini muncul dalam hitungan detik saat aplikasi terbuka. Tarik layar Hari ini ke bawah untuk langsung memperbarui.
 Control Center||Pusat Kontrol
 Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap.||Tambahkan tombol kebiasaan ke Pusat Kontrol, Layar Terkunci, atau tombol Tindakan dan centang dengan satu ketukan.
+Apple Health||Apple Health
+Check off by||Centang berdasarkan
+Steps||Langkah
+Exercise minutes||Menit olahraga
+Mindful minutes||Menit kesadaran
+Hours of sleep||Jam tidur
+Water, liters||Air, liter
+Workouts||Latihan
+The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes.||Kebiasaan tercentang otomatis saat target di app Kesehatan tercapai: langkah, tidur, air, olahraga, atau menit kesadaran.
+Timer||Pengatur waktu
+Duration||Durasi
+Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up.||Ketuk lingkaran untuk memulai pengatur waktu. Hitung mundur tampil di Layar Terkunci dan kebiasaan tercentang saat waktu habis.
