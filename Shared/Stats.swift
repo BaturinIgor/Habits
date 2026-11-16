@@ -10,6 +10,8 @@ struct HabitStats: Hashable {
     var isWeekly = false
     /// Пропуски, которые не прервали серию (до 2 в месяц).
     var frozenDays: Set<String> = []
+    /// Пропуски, починенные за искры.
+    var repairedDays: Set<String> = []
     /// Недель с выполненной целью (для "N раз в неделю").
     var goalsMet = 0
     /// Выполнено за последние 30 дней и сколько дней было нужно.
@@ -75,6 +77,7 @@ enum Stats {
         var counted = 0
         var freezesUsed: [Int: Int] = [:]
         var missedBefore = false
+        let repairs = Set(data.wallet.repairs)
         let window = calendar.date(byAdding: .day, value: -29, to: today) ?? today
         while day <= last {
             if habit.isScheduled(on: day, calendar: calendar) {
@@ -100,7 +103,9 @@ enum Stats {
                         if inWindow { result.last30Total += 1 }
                         let c = calendar.dateComponents([.year, .month], from: day)
                         let month = (c.year ?? 0) * 12 + (c.month ?? 0)
-                        if run > 0 && freezesUsed[month, default: 0] < Freeze.limit(year: c.year ?? 0, month: c.month ?? 0, data: data) {
+                        if repairs.contains(AppData.key(habit.id, key)) {
+                            result.repairedDays.insert(key)
+                        } else if run > 0 && freezesUsed[month, default: 0] < Freeze.limit(year: c.year ?? 0, month: c.month ?? 0, data: data) {
                             freezesUsed[month, default: 0] += 1
                             result.frozenDays.insert(key)
                         } else {

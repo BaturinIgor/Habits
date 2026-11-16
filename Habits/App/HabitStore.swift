@@ -186,6 +186,42 @@ final class HabitStore {
         return true
     }
 
+    // MARK: Починка серии
+
+    /// Серию, прервавшуюся из-за последнего пропуска (вчера или позавчера), можно вернуть за искры.
+    /// Возвращает пропущенный день и длину серии после починки, или nil, если чинить нечего.
+    func streakRepair(for habit: Habit) -> (day: String, streak: Int)? {
+        guard !habit.isQuit, !habit.isArchived, habit.schedule.kind != .weekly, habit.schedule.kind != .once else { return nil }
+        let calendar = Calendar.app
+        let today = calendar.startOfDay(for: Date())
+        var missed: Date?
+        for back in 1...2 {
+            guard let day = calendar.date(byAdding: .day, value: -back, to: today) else { continue }
+            if habit.isScheduled(on: day) { missed = day; break }
+        }
+        guard let missed else { return nil }
+        let key = DayKey.make(missed)
+        let repairKey = AppData.key(habit.id, key)
+        guard data.status(habit.id, day: key) == nil, !data.wallet.repairs.contains(repairKey) else { return nil }
+        let current = Stats.habit(habit, in: data)
+        guard !current.frozenDays.contains(key) else { return nil }
+        var test = data
+        test.wallet.repairs.append(repairKey)
+        let fixed = Stats.habit(habit, in: test).currentStreak
+        guard fixed > current.currentStreak, fixed >= 3 else { return nil }
+        return (key, fixed)
+    }
+
+    @discardableResult
+    func repairStreak(_ habitID: UUID) -> Bool {
+        guard let habit = habit(habitID), let repair = streakRepair(for: habit), spend(Sparks.repairPrice) else { return false }
+        data.wallet.repairs.append(AppData.key(habitID, repair.day))
+        // Старые починки больше не влияют на текущие серии, но нужны для лучшей серии.
+        if data.wallet.repairs.count > 500 { data.wallet.repairs.removeFirst(data.wallet.repairs.count - 500) }
+        commit()
+        return true
+    }
+
     /// Подарок Pro раз в месяц. Возвращает число подаренных искр.
     @discardableResult
     func claimProGift() -> Int {

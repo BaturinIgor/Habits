@@ -57,6 +57,14 @@ struct TodayView: View {
         return all.filter { $0.groupID == groupFilter }
     }
 
+    /// Первая привычка, чью вчерашнюю серию можно вернуть за искры.
+    private var streakRepair: (Habit, (day: String, streak: Int))? {
+        for habit in store.data.trackedHabits {
+            if let repair = store.streakRepair(for: habit) { return (habit, repair) }
+        }
+        return nil
+    }
+
     private var visibleHabits: [Habit] {
         let all = store.data.habits(on: selectedDay)
         guard let groupFilter, store.data.group(groupFilter) != nil else { return all }
@@ -87,6 +95,11 @@ struct TodayView: View {
                         withAnimation { store.updateSettings { $0.gestureHintShown = true } }
                     }
                     .plainRow(top: 2, bottom: 2)
+                }
+
+                if isToday, let (habit, repair) = streakRepair {
+                    StreakRepairCard(habit: habit, repair: repair, showName: true)
+                        .plainRow(top: 4, bottom: 6)
                 }
 
                 content

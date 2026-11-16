@@ -67,6 +67,10 @@ struct HabitDetailView: View {
     /// Обычная привычка: подсказка Siri, статистика, календарь, график и заметки.
     @ViewBuilder
     private func regularContent(_ habit: Habit, color: Color, stats: HabitStats) -> some View {
+        if let repair = store.streakRepair(for: habit) {
+            StreakRepairCard(habit: habit, repair: repair)
+        }
+
         if showSiriTip && !habit.isArchived {
             SiriTipView(intent: MarkHabitDoneIntent(habit: HabitEntity(habit)), isVisible: $showSiriTip)
         }

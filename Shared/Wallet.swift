@@ -19,6 +19,8 @@ struct Wallet: Codable, Hashable {
     var keptEarned = 0
     /// Опыт питомца от удалённых привычек, чтобы питомец не "уменьшался".
     var keptPetXP = 0
+    /// Починенные за искры пропуски: ключи "<habitID>|yyyy-MM-dd". Такой день не прерывает серию.
+    var repairs: [String] = []
 
     init() {}
 
@@ -33,6 +35,7 @@ struct Wallet: Codable, Hashable {
         earnedSnapshot = try c.decodeIfPresent(Int.self, forKey: .earnedSnapshot) ?? 0
         keptEarned = try c.decodeIfPresent(Int.self, forKey: .keptEarned) ?? 0
         keptPetXP = try c.decodeIfPresent(Int.self, forKey: .keptPetXP) ?? 0
+        repairs = try c.decodeIfPresent([String].self, forKey: .repairs) ?? []
     }
 
     static func monthKey(_ date: Date, calendar: Calendar = .app) -> String {
