@@ -30,6 +30,10 @@ final class HabitStore {
         revision += 1
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()
+        if #available(iOS 18.0, *) {
+            // Кнопки привычек в Пункте управления показывают, отмечена ли привычка.
+            ControlCenter.shared.reloadAllControls()
+        }
         let snapshot = data
         Task { await NotificationPlanner.reschedule(data: snapshot) }
         // Siri узнаёт новые названия привычек для фраз вроде «Отметь Зарядку».
@@ -76,6 +80,13 @@ final class HabitStore {
         }
         commit()
         Task { await NotificationPlanner.clearDelivered(habitID: id) }
+    }
+
+    /// Срыв у привычки, которую бросают: счёт дней начинается заново, рекорд запоминается.
+    func relapse(_ id: UUID) {
+        guard let index = data.habits.firstIndex(where: { $0.id == id }), data.habits[index].quit != nil else { return }
+        data.habits[index].quit?.relapse()
+        commit()
     }
 
     func setArchived(_ id: UUID, _ archived: Bool) {
@@ -175,6 +186,42 @@ final class HabitStore {
     func buyFreeze() -> Bool {
         guard extraFreezesThisMonth < Sparks.maxExtraFreezes, spend(Sparks.freezePrice) else { return false }
         data.wallet.extraFreezes[Wallet.monthKey(Date()), default: 0] += 1
+        commit()
+        return true
+    }
+
+    // MARK: Починка серии
+
+    /// Серию, прервавшуюся из-за последнего пропуска (вчера или позавчера), можно вернуть за искры.
+    /// Возвращает пропущенный день и длину серии после починки, или nil, если чинить нечего.
+    func streakRepair(for habit: Habit) -> (day: String, streak: Int)? {
+        guard !habit.isQuit, !habit.isArchived, habit.schedule.kind != .weekly, habit.schedule.kind != .once else { return nil }
+        let calendar = Calendar.app
+        let today = calendar.startOfDay(for: Date())
+        var missed: Date?
+        for back in 1...2 {
+            guard let day = calendar.date(byAdding: .day, value: -back, to: today) else { continue }
+            if habit.isScheduled(on: day) { missed = day; break }
+        }
+        guard let missed else { return nil }
+        let key = DayKey.make(missed)
+        let repairKey = AppData.key(habit.id, key)
+        guard data.status(habit.id, day: key) == nil, !data.wallet.repairs.contains(repairKey) else { return nil }
+        let current = Stats.habit(habit, in: data)
+        guard !current.frozenDays.contains(key) else { return nil }
+        var test = data
+        test.wallet.repairs.append(repairKey)
+        let fixed = Stats.habit(habit, in: test).currentStreak
+        guard fixed > current.currentStreak, fixed >= 3 else { return nil }
+        return (key, fixed)
+    }
+
+    @discardableResult
+    func repairStreak(_ habitID: UUID) -> Bool {
+        guard let habit = self.habit(habitID), let repair = streakRepair(for: habit), spend(Sparks.repairPrice) else { return false }
+        data.wallet.repairs.append(AppData.key(habitID, repair.day))
+        // Старые починки больше не влияют на текущие серии, но нужны для лучшей серии.
+        if data.wallet.repairs.count > 500 { data.wallet.repairs.removeFirst(data.wallet.repairs.count - 500) }
         commit()
         return true
     }
@@ -430,9 +477,14 @@ final class HabitStore {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         guard let imported = try? decoder.decode(AppData.self, from: raw) else { return false }
+        replaceAll(with: imported)
+        return true
+    }
+
+    /// Заменяет все данные (импорт файла или копия из iCloud).
+    func replaceAll(with imported: AppData) {
         data = imported
         commit()
-        return true
     }
 
     /// Возвращает false, если вернуть из архива нельзя из-за лимита бесплатной версии.
@@ -460,5 +512,8 @@ final class HabitStore {
         if action == NotificationPlanner.doneAction, let date = DayKey.date(day) {
             notifyChain(after: habitID, day: date)
         }
+        // Отметка из уведомления сразу уходит родным: приложение в фоне, и само
+        // оно синхронизировалось бы только при следующем открытии.
+        await FamilySync.shared.syncAll(reload: false)
     }
 }

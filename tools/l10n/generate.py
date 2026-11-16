@@ -183,6 +183,22 @@ PERMISSIONS = {
   'pl': 'ZenHab zamienia Twoje słowa w nawyk z harmonogramem i przypomnieniem.',
   'id': 'ZenHab mengubah ucapan Anda menjadi kebiasaan dengan jadwal dan pengingat.',
  },
+ 'NSHealthShareUsageDescription': {
+  'en': 'ZenHab reads steps, sleep, water, exercise and mindful minutes to check off linked habits for you.',
+  'ru': 'ZenHab читает шаги, сон, воду, упражнения и минуты осознанности, чтобы сам отмечать связанные привычки.',
+  'de': 'ZenHab liest Schritte, Schlaf, Wasser, Training und Achtsamkeitsminuten, um verknüpfte Gewohnheiten für dich abzuhaken.',
+  'fr': 'ZenHab lit les pas, le sommeil, l\'eau, l\'exercice et la pleine conscience pour cocher tes habitudes liées.',
+  'es': 'ZenHab lee pasos, sueño, agua, ejercicio y minutos de atención plena para marcar tus hábitos vinculados.',
+  'zh-Hans': 'ZenHab 读取步数、睡眠、饮水、锻炼和正念分钟数，为你自动打卡关联的习惯。',
+  'ja': 'ZenHabは歩数、睡眠、水分、エクササイズ、マインドフルネスを読み取り、連携した習慣を自動でチェックします。',
+  'ko': 'ZenHab은 걸음 수, 수면, 물, 운동, 마음챙김 시간을 읽어 연결된 습관을 자동으로 체크합니다.',
+  'hi': 'ZenHab कदम, नींद, पानी, व्यायाम और माइंडफ़ुल मिनट पढ़ता है ताकि जुड़ी आदतें अपने आप पूरी हों।',
+  'pt-BR': 'O ZenHab lê passos, sono, água, exercício e atenção plena para marcar seus hábitos vinculados.',
+  'it': 'ZenHab legge passi, sonno, acqua, esercizio e minuti di consapevolezza per spuntare le abitudini collegate.',
+  'tr': 'ZenHab, bağlı alışkanlıkları işaretlemek için adım, uyku, su, egzersiz ve farkındalık dakikalarını okur.',
+  'pl': 'ZenHab odczytuje kroki, sen, wodę, ćwiczenia i minuty uważności, aby odhaczać powiązane nawyki.',
+  'id': 'ZenHab membaca langkah, tidur, air, olahraga, dan menit kesadaran untuk mencentang kebiasaan yang terhubung.',
+ },
 }
 
 # Фразы Siri из Habits/Features/SiriIntents.swift (HabitsShortcuts), в том же порядке.

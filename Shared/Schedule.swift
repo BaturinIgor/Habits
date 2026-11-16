@@ -75,6 +75,24 @@ enum Fmt {
         return weekdayDayMonth(date)
     }
 
+    /// Когда сделана резервная копия: "Сегодня, 21:40" или "12 ноября, 21:40".
+    static func backupDate(_ date: Date) -> String {
+        let cal = Calendar.app
+        let day: String
+        if cal.isDateInToday(date) {
+            day = String(localized: "Today")
+        } else if cal.isDateInYesterday(date) {
+            day = String(localized: "Yesterday")
+        } else {
+            day = dayMonth(date)
+        }
+        let f = DateFormatter()
+        f.locale = .autoupdatingCurrent
+        f.timeStyle = .short
+        f.dateStyle = .none
+        return day + ", " + f.string(from: date)
+    }
+
     static func days(_ n: Int) -> String { String(localized: "\(n) days") }
     static func habitsLeft(_ n: Int) -> String { String(localized: "\(n) habits left") }
     static func habitsPlanned(_ n: Int) -> String { String(localized: "\(n) habits planned") }
@@ -125,6 +143,8 @@ extension Habit {
     }
 
     func isScheduled(on date: Date, calendar: Calendar = .app) -> Bool {
+        // У привычки, которую бросают, нет отметок и напоминаний: только счётчик дней без неё.
+        if quit != nil { return false }
         let day = calendar.startOfDay(for: date)
         if isPaused(on: day, calendar: calendar) { return false }
         switch schedule.kind {
@@ -184,6 +204,9 @@ extension Habit {
     }
 
     var scheduleSummary: String {
+        if let quit {
+            return String(localized: "Quitting: \(Fmt.days(quit.days()))")
+        }
         var text: String
         switch schedule.kind {
         case .once:

@@ -619,3 +619,74 @@ Sort the Today screen by groups in Settings, and hold the Today widget to show o
 Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”.||Tocca il microfono in una nuova abitudine e di' il nome.
 Try it||Prova
 What's new||Novità
+A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones.||Una copia delle tue abitudini e della cronologia viene salvata da sola nel tuo iCloud quando esci dall'app. Cambiando telefono non perdi nulla.
+Back up now||Salva ora
+Back up to iCloud||Backup su iCloud
+Backup from %@||Backup del %@
+Best, days||Record, giorni
+Bring back %@ in a row for sparks.||Recupera %@ di fila con le scintille.
+Bring back the streak for %lld sparks||Recupera la serie per %lld scintille
+Check off a habit right from Control Center or the Action button.||Spunta un'abitudine dal Centro di Controllo o dal tasto Azione.
+Count days without it||Conta i giorni senza
+Current habits and history will be replaced with the backup from %@.||Le abitudini e la cronologia attuali verranno sostituite dal backup del %@.
+Data restored||Dati ripristinati
+For bad habits: smoking, sweets, alcohol, scrolling.||Per le cattive abitudini: fumo, dolci, alcol, scrolling.
+I slipped||Ho ceduto
+I'm quitting this habit||Sto smettendo
+Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept.||Invece delle spunte quotidiane vedrai da quanti giorni ne fai a meno. Se cedi, il conto riparte, ma il record resta.
+It happens. Your record and the total stay, and the count of days starts from now.||Capita. Il record e il totale restano, e il conto riparte da adesso.
+Last backup||Ultimo backup
+Money saved||Soldi risparmiati
+Next milestone: %@||Prossimo traguardo: %@
+Next: %@||Prossimo: %@
+No connection to iCloud. The backup will be saved later.||Nessuna connessione a iCloud. Il backup verrà salvato più tardi.
+Not yet||Non ancora
+Quitting||Sto smettendo
+Quitting: %@||Senza: %@
+Relapses||Ricadute
+Restore from iCloud||Ripristina da iCloud
+Restore from iCloud?||Ripristinare da iCloud?
+Restore your habits?||Ripristinare le tue abitudini?
+Saved: %@||Risparmiati: %@
+See how much you've saved with Pro||Scopri quanto hai risparmiato con Pro
+Sign in to iCloud in Settings to keep a backup.||Accedi a iCloud nelle Impostazioni per tenere un backup.
+Since %@||Dal %@
+Spent a day||Spesa al giorno
+Start over||Ricomincia
+Start the count again?||Ricominciare il conto?
+The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included.||Backup su iCloud: %@, %@, abitudini: %lld. Si aggiorna da solo quando esci dall'app. Le foto di avatar e sfondo non sono incluse.
+The streak broke||La serie si è interrotta
+There's a backup in your iCloud from %@. Habits in it: %lld.||Nel tuo iCloud c'è un backup del %@. Abitudini: %lld.
+Total, days||Totale, giorni
+Without it since||Senza dal
+%@: the streak broke||%@: serie interrotta
+a month||un mese
+a week||una settimana
+a year||un anno
+half a year||sei mesi
+three months||tre mesi
+two weeks||due settimane
+without it||senza
+Automatic iCloud backup||Backup automatico su iCloud
+Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back.||Abitudini e cronologia vengono salvate da sole nel tuo iCloud. Su un nuovo iPhone, ZenHab ti propone di recuperare tutto.
+Open backup||Apri backup
+Quit a bad habit||Smetti una cattiva abitudine
+Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved.||Attiva “Sto smettendo” in un'abitudine per vedere da quanti giorni ne fai a meno, il record e il prossimo traguardo. Con Pro, anche i soldi risparmiati.
+Bring back a streak||Recupera la serie
+Missed a day and the streak broke? The next day you can bring it back for sparks.||Hai saltato un giorno e la serie si è interrotta? Il giorno dopo puoi recuperarla con le scintille.
+Faster family groups||Gruppi di famiglia più veloci
+Changes from your family now show up within seconds while the app is open. Pull down on Today to update right away.||Con l'app aperta, le modifiche della famiglia arrivano in pochi secondi. Trascina in basso Oggi per aggiornare subito.
+Control Center||Centro di Controllo
+Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap.||Aggiungi un pulsante abitudine al Centro di Controllo, alla schermata di blocco o al tasto Azione e spuntala con un tocco.
+Apple Health||Apple Health
+Check off by||Spunta in base a
+Steps||Passi
+Exercise minutes||Minuti di esercizio
+Mindful minutes||Minuti di consapevolezza
+Hours of sleep||Ore di sonno
+Water, liters||Acqua, litri
+Workouts||Allenamenti
+The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes.||L'abitudine si spunta da sola quando raggiungi l'obiettivo in Salute: passi, sonno, acqua, esercizio o consapevolezza.
+Timer||Timer
+Duration||Durata
+Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up.||Tocca il cerchio per avviare il timer. Scorre sulla schermata di blocco e spunta l'abitudine allo scadere.

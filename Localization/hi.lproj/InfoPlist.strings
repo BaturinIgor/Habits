@@ -2,3 +2,4 @@
 "CFBundleName" = "ZenHab";
 "NSMicrophoneUsageDescription" = "ZenHab माइक्रोफ़ोन का उपयोग करता है ताकि आप आवाज़ से आदत बना सकें।";
 "NSSpeechRecognitionUsageDescription" = "ZenHab आपके शब्दों को समय-सारणी और रिमाइंडर वाली आदत में बदलता है।";
+"NSHealthShareUsageDescription" = "ZenHab कदम, नींद, पानी, व्यायाम और माइंडफ़ुल मिनट पढ़ता है ताकि जुड़ी आदतें अपने आप पूरी हों।";

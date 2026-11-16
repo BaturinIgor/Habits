@@ -76,35 +76,100 @@ final class FamilySync {
         }
     }
 
-    private var hasFamilyGroups: Bool {
+    var hasFamilyGroups: Bool {
         HabitStore.shared.data.groups.contains { $0.family != nil }
     }
 
-    func syncAll() async {
+    /// Полная синхронизация всех семейных групп. Если она уже идёт, ждём, пока закончится
+    /// и сделает ещё один проход: вызывающий (push, фоновая задача) получает управление,
+    /// только когда его изменения точно ушли.
+    /// reload: перечитать файл (его могли изменить виджет или уведомление).
+    func syncAll(reload: Bool = true) async {
         guard Self.isAvailable, hasFamilyGroups else { return }
         if isSyncing {
             needsAnotherPass = true
+            while isSyncing {
+                try? await Task.sleep(for: .milliseconds(200))
+            }
             return
         }
         isSyncing = true
+        var changed = false
+        var firstPass = true
         repeat {
             needsAnotherPass = false
             let store = HabitStore.shared
-            store.reloadFromDisk()
+            // Повторный проход нужен из-за новых изменений, их тоже могли записать в файл.
+            if reload || !firstPass { store.reloadFromDisk() }
+            firstPass = false
             for group in store.data.groups where group.family != nil {
-                await sync(groupID: group.id)
+                if await sync(groupID: group.id) { changed = true }
             }
         } while needsAnotherPass
         isSyncing = false
         await registerSubscriptionsIfNeeded()
-        await HabitStore.shared.reschedule()
+        if changed {
+            await HabitStore.shared.reschedule()
+        }
+    }
+
+    // MARK: Пока приложение открыто
+
+    /// Как часто проверять изменения родных, пока приложение на экране.
+    /// Push от iCloud система может задержать на минуты, а опрос дешёвый:
+    /// один запрос изменений с токеном на группу.
+    private static let liveInterval: Duration = .seconds(15)
+    private var liveTask: Task<Void, Never>?
+
+    func startLiveUpdates() {
+        guard Self.isAvailable else { return }
+        liveTask?.cancel()
+        liveTask = Task {
+            while !Task.isCancelled {
+                try? await Task.sleep(for: Self.liveInterval)
+                guard !Task.isCancelled else { break }
+                await syncAll(reload: false)
+            }
+        }
+    }
+
+    func stopLiveUpdates() {
+        liveTask?.cancel()
+        liveTask = nil
+    }
+
+    /// Приложение уходит в фон: сразу отправляем то, что ещё ждёт отправки.
+    /// Раньше отметка, сделанная прямо перед закрытием, уходила к родным
+    /// только при следующем открытии приложения.
+    func flushBeforeBackground() {
+        stopLiveUpdates()
+        guard Self.isAvailable, hasFamilyGroups else { return }
+        pending?.cancel()
+        pending = nil
+        let app = UIApplication.shared
+        var taskID = UIBackgroundTaskIdentifier.invalid
+        taskID = app.beginBackgroundTask(withName: "FamilySync") {
+            if taskID != .invalid {
+                app.endBackgroundTask(taskID)
+                taskID = .invalid
+            }
+        }
+        Task {
+            await syncAll(reload: false)
+            if taskID != .invalid {
+                app.endBackgroundTask(taskID)
+                taskID = .invalid
+            }
+        }
     }
 
     // MARK: Синхронизация одной группы
 
-    private func sync(groupID: UUID) async {
+    /// Возвращает true, если что-то пришло из iCloud или ушло туда.
+    @discardableResult
+    private func sync(groupID: UUID) async -> Bool {
         let store = HabitStore.shared
-        guard let group = store.data.group(groupID), let family = group.family else { return }
+        guard let group = store.data.group(groupID), let family = group.family else { return false }
         let zoneID = CKRecordZone.ID(zoneName: family.zoneName, ownerName: family.ownerName)
         let database = family.isOwner ? container.privateCloudDatabase : container.sharedCloudDatabase
         let key = Self.stateKey(zoneID)
@@ -128,20 +193,24 @@ final class FamilySync {
             // человек мог удалить привычку, и старая копия из iCloud не должна её вернуть.
             let lastSynced = state.synced
             var fromCloud = Set<String>()
-            store.applyFamilyChanges { data in
-                let current = Self.localRecords(groupID: groupID, data: data)
-                let editedHere = Set(current.filter { lastSynced[$0.key] != $0.value.json }.keys)
-                let deletedHere = Set(lastSynced.keys).subtracting(current.keys)
-                for record in changed {
-                    let name = record.recordID.recordName
-                    guard let json = record["json"] as? Data,
-                          !editedHere.contains(name), !deletedHere.contains(name) else { continue }
-                    Self.apply(name: name, type: record.recordType, json: json, groupID: groupID, to: &data)
-                    fromCloud.insert(name)
-                }
-                for name in deleted where !editedHere.contains(name) {
-                    Self.remove(name: name, groupID: groupID, from: &data)
-                    fromCloud.insert(name)
+            // Без изменений не трогаем данные: иначе каждый опрос сохранял бы файл,
+            // обновлял виджеты и перепланировал уведомления.
+            if !changed.isEmpty || !deleted.isEmpty {
+                store.applyFamilyChanges { data in
+                    let current = Self.localRecords(groupID: groupID, data: data)
+                    let editedHere = Set(current.filter { lastSynced[$0.key] != $0.value.json }.keys)
+                    let deletedHere = Set(lastSynced.keys).subtracting(current.keys)
+                    for record in changed {
+                        let name = record.recordID.recordName
+                        guard let json = record["json"] as? Data,
+                              !editedHere.contains(name), !deletedHere.contains(name) else { continue }
+                        Self.apply(name: name, type: record.recordType, json: json, groupID: groupID, to: &data)
+                        fromCloud.insert(name)
+                    }
+                    for name in deleted where !editedHere.contains(name) {
+                        Self.remove(name: name, groupID: groupID, from: &data)
+                        fromCloud.insert(name)
+                    }
                 }
             }
 
@@ -176,13 +245,16 @@ final class FamilySync {
             states[key] = state
             saveStates()
             lastError = nil
+            return !fromCloud.isEmpty || !toSave.isEmpty || !toDelete.isEmpty
         } catch let error as CKError where error.code == .zoneNotFound || error.code == .userDeletedZone {
             // Владелец перестал делиться или удалил группу. Привычки остаются у человека как обычные.
             store.setFamily(nil, for: groupID)
             states[key] = nil
             saveStates()
+            return true
         } catch {
             lastError = Self.describe(error)
+            return false
         }
     }
 
@@ -340,10 +412,13 @@ final class FamilySync {
 
     // MARK: Push от iCloud
 
-    private var subscriptionsKey: String { "familySubscriptionsSaved" }
+    /// Подписки на push сохраняем при каждом запуске (один раз за запуск), а не один раз навсегда:
+    /// если подписка на сервере пропала, push перестают приходить, и группа обновлялась
+    /// только при открытии приложения.
+    private var subscriptionsSaved = false
 
     private func registerSubscriptionsIfNeeded() async {
-        guard !UserDefaults.standard.bool(forKey: subscriptionsKey) else { return }
+        guard !subscriptionsSaved else { return }
         let info = CKSubscription.NotificationInfo()
         info.shouldSendContentAvailable = true
         var ok = true
@@ -356,7 +431,7 @@ final class FamilySync {
                 ok = false
             }
         }
-        if ok { UserDefaults.standard.set(true, forKey: subscriptionsKey) }
+        if ok { subscriptionsSaved = true }
     }
 
     // MARK: Локальные записи

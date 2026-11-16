@@ -125,6 +125,7 @@ struct HabitCatalogView: View {
         var new = habit
         new.id = UUID()
         new.createdAt = Date()
+        if new.quit != nil { new.quit = QuitInfo() }
         withAnimation(.snappy) { store.upsert(new) }
         added += 1
         if new.reminder != nil {
@@ -145,6 +146,7 @@ private struct CatalogCard: View {
     private var color: Color { Palette.color(habit.colorIndex) }
 
     private var subtitle: String {
+        if habit.isQuit { return String(localized: "Count days without it") }
         if let reminder = habit.reminder { return reminder.text }
         if habit.schedule.kind == .weekly { return Fmt.timesPerWeek(habit.schedule.timesPerWeek) }
         if habit.schedule.weekdays.count == 1, let day = habit.schedule.weekdays.first { return Weekdays.short(day) }

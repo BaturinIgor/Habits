@@ -4,9 +4,9 @@ import SwiftUI
 /// Что нового в версии: показывается один раз после обновления.
 struct WhatsNewView: View {
     /// Меняется, когда появляются новые карточки.
-    static let version = "1.3"
+    static let version = "1.4"
 
-    /// Открыть окно новой привычки, чтобы попробовать голосовой ввод.
+    /// Открыть окно новой привычки, чтобы попробовать новое.
     let onTryVoice: () -> Void
     @Environment(\.dismiss) private var dismiss
 
@@ -18,56 +18,59 @@ struct WhatsNewView: View {
                         .font(.largeTitle.weight(.bold))
                         .padding(.bottom, 4)
 
-                    if FamilySync.isAvailable {
+                    if CloudBackup.isAvailable {
                         card(
-                            icon: "person.2.fill",
-                            color: .pink,
-                            title: "Family groups",
-                            text: "Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders."
+                            icon: "icloud.fill",
+                            color: .blue,
+                            title: "Automatic iCloud backup",
+                            text: "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back."
                         ) {
                             NavigationLink {
-                                GroupsView()
+                                BackupSettingsView()
                             } label: {
-                                Text("Open groups")
+                                Text("Open backup")
                             }
                         }
                     }
 
                     card(
-                        icon: "mic.fill",
-                        color: .orange,
-                        title: "Create habits by voice",
-                        text: "Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”."
+                        icon: "nosign",
+                        color: .red,
+                        title: "Quit a bad habit",
+                        text: "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved."
                     ) {
                         Button("Try it", action: onTryVoice)
                     }
 
                     card(
-                        icon: "waveform",
-                        color: .purple,
-                        title: "Siri",
-                        text: "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”."
-                    ) {
-                        ShortcutsLink()
-                            .shortcutsLinkStyle(.automaticOutline)
-                    }
-
-                    card(
-                        icon: "calendar",
-                        color: .blue,
-                        title: "New schedules",
-                        text: "Every other day, every N days, once a month and once a year: for pills, bills and birthdays."
+                        icon: "flame.fill",
+                        color: .orange,
+                        title: "Bring back a streak",
+                        text: "Missed a day and the streak broke? The next day you can bring it back for sparks."
                     ) {
                         EmptyView()
                     }
 
-                    card(
-                        icon: "square.grid.2x2.fill",
-                        color: .green,
-                        title: "Groups on the Today screen and in the widget",
-                        text: "Sort the Today screen by groups in Settings, and hold the Today widget to show one group."
-                    ) {
-                        EmptyView()
+                    if FamilySync.isAvailable {
+                        card(
+                            icon: "person.2.fill",
+                            color: .pink,
+                            title: "Faster family groups",
+                            text: "Changes from your family now show up within seconds while the app is open. Pull down on Today to update right away."
+                        ) {
+                            EmptyView()
+                        }
+                    }
+
+                    if #available(iOS 18.0, *) {
+                        card(
+                            icon: "switch.2",
+                            color: .green,
+                            title: "Control Center",
+                            text: "Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap."
+                        ) {
+                            EmptyView()
+                        }
                     }
                 }
                 .padding(20)

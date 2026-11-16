@@ -11,6 +11,23 @@ extension View {
     }
 }
 
+/// Потянуть список вниз: сразу забрать изменения родных из iCloud и данные Apple Health.
+/// Только если есть семейные группы или привычки с Apple Health, иначе тянуть нечего.
+private struct FamilyRefresh: ViewModifier {
+    let enabled: Bool
+
+    func body(content: Content) -> some View {
+        if enabled {
+            content.refreshable {
+                await FamilySync.shared.syncAll()
+                await HealthSync.shared.sync()
+            }
+        } else {
+            content
+        }
+    }
+}
+
 struct TodayView: View {
     @Environment(HabitStore.self) private var store
     @Environment(\.scenePhase) private var scenePhase
@@ -34,6 +51,22 @@ struct TodayView: View {
     private var isToday: Bool { calendar.isDateInToday(selectedDay) }
     private var isFuture: Bool { selectedDay > calendar.startOfDay(for: Date()) }
     private var dayKey: String { DayKey.make(selectedDay) }
+
+    /// Привычки, которые человек бросает: счётчики дней показываем только на сегодня.
+    private var quitHabits: [Habit] {
+        guard isToday else { return [] }
+        let all = store.data.activeHabits.filter(\.isQuit)
+        guard let groupFilter, store.data.group(groupFilter) != nil else { return all }
+        return all.filter { $0.groupID == groupFilter }
+    }
+
+    /// Первая привычка, чью вчерашнюю серию можно вернуть за искры.
+    private var streakRepair: (Habit, (day: String, streak: Int))? {
+        for habit in store.data.trackedHabits {
+            if let repair = store.streakRepair(for: habit) { return (habit, repair) }
+        }
+        return nil
+    }
 
     private var visibleHabits: [Habit] {
         let all = store.data.habits(on: selectedDay)
@@ -67,12 +100,20 @@ struct TodayView: View {
                     .plainRow(top: 2, bottom: 2)
                 }
 
+                if isToday, let item = streakRepair {
+                    StreakRepairCard(habit: item.0, repair: item.1, showName: true)
+                        .plainRow(top: 4, bottom: 6)
+                }
+
                 content
+                quitSection
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
             .scrollIndicators(.hidden)
             .background(AppBackground())
+            .modifier(FamilyRefresh(enabled: (FamilySync.isAvailable && store.data.groups.contains { $0.family != nil })
+                                    || (HealthSync.isAvailable && store.data.isPro && store.data.activeHabits.contains { $0.health != nil })))
             .onChange(of: scenePhase) { _, phase in
                 if phase == .active { rollOverDay() }
             }
@@ -217,7 +258,7 @@ struct TodayView: View {
                         )
                         TemplatesGrid { addHabit(template: $0) }
                     }
-                } else {
+                } else if quitHabits.isEmpty {
                     EmptyStateView(
                         systemImage: "sun.max.fill",
                         title: "Free day",
@@ -250,6 +291,38 @@ struct TodayView: View {
                             .textCase(.uppercase)
                     }
                 }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var quitSection: some View {
+        let habits = quitHabits
+        if !habits.isEmpty {
+            Section {
+                ForEach(habits) { habit in
+                    QuitCard(habit: habit, showMoney: store.data.isPro) { path.append(habit.id) }
+                        .plainRow()
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button {
+                                habitToDelete = habit
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                            .tint(.red)
+                            Button {
+                                editingHabit = habit
+                            } label: {
+                                Label("Edit", systemImage: "pencil")
+                            }
+                            .tint(.gray)
+                        }
+                }
+            } header: {
+                Text("Quitting")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .textCase(.uppercase)
             }
         }
     }
@@ -294,6 +367,13 @@ struct TodayView: View {
         store.applyManualOrder(ids)
     }
 
+    /// Прогресс по Apple Health за сегодня: "6 240/10 000".
+    private func healthText(for habit: Habit) -> String? {
+        guard isToday, let link = habit.health, store.data.isPro, HealthSync.isAvailable,
+              let value = HealthSync.shared.today[habit.id] else { return nil }
+        return link.metric.format(value) + "/" + link.metric.format(link.goal)
+    }
+
     private func row(for habit: Habit) -> some View {
         let data = store.data
         let status = data.status(habit.id, day: dayKey)
@@ -313,6 +393,7 @@ struct TodayView: View {
             weekDone: habit.schedule.kind == .weekly ? data.weekDoneCount(habit, weekOf: selectedDay) : nil,
             isMinimum: data.checkIn(habit.id, day: dayKey)?.isMinimum == true,
             chainName: habit.chainAfter.flatMap { id in data.habits.first { $0.id == id }?.name },
+            healthText: healthText(for: habit),
             canToggle: canToggle,
             zoom: zoom,
             onOpen: { path.append(habit.id) },
@@ -621,6 +702,7 @@ struct HabitCard: View {
     let weekDone: Int?
     var isMinimum: Bool = false
     var chainName: String? = nil
+    var healthText: String? = nil
     let canToggle: Bool
     let zoom: Namespace.ID
     var onOpen: () -> Void
@@ -698,6 +780,9 @@ struct HabitCard: View {
             }
             if target > 1 {
                 Label(amountText, systemImage: "target")
+            }
+            if let healthText, let link = habit.health {
+                Label(healthText, systemImage: link.metric.symbol)
             }
             if let perDay = habit.wordsPerDay, habit.isWords {
                 Label(String(localized: "\(perDay) words"), systemImage: "character.book.closed.fill")

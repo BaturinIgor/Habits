@@ -619,3 +619,74 @@ Sort the Today screen by groups in Settings, and hold the Today widget to show o
 Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”.||Yeni bir alışkanlıkta mikrofona dokunun ve adını söyleyin.
 Try it||Dene
 What's new||Yenilikler
+A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones.||Uygulamadan çıktığında alışkanlıklarının ve geçmişinin bir kopyası iCloud'una kendiliğinden kaydedilir. Telefon değiştirince hiçbir şey kaybolmaz.
+Back up now||Şimdi yedekle
+Back up to iCloud||iCloud'a yedekle
+Backup from %@||%@ yedeği
+Best, days||Rekor, gün
+Bring back %@ in a row for sparks.||Kıvılcımlarla art arda %@ geri kazan.
+Bring back the streak for %lld sparks||Seriyi %lld kıvılcımla geri al
+Check off a habit right from Control Center or the Action button.||Bir alışkanlığı doğrudan Denetim Merkezi'nden veya Eylem düğmesinden işaretle.
+Count days without it||Onsuz günleri say
+Current habits and history will be replaced with the backup from %@.||Mevcut alışkanlıklar ve geçmiş %@ yedeğiyle değiştirilecek.
+Data restored||Veriler geri yüklendi
+For bad habits: smoking, sweets, alcohol, scrolling.||Kötü alışkanlıklar için: sigara, tatlı, alkol, ekranda gezinme.
+I slipped||Bozdum
+I'm quitting this habit||Bu alışkanlığı bırakıyorum
+Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept.||Günlük işaretler yerine kaç gündür onsuz olduğunu görürsün. Bozarsan sayım baştan başlar ama rekorun kalır.
+It happens. Your record and the total stay, and the count of days starts from now.||Olur böyle. Rekorun ve toplamın kalır, gün sayımı şimdi yeniden başlar.
+Last backup||Son yedek
+Money saved||Biriken para
+Next milestone: %@||Sonraki hedef: %@
+Next: %@||Sıradaki: %@
+No connection to iCloud. The backup will be saved later.||iCloud bağlantısı yok. Yedek daha sonra kaydedilecek.
+Not yet||Henüz değil
+Quitting||Bırakıyorum
+Quitting: %@||Onsuz: %@
+Relapses||Bozmalar
+Restore from iCloud||iCloud'dan geri yükle
+Restore from iCloud?||iCloud'dan geri yüklensin mi?
+Restore your habits?||Alışkanlıkların geri yüklensin mi?
+Saved: %@||Biriken: %@
+See how much you've saved with Pro||Ne kadar biriktirdiğini Pro ile gör
+Sign in to iCloud in Settings to keep a backup.||Yedek tutmak için Ayarlar'da iCloud'a giriş yap.
+Since %@||%@ itibarıyla
+Spent a day||Günlük harcama
+Start over||Baştan başla
+Start the count again?||Sayım baştan başlasın mı?
+The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included.||iCloud'daki yedek: %@, %@, alışkanlık: %lld. Uygulamadan çıktığında kendiliğinden güncellenir. Avatar ve arka plan fotoğrafları dahil değildir.
+The streak broke||Seri bozuldu
+There's a backup in your iCloud from %@. Habits in it: %lld.||iCloud'unda %@ tarihli bir yedek var. İçindeki alışkanlık: %lld.
+Total, days||Toplam, gün
+Without it since||Şu tarihten beri onsuz
+%@: the streak broke||%@: seri bozuldu
+a month||bir ay
+a week||bir hafta
+a year||bir yıl
+half a year||altı ay
+three months||üç ay
+two weeks||iki hafta
+without it||onsuz
+Automatic iCloud backup||Otomatik iCloud yedeği
+Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back.||Alışkanlıkların ve geçmişin iCloud'una kendiliğinden kaydedilir. Yeni bir iPhone'da ZenHab her şeyi geri getirmeyi önerir.
+Open backup||Yedeği aç
+Quit a bad habit||Kötü bir alışkanlığı bırak
+Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved.||Bir alışkanlıkta “Bu alışkanlığı bırakıyorum”u aç; kaç gündür onsuz olduğunu, rekorunu ve sonraki hedefi gör. Pro ile biriken parayı da.
+Bring back a streak||Seriyi geri kazan
+Missed a day and the streak broke? The next day you can bring it back for sparks.||Bir gün kaçırdın ve seri bozuldu mu? Ertesi gün kıvılcımlarla geri alabilirsin.
+Faster family groups||Daha hızlı aile grupları
+Changes from your family now show up within seconds while the app is open. Pull down on Today to update right away.||Uygulama açıkken ailenin değişiklikleri artık saniyeler içinde görünür. Hemen güncellemek için Bugün'ü aşağı çek.
+Control Center||Denetim Merkezi
+Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap.||Denetim Merkezi'ne, Kilit Ekranı'na veya Eylem düğmesine bir alışkanlık düğmesi ekle ve tek dokunuşla işaretle.
+Apple Health||Apple Health
+Check off by||Şuna göre işaretle
+Steps||Adım
+Exercise minutes||Egzersiz dakikası
+Mindful minutes||Farkındalık dakikası
+Hours of sleep||Uyku saati
+Water, liters||Su, litre
+Workouts||Antrenmanlar
+The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes.||Sağlık uygulamasında hedefe ulaşıldığında alışkanlık kendiliğinden işaretlenir: adım, uyku, su, egzersiz veya farkındalık.
+Timer||Zamanlayıcı
+Duration||Süre
+Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up.||Zamanlayıcıyı başlatmak için daireye dokun. Kilit ekranında geri sayar ve süre bitince alışkanlığı işaretler.

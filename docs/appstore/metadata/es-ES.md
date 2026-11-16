@@ -48,8 +48,8 @@ Condiciones de uso: https://www.apple.com/legal/internet-services/itunes/dev/std
 Privacidad: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Grupos familiares: comparte un grupo por iCloud y todos podrán marcar sus hábitos y recibir recordatorios.
-• Nuevos horarios: cada dos días, cada N días, una vez al mes y una vez al año.
-• Crea un hábito con la voz: solo di su nombre.
-• Siri y Atajos: marca un hábito, añade uno o pregunta qué te queda hoy.
-• El widget Hoy puede mostrar un solo grupo y la pantalla Hoy se puede ordenar por grupos.
+• Copia automática en iCloud: tus hábitos e historial se guardan solos y, en un iPhone nuevo, ZenHab te ofrece recuperarlo todo.
+• Deja un mal hábito: contador de días sin él, récord y metas. Con Pro, también el dinero ahorrado.
+• ¿Fallaste un día? Recupera la racha al día siguiente con chispas.
+• Los grupos familiares se actualizan en segundos mientras la app está abierta.
+• Marca un hábito desde el Centro de control, la pantalla bloqueada o el botón de acción (iOS 18).

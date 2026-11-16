@@ -92,11 +92,11 @@ struct RootView: View {
         .task(id: store.revision) {
             checkAchievements()
             store.claimProGift()
-            store.syncPetStage()
+            let petGrew = store.syncPetStage() != nil
             store.syncEarnedSnapshot()
             showSparkGain()
             if store.data.settings.onboardingDone {
-                RatingPrompt.maybeAsk(data: store.data, requestReview: requestReview)
+                await RatingPrompt.maybeAsk(data: store.data, facts: store.achievementFacts, petGrew: petGrew, requestReview: requestReview)
             }
         }
     }

@@ -46,8 +46,8 @@ Warunki korzystania: https://www.apple.com/legal/internet-services/itunes/dev/st
 Prywatność: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Grupy rodzinne: udostępnij grupę przez iCloud, a wszyscy w niej mogą odhaczać nawyki i dostają przypomnienia.
-• Nowe harmonogramy: co drugi dzień, co N dni, raz w miesiącu i raz w roku.
-• Twórz nawyki głosem: wystarczy powiedzieć nazwę.
-• Siri i Skróty: odhacz nawyk, dodaj nowy lub zapytaj, co zostało na dziś.
-• Widżet Dziś może pokazywać jedną grupę, a ekran Dziś można ułożyć według grup.
+• Automatyczna kopia w iCloud: nawyki i historia zapisują się same, a na nowym iPhonie ZenHab zaproponuje ich przywrócenie.
+• Rzuć zły nawyk: licznik dni bez niego, rekord i cele. Z Pro także zaoszczędzone pieniądze.
+• Opuściłeś dzień? Następnego dnia odzyskasz serię za iskry.
+• Grupy rodzinne odświeżają się teraz w kilka sekund, gdy aplikacja jest otwarta.
+• Odhaczaj nawyk z centrum sterowania, ekranu blokady lub przyciskiem czynności (iOS 18).

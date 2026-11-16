@@ -33,6 +33,16 @@ struct HabitEditorView: View {
     @State private var pausedUntil: Date
     @State private var minimumVersion: String
     @State private var chainAfter: UUID?
+    /// Бросаю: счётчик дней без привычки вместо расписания и отметок.
+    @State private var isQuit: Bool
+    @State private var quitSince: Date
+    @State private var dailyCost: String
+    /// Apple Health (Pro).
+    @State private var healthMetric: HealthLink.Metric?
+    @State private var healthGoal: Double
+    /// Таймер (Pro).
+    @State private var hasTimer: Bool
+    @State private var timerMinutes: Int
     @FocusState private var nameFocused: Bool
 
     private enum Frequency: Hashable {
@@ -95,6 +105,13 @@ struct HabitEditorView: View {
         // Связка с удалённой или архивной привычкой не показывается в списке и не работает.
         let chainParent = base.chainAfter.flatMap { id in HabitStore.shared.data.activeHabits.first { $0.id == id } }
         _chainAfter = State(initialValue: chainParent?.id)
+        _isQuit = State(initialValue: base.quit != nil)
+        _quitSince = State(initialValue: base.quit?.since ?? Date())
+        _dailyCost = State(initialValue: base.quit?.dailyCost.map { $0.formatted(.number.grouping(.never)) } ?? "")
+        _healthMetric = State(initialValue: base.health?.metric)
+        _healthGoal = State(initialValue: base.health?.goal ?? HealthLink.Metric.steps.defaultGoal)
+        _hasTimer = State(initialValue: (base.timerMinutes ?? 0) > 0)
+        _timerMinutes = State(initialValue: base.timerMinutes ?? 10)
         _isPaused = State(initialValue: pauseActive)
         _pauseWasActive = State(initialValue: pauseActive)
         _pausedUntil = State(initialValue: pauseActive ? (base.pausedUntil ?? today)
@@ -106,7 +123,7 @@ struct HabitEditorView: View {
     private var canSave: Bool {
         let name = draft.name.trimmingCharacters(in: .whitespacesAndNewlines)
         if name.isEmpty { return false }
-        if frequency == .days && customDays.isEmpty { return false }
+        if !isQuit && frequency == .days && customDays.isEmpty { return false }
         return true
     }
 
@@ -128,15 +145,26 @@ struct HabitEditorView: View {
                 if draft.isWords {
                     wordsSection
                 }
-                appearanceSection
-                scheduleSection
-                reminderSection
                 if !draft.isWords {
-                    goalSection
+                    quitSection
                 }
-                flexibilitySection
+                appearanceSection
+                if !isQuit {
+                    scheduleSection
+                    reminderSection
+                    if !draft.isWords {
+                        goalSection
+                        timerSection
+                        if HealthSync.isAvailable {
+                            healthSection
+                        }
+                    }
+                    flexibilitySection
+                }
                 groupSection
-                pauseSection
+                if !isQuit {
+                    pauseSection
+                }
                 if original != nil {
                     dangerSection
                 }
@@ -395,6 +423,95 @@ struct HabitEditorView: View {
         }
     }
 
+    private var healthSection: some View {
+        Section {
+            if store.data.isPro {
+                Picker(selection: Binding(get: { healthMetric }, set: { metric in
+                    healthMetric = metric
+                    if let metric {
+                        healthGoal = metric.defaultGoal
+                        Task { await HealthSync.shared.requestAccess(for: metric) }
+                    }
+                })) {
+                    Text("None").tag(HealthLink.Metric?.none)
+                    ForEach(HealthLink.Metric.allCases) { metric in
+                        Label(metric.title, systemImage: metric.symbol).tag(Optional(metric))
+                    }
+                } label: {
+                    HStack(spacing: 8) {
+                        Text("Check off by")
+                        ProBadge()
+                    }
+                }
+                if let metric = healthMetric {
+                    Stepper(value: $healthGoal, in: metric.range, step: metric.step) {
+                        LabeledContent("Goal", value: metric.format(healthGoal))
+                    }
+                }
+            } else {
+                lockedRow("Apple Health")
+            }
+        } header: {
+            Text("Apple Health")
+        } footer: {
+            Text("The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes.")
+        }
+    }
+
+    private var timerSection: some View {
+        Section {
+            if store.data.isPro {
+                Toggle(isOn: $hasTimer.animation(.snappy)) {
+                    HStack(spacing: 8) {
+                        Text("Timer")
+                        ProBadge()
+                    }
+                }
+                if hasTimer {
+                    Stepper(value: $timerMinutes, in: 1...180) {
+                        LabeledContent("Duration", value: String(localized: "\(timerMinutes) min"))
+                    }
+                }
+            } else {
+                lockedRow("Timer")
+            }
+        } footer: {
+            Text("Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up.")
+        }
+    }
+
+    private var quitSection: some View {
+        Section {
+            Toggle(isOn: $isQuit.animation(.snappy)) {
+                Label("I'm quitting this habit", systemImage: "nosign")
+            }
+            if isQuit {
+                DatePicker("Without it since", selection: $quitSince, in: ...Date())
+                if store.data.isPro {
+                    HStack(spacing: 8) {
+                        Text("Spent a day")
+                        ProBadge()
+                        Spacer()
+                        TextField("0", text: $dailyCost)
+                            .keyboardType(.decimalPad)
+                            .multilineTextAlignment(.trailing)
+                            .frame(maxWidth: 120)
+                        Text(Locale.current.currency?.identifier ?? "")
+                            .foregroundStyle(.secondary)
+                    }
+                } else {
+                    lockedRow("Money saved")
+                }
+            }
+        } footer: {
+            if isQuit {
+                Text("Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept.")
+            } else {
+                Text("For bad habits: smoking, sweets, alcohol, scrolling.")
+            }
+        }
+    }
+
     private var flexibilitySection: some View {
         Section {
             TextField("Minimum version, for example 5 squats", text: $minimumVersion)
@@ -549,6 +666,15 @@ struct HabitEditorView: View {
 
     private func save() {
         var habit = draft
+        if isQuit {
+            saveQuit(habit)
+            return
+        }
+        habit.quit = nil
+        if store.data.isPro {
+            habit.health = healthMetric.map { HealthLink(metric: $0, goal: healthGoal) }
+            habit.timerMinutes = hasTimer && !habit.isWords ? timerMinutes : nil
+        }
         switch frequency {
         case .daily:
             habit.schedule.kind = .repeating
@@ -614,6 +740,39 @@ struct HabitEditorView: View {
                 await store.reschedule()
             }
         }
+        dismiss()
+    }
+}
+
+// MARK: - Бросаю
+
+extension HabitEditorView {
+    /// Привычка, которую бросают: без расписания, напоминаний, цели и паузы.
+    fileprivate func saveQuit(_ base: Habit) {
+        var habit = base
+        var quit = habit.quit ?? QuitInfo(startedAt: quitSince)
+        if quit.since != quitSince {
+            quit.since = quitSince
+            // Пока срывов не было, начало и текущий период совпадают.
+            if quit.relapses.isEmpty || quitSince < quit.startedAt { quit.startedAt = quitSince }
+        }
+        if store.data.isPro {
+            let clean = dailyCost.trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ",", with: ".")
+            quit.dailyCost = Double(clean).flatMap { $0 > 0 ? $0 : nil }
+        }
+        habit.quit = quit
+        habit.name = habit.name.trimmingCharacters(in: .whitespacesAndNewlines)
+        habit.details = habit.details.trimmingCharacters(in: .whitespacesAndNewlines)
+        habit.reminder = nil
+        habit.target = nil
+        habit.unit = nil
+        habit.pausedFrom = nil
+        habit.pausedUntil = nil
+        habit.chainAfter = nil
+        habit.minimumVersion = nil
+        habit.health = nil
+        habit.timerMinutes = nil
+        store.upsert(habit)
         dismiss()
     }
 }

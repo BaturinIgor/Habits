@@ -2,3 +2,4 @@
 "CFBundleName" = "ZenHab";
 "NSMicrophoneUsageDescription" = "ZenHab, sesle alışkanlık oluşturabilmeniz için mikrofonu kullanır.";
 "NSSpeechRecognitionUsageDescription" = "ZenHab sözlerinizi programı ve hatırlatma saati olan bir alışkanlığa dönüştürür.";
+"NSHealthShareUsageDescription" = "ZenHab, bağlı alışkanlıkları işaretlemek için adım, uyku, su, egzersiz ve farkındalık dakikalarını okur.";

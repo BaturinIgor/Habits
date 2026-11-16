@@ -357,11 +357,70 @@ struct TodayScreenSettingsView: View {
 
 struct BackupSettingsView: View {
     @Environment(HabitStore.self) private var store
+    @State private var cloud = CloudBackup.shared
+    @State private var cloudCopy: (info: CloudBackup.Info, data: AppData)?
+    @State private var checkingCloud = false
+    @State private var confirmRestore = false
+    @State private var restored = false
     @State private var showingImporter = false
     @State private var pendingImport: URL?
     @State private var importResult: Bool?
 
     @State private var exportURL: URL?
+
+    @ViewBuilder
+    private var iCloudSection: some View {
+        Section {
+            Toggle(isOn: $cloud.isEnabled) {
+                Label("Back up to iCloud", systemImage: "icloud.fill")
+            }
+            if cloud.isEnabled {
+                LabeledContent("Last backup") {
+                    if cloud.isWorking {
+                        ProgressView()
+                    } else if let date = cloud.lastBackup ?? cloudCopy?.info.date {
+                        Text(Fmt.backupDate(date))
+                    } else {
+                        Text("Not yet")
+                    }
+                }
+                Button {
+                    Task {
+                        await cloud.backupNow()
+                        await checkCloud()
+                    }
+                } label: {
+                    Label("Back up now", systemImage: "arrow.clockwise.icloud")
+                }
+                .disabled(cloud.isWorking || store.data.habits.isEmpty)
+            }
+            if let copy = cloudCopy {
+                Button {
+                    confirmRestore = true
+                } label: {
+                    Label("Restore from iCloud", systemImage: "icloud.and.arrow.down")
+                }
+                .disabled(cloud.isWorking)
+                .accessibilityHint(Text("Backup from \(Fmt.backupDate(copy.info.date))"))
+            } else if checkingCloud {
+                LabeledContent("Restore from iCloud") { ProgressView() }
+            }
+        } footer: {
+            if let error = cloud.lastError {
+                Text(error)
+            } else if let copy = cloudCopy {
+                Text("The backup in iCloud: \(Fmt.backupDate(copy.info.date)), \(copy.info.device), habits: \(copy.info.habits). It updates by itself when you leave the app. Photos for the avatar and background aren't included.")
+            } else {
+                Text("A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones.")
+            }
+        }
+    }
+
+    private func checkCloud() async {
+        checkingCloud = true
+        defer { checkingCloud = false }
+        cloudCopy = try? await cloud.fetchLatest()
+    }
 
     /// Файл с копией всех данных пишется один раз при открытии экрана, а не на каждой перерисовке.
     private func prepareExport() {
@@ -372,6 +431,9 @@ struct BackupSettingsView: View {
 
     var body: some View {
         Form {
+            if CloudBackup.isAvailable {
+                iCloudSection
+            }
             Section {
                 if let exportURL {
                     ShareLink(item: exportURL) {
@@ -394,6 +456,20 @@ struct BackupSettingsView: View {
         .navigationTitle("Backup")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: prepareExport)
+        .task { await checkCloud() }
+        .alert("Restore from iCloud?", isPresented: $confirmRestore, presenting: cloudCopy) { copy in
+            Button("Restore", role: .destructive) {
+                cloud.restore(copy.data)
+                restored = true
+                prepareExport()
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: { copy in
+            Text("Current habits and history will be replaced with the backup from \(Fmt.backupDate(copy.info.date)).")
+        }
+        .alert("Data restored", isPresented: $restored) {
+            Button("OK", role: .cancel) {}
+        }
         .fileImporter(isPresented: $showingImporter, allowedContentTypes: [.json]) { result in
             if case .success(let url) = result {
                 pendingImport = url

@@ -28,6 +28,8 @@ enum Sparks {
     static let achievementBonus = 20
     static let proMonthlyGift = 100
     static let freezePrice = 30
+    /// Вернуть прервавшуюся вчера серию.
+    static let repairPrice = 40
     static let maxExtraFreezes = 2
     static let feedPrice = 5
     static let feedsPerDay = 3

@@ -46,8 +46,8 @@ Nutzungsbedingungen: https://www.apple.com/legal/internet-services/itunes/dev/st
 Datenschutz: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Familiengruppen: Teile eine Gruppe über iCloud, und alle darin können abhaken und bekommen Erinnerungen.
-• Neue Zeitpläne: jeden zweiten Tag, alle N Tage, einmal im Monat und einmal im Jahr.
-• Gewohnheiten per Sprache anlegen: Sag einfach den Namen.
-• Siri und Kurzbefehle: Gewohnheit abhaken, neue hinzufügen oder fragen, was heute noch offen ist.
-• Das Heute-Widget kann eine Gruppe zeigen, und der Heute-Bildschirm lässt sich nach Gruppen ordnen.
+• Automatische iCloud-Sicherung: Gewohnheiten und Verlauf werden von selbst gesichert, und auf einem neuen iPhone bietet ZenHab an, alles zurückzuholen.
+• Schlechte Gewohnheit ablegen: Zähler der Tage ohne, Rekord und Ziele. Mit Pro auch das gesparte Geld.
+• Einen Tag verpasst? Hol dir die Serie am nächsten Tag für Funken zurück.
+• Familiengruppen aktualisieren sich jetzt in Sekunden, solange die App offen ist.
+• Gewohnheit im Kontrollzentrum, auf dem Sperrbildschirm oder mit der Aktionstaste abhaken (iOS 18).

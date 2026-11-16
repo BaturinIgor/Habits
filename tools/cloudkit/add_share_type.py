@@ -42,6 +42,25 @@ TYPE = '''
     );
 '''
 
+# Автоматическая резервная копия (CloudBackup.swift): одна запись в приватной базе.
+BACKUP = '''
+    RECORD TYPE Backup (
+        "___createTime" TIMESTAMP,
+        "___createdBy"  REFERENCE,
+        "___etag"       STRING,
+        "___modTime"    TIMESTAMP,
+        "___modifiedBy" REFERENCE,
+        "___recordID"   REFERENCE QUERYABLE,
+        file            ASSET,
+        habits          INT64,
+        device          STRING,
+        savedAt         TIMESTAMP,
+        GRANT WRITE TO "_creator",
+        GRANT CREATE TO "_icloud",
+        GRANT READ TO "_world"
+    );
+'''
+
 src, dst = sys.argv[1], sys.argv[2]
 text = open(src, encoding='utf-8').read().rstrip() + '\n'
 if 'DEFINE SCHEMA' not in text:
@@ -50,6 +69,9 @@ for name in FAMILY_TYPES:
     if f'RECORD TYPE {name} ' not in text and f'RECORD TYPE {name}(' not in text:
         print(f'add {name}')
         text += TYPE.format(name=name)
+if 'RECORD TYPE Backup ' not in text and 'RECORD TYPE Backup(' not in text:
+    print('add Backup')
+    text += BACKUP
 if 'cloudkit.share' not in text.replace('"', ''):
     print('add cloudkit.share')
     text += SHARE
