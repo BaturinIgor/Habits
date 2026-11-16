@@ -10,6 +10,9 @@ final class ScreensUITests: XCTestCase {
     private var timings: [String] = []
     private var shotIndex = 0
     private var runName = ""
+    private var slowSteps: [(what: String, seconds: TimeInterval)] = []
+    /// Медленные шаги всех прогонов (английский и русский идут в одном процессе тестов).
+    private static var slowEverywhere: [String: [String]] = [:]
 
     /// Пределы ловят зависания, а не обычную медлительность: симулятор в CI в разы медленнее
     /// телефона, а каждый запрос теста к интерфейсу сам занимает главный поток приложения.
@@ -25,6 +28,7 @@ final class ScreensUITests: XCTestCase {
         runName = name
         issues = []
         timings = []
+        slowSteps = []
         shotIndex = 0
     }
 
@@ -195,7 +199,20 @@ final class ScreensUITests: XCTestCase {
                 timings.append("\(runName) main thread (info, includes test queries): worst stall \(parts[0]) ms, stalls over 250 ms: \(parts[1])")
             }
         }
-        let report = (["Timings:"] + timings + ["", "Problems:"] + (issues.isEmpty ? ["none"] : issues))
+        // Симулятор CI иногда замирает на десятки секунд целиком (видно по тому, что тот же шаг
+        // в другом прогоне занимает 1–2 с). Поэтому одиночный медленный шаг — предупреждение,
+        // а ошибка — если шаг медленный в двух прогонах подряд: так ведёт себя настоящее зависание.
+        var warnings: [String] = []
+        for step in slowSteps {
+            let text = String(format: "%@: %@ took %.1f s (limit %.0f s)", runName, step.what, step.seconds, stepLimit)
+            if let earlier = Self.slowEverywhere[step.what], !earlier.isEmpty {
+                issues.append(text + ", also slow in " + earlier.joined(separator: ", "))
+            } else {
+                warnings.append(text + " (once, CI simulator stall?)")
+            }
+            Self.slowEverywhere[step.what, default: []].append(runName)
+        }
+        let report = (["Timings:"] + timings + ["", "Warnings:"] + (warnings.isEmpty ? ["none"] : warnings) + ["", "Problems:"] + (issues.isEmpty ? ["none"] : issues))
             .joined(separator: "\n")
         print("==== UI REPORT \(runName) ====\n\(report)\n==== END UI REPORT ====")
         let attachment = XCTAttachment(string: report)
@@ -250,7 +267,7 @@ final class ScreensUITests: XCTestCase {
         let elapsed = Date().timeIntervalSince(start)
         timings.append(String(format: "%@ %@: %.2f s", runName, what, elapsed))
         if elapsed > stepLimit {
-            issues.append(String(format: "%@: %@ took %.1f s (limit %.0f s)", runName, what, elapsed, stepLimit))
+            slowSteps.append((what: what, seconds: elapsed))
         }
     }
 
