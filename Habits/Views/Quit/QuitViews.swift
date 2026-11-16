@@ -18,7 +18,6 @@ enum QuitFormat {
         case 180: return String(localized: "half a year")
         case 365: return String(localized: "a year")
         default:
-            if days > 365 && days % 365 == 0 { return String(localized: "\(days / 365) years") }
             return Fmt.days(days)
         }
     }
@@ -59,15 +58,16 @@ struct QuitCard: View {
                 }
                 Spacer(minLength: 0)
                 VStack(spacing: 0) {
-                    Text("\(days)")
-                        .font(.title.weight(.bold).monospacedDigit())
+                    Text(Fmt.days(days))
+                        .font(.headline.weight(.bold).monospacedDigit())
                         .foregroundStyle(color)
                         .contentTransition(.numericText())
-                    Text("days without")
+                        .lineLimit(1)
+                    Text("without it")
                         .font(.caption2)
                         .foregroundStyle(.secondary)
                 }
-                .frame(minWidth: 64)
+                .fixedSize()
             }
             .padding(14)
             .background {
@@ -95,11 +95,13 @@ struct QuitDetailSection: View {
         let next = quit.nextMilestone()
         VStack(spacing: 16) {
             VStack(spacing: 2) {
-                Text("\(quit.days())")
-                    .font(.system(size: 64, weight: .bold, design: .rounded).monospacedDigit())
+                Text(Fmt.days(quit.days()))
+                    .font(.system(size: 44, weight: .bold, design: .rounded).monospacedDigit())
                     .foregroundStyle(color)
                     .contentTransition(.numericText())
-                Text("days without it")
+                    .minimumScaleFactor(0.6)
+                    .lineLimit(1)
+                Text("without it")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Text("Since \(Fmt.backupDate(quit.since))")

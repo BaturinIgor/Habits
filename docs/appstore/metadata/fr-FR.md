@@ -46,8 +46,8 @@ Conditions d'utilisation : https://www.apple.com/legal/internet-services/itunes/
 Confidentialité : https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Groupes famille : partage un groupe via iCloud, et chacun peut cocher ses habitudes et recevoir des rappels.
-• Nouveaux rythmes : un jour sur deux, tous les N jours, une fois par mois et une fois par an.
-• Crée une habitude à la voix : dis simplement son nom.
-• Siri et Raccourcis : coche une habitude, ajoutes-en une ou demande ce qu'il reste aujourd'hui.
-• Le widget Aujourd'hui peut afficher un seul groupe, et l'écran Aujourd'hui peut être trié par groupes.
+• Sauvegarde iCloud automatique : habitudes et historique sont sauvegardés tout seuls, et sur un nouvel iPhone ZenHab propose de tout récupérer.
+• Arrête une mauvaise habitude : compteur de jours sans, record et paliers. Avec Pro, l'argent économisé aussi.
+• Un jour manqué ? Récupère ta série le lendemain contre des étincelles.
+• Les groupes famille se mettent à jour en quelques secondes quand l'app est ouverte.
+• Coche une habitude depuis le Centre de contrôle, l'écran verrouillé ou le bouton Action (iOS 18).

@@ -619,3 +619,62 @@ Sort the Today screen by groups in Settings, and hold the Today widget to show o
 Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”.||Ketuk mikrofon di kebiasaan baru dan ucapkan namanya.
 Try it||Coba
 What's new||Yang baru
+A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones.||Salinan kebiasaan dan riwayatmu tersimpan otomatis ke iCloud saat kamu keluar dari aplikasi, jadi tidak ada yang hilang saat ganti ponsel.
+Back up now||Cadangkan sekarang
+Back up to iCloud||Cadangkan ke iCloud
+Backup from %@||Cadangan dari %@
+Best, days||Rekor, hari
+Bring back %@ in a row for sparks.||Kembalikan %@ berturut-turut dengan percikan.
+Bring back the streak for %lld sparks||Kembalikan rentetan dengan %lld percikan
+Check off a habit right from Control Center or the Action button.||Centang kebiasaan langsung dari Pusat Kontrol atau tombol Tindakan.
+Count days without it||Hitung hari tanpanya
+Current habits and history will be replaced with the backup from %@.||Kebiasaan dan riwayat saat ini akan diganti dengan cadangan dari %@.
+Data restored||Data dipulihkan
+For bad habits: smoking, sweets, alcohol, scrolling.||Untuk kebiasaan buruk: merokok, manis, alkohol, scrolling.
+I slipped||Aku tergelincir
+I'm quitting this habit||Aku sedang berhenti
+Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept.||Alih-alih centang harian, kamu akan melihat sudah berapa hari tanpanya. Kalau tergelincir, hitungan mulai lagi, tapi rekormu tetap tersimpan.
+It happens. Your record and the total stay, and the count of days starts from now.||Tidak apa-apa. Rekor dan totalmu tetap ada, dan hitungan hari dimulai dari sekarang.
+Last backup||Cadangan terakhir
+Money saved||Uang yang dihemat
+Next milestone: %@||Target berikutnya: %@
+Next: %@||Berikutnya: %@
+No connection to iCloud. The backup will be saved later.||Tidak ada koneksi ke iCloud. Cadangan akan disimpan nanti.
+Not yet||Belum
+Quitting||Sedang berhenti
+Quitting: %@||Tanpanya: %@
+Relapses||Kambuh
+Restore from iCloud||Pulihkan dari iCloud
+Restore from iCloud?||Pulihkan dari iCloud?
+Restore your habits?||Pulihkan kebiasaanmu?
+Saved: %@||Dihemat: %@
+See how much you've saved with Pro||Lihat berapa yang kamu hemat dengan Pro
+Sign in to iCloud in Settings to keep a backup.||Masuk ke iCloud di Pengaturan untuk menyimpan cadangan.
+Since %@||Sejak %@
+Spent a day||Pengeluaran per hari
+Start over||Mulai dari awal
+Start the count again?||Mulai hitungan lagi?
+The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included.||Cadangan di iCloud: %@, %@, kebiasaan: %lld. Diperbarui otomatis saat kamu keluar dari aplikasi. Foto avatar dan latar tidak termasuk.
+The streak broke||Rentetan terputus
+There's a backup in your iCloud from %@. Habits in it: %lld.||Ada cadangan di iCloud-mu dari %@. Kebiasaan di dalamnya: %lld.
+Total, days||Total, hari
+Without it since||Tanpanya sejak
+%@: the streak broke||%@: rentetan terputus
+a month||sebulan
+a week||seminggu
+a year||setahun
+half a year||setengah tahun
+three months||tiga bulan
+two weeks||dua minggu
+without it||tanpanya
+Automatic iCloud backup||Cadangan iCloud otomatis
+Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back.||Kebiasaan dan riwayatmu tersimpan otomatis di iCloud. Di iPhone baru, ZenHab akan menawarkan untuk memulihkan semuanya.
+Open backup||Buka cadangan
+Quit a bad habit||Hentikan kebiasaan buruk
+Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved.||Nyalakan “Aku sedang berhenti” di sebuah kebiasaan untuk melihat sudah berapa hari tanpanya, rekormu, dan target berikutnya. Dengan Pro, juga uang yang dihemat.
+Bring back a streak||Kembalikan rentetan
+Missed a day and the streak broke? The next day you can bring it back for sparks.||Melewatkan sehari dan rentetan terputus? Keesokan harinya kamu bisa mengembalikannya dengan percikan.
+Faster family groups||Grup keluarga lebih cepat
+Changes from your family now show up within seconds while the app is open. Pull down on Today to update right away.||Perubahan dari keluargamu kini muncul dalam hitungan detik saat aplikasi terbuka. Tarik layar Hari ini ke bawah untuk langsung memperbarui.
+Control Center||Pusat Kontrol
+Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap.||Tambahkan tombol kebiasaan ke Pusat Kontrol, Layar Terkunci, atau tombol Tindakan dan centang dengan satu ketukan.

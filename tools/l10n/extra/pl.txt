@@ -619,3 +619,62 @@ Sort the Today screen by groups in Settings, and hold the Today widget to show o
 Tap the microphone in a new habit and say, for example: “Dog pills once a month on the 15th at 9 am”.||Stuknij mikrofon w nowym nawyku i powiedz jego nazwę.
 Try it||Wypróbuj
 What's new||Co nowego
+A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones.||Kopia nawyków i historii zapisuje się sama w Twoim iCloud, gdy wychodzisz z aplikacji. Przy zmianie telefonu nic nie zginie.
+Back up now||Zapisz teraz
+Back up to iCloud||Kopia w iCloud
+Backup from %@||Kopia z %@
+Best, days||Rekord, dni
+Bring back %@ in a row for sparks.||Odzyskaj %@ z rzędu za iskry.
+Bring back the streak for %lld sparks||Odzyskaj serię za %lld iskier
+Check off a habit right from Control Center or the Action button.||Odhaczaj nawyk prosto z centrum sterowania lub przyciskiem czynności.
+Count days without it||Licz dni bez tego
+Current habits and history will be replaced with the backup from %@.||Obecne nawyki i historia zostaną zastąpione kopią z %@.
+Data restored||Dane przywrócone
+For bad habits: smoking, sweets, alcohol, scrolling.||Dla złych nawyków: palenie, słodycze, alkohol, scrollowanie.
+I slipped||Wpadka
+I'm quitting this habit||Rzucam ten nawyk
+Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept.||Zamiast codziennych odhaczeń zobaczysz, ile dni jesteś bez tego. Po wpadce licznik startuje od nowa, ale rekord zostaje.
+It happens. Your record and the total stay, and the count of days starts from now.||Zdarza się. Rekord i suma zostają, a dni liczą się od teraz.
+Last backup||Ostatnia kopia
+Money saved||Zaoszczędzone pieniądze
+Next milestone: %@||Następny cel: %@
+Next: %@||Dalej: %@
+No connection to iCloud. The backup will be saved later.||Brak połączenia z iCloud. Kopia zapisze się później.
+Not yet||Jeszcze nie
+Quitting||Rzucam
+Quitting: %@||Bez: %@
+Relapses||Wpadki
+Restore from iCloud||Przywróć z iCloud
+Restore from iCloud?||Przywrócić z iCloud?
+Restore your habits?||Przywrócić Twoje nawyki?
+Saved: %@||Zaoszczędzone: %@
+See how much you've saved with Pro||Zobacz z Pro, ile zaoszczędzono
+Sign in to iCloud in Settings to keep a backup.||Zaloguj się do iCloud w Ustawieniach, aby trzymać kopię.
+Since %@||Od %@
+Spent a day||Wydatki dziennie
+Start over||Zacznij od nowa
+Start the count again?||Zacząć liczyć od nowa?
+The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included.||Kopia w iCloud: %@, %@, nawyki: %lld. Aktualizuje się sama, gdy wychodzisz z aplikacji. Zdjęcia awatara i tła nie są w niej zapisywane.
+The streak broke||Seria została przerwana
+There's a backup in your iCloud from %@. Habits in it: %lld.||W Twoim iCloud jest kopia z %@. Nawyków: %lld.
+Total, days||Razem, dni
+Without it since||Bez tego od
+%@: the streak broke||%@: seria przerwana
+a month||miesiąc
+a week||tydzień
+a year||rok
+half a year||pół roku
+three months||trzy miesiące
+two weeks||dwa tygodnie
+without it||bez tego
+Automatic iCloud backup||Automatyczna kopia w iCloud
+Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back.||Nawyki i historia zapisują się same w Twoim iCloud. Na nowym iPhonie ZenHab zaproponuje przywrócenie wszystkiego.
+Open backup||Otwórz kopię
+Quit a bad habit||Rzuć zły nawyk
+Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved.||Włącz w nawyku „Rzucam ten nawyk”, by widzieć, ile dni jesteś bez niego, swój rekord i następny cel. Z Pro także zaoszczędzone pieniądze.
+Bring back a streak||Odzyskaj serię
+Missed a day and the streak broke? The next day you can bring it back for sparks.||Opuściłeś dzień i seria się przerwała? Następnego dnia możesz ją odzyskać za iskry.
+Faster family groups||Szybsze grupy rodzinne
+Changes from your family now show up within seconds while the app is open. Pull down on Today to update right away.||Zmiany od rodziny pojawiają się teraz w kilka sekund, gdy aplikacja jest otwarta. Pociągnij Dziś w dół, by od razu odświeżyć.
+Control Center||Centrum sterowania
+Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap.||Dodaj przycisk nawyku do centrum sterowania, ekranu blokady lub przycisku czynności i odhaczaj jednym dotknięciem.

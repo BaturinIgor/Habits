@@ -46,8 +46,8 @@ Termini d'uso: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacy: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Gruppi famiglia: condividi un gruppo tramite iCloud e tutti potranno spuntare le abitudini e ricevere promemoria.
-• Nuove frequenze: a giorni alterni, ogni N giorni, una volta al mese e una volta all'anno.
-• Crea un'abitudine con la voce: basta dirne il nome.
-• Siri e Comandi rapidi: spunta un'abitudine, aggiungine una o chiedi cosa resta oggi.
-• Il widget Oggi può mostrare un solo gruppo e la schermata Oggi si può ordinare per gruppi.
+• Backup automatico su iCloud: abitudini e cronologia si salvano da sole e, su un nuovo iPhone, ZenHab propone di recuperare tutto.
+• Smetti una cattiva abitudine: contatore dei giorni senza, record e traguardi. Con Pro, anche i soldi risparmiati.
+• Hai saltato un giorno? Recupera la serie il giorno dopo con le scintille.
+• I gruppi di famiglia si aggiornano in pochi secondi con l'app aperta.
+• Spunta un'abitudine dal Centro di Controllo, dalla schermata di blocco o dal tasto Azione (iOS 18).

@@ -72,8 +72,8 @@ Privacy Policy: https://baturinigor.github.io/Habits/privacy.html
 The app is available in 14 languages: English, Russian, German, French, Spanish, Portuguese, Italian, Turkish, Polish, Indonesian, Chinese, Japanese, Korean and Hindi.
 
 ## What's New
-• Family groups: share a group through iCloud, and everyone in it can check off its habits and gets reminders.
-• New schedules: every other day, every N days, once a month and once a year.
-• Create a habit by voice: say the name, how often and what time.
-• Siri and Shortcuts: check off a habit, add one, or ask what's left today.
-• Show one group in the Today widget, and sort the Today screen by groups.
+• Automatic iCloud backup: your habits and history are saved by themselves, and on a new iPhone ZenHab offers to bring them back.
+• Quit a bad habit: a counter of days without it, your record and milestones. With Pro, also the money saved.
+• Missed a day? Bring back a broken streak for sparks the next day.
+• Family groups now update within seconds while the app is open.
+• Check off a habit from Control Center, the Lock Screen or the Action button (iOS 18).

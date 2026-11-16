@@ -46,8 +46,8 @@ Kullanım Koşulları: https://www.apple.com/legal/internet-services/itunes/dev/
 Gizlilik: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Aile grupları: Bir grubu iCloud ile paylaş, gruptaki herkes alışkanlıkları işaretleyebilir ve hatırlatma alır.
-• Yeni programlar: gün aşırı, N günde bir, ayda bir ve yılda bir.
-• Sesle alışkanlık oluştur: sadece adını söyle.
-• Siri ve Kestirmeler: alışkanlığı işaretle, yenisini ekle ya da bugün ne kaldığını sor.
-• Bugün widget'ı tek bir grubu gösterebilir, Bugün ekranı gruplara göre sıralanabilir.
+• Otomatik iCloud yedeği: alışkanlıkların ve geçmişin kendiliğinden kaydedilir, yeni bir iPhone'da ZenHab hepsini geri getirmeyi önerir.
+• Kötü bir alışkanlığı bırak: onsuz gün sayacı, rekor ve hedefler. Pro ile biriken para da.
+• Bir gün mü kaçırdın? Ertesi gün seriyi kıvılcımlarla geri al.
+• Aile grupları uygulama açıkken artık saniyeler içinde güncellenir.
+• Alışkanlığı Denetim Merkezi'nden, Kilit Ekranı'ndan veya Eylem düğmesinden işaretle (iOS 18).
