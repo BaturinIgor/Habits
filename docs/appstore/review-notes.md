@@ -7,20 +7,24 @@
 - **Notes**: текст ниже, на английском.
 
 ```
-ZenHab is a habit tracker. It works fully offline: there is no account, no server and no third-party SDK. All data is stored on the device (app group container shared with the widget).
+ZenHab is a habit tracker. There is no account and no own server. Habits are stored on the device (app group shared with the widgets) and, if the user is signed in to iCloud, in the user's own iCloud (CloudKit private database for the automatic backup, shared database for family groups).
 
-How to try the main features:
-1. On first launch, finish the short onboarding, then tap "+" on the Today tab or pick habits from the catalog.
-2. Set a reminder time a minute ahead to see the notification. If a habit is not checked off, the reminder repeats every 15 minutes; the Done and Skip buttons in the notification stop the repeats.
-3. Add the ZenHab widget to the Home Screen: habits can be checked off directly from it (App Intents).
-4. Profile tab: achievements, avatars, backgrounds and a virtual pet. "Sparks" are points earned only by checking off habits. They cannot be bought with real money and have no cash value.
-5. Words: a built-in word-learning habit with an offline dictionary; pronunciation uses the system speech synthesizer.
+New in 1.4:
+1. Apple Health (Pro): in the habit editor, section "Apple Health", link a habit to steps, sleep, water, workouts or mindful minutes and set a goal. The app only READS these values (no write access), compares them with the goal on the device and checks the habit off. Health data is never stored, sent to a server or saved to iCloud; only the fact that the habit was done is saved.
+2. Habit timer (Pro): in the habit editor, section "Timer", set minutes. Tapping the habit on the Today tab opens the timer; it shows a Live Activity on the Lock Screen and in the Dynamic Island and checks the habit off when time is up.
+3. Quit mode: in the habit editor turn on "I'm quitting this habit". The habit then shows days without it, the record and milestones.
+4. Streak repair: the day after a missed day, a broken streak can be restored for 40 sparks.
+5. Week in review: Statistics tab > "Week in review" card, can be shared as an image.
+6. Control Center control and Action button (iOS 18): check off a habit without opening the app.
+7. Automatic iCloud backup: Settings > Backup. On a new iPhone the app offers to restore.
 
-In-app purchases: Settings > "Habit Tracker Pro". Pro is offered as monthly and yearly auto-renewable subscriptions and a lifetime non-consumable purchase. The free version allows up to 5 active habits. "Restore purchases", Terms of Use and Privacy Policy links are on the same screen.
+Pro features: Settings > "Habit Tracker Pro". Monthly and yearly auto-renewable subscriptions and a lifetime non-consumable purchase; the sandbox purchase unlocks Pro immediately. The free version allows up to 5 active habits. "Restore purchases", Terms of Use and Privacy Policy links are on the same screen.
 
-Background: the app uses BGAppRefreshTask (UIBackgroundModes: fetch) only to reschedule local reminders and refresh widgets.
+Sparks are points earned only by checking off habits. They cannot be bought with real money and have no cash value.
 
-Feedback in Settings opens the user's own Mail app; nothing is sent automatically.
+Background modes: "fetch" (BGAppRefreshTask) reschedules local reminders, refreshes widgets and checks Apple Health goals; "remote-notification" receives CloudKit change notifications for family groups.
+
+Feedback (Settings > Feedback) is sent only when the user taps Send: the text the user typed, an optional screenshot they pick and optional technical info (app version, iOS version, device model) go to the developer's support chat over HTTPS.
 ```
 
 ## Частые причины отказа и как они уже закрыты
@@ -35,6 +39,8 @@ Feedback in Settings opens the user's own Mail app; nothing is sent automaticall
 | 5.1.1(v) Account deletion | Есть регистрация без удаления аккаунта | Аккаунтов нет |
 | 4.2 Minimum functionality | "Слишком простое приложение" | Виджеты, уведомления с действиями, статистика, питомец, слова |
 | 2.5.4 Background modes | Фоновый режим без причины | Объяснено в Notes |
+| 2.5.1 HealthKit | Здоровье не упомянуто в описании или данные уходят в iCloud | Health упомянут в описании (en, ru) и Notes; данные Health только читаются на устройстве и никуда не сохраняются |
+| 2.5.4 / 4.0 Live Activity | Live Activity без пользы | Только таймер, который запустил сам пользователь, с концом отсчёта |
 | Privacy manifest | Нет PrivacyInfo.xcprivacy при использовании UserDefaults | Добавлен `Shared/PrivacyInfo.xcprivacy` |
 
 Если всё же отклонят, ответ приходит в App Store Connect -> Resolution Center. Пришли его текст в тред, разберём.

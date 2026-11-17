@@ -9,7 +9,7 @@ ZenHab: Habit Tracker
 Daily routine, streaks, goals
 
 ## Promotional text
-Build habits that stick: gentle reminders, streaks, a pet that grows with you and widgets that check off a habit in one tap. Private by design, no account needed.
+Build habits that stick: gentle reminders, streaks, a pet that grows with you and widgets that check off a habit in one tap. No account needed.
 
 ## Keywords
 habits,routine,planner,daily,goals,reminder,streak,self care,widget,productivity,water,todo,journal
@@ -25,6 +25,8 @@ HABITS YOUR WAY
 • Morning, afternoon, evening and anytime sections, or one list sorted by time
 • A catalog of about 50 ready-made habits, added in one tap
 • Notes for any check-in
+• Quit mode for bad habits: days without it, your record and milestones
+• Family groups: share a group through iCloud, and everyone in it can check off its habits and gets reminders
 
 REMINDERS THAT WORK
 • A reminder at the time you pick
@@ -49,11 +51,13 @@ LEARN WORDS EVERY DAY
 WIDGETS
 • Home Screen widgets: check off habits without opening the app
 • Lock Screen widgets with today's progress
+• Check off a habit from Control Center, the Lock Screen or the Action button (iOS 18)
+• Siri and Shortcuts
 
 PRIVATE BY DESIGN
-• All your data stays on your iPhone
+• Your habits stay on your iPhone and in your own iCloud
 • No account, no ads, no tracking
-• Export and import a backup whenever you want
+• Automatic iCloud backup, plus export and import whenever you want
 
 ZENHAB PRO
 The free version includes up to 5 active habits. Pro adds:
@@ -63,6 +67,8 @@ The free version includes up to 5 active habits. Pro adds:
 • Pause a habit for a trip or illness without losing your streak
 • Exclusive pets (dragon, unicorn, phoenix), a monthly gift of 100 sparks and a higher daily limit
 • Exclusive avatars and backgrounds
+• Apple Health: link a habit to steps, sleep, water, workouts or mindful minutes, and it checks itself off when you reach the goal. Health data is read on your iPhone and never leaves it
+• Habit timer with a countdown on the Lock Screen and in the Dynamic Island
 
 Pro is available as a monthly or yearly subscription or as a one-time lifetime purchase. Payment is charged to your Apple Account at confirmation of purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. You can manage and cancel subscriptions in Settings, Apple Account, Subscriptions.
 

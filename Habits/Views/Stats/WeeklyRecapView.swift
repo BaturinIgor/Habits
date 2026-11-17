@@ -35,13 +35,16 @@ struct WeeklyRecapCard: View {
             HStack(alignment: .bottom, spacing: 8) {
                 ForEach(recap.days) { day in
                     VStack(spacing: 6) {
-                        ZStack(alignment: .bottom) {
-                            Capsule().fill(.white.opacity(0.22))
-                            Capsule()
-                                .fill(.white)
-                                .frame(height: max(day.total > 0 ? 8 : 0, 80 * day.fraction))
-                        }
-                        .frame(height: 80)
+                        // Заливка обрезается по форме столбика, а не рисуется отдельной «таблеткой».
+                        Capsule()
+                            .fill(.white.opacity(0.22))
+                            .overlay(alignment: .bottom) {
+                                Rectangle()
+                                    .fill(.white)
+                                    .frame(height: 80 * day.fraction)
+                            }
+                            .clipShape(Capsule())
+                            .frame(height: 80)
                         Text(day.date.formatted(.dateTime.weekday(.narrow)))
                             .font(.caption2.weight(.semibold))
                             .opacity(0.8)
@@ -55,6 +58,8 @@ struct WeeklyRecapCard: View {
                 tile(value: "\(recap.perfectDays)", title: String(localized: "Perfect days"), symbol: "star.fill")
                 tile(value: "\(recap.streak)", title: String(localized: "Best streak"), symbol: "flame.fill")
             }
+            // Плитки одной высоты, даже если подпись в одной из них переносится.
+            .fixedSize(horizontal: false, vertical: true)
 
             if let top = recap.top {
                 Label {
@@ -95,10 +100,10 @@ struct WeeklyRecapCard: View {
                 .font(.caption2)
                 .opacity(0.85)
                 .multilineTextAlignment(.center)
-                .lineLimit(2)
+                .lineLimit(2, reservesSpace: true)
                 .minimumScaleFactor(0.8)
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .padding(.vertical, 10)
         .background(RoundedRectangle(cornerRadius: 16, style: .continuous).fill(.white.opacity(0.16)))
     }

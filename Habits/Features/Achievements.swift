@@ -29,8 +29,20 @@ struct AchievementFacts {
         let calendar = Calendar.app
         habitsCreated = data.habits.count
         groups = data.groups.count
-        let habitsByID = Dictionary(data.habits.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
-        var days = Set<String>()
+        let habitsByKey = Dictionary(data.habits.map { ($0.id.uuidString, $0) }, uniquingKeysWith: { a, _ in a })
+        var days = Set<Substring>()
+        // Разбор дня из ключа и работа с календарём дорогие, а дней намного меньше, чем отметок:
+        // считаем их один раз на день.
+        struct DayInfo { var weekend: Bool; var start: Date; var end: Date }
+        var dayInfo: [Substring: DayInfo] = [:]
+        func info(_ dayPart: Substring) -> DayInfo? {
+            if let cached = dayInfo[dayPart] { return cached }
+            guard let date = DayKey.date(String(dayPart), calendar: calendar),
+                  let end = calendar.date(byAdding: .day, value: 1, to: date) else { return nil }
+            let value = DayInfo(weekend: calendar.isDateInWeekend(date), start: date, end: end)
+            dayInfo[dayPart] = value
+            return value
+        }
         for (key, entry) in data.checkIns {
             let hasNote = !(entry.note ?? "").isEmpty
             if hasNote { notes += 1 }
@@ -38,18 +50,17 @@ struct AchievementFacts {
             totalDone += 1
             if hasNote { notedChecks += 1 }
             if entry.isMinimum == true { minimumChecks += 1 }
-            let parts = key.split(separator: "|").map(String.init)
-            let dayPart = parts.last ?? ""
+            let bar = key.lastIndex(of: "|")
+            let dayPart = bar.map { key[key.index(after: $0)...] } ?? key[...]
             days.insert(dayPart)
-            if let date = DayKey.date(dayPart, calendar: calendar), calendar.isDateInWeekend(date) {
-                weekendChecks += 1
-            }
-            if let id = parts.first.flatMap(UUID.init(uuidString:)), let habit = habitsByID[id] {
+            if let bar, let habit = habitsByKey[String(key[..<bar])] {
                 if (habit.target ?? 1) > 1 { goalChecks += 1 }
                 if habit.chainAfter != nil { chainChecks += 1 }
             }
+            guard let day = info(dayPart) else { continue }
+            if day.weekend { weekendChecks += 1 }
             // Ранние и поздние отметки считаем только в тот же день, без задним числом.
-            if dayPart == DayKey.make(entry.updatedAt, calendar: calendar) {
+            if entry.updatedAt >= day.start && entry.updatedAt < day.end {
                 let hour = calendar.component(.hour, from: entry.updatedAt)
                 if hour < 8 { earlyChecks += 1 }
                 if hour >= 22 { lateChecks += 1 }

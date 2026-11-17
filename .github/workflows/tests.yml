@@ -84,6 +84,8 @@ jobs:
           status=$?
           echo "---- errors ----"
           grep -E "error:|fatal error" test.log | sort -u | head -80
+          echo "---- performance ----"
+          grep -E "^PERF " test.log | sort -u || true
           echo "---- results ----"
           grep -E "Test Case .* (passed|failed)|Executed [0-9]+ test" test.log | head -80
           echo "---- failures ----"
