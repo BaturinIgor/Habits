@@ -3,3 +3,4 @@
 "NSMicrophoneUsageDescription" = "ZenHab menggunakan mikrofon agar Anda bisa membuat kebiasaan dengan suara.";
 "NSSpeechRecognitionUsageDescription" = "ZenHab mengubah ucapan Anda menjadi kebiasaan dengan jadwal dan pengingat.";
 "NSHealthShareUsageDescription" = "ZenHab membaca langkah, tidur, air, olahraga, dan menit kesadaran untuk mencentang kebiasaan yang terhubung.";
+"NSHealthUpdateUsageDescription" = "ZenHab tidak menulis apa pun ke Kesehatan. Aplikasi hanya membaca data untuk mencentang kebiasaan yang terhubung.";

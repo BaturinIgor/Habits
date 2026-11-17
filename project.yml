@@ -56,6 +56,7 @@ targets:
         # Apple Health (чтение). Права HealthKit добавляет tools/appstore/enable_family.sh в сборке для App Store.
         HealthEnabled: false
         NSHealthShareUsageDescription: ZenHab reads steps, sleep, water, exercise and mindful minutes to check off linked habits for you.
+        NSHealthUpdateUsageDescription: ZenHab does not write to Apple Health. It only reads data to check off linked habits.
         BGTaskSchedulerPermittedIdentifiers: [com.personal.habits.refresh]
         # Таймер привычки на экране блокировки (Live Activity).
         NSSupportsLiveActivities: true
