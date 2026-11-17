@@ -3,3 +3,4 @@
 "NSMicrophoneUsageDescription" = "ZenHab usa il microfono per permetterti di creare abitudini con la voce.";
 "NSSpeechRecognitionUsageDescription" = "ZenHab trasforma le tue parole in un'abitudine con programma e promemoria.";
 "NSHealthShareUsageDescription" = "ZenHab legge passi, sonno, acqua, esercizio e minuti di consapevolezza per spuntare le abitudini collegate.";
+"NSHealthUpdateUsageDescription" = "ZenHab non scrive nulla in Salute. Legge solo i dati per spuntare le abitudini collegate.";

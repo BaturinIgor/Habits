@@ -3,3 +3,4 @@
 "NSMicrophoneUsageDescription" = "ZenHab używa mikrofonu, aby można było tworzyć nawyki głosem.";
 "NSSpeechRecognitionUsageDescription" = "ZenHab zamienia Twoje słowa w nawyk z harmonogramem i przypomnieniem.";
 "NSHealthShareUsageDescription" = "ZenHab odczytuje kroki, sen, wodę, ćwiczenia i minuty uważności, aby odhaczać powiązane nawyki.";
+"NSHealthUpdateUsageDescription" = "ZenHab niczego nie zapisuje w Zdrowiu. Tylko odczytuje dane, aby odhaczać powiązane nawyki.";

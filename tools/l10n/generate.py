@@ -199,6 +199,23 @@ PERMISSIONS = {
   'pl': 'ZenHab odczytuje kroki, sen, wodę, ćwiczenia i minuty uważności, aby odhaczać powiązane nawyki.',
   'id': 'ZenHab membaca langkah, tidur, air, olahraga, dan menit kesadaran untuk mencentang kebiasaan yang terhubung.',
  },
+ # Apple требует этот ключ при правах HealthKit, хотя ZenHab в Здоровье ничего не записывает.
+ 'NSHealthUpdateUsageDescription': {
+  'en': 'ZenHab does not write to Apple Health. It only reads data to check off linked habits.',
+  'ru': 'ZenHab ничего не записывает в Здоровье. Он только читает данные, чтобы отмечать связанные привычки.',
+  'de': 'ZenHab schreibt nichts in Apple Health. Es liest nur Daten, um verknüpfte Gewohnheiten abzuhaken.',
+  'fr': 'ZenHab n\'écrit rien dans Santé. Il lit seulement des données pour cocher tes habitudes liées.',
+  'es': 'ZenHab no escribe nada en Salud. Solo lee datos para marcar tus hábitos vinculados.',
+  'zh-Hans': 'ZenHab 不会向“健康”写入任何数据，只读取数据来为关联的习惯打卡。',
+  'ja': 'ZenHabはヘルスケアに何も書き込みません。連携した習慣をチェックするためにデータを読み取るだけです。',
+  'ko': 'ZenHab은 건강 앱에 아무것도 기록하지 않습니다. 연결된 습관을 체크하기 위해 데이터를 읽기만 합니다.',
+  'hi': 'ZenHab Apple Health में कुछ नहीं लिखता। यह जुड़ी आदतें पूरी करने के लिए केवल डेटा पढ़ता है।',
+  'pt-BR': 'O ZenHab não grava nada no Saúde. Ele só lê dados para marcar seus hábitos vinculados.',
+  'it': 'ZenHab non scrive nulla in Salute. Legge solo i dati per spuntare le abitudini collegate.',
+  'tr': 'ZenHab Sağlık uygulamasına hiçbir şey yazmaz. Yalnızca bağlı alışkanlıkları işaretlemek için veri okur.',
+  'pl': 'ZenHab niczego nie zapisuje w Zdrowiu. Tylko odczytuje dane, aby odhaczać powiązane nawyki.',
+  'id': 'ZenHab tidak menulis apa pun ke Kesehatan. Aplikasi hanya membaca data untuk mencentang kebiasaan yang terhubung.',
+ },
 }
 
 # Фразы Siri из Habits/Features/SiriIntents.swift (HabitsShortcuts), в том же порядке.
