@@ -17,7 +17,7 @@ fi
 [[ "$NEW_ID" == "$OLD_ID" ]] && { echo "Идентификатор уже $OLD_ID, менять нечего"; exit 0; }
 
 cd "$(dirname "$0")/../.."
-files=$(grep -rl --include='*.swift' --include='*.entitlements' --include='*.yml' -F "$OLD_ID" project.yml Habits HabitsWidget Shared || true)
+files=$(grep -rl --include='*.swift' --include='*.entitlements' --include='*.yml' -F "$OLD_ID" project.yml Habits HabitsWidget Shared HabitsWatch HabitsWatchWidget WatchShared || true)
 for f in $files; do
   # Точки в старом ID экранированы, чтобы sed понимал их буквально.
   sed -i.bak "s/com\.personal\.habits/$NEW_ID/g" "$f" && rm -f "$f.bak"

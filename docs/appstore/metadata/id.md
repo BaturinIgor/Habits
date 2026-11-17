@@ -46,8 +46,6 @@ Ketentuan Penggunaan: https://www.apple.com/legal/internet-services/itunes/dev/s
 Privasi: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Jurnal suasana hati: nilai harimu dengan satu ketukan di Hari Ini dan tambahkan beberapa kata. Dengan Pro, lihat seluruh riwayat, grafik bulanan, dan kebiasaan yang memperbaiki suasana hati.
-• Ikon aplikasi baru (Pro): Senja, Hutan, Mawar, Emas, Tengah malam, dan Terang.
-• Kunci Face ID (Pro): hanya kamu yang bisa membuka kebiasaan dan jurnalmu.
-• Ekspor ke CSV (Pro): semua centang beserta catatan dan suasana hati sebagai tabel untuk Numbers, Excel, atau Google Sheets.
-• Layar Pro kini menampilkan semua isinya, dan uji coba gratis bila tersedia.
+• ZenHab di Apple Watch: lihat kebiasaan hari ini di pergelangan tangan dan centang dengan sekali ketuk. Semuanya tersinkron dengan iPhone.
+• Komplikasi tampilan jam dan Tumpukan Pintar: lihat sekilas berapa kebiasaan yang selesai hari ini.
+• Timer kebiasaan di Apple Watch (Pro): saat waktu habis, jam mengetuk pergelangan tanganmu dan mencentang kebiasaan.

@@ -781,3 +781,14 @@ Your days and the habits that lift your mood||Twoje dni i nawyki, które poprawi
 Your whole mood history, a monthly chart and which habits lift your mood.||Cała historia nastroju, wykres miesiąca i nawyki, które go poprawiają.
 ZenHab is locked||ZenHab jest zablokowany
 passcode||kod
+Open ZenHab on your iPhone to see your habits here.||Otwórz ZenHab na iPhonie, a nawyki pojawią się tutaj.
+Get Pro on your iPhone to use the timer on Apple Watch.||Włącz Pro na iPhonie, aby korzystać z minutnika na Apple Watch.
+Start timer||Uruchom minutnik
+Today's progress||Postęp dnia
+See how many habits are done today.||Ile nawyków masz dziś zrobionych.
+ZenHab on Apple Watch||ZenHab na Apple Watch
+See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch.||Dzisiejsze nawyki na nadgarstku, odhaczane jednym dotknięciem. Wszystko synchronizuje się z iPhone'em. Jeśli ZenHab nie pojawił się na zegarku, zainstaluj go w aplikacji Watch na iPhonie.
+Watch face complications||Komplikacje na tarczy
+Add ZenHab to your watch face or Smart Stack to see how many habits are done today.||Dodaj ZenHab do tarczy lub Inteligentnego stosu, aby widzieć, ile nawyków masz dziś zrobionych.
+Timer on your wrist||Minutnik na nadgarstku
+With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off.||Z Pro uruchomisz minutnik nawyku na Apple Watch. Gdy czas minie, zegarek stuknie w nadgarstek i odhaczy nawyk.

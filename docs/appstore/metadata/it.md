@@ -46,8 +46,6 @@ Termini d'uso: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacy: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Diario dell'umore: valuta la giornata con un tocco in Oggi e aggiungi qualche parola. Con Pro vedi tutta la cronologia, un grafico mensile e le abitudini che migliorano l'umore.
-• Nuove icone dell'app (Pro): Tramonto, Foresta, Rosa, Oro, Mezzanotte e Chiara.
-• Blocco con Face ID (Pro): solo tu puoi aprire abitudini e diario.
-• Esporta in CSV (Pro): tutte le spunte con note e umore in una tabella per Numbers, Excel o Fogli Google.
-• La schermata Pro ora mostra tutto ciò che include e la prova gratuita quando è disponibile.
+• ZenHab su Apple Watch: le abitudini di oggi al polso, da spuntare con un tocco. Tutto si sincronizza con l'iPhone.
+• Complicazioni per il quadrante e lo Smart Stack: vedi a colpo d'occhio quante abitudini hai completato oggi.
+• Timer delle abitudini su Apple Watch (Pro): allo scadere, l'orologio ti avvisa con un tocco al polso e spunta l'abitudine.
