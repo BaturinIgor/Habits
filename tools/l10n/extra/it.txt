@@ -710,3 +710,74 @@ With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and 
 Habit timer||Timer delle abitudini
 With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up.||Con Pro, dai una durata a un'abitudine. Il conto alla rovescia scorre sulla schermata di blocco e nella Dynamic Island e spunta l'abitudine alla fine.
 At the start of each week, see how the last one went and share it as a picture.||All'inizio di ogni settimana, guarda com'è andata la precedente e condividila come immagine.
+%@ free, then %@. Cancel anytime.||%1$@ gratis, poi %2$@. Disdici quando vuoi.
+A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up.||Un conto alla rovescia sulla schermata di blocco e nella Dynamic Island che spunta l'abitudine allo scadere del tempo.
+A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets.||Una tabella di tutte le spunte con note e umore per Numbers, Excel o Fogli Google.
+Add a note||Aggiungi una nota
+All your check-ins as a table for Numbers, Excel or Google Sheets.||Tutte le tue spunte in una tabella per Numbers, Excel o Fogli Google.
+App icon||Icona dell'app
+App icons||Icone dell'app
+Available with Pro||Disponibile con Pro
+Awful||Pessimo
+Bad||Male
+Okay||Così così
+Good||Bene
+Great||Benissimo
+Choose an icon||Scegli un'icona
+Classic||Classica
+Clearer Pro||Pro più chiaro
+Count||Quantità
+Delete entry||Elimina voce
+Export to CSV||Esporta in CSV
+Face ID lock||Blocco con Face ID
+Forest||Foresta
+Full mood journal||Diario dell'umore completo
+Gold||Oro
+Habits check themselves off from steps, sleep, water, workouts and mindful minutes.||Le abitudini si spuntano da sole con passi, sonno, acqua, allenamenti e minuti di consapevolezza.
+How are you today?||Come stai oggi?
+How was your day?||Com'è andata la giornata?
+Journal||Diario
+Keep rating your mood. When there are enough days with and without each habit, you'll see how they relate.||Continua a valutare il tuo umore. Quando ci saranno abbastanza giorni con e senza ogni abitudine, vedrai il legame.
+Light||Chiara
+Lock with %@||Blocca con %@
+Lock with Face ID||Blocco con Face ID
+Midnight||Mezzanotte
+Mood||Umore
+Mood (1-5)||Umore (1-5)
+Mood card||Scheda dell'umore
+Mood is higher on days you do it||L'umore è migliore nei giorni in cui lo fai
+Mood is lower on days you do it||L'umore è peggiore nei giorni in cui lo fai
+Mood journal||Diario dell'umore
+New app icons||Nuove icone dell'app
+New icons are part of Pro.||Le nuove icone fanno parte di Pro.
+No entries yet||Ancora nessuna voce
+Older entries: %lld. Your full history is in Pro.||Voci precedenti: %lld. Tutta la cronologia è in Pro.
+Only you can open your habits and journal.||Solo tu puoi aprire le tue abitudini e il diario.
+Open export||Apri esportazione
+Open journal||Apri diario
+Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood.||Valuta la giornata con un tocco in fondo a Oggi e aggiungi qualche parola. Con Pro vedi tutta la cronologia, un grafico mensile e le abitudini che migliorano l'umore.
+Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it.||Valuta l'umore nella schermata Oggi una volta al giorno. Dopo un paio di settimane vedrai quali abitudini lo migliorano.
+Rose||Rosa
+See how much money you save by quitting a habit.||Scopri quanti soldi risparmi smettendo un'abitudine.
+See which habits make your days better||Scopri quali abitudini migliorano le tue giornate
+Six new icons for your Home Screen.||Sei nuove icone per la schermata Home.
+Start free trial||Inizia la prova gratuita
+Sunset||Tramonto
+Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro.||Tramonto, Foresta, Rosa, Oro, Mezzanotte e Chiara. Scegline una in Impostazioni con Pro.
+The Pro screen now lists everything it includes, and opens on the feature you tapped.||La schermata Pro ora elenca tutto ciò che include e si apre sulla funzione toccata.
+The mood card at the bottom of the list lets you rate your day with one tap.||La scheda dell'umore in fondo all'elenco ti fa valutare la giornata con un tocco.
+Timer on the Lock Screen||Timer sulla schermata di blocco
+Today's entry||Voce di oggi
+Turn on the lock||Attiva il blocco
+Unit||Unità
+Unlock||Sblocca
+Unlock ZenHab||Sblocca ZenHab
+What happened today? What helped?||Cos'è successo oggi? Cosa ti ha aiutato?
+What lifts your mood||Cosa migliora il tuo umore
+When you come back to the app, it asks for %@ first.||Quando torni nell'app, ti chiede prima %@.
+With Pro, ZenHab asks for Face ID or your passcode when you open it, so your habits and journal stay private. Turn it on in Settings.||Con Pro, ZenHab chiede Face ID o il codice all'apertura, così abitudini e diario restano privati. Attivalo in Impostazioni.
+With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets.||Con Pro, esporta tutte le spunte con note e umore in una tabella per Numbers, Excel o Fogli Google.
+Your days and the habits that lift your mood||Le tue giornate e le abitudini che migliorano l'umore
+Your whole mood history, a monthly chart and which habits lift your mood.||Tutta la cronologia dell'umore, un grafico mensile e le abitudini che lo migliorano.
+ZenHab is locked||ZenHab è bloccato
+passcode||codice

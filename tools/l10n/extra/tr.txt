@@ -710,3 +710,74 @@ With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and 
 Habit timer||Alışkanlık zamanlayıcısı
 With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up.||Pro ile bir alışkanlığa süre ver. Geri sayım Kilit Ekranı'nda ve Dynamic Island'da görünür, süre bitince alışkanlık işaretlenir.
 At the start of each week, see how the last one went and share it as a picture.||Her haftanın başında geçen haftanın nasıl geçtiğini gör ve resim olarak paylaş.
+%@ free, then %@. Cancel anytime.||%1$@ ücretsiz, sonra %2$@. İstediğin zaman iptal et.
+A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up.||Kilit Ekranı'nda ve Dynamic Island'da geri sayım; süre dolunca alışkanlık kendiliğinden işaretlenir.
+A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets.||Tüm işaretlemeler, notlar ve ruh hâliyle bir tablo: Numbers, Excel veya Google E-Tablolar için.
+Add a note||Not ekle
+All your check-ins as a table for Numbers, Excel or Google Sheets.||Tüm işaretlemelerin Numbers, Excel veya Google E-Tablolar için tablo hâlinde.
+App icon||Uygulama simgesi
+App icons||Uygulama simgeleri
+Available with Pro||Pro ile kullanılabilir
+Awful||Berbat
+Bad||Kötü
+Okay||İdare eder
+Good||İyi
+Great||Harika
+Choose an icon||Simge seç
+Classic||Klasik
+Clearer Pro||Daha anlaşılır Pro
+Count||Adet
+Delete entry||Kaydı sil
+Export to CSV||CSV olarak dışa aktar
+Face ID lock||Face ID kilidi
+Forest||Orman
+Full mood journal||Tam ruh hâli günlüğü
+Gold||Altın
+Habits check themselves off from steps, sleep, water, workouts and mindful minutes.||Alışkanlıklar adım, uyku, su, antrenman ve farkındalık dakikalarıyla kendiliğinden işaretlenir.
+How are you today?||Bugün nasılsın?
+How was your day?||Günün nasıl geçti?
+Journal||Günlük
+Keep rating your mood. When there are enough days with and without each habit, you'll see how they relate.||Ruh hâlini işaretlemeye devam et. Her alışkanlıkla ve onsuz yeterince gün olunca aralarındaki bağı göreceksin.
+Light||Açık
+Lock with %@||%@ ile kilitle
+Lock with Face ID||Face ID ile kilit
+Midnight||Gece yarısı
+Mood||Ruh hâli
+Mood (1-5)||Ruh hâli (1-5)
+Mood card||Ruh hâli kartı
+Mood is higher on days you do it||Bunu yaptığın günlerde ruh hâlin daha iyi
+Mood is lower on days you do it||Bunu yaptığın günlerde ruh hâlin daha düşük
+Mood journal||Ruh hâli günlüğü
+New app icons||Yeni uygulama simgeleri
+New icons are part of Pro.||Yeni simgeler Pro'ya dahildir.
+No entries yet||Henüz kayıt yok
+Older entries: %lld. Your full history is in Pro.||Eski kayıtlar: %lld. Tüm geçmiş Pro'da.
+Only you can open your habits and journal.||Alışkanlıklarını ve günlüğünü yalnızca sen açabilirsin.
+Open export||Dışa aktarmayı aç
+Open journal||Günlüğü aç
+Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood.||Bugün ekranının altında tek dokunuşla gününü puanla ve birkaç kelime ekle. Pro ile tüm geçmişi, aylık grafiği ve ruh hâlini iyileştiren alışkanlıkları gör.
+Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it.||Ruh hâlini günde bir kez Bugün ekranında işaretle. Birkaç hafta sonra hangi alışkanlıkların onu iyileştirdiğini göreceksin.
+Rose||Pembe
+See how much money you save by quitting a habit.||Bir alışkanlığı bırakarak ne kadar para biriktirdiğini gör.
+See which habits make your days better||Hangi alışkanlıkların günlerini güzelleştirdiğini gör
+Six new icons for your Home Screen.||Ana ekranın için altı yeni simge.
+Start free trial||Ücretsiz denemeyi başlat
+Sunset||Gün batımı
+Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro.||Gün batımı, Orman, Pembe, Altın, Gece yarısı ve Açık. Pro ile Ayarlar'dan seç.
+The Pro screen now lists everything it includes, and opens on the feature you tapped.||Pro ekranı artık içerdiği her şeyi gösteriyor ve dokunduğun özellikle açılıyor.
+The mood card at the bottom of the list lets you rate your day with one tap.||Listenin altındaki ruh hâli kartıyla gününü tek dokunuşla puanla.
+Timer on the Lock Screen||Kilit Ekranı'nda zamanlayıcı
+Today's entry||Bugünün kaydı
+Turn on the lock||Kilidi etkinleştir
+Unit||Birim
+Unlock||Kilidi aç
+Unlock ZenHab||ZenHab kilidini aç
+What happened today? What helped?||Bugün ne oldu? Ne iyi geldi?
+What lifts your mood||Ruh hâlini ne iyileştiriyor
+When you come back to the app, it asks for %@ first.||Uygulamaya döndüğünde önce %@ istenir.
+With Pro, ZenHab asks for Face ID or your passcode when you open it, so your habits and journal stay private. Turn it on in Settings.||Pro ile ZenHab açılırken Face ID veya parolanı ister; alışkanlıkların ve günlüğün gizli kalır. Ayarlar'dan aç.
+With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets.||Pro ile tüm işaretlemeleri notlar ve ruh hâliyle birlikte Numbers, Excel veya Google E-Tablolar için tablo olarak dışa aktar.
+Your days and the habits that lift your mood||Günlerin ve ruh hâlini iyileştiren alışkanlıklar
+Your whole mood history, a monthly chart and which habits lift your mood.||Tüm ruh hâli geçmişin, aylık grafik ve onu iyileştiren alışkanlıklar.
+ZenHab is locked||ZenHab kilitli
+passcode||parola

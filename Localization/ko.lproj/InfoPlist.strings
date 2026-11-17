@@ -4,3 +4,4 @@
 "NSSpeechRecognitionUsageDescription" = "ZenHab은 말한 내용을 일정과 알림 시간이 있는 습관으로 만듭니다.";
 "NSHealthShareUsageDescription" = "ZenHab은 걸음 수, 수면, 물, 운동, 마음챙김 시간을 읽어 연결된 습관을 자동으로 체크합니다.";
 "NSHealthUpdateUsageDescription" = "ZenHab은 건강 앱에 아무것도 기록하지 않습니다. 연결된 습관을 체크하기 위해 데이터를 읽기만 합니다.";
+"NSFaceIDUsageDescription" = "ZenHab은 Face ID로 앱을 잠가 습관과 기분 일기를 본인만 볼 수 있게 합니다.";

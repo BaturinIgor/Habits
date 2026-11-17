@@ -48,11 +48,8 @@ Condiciones de uso: https://www.apple.com/legal/internet-services/itunes/dev/std
 Privacidad: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Copia automática en iCloud: tus hábitos e historial se guardan solos y, en un iPhone nuevo, ZenHab te ofrece recuperarlo todo.
-• Deja un mal hábito: contador de días sin él, récord y metas. Con Pro, también el dinero ahorrado.
-• ¿Fallaste un día? Recupera la racha al día siguiente con chispas.
-• Los grupos familiares se actualizan en segundos mientras la app está abierta.
-• Marca un hábito desde el Centro de control, la pantalla bloqueada o el botón de acción (iOS 18).
-• Apple Health (Pro): vincula un hábito a pasos, sueño, agua, entrenamientos o atención plena, y se marca solo al alcanzar la meta.
-• Temporizador de hábito (Pro): cuenta atrás en la pantalla bloqueada y en la Dynamic Island que marca el hábito al terminar.
-• Resumen semanal: los resultados de la semana pasada de un vistazo, listos para compartir como imagen.
+• Diario de ánimo: valora tu día con un toque en Hoy y añade unas palabras. Con Pro, verás todo el historial, un gráfico mensual y qué hábitos mejoran tu ánimo.
+• Nuevos iconos (Pro): Atardecer, Bosque, Rosa, Oro, Medianoche y Clara.
+• Bloqueo con Face ID (Pro): solo tú puedes abrir tus hábitos y tu diario.
+• Exportar a CSV (Pro): todas las marcas con notas y ánimo en una tabla para Numbers, Excel o Google Sheets.
+• La pantalla Pro ahora muestra todo lo que incluye y la prueba gratuita cuando está disponible.

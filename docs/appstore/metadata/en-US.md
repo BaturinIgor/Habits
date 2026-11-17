@@ -78,11 +78,8 @@ Privacy Policy: https://baturinigor.github.io/Habits/privacy.html
 The app is available in 14 languages: English, Russian, German, French, Spanish, Portuguese, Italian, Turkish, Polish, Indonesian, Chinese, Japanese, Korean and Hindi.
 
 ## What's New
-• Automatic iCloud backup: your habits and history are saved by themselves, and on a new iPhone ZenHab offers to bring them back.
-• Quit a bad habit: a counter of days without it, your record and milestones. With Pro, also the money saved.
-• Missed a day? Bring back a broken streak for sparks the next day.
-• Family groups now update within seconds while the app is open.
-• Check off a habit from Control Center, the Lock Screen or the Action button (iOS 18).
-• Apple Health (Pro): link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal.
-• Habit timer (Pro): a countdown on the Lock Screen and in the Dynamic Island that checks the habit off when time is up.
-• Week in review: last week's results at a glance, ready to share as a picture.
+• Mood journal: rate your day with one tap on Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood.
+• New app icons (Pro): Sunset, Forest, Rose, Gold, Midnight and Light.
+• Face ID lock (Pro): only you can open your habits and journal.
+• Export to CSV (Pro): all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets.
+• The Pro screen now shows everything it includes, and a free trial when it's available.

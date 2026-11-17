@@ -4,3 +4,4 @@
 "NSSpeechRecognitionUsageDescription" = "O ZenHab transforma suas palavras em um hábito com agenda e lembrete.";
 "NSHealthShareUsageDescription" = "O ZenHab lê passos, sono, água, exercício e atenção plena para marcar seus hábitos vinculados.";
 "NSHealthUpdateUsageDescription" = "O ZenHab não grava nada no Saúde. Ele só lê dados para marcar seus hábitos vinculados.";
+"NSFaceIDUsageDescription" = "O ZenHab usa o Face ID para bloquear o app, assim só você vê seus hábitos e seu diário de humor.";

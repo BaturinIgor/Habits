@@ -4,3 +4,4 @@
 "NSSpeechRecognitionUsageDescription" = "ZenHab आपके शब्दों को समय-सारणी और रिमाइंडर वाली आदत में बदलता है।";
 "NSHealthShareUsageDescription" = "ZenHab कदम, नींद, पानी, व्यायाम और माइंडफ़ुल मिनट पढ़ता है ताकि जुड़ी आदतें अपने आप पूरी हों।";
 "NSHealthUpdateUsageDescription" = "ZenHab Apple Health में कुछ नहीं लिखता। यह जुड़ी आदतें पूरी करने के लिए केवल डेटा पढ़ता है।";
+"NSFaceIDUsageDescription" = "ZenHab ऐप को लॉक करने के लिए Face ID का उपयोग करता है, ताकि आपकी आदतें और मूड डायरी सिर्फ़ आप देख सकें।";

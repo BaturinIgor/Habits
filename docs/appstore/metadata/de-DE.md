@@ -46,11 +46,8 @@ Nutzungsbedingungen: https://www.apple.com/legal/internet-services/itunes/dev/st
 Datenschutz: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Automatische iCloud-Sicherung: Gewohnheiten und Verlauf werden von selbst gesichert, und auf einem neuen iPhone bietet ZenHab an, alles zurückzuholen.
-• Schlechte Gewohnheit ablegen: Zähler der Tage ohne, Rekord und Ziele. Mit Pro auch das gesparte Geld.
-• Einen Tag verpasst? Hol dir die Serie am nächsten Tag für Funken zurück.
-• Familiengruppen aktualisieren sich jetzt in Sekunden, solange die App offen ist.
-• Gewohnheit im Kontrollzentrum, auf dem Sperrbildschirm oder mit der Aktionstaste abhaken (iOS 18).
-• Apple Health (Pro): Verknüpfe eine Gewohnheit mit Schritten, Schlaf, Wasser, Workouts oder Achtsamkeit, und sie wird beim Erreichen des Ziels von selbst abgehakt.
-• Gewohnheits-Timer (Pro): Countdown auf dem Sperrbildschirm und in der Dynamic Island, der die Gewohnheit am Ende abhakt.
-• Wochenrückblick: die Ergebnisse der letzten Woche auf einen Blick, zum Teilen als Bild.
+• Stimmungstagebuch: Bewerte deinen Tag mit einem Tipp auf „Heute“ und schreib ein paar Worte dazu. Mit Pro siehst du den ganzen Verlauf, ein Monatsdiagramm und welche Gewohnheiten deine Stimmung heben.
+• Neue App-Symbole (Pro): Sonnenuntergang, Wald, Rosé, Gold, Mitternacht und Hell.
+• Sperre mit Face ID (Pro): Nur du kannst deine Gewohnheiten und dein Tagebuch öffnen.
+• Export als CSV (Pro): alle Einträge mit Notizen und Stimmung als Tabelle für Numbers, Excel oder Google Sheets.
+• Der Pro-Bildschirm zeigt jetzt alles, was dazugehört, und einen kostenlosen Testzeitraum, wenn verfügbar.

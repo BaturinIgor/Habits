@@ -46,11 +46,8 @@ Kullanım Koşulları: https://www.apple.com/legal/internet-services/itunes/dev/
 Gizlilik: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Otomatik iCloud yedeği: alışkanlıkların ve geçmişin kendiliğinden kaydedilir, yeni bir iPhone'da ZenHab hepsini geri getirmeyi önerir.
-• Kötü bir alışkanlığı bırak: onsuz gün sayacı, rekor ve hedefler. Pro ile biriken para da.
-• Bir gün mü kaçırdın? Ertesi gün seriyi kıvılcımlarla geri al.
-• Aile grupları uygulama açıkken artık saniyeler içinde güncellenir.
-• Alışkanlığı Denetim Merkezi'nden, Kilit Ekranı'ndan veya Eylem düğmesinden işaretle (iOS 18).
-• Apple Health (Pro): bir alışkanlığı adım, uyku, su, antrenman veya farkındalık dakikalarına bağla; hedefe ulaşınca kendiliğinden işaretlenir.
-• Alışkanlık zamanlayıcısı (Pro): Kilit Ekranı'nda ve Dynamic Island'da geri sayım, süre bitince alışkanlık işaretlenir.
-• Hafta özeti: geçen haftanın sonuçları tek bakışta, resim olarak paylaşmaya hazır.
+• Ruh hâli günlüğü: Bugün ekranında tek dokunuşla gününü puanla ve birkaç kelime ekle. Pro ile tüm geçmişi, aylık grafiği ve ruh hâlini iyileştiren alışkanlıkları gör.
+• Yeni uygulama simgeleri (Pro): Gün batımı, Orman, Pembe, Altın, Gece yarısı ve Açık.
+• Face ID kilidi (Pro): alışkanlıklarını ve günlüğünü yalnızca sen açabilirsin.
+• CSV olarak dışa aktar (Pro): tüm işaretlemeler notlar ve ruh hâliyle Numbers, Excel veya Google E-Tablolar için tablo hâlinde.
+• Pro ekranı artık içerdiği her şeyi ve varsa ücretsiz denemeyi gösteriyor.

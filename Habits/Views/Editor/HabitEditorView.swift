@@ -19,7 +19,7 @@ struct HabitEditorView: View {
     @State private var customRepeat: Bool
     @State private var repeatCount: Int
     @State private var repeatInterval: Int
-    @State private var showingPaywall = false
+    @State private var paywallFeature: ProFeature?
     @State private var showingVoice = false
     @State private var timesPerWeek: Int
     @State private var intervalDays: Int
@@ -218,8 +218,8 @@ struct HabitEditorView: View {
             .onAppear {
                 if original == nil { nameFocused = true }
             }
-            .sheet(isPresented: $showingPaywall) {
-                PaywallView()
+            .sheet(item: $paywallFeature) { feature in
+                PaywallView(highlight: feature)
             }
             .sheet(isPresented: $showingVoice) {
                 VoiceHabitSheet { apply($0) }
@@ -390,7 +390,7 @@ struct HabitEditorView: View {
                         }
                     }
                 } else {
-                    lockedRow("Custom repeats")
+                    lockedRow("Custom repeats", .reminders)
                 }
             }
         } header: {
@@ -418,7 +418,7 @@ struct HabitEditorView: View {
                     TextField("Unit, for example glasses", text: $unit)
                 }
             } else {
-                lockedRow("Daily goal")
+                lockedRow("Daily goal", .goals)
             }
         } footer: {
             Text("For example, 8 glasses of water. Each tap on the circle adds one.")
@@ -451,7 +451,7 @@ struct HabitEditorView: View {
                     }
                 }
             } else {
-                lockedRow("Apple Health")
+                lockedRow("Apple Health", .health)
             }
         } header: {
             Text("Apple Health")
@@ -475,7 +475,7 @@ struct HabitEditorView: View {
                     }
                 }
             } else {
-                lockedRow("Timer")
+                lockedRow("Timer", .timer)
             }
         } footer: {
             Text("Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up.")
@@ -502,7 +502,7 @@ struct HabitEditorView: View {
                             .foregroundStyle(.secondary)
                     }
                 } else {
-                    lockedRow("Money saved")
+                    lockedRow("Money saved", .quitMoney)
                 }
             }
         } footer: {
@@ -543,16 +543,16 @@ struct HabitEditorView: View {
                     DatePicker("Until", selection: $pausedUntil, in: calendar.startOfDay(for: Date())..., displayedComponents: .date)
                 }
             } else {
-                lockedRow("Pause")
+                lockedRow("Pause", .pause)
             }
         } footer: {
             Text("During a pause the habit is hidden and sends no reminders, and your streak is kept.")
         }
     }
 
-    private func lockedRow(_ title: LocalizedStringKey) -> some View {
+    private func lockedRow(_ title: LocalizedStringKey, _ feature: ProFeature) -> some View {
         Button {
-            showingPaywall = true
+            paywallFeature = feature
         } label: {
             HStack(spacing: 8) {
                 Text(title)
@@ -603,7 +603,7 @@ struct HabitEditorView: View {
                 if let original {
                     if original.isArchived {
                         guard store.unarchive(original.id) else {
-                            showingPaywall = true
+                            paywallFeature = .unlimited
                             return
                         }
                     } else {

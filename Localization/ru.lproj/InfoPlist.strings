@@ -4,3 +4,4 @@
 "NSSpeechRecognitionUsageDescription" = "ZenHab превращает твои слова в привычку с расписанием и временем напоминания.";
 "NSHealthShareUsageDescription" = "ZenHab читает шаги, сон, воду, упражнения и минуты осознанности, чтобы сам отмечать связанные привычки.";
 "NSHealthUpdateUsageDescription" = "ZenHab ничего не записывает в Здоровье. Он только читает данные, чтобы отмечать связанные привычки.";
+"NSFaceIDUsageDescription" = "ZenHab использует Face ID, чтобы закрыть приложение и твои привычки и дневник настроения видел только ты.";

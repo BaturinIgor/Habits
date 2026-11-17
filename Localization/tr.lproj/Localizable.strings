@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / yıl";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@ fiyatı %lld kıvılcım, sende %lld var. %lld eksik. Kazanmak için alışkanlık işaretle.";
 "%@ costs %lld sparks. You have %lld." = "%@ fiyatı %lld kıvılcım. Sende %lld var.";
+"%@ free, then %@. Cancel anytime." = "%1$@ ücretsiz, sonra %2$@. İstediğin zaman iptal et.";
 "%@ is already done today." = "%@ bugün zaten yapıldı.";
 "%@: the streak broke" = "%@: seri bozuldu";
 "%lld min" = "%lld dk";
@@ -23,8 +24,10 @@
 "30 perfect days in a row" = "Üst üste 30 kusursuz gün";
 "7 perfect days in a row" = "Üst üste 7 kusursuz gün";
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "Uygulamadan çıktığında alışkanlıklarının ve geçmişinin bir kopyası iCloud'una kendiliğinden kaydedilir. Telefon değiştirince hiçbir şey kaybolmaz.";
+"A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "Kilit Ekranı'nda ve Dynamic Island'da geri sayım; süre dolunca alışkanlık kendiliğinden işaretlenir.";
 "A grown pet brings up to +5 a day" = "Büyümüş evcil hayvan günde +5'e kadar getirir";
 "A solid week. A little more and it'll be perfect." = "İyi bir hafta. Biraz daha ve mükemmel olacak.";
+"A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets." = "Tüm işaretlemeler, notlar ve ruh hâliyle bir tablo: Numbers, Excel veya Google E-Tablolar için.";
 "A week strong" = "Güçlü bir hafta";
 "A whole year" = "Koca bir yıl";
 "Abstract ideas and news" = "Soyut kavramlar ve haberler";
@@ -36,6 +39,7 @@
 "Add a habit" = "Alışkanlık ekle";
 "Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap." = "Denetim Merkezi'ne, Kilit Ekranı'na veya Eylem düğmesine bir alışkanlık düğmesi ekle ve tek dokunuşla işaretle.";
 "Add a habit, pick days and a time, and I'll remind you." = "Bir alışkanlık ekle, günleri ve saati seç, ben de sana hatırlatayım.";
+"Add a note" = "Not ekle";
 "Add a note to 20 completed habits" = "Tamamlanan 20 alışkanlığa not ekle";
 "Add habit" = "Alışkanlık ekle";
 "Add note" = "Not ekle";
@@ -52,6 +56,7 @@
 "All data is stored only on this iPhone." = "Tüm veriler yalnızca bu iPhone'da saklanır.";
 "All done" = "Hepsi tamam";
 "All done!" = "Hepsi tamam!";
+"All your check-ins as a table for Numbers, Excel or Google Sheets." = "Tüm işaretlemelerin Numbers, Excel veya Google E-Tablolar için tablo hâlinde.";
 "Allow notifications" = "Bildirimlere izin ver";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "Ayarlar'da ZenHab için mikrofona ve konuşma tanımaya izin verin.";
 "Allowed" = "İzin verildi";
@@ -59,6 +64,8 @@
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "Arşivlenen alışkanlık Bugün ekranında görünmez ve bildirim göndermez, ama geçmişi saklanır.";
 "And %lld more" = "Ve %lld tane daha";
 "Anytime" = "Herhangi bir zaman";
+"App icon" = "Uygulama simgesi";
+"App icons" = "Uygulama simgeleri";
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "Uygulama sürümü, iOS sürümü, cihaz modeli ve dil. Alışkanlıkların ve notların asla gönderilmez.";
 "Appearance" = "Görünüm";
 "Apple Health" = "Apple Health";
@@ -70,8 +77,10 @@
 "Attach a screenshot" = "Ekran görüntüsü ekle";
 "Automatic iCloud backup" = "Otomatik iCloud yedeği";
 "Available" = "Erişilebilir";
+"Available with Pro" = "Pro ile kullanılabilir";
 "Avatar" = "Avatar";
 "Avatars" = "Avatarlar";
+"Awful" = "Berbat";
 "Baby" = "Bebek";
 "Back up now" = "Şimdi yedekle";
 "Back up to iCloud" = "iCloud'a yedekle";
@@ -79,6 +88,7 @@
 "Backgrounds" = "Arka planlar";
 "Backup" = "Yedek";
 "Backup from %@" = "%@ yedeği";
+"Bad" = "Kötü";
 "Beginner" = "Başlangıç";
 "Best current streak" = "Şu anki en iyi seri";
 "Best streak" = "En iyi seri";
@@ -123,9 +133,12 @@
 "Check-ins" = "İşaretlemeler";
 "Checked off" = "İşaretlendi";
 "Chick" = "Civciv";
+"Choose an icon" = "Simge seç";
 "Choose how many times and how often each reminder repeats." = "Her hatırlatmanın kaç kez ve ne sıklıkla tekrarlanacağını seç.";
 "Chronicler" = "Tarihçi";
+"Classic" = "Klasik";
 "Clear your inbox" = "Gelen kutusunu temizle";
+"Clearer Pro" = "Daha anlaşılır Pro";
 "Close" = "Kapat";
 "Collector" = "Koleksiyoncu";
 "Come back after a miss 10 times" = "Kaçırdıktan sonra 10 kez geri dön";
@@ -145,6 +158,7 @@
 "Couldn't create an invitation link. Try again later." = "Davet bağlantısı oluşturulamadı. Daha sonra tekrar deneyin.";
 "Couldn't read the file" = "Dosya okunamadı";
 "Couldn't send the message" = "Mesaj gönderilemedi";
+"Count" = "Adet";
 "Count days without it" = "Onsuz günleri say";
 "Count glasses of water, pages or minutes toward a goal." = "Bir hedefe doğru bardak, sayfa veya dakika say.";
 "Create" = "Oluştur";
@@ -170,6 +184,7 @@
 "Day summary" = "Gün özeti";
 "Days: %@" = "Günler: %@";
 "Delete" = "Sil";
+"Delete entry" = "Kaydı sil";
 "Delete habit" = "Alışkanlığı sil";
 "Delete habit?" = "Alışkanlık silinsin mi?";
 "Description or motivation (optional)" = "Açıklama veya motivasyon (isteğe bağlı)";
@@ -218,8 +233,10 @@
 "Exclusive pets and more sparks" = "Özel evcil hayvanlar ve daha çok kıvılcım";
 "Exercise minutes" = "Egzersiz dakikası";
 "Export data" = "Verileri dışa aktar";
+"Export to CSV" = "CSV olarak dışa aktar";
 "Extra freeze" = "Ek dondurma";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Bu ayki ek dondurmalar: %lld/%lld. Kıvılcımla alınan avatar ve arka planlar profilinde.";
+"Face ID lock" = "Face ID kilidi";
 "Family" = "Aile";
 "Family groups" = "Aile grupları";
 "Family groups work in the App Store version of ZenHab." = "Aile grupları ZenHab'ın App Store sürümünde çalışır.";
@@ -239,6 +256,7 @@
 "Focus for an hour" = "Bir saat odaklan";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "Kötü alışkanlıklar için: sigara, tatlı, alkol, ekranda gezinme.";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "Örneğin 8 bardak su. Daireye her dokunuş bir ekler.";
+"Forest" = "Orman";
 "Forever" = "Ömür boyu";
 "Found a bug or have an idea? Every message is read." = "Hata mı buldun, fikrin mi var? Her mesaj okunur.";
 "Fox" = "Tilki";
@@ -249,9 +267,13 @@
 "Freeze" = "Dondurma";
 "Freezes this month" = "Bu ayki dondurmalar";
 "Full for today" = "Bugünlük tok";
+"Full mood journal" = "Tam ruh hâli günlüğü";
 "Get a pet" = "Bir evcil hayvan edin";
 "Go to bed on time" = "Zamanında yat";
 "Goal" = "Hedef";
+"Gold" = "Altın";
+"Good" = "İyi";
+"Great" = "Harika";
 "Great job, keep it up" = "Harika, böyle devam";
 "Group" = "Grup";
 "Groups" = "Gruplar";
@@ -270,6 +292,7 @@
 "Habits" = "Alışkanlıklar";
 "Habits %lld/%lld" = "Alışkanlıklar %lld/%lld";
 "Habits Pro" = "Alışkanlıklar Pro";
+"Habits check themselves off from steps, sleep, water, workouts and mindful minutes." = "Alışkanlıklar adım, uyku, su, antrenman ve farkındalık dakikalarıyla kendiliğinden işaretlenir.";
 "Habits with reminders are sorted by time. The rest come after them and can be dragged." = "Hatırlatmalı alışkanlıklar saate göre sıralanır. Diğerleri sonra gelir ve sürüklenebilir.";
 "Half a thousand" = "Beş yüz";
 "Happy" = "Mutlu";
@@ -279,9 +302,11 @@
 "Health" = "Sağlık";
 "Hide keyboard" = "Klavyeyi gizle";
 "Hours of sleep" = "Uyku saati";
+"How are you today?" = "Bugün nasılsın?";
 "How many habits are done today." = "Bugün kaç alışkanlık yapıldı.";
 "How often" = "Sıklık";
 "How to earn" = "Nasıl kazanılır";
+"How was your day?" = "Günün nasıl geçti?";
 "Hundred" = "Yüz";
 "Hundred check-ins" = "Yüz işaretleme";
 "I believe in you!" = "Sana inanıyorum!";
@@ -310,6 +335,7 @@
 "Its check-in history will be deleted too." = "İşaretleme geçmişi de silinecek.";
 "Its check-in history will be deleted too. To keep the history, archive the habit instead." = "İşaretleme geçmişi de silinecek. Geçmişi korumak için alışkanlığı arşivle.";
 "Join my group in ZenHab" = "ZenHab'daki grubuma katıl";
+"Journal" = "Günlük";
 "Keep a 100-day streak" = "100 günlük seri yap";
 "Keep a 14-day streak" = "14 günlük seri yap";
 "Keep a 200-day streak" = "200 günlük seri yap";
@@ -319,6 +345,7 @@
 "Keep a 60-day streak" = "60 günlük seri yap";
 "Keep a 7-day streak" = "7 günlük seri yap";
 "Keep a journal" = "Günlük tut";
+"Keep rating your mood. When there are enough days with and without each habit, you'll see how they relate." = "Ruh hâlini işaretlemeye devam et. Her alışkanlıkla ve onsuz yeterince gün olunca aralarındaki bağı göreceksin.";
 "Language" = "Dil";
 "Language to learn" = "Öğrenilecek dil";
 "Languages" = "Diller";
@@ -343,10 +370,13 @@
 "Let's start with your first habit" = "İlk alışkanlığınla başlayalım";
 "Level" = "Seviye";
 "Level %lld" = "Seviye %lld";
+"Light" = "Açık";
 "Listen" = "Dinle";
 "Listen to a podcast" = "Podcast dinle";
 "Listening…" = "Dinliyorum…";
 "Lists the habits that aren't checked off today." = "Bugün henüz işaretlenmemiş alışkanlıkları sayar.";
+"Lock with %@" = "%@ ile kilitle";
+"Lock with Face ID" = "Face ID ile kilit";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Bu iPhone'da Mail kurulu değil. Başka bir e-posta uygulaması aç ya da mesajı kopyalayıp %@ adresine gönder.";
 "Make the bed" = "Yatağını topla";
 "Mark as done" = "Yapıldı olarak işaretle";
@@ -354,6 +384,7 @@
 "Marks a habit as done for today." = "Alışkanlığı bugün için yapıldı olarak işaretler.";
 "Meditate" = "Meditasyon yap";
 "Message a friend" = "Bir arkadaşa yaz";
+"Midnight" = "Gece yarısı";
 "Mindful minutes" = "Farkındalık dakikası";
 "Mindfulness" = "Farkındalık";
 "Minimum" = "Minimum";
@@ -366,6 +397,12 @@
 "Money saved" = "Biriken para";
 "Month of power" = "Güç ayı";
 "Monthly" = "Aylık";
+"Mood" = "Ruh hâli";
+"Mood (1-5)" = "Ruh hâli (1-5)";
+"Mood card" = "Ruh hâli kartı";
+"Mood is higher on days you do it" = "Bunu yaptığın günlerde ruh hâlin daha iyi";
+"Mood is lower on days you do it" = "Bunu yaptığın günlerde ruh hâlin daha düşük";
+"Mood journal" = "Ruh hâli günlüğü";
 "More" = "Çok";
 "More freedom for the habits that matter." = "Önemli alışkanlıklar için daha fazla özgürlük.";
 "More species are available for sparks and with Pro." = "Kıvılcımla ve Pro ile daha fazla tür açılır.";
@@ -379,8 +416,10 @@
 "Name" = "Ad";
 "Never" = "Hiç";
 "New achievement!" = "Yeni başarı!";
+"New app icons" = "Yeni uygulama simgeleri";
 "New group" = "Yeni grup";
 "New habit" = "Yeni alışkanlık";
+"New icons are part of Pro." = "Yeni simgeler Pro'ya dahildir.";
 "New schedules" = "Yeni programlar";
 "New word" = "Yeni kelime";
 "New words a day" = "Günlük yeni kelime";
@@ -393,6 +432,7 @@
 "No alcohol" = "Alkol yok";
 "No connection to iCloud. Changes will sync later." = "iCloud bağlantısı yok. Değişiklikler daha sonra eşitlenecek.";
 "No connection to iCloud. The backup will be saved later." = "iCloud bağlantısı yok. Yedek daha sonra kaydedilecek.";
+"No entries yet" = "Henüz kayıt yok";
 "No fast food" = "Fast food yok";
 "No group" = "Grup yok";
 "No habits" = "Alışkanlık yok";
@@ -423,6 +463,8 @@
 "OK" = "Tamam";
 "Off" = "Kapalı";
 "Off in iPhone Settings" = "iPhone Ayarları'nda kapalı";
+"Okay" = "İdare eder";
+"Older entries: %lld. Your full history is in Pro." = "Eski kayıtlar: %lld. Tüm geçmiş Pro'da.";
 "On" = "Açık";
 "On target" = "Tam isabet";
 "On weekdays" = "Hafta içi";
@@ -435,9 +477,12 @@
 "One notification at the chosen time." = "Seçilen saatte tek bildirim.";
 "One notification listing the habits not checked off yet." = "Henüz işaretlenmemiş alışkanlıkları listeleyen tek bildirim.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Yalnızca aynı gün veya ertesi gün yapılan işaretlemeler sayılır. İşareti kaldırmak kıvılcımı geri alır.";
+"Only you can open your habits and journal." = "Alışkanlıklarını ve günlüğünü yalnızca sen açabilirsin.";
 "Open backup" = "Yedeği aç";
+"Open export" = "Dışa aktarmayı aç";
 "Open groups" = "Grupları aç";
 "Open iOS Settings" = "iOS Ayarları'nı aç";
+"Open journal" = "Günlüğü aç";
 "Open mail app" = "E-posta uygulamasını aç";
 "Open the app to adopt one." = "Sahiplenmek için uygulamayı aç.";
 "Order" = "Sıra";
@@ -481,6 +526,8 @@
 "Quitting" = "Bırakıyorum";
 "Quitting: %@" = "Onsuz: %@";
 "Rate the app" = "Uygulamayı değerlendir";
+"Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "Bugün ekranının altında tek dokunuşla gününü puanla ve birkaç kelime ekle. Pro ile tüm geçmişi, aylık grafiği ve ruh hâlini iyileştiren alışkanlıkları gör.";
+"Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "Ruh hâlini günde bir kez Bugün ekranında işaretle. Birkaç hafta sonra hangi alışkanlıkların onu iyileştirdiğini göreceksin.";
 "Reach a daily goal 20 times" = "Günlük hedefe 20 kez ulaş";
 "Reach a weekly goal 4 times" = "Haftalık hedefe 4 kez ulaş";
 "Read" = "Oku";
@@ -511,6 +558,7 @@
 "Restore your habits?" = "Alışkanlıkların geri yüklensin mi?";
 "Return to a habit after a miss" = "Kaçırdıktan sonra alışkanlığa geri dön";
 "Review" = "Tekrar";
+"Rose" = "Pembe";
 "Run" = "Koşu";
 "Sad" = "Üzgün";
 "Save" = "Kaydet";
@@ -521,7 +569,9 @@
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Alışkanlığın adını söyleyin, örneğin “Su içmek”.";
 "Schedule" = "Plan";
 "Scheduled notifications" = "Planlanan bildirimler";
+"See how much money you save by quitting a habit." = "Bir alışkanlığı bırakarak ne kadar para biriktirdiğini gör.";
 "See how much you've saved with Pro" = "Ne kadar biriktirdiğini Pro ile gör";
+"See which habits make your days better" = "Hangi alışkanlıkların günlerini güzelleştirdiğini gör";
 "Send" = "Gönder";
 "Send by email" = "E-postayla gönder";
 "Send the message" = "Mesajı gönder";
@@ -540,6 +590,7 @@
 "Simple gestures" = "Basit hareketler";
 "Since %@" = "%@ itibarıyla";
 "Siri" = "Siri";
+"Six new icons for your Home Screen." = "Ana ekranın için altı yeni simge.";
 "Skin care" = "Cilt bakımı";
 "Skip" = "Atla";
 "Skipped" = "Atlandı";
@@ -557,6 +608,7 @@
 "Spend time outdoors" = "Dışarıda vakit geçir";
 "Spent a day" = "Günlük harcama";
 "Start" = "Başlangıç";
+"Start free trial" = "Ücretsiz denemeyi başlat";
 "Start over" = "Baştan başla";
 "Start the count again?" = "Sayım baştan başlasın mı?";
 "Statistics" = "İstatistikler";
@@ -577,6 +629,8 @@
 "Subscriptions renew automatically until cancelled. Cancel anytime in Settings, Apple Account, Subscriptions, at least 24 hours before the period ends." = "Abonelikler iptal edilene kadar otomatik yenilenir. Dönem bitmeden en az 24 saat önce Ayarlar, Apple Hesabı, Abonelikler bölümünden istediğin zaman iptal et.";
 "Suggest an idea" = "Fikir öner";
 "Sunrise club" = "Gün doğumu kulübü";
+"Sunset" = "Gün batımı";
+"Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro." = "Gün batımı, Orman, Pembe, Altın, Gece yarısı ve Açık. Pro ile Ayarlar'dan seç.";
 "Swimming" = "Yüzme";
 "Swipe a card right to check it off, left for more actions. Press and hold to reorder." = "İşaretlemek için kartı sağa, diğer işlemler için sola kaydır. Sıralamak için basılı tut.";
 "Symbols" = "Semboller";
@@ -594,6 +648,7 @@
 "Tell us what you think" = "Ne düşündüğünü söyle";
 "Terms of Use" = "Kullanım Koşulları";
 "Thank you!" = "Teşekkürler!";
+"The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Pro ekranı artık içerdiği her şeyi gösteriyor ve dokunduğun özellikle açılıyor.";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "iCloud'daki yedek: %@, %@, alışkanlık: %lld. Uygulamadan çıktığında kendiliğinden güncellenir. Avatar ve arka plan fotoğrafları dahil değildir.";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "Ücretsiz sürüm alışkanlık sınırına ulaştı. Pro için ZenHab'ı açın.";
 "The free version has up to 5 active habits." = "Ücretsiz sürümde en fazla 5 etkin alışkanlık olabilir.";
@@ -601,6 +656,7 @@
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "Grubun alışkanlıkları ve işaretleri iCloud ile paylaşılır. Davet bağlantısı olan herkes katılıp işaretleyebilir. Herkes kendi hatırlatmalarını alır.";
 "The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "Sağlık uygulamasında hedefe ulaşıldığında alışkanlık kendiliğinden işaretlenir: adım, uyku, su, egzersiz veya farkındalık.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Minimum sürüm yapılmış sayılır ve serini korur. Zincirli alışkanlık, öncekini işaretlediğin anda sana hatırlatılır.";
+"The mood card at the bottom of the list lets you rate your day with one tap." = "Listenin altındaki ruh hâli kartıyla gününü tek dokunuşla puanla.";
 "The new language will apply after you close the app and open it again." = "Yeni dil, uygulamayı kapatıp yeniden açtıktan sonra uygulanacak.";
 "The purchase could not be verified." = "Satın alma doğrulanamadı.";
 "The streak broke" = "Seri bozuldu";
@@ -614,9 +670,11 @@
 "Time to rest" = "Dinlenme zamanı";
 "Time's up. Well done!" = "Süre doldu. Aferin!";
 "Timer" = "Zamanlayıcı";
+"Timer on the Lock Screen" = "Kilit Ekranı'nda zamanlayıcı";
 "Today" = "Bugün";
 "Today is a good day." = "Bugün güzel bir gün.";
 "Today screen" = "Bugün ekranı";
+"Today's entry" = "Bugünün kaydı";
 "Today's habits" = "Bugünün alışkanlıkları";
 "Today's progress and quick check-off right from the Home Screen." = "Bugünün ilerlemesi ve Ana Ekran'dan hızlı işaretleme.";
 "Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "Ana ekrandan günün ilerlemesi ve hızlı işaretleme. Grup seçmek için widget'a basılı tutun.";
@@ -628,6 +686,7 @@
 "Track habits, get gentle reminders and watch your streaks grow." = "Alışkanlıklarını takip et, nazik hatırlatmalar al ve serilerinin büyüdüğünü izle.";
 "Try again" = "Tekrar dene";
 "Try it" = "Dene";
+"Turn on the lock" = "Kilidi etkinleştir";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "Bir alışkanlıkta “Bu alışkanlığı bırakıyorum”u aç; kaç gündür onsuz olduğunu, rekorunu ve sonraki hedefi gör. Pro ile biriken parayı da.";
 "Turtle" = "Kaplumbağa";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Ayda iki kaçırma serini bozmaz, zor günlerde minimum sürüm de sayılır.";
@@ -635,9 +694,12 @@
 "Uncheck" = "İşareti kaldır";
 "Undo skip" = "Atlamayı geri al";
 "Unicorn" = "Tek boynuzlu at";
+"Unit" = "Birim";
 "Unit, for example glasses" = "Birim, örneğin bardak";
 "Unknown" = "Bilinmiyor";
 "Unlimited habits" = "Sınırsız alışkanlık";
+"Unlock" = "Kilidi aç";
+"Unlock ZenHab" = "ZenHab kilidini aç";
 "Unlock the full collection and Pro-only designs." = "Tüm koleksiyonu ve Pro'ya özel tasarımları aç.";
 "Unlock your iPhone" = "iPhone'unun kilidini aç";
 "Unlock: %@" = "Nasıl açılır: %@";
@@ -663,12 +725,17 @@
 "Welcome to Habit Tracker" = "Alışkanlık Takibi'ne hoş geldin";
 "What %@ gives you" = "%@ sana ne verir";
 "What happened and what did you expect?" = "Ne oldu ve ne bekliyordun?";
+"What happened today? What helped?" = "Bugün ne oldu? Ne iyi geldi?";
+"What lifts your mood" = "Ruh hâlini ne iyileştiriyor";
 "What should I add?" = "Ne ekleyeyim?";
 "What to add" = "Ne eklenecek";
 "What's left today" = "Bugün ne kaldı";
 "What's new" = "Yenilikler";
+"When you come back to the app, it asks for %@ first." = "Uygulamaya döndüğünde önce %@ istenir.";
 "Which habit?" = "Hangi alışkanlık?";
 "Widget" = "Widget";
+"With Pro, ZenHab asks for Face ID or your passcode when you open it, so your habits and journal stay private. Turn it on in Settings." = "Pro ile ZenHab açılırken Face ID veya parolanı ister; alışkanlıkların ve günlüğün gizli kalır. Ayarlar'dan aç.";
+"With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets." = "Pro ile tüm işaretlemeleri notlar ve ruh hâliyle birlikte Numbers, Excel veya Google E-Tablolar için tablo olarak dışa aktar.";
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "Pro ile bir alışkanlığa süre ver. Geri sayım Kilit Ekranı'nda ve Dynamic Island'da görünür, süre bitince alışkanlık işaretlenir.";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "Pro ile bir alışkanlığı adım, uyku, su, antrenman veya farkındalık dakikalarına bağla; hedefe ulaştığında kendiliğinden işaretlenir.";
 "Without it since" = "Şu tarihten beri onsuz";
@@ -687,6 +754,7 @@
 "You're doing great!" = "Harika gidiyorsun!";
 "You've gone through the whole dictionary" = "Tüm sözlüğü bitirdin";
 "Young" = "Genç";
+"Your days and the habits that lift your mood" = "Günlerin ve ruh hâlini iyileştiren alışkanlıklar";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Alışkanlıkların ve geçmişin iCloud'una kendiliğinden kaydedilir. Yeni bir iPhone'da ZenHab her şeyi geri getirmeyi önerir.";
 "Your message has been sent." = "Mesajın gönderildi.";
 "Your own emoji from the keyboard" = "Klavyeden kendi emojin";
@@ -695,6 +763,8 @@
 "Your pet's mood and feeding right from the Home Screen." = "Evcil hayvanının ruh hali ve beslenmesi Ana Ekran'da.";
 "Your photo" = "Fotoğrafın";
 "Your week in review" = "Haftanın özeti";
+"Your whole mood history, a monthly chart and which habits lift your mood." = "Tüm ruh hâli geçmişin, aylık grafik ve onu iyileştiren alışkanlıklar.";
+"ZenHab is locked" = "ZenHab kilitli";
 "a month" = "bir ay";
 "a week" = "bir hafta";
 "a year" = "bir yıl";
@@ -705,6 +775,7 @@
 "iPhone permission" = "iPhone izni";
 "of %lld" = "/ %lld";
 "of habits done" = "alışkanlık tamamlandı";
+"passcode" = "parola";
 "three months" = "üç ay";
 "times" = "kez";
 "two weeks" = "iki hafta";

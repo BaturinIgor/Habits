@@ -49,6 +49,8 @@ struct TodayView: View {
     @State private var showingProfile = false
     @State private var showingSparks = false
     @State private var showingPet = false
+    @State private var showingMoodJournal = false
+    @State private var moodDay: MoodDay?
     @Namespace private var zoom
 
     private var calendar: Calendar { .app }
@@ -130,6 +132,16 @@ struct TodayView: View {
                 }
 
                 content
+
+                if !isFuture && store.data.settings.moodCard && !store.data.habits.isEmpty {
+                    MoodCard(dayKey: dayKey, isToday: isToday) {
+                        showingMoodJournal = true
+                    } edit: {
+                        moodDay = MoodDay(key: dayKey)
+                    }
+                    .plainRow(top: 10, bottom: 6)
+                }
+
                 quitSection
             }
             .listStyle(.plain)
@@ -197,8 +209,14 @@ struct TodayView: View {
             .sheet(isPresented: $showingRecap) {
                 WeeklyRecapView(recap: WeeklyRecap.lastWeek(in: store.data))
             }
+            .sheet(isPresented: $showingMoodJournal) {
+                MoodJournalView()
+            }
+            .sheet(item: $moodDay) { day in
+                MoodEntryEditor(dayKey: day.key)
+            }
             .sheet(isPresented: $showingPaywall) {
-                PaywallView()
+                PaywallView(highlight: .unlimited)
             }
             .sheet(isPresented: $showingProfile) {
                 ProfileView()

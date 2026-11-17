@@ -430,6 +430,33 @@ final class HabitStore {
         WidgetCenter.shared.reloadAllTimelines()
     }
 
+    // MARK: Настроение
+
+    func mood(on dayKey: String) -> MoodEntry? {
+        data.moods[dayKey]
+    }
+
+    /// Оценка настроения за день. Заметка остаётся прежней, если её не передали.
+    func setMood(_ level: Int, note: String? = nil, dayKey: String) {
+        var entry = data.moods[dayKey] ?? MoodEntry(level: level)
+        entry.level = min(5, max(1, level))
+        if let note {
+            let trimmed = note.trimmingCharacters(in: .whitespacesAndNewlines)
+            entry.note = trimmed.isEmpty ? nil : trimmed
+        }
+        entry.updatedAt = Date()
+        data.moods[dayKey] = entry
+        // Без перепланирования уведомлений и семейной синхронизации: дневник личный.
+        revision += 1
+        DataFile.save(data)
+    }
+
+    func removeMood(dayKey: String) {
+        data.moods[dayKey] = nil
+        revision += 1
+        DataFile.save(data)
+    }
+
     // MARK: Слова
 
     /// Ответ на карточку слова. Сохраняем без перепланирования уведомлений: это частое действие.
@@ -453,6 +480,8 @@ final class HabitStore {
             // Pro-награды без Pro не носим, возвращаем стандартные.
             if Rewards.background(data.settings.backgroundID).needsPro { data.settings.backgroundID = Rewards.backgrounds[0].id }
             if Rewards.avatar(data.settings.avatarID).needsPro { data.settings.avatarID = Rewards.avatars[0].id }
+            // Блокировка по Face ID доступна только в Pro.
+            data.settings.appLock = false
         }
         commit()
     }

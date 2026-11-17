@@ -96,7 +96,7 @@ struct HabitsListView: View {
                 HabitEditorView(habit: nil)
             }
             .sheet(isPresented: $showingPaywall) {
-                PaywallView()
+                PaywallView(highlight: .unlimited)
             }
             .alert(
                 "Delete habit?",

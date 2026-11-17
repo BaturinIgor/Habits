@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / Jahr";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: Preis ✨ %lld, du hast: ✨ %lld. Es fehlen ✨ %lld. Hake Gewohnheiten ab, um sie zu verdienen.";
 "%@ costs %lld sparks. You have %lld." = "%@: Preis ✨ %lld. Du hast: ✨ %lld.";
+"%@ free, then %@. Cancel anytime." = "%1$@ gratis, danach %2$@. Jederzeit kündbar.";
 "%@ is already done today." = "%@ ist heute schon erledigt.";
 "%@: the streak broke" = "%@: Serie gerissen";
 "%lld min" = "%lld Min.";
@@ -23,8 +24,10 @@
 "30 perfect days in a row" = "30 perfekte Tage am Stück";
 "7 perfect days in a row" = "7 perfekte Tage in Folge";
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "Eine Kopie deiner Gewohnheiten und deines Verlaufs wird automatisch in deiner iCloud gespeichert, wenn du die App verlässt. So geht beim Handywechsel nichts verloren.";
+"A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "Ein Countdown auf dem Sperrbildschirm und in der Dynamic Island, der die Gewohnheit abhakt, wenn die Zeit um ist.";
 "A grown pet brings up to +5 a day" = "Ein großes Haustier bringt bis zu +5 am Tag";
 "A solid week. A little more and it'll be perfect." = "Eine solide Woche. Noch ein bisschen, dann ist sie perfekt.";
+"A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets." = "Eine Tabelle aller Einträge mit Notizen und Stimmung für Numbers, Excel oder Google Sheets.";
 "A week strong" = "Eine starke Woche";
 "A whole year" = "Ein ganzes Jahr";
 "Abstract ideas and news" = "Abstrakte Begriffe und Nachrichten";
@@ -36,6 +39,7 @@
 "Add a habit" = "Gewohnheit hinzufügen";
 "Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap." = "Füge einen Gewohnheits-Button zum Kontrollzentrum, Sperrbildschirm oder zur Aktionstaste hinzu und hake mit einem Tippen ab.";
 "Add a habit, pick days and a time, and I'll remind you." = "Füge eine Gewohnheit hinzu, wähle Tage und Uhrzeit, und ich erinnere dich daran.";
+"Add a note" = "Notiz hinzufügen";
 "Add a note to 20 completed habits" = "Füge 20 erledigten Gewohnheiten eine Notiz hinzu";
 "Add habit" = "Gewohnheit hinzufügen";
 "Add note" = "Notiz hinzufügen";
@@ -52,6 +56,7 @@
 "All data is stored only on this iPhone." = "Alle Daten werden nur auf diesem iPhone gespeichert.";
 "All done" = "Alles erledigt";
 "All done!" = "Alles erledigt!";
+"All your check-ins as a table for Numbers, Excel or Google Sheets." = "Alle Einträge als Tabelle für Numbers, Excel oder Google Sheets.";
 "Allow notifications" = "Mitteilungen erlauben";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "Erlaube ZenHab in den Einstellungen Mikrofon und Spracherkennung.";
 "Allowed" = "Erlaubt";
@@ -59,6 +64,8 @@
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "Eine archivierte Gewohnheit wird auf dem Heute-Bildschirm ausgeblendet und sendet keine Mitteilungen, ihr Verlauf bleibt aber erhalten.";
 "And %lld more" = "Und %lld weitere";
 "Anytime" = "Jederzeit";
+"App icon" = "App-Symbol";
+"App icons" = "App-Symbole";
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "App- und iOS-Version, Gerätemodell und Sprache. Deine Gewohnheiten und Notizen werden nie gesendet.";
 "Appearance" = "Darstellung";
 "Apple Health" = "Apple Health";
@@ -70,8 +77,10 @@
 "Attach a screenshot" = "Screenshot anhängen";
 "Automatic iCloud backup" = "Automatische iCloud-Sicherung";
 "Available" = "Verfügbar";
+"Available with Pro" = "Mit Pro verfügbar";
 "Avatar" = "Avatar";
 "Avatars" = "Avatare";
+"Awful" = "Furchtbar";
 "Baby" = "Baby";
 "Back up now" = "Jetzt sichern";
 "Back up to iCloud" = "In iCloud sichern";
@@ -79,6 +88,7 @@
 "Backgrounds" = "Hintergründe";
 "Backup" = "Backup";
 "Backup from %@" = "Sicherung vom %@";
+"Bad" = "Schlecht";
 "Beginner" = "Anfänger";
 "Best current streak" = "Beste aktuelle Serie";
 "Best streak" = "Beste Serie";
@@ -123,9 +133,12 @@
 "Check-ins" = "Abhaken";
 "Checked off" = "Abgehakt";
 "Chick" = "Küken";
+"Choose an icon" = "Symbol wählen";
 "Choose how many times and how often each reminder repeats." = "Lege fest, wie oft und in welchem Abstand jede Erinnerung wiederholt wird.";
 "Chronicler" = "Chronist";
+"Classic" = "Klassisch";
 "Clear your inbox" = "Posteingang leeren";
+"Clearer Pro" = "Klareres Pro";
 "Close" = "Schließen";
 "Collector" = "Sammler";
 "Come back after a miss 10 times" = "Komm 10-mal nach einer Lücke zurück";
@@ -145,6 +158,7 @@
 "Couldn't create an invitation link. Try again later." = "Einladungslink konnte nicht erstellt werden. Versuche es später erneut.";
 "Couldn't read the file" = "Datei konnte nicht gelesen werden";
 "Couldn't send the message" = "Nachricht konnte nicht gesendet werden";
+"Count" = "Anzahl";
 "Count days without it" = "Tage ohne zählen";
 "Count glasses of water, pages or minutes toward a goal." = "Zähle Gläser Wasser, Seiten oder Minuten bis zum Ziel.";
 "Create" = "Erstellen";
@@ -170,6 +184,7 @@
 "Day summary" = "Tagesbilanz";
 "Days: %@" = "Tage: %@";
 "Delete" = "Löschen";
+"Delete entry" = "Eintrag löschen";
 "Delete habit" = "Gewohnheit löschen";
 "Delete habit?" = "Gewohnheit löschen?";
 "Description or motivation (optional)" = "Beschreibung oder Motivation (optional)";
@@ -218,8 +233,10 @@
 "Exclusive pets and more sparks" = "Exklusive Haustiere und mehr Funken";
 "Exercise minutes" = "Trainingsminuten";
 "Export data" = "Daten exportieren";
+"Export to CSV" = "Als CSV exportieren";
 "Extra freeze" = "Extra-Freeze";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "Extra-Freezes diesen Monat: %lld/%lld. Avatare und Hintergründe für Funken findest du im Profil.";
+"Face ID lock" = "Sperre mit Face ID";
 "Family" = "Familie";
 "Family groups" = "Familiengruppen";
 "Family groups work in the App Store version of ZenHab." = "Familiengruppen funktionieren in der App-Store-Version von ZenHab.";
@@ -239,6 +256,7 @@
 "Focus for an hour" = "Eine Stunde konzentriert arbeiten";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "Für schlechte Gewohnheiten: Rauchen, Süßes, Alkohol, Scrollen.";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "Zum Beispiel 8 Gläser Wasser. Jedes Tippen auf den Kreis zählt eins dazu.";
+"Forest" = "Wald";
 "Forever" = "Für immer";
 "Found a bug or have an idea? Every message is read." = "Fehler gefunden oder eine Idee? Jede Nachricht wird gelesen.";
 "Fox" = "Fuchs";
@@ -249,9 +267,13 @@
 "Freeze" = "Freeze";
 "Freezes this month" = "Freezes diesen Monat";
 "Full for today" = "Für heute satt";
+"Full mood journal" = "Volles Stimmungstagebuch";
 "Get a pet" = "Haustier holen";
 "Go to bed on time" = "Pünktlich ins Bett";
 "Goal" = "Ziel";
+"Gold" = "Gold";
+"Good" = "Gut";
+"Great" = "Super";
 "Great job, keep it up" = "Super gemacht, weiter so";
 "Group" = "Gruppe";
 "Groups" = "Gruppen";
@@ -270,6 +292,7 @@
 "Habits" = "Gewohnheiten";
 "Habits %lld/%lld" = "Gewohnheiten %lld/%lld";
 "Habits Pro" = "Gewohnheiten Pro";
+"Habits check themselves off from steps, sleep, water, workouts and mindful minutes." = "Gewohnheiten haken sich selbst ab: durch Schritte, Schlaf, Wasser, Training und Achtsamkeitsminuten.";
 "Habits with reminders are sorted by time. The rest come after them and can be dragged." = "Gewohnheiten mit Erinnerung sind nach Uhrzeit sortiert. Die übrigen folgen danach und lassen sich verschieben.";
 "Half a thousand" = "Fünfhundert";
 "Happy" = "Glücklich";
@@ -279,9 +302,11 @@
 "Health" = "Gesundheit";
 "Hide keyboard" = "Tastatur ausblenden";
 "Hours of sleep" = "Stunden Schlaf";
+"How are you today?" = "Wie geht's dir heute?";
 "How many habits are done today." = "Wie viele Gewohnheiten heute erledigt sind.";
 "How often" = "Wie oft";
 "How to earn" = "So verdienst du";
+"How was your day?" = "Wie war dein Tag?";
 "Hundred" = "Hundert";
 "Hundred check-ins" = "Hundert Haken";
 "I believe in you!" = "Ich glaube an dich!";
@@ -310,6 +335,7 @@
 "Its check-in history will be deleted too." = "Der Verlauf wird ebenfalls gelöscht.";
 "Its check-in history will be deleted too. To keep the history, archive the habit instead." = "Der Verlauf wird ebenfalls gelöscht. Um ihn zu behalten, archiviere die Gewohnheit stattdessen.";
 "Join my group in ZenHab" = "Tritt meiner Gruppe in ZenHab bei";
+"Journal" = "Tagebuch";
 "Keep a 100-day streak" = "Halte eine Serie von 100 Tagen";
 "Keep a 14-day streak" = "Halte eine Serie von 14 Tagen";
 "Keep a 200-day streak" = "Halte eine Serie von 200 Tagen";
@@ -319,6 +345,7 @@
 "Keep a 60-day streak" = "Halte eine Serie von 60 Tagen";
 "Keep a 7-day streak" = "Halte eine Serie von 7 Tagen";
 "Keep a journal" = "Tagebuch schreiben";
+"Keep rating your mood. When there are enough days with and without each habit, you'll see how they relate." = "Bewerte weiter deine Stimmung. Sobald es genug Tage mit und ohne jede Gewohnheit gibt, siehst du den Zusammenhang.";
 "Language" = "Sprache";
 "Language to learn" = "Zu lernende Sprache";
 "Languages" = "Sprachen";
@@ -343,10 +370,13 @@
 "Let's start with your first habit" = "Fangen wir mit deiner ersten Gewohnheit an";
 "Level" = "Niveau";
 "Level %lld" = "Level %lld";
+"Light" = "Hell";
 "Listen" = "Anhören";
 "Listen to a podcast" = "Podcast hören";
 "Listening…" = "Ich höre zu…";
 "Lists the habits that aren't checked off today." = "Nennt die Gewohnheiten, die heute noch offen sind.";
+"Lock with %@" = "Sperren mit %@";
+"Lock with Face ID" = "Sperre mit Face ID";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Mail ist auf diesem iPhone nicht eingerichtet. Öffne eine andere Mail-App oder kopiere die Nachricht und sende sie an %@.";
 "Make the bed" = "Bett machen";
 "Mark as done" = "Als erledigt markieren";
@@ -354,6 +384,7 @@
 "Marks a habit as done for today." = "Hakt eine Gewohnheit für heute ab.";
 "Meditate" = "Meditieren";
 "Message a friend" = "Freund schreiben";
+"Midnight" = "Mitternacht";
 "Mindful minutes" = "Achtsamkeitsminuten";
 "Mindfulness" = "Achtsamkeit";
 "Minimum" = "Minimum";
@@ -366,6 +397,12 @@
 "Money saved" = "Gespartes Geld";
 "Month of power" = "Monat der Stärke";
 "Monthly" = "Monatlich";
+"Mood" = "Stimmung";
+"Mood (1-5)" = "Stimmung (1-5)";
+"Mood card" = "Stimmungskarte";
+"Mood is higher on days you do it" = "An Tagen damit ist die Stimmung besser";
+"Mood is lower on days you do it" = "An Tagen damit ist die Stimmung schlechter";
+"Mood journal" = "Stimmungstagebuch";
 "More" = "Mehr";
 "More freedom for the habits that matter." = "Mehr Freiheit für die Gewohnheiten, die zählen.";
 "More species are available for sparks and with Pro." = "Weitere Arten gibt es für Funken und mit Pro.";
@@ -379,8 +416,10 @@
 "Name" = "Name";
 "Never" = "Nie";
 "New achievement!" = "Neuer Erfolg!";
+"New app icons" = "Neue App-Symbole";
 "New group" = "Neue Gruppe";
 "New habit" = "Neue Gewohnheit";
+"New icons are part of Pro." = "Neue Symbole gehören zu Pro.";
 "New schedules" = "Neue Zeitpläne";
 "New word" = "Neues Wort";
 "New words a day" = "Neue Wörter pro Tag";
@@ -393,6 +432,7 @@
 "No alcohol" = "Kein Alkohol";
 "No connection to iCloud. Changes will sync later." = "Keine Verbindung zu iCloud. Änderungen werden später synchronisiert.";
 "No connection to iCloud. The backup will be saved later." = "Keine Verbindung zu iCloud. Die Sicherung wird später gespeichert.";
+"No entries yet" = "Noch keine Einträge";
 "No fast food" = "Kein Fast Food";
 "No group" = "Ohne Gruppe";
 "No habits" = "Keine Gewohnheiten";
@@ -423,6 +463,8 @@
 "OK" = "OK";
 "Off" = "Aus";
 "Off in iPhone Settings" = "In den iPhone-Einstellungen aus";
+"Okay" = "Okay";
+"Older entries: %lld. Your full history is in Pro." = "Ältere Einträge: %lld. Der ganze Verlauf ist in Pro.";
 "On" = "Ein";
 "On target" = "Volltreffer";
 "On weekdays" = "Werktags";
@@ -435,9 +477,12 @@
 "One notification at the chosen time." = "Eine Mitteilung zur gewählten Uhrzeit.";
 "One notification listing the habits not checked off yet." = "Eine Mitteilung mit den Gewohnheiten, die noch offen sind.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Es zählen nur Abhaken am selben oder nächsten Tag. Wird eine Gewohnheit abgewählt, ist der Funke wieder weg.";
+"Only you can open your habits and journal." = "Nur du kannst deine Gewohnheiten und dein Tagebuch öffnen.";
 "Open backup" = "Sicherung öffnen";
+"Open export" = "Export öffnen";
 "Open groups" = "Gruppen öffnen";
 "Open iOS Settings" = "iOS-Einstellungen öffnen";
+"Open journal" = "Tagebuch öffnen";
 "Open mail app" = "Mail-App öffnen";
 "Open the app to adopt one." = "Öffne die App, um eins aufzunehmen.";
 "Order" = "Reihenfolge";
@@ -481,6 +526,8 @@
 "Quitting" = "Ich gewöhne mir ab";
 "Quitting: %@" = "Ohne: %@";
 "Rate the app" = "App bewerten";
+"Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "Bewerte deinen Tag mit einem Tipp unten auf „Heute“ und schreib ein paar Worte dazu. Mit Pro siehst du den ganzen Verlauf, ein Monatsdiagramm und welche Gewohnheiten deine Stimmung heben.";
+"Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "Bewerte einmal am Tag deine Stimmung auf „Heute“. Nach ein paar Wochen siehst du, welche Gewohnheiten sie heben.";
 "Reach a daily goal 20 times" = "Erreiche 20-mal ein Tagesziel";
 "Reach a weekly goal 4 times" = "Erreiche 4-mal ein Wochenziel";
 "Read" = "Lesen";
@@ -511,6 +558,7 @@
 "Restore your habits?" = "Gewohnheiten wiederherstellen?";
 "Return to a habit after a miss" = "Kehre nach einer Lücke zur Gewohnheit zurück";
 "Review" = "Wiederholung";
+"Rose" = "Rosé";
 "Run" = "Laufen";
 "Sad" = "Traurig";
 "Save" = "Sichern";
@@ -521,7 +569,9 @@
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Sag den Namen der Gewohnheit, zum Beispiel „Wasser trinken“.";
 "Schedule" = "Zeitplan";
 "Scheduled notifications" = "Geplante Mitteilungen";
+"See how much money you save by quitting a habit." = "Sieh, wie viel Geld du sparst, wenn du eine Gewohnheit aufgibst.";
 "See how much you've saved with Pro" = "Mit Pro siehst du, wie viel du gespart hast";
+"See which habits make your days better" = "Finde heraus, welche Gewohnheiten deine Tage besser machen";
 "Send" = "Senden";
 "Send by email" = "Per E-Mail senden";
 "Send the message" = "Nachricht senden";
@@ -540,6 +590,7 @@
 "Simple gestures" = "Einfache Gesten";
 "Since %@" = "Seit %@";
 "Siri" = "Siri";
+"Six new icons for your Home Screen." = "Sechs neue Symbole für deinen Home-Bildschirm.";
 "Skin care" = "Hautpflege";
 "Skip" = "Überspringen";
 "Skipped" = "Übersprungen";
@@ -557,6 +608,7 @@
 "Spend time outdoors" = "Zeit draußen verbringen";
 "Spent a day" = "Ausgaben pro Tag";
 "Start" = "Beginn";
+"Start free trial" = "Gratis testen";
 "Start over" = "Neu anfangen";
 "Start the count again?" = "Zählung neu starten?";
 "Statistics" = "Statistik";
@@ -577,6 +629,8 @@
 "Subscriptions renew automatically until cancelled. Cancel anytime in Settings, Apple Account, Subscriptions, at least 24 hours before the period ends." = "Abos verlängern sich automatisch bis zur Kündigung. Kündige jederzeit unter Einstellungen, Apple Account, Abonnements, spätestens 24 Stunden vor Ablauf des Zeitraums.";
 "Suggest an idea" = "Idee vorschlagen";
 "Sunrise club" = "Club der Frühaufsteher";
+"Sunset" = "Sonnenuntergang";
+"Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro." = "Sonnenuntergang, Wald, Rosé, Gold, Mitternacht und Hell. Wähle eins in den Einstellungen mit Pro.";
 "Swimming" = "Schwimmen";
 "Swipe a card right to check it off, left for more actions. Press and hold to reorder." = "Wische eine Karte nach rechts zum Abhaken, nach links für mehr Aktionen. Halte gedrückt zum Verschieben.";
 "Symbols" = "Symbole";
@@ -594,6 +648,7 @@
 "Tell us what you think" = "Sag uns deine Meinung";
 "Terms of Use" = "Nutzungsbedingungen";
 "Thank you!" = "Danke!";
+"The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Der Pro-Bildschirm zeigt jetzt alles, was dazugehört, und öffnet sich bei der Funktion, die du angetippt hast.";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "Sicherung in iCloud: %@, %@, Gewohnheiten: %lld. Sie wird automatisch aktualisiert, wenn du die App verlässt. Fotos für Avatar und Hintergrund sind nicht enthalten.";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "Die kostenlose Version hat ihr Gewohnheitslimit erreicht. Öffne ZenHab, um Pro zu holen.";
 "The free version has up to 5 active habits." = "Die kostenlose Version erlaubt bis zu 5 aktive Gewohnheiten.";
@@ -601,6 +656,7 @@
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "Gewohnheiten und Häkchen der Gruppe werden über iCloud geteilt. Wer den Einladungslink hat, kann beitreten und abhaken. Jeder bekommt eigene Erinnerungen.";
 "The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "Die Gewohnheit wird von selbst abgehakt, sobald das Ziel in Health erreicht ist: Schritte, Schlaf, Wasser, Training oder Achtsamkeit.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Die Minimalversion zählt als erledigt und hält deine Serie. Eine verkettete Gewohnheit erinnert dich direkt nach dem Abhaken der vorherigen.";
+"The mood card at the bottom of the list lets you rate your day with one tap." = "Die Stimmungskarte unten in der Liste: bewerte deinen Tag mit einem Tipp.";
 "The new language will apply after you close the app and open it again." = "Die neue Sprache gilt, sobald du die App schließt und wieder öffnest.";
 "The purchase could not be verified." = "Der Kauf konnte nicht überprüft werden.";
 "The streak broke" = "Die Serie ist gerissen";
@@ -614,9 +670,11 @@
 "Time to rest" = "Zeit zum Ausruhen";
 "Time's up. Well done!" = "Die Zeit ist um. Gut gemacht!";
 "Timer" = "Timer";
+"Timer on the Lock Screen" = "Timer auf dem Sperrbildschirm";
 "Today" = "Heute";
 "Today is a good day." = "Heute ist ein guter Tag.";
 "Today screen" = "Heute-Bildschirm";
+"Today's entry" = "Heutiger Eintrag";
 "Today's habits" = "Heutige Gewohnheiten";
 "Today's progress and quick check-off right from the Home Screen." = "Tagesfortschritt und schnelles Abhaken direkt auf dem Home-Bildschirm.";
 "Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "Tagesfortschritt und schnelles Abhaken direkt auf dem Home-Bildschirm. Halte das Widget gedrückt, um eine Gruppe zu wählen.";
@@ -628,6 +686,7 @@
 "Track habits, get gentle reminders and watch your streaks grow." = "Verfolge Gewohnheiten, erhalte sanfte Erinnerungen und sieh deine Serien wachsen.";
 "Try again" = "Erneut versuchen";
 "Try it" = "Ausprobieren";
+"Turn on the lock" = "Sperre einschalten";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "Aktiviere „Ich gewöhne mir das ab“ in einer Gewohnheit und sieh, wie viele Tage du ohne bist, deinen Rekord und das nächste Ziel. Mit Pro auch das gesparte Geld.";
 "Turtle" = "Schildkröte";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Zwei Lücken im Monat brechen deine Serie nicht, und an schweren Tagen zählt auch die Minimalversion.";
@@ -635,9 +694,12 @@
 "Uncheck" = "Abhaken aufheben";
 "Undo skip" = "Überspringen aufheben";
 "Unicorn" = "Einhorn";
+"Unit" = "Einheit";
 "Unit, for example glasses" = "Einheit, z. B. Gläser";
 "Unknown" = "Unbekannt";
 "Unlimited habits" = "Unbegrenzte Gewohnheiten";
+"Unlock" = "Entsperren";
+"Unlock ZenHab" = "ZenHab entsperren";
 "Unlock the full collection and Pro-only designs." = "Die ganze Sammlung und Pro-exklusive Designs.";
 "Unlock your iPhone" = "Entsperre dein iPhone";
 "Unlock: %@" = "Freischalten: %@";
@@ -663,12 +725,17 @@
 "Welcome to Habit Tracker" = "Willkommen beim Gewohnheitstracker";
 "What %@ gives you" = "Was %@ dir bringt";
 "What happened and what did you expect?" = "Was ist passiert und was hast du erwartet?";
+"What happened today? What helped?" = "Was ist heute passiert? Was hat geholfen?";
+"What lifts your mood" = "Was deine Stimmung hebt";
 "What should I add?" = "Was soll ich hinzufügen?";
 "What to add" = "Was hinzufügen";
 "What's left today" = "Was heute noch offen ist";
 "What's new" = "Neu in ZenHab";
+"When you come back to the app, it asks for %@ first." = "Wenn du zur App zurückkehrst, fragt sie zuerst nach %@.";
 "Which habit?" = "Welche Gewohnheit?";
 "Widget" = "Widget";
+"With Pro, ZenHab asks for Face ID or your passcode when you open it, so your habits and journal stay private. Turn it on in Settings." = "Mit Pro fragt ZenHab beim Öffnen nach Face ID oder deinem Code, damit deine Gewohnheiten und dein Tagebuch privat bleiben. Einschalten in den Einstellungen.";
+"With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets." = "Mit Pro exportierst du alle Einträge mit Notizen und Stimmung als Tabelle für Numbers, Excel oder Google Sheets.";
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "Mit Pro gibst du einer Gewohnheit eine Dauer. Der Countdown läuft auf dem Sperrbildschirm und in der Dynamic Island und hakt die Gewohnheit am Ende ab.";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "Mit Pro verknüpfst du eine Gewohnheit mit Schritten, Schlaf, Wasser, Workouts oder Achtsamkeit, und sie wird beim Erreichen des Ziels von selbst abgehakt.";
 "Without it since" = "Ohne seit";
@@ -687,6 +754,7 @@
 "You're doing great!" = "Du machst das super!";
 "You've gone through the whole dictionary" = "Du hast das ganze Wörterbuch durch";
 "Young" = "Jungtier";
+"Your days and the habits that lift your mood" = "Deine Tage und die Gewohnheiten, die deine Stimmung heben";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Gewohnheiten und Verlauf werden automatisch in deiner iCloud gesichert. Auf einem neuen iPhone bietet ZenHab an, alles zurückzuholen.";
 "Your message has been sent." = "Deine Nachricht wurde gesendet.";
 "Your own emoji from the keyboard" = "Eigenes Emoji per Tastatur";
@@ -695,6 +763,8 @@
 "Your pet's mood and feeding right from the Home Screen." = "Stimmung deines Haustiers und Füttern direkt vom Home-Bildschirm.";
 "Your photo" = "Eigenes Foto";
 "Your week in review" = "Dein Wochenrückblick";
+"Your whole mood history, a monthly chart and which habits lift your mood." = "Dein ganzer Stimmungsverlauf, ein Monatsdiagramm und welche Gewohnheiten deine Stimmung heben.";
+"ZenHab is locked" = "ZenHab ist gesperrt";
 "a month" = "ein Monat";
 "a week" = "eine Woche";
 "a year" = "ein Jahr";
@@ -705,6 +775,7 @@
 "iPhone permission" = "iPhone-Berechtigung";
 "of %lld" = "von %lld";
 "of habits done" = "der Gewohnheiten erledigt";
+"passcode" = "Code";
 "three months" = "drei Monate";
 "times" = "Mal";
 "two weeks" = "zwei Wochen";

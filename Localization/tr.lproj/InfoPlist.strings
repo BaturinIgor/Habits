@@ -4,3 +4,4 @@
 "NSSpeechRecognitionUsageDescription" = "ZenHab sözlerinizi programı ve hatırlatma saati olan bir alışkanlığa dönüştürür.";
 "NSHealthShareUsageDescription" = "ZenHab, bağlı alışkanlıkları işaretlemek için adım, uyku, su, egzersiz ve farkındalık dakikalarını okur.";
 "NSHealthUpdateUsageDescription" = "ZenHab Sağlık uygulamasına hiçbir şey yazmaz. Yalnızca bağlı alışkanlıkları işaretlemek için veri okur.";
+"NSFaceIDUsageDescription" = "ZenHab, alışkanlıklarını ve ruh hâli günlüğünü yalnızca senin görebilmen için uygulamayı Face ID ile kilitler.";

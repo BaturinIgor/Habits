@@ -710,3 +710,74 @@ With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and 
 Habit timer||Timer de hábito
 With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up.||Com o Pro, dê uma duração a um hábito. A contagem regressiva aparece na Tela Bloqueada e na Dynamic Island e marca o hábito no final.
 At the start of each week, see how the last one went and share it as a picture.||No começo de cada semana, veja como foi a anterior e compartilhe como imagem.
+%@ free, then %@. Cancel anytime.||%1$@ grátis, depois %2$@. Cancele quando quiser.
+A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up.||Uma contagem regressiva na Tela Bloqueada e na Dynamic Island que marca o hábito quando o tempo acaba.
+A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets.||Uma tabela com todas as marcações, notas e humor para Numbers, Excel ou Planilhas Google.
+Add a note||Adicionar nota
+All your check-ins as a table for Numbers, Excel or Google Sheets.||Todas as suas marcações em uma tabela para Numbers, Excel ou Planilhas Google.
+App icon||Ícone do app
+App icons||Ícones do app
+Available with Pro||Disponível no Pro
+Awful||Péssimo
+Bad||Ruim
+Okay||Ok
+Good||Bom
+Great||Ótimo
+Choose an icon||Escolher ícone
+Classic||Clássico
+Clearer Pro||Pro mais claro
+Count||Quantidade
+Delete entry||Apagar registro
+Export to CSV||Exportar para CSV
+Face ID lock||Bloqueio com Face ID
+Forest||Floresta
+Full mood journal||Diário de humor completo
+Gold||Dourado
+Habits check themselves off from steps, sleep, water, workouts and mindful minutes.||Os hábitos se marcam sozinhos com passos, sono, água, treinos e minutos de atenção plena.
+How are you today?||Como você está hoje?
+How was your day?||Como foi seu dia?
+Journal||Diário
+Keep rating your mood. When there are enough days with and without each habit, you'll see how they relate.||Continue avaliando seu humor. Quando houver dias suficientes com e sem cada hábito, você verá a relação.
+Light||Clara
+Lock with %@||Bloquear com %@
+Lock with Face ID||Bloqueio com Face ID
+Midnight||Meia-noite
+Mood||Humor
+Mood (1-5)||Humor (1-5)
+Mood card||Cartão de humor
+Mood is higher on days you do it||O humor é melhor nos dias em que você faz
+Mood is lower on days you do it||O humor é pior nos dias em que você faz
+Mood journal||Diário de humor
+New app icons||Novos ícones do app
+New icons are part of Pro.||Os novos ícones fazem parte do Pro.
+No entries yet||Nenhum registro ainda
+Older entries: %lld. Your full history is in Pro.||Registros anteriores: %lld. Todo o histórico está no Pro.
+Only you can open your habits and journal.||Só você pode abrir seus hábitos e seu diário.
+Open export||Abrir exportação
+Open journal||Abrir diário
+Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood.||Avalie seu dia com um toque no fim de Hoje e escreva algumas palavras. Com o Pro, veja todo o histórico, um gráfico do mês e quais hábitos melhoram seu humor.
+Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it.||Avalie seu humor na tela Hoje uma vez por dia. Em algumas semanas você verá quais hábitos o melhoram.
+Rose||Rosa
+See how much money you save by quitting a habit.||Veja quanto dinheiro você economiza ao largar um hábito.
+See which habits make your days better||Veja quais hábitos deixam seus dias melhores
+Six new icons for your Home Screen.||Seis novos ícones para sua Tela de Início.
+Start free trial||Começar teste grátis
+Sunset||Pôr do sol
+Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro.||Pôr do sol, Floresta, Rosa, Dourado, Meia-noite e Clara. Escolha em Ajustes com o Pro.
+The Pro screen now lists everything it includes, and opens on the feature you tapped.||A tela do Pro agora mostra tudo o que inclui e abre no recurso que você tocou.
+The mood card at the bottom of the list lets you rate your day with one tap.||O cartão de humor no fim da lista permite avaliar seu dia com um toque.
+Timer on the Lock Screen||Timer na Tela Bloqueada
+Today's entry||Registro de hoje
+Turn on the lock||Ativar o bloqueio
+Unit||Unidade
+Unlock||Desbloquear
+Unlock ZenHab||Desbloquear o ZenHab
+What happened today? What helped?||O que aconteceu hoje? O que ajudou?
+What lifts your mood||O que melhora seu humor
+When you come back to the app, it asks for %@ first.||Quando você volta ao app, ele pede %@ primeiro.
+With Pro, ZenHab asks for Face ID or your passcode when you open it, so your habits and journal stay private. Turn it on in Settings.||Com o Pro, o ZenHab pede Face ID ou seu código ao abrir, para manter seus hábitos e diário privados. Ative em Ajustes.
+With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets.||Com o Pro, exporte todas as marcações com notas e humor em uma tabela para Numbers, Excel ou Planilhas Google.
+Your days and the habits that lift your mood||Seus dias e os hábitos que melhoram seu humor
+Your whole mood history, a monthly chart and which habits lift your mood.||Todo o histórico de humor, um gráfico mensal e quais hábitos o melhoram.
+ZenHab is locked||O ZenHab está bloqueado
+passcode||código

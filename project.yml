@@ -9,7 +9,7 @@ options:
 settings:
   base:
     SWIFT_VERSION: "5.0"
-    MARKETING_VERSION: "1.4"
+    MARKETING_VERSION: "1.5"
     CURRENT_PROJECT_VERSION: "1"
     TARGETED_DEVICE_FAMILY: "1"
     CODE_SIGN_STYLE: Manual
@@ -55,6 +55,8 @@ targets:
         FamilySharingEnabled: false
         # Apple Health (чтение). Права HealthKit добавляет tools/appstore/enable_family.sh в сборке для App Store.
         HealthEnabled: false
+        # Блокировка по Face ID (Pro).
+        NSFaceIDUsageDescription: ZenHab uses Face ID to lock the app so only you can see your habits and mood journal.
         NSHealthShareUsageDescription: ZenHab reads steps, sleep, water, exercise and mindful minutes to check off linked habits for you.
         NSHealthUpdateUsageDescription: ZenHab does not write to Apple Health. It only reads data to check off linked habits.
         BGTaskSchedulerPermittedIdentifiers: [com.personal.habits.refresh]
@@ -77,6 +79,8 @@ targets:
         # Профиль подписи для App Store передаёт workflow appstore.yml, в сборке для SideStore он пустой.
         PROVISIONING_PROFILE_SPECIFIER: $(APP_PROFILE_NAME)
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        # Альтернативные иконки (Pro) лежат рядом: AppIcon-Sunset и другие.
+        ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS: "YES"
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
     dependencies:
       - target: HabitsWidget
