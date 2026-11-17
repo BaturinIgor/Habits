@@ -4,7 +4,7 @@ import UIKit
 /// Альтернативные иконки приложения (Pro). Файлы: Assets.xcassets/AppIcon-<имя>,
 /// превью для выбора: IconPreview-<имя>.
 enum AppIcons {
-    struct Item: Identifiable, Hashable {
+    struct Item: Identifiable {
         /// nil у стандартной иконки.
         let name: String?
         let title: LocalizedStringKey
