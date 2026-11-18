@@ -1,0 +1,38 @@
+name: App Store texts
+
+# Заполняет «Что нового» для версии в App Store Connect из docs/appstore/metadata/*.md
+# (все языки), создаёт версию, если её нет, ставит автоматический выпуск и прикрепляет сборку.
+# На проверку не отправляет. Запуск: Actions -> App Store texts -> Run workflow.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Версия, например 1.5"
+        required: true
+        default: "1.5"
+      build:
+        description: "Номер сборки, которую прикрепить (необязательно), например 11"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  texts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install
+        run: pip install pyjwt cryptography requests
+      - name: Fill What's New
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          APP_BUNDLE_ID: ${{ vars.APP_BUNDLE_ID || 'com.baturinigor.zenhab' }}
+          VERSION: ${{ inputs.version }}
+          BUILD_NUMBER: ${{ inputs.build }}
+        run: python3 tools/appstore/asc_whats_new.py
