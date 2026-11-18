@@ -16,6 +16,9 @@ struct HabitsApp: App {
                     if TestMode.isUITest { HangWatchdog.shared.start() }
                     #endif
                     ProStore.shared.start()
+                    // Блокировка по Face ID при запуске.
+                    AppLock.shared.lock()
+                    await AppLock.shared.unlockIfNeeded()
                     if store.data.settings.onboardingDone {
                         await NotificationPlanner.requestAuthorizationIfNeeded()
                     }
@@ -26,6 +29,7 @@ struct HabitsApp: App {
             switch phase {
             case .active:
                 store.reloadFromDisk()
+                Task { await AppLock.shared.unlockIfNeeded() }
                 Task {
                     // Пользователь в приложении: новые уведомления увидены, счётчик на иконке с нуля.
                     await NotificationPlanner.markSeen()
@@ -39,6 +43,7 @@ struct HabitsApp: App {
                 // Пока приложение открыто, изменения родных подтягиваем сами, не дожидаясь push.
                 FamilySync.shared.startLiveUpdates()
             case .background:
+                AppLock.shared.lock()
                 FamilySync.shared.flushBeforeBackground()
                 CloudBackup.shared.backupBeforeBackground()
                 BackgroundRefresh.schedule()

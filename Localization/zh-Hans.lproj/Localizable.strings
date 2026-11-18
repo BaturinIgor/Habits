@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / 年";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@：价格 ✨ %lld，你有：✨ %lld。还差 ✨ %lld。完成习惯即可获得。";
 "%@ costs %lld sparks. You have %lld." = "%@：价格 ✨ %lld。你有：✨ %lld。";
+"%@ free, then %@. Cancel anytime." = "免费 %1$@，之后 %2$@。可随时取消。";
 "%@ is already done today." = "%@ 今天已完成。";
 "%@: the streak broke" = "%@：连续记录中断了";
 "%lld min" = "%lld 分钟";
@@ -23,8 +24,10 @@
 "30 perfect days in a row" = "连续 30 个完美日";
 "7 perfect days in a row" = "连续 7 个完美日";
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "离开应用时，习惯和历史记录的副本会自动保存到你的 iCloud，换手机也不会丢失。";
+"A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "锁定屏幕和灵动岛上的倒计时，时间到了自动打卡。";
 "A grown pet brings up to +5 a day" = "长大的宠物每天最多带来 +5";
 "A solid week. A little more and it'll be perfect." = "不错的一周，再加把劲就完美了。";
+"A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets." = "包含所有打卡、备注和心情的表格，可用于 Numbers、Excel 或 Google 表格。";
 "A week strong" = "坚持一周";
 "A whole year" = "整整一年";
 "Abstract ideas and news" = "抽象概念和新闻";
@@ -36,6 +39,7 @@
 "Add a habit" = "添加习惯";
 "Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap." = "把习惯按钮加到控制中心、锁定屏幕或操作按钮，一点即可打卡。";
 "Add a habit, pick days and a time, and I'll remind you." = "添加一个习惯，选择日期和时间，我会提醒你。";
+"Add a note" = "添加备注";
 "Add a note to 20 completed habits" = "为 20 个已完成的习惯添加备注";
 "Add habit" = "添加习惯";
 "Add note" = "添加备注";
@@ -52,6 +56,7 @@
 "All data is stored only on this iPhone." = "所有数据仅保存在这台 iPhone 上。";
 "All done" = "全部完成";
 "All done!" = "全部完成！";
+"All your check-ins as a table for Numbers, Excel or Google Sheets." = "把所有打卡导出为表格，用于 Numbers、Excel 或 Google 表格。";
 "Allow notifications" = "允许通知";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "请在“设置”中允许 ZenHab 使用麦克风和语音识别。";
 "Allowed" = "已允许";
@@ -59,6 +64,8 @@
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "归档的习惯不会显示在“今天”页面，也不会发送通知，但历史记录会保留。";
 "And %lld more" = "还有 %lld 个";
 "Anytime" = "随时";
+"App icon" = "应用图标";
+"App icons" = "应用图标";
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "应用和 iOS 版本、设备型号及语言。你的习惯和备注不会被发送。";
 "Appearance" = "外观";
 "Apple Health" = "Apple Health";
@@ -70,8 +77,10 @@
 "Attach a screenshot" = "附上截图";
 "Automatic iCloud backup" = "自动 iCloud 备份";
 "Available" = "可用";
+"Available with Pro" = "Pro 专享";
 "Avatar" = "头像";
 "Avatars" = "头像";
+"Awful" = "很糟";
 "Baby" = "幼崽";
 "Back up now" = "立即备份";
 "Back up to iCloud" = "备份到 iCloud";
@@ -79,6 +88,7 @@
 "Backgrounds" = "背景";
 "Backup" = "备份";
 "Backup from %@" = "%@ 的备份";
+"Bad" = "不好";
 "Beginner" = "初级";
 "Best current streak" = "当前最佳连续";
 "Best streak" = "最佳连续";
@@ -123,9 +133,12 @@
 "Check-ins" = "打卡";
 "Checked off" = "已打卡";
 "Chick" = "小鸡";
+"Choose an icon" = "选择图标";
 "Choose how many times and how often each reminder repeats." = "自行设置每个提醒重复的次数和间隔。";
 "Chronicler" = "编年史家";
+"Classic" = "经典";
 "Clear your inbox" = "清空收件箱";
+"Clearer Pro" = "更清晰的 Pro";
 "Close" = "关闭";
 "Collector" = "收藏家";
 "Come back after a miss 10 times" = "中断后重新开始 10 次";
@@ -145,6 +158,7 @@
 "Couldn't create an invitation link. Try again later." = "无法创建邀请链接，请稍后再试。";
 "Couldn't read the file" = "无法读取文件";
 "Couldn't send the message" = "无法发送消息";
+"Count" = "数量";
 "Count days without it" = "记录戒除天数";
 "Count glasses of water, pages or minutes toward a goal." = "记录喝水杯数、阅读页数或分钟数，直到达成目标。";
 "Create" = "创建";
@@ -170,6 +184,7 @@
 "Day summary" = "今日小结";
 "Days: %@" = "日期：%@";
 "Delete" = "删除";
+"Delete entry" = "删除记录";
 "Delete habit" = "删除习惯";
 "Delete habit?" = "删除该习惯？";
 "Description or motivation (optional)" = "描述或动力（可选）";
@@ -218,8 +233,10 @@
 "Exclusive pets and more sparks" = "专属宠物和更多火花";
 "Exercise minutes" = "锻炼分钟数";
 "Export data" = "导出数据";
+"Export to CSV" = "导出为 CSV";
 "Extra freeze" = "额外冻结";
 "Extra freezes this month: %lld/%lld. Avatars and backgrounds for sparks are in your profile." = "本月额外冻结：%lld/%lld。可用火花购买的头像和背景在个人资料中。";
+"Face ID lock" = "面容 ID 锁";
 "Family" = "家庭";
 "Family groups" = "家庭分组";
 "Family groups work in the App Store version of ZenHab." = "家庭分组仅在 App Store 版 ZenHab 中可用。";
@@ -239,6 +256,7 @@
 "Focus for an hour" = "专注一小时";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "适用于坏习惯：吸烟、甜食、饮酒、刷手机。";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "例如每天 8 杯水。每点一下圆圈加一。";
+"Forest" = "森林";
 "Forever" = "永久";
 "Found a bug or have an idea? Every message is read." = "发现问题或有想法？每条消息都会被阅读。";
 "Fox" = "狐狸";
@@ -249,9 +267,13 @@
 "Freeze" = "冻结";
 "Freezes this month" = "本月冻结";
 "Full for today" = "今天吃饱了";
+"Full mood journal" = "完整心情日记";
 "Get a pet" = "领养宠物";
 "Go to bed on time" = "按时睡觉";
 "Goal" = "目标";
+"Gold" = "金色";
+"Good" = "不错";
+"Great" = "超棒";
 "Great job, keep it up" = "干得好，继续保持";
 "Group" = "分组";
 "Groups" = "分组";
@@ -270,6 +292,7 @@
 "Habits" = "习惯";
 "Habits %lld/%lld" = "习惯 %lld/%lld";
 "Habits Pro" = "习惯 Pro";
+"Habits check themselves off from steps, sleep, water, workouts and mindful minutes." = "根据步数、睡眠、饮水、锻炼和正念分钟自动打卡。";
 "Habits with reminders are sorted by time. The rest come after them and can be dragged." = "有提醒的习惯按时间排序，其余的排在后面，可以拖动调整。";
 "Half a thousand" = "五百";
 "Happy" = "很开心";
@@ -279,9 +302,11 @@
 "Health" = "健康";
 "Hide keyboard" = "隐藏键盘";
 "Hours of sleep" = "睡眠小时数";
+"How are you today?" = "今天感觉怎么样？";
 "How many habits are done today." = "今天完成了多少习惯。";
 "How often" = "频率";
 "How to earn" = "如何获得";
+"How was your day?" = "这一天过得怎么样？";
 "Hundred" = "百日";
 "Hundred check-ins" = "百次打卡";
 "I believe in you!" = "我相信你！";
@@ -310,6 +335,7 @@
 "Its check-in history will be deleted too." = "打卡记录也会被删除。";
 "Its check-in history will be deleted too. To keep the history, archive the habit instead." = "打卡记录也会被删除。如需保留记录，请改为归档。";
 "Join my group in ZenHab" = "加入我在 ZenHab 的分组";
+"Journal" = "日记";
 "Keep a 100-day streak" = "连续 100 天";
 "Keep a 14-day streak" = "保持 14 天连续";
 "Keep a 200-day streak" = "保持 200 天连续";
@@ -319,6 +345,7 @@
 "Keep a 60-day streak" = "保持 60 天连续";
 "Keep a 7-day streak" = "连续 7 天";
 "Keep a journal" = "写日记";
+"Keep rating your mood. When there are enough days with and without each habit, you'll see how they relate." = "继续记录心情。当每个习惯都有足够多做与没做的日子时，就能看到它们的关系。";
 "Language" = "语言";
 "Language to learn" = "要学的语言";
 "Languages" = "语言";
@@ -343,10 +370,13 @@
 "Let's start with your first habit" = "从第一个习惯开始吧";
 "Level" = "水平";
 "Level %lld" = "等级 %lld";
+"Light" = "浅色";
 "Listen" = "收听";
 "Listen to a podcast" = "听播客";
 "Listening…" = "正在聆听…";
 "Lists the habits that aren't checked off today." = "列出今天还没打卡的习惯。";
+"Lock with %@" = "使用%@锁定";
+"Lock with Face ID" = "面容 ID 锁定";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "这台 iPhone 未设置“邮件”。请打开其他邮件应用，或复制消息发送到 %@。";
 "Make the bed" = "整理床铺";
 "Mark as done" = "标记为完成";
@@ -354,6 +384,7 @@
 "Marks a habit as done for today." = "将习惯标记为今天已完成。";
 "Meditate" = "冥想";
 "Message a friend" = "给朋友发消息";
+"Midnight" = "午夜";
 "Mindful minutes" = "正念分钟数";
 "Mindfulness" = "正念";
 "Minimum" = "最低版";
@@ -366,6 +397,12 @@
 "Money saved" = "省下的钱";
 "Month of power" = "力量之月";
 "Monthly" = "按月";
+"Mood" = "心情";
+"Mood (1-5)" = "心情 (1-5)";
+"Mood card" = "心情卡片";
+"Mood is higher on days you do it" = "做了这件事的日子心情更好";
+"Mood is lower on days you do it" = "做了这件事的日子心情较差";
+"Mood journal" = "心情日记";
 "More" = "多";
 "More freedom for the habits that matter." = "为重要的习惯提供更多自由。";
 "More species are available for sparks and with Pro." = "更多种类可用火花或 Pro 获得。";
@@ -379,8 +416,10 @@
 "Name" = "名称";
 "Never" = "从未";
 "New achievement!" = "新成就！";
+"New app icons" = "新的应用图标";
 "New group" = "新分组";
 "New habit" = "新习惯";
+"New icons are part of Pro." = "新图标属于 Pro。";
 "New schedules" = "新的频率";
 "New word" = "新单词";
 "New words a day" = "每天新单词";
@@ -393,6 +432,7 @@
 "No alcohol" = "不喝酒";
 "No connection to iCloud. Changes will sync later." = "无法连接 iCloud，更改稍后会同步。";
 "No connection to iCloud. The backup will be saved later." = "无法连接 iCloud，稍后会再备份。";
+"No entries yet" = "还没有记录";
 "No fast food" = "不吃快餐";
 "No group" = "未分组";
 "No habits" = "没有习惯";
@@ -423,6 +463,8 @@
 "OK" = "好";
 "Off" = "已关闭";
 "Off in iPhone Settings" = "已在 iPhone 设置中关闭";
+"Okay" = "一般";
+"Older entries: %lld. Your full history is in Pro." = "更早的记录：%lld 条。完整历史在 Pro 中。";
 "On" = "已开启";
 "On target" = "命中目标";
 "On weekdays" = "工作日";
@@ -435,9 +477,12 @@
 "One notification at the chosen time." = "在所选时间发送一次通知。";
 "One notification listing the habits not checked off yet." = "一条通知，列出尚未打卡的习惯。";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "只有当天或第二天的打卡才算数。取消打卡会收回火花。";
+"Only you can open your habits and journal." = "只有你能打开自己的习惯和日记。";
 "Open backup" = "打开备份";
+"Open export" = "打开导出";
 "Open groups" = "打开分组";
 "Open iOS Settings" = "打开 iOS 设置";
+"Open journal" = "打开日记";
 "Open mail app" = "打开邮件应用";
 "Open the app to adopt one." = "打开应用来领养一只。";
 "Order" = "顺序";
@@ -481,6 +526,8 @@
 "Quitting" = "戒除中";
 "Quitting: %@" = "已戒：%@";
 "Rate the app" = "给应用评分";
+"Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "在“今天”底部轻点一下为这一天打分，再写几句话。开通 Pro 可查看完整历史、月度图表以及哪些习惯让你心情更好。";
+"Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "每天在“今天”页面记录一次心情。几周后就能看到哪些习惯让你心情更好。";
 "Reach a daily goal 20 times" = "完成每日目标 20 次";
 "Reach a weekly goal 4 times" = "完成 4 次每周目标";
 "Read" = "阅读";
@@ -511,6 +558,7 @@
 "Restore your habits?" = "恢复你的习惯？";
 "Return to a habit after a miss" = "中断后重新坚持";
 "Review" = "复习";
+"Rose" = "玫瑰";
 "Run" = "跑步";
 "Sad" = "有点难过";
 "Save" = "保存";
@@ -521,7 +569,9 @@
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "说出习惯名称，例如“喝水”。";
 "Schedule" = "计划";
 "Scheduled notifications" = "已安排的通知";
+"See how much money you save by quitting a habit." = "看看戒掉一个习惯能省下多少钱。";
 "See how much you've saved with Pro" = "Pro 可显示你省下了多少钱";
+"See which habits make your days better" = "看看哪些习惯让你的日子更好";
 "Send" = "发送";
 "Send by email" = "通过邮件发送";
 "Send the message" = "发送消息";
@@ -540,6 +590,7 @@
 "Simple gestures" = "简单手势";
 "Since %@" = "自 %@";
 "Siri" = "Siri";
+"Six new icons for your Home Screen." = "六款新图标装点主屏幕。";
 "Skin care" = "护肤";
 "Skip" = "跳过";
 "Skipped" = "已跳过";
@@ -557,6 +608,7 @@
 "Spend time outdoors" = "户外活动";
 "Spent a day" = "每天花费";
 "Start" = "开始";
+"Start free trial" = "开始免费试用";
 "Start over" = "重新开始";
 "Start the count again?" = "重新开始计数？";
 "Statistics" = "统计";
@@ -577,6 +629,8 @@
 "Subscriptions renew automatically until cancelled. Cancel anytime in Settings, Apple Account, Subscriptions, at least 24 hours before the period ends." = "订阅会自动续期，直到取消。可随时在“设置”>“Apple 账户”>“订阅”中取消，需在当期结束前至少 24 小时操作。";
 "Suggest an idea" = "提个建议";
 "Sunrise club" = "日出俱乐部";
+"Sunset" = "日落";
+"Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro." = "日落、森林、玫瑰、金色、午夜和浅色。开通 Pro 后在设置中选择。";
 "Swimming" = "游泳";
 "Swipe a card right to check it off, left for more actions. Press and hold to reorder." = "向右滑动卡片打卡，向左滑动查看更多操作，长按可调整顺序。";
 "Symbols" = "符号";
@@ -594,6 +648,7 @@
 "Tell us what you think" = "说说你的想法";
 "Terms of Use" = "使用条款";
 "Thank you!" = "谢谢！";
+"The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Pro 页面现在列出全部内容，并直接定位到你点按的功能。";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "iCloud 中的备份：%@，%@，习惯：%lld。离开应用时会自动更新。不包含头像和背景照片。";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "免费版的习惯数量已达上限。打开 ZenHab 获取 Pro。";
 "The free version has up to 5 active habits." = "免费版最多 5 个进行中的习惯。";
@@ -601,6 +656,7 @@
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "分组的习惯和打卡通过 iCloud 共享。拥有邀请链接的人都可以加入并打卡。每个人都会收到自己的提醒。";
 "The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "当“健康”App 中的数据达到目标时，习惯会自动打卡：步数、睡眠、饮水、锻炼或正念分钟数。";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "最低版本也算完成，并保持连续记录。链中的习惯会在你完成上一个后立即提醒。";
+"The mood card at the bottom of the list lets you rate your day with one tap." = "列表底部的心情卡片，一点即可为这一天打分。";
 "The new language will apply after you close the app and open it again." = "关闭并重新打开应用后，新语言才会生效。";
 "The purchase could not be verified." = "无法验证此次购买。";
 "The streak broke" = "连续记录中断了";
@@ -614,9 +670,11 @@
 "Time to rest" = "好好休息";
 "Time's up. Well done!" = "时间到了，做得好！";
 "Timer" = "计时器";
+"Timer on the Lock Screen" = "锁定屏幕计时器";
 "Today" = "今天";
 "Today is a good day." = "今天是美好的一天。";
 "Today screen" = "“今天”页面";
+"Today's entry" = "今天的记录";
 "Today's habits" = "今日习惯";
 "Today's progress and quick check-off right from the Home Screen." = "在主屏幕查看今日进度并快速打卡。";
 "Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "在主屏幕查看今日进度并快速打卡。长按小组件可选择分组。";
@@ -628,6 +686,7 @@
 "Track habits, get gentle reminders and watch your streaks grow." = "记录习惯，接收温和提醒，看着连续记录不断增长。";
 "Try again" = "重试";
 "Try it" = "试一试";
+"Turn on the lock" = "开启锁定";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "在习惯中打开“我要戒掉这个习惯”，即可查看已戒天数、最长纪录和下一个里程碑。Pro 还会显示省下的钱。";
 "Turtle" = "乌龟";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "每月两次错过不会中断连续记录，艰难的日子里最低版本也算数。";
@@ -635,9 +694,12 @@
 "Uncheck" = "取消打卡";
 "Undo skip" = "取消跳过";
 "Unicorn" = "独角兽";
+"Unit" = "单位";
 "Unit, for example glasses" = "单位，例如杯";
 "Unknown" = "未知";
 "Unlimited habits" = "无限习惯";
+"Unlock" = "解锁";
+"Unlock ZenHab" = "解锁 ZenHab";
 "Unlock the full collection and Pro-only designs." = "解锁全部收藏和 Pro 专属设计。";
 "Unlock your iPhone" = "请解锁 iPhone";
 "Unlock: %@" = "解锁条件：%@";
@@ -663,12 +725,17 @@
 "Welcome to Habit Tracker" = "欢迎使用习惯追踪";
 "What %@ gives you" = "%@ 能带给你什么";
 "What happened and what did you expect?" = "发生了什么？你原本期望什么？";
+"What happened today? What helped?" = "今天发生了什么？什么帮到了你？";
+"What lifts your mood" = "什么让你心情变好";
 "What should I add?" = "要添加什么？";
 "What to add" = "添加内容";
 "What's left today" = "今天还剩什么";
 "What's new" = "新功能";
+"When you come back to the app, it asks for %@ first." = "回到应用时，会先要求%@。";
 "Which habit?" = "哪个习惯？";
 "Widget" = "小组件";
+"With Pro, ZenHab asks for Face ID or your passcode when you open it, so your habits and journal stay private. Turn it on in Settings." = "开通 Pro 后，打开 ZenHab 时会要求面容 ID 或密码，让你的习惯和日记保持私密。在设置中开启。";
+"With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets." = "开通 Pro 后，可将所有打卡连同备注和心情导出为表格，用于 Numbers、Excel 或 Google 表格。";
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "开通 Pro 后，可为习惯设定时长。倒计时显示在锁定屏幕和灵动岛上，时间到后自动打卡。";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "开通 Pro 后，可将习惯与步数、睡眠、饮水、体能训练或正念分钟数关联，达到目标即自动打卡。";
 "Without it since" = "戒除开始于";
@@ -687,6 +754,7 @@
 "You're doing great!" = "你做得很棒！";
 "You've gone through the whole dictionary" = "你已学完整个词库";
 "Young" = "少年";
+"Your days and the habits that lift your mood" = "你的每一天，以及让你心情变好的习惯";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "习惯和历史记录会自动保存到你的 iCloud。在新 iPhone 上，ZenHab 会提示你恢复全部数据。";
 "Your message has been sent." = "消息已发送。";
 "Your own emoji from the keyboard" = "用键盘输入表情";
@@ -695,6 +763,8 @@
 "Your pet's mood and feeding right from the Home Screen." = "直接在主屏幕查看宠物心情并喂食。";
 "Your photo" = "自己的照片";
 "Your week in review" = "你的一周回顾";
+"Your whole mood history, a monthly chart and which habits lift your mood." = "完整的心情历史、月度图表，以及让你心情变好的习惯。";
+"ZenHab is locked" = "ZenHab 已锁定";
 "a month" = "一个月";
 "a week" = "一周";
 "a year" = "一年";
@@ -705,6 +775,7 @@
 "iPhone permission" = "iPhone 权限";
 "of %lld" = "共 %lld";
 "of habits done" = "的习惯已完成";
+"passcode" = "密码";
 "three months" = "三个月";
 "times" = "次";
 "two weeks" = "两周";

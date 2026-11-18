@@ -4,3 +4,4 @@
 "NSSpeechRecognitionUsageDescription" = "ZenHab turns your words into a habit with a schedule and a reminder time.";
 "NSHealthShareUsageDescription" = "ZenHab reads steps, sleep, water, exercise and mindful minutes to check off linked habits for you.";
 "NSHealthUpdateUsageDescription" = "ZenHab does not write to Apple Health. It only reads data to check off linked habits.";
+"NSFaceIDUsageDescription" = "ZenHab uses Face ID to lock the app so only you can see your habits and mood journal.";

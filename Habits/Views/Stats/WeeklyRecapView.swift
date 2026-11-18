@@ -114,7 +114,9 @@ struct WeeklyRecapView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.displayScale) private var displayScale
     let recap: WeeklyRecap
-    @State private var image: Image?
+    /// Картинка карточки и PNG-файл с ней. Делимся файлом: ShareLink с SwiftUI Image
+    /// показывал в окне «Поделиться» бесконечную загрузку.
+    @State private var shareImage: (preview: Image, file: URL)?
 
     var body: some View {
         NavigationStack {
@@ -125,10 +127,10 @@ struct WeeklyRecapView: View {
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
-                    if let image {
+                    if let shareImage {
                         ShareLink(
-                            item: image,
-                            preview: SharePreview(String(localized: "My week"), image: image)
+                            item: shareImage.file,
+                            preview: SharePreview(String(localized: "My week"), image: shareImage.preview)
                         ) {
                             Label("Share", systemImage: "square.and.arrow.up")
                                 .frame(maxWidth: .infinity)
@@ -171,9 +173,11 @@ struct WeeklyRecapView: View {
                 .environment(\.colorScheme, .light)
         )
         renderer.scale = max(displayScale, 3)
-        if let uiImage = renderer.uiImage {
-            image = Image(uiImage: uiImage)
-        }
+        guard let uiImage = renderer.uiImage, let png = uiImage.pngData() else { return }
+        let file = FileManager.default.temporaryDirectory
+            .appendingPathComponent("ZenHab-week-\(DayKey.make(recap.start)).png")
+        guard (try? png.write(to: file, options: .atomic)) != nil else { return }
+        shareImage = (Image(uiImage: uiImage), file)
     }
 }
 

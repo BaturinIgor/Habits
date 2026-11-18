@@ -5,6 +5,7 @@ import UIKit
 struct StatsView: View {
     @Environment(HabitStore.self) private var store
     @State private var showingRecap = false
+    @State private var showingMood = false
 
     var body: some View {
         NavigationStack {
@@ -19,6 +20,7 @@ struct StatsView: View {
                     } else {
                         summary
                         recapButton
+                        moodButton
                         WeekChartCard(days: Stats.lastDays(7, in: store.data))
                         HeatmapCard(data: store.data)
                         habitsCard
@@ -35,6 +37,9 @@ struct StatsView: View {
             }
             .sheet(isPresented: $showingRecap) {
                 WeeklyRecapView(recap: WeeklyRecap.lastWeek(in: store.data))
+            }
+            .sheet(isPresented: $showingMood) {
+                MoodJournalView()
             }
         }
     }
@@ -69,6 +74,38 @@ struct StatsView: View {
         }
         .buttonStyle(PressableStyle())
         .accessibilityIdentifier("stats.recap")
+    }
+
+    private var moodButton: some View {
+        Button {
+            showingMood = true
+        } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "face.smiling")
+                    .font(.title3)
+                    .foregroundStyle(.orange)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Mood journal")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(Color.primary)
+                    Text("Your days and the habits that lift your mood")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(.tertiary)
+            }
+            .padding(14)
+            .background {
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(Color(uiColor: .secondarySystemGroupedBackground))
+            }
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(PressableStyle())
+        .accessibilityIdentifier("stats.mood")
     }
 
     private var summary: some View {

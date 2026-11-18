@@ -216,6 +216,23 @@ PERMISSIONS = {
   'pl': 'ZenHab niczego nie zapisuje w Zdrowiu. Tylko odczytuje dane, aby odhaczać powiązane nawyki.',
   'id': 'ZenHab tidak menulis apa pun ke Kesehatan. Aplikasi hanya membaca data untuk mencentang kebiasaan yang terhubung.',
  },
+ # Блокировка приложения по Face ID (Pro, с версии 1.5).
+ 'NSFaceIDUsageDescription': {
+  'en': 'ZenHab uses Face ID to lock the app so only you can see your habits and mood journal.',
+  'ru': 'ZenHab использует Face ID, чтобы закрыть приложение и твои привычки и дневник настроения видел только ты.',
+  'de': 'ZenHab nutzt Face ID, um die App zu sperren, damit nur du deine Gewohnheiten und dein Stimmungstagebuch siehst.',
+  'fr': 'ZenHab utilise Face ID pour verrouiller l\'app afin que toi seul voies tes habitudes et ton journal d\'humeur.',
+  'es': 'ZenHab usa Face ID para bloquear la app y que solo tú veas tus hábitos y tu diario de ánimo.',
+  'zh-Hans': 'ZenHab 使用面容 ID 锁定应用，只有你能看到自己的习惯和心情日记。',
+  'ja': 'ZenHabはFace IDでアプリをロックし、習慣と気分日記をあなただけが見られるようにします。',
+  'ko': 'ZenHab은 Face ID로 앱을 잠가 습관과 기분 일기를 본인만 볼 수 있게 합니다.',
+  'hi': 'ZenHab ऐप को लॉक करने के लिए Face ID का उपयोग करता है, ताकि आपकी आदतें और मूड डायरी सिर्फ़ आप देख सकें।',
+  'pt-BR': 'O ZenHab usa o Face ID para bloquear o app, assim só você vê seus hábitos e seu diário de humor.',
+  'it': 'ZenHab usa Face ID per bloccare l\'app, così solo tu vedi le tue abitudini e il diario dell\'umore.',
+  'tr': 'ZenHab, alışkanlıklarını ve ruh hâli günlüğünü yalnızca senin görebilmen için uygulamayı Face ID ile kilitler.',
+  'pl': 'ZenHab używa Face ID do blokowania aplikacji, aby tylko ty widział swoje nawyki i dziennik nastroju.',
+  'id': 'ZenHab memakai Face ID untuk mengunci aplikasi agar hanya kamu yang melihat kebiasaan dan jurnal suasana hatimu.',
+ },
 }
 
 # Фразы Siri из Habits/Features/SiriIntents.swift (HabitsShortcuts), в том же порядке.

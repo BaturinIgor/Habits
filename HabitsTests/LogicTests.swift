@@ -171,4 +171,81 @@ final class LogicTests: XCTestCase {
         XCTAssertEqual(data.habits.filter(\.isQuit).count, 1)
         XCTAssertNotNil(data.habits.first { $0.timerMinutes != nil })
     }
+
+    // MARK: Настроение (1.5)
+
+    func testMoodsSurviveOldFilesAndRoundTrip() throws {
+        // Файл без поля moods (версии до 1.5) читается с пустым дневником.
+        let old = try JSONSerialization.data(withJSONObject: ["version": 1, "habits": []])
+        XCTAssertTrue(try JSONDecoder().decode(AppData.self, from: old).moods.isEmpty)
+
+        var data = AppData()
+        data.moods["2026-11-17"] = MoodEntry(level: 9, note: "ok")
+        XCTAssertEqual(data.moods["2026-11-17"]?.level, 5, "оценка ограничена 1...5")
+        let decoded = try JSONDecoder().decode(AppData.self, from: JSONEncoder().encode(data))
+        XCTAssertEqual(decoded.moods["2026-11-17"]?.note, "ok")
+        XCTAssertFalse(decoded.settings.appLock)
+        XCTAssertTrue(decoded.settings.moodCard)
+    }
+
+    func testMoodFreeWindowIsSevenDays() {
+        XCTAssertTrue(MoodJournal.isFree(day(0), now: today))
+        XCTAssertTrue(MoodJournal.isFree(day(-6), now: today))
+        XCTAssertFalse(MoodJournal.isFree(day(-7), now: today))
+    }
+
+    func testMoodImpactFindsHabitThatLiftsMood() {
+        var data = AppData()
+        let habit = dailyHabit(startOffset: -20)
+        data.habits = [habit]
+        // Дни с привычкой: настроение 5, без неё: 2.
+        for offset in -9 ... 0 {
+            let key = DayKey.make(day(offset))
+            if offset % 2 == 0 {
+                data.setStatus(.done, habitID: habit.id, day: key)
+                data.moods[key] = MoodEntry(level: 5)
+            } else {
+                data.moods[key] = MoodEntry(level: 2)
+            }
+        }
+        let impacts = MoodJournal.impacts(in: data)
+        XCTAssertEqual(impacts.first?.habit.id, habit.id)
+        XCTAssertEqual(impacts.first?.delta ?? 0, 3, accuracy: 0.001)
+        XCTAssertEqual(MoodJournal.average(in: data, days: 10, now: today) ?? 0, 3.5, accuracy: 0.001)
+    }
+
+    func testMoodImpactNeedsEnoughDays() {
+        var data = AppData()
+        let habit = dailyHabit(startOffset: -20)
+        data.habits = [habit]
+        for offset in -3 ... 0 {
+            let key = DayKey.make(day(offset))
+            data.setStatus(.done, habitID: habit.id, day: key)
+            data.moods[key] = MoodEntry(level: 5)
+        }
+        XCTAssertTrue(MoodJournal.impacts(in: data).isEmpty)
+    }
+
+    // MARK: CSV (1.5)
+
+    func testCSVEscapesAndSkipsEmptyRows() {
+        var data = AppData()
+        var habit = dailyHabit(startOffset: -3)
+        habit.name = "Read, \"slowly\""
+        data.habits = [habit]
+        let yesterday = DayKey.make(day(-1))
+        let todayKey = DayKey.make(day(0))
+        data.setStatus(.done, habitID: habit.id, day: yesterday)
+        data.setNote("line1\nline2", habitID: habit.id, day: yesterday)
+        data.moods[yesterday] = MoodEntry(level: 4)
+        // Отметку сняли: такая пустая запись в таблицу не попадает.
+        data.setStatus(.done, habitID: habit.id, day: todayKey)
+        data.setStatus(nil, habitID: habit.id, day: todayKey)
+
+        let lines = CSVExport.make(from: data).components(separatedBy: "\r\n").filter { !$0.isEmpty }
+        XCTAssertEqual(lines.count, 2, "заголовок и одна строка")
+        XCTAssertTrue(lines[1].hasPrefix(yesterday + ",\"Read, \"\"slowly\"\"\","))
+        XCTAssertTrue(lines[1].contains(",4,"))
+        XCTAssertTrue(lines[1].hasSuffix("\"line1\nline2\""))
+    }
 }

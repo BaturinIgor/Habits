@@ -46,11 +46,8 @@ Ketentuan Penggunaan: https://www.apple.com/legal/internet-services/itunes/dev/s
 Privasi: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Cadangan iCloud otomatis: kebiasaan dan riwayatmu tersimpan sendiri, dan di iPhone baru ZenHab menawarkan untuk memulihkannya.
-• Hentikan kebiasaan buruk: penghitung hari tanpanya, rekor, dan target. Dengan Pro, juga uang yang dihemat.
-• Melewatkan sehari? Kembalikan rentetan keesokan harinya dengan percikan.
-• Grup keluarga kini diperbarui dalam hitungan detik saat aplikasi terbuka.
-• Centang kebiasaan dari Pusat Kontrol, Layar Terkunci, atau tombol Tindakan (iOS 18).
-• Apple Health (Pro): hubungkan kebiasaan ke langkah, tidur, air, latihan, atau menit kesadaran, dan kebiasaan tercentang otomatis saat target tercapai.
-• Pengatur waktu kebiasaan (Pro): hitung mundur di Layar Terkunci dan Dynamic Island yang mencentang kebiasaan saat waktu habis.
-• Ringkasan minggu: hasil minggu lalu sekilas, siap dibagikan sebagai gambar.
+• Jurnal suasana hati: nilai harimu dengan satu ketukan di Hari Ini dan tambahkan beberapa kata. Dengan Pro, lihat seluruh riwayat, grafik bulanan, dan kebiasaan yang memperbaiki suasana hati.
+• Ikon aplikasi baru (Pro): Senja, Hutan, Mawar, Emas, Tengah malam, dan Terang.
+• Kunci Face ID (Pro): hanya kamu yang bisa membuka kebiasaan dan jurnalmu.
+• Ekspor ke CSV (Pro): semua centang beserta catatan dan suasana hati sebagai tabel untuk Numbers, Excel, atau Google Sheets.
+• Layar Pro kini menampilkan semua isinya, dan uji coba gratis bila tersedia.

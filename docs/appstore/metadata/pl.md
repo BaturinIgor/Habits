@@ -46,11 +46,8 @@ Warunki korzystania: https://www.apple.com/legal/internet-services/itunes/dev/st
 Prywatność: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Automatyczna kopia w iCloud: nawyki i historia zapisują się same, a na nowym iPhonie ZenHab zaproponuje ich przywrócenie.
-• Rzuć zły nawyk: licznik dni bez niego, rekord i cele. Z Pro także zaoszczędzone pieniądze.
-• Opuściłeś dzień? Następnego dnia odzyskasz serię za iskry.
-• Grupy rodzinne odświeżają się teraz w kilka sekund, gdy aplikacja jest otwarta.
-• Odhaczaj nawyk z centrum sterowania, ekranu blokady lub przyciskiem czynności (iOS 18).
-• Apple Health (Pro): połącz nawyk z krokami, snem, wodą, treningami lub uważnością, a odhaczy się sam po osiągnięciu celu.
-• Minutnik nawyku (Pro): odliczanie na ekranie blokady i w Dynamic Island, które na koniec odhacza nawyk.
-• Podsumowanie tygodnia: wyniki z zeszłego tygodnia w skrócie, gotowe do udostępnienia jako obrazek.
+• Dziennik nastroju: oceń dzień jednym dotknięciem na ekranie Dziś i dopisz kilka słów. Z Pro zobaczysz całą historię, wykres miesiąca i nawyki, które poprawiają nastrój.
+• Nowe ikony aplikacji (Pro): Zachód słońca, Las, Róż, Złoto, Północ i Jasna.
+• Blokada Face ID (Pro): tylko ty otworzysz swoje nawyki i dziennik.
+• Eksport do CSV (Pro): wszystkie odhaczenia z notatkami i nastrojem jako tabela do Numbers, Excela lub Arkuszy Google.
+• Ekran Pro pokazuje teraz wszystko, co zawiera, oraz darmowy okres próbny, gdy jest dostępny.

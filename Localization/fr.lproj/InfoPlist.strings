@@ -4,3 +4,4 @@
 "NSSpeechRecognitionUsageDescription" = "ZenHab transforme tes mots en habitude avec un horaire et un rappel.";
 "NSHealthShareUsageDescription" = "ZenHab lit les pas, le sommeil, l'eau, l'exercice et la pleine conscience pour cocher tes habitudes liées.";
 "NSHealthUpdateUsageDescription" = "ZenHab n'écrit rien dans Santé. Il lit seulement des données pour cocher tes habitudes liées.";
+"NSFaceIDUsageDescription" = "ZenHab utilise Face ID pour verrouiller l'app afin que toi seul voies tes habitudes et ton journal d'humeur.";

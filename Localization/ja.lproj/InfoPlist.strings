@@ -4,3 +4,4 @@
 "NSSpeechRecognitionUsageDescription" = "ZenHabは話した内容を、スケジュールとリマインダー付きの習慣にします。";
 "NSHealthShareUsageDescription" = "ZenHabは歩数、睡眠、水分、エクササイズ、マインドフルネスを読み取り、連携した習慣を自動でチェックします。";
 "NSHealthUpdateUsageDescription" = "ZenHabはヘルスケアに何も書き込みません。連携した習慣をチェックするためにデータを読み取るだけです。";
+"NSFaceIDUsageDescription" = "ZenHabはFace IDでアプリをロックし、習慣と気分日記をあなただけが見られるようにします。";

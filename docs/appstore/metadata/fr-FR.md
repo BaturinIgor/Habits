@@ -46,11 +46,8 @@ Conditions d'utilisation : https://www.apple.com/legal/internet-services/itunes/
 Confidentialité : https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Sauvegarde iCloud automatique : habitudes et historique sont sauvegardés tout seuls, et sur un nouvel iPhone ZenHab propose de tout récupérer.
-• Arrête une mauvaise habitude : compteur de jours sans, record et paliers. Avec Pro, l'argent économisé aussi.
-• Un jour manqué ? Récupère ta série le lendemain contre des étincelles.
-• Les groupes famille se mettent à jour en quelques secondes quand l'app est ouverte.
-• Coche une habitude depuis le Centre de contrôle, l'écran verrouillé ou le bouton Action (iOS 18).
-• Apple Health (Pro) : relie une habitude aux pas, au sommeil, à l'eau, aux séances ou à la pleine conscience, elle se coche toute seule à l'objectif.
-• Minuteur d'habitude (Pro) : un compte à rebours sur l'écran verrouillé et dans la Dynamic Island qui coche l'habitude à la fin.
-• Bilan de la semaine : les résultats de la semaine passée en un coup d'œil, à partager en image.
+• Journal d'humeur : note ta journée d'un geste sur Aujourd'hui et ajoute quelques mots. Avec Pro, vois tout l'historique, un graphique du mois et les habitudes qui améliorent ton humeur.
+• Nouvelles icônes (Pro) : Coucher de soleil, Forêt, Rose, Or, Minuit et Clair.
+• Verrouillage Face ID (Pro) : toi seul peux ouvrir tes habitudes et ton journal.
+• Export CSV (Pro) : toutes les coches avec notes et humeur en tableau pour Numbers, Excel ou Google Sheets.
+• L'écran Pro montre maintenant tout ce qu'il comprend, et l'essai gratuit quand il est disponible.

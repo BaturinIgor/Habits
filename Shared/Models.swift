@@ -556,12 +556,17 @@ struct AppSettings: Codable, Hashable {
     var seenAchievements: [String] = []
     /// Версия, для которой уже показали экран «Что нового».
     var whatsNewSeen: String = ""
+    /// Блокировка приложения по Face ID (Pro).
+    var appLock: Bool = false
+    /// Карточка настроения на экране «Сегодня».
+    var moodCard: Bool = true
 
     init() {}
 
     enum CodingKeys: String, CodingKey {
         case proUnlocked, remindersEnabled, homeLayout, doneToBottom, summaryEnabled, summaryTime
         case onboardingDone, gestureHintShown, backgroundID, avatarID, seenAchievements, badgeEnabled, whatsNewSeen
+        case appLock, moodCard
     }
 
     init(from decoder: Decoder) throws {
@@ -579,6 +584,8 @@ struct AppSettings: Codable, Hashable {
         seenAchievements = try c.decodeIfPresent([String].self, forKey: .seenAchievements) ?? []
         badgeEnabled = try c.decodeIfPresent(Bool.self, forKey: .badgeEnabled) ?? true
         whatsNewSeen = try c.decodeIfPresent(String.self, forKey: .whatsNewSeen) ?? ""
+        appLock = try c.decodeIfPresent(Bool.self, forKey: .appLock) ?? false
+        moodCard = try c.decodeIfPresent(Bool.self, forKey: .moodCard) ?? true
     }
 }
 
@@ -594,11 +601,13 @@ struct AppData: Codable {
     var wallet: Wallet = Wallet()
     /// Прогресс изучения слов. Ключ: "<язык>|<номер слова>".
     var words: [String: WordCard] = [:]
+    /// Дневник настроения. Ключ: yyyy-MM-dd.
+    var moods: [String: MoodEntry] = [:]
 
     init() {}
 
     enum CodingKeys: String, CodingKey {
-        case version, habits, groups, checkIns, settings, wallet, words
+        case version, habits, groups, checkIns, settings, wallet, words, moods
     }
 
     init(from decoder: Decoder) throws {
@@ -610,6 +619,31 @@ struct AppData: Codable {
         settings = try c.decodeIfPresent(AppSettings.self, forKey: .settings) ?? AppSettings()
         wallet = (try? c.decodeIfPresent(Wallet.self, forKey: .wallet)) ?? Wallet()
         words = (try? c.decodeIfPresent([String: WordCard].self, forKey: .words)) ?? [:]
+        moods = (try? c.decodeIfPresent([String: MoodEntry].self, forKey: .moods)) ?? [:]
+    }
+}
+
+// MARK: - Настроение
+
+/// Запись дневника настроения за день: оценка от 1 (плохо) до 5 (отлично) и заметка.
+struct MoodEntry: Codable, Hashable {
+    var level: Int
+    var note: String?
+    var updatedAt: Date
+
+    init(level: Int, note: String? = nil, updatedAt: Date = Date()) {
+        self.level = min(5, max(1, level))
+        self.note = note
+        self.updatedAt = updatedAt
+    }
+
+    enum CodingKeys: String, CodingKey { case level, note, updatedAt }
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        level = min(5, max(1, try c.decodeIfPresent(Int.self, forKey: .level) ?? 3))
+        note = try c.decodeIfPresent(String.self, forKey: .note)
+        updatedAt = try c.decodeIfPresent(Date.self, forKey: .updatedAt) ?? Date()
     }
 }
 

@@ -17,6 +17,7 @@ struct SettingsView: View {
     @Environment(HabitStore.self) private var store
     @Environment(\.openURL) private var openURL
     @State private var showingPaywall = false
+    @State private var paywallFeature: ProFeature?
     @State private var showingRestartHint = false
     @State private var showingProfile = false
     @State private var showingFeedback = false
@@ -37,6 +38,25 @@ struct SettingsView: View {
                 UserDefaults.standard.set([code], forKey: "AppleLanguages")
             }
             showingRestartHint = true
+        })
+    }
+
+    /// Включение блокировки сначала проверяет Face ID, чтобы не закрыть приложение от самого себя.
+    private var appLockBinding: Binding<Bool> {
+        Binding(get: { store.data.isPro && store.data.settings.appLock }, set: { enabled in
+            guard store.data.isPro else {
+                paywallFeature = .appLock
+                return
+            }
+            if enabled {
+                Task {
+                    if await AppLock.authenticate(reason: String(localized: "Turn on the lock")) {
+                        store.updateSettings { $0.appLock = true }
+                    }
+                }
+            } else {
+                store.updateSettings { $0.appLock = false }
+            }
         })
     }
 
@@ -110,6 +130,26 @@ struct SettingsView: View {
                     .pickerStyle(.navigationLink)
                 }
 
+                Section {
+                    NavigationLink {
+                        AppIconView()
+                    } label: {
+                        Label("App icon", systemImage: "app.badge.fill")
+                    }
+                    if AppLock.isAvailable {
+                        Toggle(isOn: appLockBinding) {
+                            HStack(spacing: 8) {
+                                Label(String(localized: "Lock with \(AppLock.methodName)"), systemImage: AppLock.methodSymbol)
+                                if !store.data.isPro { ProBadge() }
+                            }
+                        }
+                    }
+                } footer: {
+                    if AppLock.isAvailable {
+                        Text("When you come back to the app, it asks for \(AppLock.methodName) first.")
+                    }
+                }
+
                 WidgetStatusSection()
 
                 Section {
@@ -154,6 +194,9 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             .sheet(isPresented: $showingPaywall) {
                 PaywallView()
+            }
+            .sheet(item: $paywallFeature) { feature in
+                PaywallView(highlight: feature)
             }
             .sheet(isPresented: $showingProfile) {
                 ProfileView()
@@ -345,6 +388,9 @@ struct TodayScreenSettingsView: View {
                     Text("By group").tag(HomeLayout.byGroup)
                 }
                 Toggle("Done habits at the bottom", isOn: store.settingBinding(\.doneToBottom))
+                Toggle("Mood card", isOn: store.settingBinding(\.moodCard))
+            } footer: {
+                Text("The mood card at the bottom of the list lets you rate your day with one tap.")
             }
         }
         .appBackground()
@@ -367,6 +413,8 @@ struct BackupSettingsView: View {
     @State private var importResult: Bool?
 
     @State private var exportURL: URL?
+    @State private var csvURL: URL?
+    @State private var showingPaywall = false
 
     @ViewBuilder
     private var iCloudSection: some View {
@@ -427,6 +475,7 @@ struct BackupSettingsView: View {
         let stamp = DayKey.make(Date())
         let url = FileManager.default.temporaryDirectory.appendingPathComponent("habits-backup-\(stamp).json")
         exportURL = (try? store.exportData().write(to: url, options: .atomic)) != nil ? url : nil
+        csvURL = store.data.isPro ? CSVExport.writeFile(from: store.data) : nil
     }
 
     var body: some View {
@@ -451,11 +500,42 @@ struct BackupSettingsView: View {
             } footer: {
                 Text("Save a copy to Files or iCloud Drive. Importing replaces all current data.")
             }
+
+            Section {
+                if store.data.isPro {
+                    if let csvURL {
+                        ShareLink(item: csvURL) {
+                            Label("Export to CSV", systemImage: "tablecells")
+                        }
+                    } else {
+                        Label("Export to CSV", systemImage: "tablecells")
+                            .foregroundStyle(.secondary)
+                    }
+                } else {
+                    Button {
+                        showingPaywall = true
+                    } label: {
+                        HStack(spacing: 8) {
+                            Label("Export to CSV", systemImage: "tablecells")
+                            ProBadge()
+                            Spacer()
+                            Image(systemName: "lock.fill")
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+            } footer: {
+                Text("A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets.")
+            }
         }
         .appBackground()
         .navigationTitle("Backup")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: prepareExport)
+        .onChange(of: store.data.isPro) { _, _ in prepareExport() }
+        .sheet(isPresented: $showingPaywall) {
+            PaywallView(highlight: .csv)
+        }
         .task { await checkCloud() }
         .alert("Restore from iCloud?", isPresented: $confirmRestore, presenting: cloudCopy) { copy in
             Button("Restore", role: .destructive) {

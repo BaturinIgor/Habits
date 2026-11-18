@@ -4,3 +4,4 @@
 "NSSpeechRecognitionUsageDescription" = "ZenHab macht aus deinen Worten eine Gewohnheit mit Zeitplan und Erinnerung.";
 "NSHealthShareUsageDescription" = "ZenHab liest Schritte, Schlaf, Wasser, Training und Achtsamkeitsminuten, um verknüpfte Gewohnheiten für dich abzuhaken.";
 "NSHealthUpdateUsageDescription" = "ZenHab schreibt nichts in Apple Health. Es liest nur Daten, um verknüpfte Gewohnheiten abzuhaken.";
+"NSFaceIDUsageDescription" = "ZenHab nutzt Face ID, um die App zu sperren, damit nur du deine Gewohnheiten und dein Stimmungstagebuch siehst.";

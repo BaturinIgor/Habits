@@ -710,3 +710,74 @@ With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and 
 Habit timer||Pengatur waktu kebiasaan
 With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up.||Dengan Pro, beri durasi pada kebiasaan. Hitung mundur tampil di Layar Terkunci dan Dynamic Island, lalu kebiasaan tercentang saat waktu habis.
 At the start of each week, see how the last one went and share it as a picture.||Di awal setiap minggu, lihat bagaimana minggu lalu dan bagikan sebagai gambar.
+%@ free, then %@. Cancel anytime.||Gratis %1$@, lalu %2$@. Batalkan kapan saja.
+A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up.||Hitung mundur di Layar Terkunci dan Dynamic Island yang mencentang kebiasaan saat waktunya habis.
+A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets.||Tabel semua centang beserta catatan dan suasana hati untuk Numbers, Excel, atau Google Sheets.
+Add a note||Tambah catatan
+All your check-ins as a table for Numbers, Excel or Google Sheets.||Semua centang sebagai tabel untuk Numbers, Excel, atau Google Sheets.
+App icon||Ikon aplikasi
+App icons||Ikon aplikasi
+Available with Pro||Tersedia dengan Pro
+Awful||Buruk sekali
+Bad||Buruk
+Okay||Biasa
+Good||Baik
+Great||Hebat
+Choose an icon||Pilih ikon
+Classic||Klasik
+Clearer Pro||Pro lebih jelas
+Count||Jumlah
+Delete entry||Hapus catatan
+Export to CSV||Ekspor ke CSV
+Face ID lock||Kunci Face ID
+Forest||Hutan
+Full mood journal||Jurnal suasana hati lengkap
+Gold||Emas
+Habits check themselves off from steps, sleep, water, workouts and mindful minutes.||Kebiasaan tercentang sendiri dari langkah, tidur, air, olahraga, dan menit kesadaran.
+How are you today?||Bagaimana kabarmu hari ini?
+How was your day?||Bagaimana harimu?
+Journal||Jurnal
+Keep rating your mood. When there are enough days with and without each habit, you'll see how they relate.||Terus nilai suasana hatimu. Setelah cukup hari dengan dan tanpa tiap kebiasaan, kamu akan melihat hubungannya.
+Light||Terang
+Lock with %@||Kunci dengan %@
+Lock with Face ID||Kunci dengan Face ID
+Midnight||Tengah malam
+Mood||Suasana hati
+Mood (1-5)||Suasana hati (1-5)
+Mood card||Kartu suasana hati
+Mood is higher on days you do it||Suasana hati lebih baik di hari kamu melakukannya
+Mood is lower on days you do it||Suasana hati lebih rendah di hari kamu melakukannya
+Mood journal||Jurnal suasana hati
+New app icons||Ikon aplikasi baru
+New icons are part of Pro.||Ikon baru termasuk dalam Pro.
+No entries yet||Belum ada catatan
+Older entries: %lld. Your full history is in Pro.||Catatan lama: %lld. Seluruh riwayat ada di Pro.
+Only you can open your habits and journal.||Hanya kamu yang bisa membuka kebiasaan dan jurnalmu.
+Open export||Buka ekspor
+Open journal||Buka jurnal
+Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood.||Nilai harimu dengan satu ketukan di bawah Hari Ini dan tambahkan beberapa kata. Dengan Pro, lihat seluruh riwayat, grafik bulanan, dan kebiasaan yang memperbaiki suasana hati.
+Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it.||Nilai suasana hatimu sekali sehari di layar Hari Ini. Setelah beberapa minggu kamu akan melihat kebiasaan mana yang memperbaikinya.
+Rose||Mawar
+See how much money you save by quitting a habit.||Lihat berapa banyak uang yang kamu hemat dengan berhenti dari suatu kebiasaan.
+See which habits make your days better||Lihat kebiasaan mana yang membuat harimu lebih baik
+Six new icons for your Home Screen.||Enam ikon baru untuk Layar Utama.
+Start free trial||Mulai uji coba gratis
+Sunset||Senja
+Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro.||Senja, Hutan, Mawar, Emas, Tengah malam, dan Terang. Pilih di Pengaturan dengan Pro.
+The Pro screen now lists everything it includes, and opens on the feature you tapped.||Layar Pro kini menampilkan semua isinya dan terbuka di fitur yang kamu ketuk.
+The mood card at the bottom of the list lets you rate your day with one tap.||Kartu suasana hati di bawah daftar memungkinkanmu menilai hari dengan satu ketukan.
+Timer on the Lock Screen||Timer di Layar Terkunci
+Today's entry||Catatan hari ini
+Turn on the lock||Aktifkan kunci
+Unit||Satuan
+Unlock||Buka kunci
+Unlock ZenHab||Buka kunci ZenHab
+What happened today? What helped?||Apa yang terjadi hari ini? Apa yang membantu?
+What lifts your mood||Apa yang memperbaiki suasana hatimu
+When you come back to the app, it asks for %@ first.||Saat kembali ke aplikasi, kamu akan diminta %@ dulu.
+With Pro, ZenHab asks for Face ID or your passcode when you open it, so your habits and journal stay private. Turn it on in Settings.||Dengan Pro, ZenHab meminta Face ID atau kode sandi saat dibuka agar kebiasaan dan jurnalmu tetap pribadi. Aktifkan di Pengaturan.
+With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets.||Dengan Pro, ekspor semua centang beserta catatan dan suasana hati sebagai tabel untuk Numbers, Excel, atau Google Sheets.
+Your days and the habits that lift your mood||Hari-harimu dan kebiasaan yang memperbaiki suasana hati
+Your whole mood history, a monthly chart and which habits lift your mood.||Seluruh riwayat suasana hati, grafik bulanan, dan kebiasaan yang memperbaikinya.
+ZenHab is locked||ZenHab terkunci
+passcode||kode sandi
