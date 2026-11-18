@@ -43,6 +43,75 @@ def call(method, path, **kw):
     return r.json() if r.text else {}
 
 
+def sections(locale):
+    """Разделы «## Имя» из docs/appstore/metadata/<locale>.md."""
+    path = os.path.join(ROOT, "docs/appstore/metadata", locale + ".md")
+    if not os.path.exists(path):
+        return {}
+    result, name, lines = {}, None, []
+    for line in open(path, encoding="utf-8").read().splitlines():
+        if line.startswith("## "):
+            if name:
+                result[name] = "\n".join(lines).strip()
+            name, lines = line[3:].strip(), []
+        elif name:
+            lines.append(line)
+    if name:
+        result[name] = "\n".join(lines).strip()
+    return result
+
+
+def fill_missing_texts(app_id, ver_id):
+    """Языки, добавленные только ради «Что нового», получают описание, ключевые слова,
+    рекламный текст, URL поддержки, а также название и подзаголовок. Уже заполненные поля не трогаем."""
+    locs = call("GET", f"/appStoreVersions/{ver_id}/appStoreVersionLocalizations", params={"limit": 50})["data"]
+    base = next((l["attributes"] for l in locs if l["attributes"]["locale"] == "en-US"), {})
+    for loc in locs:
+        a, locale = loc["attributes"], loc["attributes"]["locale"]
+        sec = sections(locale)
+        wanted = {
+            "description": sec.get("Description"),
+            "keywords": sec.get("Keywords"),
+            "promotionalText": sec.get("Promotional text"),
+            "supportUrl": base.get("supportUrl"),
+            "marketingUrl": base.get("marketingUrl"),
+        }
+        patch = {k: v for k, v in wanted.items() if v and not a.get(k)}
+        if patch:
+            call("PATCH", f"/appStoreVersionLocalizations/{loc['id']}", json={"data": {
+                "type": "appStoreVersionLocalizations", "id": loc["id"], "attributes": patch}})
+            print(f"  {locale}: дозаполнено {', '.join(sorted(patch))}")
+
+    infos = call("GET", f"/apps/{app_id}/appInfos")["data"]
+    editable = [i for i in infos if (i["attributes"].get("appStoreState") or i["attributes"].get("state"))
+                not in ("READY_FOR_SALE", "READY_FOR_DISTRIBUTION", "REPLACED_WITH_NEW_INFO")]
+    if not editable:
+        print("::warning::Нет редактируемой информации о приложении, название и подзаголовок не проверены")
+        return
+    info_id = editable[0]["id"]
+    info_locs = {l["attributes"]["locale"]: l for l in
+                 call("GET", f"/appInfos/{info_id}/appInfoLocalizations", params={"limit": 50})["data"]}
+    privacy = (info_locs.get("en-US") or {}).get("attributes", {}).get("privacyPolicyUrl")
+    for loc in locs:
+        locale = loc["attributes"]["locale"]
+        sec = sections(locale)
+        wanted = {"name": sec.get("Name"), "subtitle": sec.get("Subtitle"), "privacyPolicyUrl": privacy}
+        if locale in info_locs:
+            a = info_locs[locale]["attributes"]
+            patch = {k: v for k, v in wanted.items() if v and not a.get(k)}
+            if patch:
+                call("PATCH", f"/appInfoLocalizations/{info_locs[locale]['id']}", json={"data": {
+                    "type": "appInfoLocalizations", "id": info_locs[locale]["id"], "attributes": patch}})
+                print(f"  {locale}: дозаполнено {', '.join(sorted(patch))}")
+        elif wanted["name"]:
+            attrs = {k: v for k, v in wanted.items() if v}
+            attrs["locale"] = locale
+            call("POST", "/appInfoLocalizations", json={"data": {
+                "type": "appInfoLocalizations", "attributes": attrs,
+                "relationships": {"appInfo": {"data": {"type": "appInfos", "id": info_id}}}}})
+            print(f"  {locale}: добавлены название и подзаголовок")
+
+
 def whats_new_texts():
     texts = {}
     for path in sorted(glob.glob(os.path.join(ROOT, "docs/appstore/metadata/*.md"))):
@@ -105,6 +174,8 @@ def main():
                 "attributes": {"locale": locale, "whatsNew": text},
                 "relationships": {"appStoreVersion": {"data": {"type": "appStoreVersions", "id": ver_id}}}}})
         print(f"  {locale}: «Что нового» заполнено")
+
+    fill_missing_texts(app_id, ver_id)
 
     if build_number:
         builds = call("GET", "/builds", params={
