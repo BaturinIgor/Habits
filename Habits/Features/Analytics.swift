@@ -1,20 +1,20 @@
-import CryptoKit
+import FirebaseAnalytics
+import FirebaseCore
 import Foundation
 import SwiftUI
 import UIKit
 
-/// Анонимная статистика через TelemetryDeck (свой маленький клиент к Ingest API v2, без SDK).
+/// Анонимная статистика через Google Analytics for Firebase.
 ///
-/// Бесплатный тариф TelemetryDeck ограничен числом событий в месяц, поэтому:
-/// - экраны, переходы, нажатия, свайпы и действия только считаются в телефоне
-///   и раз в день уходят одним событием `Usage.daily` со всеми счётчиками;
-/// - сразу уходят только редкие важные события из `AnalyticsEvent` (покупка, пейвол, новая привычка...).
-/// Так на одного активного пользователя выходит около 50 событий в месяц.
+/// - Экраны уходят как `screen_view`, из них Firebase сам считает время на экранах, сессии и переходы.
+/// - Каждое действие, нажатие и свайп уходит своим событием (`habit_check`, `gesture` и т. д.):
+///   у Firebase нет лимита на число событий, а отправляет он их пачками сам.
+/// - Раз в день уходит `daily_state`: числа и флаги о состоянии приложения.
 ///
 /// Личные данные не отправляются никогда: ни названий привычек, ни заметок, ни текста настроения.
-/// Ключи счётчиков берутся только из перечислений в AnalyticsCatalog.swift.
-/// Пользователь — случайный UUID этого устройства (TelemetryDeck дополнительно хэширует его у себя).
-/// Без App ID (сборка для SideStore, локальная сборка) и в автотестах ничего не отправляется.
+/// Все имена событий и параметров берутся только из перечислений в AnalyticsCatalog.swift.
+/// IDFA не собирается (AdSupport не подключён, окна ATT нет), IDFV и рекламные сигналы выключены в Info.plist.
+/// Без GoogleService-Info.plist (сборка для SideStore, локальная сборка) и в автотестах ничего не отправляется.
 @MainActor
 final class Analytics {
     static let shared = Analytics()
@@ -23,218 +23,154 @@ final class Analytics {
     static let optOutKey = "analyticsOptOut"
 
     private let defaults = UserDefaults.standard
-    private let appID: String
-    private let endpoint = URL(string: "https://nom.telemetrydeck.com/v2/")!
-
-    /// Экраны, открытые сейчас (последний — тот, что видит пользователь).
-    private var screenStack: [(screen: AnalyticsScreen, since: Date)] = []
-    private var lastScreen: AnalyticsScreen?
-    private var sessionStart: Date?
-    private var flushing = false
-    /// Счётчики за текущий день держим в памяти и сохраняем пачками.
-    private lazy var counters: [String: Int] = defaults.dictionary(forKey: Key.counters) as? [String: Int] ?? [:]
-    private var unsaved = 0
+    private var configured = false
+    private var screenStack: [AnalyticsScreen] = []
 
     private enum Key {
-        static let user = "analytics.user"
-        static let counters = "analytics.counters"
-        static let countersDay = "analytics.countersDay"
-        static let queue = "analytics.queue"
+        static let stateDay = "analytics.stateDay"
         static let installSent = "analytics.installSent"
         static let firstLaunch = "analytics.firstLaunch"
     }
 
-    private init() {
-        appID = (Bundle.main.object(forInfoDictionaryKey: "TelemetryDeckAppID") as? String ?? "")
-            .trimmingCharacters(in: .whitespacesAndNewlines)
+    private init() {}
+
+    /// Firebase настроен (есть GoogleService-Info.plist) и это не автотест.
+    static var isAvailable: Bool {
+        !TestMode.isUITest && Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil
     }
 
-    /// Работает ли отправка: есть App ID, не автотест и пользователь не выключил.
-    var isActive: Bool {
-        !appID.isEmpty && !TestMode.isUITest && !defaults.bool(forKey: Self.optOutKey)
+    /// Работает ли отправка: Firebase настроен и пользователь не выключил статистику.
+    var isActive: Bool { configured && !defaults.bool(forKey: Self.optOutKey) }
+
+    /// Вызывается при запуске приложения.
+    func start() {
+        guard Self.isAvailable, !configured else { return }
+        FirebaseApp.configure()
+        configured = true
+        FirebaseAnalytics.Analytics.setAnalyticsCollectionEnabled(!defaults.bool(forKey: Self.optOutKey))
+        if defaults.object(forKey: Key.firstLaunch) == nil {
+            defaults.set(Date(), forKey: Key.firstLaunch)
+        }
+        if let first = defaults.object(forKey: Key.firstLaunch) as? Date {
+            FirebaseAnalytics.Analytics.setUserProperty(Self.weekKey(first), forName: "install_week")
+        }
     }
 
     // MARK: Жизненный цикл
 
-    /// Приложение стало активным: новая сессия, отправка вчерашних счётчиков и очереди.
+    /// Приложение стало активным: событие установки (один раз) и состояние (раз в день).
     func appBecameActive() {
         AnalyticsGestures.attachToWindows()
         guard isActive else { return }
-        if defaults.object(forKey: Key.firstLaunch) == nil {
-            defaults.set(Date(), forKey: Key.firstLaunch)
-        }
         if !defaults.bool(forKey: Key.installSent) {
             defaults.set(true, forKey: Key.installSent)
             send(.appInstalled(isUpdate: HabitStore.shared.data.settings.onboardingDone))
         }
-        sessionStart = Date()
-        // Время в фоне не считаем.
-        if !screenStack.isEmpty { screenStack[screenStack.count - 1].since = sessionStart ?? Date() }
-        count("Session.count")
-        rollOverIfNeeded()
-        flush()
-    }
-
-    /// Приложение ушло в фон: дописываем время сессии и экрана, отправляем очередь.
-    func appWentToBackground() {
-        guard isActive else { return }
-        if let start = sessionStart {
-            count("Session.seconds", by: Int(Date().timeIntervalSince(start)))
-            sessionStart = nil
+        let data = HabitStore.shared.data
+        FirebaseAnalytics.Analytics.setUserProperty(data.isPro ? "1" : "0", forName: "is_pro")
+        let today = DayKey.make(Date())
+        if defaults.string(forKey: Key.stateDay) != today {
+            defaults.set(today, forKey: Key.stateDay)
+            var payload = AnalyticsSnapshot.make(data)
+            if let first = defaults.object(forKey: Key.firstLaunch) as? Date {
+                payload["User.daysSinceInstall"] = max(0, Calendar.app.dateComponents([.day], from: first, to: Date()).day ?? 0)
+            }
+            log("daily_state", payload)
         }
-        if let top = screenStack.last {
-            count("Time.\(top.screen.rawValue)", by: Int(Date().timeIntervalSince(top.since)))
-            screenStack[screenStack.count - 1].since = Date()
-        }
-        saveCounters()
-        flush(inBackground: true)
     }
 
     /// Пользователь выключил или включил статистику в настройках.
     func setEnabled(_ enabled: Bool) {
         defaults.set(!enabled, forKey: Self.optOutKey)
-        if !enabled {
-            // Ничего из накопленного не отправляем.
-            counters = [:]
-            defaults.removeObject(forKey: Key.counters)
-            defaults.removeObject(forKey: Key.queue)
-        }
+        guard configured else { return }
+        FirebaseAnalytics.Analytics.setAnalyticsCollectionEnabled(enabled)
+        if !enabled { FirebaseAnalytics.Analytics.resetAnalyticsData() }
     }
 
-    // MARK: Экраны и действия (только счётчики)
+    // MARK: Экраны, действия, жесты
 
     func screenAppeared(_ screen: AnalyticsScreen) {
-        let now = Date()
-        if let top = screenStack.last {
-            count("Time.\(top.screen.rawValue)", by: Int(now.timeIntervalSince(top.since)))
-            screenStack[screenStack.count - 1].since = now
-        }
-        screenStack.removeAll { $0.screen == screen }
-        screenStack.append((screen, now))
-        count("Screen.\(screen.rawValue)")
-        if let lastScreen, lastScreen != screen {
-            count("Flow.\(lastScreen.rawValue)>\(screen.rawValue)")
-        }
-        lastScreen = screen
+        screenStack.removeAll { $0 == screen }
+        screenStack.append(screen)
+        logScreen(screen)
     }
 
     func screenDisappeared(_ screen: AnalyticsScreen) {
-        guard let index = screenStack.lastIndex(where: { $0.screen == screen }) else { return }
-        count("Time.\(screen.rawValue)", by: Int(Date().timeIntervalSince(screenStack[index].since)))
-        screenStack.remove(at: index)
-        if let top = screenStack.last {
-            screenStack[screenStack.count - 1].since = Date()
-            if lastScreen != top.screen {
-                count("Flow.\(screen.rawValue)>\(top.screen.rawValue)")
-                lastScreen = top.screen
-            }
-        }
+        let wasTop = screenStack.last == screen
+        screenStack.removeAll { $0 == screen }
+        // Закрыли лист или вернулись назад: снова показан экран под ним.
+        if wasTop, let top = screenStack.last { logScreen(top) }
     }
 
-    /// Экран, на котором сейчас пользователь (для подсчёта жестов).
-    var currentScreen: AnalyticsScreen? { screenStack.last?.screen }
+    /// Экран, на котором сейчас пользователь.
+    var currentScreen: AnalyticsScreen? { screenStack.last }
 
     /// Действие пользователя: кнопка, переключатель, отметка привычки.
     func action(_ action: AnalyticsAction) {
-        count("Action.\(action.rawValue)")
+        log(action.rawValue, ["screen": currentScreen?.rawValue ?? "Other"])
     }
 
     /// Нажатие или жест на текущем экране (считает AnalyticsGestures).
     func gesture(_ kind: AnalyticsGestures.Kind) {
-        count("Gesture.\(currentScreen?.rawValue ?? "Other").\(kind.rawValue)")
+        log("gesture", ["screen": currentScreen?.rawValue ?? "Other", "kind": kind.rawValue])
     }
 
-    // MARK: Важные события (уходят сразу)
-
+    /// Редкое важное событие (покупка, пейвол, новая привычка...).
     func send(_ event: AnalyticsEvent) {
+        var payload = event.payload
+        if let value = event.floatValue { payload["value"] = value }
+        payload["screen"] = currentScreen?.rawValue ?? "Other"
+        log(event.type, payload)
+    }
+
+    // MARK: Отправка
+
+    private func logScreen(_ screen: AnalyticsScreen) {
         guard isActive else { return }
-        var payload = defaultPayload()
-        for (key, value) in event.payload { payload[key] = value }
-        enqueue(type: event.type, payload: payload, floatValue: event.floatValue)
-        // Важные события отправляем пачкой: при уходе в фон или сразу, если это покупка.
-        if event.isUrgent { flush() }
+        FirebaseAnalytics.Analytics.logEvent(AnalyticsEventScreenView, parameters: [
+            AnalyticsParameterScreenName: screen.rawValue,
+            AnalyticsParameterScreenClass: screen.rawValue,
+        ])
     }
 
-    // MARK: Счётчики
-
-    private func count(_ key: String, by value: Int = 1) {
-        guard isActive, value > 0 else { return }
-        rollOverIfNeeded()
-        // Ограничение на случай ошибки: не больше 400 разных ключей в день.
-        guard counters[key] != nil || counters.count < 400 else { return }
-        counters[key, default: 0] += value
-        unsaved += 1
-        if unsaved >= 20 { saveCounters() }
+    private func log(_ name: String, _ payload: [String: Any]) {
+        guard isActive else { return }
+        FirebaseAnalytics.Analytics.logEvent(Self.firebaseName(name), parameters: Self.firebaseParameters(payload))
     }
 
-    private func saveCounters() {
-        unsaved = 0
-        defaults.set(counters, forKey: Key.counters)
-    }
-
-    /// Если накопленные счётчики за прошлый день, отправляем их одним событием и начинаем заново.
-    private func rollOverIfNeeded() {
-        let today = DayKey.make(Date())
-        let day = defaults.string(forKey: Key.countersDay)
-        guard day != today else { return }
-        defaults.set(today, forKey: Key.countersDay)
-        let counters = self.counters
-        self.counters = [:]
-        saveCounters()
-        guard let day, !counters.isEmpty else { return }
-        var payload = defaultPayload()
-        payload["Usage.day"] = day
-        for (key, value) in counters { payload[key] = value }
-        for (key, value) in AnalyticsSnapshot.make(HabitStore.shared.data) { payload[key] = value }
-        if let first = defaults.object(forKey: Key.firstLaunch) as? Date {
-            payload["User.daysSinceInstall"] = max(0, Calendar.app.dateComponents([.day], from: first, to: Date()).day ?? 0)
+    /// "Habit.hasReminder" -> "habit_has_reminder": Firebase разрешает только буквы, цифры и _, до 40 символов.
+    nonisolated static func firebaseName(_ name: String) -> String {
+        var result = ""
+        var previous: Character = "_"
+        for char in name {
+            defer { previous = char }
+            if char == "." || char == "-" || char == " " {
+                if !result.hasSuffix("_") { result.append("_") }
+            } else if char.isUppercase {
+                // Подчёркивание только на границе слова: exportCSV -> export_csv.
+                if !result.isEmpty && !result.hasSuffix("_") && (previous.isLowercase || previous.isNumber) { result.append("_") }
+                result.append(contentsOf: char.lowercased())
+            } else if char.isLetter || char.isNumber || char == "_" {
+                result.append(char)
+            }
         }
-        enqueue(type: "Usage.daily", payload: payload, floatValue: Double(counters["Session.seconds"] ?? 0))
+        return String(result.prefix(40))
     }
 
-    // MARK: Параметры каждого события
-
-    private func defaultPayload() -> [String: Any] {
-        let info = Bundle.main.infoDictionary
-        let os = ProcessInfo.processInfo.operatingSystemVersion
-        let locale = Locale.current
-        var payload: [String: Any] = [
-            "TelemetryDeck.AppInfo.version": info?["CFBundleShortVersionString"] as? String ?? "",
-            "TelemetryDeck.AppInfo.buildNumber": info?["CFBundleVersion"] as? String ?? "",
-            "TelemetryDeck.Device.operatingSystem": "iOS",
-            "TelemetryDeck.Device.systemVersion": "\(os.majorVersion).\(os.minorVersion)",
-            "TelemetryDeck.Device.systemMajorVersion": "\(os.majorVersion)",
-            "TelemetryDeck.Device.modelName": Self.modelName,
-            "TelemetryDeck.RunContext.locale": locale.identifier,
-            "TelemetryDeck.RunContext.language": Bundle.main.preferredLocalizations.first ?? "",
-            "TelemetryDeck.UserPreference.language": locale.language.languageCode?.identifier ?? "",
-            "TelemetryDeck.UserPreference.region": locale.region?.identifier ?? "",
-            "TelemetryDeck.RunContext.isTestFlight": Self.isTestFlight,
-            "TelemetryDeck.RunContext.isAppStore": !Self.isTestFlight && !Self.isDebug,
-            "User.isPro": HabitStore.shared.data.isPro,
-        ]
-        if let first = defaults.object(forKey: Key.firstLaunch) as? Date {
-            payload["User.installWeek"] = Self.weekKey(first)
+    /// Параметры для Firebase: не больше 25, строки до 100 символов, флаги как 0/1.
+    nonisolated static func firebaseParameters(_ payload: [String: Any]) -> [String: Any] {
+        var result: [String: Any] = [:]
+        for (key, value) in payload.sorted(by: { $0.key < $1.key }).prefix(25) {
+            let name = firebaseName(key)
+            switch value {
+            case let flag as Bool: result[name] = flag ? 1 : 0
+            case let number as Int: result[name] = number
+            case let number as Double: result[name] = number
+            default: result[name] = String(String(describing: value).prefix(100))
+            }
         }
-        return payload
+        return result
     }
-
-    #if DEBUG
-    private static let isDebug = true
-    #else
-    private static let isDebug = false
-    #endif
-
-    private static let isTestFlight: Bool =
-        Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt"
-
-    private static let modelName: String = {
-        var system = utsname()
-        uname(&system)
-        return withUnsafeBytes(of: &system.machine) { raw in
-            String(decoding: raw.prefix { $0 != 0 }, as: UTF8.self)
-        }
-    }()
 
     /// Неделя установки вида 2026-W47: для когорт удержания.
     private static func weekKey(_ date: Date) -> String {
@@ -243,100 +179,12 @@ final class Analytics {
         let parts = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: date)
         return String(format: "%04d-W%02d", parts.yearForWeekOfYear ?? 0, parts.weekOfYear ?? 0)
     }
-
-    private var clientUser: String {
-        if let saved = defaults.string(forKey: Key.user) { return saved }
-        let raw = UUID().uuidString
-        let hash = SHA256.hash(data: Data(raw.utf8)).map { String(format: "%02x", $0) }.joined()
-        defaults.set(hash, forKey: Key.user)
-        return hash
-    }
-
-    // MARK: Очередь и отправка
-
-    private func enqueue(type: String, payload: [String: Any], floatValue: Double?) {
-        var signal: [String: Any] = [
-            "appID": appID,
-            "clientUser": clientUser,
-            "type": type,
-            "isTestMode": Self.isDebug,
-            "receivedAt": ISO8601DateFormatter().string(from: Date()),
-            "payload": payload,
-        ]
-        if let floatValue { signal["floatValue"] = floatValue }
-        var queue = storedQueue()
-        queue.append(signal)
-        // Если сети долго нет, старое выбрасываем, чтобы очередь не росла бесконечно.
-        if queue.count > 100 { queue.removeFirst(queue.count - 100) }
-        if let data = try? JSONSerialization.data(withJSONObject: queue) {
-            defaults.set(data, forKey: Key.queue)
-        }
-    }
-
-    private func storedQueue() -> [[String: Any]] {
-        guard let data = defaults.data(forKey: Key.queue),
-              let queue = try? JSONSerialization.jsonObject(with: data) as? [[String: Any]] else { return [] }
-        return queue
-    }
-
-    private func flush(inBackground: Bool = false) {
-        guard isActive, !flushing else { return }
-        let queue = storedQueue()
-        guard !queue.isEmpty, let body = try? JSONSerialization.data(withJSONObject: queue) else { return }
-        flushing = true
-        var request = URLRequest(url: endpoint)
-        request.httpMethod = "POST"
-        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        request.httpBody = body
-        request.timeoutInterval = 20
-        let task = BackgroundTask()
-        if inBackground { task.begin() }
-        let sent = queue.count
-        Task {
-            let ok: Bool
-            do {
-                let (_, response) = try await URLSession.shared.data(for: request)
-                let status = (response as? HTTPURLResponse)?.statusCode ?? 0
-                // 4xx кроме 429: запрос не примут и потом, повторять смысла нет.
-                ok = (200..<300).contains(status) || ((400..<500).contains(status) && status != 429)
-            } catch {
-                ok = false
-            }
-            if ok {
-                var rest = storedQueue()
-                rest.removeFirst(min(sent, rest.count))
-                if let data = try? JSONSerialization.data(withJSONObject: rest) {
-                    defaults.set(data, forKey: Key.queue)
-                }
-            }
-            flushing = false
-            task.end()
-        }
-    }
-}
-
-/// Немного времени в фоне, чтобы успеть отправить очередь.
-@MainActor
-private final class BackgroundTask {
-    private var id: UIBackgroundTaskIdentifier = .invalid
-
-    func begin() {
-        id = UIApplication.shared.beginBackgroundTask(withName: "analytics") { [weak self] in
-            MainActor.assumeIsolated { self?.end() }
-        }
-    }
-
-    func end() {
-        guard id != .invalid else { return }
-        UIApplication.shared.endBackgroundTask(id)
-        id = .invalid
-    }
 }
 
 // MARK: - Отметка экрана
 
 extension View {
-    /// Считает показы экрана, время на нём и переходы между экранами.
+    /// Отмечает показ экрана (screen_view): из этого Firebase считает время на экранах и переходы.
     func analyticsScreen(_ screen: AnalyticsScreen) -> some View {
         onAppear { Analytics.shared.screenAppeared(screen) }
             .onDisappear { Analytics.shared.screenDisappeared(screen) }

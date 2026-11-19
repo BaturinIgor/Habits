@@ -268,4 +268,17 @@ final class LogicTests: XCTestCase {
         XCTAssertTrue(all.contains("State.checks7d=1"), all)
         XCTAssertTrue(all.contains("State.moods7d=1"), all)
     }
+
+    /// Имена и параметры в формате Firebase: только буквы, цифры и _, до 40 символов, не больше 25 параметров.
+    func testFirebaseNames() {
+        XCTAssertEqual(Analytics.firebaseName("Habit.hasReminder"), "habit_has_reminder")
+        XCTAssertEqual(Analytics.firebaseName("Data.exportCSV"), "data_export_csv")
+        XCTAssertEqual(Analytics.firebaseName("State.checks7d"), "state_checks7d")
+        var many: [String: Any] = [:]
+        for index in 0..<40 { many["Key.number\(index)"] = index }
+        many["Flag.on"] = true
+        let params = Analytics.firebaseParameters(many)
+        XCTAssertEqual(params.count, 25)
+        XCTAssertEqual(Analytics.firebaseParameters(["Flag.on": true])["flag_on"] as? Int, 1)
+    }
 }

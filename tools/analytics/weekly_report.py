@@ -7,9 +7,8 @@
 - reports/weekly/<дата>.json — те же цифры для машин;
 - короткое сообщение в Telegram (бот отзывов), если заданы FEEDBACK_BOT_TOKEN и FEEDBACK_CHAT_ID.
 
-Цифры TelemetryDeck (экраны, нажатия, воронка) в бесплатном тарифе по API не получить:
-их смотрим в панели TelemetryDeck. Если появится TELEMETRYDECK_TOKEN (платный тариф),
-сюда добавится и эта часть.
+Поведение в приложении (экраны, нажатия, воронка) смотрим в Firebase / Google Analytics.
+Позже сюда можно добавить и их через бесплатный Google Analytics Data API (нужен сервисный аккаунт).
 
 Переменные окружения: ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8 (текст .p8 или base64), ASC_VENDOR_NUMBER.
 Необязательно: REPORT_DIR (по умолчанию reports/weekly), FEEDBACK_BOT_TOKEN, FEEDBACK_CHAT_ID.
@@ -208,7 +207,7 @@ def main():
         for name, count in active.items():
             lines.append(f"- {name}: {count}")
     lines += ["", "## Поведение в приложении", "",
-              "Экраны, нажатия, воронка пейвола и удержание: панель TelemetryDeck (сигналы Usage.daily, Paywall.shown, Purchase.*).", ""]
+              "Экраны, нажатия, воронка пейвола и удержание: Firebase → Analytics (события screen_view, paywall_shown, purchase_*).", ""]
     report = "\n".join(lines)
     print(report)
 

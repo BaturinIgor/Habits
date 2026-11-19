@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!-- Манифест приватности для App Store. Лежит в Shared, поэтому попадает и в приложение, и в виджет.
-     Приложение не отслеживает. С версии 1.6 собирается анонимная статистика (TelemetryDeck): случайный ID установки
-     и взаимодействие с приложением, только для аналитики, не связано с личностью. Из API с обязательной причиной используется только UserDefaults:
+     Приложение не отслеживает. С версии 1.6 собирается анонимная статистика (Google Analytics for Firebase, без IDFA):
+     ID установки, взаимодействие с приложением, примерное местоположение по IP и покупки, только для аналитики,
+     не связано с личностью. Свой манифест есть и у Firebase. Из API с обязательной причиной используется только UserDefaults:
      CA92.1 - настройки самого приложения, 1C8F.1 - общая группа приложения и виджета. -->
 <plist version="1.0">
 <dict>
@@ -27,6 +28,30 @@
 		<dict>
 			<key>NSPrivacyCollectedDataType</key>
 			<string>NSPrivacyCollectedDataTypeDeviceID</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+			</array>
+		</dict>
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeCoarseLocation</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+			</array>
+		</dict>
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypePurchaseHistory</string>
 			<key>NSPrivacyCollectedDataTypeLinked</key>
 			<false/>
 			<key>NSPrivacyCollectedDataTypeTracking</key>

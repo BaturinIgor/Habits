@@ -6,6 +6,12 @@ options:
   createIntermediateGroups: true
   developmentLanguage: en
 
+# Google Analytics for Firebase (анонимная статистика, без IDFA).
+packages:
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk
+    from: "13.0.0"
+
 settings:
   base:
     SWIFT_VERSION: "5.0"
@@ -70,9 +76,13 @@ targets:
         # из секретов FEEDBACK_BOT_TOKEN и FEEDBACK_CHAT_ID; без них отзывы идут через почту.
         FeedbackBotToken: ""
         FeedbackChatID: ""
-        # Анонимная статистика TelemetryDeck. Значение подставляет tools/analytics/inject_app_id.sh
-        # в сборке для App Store; без него статистика выключена.
-        TelemetryDeckAppID: ""
+        # Firebase Analytics: без рекламных сигналов, IDFV и подмены делегата приложения.
+        # GoogleService-Info.plist кладёт только сборка для App Store (tools/analytics/add_firebase_config.sh).
+        FirebaseAutomaticScreenReportingEnabled: false
+        FirebaseAppDelegateProxyEnabled: false
+        GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS: false
+        GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED: false
+        GOOGLE_ANALYTICS_REGISTRATION_WITH_AD_NETWORK_ENABLED: false
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.personal.habits
@@ -85,9 +95,13 @@ targets:
         # Альтернативные иконки (Pro) лежат рядом: AppIcon-Sunset и другие.
         ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS: "YES"
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        # Firebase через Swift Package Manager требует -ObjC.
+        OTHER_LDFLAGS: ["$(inherited)", "-ObjC"]
     dependencies:
       - target: HabitsWidget
         embed: true
+      - package: Firebase
+        product: FirebaseAnalytics
 
   HabitsWidget:
     type: app-extension

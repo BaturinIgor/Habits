@@ -1,41 +1,36 @@
-# Статистика ZenHab (TelemetryDeck)
+# Статистика ZenHab (Google Analytics for Firebase)
 
-С версии 1.6 приложение шлёт анонимную статистику в TelemetryDeck. Клиент свой, без SDK:
-`Habits/Features/Analytics.swift`, все имена событий и счётчиков в `Habits/Features/AnalyticsCatalog.swift`.
+С версии 1.6 приложение шлёт анонимную статистику в Google Analytics for Firebase (SDK `FirebaseAnalytics`
+через Swift Package Manager). Обёртка: `Habits/Features/Analytics.swift`, все имена событий
+в `Habits/Features/AnalyticsCatalog.swift`. Лимита на число событий у Firebase нет, поэтому каждое
+действие уходит своим событием, а Firebase сам отправляет их пачками.
 
-## Как экономятся события (бесплатный тариф: 50 000 в месяц)
+## Что уходит
 
-- Экраны, время на них, переходы, нажатия, свайпы и действия только считаются в телефоне
-  и раз в день уходят одним сигналом `Usage.daily` (счётчики лежат в его параметрах).
-- Сразу (пачкой при уходе в фон) уходят только редкие события: `App.installed`, `Onboarding.completed`,
-  `Habit.created`, `Habit.deleted`, `Paywall.shown`, `Purchase.*`, `Pro.changed`, `Pet.*`,
-  `Achievement.unlocked`, `Rating.promptShown`, `Family.*`, `Feedback.sent`, `Backup.restored`.
-- Итого около 50 сигналов на активного пользователя в месяц, то есть примерно 1 000 активных в месяц на бесплатном тарифе.
-
-## Параметры `Usage.daily`
-
-| Ключ | Что это |
+| Событие | Когда |
 |---|---|
-| `Usage.day` | день, за который счётчики |
-| `Session.count`, `Session.seconds` | открытия приложения и время в нём (секунды, ещё и в `floatValue`) |
-| `Screen.<Экран>` | сколько раз открыт экран |
-| `Time.<Экран>` | секунд на экране |
-| `Flow.<A>><B>` | переходы между экранами |
-| `Gesture.<Экран>.<tap/longPress/swipeLeft/...>` | все нажатия и свайпы по экранам |
-| `Action.<...>` | действия: отметки, покупки за искры, питомец, экспорт и т. д. |
-| `State.*` | состояние: сколько привычек, групп, отметок и записей настроения за 7 дней, питомец, настройки |
-| `User.daysSinceInstall`, `User.installWeek`, `User.isPro` | для удержания и когорт |
+| `screen_view` (`screen_name`) | показ экрана; из этого Firebase считает время, сессии и пути между экранами |
+| `gesture` (`screen`, `kind`: tap, longPress, swipeLeft/Right/Up/Down) | каждое нажатие и свайп |
+| `habit_check`, `habit_skip`, `pet_feed`, `data_export_csv`... (`screen`) | действия из `AnalyticsAction` |
+| `app_installed`, `onboarding_completed`, `habit_created`, `habit_deleted`, `paywall_shown`, `purchase_started/completed/cancelled/failed`, `purchase_restored`, `pro_changed`, `pet_adopted`, `pet_stage_reached`, `achievement_unlocked`, `rating_prompt_shown`, `family_group_created/joined`, `feedback_sent`, `backup_restored` | важные события с параметрами из `AnalyticsEvent` |
+| `daily_state` | раз в день: число привычек, групп, отметок и записей настроения за 7 дней, питомец, настройки |
+| user properties `is_pro`, `install_week` | для сравнения групп и когорт |
 
-Личного не уходит никогда: ни названий привычек, ни заметок, ни настроения, ни текста.
-Это проверяет тест `testAnalyticsSendsNoPersonalText`.
+Лимиты Firebase: 500 разных событий, 25 параметров на событие, имена до 40 символов. Поэтому имена только из перечислений.
+
+Личного не уходит никогда: ни названий привычек, ни заметок, ни настроения, ни текста
+(проверяет тест `testAnalyticsSendsNoPersonalText`). IDFA не собирается (AdSupport не подключён, ATT нет),
+IDFV, рекламные сигналы и подмена делегата приложения выключены в `project.yml`.
 
 ## Включение
 
-- App ID: переменная `TELEMETRYDECK_APP_ID` (Settings → Secrets and variables → Actions → Variables)
-  или файл `tools/analytics/telemetrydeck_app_id.txt`. Подставляется только в сборке для App Store
-  (`tools/analytics/inject_app_id.sh`). Без App ID и в автотестах статистика выключена.
-- В отладочной сборке сигналы помечаются `isTestMode` и не смешиваются с настоящими.
+- `GoogleService-Info.plist` для bundle ID `com.baturinigor.zenhab`: секрет `GOOGLE_SERVICE_INFO_PLIST`
+  (содержимое файла или base64) или файл `tools/analytics/GoogleService-Info.plist`.
+  Кладётся только в сборку для App Store (`tools/analytics/add_firebase_config.sh`).
+  Без файла и в автотестах статистика выключена.
 - Пользователь может выключить: Настройки → «Отправлять анонимную статистику».
+- App Privacy в App Store Connect: Identifiers → Device ID, Location → Coarse Location,
+  Purchases → Purchase History, Usage Data → Product Interaction. Везде Analytics, не связано, не для отслеживания.
 
 ## Еженедельный отчёт
 

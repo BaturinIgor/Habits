@@ -44,7 +44,6 @@ struct HabitsApp: App {
                 // Пока приложение открыто, изменения родных подтягиваем сами, не дожидаясь push.
                 FamilySync.shared.startLiveUpdates()
             case .background:
-                Analytics.shared.appWentToBackground()
                 AppLock.shared.lock()
                 FamilySync.shared.flushBeforeBackground()
                 CloudBackup.shared.backupBeforeBackground()

@@ -66,6 +66,11 @@ jobs:
       - name: Apply App Store identifiers
         run: tools/appstore/set_bundle_id.sh "$APP_ID"
 
+      - name: Add Firebase config (analytics)
+        env:
+          GOOGLE_SERVICE_INFO_PLIST: ${{ secrets.GOOGLE_SERVICE_INFO_PLIST }}
+        run: tools/analytics/add_firebase_config.sh
+
       - name: Generate Xcode project
         run: xcodegen generate
 
@@ -74,11 +79,6 @@ jobs:
           FEEDBACK_BOT_TOKEN: ${{ secrets.FEEDBACK_BOT_TOKEN }}
           FEEDBACK_CHAT_ID: ${{ secrets.FEEDBACK_CHAT_ID }}
         run: tools/feedback/inject_secrets.sh Habits/Info.plist
-
-      - name: Add analytics App ID
-        env:
-          TELEMETRYDECK_APP_ID: ${{ vars.TELEMETRYDECK_APP_ID }}
-        run: tools/analytics/inject_app_id.sh Habits/Info.plist
 
       - name: Install certificate and profiles
         env:

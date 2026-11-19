@@ -1,9 +1,11 @@
 import Foundation
 
-// Все имена, которые уходят в статистику. Новые экраны и действия добавляйте сюда:
-// так в TelemetryDeck не попадёт ничего личного (названий привычек, заметок, текста).
+// Все имена, которые уходят в статистику (Firebase). Новые экраны и действия добавляйте сюда:
+// так в статистику не попадёт ничего личного (названий привычек, заметок, текста).
+// Имена переводятся в формат Firebase: "Habit.check" -> "habit_check". У Firebase лимит 500 разных
+// событий на приложение и 25 параметров на событие, поэтому не создавайте имена на лету.
 
-/// Экраны приложения. Считаются показы (`Screen.*`), время (`Time.*`, секунды) и переходы (`Flow.A>B`).
+/// Экраны приложения: уходят как screen_view с этим именем.
 enum AnalyticsScreen: String {
     case today = "Today"
     case habits = "Habits"
@@ -35,7 +37,7 @@ enum AnalyticsScreen: String {
     case appIcon = "AppIcon"
 }
 
-/// Действия пользователя. Только счётчики за день (`Action.*`), отдельных событий не создают.
+/// Действия пользователя: каждое уходит своим событием с параметром screen.
 enum AnalyticsAction: String {
     // Отметки
     case check = "Habit.check"
@@ -91,7 +93,7 @@ enum HabitSource: String {
     case editor, catalog, siri, onboarding
 }
 
-/// Редкие важные события: уходят в TelemetryDeck отдельным сигналом.
+/// Важные события с параметрами.
 enum AnalyticsEvent {
     case appInstalled(isUpdate: Bool)
     case onboardingCompleted(seconds: Int, restoredFromCloud: Bool)
@@ -134,14 +136,6 @@ enum AnalyticsEvent {
         case .familyGroupJoined: "Family.groupJoined"
         case .feedbackSent: "Feedback.sent"
         case .backupRestored: "Backup.restored"
-        }
-    }
-
-    /// Покупки отправляем сразу, остальное при уходе в фон.
-    var isUrgent: Bool {
-        switch self {
-        case .purchaseCompleted, .purchaseFailed: true
-        default: false
         }
     }
 
@@ -203,7 +197,7 @@ enum AnalyticsEvent {
     }
 }
 
-/// Состояние приложения раз в день (вместе с `Usage.daily`): только числа и флаги.
+/// Состояние приложения раз в день (событие daily_state): только числа и флаги, не больше 24 ключей.
 enum AnalyticsSnapshot {
     static func make(_ data: AppData) -> [String: Any] {
         let active = data.activeHabits
