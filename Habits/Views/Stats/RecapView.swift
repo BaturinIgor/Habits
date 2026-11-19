@@ -91,17 +91,8 @@ struct RecapCard: View {
             }
 
             // При очень крупном шрифте подпись под процентом: рядом ей остаётся по слову на строку.
-            if typeSize.isAccessibilitySize {
-                VStack(alignment: .leading, spacing: 0) {
-                    percentText
-                    percentLabel
-                }
-            } else {
-                HStack(alignment: .firstTextBaseline, spacing: 8) {
-                    percentText
-                    percentLabel
-                }
-            }
+            Self.percentRow(percent: recap.percent, label: String(localized: "of habits done"),
+                            stacked: typeSize.isAccessibilitySize)
 
             HStack(alignment: .bottom, spacing: barSpacing) {
                 ForEach(recap.bars) { bar in
@@ -136,6 +127,7 @@ struct RecapCard: View {
 
             if let top = recap.top {
                 Label {
+                    // Имя привычки пользовательское: слово длиннее строки переносится по буквам, а не обрезается.
                     WordWrapText(String(localized: "Most steady: \(top.name), \(top.done) of \(top.total)"))
                 } icon: {
                     Image(systemName: "trophy.fill")
@@ -155,24 +147,38 @@ struct RecapCard: View {
             }
         }
         .foregroundStyle(.white)
-        .padding(22)
+        .padding(Self.padding)
         .background {
             RoundedRectangle(cornerRadius: 28, style: .continuous)
                 .fill(LinearGradient(colors: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))
         }
     }
 
-    private var percentText: some View {
-        Text(verbatim: "\(recap.percent)%")
+    /// Поля карточки: их же учитывает подвал картинки «Поделиться» (ShareCardFooter.textColumnWidth).
+    static let padding: CGFloat = 22
+
+    /// Крупный процент и подпись «привычек выполнено». Рядом подпись переносится по словам,
+    /// а процент не уменьшается раньше неё (layoutPriority). При очень крупном шрифте подпись под процентом.
+    @ViewBuilder
+    static func percentRow(percent: Int, label: String, stacked: Bool) -> some View {
+        let number = Text(verbatim: "\(percent)%")
             .font(.system(size: 64, weight: .heavy, design: .rounded).monospacedDigit())
             .minimumScaleFactor(0.6)
             .lineLimit(1)
-    }
-
-    private var percentLabel: some View {
-        WordWrapText(String(localized: "of habits done"))
+        let caption = WordWrapText(label)
             .font(.subheadline.weight(.medium))
             .opacity(0.85)
+        if stacked {
+            VStack(alignment: .leading, spacing: 0) {
+                number
+                caption
+            }
+        } else {
+            HStack(alignment: .firstTextBaseline, spacing: 8) {
+                number.layoutPriority(1)
+                caption
+            }
+        }
     }
 
     private func tile(value: String, title: String, symbol: String) -> some View {
@@ -315,7 +321,8 @@ struct RecapBanner: View {
                     WordWrapText(String(localized: title))
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Color.primary)
-                    WordWrapText("\(recap.percent)% · " + String(localized: "Perfect days: \(recap.perfectDays)"))
+                    // Неразрывный пробел: «84% ·» не разрывается между строками.
+                    WordWrapText("\(recap.percent)%\u{00A0}· " + String(localized: "Perfect days: \(recap.perfectDays)"))
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }

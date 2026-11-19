@@ -204,26 +204,65 @@ final class LogicTests: XCTestCase {
         }
     }
 
-    /// Слова в WordFlowLayout переносятся только целиком: строк столько, сколько нужно по ширине слов,
-    /// и картинка не шире предложенной ширины. KAN-101.
+    /// Слова в WordFlowLayout переносятся только целиком, а слишком длинное слово (например, имя привычки
+    /// без пробелов) не обрезается, а переносится по буквам. KAN-101.
     @MainActor
     func testWordWrapTextBreaksOnlyBetweenWords() throws {
-        let font = UIFont.systemFont(ofSize: 30)
-        func height(_ text: String, width: CGFloat) throws -> CGFloat {
-            let renderer = ImageRenderer(content: WordWrapText(text).font(.system(size: 30)).frame(width: width, alignment: .leading).fixedSize(horizontal: false, vertical: true))
+        func render(_ text: String, width: CGFloat) throws -> CGSize {
+            let renderer = ImageRenderer(content: WordWrapText(text).font(.system(size: 30)))
+            renderer.proposedSize = ProposedViewSize(width: width, height: nil)
             renderer.scale = 1
-            return try XCTUnwrap(renderer.uiImage).size.height
+            return try XCTUnwrap(renderer.uiImage).size
         }
-        let line = font.lineHeight
-        // «привычек выполнено» в 200 pt: два слова на двух строках, а не «выпол-нено» на третьей.
-        let two = try height("привычек выполнено", width: 200)
-        XCTAssertEqual(two, 2 * line, accuracy: line * 0.4)
+        let line = try render("привычек", width: 600).height
+        // «привычек выполнено» в 200 pt: ровно две строки, по слову на строку, не шире колонки.
+        let two = try render("привычек выполнено", width: 200)
+        XCTAssertEqual(two.height, 2 * line, accuracy: 1)
+        XCTAssertLessThanOrEqual(two.width, 200)
         // В широкой колонке — одна строка.
-        let one = try height("привычек выполнено", width: 600)
-        XCTAssertEqual(one, line, accuracy: line * 0.4)
-        // Слово шире колонки уменьшается и остаётся одной строкой.
-        let long = try height("Идеальные", width: 80)
-        XCTAssertLessThanOrEqual(long, line * 1.2)
+        XCTAssertEqual(try render("привычек выполнено", width: 600).height, line, accuracy: 1)
+        // Слово чуть шире колонки уменьшается и остаётся одной строкой.
+        let scaled = try render("Идеальные", width: 80)
+        XCTAssertLessThanOrEqual(scaled.height, line + 1)
+        XCTAssertLessThanOrEqual(scaled.width, 80)
+        // Слово намного длиннее колонки переносится по буквам на несколько строк, но не шире колонки.
+        let long = try render("Медитацияутромпередзавтраком", width: 80)
+        XCTAssertGreaterThan(long.height, line * 1.5)
+        XCTAssertLessThanOrEqual(long.width, 80)
+    }
+
+    /// Процент и «привычек выполнено» в одной строке на самом узком iPhone (SE, 375 pt): процент 64 pt
+    /// не уменьшается, а подпись переносится по словам. На всех 14 языках. KAN-101.
+    @MainActor
+    func testRecapPercentKeepsFullSizeOnNarrowestPhone() throws {
+        let width: CGFloat = 375 - 2 * 20 - 2 * RecapCard.padding
+        let heavy = UIFont.systemFont(ofSize: 64, weight: .heavy)
+        let digits = UIFont(descriptor: heavy.fontDescriptor.withDesign(.rounded) ?? heavy.fontDescriptor, size: 64)
+        let percentWidth = ("100%" as NSString).size(withAttributes: [.font: digits]).width
+        let caption = UIFont.preferredFont(forTextStyle: .subheadline, compatibleWith: UITraitCollection(preferredContentSizeCategory: .large))
+        let outDir = ProcessInfo.processInfo.environment["KAN101_RENDER_DIR"]
+        for language in Bundle.main.localizations where language != "Base" {
+            let path = try XCTUnwrap(Bundle.main.path(forResource: language, ofType: "lproj"))
+            let label = try XCTUnwrap(Bundle(path: path)).localizedString(forKey: "of habits done", value: nil, table: nil)
+            if !WordWrapText.hasCJK(label) {
+                let longest = WordWrapText.words(label).map { ($0 as NSString).size(withAttributes: [.font: caption]).width }.max() ?? 0
+                XCTAssertLessThanOrEqual(percentWidth + 8 + longest, width, "\(language): «\(label)»")
+            }
+            let row = RecapCard.percentRow(percent: 100, label: label, stacked: false)
+                .foregroundStyle(.white)
+                .frame(width: width, alignment: .leading)
+                .padding(8)
+                .background(Color.indigo)
+                .dynamicTypeSize(.large)
+            let renderer = ImageRenderer(content: row)
+            renderer.scale = 2
+            let image = try XCTUnwrap(renderer.uiImage, language)
+            // Строка не ниже, чем у процента без уменьшения (64 pt rounded heavy).
+            XCTAssertGreaterThanOrEqual(image.size.height - 16, digits.lineHeight - 2, language)
+            if let outDir {
+                try? image.pngData()?.write(to: URL(fileURLWithPath: outDir).appendingPathComponent("percent-\(language).png"))
+            }
+        }
     }
 
     @MainActor

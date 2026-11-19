@@ -65,20 +65,26 @@ struct ShareCardFooter: View {
     var scanText = String(localized: "Scan to get ZenHab")
 
     /// Ширина колонки с текстом на картинке (карточка 360 pt минус поля и QR-код).
+    /// Сторона QR-кода, в которую он вписывается, и отступ между текстом и кодом.
+    static let qrFitting: CGFloat = 88
+    static let spacing: CGFloat = 12
+    /// Белое поле вокруг кода: 3 модуля (ещё 1 уже есть в картинке).
+    static let quietModules: CGFloat = 3
+
     static func textColumnWidth(cardWidth: CGFloat = 360, campaign: ShareCampaign) -> CGFloat {
         let qrSide: CGFloat
         if let qr = QRCode(AppInfo.appStoreURL(campaign: campaign).absoluteString) {
-            let module = qr.modulePoints(fitting: 88)
-            qrSide = module * CGFloat(qr.modules) + module * 6
+            let module = qr.modulePoints(fitting: qrFitting)
+            qrSide = module * CGFloat(qr.modules) + module * quietModules * 2
         } else {
             qrSide = 0
         }
-        return cardWidth - 2 * 22 - 12 - qrSide
+        return cardWidth - 2 * RecapCard.padding - spacing - qrSide
     }
 
     var body: some View {
         let qr = QRCode(AppInfo.appStoreURL(campaign: campaign).absoluteString)
-        HStack(alignment: .center, spacing: 12) {
+        HStack(alignment: .center, spacing: Self.spacing) {
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
                     Image(systemName: "leaf.fill")
@@ -99,13 +105,13 @@ struct ShareCardFooter: View {
             }
             Spacer(minLength: 0)
             if let qr {
-                let module = qr.modulePoints(fitting: 88)
+                let module = qr.modulePoints(fitting: Self.qrFitting)
                 Image(uiImage: qr.image)
                     .interpolation(.none)
                     .resizable()
                     .frame(width: module * CGFloat(qr.modules), height: module * CGFloat(qr.modules))
                     // Поле вокруг кода по стандарту — 4 модуля: 1 уже есть в картинке, ещё 3 — белая подложка.
-                    .padding(module * 3)
+                    .padding(module * Self.quietModules)
                     .background(RoundedRectangle(cornerRadius: 10, style: .continuous).fill(.white))
                     .accessibilityHidden(true)
             }
