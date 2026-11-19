@@ -1,6 +1,6 @@
 # Habits (ZenHab) 1.5 — макеты экранов
 
-Снято с реального приложения (коммит ветки 1.5) на iPhone 6.9", русский язык, демо-данные.
+Снято с реального приложения (последний коммит версии 1.5, 87e68c1) на iPhone 6.9", русский язык, демо-данные.
 Каждый экран в двух темах: `*-light.png` и `*-dark.png`. Как переснять: workflow **Design screens**
 (каталог экранов `Habits/App/DesignGallery.swift`, тест `HabitsUITests/DesignCatalogUITests.swift`).
 
