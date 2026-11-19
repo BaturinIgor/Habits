@@ -68,6 +68,9 @@ struct WatchSnapshot: Codable, Hashable {
     var isPro: Bool
     /// Сегодня и завтра: так часы показывают правильный день сразу после полуночи.
     var days: [WatchDay]
+    /// Отметки с часов, которые iPhone уже получил: ключ отметки и её время (по часам).
+    /// iPhone мог отметку и не применить (на нём отметили позже), но ждать её больше не нужно.
+    var acks: [String: Date]? = nil
 
     func day(_ key: String) -> WatchDay? {
         days.first { $0.day == key }
@@ -105,18 +108,20 @@ struct WatchState: Codable, Hashable {
         return day
     }
 
-    /// Новый снимок с iPhone: отметки, которые он уже учёл, больше не нужны.
-    /// Отметку, которую iPhone так и не учёл за 10 минут, тоже убираем: значит, на iPhone отметили иначе позже.
+    /// Новый снимок с iPhone: отметки, которые он уже получил или уже учёл, больше не нужны.
+    /// Остальные ждут: часы могли быть без связи, и отметка ещё в очереди на доставку.
     mutating func receive(_ fresh: WatchSnapshot) {
         if let old = snapshot, old.generatedAt > fresh.generatedAt { return }
         snapshot = fresh
-        pending = pending.filter { _, mark in
+        let acks = fresh.acks ?? [:]
+        pending = pending.filter { key, mark in
+            if let acked = acks[key], acked >= mark.at { return false }
             guard let habit = fresh.day(mark.day)?.habits.first(where: { $0.id == mark.habitID }) else {
-                // Дня уже нет в снимке: отметка устарела.
+                // Дня уже нет в снимке или привычку удалили: показывать отметку негде.
+                // Сама отметка остаётся в очереди WatchConnectivity и дойдёт до iPhone.
                 return false
             }
-            if habit.matches(mark) { return false }
-            return fresh.generatedAt.timeIntervalSince(mark.at) < 600
+            return !habit.matches(mark)
         }
     }
 }

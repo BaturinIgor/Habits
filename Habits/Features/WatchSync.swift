@@ -11,9 +11,14 @@ final class WatchSync: NSObject {
     private var session: WCSession? { WCSession.isSupported() ? WCSession.default : nil }
     /// Последний отправленный снимок без времени создания: не шлём одно и то же.
     private var lastSent: [WatchDay] = []
+    private var lastSentAcks: [String: Date]?
     private var lastSentPro: Bool?
     /// Последний прогресс, отправленный в компликацию: у неё ограничен дневной запас обновлений.
     private var lastComplication: String?
+    /// Отметки с часов, которые уже пришли: часы по ним понимают, что ждать больше нечего.
+    /// Хранятся на диске, потому что iPhone может получить отметку в фоне и тут же выгрузиться.
+    private var acks: [String: Date] = WatchSync.loadAcks()
+    private static let acksKey = "watchMarkAcks"
 
     func start() {
         guard let session, session.delegate == nil else { return }
@@ -25,13 +30,14 @@ final class WatchSync: NSObject {
     func push(_ data: AppData, force: Bool = false) {
         guard let session, session.activationState == .activated,
               session.isPaired, session.isWatchAppInstalled else { return }
-        let snapshot = WatchSnapshot.make(from: data)
-        if !force && snapshot.days == lastSent && snapshot.isPro == lastSentPro { return }
+        let snapshot = snapshot(data)
+        if !force && snapshot.days == lastSent && snapshot.isPro == lastSentPro && snapshot.acks == lastSentAcks { return }
         guard let raw = try? JSONEncoder().encode(snapshot) else { return }
         do {
             try session.updateApplicationContext([WatchKeys.snapshot: raw])
             lastSent = snapshot.days
             lastSentPro = snapshot.isPro
+            lastSentAcks = snapshot.acks
         } catch {
             print("Watch context failed: \(error)")
         }
@@ -54,7 +60,11 @@ final class WatchSync: NSObject {
         store.reloadFromDisk()
         for mark in marks {
             store.applyWatchMark(mark)
+            if acks[mark.key].map({ $0 < mark.at }) ?? true {
+                acks[mark.key] = mark.at
+            }
         }
+        saveAcks()
         // Даже если ничего не поменялось, часы должны получить подтверждение.
         push(store.data, force: true)
     }
@@ -85,7 +95,7 @@ extension WatchSync: WCSessionDelegate {
         let reply = ReplyBox(replyHandler)
         Task { @MainActor in
             WatchSync.shared.receive(payload.value)
-            let snapshot = WatchSnapshot.make(from: HabitStore.shared.data)
+            let snapshot = WatchSync.shared.snapshot(HabitStore.shared.data)
             if let raw = try? JSONEncoder().encode(snapshot) {
                 reply.handler([WatchKeys.snapshot: raw])
             } else {
@@ -99,6 +109,40 @@ extension WatchSync: WCSessionDelegate {
         Task { @MainActor in
             WatchSync.shared.receive(payload.value)
         }
+    }
+}
+
+// MARK: - Подтверждения отметок
+
+extension WatchSync {
+    func snapshot(_ data: AppData) -> WatchSnapshot {
+        var snapshot = WatchSnapshot.make(from: data)
+        snapshot.acks = currentAcks(for: snapshot)
+        return snapshot
+    }
+
+    /// Подтверждения только для дней из снимка: старые часам уже не нужны.
+    fileprivate func currentAcks(for snapshot: WatchSnapshot) -> [String: Date] {
+        let days = Set(snapshot.days.map(\.day))
+        let fresh = acks.filter { key, _ in
+            days.contains(String(key.split(separator: "|").last ?? ""))
+        }
+        if fresh.count != acks.count {
+            acks = fresh
+            saveAcks()
+        }
+        return fresh
+    }
+
+    fileprivate static func loadAcks() -> [String: Date] {
+        guard let raw = UserDefaults.standard.data(forKey: acksKey),
+              let value = try? JSONDecoder().decode([String: Date].self, from: raw) else { return [:] }
+        return value
+    }
+
+    fileprivate func saveAcks() {
+        guard let raw = try? JSONEncoder().encode(acks) else { return }
+        UserDefaults.standard.set(raw, forKey: Self.acksKey)
     }
 }
 

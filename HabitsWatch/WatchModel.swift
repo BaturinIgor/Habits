@@ -64,6 +64,26 @@ final class WatchModel {
     func refresh() {
         now = Date()
         checkTimer()
+        resendPending()
+    }
+
+    /// Неподтверждённые отметки, которых нет в очереди на доставку, отправляем заново.
+    /// Повтор безопасен: отметка передаёт состояние, а не нажатие.
+    private func resendPending() {
+        guard !state.pending.isEmpty, WCSession.isSupported() else { return }
+        let session = WCSession.default
+        guard session.activationState == .activated, session.outstandingUserInfoTransfers.isEmpty else { return }
+        send(Array(state.pending.values))
+    }
+
+    /// Ждёт, пока WatchConnectivity передаст всё, что пришло в фоне (не дольше 15 секунд).
+    func waitForPendingContent() async {
+        guard WCSession.isSupported() else { return }
+        for _ in 0..<30 {
+            let session = WCSession.default
+            if session.activationState == .activated && !session.hasContentPending { break }
+            try? await Task.sleep(nanoseconds: 500_000_000)
+        }
     }
 
     fileprivate func receive(_ payload: [String: Any]) {
@@ -116,8 +136,8 @@ final class WatchModel {
         set(next, day: todayKey)
     }
 
-    private func set(_ habit: WatchHabit, day: String) {
-        let mark = WatchMark(habitID: habit.id, day: day, done: habit.done, count: habit.count, at: Date())
+    private func set(_ habit: WatchHabit, day: String, at: Date = Date()) {
+        let mark = WatchMark(habitID: habit.id, day: day, done: habit.done, count: habit.count, at: at)
         state.pending[mark.key] = mark
         save()
         send([mark])
@@ -132,6 +152,8 @@ final class WatchModel {
         let end = start.addingTimeInterval(TimeInterval(minutes * 60))
         timer = WatchTimerRun(habitID: habit.id, day: todayKey, start: start, end: end)
         scheduleNotification(name: habit.name, after: end.timeIntervalSince(start))
+        // Отметить привычку, даже если приложение к этому времени уйдёт в фон.
+        WKApplication.shared().scheduleBackgroundRefresh(withPreferredDate: end, userInfo: nil) { _ in }
         WKInterfaceDevice.current().play(.start)
     }
 
@@ -162,7 +184,9 @@ final class WatchModel {
         habit.done = true
         habit.count = max(1, habit.target)
         habit.skipped = false
-        set(habit, day: run.day)
+        // Время отметки — конец таймера, а не момент, когда приложение это заметило:
+        // иначе поздняя проверка перебила бы то, что успели поменять на iPhone.
+        set(habit, day: run.day, at: min(Date(), run.end))
     }
 
     private func saveTimer() {
@@ -195,9 +219,10 @@ private final class SessionDelegate: NSObject, WCSessionDelegate {
         let context = Payload(session.receivedApplicationContext)
         Task { @MainActor in
             let model = WatchModel.shared
-            model.receive(context.value)
-            // Отметки, сделанные до подключения или так и не подтверждённые.
+            // Сначала отметки, сделанные до подключения: снимок может убрать их из pending
+            // (например, если день уже сменился), и тогда они не ушли бы вовсе.
             model.send(Array(model.state.pending.values))
+            model.receive(context.value)
         }
     }
 
