@@ -139,6 +139,10 @@ struct HabitEditorView: View {
     }
 
     var body: some View {
+        analyticsBody.analyticsScreen(.editor)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             Form {
                 headerSection

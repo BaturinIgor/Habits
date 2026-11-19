@@ -1,0 +1,59 @@
+name: Weekly report
+
+# Отчёт за неделю: установки, покупки, подписки и доход из App Store Connect.
+# Запускается сам по понедельникам в 05:00 UTC и вручную: Actions -> Weekly report -> Run workflow.
+# Отчёт кладётся в ветку analytics-reports (reports/weekly/<дата>.md), короткая сводка уходит в Telegram.
+# Нужны секреты ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8 (ключ с ролью Sales, Finance или Admin)
+# и ASC_VENDOR_NUMBER (секрет или переменная).
+
+on:
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install
+        run: pip install pyjwt cryptography requests
+      - name: Build report
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          ASC_VENDOR_NUMBER: ${{ secrets.ASC_VENDOR_NUMBER || vars.ASC_VENDOR_NUMBER }}
+          FEEDBACK_BOT_TOKEN: ${{ secrets.FEEDBACK_BOT_TOKEN }}
+          FEEDBACK_CHAT_ID: ${{ secrets.FEEDBACK_CHAT_ID }}
+          REPORT_DIR: ${{ runner.temp }}/weekly
+        run: python3 tools/analytics/weekly_report.py
+      - name: Save to analytics-reports branch
+        env:
+          SRC: ${{ runner.temp }}/weekly
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git fetch --depth=1 origin analytics-reports 2>/dev/null; then
+            git checkout -B analytics-reports FETCH_HEAD
+          else
+            git checkout --orphan analytics-reports
+            git rm -rf --quiet .
+          fi
+          mkdir -p reports/weekly
+          cp "$SRC"/* reports/weekly/
+          git add reports/weekly
+          git commit -m "Weekly report $(ls "$SRC" | sort | tail -1 | sed 's/\.[a-z]*$//')" || exit 0
+          git push origin analytics-reports
+      - uses: actions/upload-artifact@v4
+        with:
+          name: weekly-report
+          path: ${{ runner.temp }}/weekly

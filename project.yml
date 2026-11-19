@@ -70,6 +70,9 @@ targets:
         # из секретов FEEDBACK_BOT_TOKEN и FEEDBACK_CHAT_ID; без них отзывы идут через почту.
         FeedbackBotToken: ""
         FeedbackChatID: ""
+        # Анонимная статистика TelemetryDeck. Значение подставляет tools/analytics/inject_app_id.sh
+        # в сборке для App Store; без него статистика выключена.
+        TelemetryDeckAppID: ""
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.personal.habits

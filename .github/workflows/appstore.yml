@@ -75,6 +75,11 @@ jobs:
           FEEDBACK_CHAT_ID: ${{ secrets.FEEDBACK_CHAT_ID }}
         run: tools/feedback/inject_secrets.sh Habits/Info.plist
 
+      - name: Add analytics App ID
+        env:
+          TELEMETRYDECK_APP_ID: ${{ vars.TELEMETRYDECK_APP_ID }}
+        run: tools/analytics/inject_app_id.sh Habits/Info.plist
+
       - name: Install certificate and profiles
         env:
           DIST_CERT_P12: ${{ secrets.DIST_CERT_P12 }}

@@ -248,4 +248,24 @@ final class LogicTests: XCTestCase {
         XCTAssertTrue(lines[1].contains(",4,"))
         XCTAssertTrue(lines[1].hasSuffix("\"line1\nline2\""))
     }
+
+    // MARK: Статистика
+
+    /// В статистику не должно уходить ничего личного: ни названия, ни описания, ни заметки.
+    func testAnalyticsSendsNoPersonalText() {
+        var habit = dailyHabit()
+        habit.name = "SECRET-NAME"
+        habit.details = "SECRET-DETAILS"
+        var data = AppData()
+        data.habits = [habit]
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(today))
+        data.setNote("SECRET-NOTE", habitID: habit.id, day: DayKey.make(today))
+        data.moods[DayKey.make(today)] = MoodEntry(level: 4, note: "SECRET-MOOD", updatedAt: Date())
+        var values = AnalyticsSnapshot.make(data).map { "\($0.key)=\($0.value)" }
+        values += AnalyticsEvent.habitCreated(habit, source: .editor).payload.map { "\($0.key)=\($0.value)" }
+        let all = values.joined(separator: " ")
+        XCTAssertFalse(all.contains("SECRET"), all)
+        XCTAssertTrue(all.contains("State.checks7d=1"), all)
+        XCTAssertTrue(all.contains("State.moods7d=1"), all)
+    }
 }

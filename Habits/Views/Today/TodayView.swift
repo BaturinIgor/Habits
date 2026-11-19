@@ -92,6 +92,10 @@ struct TodayView: View {
     }
 
     var body: some View {
+        analyticsBody.analyticsScreen(.today)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack(path: $path) {
             List {
                 WeekStrip(selected: $selectedDay)

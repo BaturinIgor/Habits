@@ -781,3 +781,5 @@ Your days and the habits that lift your mood||Le tue giornate e le abitudini che
 Your whole mood history, a monthly chart and which habits lift your mood.||Tutta la cronologia dell'umore, un grafico mensile e le abitudini che lo migliorano.
 ZenHab is locked||ZenHab è bloccato
 passcode||codice
+Share anonymous statistics||Condividi statistiche anonime
+Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood.||Aiuta a migliorare ZenHab: solo quali schermate e pulsanti vengono usati. Mai le tue abitudini, note o umore.

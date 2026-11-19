@@ -8,6 +8,10 @@ struct HabitsListView: View {
     @State private var showingPaywall = false
 
     var body: some View {
+        analyticsBody.analyticsScreen(.habits)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             List {
                 let active = store.data.activeHabits

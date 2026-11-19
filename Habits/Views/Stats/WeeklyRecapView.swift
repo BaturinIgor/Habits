@@ -119,6 +119,10 @@ struct WeeklyRecapView: View {
     @State private var shareImage: (preview: Image, file: URL)?
 
     var body: some View {
+        analyticsBody.analyticsScreen(.weeklyRecap)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
@@ -135,6 +139,7 @@ struct WeeklyRecapView: View {
                             Label("Share", systemImage: "square.and.arrow.up")
                                 .frame(maxWidth: .infinity)
                         }
+                        .analyticsTap(.recapShare)
                         .buttonStyle(.borderedProminent)
                         .controlSize(.large)
                     }

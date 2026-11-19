@@ -86,6 +86,10 @@ struct FeedbackView: View {
     }
 
     var body: some View {
+        analyticsBody.analyticsScreen(.feedback)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             Form {
                 Section {
@@ -240,6 +244,7 @@ struct FeedbackView: View {
         Task {
             do {
                 try await TelegramFeedback.send(text: text, screenshot: photo)
+                Analytics.shared.send(.feedbackSent(channel: "telegram"))
                 showingThanks = true
             } catch {
                 showingSendFailed = true
@@ -250,6 +255,7 @@ struct FeedbackView: View {
 
     private func sendByEmail() {
         focused = false
+        Analytics.shared.send(.feedbackSent(channel: "email"))
         if MFMailComposeViewController.canSendMail() {
             showingMail = true
         } else {
@@ -340,6 +346,7 @@ enum RatingPrompt {
         try? await Task.sleep(for: .seconds(2))
         guard !Task.isCancelled else { return }
         defaults.set(Date(), forKey: lastKey)
+        Analytics.shared.send(.ratingPromptShown)
         requestReview()
     }
 }

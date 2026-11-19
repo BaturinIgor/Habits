@@ -115,7 +115,7 @@ struct AddHabitIntent: AppIntent {
         )
         habit.name = voice.name
         habit.partOfDay = .anytime
-        store.upsert(habit)
+        store.upsert(habit, source: .siri)
         let summary = habit.scheduleSummary
         let habitName = habit.name
         if let reminder = habit.reminder {

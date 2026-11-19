@@ -63,6 +63,10 @@ struct PetView: View {
     private let grid = [GridItem(.adaptive(minimum: 76), spacing: 12)]
 
     var body: some View {
+        analyticsBody.analyticsScreen(.pet)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 22) {

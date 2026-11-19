@@ -22,6 +22,7 @@ struct SettingsView: View {
     @State private var showingProfile = false
     @State private var showingFeedback = false
     @AppStorage("appLanguage") private var appLanguage = "system"
+    @AppStorage(Analytics.optOutKey) private var analyticsOptOut = false
 
     private static let languages: [(code: String, name: String)] = [
         ("en", "English"), ("ru", "Русский"), ("de", "Deutsch"), ("fr", "Français"), ("es", "Español"),
@@ -61,6 +62,10 @@ struct SettingsView: View {
     }
 
     var body: some View {
+        analyticsBody.analyticsScreen(.settings)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             Form {
                 Section {
@@ -185,6 +190,14 @@ struct SettingsView: View {
                 }
 
                 Section {
+                    Toggle(isOn: Binding(get: { !analyticsOptOut }, set: { Analytics.shared.setEnabled($0) })) {
+                        Label("Share anonymous statistics", systemImage: "chart.line.uptrend.xyaxis")
+                    }
+                } footer: {
+                    Text("Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood.")
+                }
+
+                Section {
                     LabeledContent("Version", value: AppInfo.version)
                 } footer: {
                     Text("All data is stored only on this iPhone.")
@@ -304,6 +317,10 @@ struct NotificationSettingsView: View {
     }
 
     var body: some View {
+        analyticsBody.analyticsScreen(.notificationSettings)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         Form {
             Section {
                 Toggle(isOn: store.settingBinding(\.remindersEnabled)) {
@@ -380,6 +397,10 @@ struct TodayScreenSettingsView: View {
     @Environment(HabitStore.self) private var store
 
     var body: some View {
+        analyticsBody.analyticsScreen(.todaySettings)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         Form {
             Section {
                 Picker("Order", selection: store.settingBinding(\.homeLayout)) {
@@ -479,6 +500,10 @@ struct BackupSettingsView: View {
     }
 
     var body: some View {
+        analyticsBody.analyticsScreen(.backupSettings)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         Form {
             if CloudBackup.isAvailable {
                 iCloudSection
@@ -488,6 +513,7 @@ struct BackupSettingsView: View {
                     ShareLink(item: exportURL) {
                         Label("Export data", systemImage: "square.and.arrow.up")
                     }
+                    .analyticsTap(.exportJSON)
                 } else {
                     Label("Export data", systemImage: "square.and.arrow.up")
                         .foregroundStyle(.secondary)
@@ -507,6 +533,7 @@ struct BackupSettingsView: View {
                         ShareLink(item: csvURL) {
                             Label("Export to CSV", systemImage: "tablecells")
                         }
+                        .analyticsTap(.exportCSV)
                     } else {
                         Label("Export to CSV", systemImage: "tablecells")
                             .foregroundStyle(.secondary)
@@ -585,6 +612,10 @@ struct GroupsView: View {
     @State private var newName = ""
 
     var body: some View {
+        analyticsBody.analyticsScreen(.groups)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         List {
             if store.data.groups.isEmpty {
                 Text("Groups help sort habits by topic: morning, health, work.")
@@ -660,6 +691,10 @@ struct GroupDetailView: View {
     private var family: FamilyShare? { group?.family }
 
     var body: some View {
+        analyticsBody.analyticsScreen(.groupDetail)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         Form {
             Section("Name") {
                 TextField("Name", text: $name)
@@ -700,6 +735,7 @@ struct GroupDetailView: View {
                     ShareLink(item: url, subject: Text(group?.name ?? ""), message: Text("Join my group in ZenHab")) {
                         Label("Invite family", systemImage: "person.badge.plus")
                     }
+                    .analyticsTap(.familyInviteShare)
                 } else if !family.isOwner {
                     Label("Shared with you", systemImage: "person.2.fill")
                 }

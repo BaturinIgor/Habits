@@ -12,6 +12,10 @@ struct WhatsNewView: View {
     @State private var showingMood = false
 
     var body: some View {
+        analyticsBody.analyticsScreen(.whatsNew)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {

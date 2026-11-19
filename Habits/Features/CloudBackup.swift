@@ -161,6 +161,7 @@ final class CloudBackup {
 
     /// Заменяет данные на телефоне копией из iCloud.
     func restore(_ data: AppData) {
+        Analytics.shared.send(.backupRestored)
         HabitStore.shared.replaceAll(with: data)
         // Только что вернули эти данные: заново их не загружаем.
         UserDefaults.standard.set(Self.hash(HabitStore.shared.exportData()), forKey: Keys.hash)

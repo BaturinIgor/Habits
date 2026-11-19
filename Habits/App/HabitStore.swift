@@ -61,13 +61,15 @@ final class HabitStore {
         data.habits.first { $0.id == id }
     }
 
-    func upsert(_ habit: Habit) {
+    func upsert(_ habit: Habit, source: HabitSource = .editor) {
         if let index = data.habits.firstIndex(where: { $0.id == habit.id }) {
             data.habits[index] = habit
+            Analytics.shared.action(.edit)
         } else {
             var new = habit
             new.sortOrder = (data.habits.map(\.sortOrder).max() ?? -1) + 1
             data.habits.append(new)
+            Analytics.shared.send(.habitCreated(new, source: source))
         }
         commit()
     }
@@ -77,6 +79,10 @@ final class HabitStore {
         // уменьшало бы баланс искр и опыт питомца. Разницу запоминаем в кошельке.
         let earnedBefore = economy.report.total
         let xpBefore = data.wallet.pet.map { Pets.xp($0, data: data) }
+        if let removed = habit(id) {
+            let age = Calendar.app.dateComponents([.day], from: removed.createdAt, to: Date()).day ?? 0
+            Analytics.shared.send(.habitDeleted(ageDays: max(0, age), isQuit: removed.isQuit))
+        }
         data.habits.removeAll { $0.id == id }
         data.removeCheckIns(for: id)
         revision += 1
@@ -94,12 +100,14 @@ final class HabitStore {
     func relapse(_ id: UUID) {
         guard let index = data.habits.firstIndex(where: { $0.id == id }), data.habits[index].quit != nil else { return }
         data.habits[index].quit?.relapse()
+        Analytics.shared.action(.relapse)
         commit()
     }
 
     func setArchived(_ id: UUID, _ archived: Bool) {
         guard let index = data.habits.firstIndex(where: { $0.id == id }) else { return }
         data.habits[index].isArchived = archived
+        Analytics.shared.action(archived ? .archive : .unarchive)
         commit()
     }
 
@@ -118,6 +126,7 @@ final class HabitStore {
                 data.habits[index].sortOrder = position
             }
         }
+        Analytics.shared.action(.reorder)
         revision += 1
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()
@@ -184,6 +193,7 @@ final class HabitStore {
         guard case .shop(let price) = reward.unlock, !data.wallet.purchases.contains(reward.id), spend(price) else { return false }
         data.wallet.purchases.append(reward.id)
         if reward.kind == .avatar { data.settings.avatarID = reward.id } else { data.settings.backgroundID = reward.id }
+        Analytics.shared.action(.rewardBuy)
         commit()
         return true
     }
@@ -194,6 +204,7 @@ final class HabitStore {
     func buyFreeze() -> Bool {
         guard extraFreezesThisMonth < Sparks.maxExtraFreezes, spend(Sparks.freezePrice) else { return false }
         data.wallet.extraFreezes[Wallet.monthKey(Date()), default: 0] += 1
+        Analytics.shared.action(.freezeBuy)
         commit()
         return true
     }
@@ -230,6 +241,7 @@ final class HabitStore {
         data.wallet.repairs.append(AppData.key(habitID, repair.day))
         // Старые починки больше не влияют на текущие серии, но нужны для лучшей серии.
         if data.wallet.repairs.count > 500 { data.wallet.repairs.removeFirst(data.wallet.repairs.count - 500) }
+        Analytics.shared.action(.streakRepair)
         commit()
         return true
     }
@@ -248,6 +260,7 @@ final class HabitStore {
         let clean = name.trimmingCharacters(in: .whitespacesAndNewlines)
         data.wallet.pet = PetState(species: species, name: clean.isEmpty ? String(localized: "Buddy") : clean, adoptedAt: Date())
         data.wallet.keptPetXP = 0
+        Analytics.shared.send(.petAdopted(species: species))
         commit()
     }
 
@@ -255,6 +268,7 @@ final class HabitStore {
         let clean = name.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !clean.isEmpty else { return }
         data.wallet.pet?.name = clean
+        Analytics.shared.action(.petRename)
         commit()
     }
 
@@ -273,6 +287,7 @@ final class HabitStore {
             pet.feeds = pet.feeds.filter { $0.key >= old }
         }
         data.wallet.pet = pet
+        Analytics.shared.action(.petFeed)
         commit()
         return true
     }
@@ -290,6 +305,7 @@ final class HabitStore {
             reached = stage
         }
         guard let reached else { return nil }
+        Analytics.shared.send(.petStageReached(stage: reached.rawValue))
         data.wallet.pet = pet
         commit()
         return reached
@@ -303,6 +319,7 @@ final class HabitStore {
             data.wallet.ownedPets.append(species.id)
         }
         data.wallet.pet?.species = species.id
+        Analytics.shared.action(.petSpecies)
         commit()
         return true
     }
@@ -317,6 +334,7 @@ final class HabitStore {
             sortOrder: (data.groups.map(\.sortOrder).max() ?? -1) + 1
         )
         data.groups.append(group)
+        Analytics.shared.action(.groupAdd)
         commit()
         return group
     }
@@ -325,10 +343,12 @@ final class HabitStore {
         let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty, let index = data.groups.firstIndex(where: { $0.id == id }) else { return }
         data.groups[index].name = trimmed
+        Analytics.shared.action(.groupRename)
         commit()
     }
 
     func deleteGroup(_ id: UUID) {
+        Analytics.shared.action(.groupDelete)
         data.groups.removeAll { $0.id == id }
         for index in data.habits.indices where data.habits[index].groupID == id {
             data.habits[index].groupID = nil
@@ -346,12 +366,14 @@ final class HabitStore {
 
     func setFamily(_ family: FamilyShare?, for groupID: UUID) {
         guard let index = data.groups.firstIndex(where: { $0.id == groupID }) else { return }
+        if data.groups[index].family == nil, family?.isOwner == true { Analytics.shared.send(.familyGroupCreated) }
         data.groups[index].family = family
         commit(syncFamily: false)
     }
 
     /// Группа, в которую пригласили. id совпадает с id группы у владельца.
     func addFamilyGroup(id: UUID, name: String, family: FamilyShare) {
+        if !data.groups.contains(where: { $0.id == id && $0.family != nil }) { Analytics.shared.send(.familyGroupJoined) }
         if let index = data.groups.firstIndex(where: { $0.id == id }) {
             data.groups[index].family = family
         } else {
@@ -377,6 +399,7 @@ final class HabitStore {
     func moveGroups(from source: IndexSet, to destination: Int) {
         var groups = data.sortedGroups
         groups.move(fromOffsets: source, toOffset: destination)
+        Analytics.shared.action(.groupReorder)
         for (position, group) in groups.enumerated() {
             if let index = data.groups.firstIndex(where: { $0.id == group.id }) {
                 data.groups[index].sortOrder = position
@@ -393,7 +416,9 @@ final class HabitStore {
 
     func toggleDone(_ id: UUID, on day: Date) {
         let key = DayKey.make(day)
+        let wasDone = data.status(id, day: key) == .done
         data.tap(habitID: id, day: key)
+        trackCheck(data.status(id, day: key) == .done && !wasDone ? .check : .uncheck, day: key)
         commit()
         Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
         notifyChain(after: id, day: day)
@@ -402,9 +427,15 @@ final class HabitStore {
     func markMinimum(_ id: UUID, on day: Date) {
         let key = DayKey.make(day)
         data.markMinimum(habitID: id, day: key)
+        trackCheck(.minimum, day: key)
         commit()
         Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
         notifyChain(after: id, day: day)
+    }
+
+    private func trackCheck(_ action: AnalyticsAction, day: String) {
+        Analytics.shared.action(action)
+        if day != DayKey.make(Date()) { Analytics.shared.action(.checkPastDay) }
     }
 
     /// Связка привычек: после отметки напоминаем о следующих.
@@ -415,6 +446,7 @@ final class HabitStore {
     func setStatus(_ status: CheckStatus?, for id: UUID, on day: Date) {
         let key = DayKey.make(day)
         data.setStatus(status, habitID: id, day: key)
+        trackCheck(status == .done ? .check : status == nil ? .clearStatus : .skip, day: key)
         commit()
         if status != nil {
             Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
@@ -424,6 +456,7 @@ final class HabitStore {
 
     func setNote(_ note: String, for id: UUID, dayKey: String) {
         data.setNote(note, habitID: id, day: dayKey)
+        Analytics.shared.action(.noteSave)
         // Заметки влияют на ачивки (и искры за них), поэтому экраны должны пересчитаться.
         revision += 1
         DataFile.save(data)
@@ -446,6 +479,7 @@ final class HabitStore {
         }
         entry.updatedAt = Date()
         data.moods[dayKey] = entry
+        Analytics.shared.action(.moodSet)
         // Без перепланирования уведомлений и семейной синхронизации: дневник личный.
         revision += 1
         DataFile.save(data)
@@ -453,6 +487,7 @@ final class HabitStore {
 
     func removeMood(dayKey: String) {
         data.moods[dayKey] = nil
+        Analytics.shared.action(.moodRemove)
         revision += 1
         DataFile.save(data)
     }
@@ -462,6 +497,7 @@ final class HabitStore {
     /// Ответ на карточку слова. Сохраняем без перепланирования уведомлений: это частое действие.
     func answerWord(language: String, wordID: String, known: Bool) {
         data.answerWord(language: language, wordID: wordID, known: known, day: DayKey.make(Date()))
+        Analytics.shared.action(known ? .wordKnown : .wordUnknown)
         revision += 1
         DataFile.save(data)
     }
@@ -475,6 +511,7 @@ final class HabitStore {
     // MARK: Настройки
 
     func setPro(_ enabled: Bool) {
+        if data.settings.proUnlocked != enabled { Analytics.shared.send(.proChanged(active: enabled)) }
         data.settings.proUnlocked = enabled
         if !enabled {
             // Pro-награды без Pro не носим, возвращаем стандартные.
@@ -488,12 +525,21 @@ final class HabitStore {
 
     func decrement(_ id: UUID, on day: Date) {
         data.decrement(habitID: id, day: DayKey.make(day))
+        Analytics.shared.action(.decrement)
         commit()
     }
 
     /// Изменение настроек с сохранением и пересчётом уведомлений.
     func updateSettings(_ change: (inout AppSettings) -> Void) {
+        let before = data.settings
         change(&data.settings)
+        // Считаем только то, что меняет пользователь, а не служебные отметки.
+        var after = data.settings
+        after.seenAchievements = before.seenAchievements
+        after.whatsNewSeen = before.whatsNewSeen
+        after.onboardingDone = before.onboardingDone
+        after.gestureHintShown = before.gestureHintShown
+        if after != before { Analytics.shared.action(.settingsChange) }
         commit()
     }
 
@@ -514,6 +560,7 @@ final class HabitStore {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         guard let imported = try? decoder.decode(AppData.self, from: raw) else { return false }
+        Analytics.shared.action(.importData)
         replaceAll(with: imported)
         return true
     }
@@ -541,6 +588,7 @@ final class HabitStore {
         data = fresh
         guard data.habits.contains(where: { $0.id == habitID }) else { return }
         data.setStatus(action == NotificationPlanner.doneAction ? .done : .skipped, habitID: habitID, day: day)
+        Analytics.shared.action(action == NotificationPlanner.doneAction ? .checkFromNotification : .skipFromNotification)
         revision += 1
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()

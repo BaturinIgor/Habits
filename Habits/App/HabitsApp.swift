@@ -29,6 +29,7 @@ struct HabitsApp: App {
             switch phase {
             case .active:
                 store.reloadFromDisk()
+                Analytics.shared.appBecameActive()
                 Task { await AppLock.shared.unlockIfNeeded() }
                 Task {
                     // Пользователь в приложении: новые уведомления увидены, счётчик на иконке с нуля.
@@ -43,6 +44,7 @@ struct HabitsApp: App {
                 // Пока приложение открыто, изменения родных подтягиваем сами, не дожидаясь push.
                 FamilySync.shared.startLiveUpdates()
             case .background:
+                Analytics.shared.appWentToBackground()
                 AppLock.shared.lock()
                 FamilySync.shared.flushBeforeBackground()
                 CloudBackup.shared.backupBeforeBackground()

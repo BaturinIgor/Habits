@@ -111,6 +111,10 @@ struct VoiceHabitSheet: View {
     @State private var speech = SpeechRecognizer()
 
     var body: some View {
+        analyticsBody.analyticsScreen(.voiceHabit)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             VStack(spacing: 24) {
                 Spacer(minLength: 0)
