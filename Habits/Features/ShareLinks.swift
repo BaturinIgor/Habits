@@ -4,7 +4,7 @@ import UIKit
 
 /// Откуда поделились приложением. Метка `ct` в ссылке на App Store: в App Store Connect
 /// (Analytics → Campaigns) видно, какая карточка приводит установки.
-enum ShareCampaign: String {
+enum ShareCampaign: String, CaseIterable {
     case weekly = "share_weekly"
     case month = "share_month"
     case year = "share_year"
@@ -14,8 +14,7 @@ enum ShareCampaign: String {
 
 extension AppInfo {
     /// Provider token из App Store Connect (Analytics → Campaigns → Generate Campaign Link, параметр `pt`).
-    /// Без него Apple не засчитывает метку `ct`, поэтому пока он пустой, ссылка идёт без меток:
-    /// так QR-код короче и читается легче.
+    /// Без него Apple не засчитывает метку `ct`; если его очистить, ссылка пойдёт без меток.
     static let providerToken = "129723822"
 
     /// Ссылка на приложение в App Store для карточек «поделиться».
