@@ -189,12 +189,15 @@ struct SettingsView: View {
                     Text("Found a bug or have an idea? Every message is read.")
                 }
 
-                Section {
-                    Toggle(isOn: Binding(get: { !analyticsOptOut }, set: { Analytics.shared.setEnabled($0) })) {
-                        Label("Share anonymous statistics", systemImage: "chart.line.uptrend.xyaxis")
+                // Без Firebase (сборка для SideStore, отладка, автотесты) статистика не отправляется: выключатель не нужен.
+                if Analytics.isAvailable {
+                    Section {
+                        Toggle(isOn: Binding(get: { !analyticsOptOut }, set: { Analytics.shared.setEnabled($0) })) {
+                            Label("Share anonymous statistics", systemImage: "chart.line.uptrend.xyaxis")
+                        }
+                    } footer: {
+                        Text("Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood.")
                     }
-                } footer: {
-                    Text("Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood.")
                 }
 
                 Section {

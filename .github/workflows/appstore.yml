@@ -69,7 +69,7 @@ jobs:
       - name: Add Firebase config (analytics)
         env:
           GOOGLE_SERVICE_INFO_PLIST: ${{ secrets.GOOGLE_SERVICE_INFO_PLIST }}
-        run: tools/analytics/add_firebase_config.sh
+        run: tools/analytics/add_firebase_config.sh "$APP_ID"
 
       - name: Generate Xcode project
         run: xcodegen generate

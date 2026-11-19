@@ -6,7 +6,7 @@ import Foundation
 // событий на приложение и 25 параметров на событие, поэтому не создавайте имена на лету.
 
 /// Экраны приложения: уходят как screen_view с этим именем.
-enum AnalyticsScreen: String {
+enum AnalyticsScreen: String, CaseIterable {
     case today = "Today"
     case habits = "Habits"
     case stats = "Stats"
@@ -38,7 +38,7 @@ enum AnalyticsScreen: String {
 }
 
 /// Действия пользователя: каждое уходит своим событием с параметром screen.
-enum AnalyticsAction: String {
+enum AnalyticsAction: String, CaseIterable {
     // Отметки
     case check = "Habit.check"
     case uncheck = "Habit.uncheck"
@@ -158,7 +158,7 @@ enum AnalyticsEvent {
             if case .symbol = habit.icon { iconKind = "symbol" }
             return [
                 "Habit.source": source.rawValue,
-                "Habit.schedule": String(describing: habit.schedule.kind),
+                "Habit.schedule": habit.schedule.kind.rawValue,
                 "Habit.isQuit": habit.isQuit,
                 "Habit.isWords": habit.isWords,
                 "Habit.hasReminder": habit.reminder != nil,

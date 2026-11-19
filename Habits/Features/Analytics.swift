@@ -34,9 +34,22 @@ final class Analytics {
 
     private init() {}
 
-    /// Firebase настроен (есть GoogleService-Info.plist) и это не автотест.
+    /// Firebase настроен (есть GoogleService-Info.plist), это не автотест и не отладочная сборка.
+    /// В отладочной сборке статистику можно включить аргументом запуска -AnalyticsDebug (вместе с -FIRDebugEnabled
+    /// события видны в Firebase DebugView).
     static var isAvailable: Bool {
-        !TestMode.isUITest && Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil
+        guard !TestMode.isUITest, !isRunningTests,
+              Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil else { return false }
+        #if DEBUG
+        return ProcessInfo.processInfo.arguments.contains("-AnalyticsDebug")
+        #else
+        return true
+        #endif
+    }
+
+    /// Юнит-тесты запускают приложение как хост: там статистика не нужна даже с GoogleService-Info.plist.
+    private static var isRunningTests: Bool {
+        ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil || NSClassFromString("XCTestCase") != nil
     }
 
     /// Работает ли отправка: Firebase настроен и пользователь не выключил статистику.
@@ -60,8 +73,9 @@ final class Analytics {
 
     /// Приложение стало активным: событие установки (один раз) и состояние (раз в день).
     func appBecameActive() {
-        AnalyticsGestures.attachToWindows()
         guard isActive else { return }
+        // Без Firebase или после выключения в настройках жесты даже не наблюдаем.
+        AnalyticsGestures.attachToWindows()
         if !defaults.bool(forKey: Key.installSent) {
             defaults.set(true, forKey: Key.installSent)
             send(.appInstalled(isUpdate: HabitStore.shared.data.settings.onboardingDone))
@@ -71,11 +85,20 @@ final class Analytics {
         let today = DayKey.make(Date())
         if defaults.string(forKey: Key.stateDay) != today {
             defaults.set(today, forKey: Key.stateDay)
-            var payload = AnalyticsSnapshot.make(data)
-            if let first = defaults.object(forKey: Key.firstLaunch) as? Date {
-                payload["User.daysSinceInstall"] = max(0, Calendar.app.dateComponents([.day], from: first, to: Date()).day ?? 0)
+            let daysSinceInstall = (defaults.object(forKey: Key.firstLaunch) as? Date).map {
+                max(0, Calendar.app.dateComponents([.day], from: $0, to: Date()).day ?? 0)
             }
-            log("daily_state", payload)
+            // Снимок проходит по всем отметкам (на больших данных это сотни мс): считаем не на главном потоке,
+            // чтобы не тормозить запуск.
+            Task.detached(priority: .utility) {
+                var payload = AnalyticsSnapshot.make(data)
+                if let daysSinceInstall { payload["User.daysSinceInstall"] = daysSinceInstall }
+                let parameters = Self.firebaseParameters(payload)
+                await MainActor.run {
+                    guard Analytics.shared.isActive else { return }
+                    FirebaseAnalytics.Analytics.logEvent("daily_state", parameters: parameters)
+                }
+            }
         }
     }
 

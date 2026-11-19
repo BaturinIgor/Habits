@@ -13,3 +13,4 @@ android/build.log
 android/Habits.apk
 __pycache__/
 Habits/Resources/GoogleService-Info.plist
+tools/analytics/GoogleService-Info.plist

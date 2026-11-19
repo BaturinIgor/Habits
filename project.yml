@@ -83,6 +83,7 @@ targets:
         GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS: false
         GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED: false
         GOOGLE_ANALYTICS_REGISTRATION_WITH_AD_NETWORK_ENABLED: false
+        GOOGLE_ANALYTICS_ADID_COLLECTION_ENABLED: false
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.personal.habits
@@ -100,8 +101,10 @@ targets:
     dependencies:
       - target: HabitsWidget
         embed: true
+      # FirebaseAnalyticsCore, а не FirebaseAnalytics: без поддержки IDFA (AdSupport) и
+      # GoogleAdsOnDeviceConversion. Модуль тот же: import FirebaseAnalytics.
       - package: Firebase
-        product: FirebaseAnalytics
+        product: FirebaseAnalyticsCore
 
   HabitsWidget:
     type: app-extension

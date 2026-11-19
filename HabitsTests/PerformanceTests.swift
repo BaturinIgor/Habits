@@ -78,4 +78,20 @@ final class PerformanceTests: XCTestCase {
             _ = WeeklyRecap.lastWeek(in: data)
         }
     }
+
+    /// Статистика не должна тормозить интерфейс: daily_state считается на главном потоке при запуске,
+    /// а параметры собираются на каждое нажатие (событие gesture).
+    func testAnalyticsIsCheap() {
+        var data = Self.heavy
+        // С питомцем: снимок считает его стадию по опыту за все отметки.
+        data.wallet.pet = PetState(species: Pets.all[0].id, name: "Buddy", adoptedAt: Date().addingTimeInterval(-86400 * 365))
+        time("daily_state snapshot", limit: 0.3) {
+            _ = AnalyticsSnapshot.make(data)
+        }
+        time("1000 gesture payloads", limit: 0.1) {
+            for _ in 0..<1000 {
+                _ = Analytics.firebaseParameters(["screen": "Today", "kind": "tap"])
+            }
+        }
+    }
 }

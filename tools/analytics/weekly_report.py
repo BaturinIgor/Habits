@@ -34,10 +34,16 @@ REDOWNLOADS = {"3", "3F", "3T", "F3"}
 UPDATES = {"7", "7F", "7T", "F7"}
 
 
+REQUIRED = ("ASC_KEY_ID", "ASC_ISSUER_ID", "ASC_KEY_P8", "ASC_VENDOR_NUMBER")
+
+
 def token():
-    key = os.environ["ASC_KEY_P8"]
+    key = os.environ["ASC_KEY_P8"].strip()
     if "BEGIN PRIVATE KEY" not in key:
-        key = base64.b64decode(key).decode()
+        try:
+            key = base64.b64decode(key, validate=True).decode()
+        except ValueError:
+            fail("ASC_KEY_P8 должен быть текстом .p8 (-----BEGIN PRIVATE KEY-----...) или его base64.")
     now = int(time.time())
     return jwt.encode(
         {"iss": os.environ["ASC_ISSUER_ID"], "iat": now, "exp": now + 15 * 60, "aud": "appstoreconnect-v1"},
@@ -45,9 +51,14 @@ def token():
     )
 
 
+def fail(message):
+    print(f"::error::{message}")
+    sys.exit(1)
+
+
+# Сессия создаётся в main(), после проверки секретов: иначе без них скрипт падал бы с KeyError при импорте.
 SESSION = requests.Session()
-SESSION.headers.update({"Authorization": f"Bearer {token()}"})
-VENDOR = os.environ.get("ASC_VENDOR_NUMBER", "").strip()
+VENDOR = ""
 
 
 def fetch(report_type, sub_type, day, versions):
@@ -165,9 +176,17 @@ def delta(now, before):
 
 
 def main():
-    if not VENDOR:
-        print("::error::ASC_VENDOR_NUMBER не задан. Его видно в App Store Connect: Payments and Financial Reports, слева вверху.")
-        sys.exit(1)
+    global VENDOR
+    missing = [name for name in REQUIRED if not os.environ.get(name, "").strip()]
+    if missing:
+        hint = " ASC_VENDOR_NUMBER видно в App Store Connect: Payments and Financial Reports, слева вверху." \
+            if "ASC_VENDOR_NUMBER" in missing else ""
+        fail("Не заданы секреты: " + ", ".join(missing) + "." + hint)
+    VENDOR = os.environ["ASC_VENDOR_NUMBER"].strip()
+    try:
+        SESSION.headers.update({"Authorization": f"Bearer {token()}"})
+    except (ValueError, TypeError, jwt.PyJWTError) as error:
+        fail(f"Не удалось подписать токен App Store Connect ключом ASC_KEY_P8 ({type(error).__name__}). Проверьте ключ.")
     today = dt.date.today()
     week = available_days(today)
     prev = [d - dt.timedelta(days=7) for d in week]

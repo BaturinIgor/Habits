@@ -251,22 +251,83 @@ final class LogicTests: XCTestCase {
 
     // MARK: Статистика
 
-    /// В статистику не должно уходить ничего личного: ни названия, ни описания, ни заметки.
+    /// В статистику не должно уходить ничего личного: ни названия, ни описания, ни заметки, ни имени питомца,
+    /// ни названия группы. Проверяем то, что реально уходит в Firebase (после firebaseParameters), для всех событий.
     func testAnalyticsSendsNoPersonalText() {
         var habit = dailyHabit()
         habit.name = "SECRET-NAME"
         habit.details = "SECRET-DETAILS"
         var data = AppData()
         data.habits = [habit]
+        data.groups = [HabitGroup(name: "SECRET-GROUP", family: FamilyShare(zoneName: "SECRET-ZONE", ownerName: "SECRET-OWNER", isOwner: true, url: nil))]
+        data.wallet.pet = PetState(species: Pets.all.first?.id ?? "cat", name: "SECRET-PET", adoptedAt: Date())
         data.setStatus(.done, habitID: habit.id, day: DayKey.make(today))
         data.setNote("SECRET-NOTE", habitID: habit.id, day: DayKey.make(today))
         data.moods[DayKey.make(today)] = MoodEntry(level: 4, note: "SECRET-MOOD", updatedAt: Date())
-        var values = AnalyticsSnapshot.make(data).map { "\($0.key)=\($0.value)" }
-        values += AnalyticsEvent.habitCreated(habit, source: .editor).payload.map { "\($0.key)=\($0.value)" }
-        let all = values.joined(separator: " ")
+        let events: [AnalyticsEvent] = [
+            .appInstalled(isUpdate: true), .onboardingCompleted(seconds: 5, restoredFromCloud: false),
+            .habitCreated(habit, source: .editor), .habitDeleted(ageDays: 3, isQuit: false),
+            .paywallShown(source: "settings"), .purchaseStarted(product: "pro", source: "settings"),
+            .restoreFinished(found: false), .proChanged(active: true), .petAdopted(species: "cat"),
+            .petStageReached(stage: 1), .achievementUnlocked(id: "first"), .ratingPromptShown,
+            .familyGroupCreated, .familyGroupJoined, .feedbackSent(channel: "email"), .backupRestored,
+        ]
+        var payloads = [Analytics.firebaseParameters(AnalyticsSnapshot.make(data))]
+        payloads += events.map { Analytics.firebaseParameters($0.payload) }
+        let all = payloads.flatMap { $0.map { "\($0.key)=\($0.value)" } }.sorted().joined(separator: " ")
         XCTAssertFalse(all.contains("SECRET"), all)
-        XCTAssertTrue(all.contains("State.checks7d=1"), all)
-        XCTAssertTrue(all.contains("State.moods7d=1"), all)
+        // Снимок не пустой: проверка выше действительно что-то проверяла.
+        XCTAssertTrue(all.contains("state_checks7d=1"), all)
+        XCTAssertTrue(all.contains("state_moods7d=1"), all)
+        XCTAssertTrue(all.contains("state_family_groups=1"), all)
+        XCTAssertTrue(all.contains("state_has_pet=1"), all)
+        // Значения только числа и короткие строки-идентификаторы, без пробелов (текст пользователя был бы с ними).
+        for payload in payloads {
+            for (key, value) in payload {
+                if let text = value as? String { XCTAssertFalse(text.contains(" "), "\(key)=\(text)") }
+            }
+        }
+    }
+
+    /// Все имена событий, экранов и параметров укладываются в лимиты Firebase и не заняты им самим.
+    func testAnalyticsNamesFitFirebaseLimits() {
+        let reservedPrefixes = ["firebase_", "google_", "ga_"]
+        func check(_ raw: String, file: StaticString = #filePath, line: UInt = #line) {
+            let name = Analytics.firebaseName(raw)
+            XCTAssertFalse(name.isEmpty, raw, file: file, line: line)
+            XCTAssertLessThan(name.count, 40, "\(raw) обрезается до 40 символов", file: file, line: line)
+            XCTAssertTrue(name.first?.isLetter == true, name, file: file, line: line)
+            XCTAssertTrue(name.allSatisfy { $0.isASCII && ($0.isLetter || $0.isNumber || $0 == "_") }, name, file: file, line: line)
+            XCTAssertFalse(reservedPrefixes.contains { name.hasPrefix($0) }, name, file: file, line: line)
+        }
+        let actions = AnalyticsAction.allCases.map(\.rawValue)
+        actions.forEach { check($0) }
+        AnalyticsScreen.allCases.forEach { check($0.rawValue) }
+        // Разные действия не должны склеиваться в одно имя.
+        XCTAssertEqual(Set(actions.map(Analytics.firebaseName)).count, actions.count)
+        var habit = dailyHabit()
+        habit.reminder = nil
+        let events: [AnalyticsEvent] = [
+            .appInstalled(isUpdate: true), .onboardingCompleted(seconds: 5, restoredFromCloud: false),
+            .habitCreated(habit, source: .catalog), .habitDeleted(ageDays: 3, isQuit: false),
+            .paywallShown(source: "settings"), .purchaseStarted(product: "pro", source: "settings"),
+            .purchaseCompleted(product: "pro", source: "settings"), .purchaseCancelled(product: "pro", source: "settings"),
+            .purchaseFailed(product: "pro", source: "settings"), .restoreFinished(found: false), .proChanged(active: true),
+            .petAdopted(species: "cat"), .petStageReached(stage: 1), .achievementUnlocked(id: "first"),
+            .ratingPromptShown, .familyGroupCreated, .familyGroupJoined, .feedbackSent(channel: "email"), .backupRestored,
+        ]
+        for event in events {
+            check(event.type)
+            event.payload.keys.forEach { check($0) }
+            // + value и screen, которые добавляет Analytics.send.
+            XCTAssertLessThanOrEqual(event.payload.count + 2, 25, event.type)
+        }
+        let snapshot = AnalyticsSnapshot.make(AppData())
+        snapshot.keys.forEach { check($0) }
+        // + User.daysSinceInstall, который добавляется в appBecameActive.
+        XCTAssertLessThanOrEqual(snapshot.count + 1, 25)
+        // Всего разных событий намного меньше лимита в 500.
+        XCTAssertLessThan(actions.count + events.count + 3, 500)
     }
 
     /// Имена и параметры в формате Firebase: только буквы, цифры и _, до 40 символов, не больше 25 параметров.

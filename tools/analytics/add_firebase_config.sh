@@ -1,21 +1,40 @@
 #!/bin/bash
 # Кладёт GoogleService-Info.plist в приложение перед xcodegen (только сборка для App Store).
 # Берётся из секрета GOOGLE_SERVICE_INFO_PLIST (содержимое файла или base64), иначе из
-# tools/analytics/GoogleService-Info.plist. Без файла статистика в приложении выключена.
+# tools/analytics/GoogleService-Info.plist (файл в .gitignore). Без файла статистика в приложении выключена.
+#
+# Использование: tools/analytics/add_firebase_config.sh [ожидаемый bundle ID]
+# Если файла нет, он испорчен или выписан на другой bundle ID, сборка не падает: статистика просто выключена.
 set -euo pipefail
 DIR="$(cd "$(dirname "$0")" && pwd)"
-DEST="Habits/Resources/GoogleService-Info.plist"
+DEST="$DIR/../../Habits/Resources/GoogleService-Info.plist"
+EXPECTED_ID="${1:-}"
+
+skip() {
+  rm -f "$DEST"
+  echo "::warning::$1 Статистика в этой сборке выключена."
+  exit 0
+}
+
 if [ -n "${GOOGLE_SERVICE_INFO_PLIST:-}" ]; then
   if printf '%s' "$GOOGLE_SERVICE_INFO_PLIST" | grep -q "<plist"; then
     printf '%s' "$GOOGLE_SERVICE_INFO_PLIST" > "$DEST"
-  else
-    printf '%s' "$GOOGLE_SERVICE_INFO_PLIST" | base64 --decode > "$DEST"
+  elif ! printf '%s' "$GOOGLE_SERVICE_INFO_PLIST" | base64 --decode > "$DEST" 2>/dev/null; then
+    skip "Секрет GOOGLE_SERVICE_INFO_PLIST не похож ни на plist, ни на base64."
   fi
 elif [ -f "$DIR/GoogleService-Info.plist" ]; then
   cp "$DIR/GoogleService-Info.plist" "$DEST"
 else
-  echo "::warning::GoogleService-Info.plist не найден: статистика в этой сборке выключена."
-  exit 0
+  skip "GoogleService-Info.plist не найден (секрет GOOGLE_SERVICE_INFO_PLIST не задан)."
 fi
-/usr/libexec/PlistBuddy -c "Print :BUNDLE_ID" "$DEST" >/dev/null
-echo "Firebase Analytics подключён."
+
+# Испорченный файл уронил бы приложение в FirebaseApp.configure(), поэтому проверяем ключи.
+for key in BUNDLE_ID GOOGLE_APP_ID API_KEY GCM_SENDER_ID PROJECT_ID; do
+  /usr/libexec/PlistBuddy -c "Print :$key" "$DEST" >/dev/null 2>&1 \
+    || skip "В GoogleService-Info.plist нет ключа $key."
+done
+BUNDLE_ID="$(/usr/libexec/PlistBuddy -c "Print :BUNDLE_ID" "$DEST")"
+if [ -n "$EXPECTED_ID" ] && [ "$BUNDLE_ID" != "$EXPECTED_ID" ]; then
+  skip "GoogleService-Info.plist выписан на $BUNDLE_ID, а приложение собирается как $EXPECTED_ID."
+fi
+echo "Firebase Analytics подключён ($BUNDLE_ID)."
