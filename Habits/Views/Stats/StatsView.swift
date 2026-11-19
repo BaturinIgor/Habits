@@ -8,6 +8,10 @@ struct StatsView: View {
     @State private var showingMood = false
 
     var body: some View {
+        analyticsBody.analyticsScreen(.stats)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 16) {

@@ -8,6 +8,10 @@ struct SparksView: View {
     @State private var showingPet = false
 
     var body: some View {
+        analyticsBody.analyticsScreen(.sparks)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         let economy = store.economy
         let r = economy.report
         NavigationStack {

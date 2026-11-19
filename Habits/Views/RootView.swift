@@ -131,6 +131,7 @@ struct RootView: View {
         let fresh = Achievements.all.filter { unlocked.contains($0.id) && !seen.contains($0.id) }
         guard let first = fresh.first else { return }
         store.updateSettings { $0.seenAchievements = Array(seen.union(unlocked)).sorted() }
+        for achievement in fresh { Analytics.shared.send(.achievementUnlocked(id: achievement.id)) }
         withAnimation(.spring(response: 0.45, dampingFraction: 0.8)) {
             banner = (first, fresh.count - 1)
         }

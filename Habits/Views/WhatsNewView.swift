@@ -11,6 +11,10 @@ struct WhatsNewView: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
+        analyticsBody.analyticsScreen(.whatsNew)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {

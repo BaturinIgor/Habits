@@ -20,6 +20,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
+        Analytics.shared.start()
         UNUserNotificationCenter.current().delegate = self
         NotificationPlanner.registerCategories()
         // Apple Watch: отметки с часов могут прийти, даже когда приложение запущено в фоне.

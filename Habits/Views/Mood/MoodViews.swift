@@ -102,6 +102,10 @@ struct MoodEntryEditor: View {
     @FocusState private var focused: Bool
 
     var body: some View {
+        analyticsBody.analyticsScreen(.moodEditor)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 16) {
                 Text(DayKey.date(dayKey).map { Fmt.relativeDay($0) } ?? dayKey)
@@ -193,6 +197,10 @@ struct MoodJournalView: View {
     @State private var showingPaywall = false
 
     var body: some View {
+        analyticsBody.analyticsScreen(.moodJournal)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         let items = MoodJournal.items(in: store.data)
         let isPro = store.data.isPro
         NavigationStack {

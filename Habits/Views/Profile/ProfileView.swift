@@ -30,6 +30,10 @@ struct ProfileView: View {
     private let smallGrid = [GridItem(.adaptive(minimum: 64), spacing: 12)]
 
     var body: some View {
+        analyticsBody.analyticsScreen(.profile)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         let facts = AchievementFacts(data: store.data)
         let unlocked = store.unlockedAchievementIDs
         let isPro = store.data.isPro

@@ -84,4 +84,20 @@ final class PerformanceTests: XCTestCase {
             _ = Recap.year(in: data)
         }
     }
+
+    /// Статистика не должна тормозить: daily_state считается в фоне при запуске (но держит ядро и батарею),
+    /// а параметры собираются на главном потоке на каждое нажатие (событие gesture).
+    func testAnalyticsIsCheap() {
+        var data = Self.heavy
+        // С питомцем: снимок считает его стадию по опыту за все отметки.
+        data.wallet.pet = PetState(species: Pets.all[0].id, name: "Buddy", adoptedAt: Date().addingTimeInterval(-86400 * 365))
+        time("daily_state snapshot", limit: 0.3) {
+            _ = AnalyticsSnapshot.make(data)
+        }
+        time("1000 gesture payloads", limit: 0.1) {
+            for _ in 0..<1000 {
+                _ = Analytics.firebaseParameters(["screen": "Today", "kind": "tap"])
+            }
+        }
+    }
 }

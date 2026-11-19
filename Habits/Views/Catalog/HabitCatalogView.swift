@@ -24,6 +24,10 @@ struct HabitCatalogView: View {
     private let columns = [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)]
 
     var body: some View {
+        analyticsBody.analyticsScreen(.catalog)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 22) {
@@ -128,7 +132,7 @@ struct HabitCatalogView: View {
         new.id = UUID()
         new.createdAt = Date()
         if new.quit != nil { new.quit = QuitInfo() }
-        withAnimation(.snappy) { store.upsert(new) }
+        withAnimation(.snappy) { store.upsert(new, source: .catalog) }
         added += 1
         if new.reminder != nil {
             Task {

@@ -6,6 +6,7 @@ struct OnboardingView: View {
     @State private var page = 0
     /// Копия в iCloud, найденная при первом запуске (например, на новом телефоне).
     @State private var cloudCopy: (info: CloudBackup.Info, data: AppData)?
+    @State private var startedAt = Date()
 
     private struct Page {
         let icon: String
@@ -81,6 +82,7 @@ struct OnboardingView: View {
             .padding(.bottom, 24)
         }
         .uiTestScreen("onboarding")
+        .analyticsScreen(.onboarding)
         .background(AppBackground())
         .task {
             // Новый телефон или переустановка: предлагаем вернуть копию из iCloud.
@@ -94,7 +96,7 @@ struct OnboardingView: View {
         ) { copy in
             Button("Restore") {
                 CloudBackup.shared.restore(copy.data)
-                finish()
+                finish(restored: true)
             }
             Button("Start over", role: .cancel) {}
         } message: { copy in
@@ -102,7 +104,8 @@ struct OnboardingView: View {
         }
     }
 
-    private func finish() {
+    private func finish(restored: Bool = false) {
+        Analytics.shared.send(.onboardingCompleted(seconds: Int(Date().timeIntervalSince(startedAt)), restoredFromCloud: restored))
         store.updateSettings { $0.onboardingDone = true; $0.whatsNewSeen = WhatsNewView.version }
         Task {
             await NotificationPlanner.requestAuthorizationIfNeeded()

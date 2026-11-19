@@ -15,6 +15,10 @@ struct HabitTimerView: View {
     }
 
     var body: some View {
+        analyticsBody.analyticsScreen(.timer)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             VStack(spacing: 28) {
                 Spacer(minLength: 0)

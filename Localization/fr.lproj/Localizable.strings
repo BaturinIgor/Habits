@@ -308,6 +308,7 @@
 "Hatches after a few check-ins" = "Éclot après quelques validations";
 "Have 30 perfect days" = "Cumule 30 journées parfaites";
 "Health" = "Santé";
+"Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood." = "Aide à améliorer ZenHab : seulement les écrans et boutons utilisés. Jamais tes habitudes, notes ou humeur.";
 "Hide keyboard" = "Masquer le clavier";
 "Hours of sleep" = "Heures de sommeil";
 "How are you today?" = "Comment ça va aujourd'hui ?";
@@ -595,6 +596,7 @@
 "Settings" = "Réglages";
 "Share" = "Partager";
 "Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "Partage un groupe avec ta famille, par exemple « Chien » ou « Maison ». Tout le monde voit les mêmes habitudes, les coche et reçoit des rappels.";
+"Share anonymous statistics" = "Partager des statistiques anonymes";
 "Share with family" = "Partager avec la famille";
 "Shared data" = "Données partagées";
 "Shared with you" = "Partagé avec toi";
