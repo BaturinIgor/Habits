@@ -782,3 +782,5 @@ Your days and the habits that lift your mood||Твои дни и привычк�
 Your whole mood history, a monthly chart and which habits lift your mood.||Вся история настроения, график за месяц и привычки, которые его поднимают.||Dein ganzer Stimmungsverlauf, ein Monatsdiagramm und welche Gewohnheiten deine Stimmung heben.||Tout l'historique de ton humeur, un graphique du mois et les habitudes qui l'améliorent.||Todo tu historial de ánimo, un gráfico mensual y qué hábitos lo mejoran.||完整的心情历史、月度图表，以及让你心情变好的习惯。||気分の全履歴、月間グラフ、気分を上げる習慣。||전체 기분 기록, 월간 그래프, 기분을 올려 주는 습관.||पूरा मूड इतिहास, मासिक चार्ट और मूड बेहतर करने वाली आदतें।
 ZenHab is locked||ZenHab заблокирован||ZenHab ist gesperrt||ZenHab est verrouillé||ZenHab está bloqueado||ZenHab 已锁定||ZenHabはロックされています||ZenHab이 잠겨 있어요||ZenHab लॉक है
 passcode||код-пароль||Code||code||código||密码||パスコード||암호||पासकोड
+%lld XP||%lld опыта||%lld EP||%lld XP||%lld XP||%lld 经验||%lld XP||경험치 %lld||%lld XP
+Pet name||Имя питомца||Name des Haustiers||Nom du compagnon||Nombre de la mascota||宠物名字||ペットの名前||펫 이름||पालतू का नाम

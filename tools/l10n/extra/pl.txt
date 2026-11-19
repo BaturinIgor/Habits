@@ -781,3 +781,5 @@ Your days and the habits that lift your mood||Twoje dni i nawyki, które poprawi
 Your whole mood history, a monthly chart and which habits lift your mood.||Cała historia nastroju, wykres miesiąca i nawyki, które go poprawiają.
 ZenHab is locked||ZenHab jest zablokowany
 passcode||kod
+%lld XP||%lld XP
+Pet name||Imię zwierzaka

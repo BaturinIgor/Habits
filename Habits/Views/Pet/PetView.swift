@@ -90,7 +90,7 @@ struct PetView: View {
             }
             .sheet(isPresented: $showingPaywall) { PaywallView(highlight: .pets) }
             .alert("Rename", isPresented: $renaming) {
-                TextField("Name", text: $renameText)
+                TextField("Pet name", text: $renameText)
                 Button("Save") { store.renamePet(renameText) }
                 Button("Cancel", role: .cancel) {}
             }
@@ -225,7 +225,7 @@ struct PetView: View {
                         }
                         Spacer(minLength: 0)
                         if !reached {
-                            Text(verbatim: "\(stage.threshold) XP")
+                            Text("\(stage.threshold) XP")
                                 .font(.caption.weight(.semibold))
                                 .monospacedDigit()
                                 .foregroundStyle(.secondary)
@@ -316,7 +316,7 @@ struct PetView: View {
                     }
                 }
             }
-            TextField("Name", text: $name)
+            TextField("Pet name", text: $name)
                 .textFieldStyle(.roundedBorder)
                 .submitLabel(.done)
             Button {
