@@ -34,6 +34,10 @@ final class HabitStore {
     /// Растёт при каждом сохранении, чтобы экраны могли реагировать на любые изменения.
     private(set) var revision = 0
 
+    /// Растёт, только когда пользователь сам отметил привычку в приложении или покормил питомца:
+    /// питомец подпрыгивает. Отметки из виджета, Siri, Здоровья и синхронизации сюда не попадают.
+    private(set) var petCheers = 0
+
     private func commit(syncFamily: Bool = true) {
         revision += 1
         DataFile.save(data)
@@ -267,6 +271,7 @@ final class HabitStore {
         // выражении приводили к падению (одновременный доступ к памяти).
         guard var pet = data.wallet.pet else { return false }
         pet.feeds[DayKey.make(Date()), default: 0] += 1
+        petCheers += 1
         // Старые записи о кормлении не нужны дольше года.
         if let cutoff = Calendar.app.date(byAdding: .day, value: -400, to: Date()) {
             let old = DayKey.make(cutoff)
@@ -394,6 +399,7 @@ final class HabitStore {
     func toggleDone(_ id: UUID, on day: Date) {
         let key = DayKey.make(day)
         data.tap(habitID: id, day: key)
+        if data.status(id, day: key) == .done { petCheers += 1 }
         commit()
         Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
         notifyChain(after: id, day: day)
@@ -402,6 +408,7 @@ final class HabitStore {
     func markMinimum(_ id: UUID, on day: Date) {
         let key = DayKey.make(day)
         data.markMinimum(habitID: id, day: key)
+        if data.status(id, day: key) == .done { petCheers += 1 }
         commit()
         Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
         notifyChain(after: id, day: day)
@@ -412,9 +419,11 @@ final class HabitStore {
         NotificationPlanner.notifyChain(after: id, day: day, data: data)
     }
 
-    func setStatus(_ status: CheckStatus?, for id: UUID, on day: Date) {
+    /// - Parameter byUser: отметку поставил сам пользователь на экране приложения (питомец радуется).
+    func setStatus(_ status: CheckStatus?, for id: UUID, on day: Date, byUser: Bool = false) {
         let key = DayKey.make(day)
         data.setStatus(status, habitID: id, day: key)
+        if byUser && status == .done { petCheers += 1 }
         commit()
         if status != nil {
             Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }

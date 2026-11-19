@@ -59,7 +59,9 @@ struct PetStyle {
     ]
 
     /// Нарисованный вид для id из Pets.all; nil - рисуем эмодзи.
-    static func style(for species: String) -> PetStyle? { all.first { $0.id == species } }
+    static func style(for species: String) -> PetStyle? { byID[species] }
+
+    private static let byID = Dictionary(all.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
 }
 
 // MARK: - Состояния приложения -> дизайн
@@ -96,7 +98,8 @@ enum PetArt {
 /// Готовые фигуры питомца в координатах дизайна. Позы (дыхание, моргание, хвост) накладываются при отрисовке.
 struct PetScene {
     enum Group: Equatable { case still, tail, eyes, z(Int), spark(Int) }
-    enum Paint { case color(Color), fur }
+    /// fur - градиент меха; shadow - тень на земле, цвет зависит от темы.
+    enum Paint { case color(Color), fur, shadow }
 
     struct Stroke {
         var color: Color
@@ -188,7 +191,7 @@ struct PetScene {
             add("M30 60 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4z", fill: gold, body: false)
             add("M170 66 l3 7 l7 3 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -3z", fill: gold, body: false)
         }
-        addPath(ellipse(100, 184, 56 * s, 7), fill: color(.black), body: false, opacity: 0.18)
+        addPath(ellipse(100, 184, 56 * s, 7), fill: .shadow, body: false, opacity: 0.18)
 
         // Задний слой: хвосты, панцирь, крылья за спиной.
         if stage >= 1 {
@@ -593,7 +596,8 @@ enum PetRenderer {
     static let designSize = CGSize(width: 200, height: 210)
     static let designOriginY: CGFloat = -22
 
-    static func draw(_ scene: PetScene, pose: PetPose, in context: inout GraphicsContext, size: CGSize) {
+    /// - Parameter shadow: цвет тени; на тёмном фоне чёрная тень не видна, поэтому там она светлая.
+    static func draw(_ scene: PetScene, pose: PetPose, in context: inout GraphicsContext, size: CGSize, shadow: Color = .black) {
         let k = min(size.width / designSize.width, size.height / designSize.height)
         var root = context
         root.translateBy(x: (size.width - designSize.width * k) / 2, y: (size.height - designSize.height * k) / 2 - designOriginY * k)
@@ -644,6 +648,7 @@ enum PetRenderer {
                 if let fill {
                     switch fill {
                     case .fur: c.fill(path, with: shading)
+                    case .shadow: c.fill(path, with: .color(shadow))
                     case .color(let color): c.fill(path, with: .color(color))
                     }
                 }
@@ -682,6 +687,7 @@ struct PetArtView: View {
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.colorScheme) private var colorScheme
     @State private var visible = false
     @State private var lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
     @State private var reactedAt: Date?
@@ -699,15 +705,16 @@ struct PetArtView: View {
         let scene = PetScene.cached(style, stage: stage, emotion: emotion)
         let level = level
         Group {
+            let shadow = colorScheme == .dark ? Color.white.opacity(0.55) : Color.black
             if level == .still {
-                Self.canvas(scene, pose: .rest)
+                Self.canvas(scene, pose: .rest, shadow: shadow)
             } else {
                 TimelineView(.animation(minimumInterval: level == .full ? 1.0 / 30 : 1.0 / 20,
                                         paused: !visible || scenePhase == .background)) { timeline in
                     let date = timeline.date
                     let pose = PetPose.at(date.timeIntervalSinceReferenceDate, emotion: emotion, full: level == .full,
                                           reaction: reactedAt.map { date.timeIntervalSince($0) })
-                    Self.canvas(scene, pose: pose)
+                    Self.canvas(scene, pose: pose, shadow: shadow)
                 }
                 .drawingGroup()
             }
@@ -720,19 +727,20 @@ struct PetArtView: View {
             lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
         }
         .onChange(of: reaction) { old, new in
-            guard new > old, motion != .none else { return }
-            let start = Date()
-            reactedAt = start
-            Task { @MainActor in
-                try? await Task.sleep(for: .seconds(1.6))
-                if reactedAt == start { reactedAt = nil }
-            }
+            // Без анимации (виджет, «Уменьшение движения», энергосбережение) мордочку не меняем.
+            guard new > old, level != .still else { return }
+            reactedAt = Date()
+        }
+        .task(id: reactedAt) {
+            guard let start = reactedAt else { return }
+            do { try await Task.sleep(for: .seconds(1.6)) } catch { return }
+            if reactedAt == start { reactedAt = nil }
         }
     }
 
-    static func canvas(_ scene: PetScene, pose: PetPose) -> some View {
+    static func canvas(_ scene: PetScene, pose: PetPose, shadow: Color = .black) -> some View {
         Canvas { context, size in
-            PetRenderer.draw(scene, pose: pose, in: &context, size: size)
+            PetRenderer.draw(scene, pose: pose, in: &context, size: size, shadow: shadow)
         }
     }
 }
@@ -766,6 +774,13 @@ enum SVGPath {
                 } else { break }
             }
             return CGFloat(Double(String(decoding: chars[begin..<i], as: UTF8.self)) ?? 0)
+        }
+        /// Флаг дуги - один символ 0 или 1, поэтому «00» и «0 0» читаются одинаково.
+        func flag() -> Bool {
+            skipSeparators()
+            guard i < chars.count else { return false }
+            defer { i += 1 }
+            return chars[i] == 49
         }
         func point(relative: Bool) -> CGPoint {
             let x = number(), y = number()
@@ -809,7 +824,7 @@ enum SVGPath {
                 path.addQuadCurve(to: end, control: c1)
                 current = end
             case 97: // a
-                let rx = number(), ry = number(), rotation = number(), large = number() != 0, sweep = number() != 0
+                let rx = number(), ry = number(), rotation = number(), large = flag(), sweep = flag()
                 let end = point(relative: relative)
                 addArc(&path, from: current, rx: rx, ry: ry, rotation: rotation, large: large, sweep: sweep, to: end)
                 current = end

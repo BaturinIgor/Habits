@@ -12,7 +12,7 @@ struct PetCard: View {
                     let xp = Pets.xp(pet, data: store.data)
                     let stage = Pets.stage(pet, data: store.data)
                     let mood = Pets.mood(pet, data: store.data)
-                    PetAvatar(pet: pet, stage: stage, mood: mood, size: 64, reaction: xp)
+                    PetAvatar(pet: pet, stage: stage, mood: mood, size: 64, reaction: store.petCheers)
                     VStack(alignment: .leading, spacing: 3) {
                         Text(pet.name).font(.headline)
                         Text("\(stage.title) · \(mood.title)")
@@ -108,7 +108,7 @@ struct PetView: View {
 
         VStack(spacing: 10) {
             ZStack(alignment: .top) {
-                PetAvatar(pet: pet, stage: stage, mood: mood, size: 200, reaction: xp + hearts)
+                PetAvatar(pet: pet, stage: stage, mood: mood, size: 200, reaction: hearts)
                     .id("\(pet.species)-\(stage.rawValue)")
                     .onTapGesture { pat() }
                     .sensoryFeedback(.impact(weight: .light), trigger: hearts)
@@ -278,6 +278,7 @@ struct PetView: View {
                     // У малыша верх рисунка пустой: показываем нижнюю часть квадрата.
                     PetArtView(style: style, stage: 0, mood: .happy, size: 64, motion: .none)
                         .frame(height: 44, alignment: .bottom)
+                        .clipped()
                         .accessibilityHidden(true)
                 } else {
                     Text(species.baby).font(.system(size: 38))

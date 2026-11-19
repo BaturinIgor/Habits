@@ -46,6 +46,33 @@ final class PetArtTests: XCTestCase {
         let arc = SVGPath.parse("M110 50 A10 10 0 0 0 90 50").boundingRect
         XCTAssertEqual(arc.width, 20, accuracy: 0.1)
         XCTAssertEqual(arc.minY, 40, accuracy: 0.1)
+        // Флаги дуги слитно («00») и относительная дуга с sweep 1 (через низ).
+        XCTAssertEqual(SVGPath.parse("M110 50 A10 10 0 00 90 50").boundingRect.minY, 40, accuracy: 0.1)
+        let relArc = SVGPath.parse("M110 50 a10 10 0 0 1 -20 0").boundingRect
+        XCTAssertEqual(relArc.minX, 90, accuracy: 0.1)
+        XCTAssertEqual(relArc.maxY, 60, accuracy: 0.1)
+
+        // Неявный повтор команды: после l, после M (→ L) и после m (→ l).
+        let zigzag = SVGPath.parse("M10 10 l5 5 5 -5").boundingRect
+        XCTAssertEqual(zigzag, CGRect(x: 10, y: 10, width: 10, height: 5))
+        let implicitL = SVGPath.parse("M0 0 10 0 10 4").boundingRect
+        XCTAssertEqual(implicitL, CGRect(x: 0, y: 0, width: 10, height: 4))
+        let implicitRel = SVGPath.parse("m10 10 5 5").boundingRect
+        XCTAssertEqual(implicitRel, CGRect(x: 10, y: 10, width: 5, height: 5))
+        // Отрицательные числа без пробела, «.5» и экспонента.
+        XCTAssertEqual(SVGPath.parse("M0 0 L10 0 -5 .5").boundingRect, CGRect(x: -5, y: 0, width: 15, height: 0.5))
+        let exponent = SVGPath.parse("M0 0 L1e1 0-2e-1 2.5E0").boundingRect
+        XCTAssertEqual(exponent.minX, -0.2, accuracy: 0.001)
+        XCTAssertEqual(exponent.maxX, 10, accuracy: 0.001)
+        XCTAssertEqual(exponent.maxY, 2.5, accuracy: 0.001)
+        // Относительные кривые: q и c от текущей точки.
+        let quad = SVGPath.parse("M10 0 q5 5 10 0").boundingRect
+        XCTAssertEqual(quad.minX, 10, accuracy: 0.01)
+        XCTAssertEqual(quad.maxX, 20, accuracy: 0.01)
+        XCTAssertEqual(quad.height, 2.5, accuracy: 0.01)
+        let cubic = SVGPath.parse("M0 0 L5 0 c0 10 10 10 10 0").boundingRect
+        XCTAssertEqual(cubic.maxX, 15, accuracy: 0.01)
+        XCTAssertEqual(cubic.height, 7.5, accuracy: 0.01)
     }
 
     func testSceneLayersPerStageAndEmotion() {
@@ -132,6 +159,21 @@ final class PetArtTests: XCTestCase {
         .padding(20)
         .background(Color(red: 0x4a / 255, green: 0x55 / 255, blue: 0x66 / 255))
         try Self.write(motion, to: dir.appendingPathComponent("kan86-cat-motion.png"))
+
+        // Размеры питомца в виджетах (78 и 110 pt), статично, во сне - проверка текста «z» и тени в обеих темах.
+        let pet = PetState(species: "cat", name: "Test", adoptedAt: Date())
+        for scheme in [ColorScheme.light, .dark] {
+            let widgets = HStack(spacing: 16) {
+                PetAvatar(pet: pet, stage: .adult, mood: .sleeping, size: 78, motion: .none)
+                    .frame(width: 170, height: 170)
+                PetAvatar(pet: pet, stage: .legend, mood: .lonely, size: 110, motion: .none)
+                    .frame(width: 364, height: 170)
+            }
+            .padding(16)
+            .background(scheme == .dark ? Color.black : Color.white)
+            .environment(\.colorScheme, scheme)
+            try Self.write(widgets, to: dir.appendingPathComponent("kan86-widget-\(scheme == .dark ? "dark" : "light").png"))
+        }
     }
 
     // MARK: Помощники

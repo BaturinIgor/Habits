@@ -116,7 +116,7 @@ struct HabitTimerView: View {
                 .accessibilityIdentifier("timer.start")
 
                 Button {
-                    store.setStatus(.done, for: habit.id, on: Date())
+                    store.setStatus(.done, for: habit.id, on: Date(), byUser: true)
                     finished += 1
                     dismiss()
                 } label: {

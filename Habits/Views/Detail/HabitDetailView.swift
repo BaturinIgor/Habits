@@ -294,7 +294,7 @@ struct MonthCalendarCard: View {
         .contextMenu {
             if canEdit {
                 Button {
-                    store.setStatus(.done, for: habit.id, on: date)
+                    store.setStatus(.done, for: habit.id, on: date, byUser: true)
                 } label: { Label("Mark as done", systemImage: "checkmark.circle") }
                 Button {
                     store.setStatus(.skipped, for: habit.id, on: date)
