@@ -9,7 +9,7 @@ ZenHab: hábitos y rutinas
 Rachas, metas y recordatorios
 
 ## Promotional text
-Hábitos que se quedan: recordatorios amables, rachas, una mascota que crece contigo y widgets para marcar con un toque. Sin cuenta, tus datos se quedan en tu iPhone.
+Hábitos que se quedan, ahora también en el Apple Watch: márcalos desde la muñeca, mira tu resumen del mes y del año, con una mascota que crece contigo. Sin cuenta.
 
 ## Keywords
 habito,seguimiento,tracker,planificador,diario,metas,recordatorio,widget,productividad,agua,racha
@@ -31,12 +31,15 @@ RECORDATORIOS QUE FUNCIONAN
 
 PROGRESO Y MOTIVACIÓN
 • Racha actual y mejor racha, porcentaje de cumplimiento, calendario, gráficos y mapa de calor
+• Resumen semanal, mensual y anual para compartir como imagen
 • Logros, una mascota que crece con cada hábito y chispas para nuevas mascotas, avatares y fondos
 • Aprende palabras: 500 palabras frecuentes en 14 idiomas con pronunciación y repetición espaciada
 • Widgets para la pantalla de inicio y la de bloqueo
+• Apple Watch: marca los hábitos de hoy desde la muñeca, complicaciones para la esfera y temporizador con Pro
 
 PRIVADO
-• Todos tus datos se quedan en tu iPhone. Sin cuenta, sin anuncios, sin rastreo
+• Tus hábitos se quedan en tu iPhone. Sin cuenta, sin anuncios, sin rastreo
+• Estadísticas de uso anónimas, que puedes desactivar en Ajustes
 • Exporta e importa copias de seguridad
 
 ZENHAB PRO
@@ -48,8 +51,11 @@ Condiciones de uso: https://www.apple.com/legal/internet-services/itunes/dev/std
 Privacidad: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Diario de ánimo: valora tu día con un toque en Hoy y añade unas palabras. Con Pro, verás todo el historial, un gráfico mensual y qué hábitos mejoran tu ánimo.
-• Nuevos iconos (Pro): Atardecer, Bosque, Rosa, Oro, Medianoche y Clara.
-• Bloqueo con Face ID (Pro): solo tú puedes abrir tus hábitos y tu diario.
-• Exportar a CSV (Pro): todas las marcas con notas y ánimo en una tabla para Numbers, Excel o Google Sheets.
-• La pantalla Pro ahora muestra todo lo que incluye y la prueba gratuita cuando está disponible.
+• ZenHab en el Apple Watch: los hábitos de hoy en tu muñeca, marcados con un toque (en los hábitos con contador, cada toque suma uno). Funciona sin conexión y se sincroniza con tu iPhone.
+• Complicaciones para la esfera: circular, de esquina, rectangular y en línea. Ve tu progreso del día de un vistazo.
+• Temporizador de hábitos en el Apple Watch (Pro): cuando acaba el tiempo, el reloj te da un toque en la muñeca y marca el hábito.
+• Resumen mensual y Resumen anual: en Estadísticas o en Hoy al empezar el mes, y puedes compartirlos como imagen.
+• Las imágenes que compartes ahora llevan un código QR y se envían junto con un enlace a ZenHab en el App Store.
+• Las 11 mascotas tienen dibujo nuevo: más suave y con volumen, 4 etapas, emociones y animaciones tranquilas. Respiran, parpadean, mueven la cola y dan un salto cuando marcas un hábito.
+• Estadísticas de uso anónimas para saber qué mejorar. Nunca se envía nada de lo que escribes, y puedes desactivarlas en Ajustes.
+• Las tarjetas de resumen se ven mejor con texto grande, y la pantalla de la mascota ya está traducida del todo.

@@ -9,10 +9,10 @@ ZenHab: Habit Tracker
 Daily routine, streaks, goals
 
 ## Promotional text
-Build habits that stick: gentle reminders, streaks, a pet that grows with you and widgets that check off a habit in one tap. No account needed.
+Build habits that stick, now on Apple Watch too: check off from your wrist, see your month and year in review, and grow a pet along the way. No account needed.
 
 ## Keywords
-habits,routine,planner,daily,goals,reminder,streak,self care,widget,productivity,water,todo,journal
+habits,routine,planner,daily,goals,reminder,streak,self care,widget,productivity,water,watch,journal
 
 ## Description
 ZenHab helps you build good habits and keep them, one calm day at a time.
@@ -37,9 +37,10 @@ SEE YOUR PROGRESS
 • Current and best streaks, completion rate
 • Calendar, charts and an activity heatmap
 • Achievements for streaks, perfect days and weeks
+• Week, month and year in review cards, shared as a picture
 
 STAY MOTIVATED
-• A pet hatches from an egg and grows with every habit you check off
+• A pet hatches from an egg and grows through four stages with every habit you check off
 • Earn sparks for check-ins and spend them on new pets, avatars, backgrounds and streak freezes
 • Confetti when the whole day is done
 
@@ -54,9 +55,15 @@ WIDGETS
 • Check off a habit from Control Center, the Lock Screen or the Action button (iOS 18)
 • Siri and Shortcuts
 
+APPLE WATCH
+• Today's habits on your wrist, checked off with one tap
+• Watch face complications: circular, corner, rectangular and inline
+• Works offline and syncs with your iPhone
+
 PRIVATE BY DESIGN
 • Your habits stay on your iPhone and in your own iCloud
 • No account, no ads, no tracking
+• Anonymous usage statistics help improve the app, and you can turn them off in Settings
 • Automatic iCloud backup, plus export and import whenever you want
 
 ZENHAB PRO
@@ -68,7 +75,7 @@ The free version includes up to 5 active habits. Pro adds:
 • Exclusive pets (dragon, unicorn, phoenix), a monthly gift of 100 sparks and a higher daily limit
 • Exclusive avatars and backgrounds
 • Apple Health: link a habit to steps, sleep, water, workouts or mindful minutes, and it checks itself off when you reach the goal. Health data is read on your iPhone and never leaves it
-• Habit timer with a countdown on the Lock Screen and in the Dynamic Island
+• Habit timer with a countdown on the Lock Screen, in the Dynamic Island and on Apple Watch
 
 Pro is available as a monthly or yearly subscription or as a one-time lifetime purchase. Payment is charged to your Apple Account at confirmation of purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. You can manage and cancel subscriptions in Settings, Apple Account, Subscriptions.
 
@@ -78,8 +85,11 @@ Privacy Policy: https://baturinigor.github.io/Habits/privacy.html
 The app is available in 14 languages: English, Russian, German, French, Spanish, Portuguese, Italian, Turkish, Polish, Indonesian, Chinese, Japanese, Korean and Hindi.
 
 ## What's New
-• Mood journal: rate your day with one tap on Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood.
-• New app icons (Pro): Sunset, Forest, Rose, Gold, Midnight and Light.
-• Face ID lock (Pro): only you can open your habits and journal.
-• Export to CSV (Pro): all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets.
-• The Pro screen now shows everything it includes, and a free trial when it's available.
+• ZenHab on Apple Watch: today's habits on your wrist, checked off with one tap (habits with a count go up by one with each tap). Works offline and syncs with your iPhone.
+• Watch face complications: circular, corner, rectangular and inline, so you see today's progress at a glance.
+• Habit timer on Apple Watch (Pro): when time is up, the watch taps your wrist and checks the habit off.
+• Month in review and Year in review: find them in Statistics, or on Today at the start of a month, and share them as a picture.
+• Shared pictures now have a QR code, and they go out with a link to ZenHab on the App Store.
+• All 11 pets are redrawn: soft new art, 4 growth stages, emotions and gentle animations. They breathe, blink, wag their tails and jump when you check off a habit.
+• Anonymous usage statistics help us see what to improve. Nothing you type is ever sent, and you can turn them off in Settings.
+• Review cards look better with large text, and the pet screen is now fully translated.

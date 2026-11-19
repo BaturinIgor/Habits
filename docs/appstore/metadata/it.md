@@ -7,7 +7,7 @@ ZenHab: tracker abitudini
 Routine, serie e obiettivi
 
 ## Promotional text
-Abitudini che restano: promemoria gentili, serie, un animaletto che cresce con te e widget per spuntare con un tocco. Nessun account, i tuoi dati restano sull'iPhone.
+Abitudini che restano, ora anche su Apple Watch: spunta dal polso, guarda il riepilogo del mese e dell'anno, con un cucciolo che cresce con te. Nessun account.
 
 ## Keywords
 abitudini,routine,planner,quotidiano,obiettivi,promemoria,serie,widget,produttività,acqua,diario
@@ -29,12 +29,15 @@ PROMEMORIA CHE FUNZIONANO
 
 PROGRESSI E MOTIVAZIONE
 • Serie attuale e migliore, percentuale di completamento, calendario, grafici e mappa di calore
+• Riepilogo della settimana, del mese e dell'anno da condividere come immagine
 • Traguardi, un animaletto che cresce a ogni abitudine e scintille per nuovi animaletti, avatar e sfondi
 • Impara parole: 500 parole comuni in 14 lingue con pronuncia e ripetizione dilazionata
 • Widget per la schermata Home e la schermata di blocco
+• Apple Watch: spunta le abitudini di oggi dal polso, complicazioni per il quadrante e timer con Pro
 
 PRIVATO
-• Tutti i dati restano sul tuo iPhone. Nessun account, nessuna pubblicità, nessun tracciamento
+• Le tue abitudini restano sul tuo iPhone. Nessun account, nessuna pubblicità, nessun tracciamento
+• Statistiche d'uso anonime, disattivabili in Impostazioni
 • Esporta e importa i backup
 
 ZENHAB PRO
@@ -46,8 +49,11 @@ Termini d'uso: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacy: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Diario dell'umore: valuta la giornata con un tocco in Oggi e aggiungi qualche parola. Con Pro vedi tutta la cronologia, un grafico mensile e le abitudini che migliorano l'umore.
-• Nuove icone dell'app (Pro): Tramonto, Foresta, Rosa, Oro, Mezzanotte e Chiara.
-• Blocco con Face ID (Pro): solo tu puoi aprire abitudini e diario.
-• Esporta in CSV (Pro): tutte le spunte con note e umore in una tabella per Numbers, Excel o Fogli Google.
-• La schermata Pro ora mostra tutto ciò che include e la prova gratuita quando è disponibile.
+• ZenHab su Apple Watch: le abitudini di oggi al polso, da spuntare con un tocco (per quelle con un conteggio, ogni tocco aggiunge uno). Funziona anche offline e si sincronizza con l'iPhone.
+• Complicazioni per il quadrante: circolare, angolare, rettangolare e in linea. Vedi a colpo d'occhio come va la giornata.
+• Timer delle abitudini su Apple Watch (Pro): allo scadere, l'orologio ti dà un colpetto al polso e spunta l'abitudine.
+• Riepilogo del mese e Riepilogo dell'anno: in Statistiche o in Oggi a inizio mese, da condividere come immagine.
+• Le immagini che condividi ora hanno un codice QR e partono insieme a un link a ZenHab sull'App Store.
+• Tutti gli 11 cuccioli sono stati ridisegnati: un nuovo stile morbido, 4 fasi di crescita, emozioni e animazioni delicate. Respirano, sbattono le palpebre, muovono la coda e fanno un salto quando spunti un'abitudine.
+• Statistiche d'uso anonime per capire cosa migliorare. Non viene mai inviato nulla di ciò che scrivi, e puoi disattivarle in Impostazioni.
+• Le schede di riepilogo si leggono meglio con il testo grande, e la schermata del cucciolo ora è tutta tradotta.
