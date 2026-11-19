@@ -5,6 +5,7 @@
 "%@ free, then %@. Cancel anytime." = "%1$@無料、その後%2$@。いつでも解約できます。";
 "%@ is already done today." = "%@は今日もう完了しています。";
 "%@: the streak broke" = "%@：連続記録が途切れました";
+"%lld XP" = "%lld XP";
 "%lld min" = "%lld分";
 "%lld more to %@" = "%2$@まであと%1$lld";
 "%lld of %lld" = "%lld / %lld";
@@ -514,6 +515,7 @@
 "Perfect week" = "パーフェクトな週";
 "Pet" = "ペット";
 "Pet gifts" = "ペットのおくりもの";
+"Pet name" = "ペットの名前";
 "Phoenix" = "フェニックス";
 "Pick a template or create your own." = "テンプレートを選ぶか、自分で作成しましょう。";
 "Plan the day" = "1日の計画を立てる";

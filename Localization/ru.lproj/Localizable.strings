@@ -5,6 +5,7 @@
 "%@ free, then %@. Cancel anytime." = "%1$@ бесплатно, затем %2$@. Отмена в любой момент.";
 "%@ is already done today." = "%@ уже выполнено сегодня.";
 "%@: the streak broke" = "%@: серия прервалась";
+"%lld XP" = "%lld опыта";
 "%lld min" = "%lld мин";
 "%lld more to %@" = "Ещё %lld до стадии \"%@\"";
 "%lld of %lld" = "%lld из %lld";
@@ -514,6 +515,7 @@
 "Perfect week" = "Идеальная неделя";
 "Pet" = "Питомец";
 "Pet gifts" = "Подарки питомца";
+"Pet name" = "Имя питомца";
 "Phoenix" = "Феникс";
 "Pick a template or create your own." = "Выбери шаблон или создай свою.";
 "Plan the day" = "Спланировать день";
