@@ -48,6 +48,8 @@ enum AnalyticsAction: String, CaseIterable {
     case skip = "Habit.skip"
     case clearStatus = "Habit.clearStatus"
     case decrement = "Habit.decrement"
+    /// +1 у привычки со счётчиком, цель ещё не достигнута.
+    case increment = "Habit.increment"
     case checkPastDay = "Habit.checkPastDay"
     case checkFromNotification = "Notification.done"
     case skipFromNotification = "Notification.skip"
@@ -89,6 +91,27 @@ enum AnalyticsAction: String, CaseIterable {
     case appIconChange = "AppIcon.change"
     case paywallClose = "Paywall.close"
     case restoreTap = "Paywall.restore"
+}
+
+/// Какое действие отметки отправить, по состоянию до и после.
+enum AnalyticsCheck {
+    /// Нажатие на кружок (AppData.tap): выполнено, снято, +1 к счётчику или ничего.
+    static func tap(before: CheckStatus?, after: CheckStatus?, countBefore: Int, countAfter: Int) -> AnalyticsAction? {
+        if after == .done && before != .done { return .check }
+        if before == .done && after != .done { return .uncheck }
+        if countAfter > countBefore { return .increment }
+        return nil
+    }
+
+    /// Явная установка статуса (меню, отметка за прошлый день). Тот же статус ещё раз ничего не меняет.
+    static func set(before: CheckStatus?, after: CheckStatus?) -> AnalyticsAction? {
+        guard before != after else { return nil }
+        switch after {
+        case .done: return .check
+        case nil: return .clearStatus
+        default: return .skip
+        }
+    }
 }
 
 /// Откуда создана привычка.

@@ -11,7 +11,7 @@
 |---|---|
 | `screen_view` (`screen_name`) | показ экрана; из этого Firebase считает время, сессии и пути между экранами |
 | `gesture` (`screen`, `kind`: tap, longPress, swipeLeft/Right/Up/Down) | каждое нажатие и свайп в окне приложения, в том числе по пустому месту (это не только нажатия на кнопки). Активации через VoiceOver и другие спецвозможности не считаются: они не проходят как касания |
-| `habit_check`, `habit_skip`, `pet_feed`, `data_export_csv`... (`screen`) | действия из `AnalyticsAction` |
+| `habit_check`, `habit_uncheck`, `habit_increment`, `habit_skip`, `pet_feed`, `data_export_csv`... (`screen`) | действия из `AnalyticsAction`. `habit_increment` - +1 у привычки со счётчиком без достижения цели, `habit_uncheck` - только снятие выполненной отметки |
 | `app_installed`, `onboarding_completed`, `habit_created`, `habit_deleted`, `paywall_shown`, `purchase_started/completed/cancelled/failed`, `purchase_restored`, `pro_changed`, `pet_adopted`, `pet_stage_reached`, `achievement_unlocked`, `rating_prompt_shown`, `family_group_created/joined`, `feedback_sent`, `backup_restored` | важные события с параметрами из `AnalyticsEvent` |
 | `daily_state` | раз в день: число привычек, групп, отметок и записей настроения за 7 дней, питомец, настройки |
 | user properties `is_pro`, `first_seen_week` | для сравнения групп и когорт. `first_seen_week` и `daily_state.user_days_since_first_seen` считаются от первого запуска версии 1.6+, у обновившихся это не неделя установки (их отличает `app_installed.app_is_update = 1`) |

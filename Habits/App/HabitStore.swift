@@ -440,9 +440,15 @@ final class HabitStore {
 
     func toggleDone(_ id: UUID, on day: Date) {
         let key = DayKey.make(day)
-        let wasDone = data.status(id, day: key) == .done
+        let before = data.status(id, day: key)
+        let wasDone = before == .done
+        let countBefore = data.habits.first { $0.id == id }.map { data.count(of: $0, day: key) } ?? 0
         data.tap(habitID: id, day: key)
-        trackCheck(data.status(id, day: key) == .done && !wasDone ? .check : .uncheck, day: key)
+        let countAfter = data.habits.first { $0.id == id }.map { data.count(of: $0, day: key) } ?? 0
+        if let action = AnalyticsCheck.tap(before: before, after: data.status(id, day: key),
+                                           countBefore: countBefore, countAfter: countAfter) {
+            trackCheck(action, day: key)
+        }
         // Промежуточные +1 у привычек со счётчиком питомца не радуют: только итоговая отметка.
         if !wasDone && data.status(id, day: key) == .done { petCheers += 1 }
         commit()
@@ -489,9 +495,10 @@ final class HabitStore {
     /// - Parameter byUser: отметку поставил сам пользователь на экране приложения (питомец радуется).
     func setStatus(_ status: CheckStatus?, for id: UUID, on day: Date, byUser: Bool = false) {
         let key = DayKey.make(day)
-        let wasDone = data.status(id, day: key) == .done
+        let before = data.status(id, day: key)
+        let wasDone = before == .done
         data.setStatus(status, habitID: id, day: key)
-        trackCheck(status == .done ? .check : status == nil ? .clearStatus : .skip, day: key)
+        if let action = AnalyticsCheck.set(before: before, after: status) { trackCheck(action, day: key) }
         if byUser && !wasDone && status == .done { petCheers += 1 }
         commit()
         if status != nil {

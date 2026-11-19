@@ -786,6 +786,45 @@ final class LogicTests: XCTestCase {
         }
     }
 
+    /// Нажатия на кружок в статистике: +1 у счётчика - increment, достижение цели - check,
+    /// снятие выполненной - uncheck. Частичное +1 не должно считаться снятием отметки.
+    func testAnalyticsTapActions() {
+        var data = AppData()
+        data.settings.proUnlocked = true
+        var habit = dailyHabit()
+        habit.target = 3
+        data.habits = [habit]
+        let day = DayKey.make(today)
+        func tap() -> AnalyticsAction? {
+            let before = data.status(habit.id, day: day)
+            let countBefore = data.count(of: habit, day: day)
+            data.tap(habitID: habit.id, day: day)
+            return AnalyticsCheck.tap(before: before, after: data.status(habit.id, day: day),
+                                      countBefore: countBefore, countAfter: data.count(of: habit, day: day))
+        }
+        XCTAssertEqual(tap(), .increment)
+        XCTAssertEqual(tap(), .increment)
+        XCTAssertEqual(tap(), .check)
+        XCTAssertEqual(tap(), .uncheck)
+
+        // Обычная привычка: отметка и снятие.
+        var simple = AppData()
+        let single = dailyHabit()
+        simple.habits = [single]
+        let before = simple.status(single.id, day: day)
+        simple.tap(habitID: single.id, day: day)
+        XCTAssertEqual(AnalyticsCheck.tap(before: before, after: simple.status(single.id, day: day), countBefore: 0, countAfter: 1), .check)
+        simple.tap(habitID: single.id, day: day)
+        XCTAssertEqual(AnalyticsCheck.tap(before: .done, after: simple.status(single.id, day: day), countBefore: 1, countAfter: 0), .uncheck)
+
+        // Явная установка статуса: повтор того же статуса ничего не отправляет.
+        XCTAssertEqual(AnalyticsCheck.set(before: nil, after: .done), .check)
+        XCTAssertNil(AnalyticsCheck.set(before: .done, after: .done))
+        XCTAssertEqual(AnalyticsCheck.set(before: .done, after: .skipped), .skip)
+        XCTAssertEqual(AnalyticsCheck.set(before: .skipped, after: nil), .clearStatus)
+        XCTAssertNil(AnalyticsCheck.set(before: nil, after: nil))
+    }
+
     /// Выключатель статистики: без выбора действует enabledByDefault, выбор пользователя сохраняется.
     func testAnalyticsUserChoice() {
         let defaults = UserDefaults(suiteName: "analytics-tests-\(UUID().uuidString)")!
