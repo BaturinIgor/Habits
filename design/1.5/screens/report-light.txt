@@ -1,0 +1,1 @@
+not confirmed: 21-editor-new-group, 22-editor-delete-confirm, 35-pet-rename, 42-groups-new, 48-backup-restored, 49-settings-restart-hint, 52-feedback-thanks, 53-feedback-failed, 54-feedback-no-mail, 55-feedback-copied
