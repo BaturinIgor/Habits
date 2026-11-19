@@ -1,3 +1,5 @@
+import CoreImage
+import SwiftUI
 import XCTest
 @testable import Habits
 
@@ -74,6 +76,42 @@ final class LogicTests: XCTestCase {
         XCTAssertFalse(recap.hasData)
         XCTAssertEqual(recap.percent, 0)
         XCTAssertNil(recap.top)
+    }
+
+    // MARK: Ссылка на App Store при шеринге (1.6)
+
+    func testShareLinkPointsToAppStore() {
+        let url = AppInfo.appStoreURL(campaign: .weekly)
+        XCTAssertEqual(url.host, "apps.apple.com")
+        XCTAssertEqual(url.path, "/app/id\(AppInfo.appStoreID)")
+        if AppInfo.providerToken.isEmpty {
+            // Без provider token Apple метки не считает, поэтому их нет.
+            XCTAssertNil(url.query)
+        } else {
+            let items = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems ?? []
+            XCTAssertTrue(items.contains(URLQueryItem(name: "pt", value: AppInfo.providerToken)))
+            XCTAssertTrue(items.contains(URLQueryItem(name: "ct", value: "share_weekly")))
+        }
+        XCTAssertTrue(ShareSheet.message(campaign: .weekly).hasSuffix(" " + url.absoluteString))
+    }
+
+    /// QR-код на картинке «Итогов недели» читается и ведёт в App Store.
+    @MainActor
+    func testWeeklyRecapShareImageHasReadableQRCode() throws {
+        var data = AppData()
+        data.habits = [dailyHabit(startOffset: -40)]
+        let renderer = ImageRenderer(content:
+            WeeklyRecapCard(recap: WeeklyRecap.lastWeek(in: data), forSharing: true)
+                .frame(width: 360)
+                .padding(20)
+                .background(Color.white)
+                .environment(\.colorScheme, .light)
+        )
+        renderer.scale = 3
+        let image = try XCTUnwrap(renderer.cgImage)
+        let detector = try XCTUnwrap(CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]))
+        let codes = detector.features(in: CIImage(cgImage: image)).compactMap { ($0 as? CIQRCodeFeature)?.messageString }
+        XCTAssertEqual(codes, [AppInfo.appStoreURL(campaign: .weekly).absoluteString])
     }
 
     // MARK: Бросаю

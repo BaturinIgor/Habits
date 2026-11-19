@@ -5,6 +5,8 @@ import UIKit
 /// поэтому цвета заданы явно и не зависят от темы.
 struct WeeklyRecapCard: View {
     let recap: WeeklyRecap
+    /// Картинка для «Поделиться»: внизу QR-код со ссылкой на App Store вместо простой подписи.
+    var forSharing = false
 
     private var range: String {
         let start = recap.start.formatted(.dateTime.day().month(.abbreviated))
@@ -71,12 +73,16 @@ struct WeeklyRecapCard: View {
                 .font(.subheadline.weight(.semibold))
             }
 
-            HStack(spacing: 6) {
-                Image(systemName: "leaf.fill")
-                Text(verbatim: "ZenHab")
+            if forSharing {
+                ShareCardFooter(campaign: .weekly)
+            } else {
+                HStack(spacing: 6) {
+                    Image(systemName: "leaf.fill")
+                    Text(verbatim: "ZenHab")
+                }
+                .font(.caption.weight(.bold))
+                .opacity(0.75)
             }
-            .font(.caption.weight(.bold))
-            .opacity(0.75)
         }
         .foregroundStyle(.white)
         .padding(22)
@@ -114,9 +120,9 @@ struct WeeklyRecapView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.displayScale) private var displayScale
     let recap: WeeklyRecap
-    /// Картинка карточки и PNG-файл с ней. Делимся файлом: ShareLink с SwiftUI Image
-    /// показывал в окне «Поделиться» бесконечную загрузку.
-    @State private var shareImage: (preview: Image, file: URL)?
+    /// PNG-файл с картинкой карточки. Делимся файлом: SwiftUI Image в окне «Поделиться»
+    /// показывал бесконечную загрузку.
+    @State private var shareFile: URL?
 
     var body: some View {
         NavigationStack {
@@ -127,16 +133,16 @@ struct WeeklyRecapView: View {
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
-                    if let shareImage {
-                        ShareLink(
-                            item: shareImage.file,
-                            preview: SharePreview(String(localized: "My week"), image: shareImage.preview)
-                        ) {
+                    if let shareFile {
+                        Button {
+                            ShareSheet.present(image: shareFile, campaign: .weekly)
+                        } label: {
                             Label("Share", systemImage: "square.and.arrow.up")
                                 .frame(maxWidth: .infinity)
                         }
                         .buttonStyle(.borderedProminent)
                         .controlSize(.large)
+                        .accessibilityIdentifier("recap.share")
                     }
                 }
                 .padding(20)
@@ -166,7 +172,7 @@ struct WeeklyRecapView: View {
     @MainActor
     private func render() {
         let renderer = ImageRenderer(content:
-            WeeklyRecapCard(recap: recap)
+            WeeklyRecapCard(recap: recap, forSharing: true)
                 .frame(width: 360)
                 .padding(20)
                 .background(Color.white)
@@ -177,7 +183,7 @@ struct WeeklyRecapView: View {
         let file = FileManager.default.temporaryDirectory
             .appendingPathComponent("ZenHab-week-\(DayKey.make(recap.start)).png")
         guard (try? png.write(to: file, options: .atomic)) != nil else { return }
-        shareImage = (Image(uiImage: uiImage), file)
+        shareFile = file
     }
 }
 

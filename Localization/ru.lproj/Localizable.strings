@@ -567,6 +567,7 @@
 "Saved: %@" = "Сэкономлено: %@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Скажи: «Отметь привычку в ZenHab», «Добавь привычку в ZenHab» или «Что осталось в ZenHab».";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Скажи, например: «Таблетки собаке раз в месяц 15 числа в 9 утра» или «Читать через день вечером».";
+"Scan to get ZenHab" = "Наведи камеру, чтобы скачать ZenHab";
 "Schedule" = "Расписание";
 "Scheduled notifications" = "Запланировано уведомлений";
 "See how much money you save by quitting a habit." = "Сколько денег ты экономишь, бросив привычку.";
@@ -684,6 +685,7 @@
 "Total, days" = "Всего, дней";
 "Track expenses" = "Записать расходы";
 "Track habits, get gentle reminders and watch your streaks grow." = "Отмечай привычки, получай мягкие напоминания и смотри, как растут серии.";
+"Track your habits with ZenHab" = "Отслеживай привычки в ZenHab";
 "Try again" = "Попробовать ещё раз";
 "Try it" = "Попробовать";
 "Turn on the lock" = "Включить блокировку";
