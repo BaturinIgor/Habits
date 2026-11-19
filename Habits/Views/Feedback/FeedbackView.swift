@@ -187,6 +187,7 @@ struct FeedbackView: View {
                 }
                 .ignoresSafeArea()
             }
+            .designAlert("sendOptions", $showingSendOptions)
             .confirmationDialog("Send the message", isPresented: $showingSendOptions, titleVisibility: .visible) {
                 Button("Open mail app") { openMailApp() }
                 Button("Copy message and address") {
@@ -197,16 +198,19 @@ struct FeedbackView: View {
             } message: {
                 Text("Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to \(AppInfo.supportEmail).")
             }
+            .designAlert("copied", $copied)
             .alert("Copied", isPresented: $copied) {
                 Button("OK", role: .cancel) {}
             } message: {
                 Text("Paste the message into any mail app and send it to \(AppInfo.supportEmail).")
             }
+            .designAlert("thanks", $showingThanks)
             .alert("Thank you!", isPresented: $showingThanks) {
                 Button("OK", role: .cancel) { dismiss() }
             } message: {
                 Text("Your message has been sent.")
             }
+            .designAlert("sendFailed", $showingSendFailed)
             .alert("Couldn't send the message", isPresented: $showingSendFailed) {
                 Button("Try again") { send() }
                 Button("Send by email") { sendByEmail() }
@@ -214,6 +218,7 @@ struct FeedbackView: View {
             } message: {
                 Text("Check your internet connection and try again, or send it by email.")
             }
+            .designAlert("noMail", $showingNoMail)
             .alert("No mail account", isPresented: $showingNoMail) {
                 Button("Copy address") {
                     UIPasteboard.general.string = AppInfo.supportEmail

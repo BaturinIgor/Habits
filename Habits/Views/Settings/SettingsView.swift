@@ -161,6 +161,7 @@ struct SettingsView: View {
             .sheet(isPresented: $showingFeedback) {
                 FeedbackView()
             }
+            .designAlert("restartHint", $showingRestartHint)
             .alert("Restart the app", isPresented: $showingRestartHint) {
                 Button("OK", role: .cancel) {}
             } message: {
@@ -481,6 +482,7 @@ struct GroupsView: View {
                 EditButton()
             }
         }
+        .designAlert("groupNew", $showingNew)
         .alert("New group", isPresented: $showingNew) {
             TextField("Name", text: $newName)
             Button("Cancel", role: .cancel) {}
@@ -517,6 +519,7 @@ struct GroupDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear { name = group?.name ?? "" }
         .onDisappear(perform: saveName)
+        .designAlert("familyEnd", $confirmEnd)
         .confirmationDialog(
             family?.isOwner == false ? String(localized: "Leave group?") : String(localized: "Stop sharing?"),
             isPresented: $confirmEnd,

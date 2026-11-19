@@ -108,6 +108,19 @@ targets:
         PROVISIONING_PROFILE_SPECIFIER: $(WIDGET_PROFILE_NAME)
         SKIP_INSTALL: "YES"
 
+  HabitsUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: HabitsUITests
+    dependencies:
+      - target: Habits
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.personal.habits.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TEST_TARGET_NAME: Habits
+
 schemes:
   Habits:
     build:
@@ -116,5 +129,10 @@ schemes:
         HabitsWidget: all
     run:
       config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: false
+      targets:
+        - HabitsUITests
     archive:
       config: Release
