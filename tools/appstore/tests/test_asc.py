@@ -498,6 +498,7 @@ class ScreenshotSafetyTests(unittest.TestCase):
             ("PATCH", "/appScreenshots/N1"): {},
             ("GET", "/appScreenshots/N1"): {"data": {"attributes": {"assetDeliveryState": {"state": state}}}},
             ("PATCH", "/appScreenshotSets/S/relationships/appScreenshots"): {},
+            ("DELETE", "/appScreenshots/N1"): {},
         }
         for o in old:
             routes[("DELETE", f"/appScreenshots/{o['id']}")] = {}
@@ -527,7 +528,9 @@ class ScreenshotSafetyTests(unittest.TestCase):
         out, code = self.run_main(c)
         self.assertEqual(code, 1)
         self.assertNotIn(("DELETE", "/appScreenshots/old0"), c.writes())
-        self.assertIn("старые скриншоты на месте", out)
+        # Созданный, но не догруженный новый скриншот убран: в наборе остались только старые.
+        self.assertEqual(c.writes()[-1], ("DELETE", "/appScreenshots/N1"))
+        self.assertIn("загруженные новые убраны", out)
         self.assertIn("Запусти workflow ещё раз", out)
 
     def test_rejected_upload_keeps_old_screenshots(self):
@@ -536,7 +539,8 @@ class ScreenshotSafetyTests(unittest.TestCase):
         out, code = self.run_main(c)
         self.assertEqual(code, 1)
         self.assertNotIn(("DELETE", "/appScreenshots/old0"), c.writes())
-        self.assertIn("старые скриншоты оставлены", out)
+        self.assertEqual(c.writes()[-1], ("DELETE", "/appScreenshots/N1"))
+        self.assertIn("загруженные новые убраны", out)
 
     def test_full_set_deletes_first_and_reports_incomplete(self):
         self.write("ru/01.png", png(1320, 2868))
@@ -544,6 +548,7 @@ class ScreenshotSafetyTests(unittest.TestCase):
         out, code = self.run_main(c)
         self.assertEqual(code, 1)
         self.assertEqual(c.writes()[0], ("DELETE", "/appScreenshots/old0"))
+        self.assertNotIn(("DELETE", "/appScreenshots/N1"), c.writes())
         self.assertIn("набор пустой или неполный", out)
 
     def test_no_locale_folder_fails(self):
@@ -568,6 +573,20 @@ class ScreenshotSafetyTests(unittest.TestCase):
         self.assertEqual(errors, [])
         self.assertEqual(len(sets["APP_IPHONE_67"]), 1)
         self.assertIsNone(shots.find_shots_root(os.path.join(self.tmp.name, "__MACOSX", "ru"), {"en-US"}))
+
+    def test_find_root_warns_when_ambiguous(self):
+        self.write("a/ru/01.png", png(1320, 2868))
+        self.write("b/en-US/01.png", png(1320, 2868))
+        self.write("a/ru/watch/01.png", png(422, 514))
+        with redirect_stdout(io.StringIO()) as out:
+            root = shots.find_shots_root(self.tmp.name, {"ru", "en-US"})
+        self.assertEqual(root, os.path.join(self.tmp.name, "a"))
+        self.assertIn("::warning::", out.getvalue())
+        self.assertIn("Беру a", out.getvalue())
+        self.assertIn("b", out.getvalue().split("пропускаю:")[1])
+        with redirect_stdout(io.StringIO()) as out:
+            shots.find_shots_root(os.path.join(self.tmp.name, "a"), {"ru"})
+        self.assertEqual(out.getvalue(), "")
 
     def test_dry_run_from_nested_root(self):
         self.write("pack/ru/01.png", png(1320, 2868))
@@ -780,6 +799,14 @@ class CommonTests(unittest.TestCase):
         self.assertEqual(client.call("GET", "/apps"), {"data": []})
         self.assertEqual(session.request.call_count, 3)
         self.assertEqual([c.args[0] for c in client._sleep.call_args_list], [2, 4])
+
+    def test_retry_after_is_honored_and_capped(self):
+        r1, r2 = self.resp(429), self.resp(429)
+        r1.headers, r2.headers = {"Retry-After": "7"}, {"Retry-After": "3600"}
+        client, session = self.retry_client([r1, r2, self.resp(200)])
+        client.call("GET", "/apps")
+        self.assertEqual([c.args[0] for c in client._sleep.call_args_list], [7.0, 60.0])
+        self.assertIsNone(asc_common.retry_after(mock.Mock(headers={"Retry-After": "Wed, 21 Oct"})))
 
     def test_post_not_retried_on_5xx(self):
         client, session = self.retry_client([self.resp(500), self.resp(200)])

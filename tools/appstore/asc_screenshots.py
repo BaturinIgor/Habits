@@ -132,13 +132,16 @@ def find_shots_root(path, locales, depth=3):
         return sorted(d for d in os.listdir(p) if not d.startswith(".") and d != "__MACOSX"
                       and os.path.isdir(os.path.join(p, d)) and not os.path.islink(os.path.join(p, d)))
 
-    level = [path]
+    found, level = [], [path]
     for _ in range(depth + 1):
-        for p in level:
-            if any(d in locales for d in visible_dirs(p)):
-                return p
-        level = [os.path.join(p, d) for p in level for d in visible_dirs(p)]
-    return None
+        found += [p for p in level if any(d in locales for d in visible_dirs(p))]
+        # В папки, где языки уже нашлись, глубже не идём.
+        level = [os.path.join(p, d) for p in level if p not in found for d in visible_dirs(p)]
+    if len(found) > 1:
+        others = ", ".join(os.path.relpath(p, path) for p in found[1:])
+        print(f"::warning::Папки языков есть в нескольких местах. Беру {os.path.relpath(found[0], path)}, "
+              f"пропускаю: {others}")
+    return found[0] if found else None
 
 
 def screenshot_payload(set_id, file_name, file_size):
@@ -166,10 +169,14 @@ def existing_shots(client, set_id):
              "state": ((s["attributes"].get("assetDeliveryState") or {}).get("state"))} for s in shots]
 
 
-def upload(client, set_id, item):
+def upload(client, set_id, item, created=None):
+    """Загружает один скриншот. id созданного скриншота сразу попадает в created,
+    чтобы при сбое посреди загрузки его можно было убрать."""
     with open(item["path"], "rb") as f:
         data = f.read()
     shot = client.call("POST", "/appScreenshots", json=screenshot_payload(set_id, item["fileName"], len(data)))["data"]
+    if created is not None:
+        created.append(shot["id"])
     for op in shot["attributes"].get("uploadOperations") or []:
         chunk = data[op["offset"]:op["offset"] + op["length"]]
         headers = {h["name"]: h["value"] for h in op.get("requestHeaders") or []}
@@ -205,21 +212,32 @@ def replace_set(client, set_id, existing, files, label):
     """Заменяет скриншоты набора. При сбое печатает понятную ошибку и завершает работу."""
     strategy = replace_strategy(len(existing), len(files))
     ids = []
+
+    def rollback():
+        """При upload_first убираем уже созданные новые скриншоты, чтобы в наборе остались только старые."""
+        if strategy != "upload_first":
+            return ""
+        try:
+            for i in ids:
+                client.call("DELETE", f"/appScreenshots/{i}", ok_statuses=(404,))
+        except ApiError as e:
+            return f"старые скриншоты на месте, но новые убрать не удалось ({e})"
+        return "старые скриншоты на месте, загруженные новые убраны"
+
     try:
         if strategy == "delete_first":
             for e in existing:
                 client.call("DELETE", f"/appScreenshots/{e['id']}", ok_statuses=(404,))
         for item in files:
-            ids.append(upload(client, set_id, item))
+            upload(client, set_id, item, created=ids)
         failed, pending = wait_processed(client, ids)
     except ApiError as e:
-        state = ("старые скриншоты на месте, новые загружены не все" if strategy == "upload_first"
-                 else "набор пустой или неполный")
+        state = rollback() or "набор пустой или неполный"
         print(f"::error::{label}: {e}. {state}. Запусти workflow ещё раз.")
         sys.exit(1)
     if failed or pending:
         what = f"Apple не приняла {len(failed)}" if failed else f"не обработаны за 5 минут {len(pending)}"
-        state = ("старые скриншоты оставлены" if strategy == "upload_first" else "набор неполный")
+        state = rollback() or "набор неполный"
         print(f"::error::{label}: {what} из {len(ids)} новых скриншотов, {state}. Запусти workflow ещё раз.")
         sys.exit(1)
     try:

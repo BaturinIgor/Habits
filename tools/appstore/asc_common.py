@@ -45,6 +45,15 @@ def safe_error_codes(response):
     return [str(e.get("code")) for e in errors[:5] if isinstance(e, dict) and e.get("code")]
 
 
+def retry_after(response, cap=60):
+    """Секунды из заголовка Retry-After (не больше cap) или None, если его нет или он не числом."""
+    try:
+        value = float((getattr(response, "headers", None) or {}).get("Retry-After"))
+    except (TypeError, ValueError):
+        return None
+    return max(0.0, min(value, cap))
+
+
 def _network_errors():
     try:
         import requests
@@ -87,6 +96,10 @@ class Client:
                 retry = r.status_code == 429 or (r.status_code >= 500 and method != "POST")
                 if not retry or attempt == self.RETRIES:
                     return r
+                wait = retry_after(r) if r.status_code == 429 else None
+                if wait is not None:
+                    self._sleep(wait)
+                    continue
             self._sleep(2 ** (attempt + 1))
         raise AssertionError("unreachable")
 
