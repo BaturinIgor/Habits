@@ -69,31 +69,33 @@ struct TodayView: View {
     }
 
     /// Первая привычка, чью вчерашнюю серию можно вернуть за искры.
-    /// Итоги прошлого периода в первые три дня нового, пока их не закрыли:
-    /// в начале года итоги года, в начале месяца итоги месяца, иначе в начале недели итоги недели.
-    private var periodRecap: Recap? {
-        let calendar = Calendar.app
+    /// Итоги прошлого периода для карточки на «Сегодня». Считаются в `.task`, а не в `body`:
+    /// в начале января это целый год отметок.
+    @State private var bannerRecap: Recap?
+
+    private var recapDismissedKeys: [Recap.Period: String] {
+        [.week: recapDismissed, .month: monthRecapDismissed, .year: yearRecapDismissed]
+    }
+
+    /// Пересчитать карточку итогов, когда сменился день, данные или её закрыли.
+    private var bannerTaskID: String {
+        "\(DayKey.make(anchorToday))|\(store.revision)|\(recapDismissed)|\(monthRecapDismissed)|\(yearRecapDismissed)"
+    }
+
+    private func updateBannerRecap() async {
+        let dismissed = recapDismissedKeys
         let now = Date()
-        let today = calendar.startOfDay(for: now)
-        let dayOfMonth = calendar.component(.day, from: today)
-        if dayOfMonth <= 3 {
-            let isJanuary = calendar.component(.month, from: today) == 1
-            let period: Recap.Period = isJanuary ? .year : .month
-            let dismissed = isJanuary ? yearRecapDismissed : monthRecapDismissed
-            // Ключ известен заранее, поэтому закрытые итоги даже не считаем.
-            let startKey = isJanuary
-                ? DayKey.make(calendar.date(byAdding: .year, value: -1, to: calendar.dateInterval(of: .year, for: today)?.start ?? today) ?? today, calendar: calendar)
-                : DayKey.make(Recap.lastMonthStart(now: now, calendar: calendar), calendar: calendar)
-            if startKey != dismissed {
-                let recap = Recap.current(period, in: store.data, now: now, calendar: calendar)
-                if recap.hasData, recap.key == startKey { return recap }
-            }
+        // Без кандидатов (большая часть дней) ничего не считаем и не копируем данные.
+        guard !Recap.bannerCandidates(dismissed: dismissed, now: now).isEmpty else {
+            bannerRecap = nil
+            return
         }
-        let weekStart = Stats.startOfWeek(now, calendar: calendar)
-        let daysIn = calendar.dateComponents([.day], from: weekStart, to: today).day ?? 0
-        guard daysIn < 3, DayKey.make(Recap.lastWeekStart(now: now, calendar: calendar), calendar: calendar) != recapDismissed else { return nil }
-        let recap = Recap.lastWeek(in: store.data, now: now, calendar: calendar)
-        return recap.hasData ? recap : nil
+        let data = store.data
+        let recap = await Task.detached(priority: .userInitiated) {
+            Recap.banner(in: data, dismissed: dismissed, now: now)
+        }.value
+        guard !Task.isCancelled else { return }
+        bannerRecap = recap
     }
 
     private func dismissRecap(_ recap: Recap) {
@@ -143,11 +145,14 @@ struct TodayView: View {
                     .plainRow(top: 2, bottom: 2)
                 }
 
-                if isToday, let recap = periodRecap {
+                if isToday, let recap = bannerRecap {
                     RecapBanner(recap: recap) {
                         shownRecap = recap
                     } onClose: {
-                        withAnimation { dismissRecap(recap) }
+                        withAnimation {
+                            dismissRecap(recap)
+                            bannerRecap = nil
+                        }
                     }
                     .plainRow(top: 4, bottom: 6)
                 }
@@ -179,6 +184,7 @@ struct TodayView: View {
             .onChange(of: scenePhase) { _, phase in
                 if phase == .active { rollOverDay() }
             }
+            .task(id: bannerTaskID) { await updateBannerRecap() }
             .onReceive(NotificationCenter.default.publisher(for: .NSCalendarDayChanged).receive(on: RunLoop.main)) { _ in
                 rollOverDay()
             }

@@ -22,11 +22,25 @@ struct RecapCard: View {
         case .week:
             return "\(recap.start.formatted(dayMonth)) – \(recap.end.formatted(dayMonth))"
         case .month:
-            return recap.start.formatted(.dateTime.month(.wide).year())
+            return Self.monthTitle(recap.start)
         case .year:
             if recap.isComplete { return recap.start.formatted(.dateTime.year()) }
             return "\(recap.start.formatted(dayMonth)) – \(recap.end.formatted(dayMonth.year()))"
         }
+    }
+
+    /// «Октябрь 2026»: месяц в именительном падеже и год без приписки «г.», которую добавляет
+    /// русский формат. В остальных языках порядок и слова из системного шаблона («octubre de 2026», «2026年10月»).
+    static func monthTitle(_ date: Date, locale: Locale = .autoupdatingCurrent) -> String {
+        let formatter = DateFormatter()
+        formatter.locale = locale
+        formatter.setLocalizedDateFormatFromTemplate("LLLLy")
+        if let format = formatter.dateFormat,
+           let suffix = format.range(of: #"y\s*'[^']*'\.?$"#, options: .regularExpression) {
+            formatter.dateFormat = format.replacingCharacters(in: suffix, with: "y")
+        }
+        let text = formatter.string(from: date)
+        return text.prefix(1).uppercased(with: locale) + text.dropFirst()
     }
 
     private var gradient: [Color] {
@@ -230,7 +244,7 @@ struct RecapView: View {
         renderer.scale = max(displayScale, 3)
         guard let uiImage = renderer.uiImage, let png = uiImage.pngData() else { return }
         let file = FileManager.default.temporaryDirectory
-            .appendingPathComponent("ZenHab-\(recap.period.rawValue)-\(recap.key).png")
+            .appendingPathComponent("ZenHab-\(recap.period.rawValue)-\(recap.key)-\(DayKey.make(recap.end)).png")
         guard (try? png.write(to: file, options: .atomic)) != nil else { return }
         shareFile = file
     }

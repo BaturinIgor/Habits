@@ -54,20 +54,26 @@ struct StatsView: View {
                 color: .indigo,
                 id: "stats.recap"
             ) { recapPeriod = .week }
-            entryButton(
-                title: "Month in review",
-                subtitle: "Last month's results as a card you can share",
-                symbol: "calendar",
-                color: .teal,
-                id: "stats.recap.month"
-            ) { recapPeriod = .month }
-            entryButton(
-                title: "Year in review",
-                subtitle: "Your year's results as a card you can share",
-                symbol: "sparkles",
-                color: .pink,
-                id: "stats.recap.year"
-            ) { recapPeriod = .year }
+            // Месяц и год только когда в них есть что показать: в первые дни января
+            // «итоги года» были бы пустыми или из одного-двух дней.
+            if Recap.isAvailable(.month, in: store.data) {
+                entryButton(
+                    title: "Month in review",
+                    subtitle: "Last month's results as a card you can share",
+                    symbol: "calendar",
+                    color: .teal,
+                    id: "stats.recap.month"
+                ) { recapPeriod = .month }
+            }
+            if Recap.isAvailable(.year, in: store.data) {
+                entryButton(
+                    title: "Year in review",
+                    subtitle: "Your year's results as a card you can share",
+                    symbol: "sparkles",
+                    color: .pink,
+                    id: "stats.recap.year"
+                ) { recapPeriod = .year }
+            }
         }
     }
 
