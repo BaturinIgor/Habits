@@ -12,19 +12,22 @@
 5. Создаёт профили App Store «ZenHab Watch App Store» и «ZenHab Watch Widget App Store»
    или берёт уже существующие, если они действующие и содержат нужный сертификат и группу.
    Недействительные (после правки capability) удаляет и создаёт заново.
-6. Сохраняет профили (base64) в секреты репозитория PROFILE_WATCH и PROFILE_WATCH_WIDGET
-   через `gh secret set` и/или пишет файлы .mobileprovision в папку.
+6. Дальше по режиму:
+   --install  ставит оба профиля в ~/Library/MobileDevice/Provisioning Profiles (<UUID>.mobileprovision)
+              и пишет только их ИМЕНА в $GITHUB_ENV (WATCH_PROFILE_NAME, WATCH_WIDGET_PROFILE_NAME)
+              и $GITHUB_OUTPUT (watch_profile_name, watch_widget_profile_name). Для сборки в appstore.yml;
+   --create   только проверяет и создаёт всё нужное в Apple (workflow «App Store provisioning»);
+   --out DIR  пишет файлы .mobileprovision в папку (локально);
+   --dry-run  ничего не меняет, показывает план;
+   --store-secrets  (только локально, по желанию) кладёт профили в секреты PROFILE_WATCH* через свой gh.
 
 Переменные окружения: ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8 (текст .p8 или base64),
-APP_BUNDLE_ID (по умолчанию com.baturinigor.zenhab), необязательно DIST_CERT_P12 + DIST_CERT_PASSWORD,
-GH_TOKEN (для gh в Actions; локально хватает `gh auth login`).
+APP_BUNDLE_ID (по умолчанию com.baturinigor.zenhab), необязательно DIST_CERT_P12 + DIST_CERT_PASSWORD.
 
-    # В Actions (workflow «App Store provisioning»):
-    python3 tools/appstore/asc_provision_watch.py --store-secrets
-    # Локально на Mac:
-    python3 tools/appstore/asc_provision_watch.py --out ~/Desktop/profiles --store-secrets
-    # Только посмотреть, что будет сделано:
     python3 tools/appstore/asc_provision_watch.py --dry-run
+    python3 tools/appstore/asc_provision_watch.py --create
+    python3 tools/appstore/asc_provision_watch.py --install          # на раннере сборки
+    python3 tools/appstore/asc_provision_watch.py --out ~/Desktop/profiles
 """
 import argparse
 import base64
@@ -43,13 +46,41 @@ DIST_CERT_TYPES = ("DISTRIBUTION", "IOS_DISTRIBUTION")
 
 
 def targets(app_id):
-    """Что готовим: суффикс bundle ID, имя bundle ID, имя профиля, имя секрета."""
+    """Что готовим: bundle ID, его имя, имя профиля, переменная с именем профиля для сборки, секрет."""
     return [
         {"identifier": f"{app_id}.watchkitapp", "name": "ZenHab Watch",
-         "profile": "ZenHab Watch App Store", "secret": "PROFILE_WATCH"},
+         "profile": "ZenHab Watch App Store", "env": "WATCH_PROFILE_NAME", "secret": "PROFILE_WATCH"},
         {"identifier": f"{app_id}.watchkitapp.widget", "name": "ZenHab Watch Widget",
-         "profile": "ZenHab Watch Widget App Store", "secret": "PROFILE_WATCH_WIDGET"},
+         "profile": "ZenHab Watch Widget App Store", "env": "WATCH_WIDGET_PROFILE_NAME",
+         "secret": "PROFILE_WATCH_WIDGET"},
     ]
+
+
+PROFILE_DIRS = ("~/Library/MobileDevice/Provisioning Profiles",
+                "~/Library/Developer/Xcode/UserData/Provisioning Profiles")
+
+
+def install_profile(content_b64, dirs=PROFILE_DIRS):
+    """Кладёт профиль туда, где его ищет xcodebuild, под именем <UUID>.mobileprovision. Возвращает имя."""
+    info = parse_profile(content_b64)
+    data = base64.b64decode(content_b64)
+    for d in dirs:
+        folder = os.path.expanduser(d)
+        os.makedirs(folder, exist_ok=True)
+        path = os.path.join(folder, f"{info['uuid']}.mobileprovision")
+        with open(path, "wb") as f:
+            f.write(data)
+        os.chmod(path, 0o600)
+    return info["name"]
+
+
+def export_names(names, env_file=None, output_file=None):
+    """names: {"WATCH_PROFILE_NAME": "...", ...}. Пишет только имена профилей, без содержимого."""
+    for path, key in ((env_file, str), (output_file, str.lower)):
+        if path:
+            with open(path, "a", encoding="utf-8") as f:
+                for name, value in names.items():
+                    f.write(f"{key(name)}={value}\n")
 
 
 # ---------- Чистые функции (покрыты тестами) ----------
@@ -309,18 +340,21 @@ def store_secret(repo, name, value):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--dry-run", action="store_true", help="ничего не менять, только показать план")
-    parser.add_argument("--store-secrets", action="store_true", help="сохранить профили в секреты через gh")
+    parser.add_argument("--create", action="store_true", help="создать недостающее в Apple, файлы не писать")
+    parser.add_argument("--install", action="store_true",
+                        help="поставить профили на эту машину и выдать их имена в $GITHUB_ENV/$GITHUB_OUTPUT")
     parser.add_argument("--out", help="папка, куда записать .mobileprovision (локальный режим)")
+    parser.add_argument("--store-secrets", action="store_true",
+                        help="только локально: положить профили в секреты PROFILE_WATCH* через свой gh")
     parser.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY") or "BaturinIgor/Habits")
     args = parser.parse_args(argv)
 
-    if not (args.dry_run or args.store_secrets or args.out):
-        parser.error("укажи --store-secrets, --out или --dry-run")
+    if not (args.dry_run or args.create or args.install or args.out or args.store_secrets):
+        parser.error("укажи --dry-run, --create, --install, --out или --store-secrets")
     if args.store_secrets and not args.dry_run:
         problem = gh_ready(args.repo)
         if problem:
-            print(f"::error::{problem}. В Actions добавь секрет GH_ADMIN_TOKEN (fine-grained token на этот "
-                  f"репозиторий с правом Secrets: Read and write); локально выполни gh auth login.")
+            print(f"::error::{problem}. Выполни gh auth login под владельцем репозитория.")
             sys.exit(1)
 
     app_id = os.environ.get("APP_BUNDLE_ID") or DEFAULT_BUNDLE_ID
@@ -343,9 +377,14 @@ def main(argv=None):
     if args.dry_run:
         print("Dry run: ничего не изменено.")
         return
+    if prov.failed:
+        print("::error::Не все профили готовы, см. предупреждения выше. Ничего не установлено.")
+        sys.exit(1)
+    names = {}
     for secret, (t, content) in results.items():
-        if content is None:
-            continue
+        if args.install:
+            names[t["env"]] = install_profile(content)
+            print(f"Установлен профиль «{names[t['env']]}» -> {t['env']}")
         if args.out:
             os.makedirs(os.path.expanduser(args.out), exist_ok=True)
             path = os.path.join(os.path.expanduser(args.out), f"{t['profile'].replace(' ', '_')}.mobileprovision")
@@ -354,9 +393,8 @@ def main(argv=None):
             print(f"Записан {path}")
         if args.store_secrets:
             store_secret(args.repo, secret, content)
-    if prov.failed:
-        print("::error::Не все профили готовы, см. предупреждения выше.")
-        sys.exit(1)
+    if names:
+        export_names(names, os.environ.get("GITHUB_ENV"), os.environ.get("GITHUB_OUTPUT"))
     print("Готово. Профили для часов на месте.")
 
 

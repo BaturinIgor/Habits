@@ -50,6 +50,11 @@ def png(w, h):
             + chunk(b"IEND", b""))
 
 
+def read_text(path):
+    with open(path, encoding="utf-8") as f:
+        return f.read()
+
+
 class FakeClient:
     """Подменяет asc_common.Client: маршруты (метод, путь) -> ответ или функция, журнал вызовов."""
 
@@ -211,12 +216,92 @@ class ProvisionFlowTests(unittest.TestCase):
         with self.assertRaises(SystemExit), redirect_stdout(io.StringIO()), mock.patch("sys.stderr", io.StringIO()):
             prov.main([])
 
-    def test_missing_gh_token_fails_before_apple(self):
-        with mock.patch.object(prov, "gh_ready", return_value="нет токена"), \
+    def test_local_store_secrets_without_gh_fails_before_apple(self):
+        with mock.patch.object(prov, "gh_ready", return_value="нет gh"), \
                 mock.patch.object(prov, "Client", side_effect=AssertionError("Apple не должен вызываться")), \
                 redirect_stdout(io.StringIO()) as out, self.assertRaises(SystemExit):
             prov.main(["--store-secrets"])
-        self.assertIn("GH_ADMIN_TOKEN", out.getvalue())
+        self.assertIn("gh auth login", out.getvalue())
+
+    def test_install_and_export_names(self):
+        content = profile_content(self.ident, uuid="UUID-42")
+        with tempfile.TemporaryDirectory() as d:
+            dirs = (os.path.join(d, "a"), os.path.join(d, "b"))
+            name = prov.install_profile(content, dirs)
+            self.assertEqual(name, "x")
+            for folder in dirs:
+                with open(os.path.join(folder, "UUID-42.mobileprovision"), "rb") as f:
+                    self.assertEqual(f.read(), base64.b64decode(content))
+            env, out = os.path.join(d, "env"), os.path.join(d, "out")
+            prov.export_names({"WATCH_PROFILE_NAME": "ZenHab Watch App Store"}, env, out)
+            self.assertEqual(read_text(env), "WATCH_PROFILE_NAME=ZenHab Watch App Store\n")
+            self.assertEqual(read_text(out), "watch_profile_name=ZenHab Watch App Store\n")
+
+    def main_with(self, routes, args, env):
+        c = FakeClient(routes)
+        with mock.patch.object(prov, "Client", return_value=c), mock.patch.dict(os.environ, env, clear=False), \
+                redirect_stdout(io.StringIO()) as out:
+            try:
+                prov.main(args)
+                code = 0
+            except SystemExit as e:
+                code = e.code
+        return c, out.getvalue(), code
+
+    def full_routes(self, groups=(GROUP,)):
+        ids = {t["identifier"]: f"B{i}" for i, t in enumerate(prov.targets(APP))}
+
+        def bundles(kw):
+            ident = kw["params"]["filter[identifier]"]
+            return {"data": [{"id": ids[ident], "attributes": {"identifier": ident, "platform": "IOS"}}]}
+
+        def profiles(kw):
+            name = kw["params"]["filter[name]"]
+            t = next(t for t in prov.targets(APP) if t["profile"] == name)
+            p = profile("P" + ids[t["identifier"]], t["identifier"], bundle_db=ids[t["identifier"]], groups=groups)
+            p["attributes"]["name"] = name
+            return {"data": [p]}
+
+        routes = {
+            ("GET", "/certificates"): {"data": [{"id": "C1", "attributes": {
+                "certificateType": "DISTRIBUTION", "expirationDate": "2099-01-01T00:00:00Z"}}]},
+            ("GET", "/bundleIds"): bundles,
+            ("GET", "/profiles"): profiles,
+        }
+        for b in ids.values():
+            routes[("GET", f"/bundleIds/{b}/bundleIdCapabilities")] = {"data": [{"attributes": {"capabilityType": "APP_GROUPS"}}]}
+        return routes
+
+    def test_main_install_writes_profiles_and_only_names(self):
+        with tempfile.TemporaryDirectory() as d:
+            env_file, out_file = os.path.join(d, "env"), os.path.join(d, "out")
+            env = {"GITHUB_ENV": env_file, "GITHUB_OUTPUT": out_file, "APP_BUNDLE_ID": APP, "DIST_CERT_P12": ""}
+            with mock.patch.object(prov, "PROFILE_DIRS", (os.path.join(d, "profiles"),)), \
+                    mock.patch.object(prov, "install_profile", wraps=lambda c: prov.parse_profile(c)["name"]) as inst:
+                c, out, code = self.main_with(self.full_routes(), ["--install"], env)
+            self.assertEqual(code, 0, out)
+            self.assertEqual(inst.call_count, 2)
+            self.assertEqual(c.writes(), [])
+            exported = read_text(env_file)
+            self.assertIn("WATCH_PROFILE_NAME=", exported)
+            self.assertIn("WATCH_WIDGET_PROFILE_NAME=", exported)
+            self.assertIn("watch_widget_profile_name=", read_text(out_file))
+            self.assertNotIn(profile_content(APP + ".watchkitapp")[:40], out + exported)
+
+    def test_main_install_refuses_profile_without_group(self):
+        created = profile("PN", self.ident, groups=())
+        routes = self.full_routes(groups=())
+        routes[("DELETE", "/profiles/PB0")] = {}
+        routes[("DELETE", "/profiles/PB1")] = {}
+        routes[("POST", "/profiles")] = {"data": created}
+        with tempfile.TemporaryDirectory() as d:
+            env_file = os.path.join(d, "env")
+            with mock.patch.object(prov, "install_profile", side_effect=AssertionError("нельзя ставить")):
+                _, out, code = self.main_with(routes, ["--install"],
+                                              {"GITHUB_ENV": env_file, "APP_BUNDLE_ID": APP, "DIST_CERT_P12": ""})
+            self.assertEqual(code, 1)
+            self.assertIn("App Groups", out)
+            self.assertFalse(os.path.exists(env_file))
 
     def test_store_secret_uses_stdin(self):
         with mock.patch("subprocess.run") as run, redirect_stdout(io.StringIO()):
@@ -469,7 +554,9 @@ class CommonTests(unittest.TestCase):
         self.assertIn("409", text)
         self.assertIn("ENTITY_ERROR.ATTRIBUTE.REQUIRED", text)
         self.assertNotIn("TOPSECRET", text)
-        self.assertLess(len(text), 300)
+        self.assertNotIn("xxx", text)
+        self.assertNotIn("whatsNew", text)
+        self.assertEqual(text, "POST /appStoreVersions -> HTTP 409 ENTITY_ERROR.ATTRIBUTE.REQUIRED")
 
     def test_metadata_locales(self):
         self.assertEqual(len(asc_common.metadata_locales()), 14)

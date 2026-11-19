@@ -36,18 +36,13 @@ def token(key_id, issuer_id, key_p8):
 
 
 def safe_error_codes(response):
-    """Из ответа с ошибкой берём только код, статус и поле, к которому относится ошибка.
-    detail обрезаем: он объясняет, что не так, и не содержит ключей, но печатать тело целиком нельзя."""
+    """Из ответа с ошибкой берём только коды ошибок Apple (например ENTITY_ERROR.ATTRIBUTE.REQUIRED).
+    detail, title, source и meta не печатаем: репозиторий публичный."""
     try:
         errors = response.json().get("errors", [])
     except Exception:
         return []
-    out = []
-    for e in errors[:5]:
-        pointer = (e.get("source") or {}).get("pointer") or (e.get("source") or {}).get("parameter") or ""
-        detail = (e.get("detail") or "").replace("\n", " ")[:160]
-        out.append(" ".join(x for x in (e.get("code", ""), pointer, f"«{detail}»" if detail else "") if x))
-    return out
+    return [str(e.get("code")) for e in errors[:5] if isinstance(e, dict) and e.get("code")]
 
 
 class Client:

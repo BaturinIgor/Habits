@@ -11,7 +11,7 @@
 |---|---|---|
 | App Store | — | Сборка, подпись, загрузка в App Store Connect |
 | App Store texts | `asc_whats_new.py` | Создаёт версию, заполняет тексты и «Что нового», прикрепляет сборку |
-| App Store provisioning | `asc_provision_watch.py` | Bundle ID и профили для Apple Watch -> секреты `PROFILE_WATCH`, `PROFILE_WATCH_WIDGET` |
+| App Store provisioning | `asc_provision_watch.py` | Проверяет и создаёт bundle ID, App Groups и профили для Apple Watch (секреты не пишет) |
 | App Store screenshots | `asc_screenshots.py` | Загружает скриншоты по всем языкам |
 | App Store submit | `asc_submit.py` | Проверяет версию и отправляет на ревью |
 
@@ -26,29 +26,70 @@
 
 ## App Store provisioning (часы)
 
+Скрипт `asc_provision_watch.py` (всё идемпотентно):
+
 1. Регистрирует `<APP_ID>.watchkitapp` и `<APP_ID>.watchkitapp.widget` (платформа iOS), если их нет.
 2. Включает на них capability App Groups.
 3. Находит сертификат Apple Distribution: тот, что лежит в `DIST_CERT_P12`, иначе самый свежий.
 4. Создаёт профили App Store «ZenHab Watch App Store» и «ZenHab Watch Widget App Store» или берёт
    существующие, если они действующие, с тем же сертификатом и с группой. Недействительные пересоздаёт.
-5. Кладёт профили (base64) в секреты `PROFILE_WATCH` и `PROFILE_WATCH_WIDGET`.
+5. Дальше по режиму:
+   - `--dry-run` — ничего не меняет, показывает план;
+   - `--create` — только создаёт недостающее в Apple (так работает workflow);
+   - `--install` — для сборки: кладёт оба профиля в `~/Library/MobileDevice/Provisioning Profiles`
+     (и в папку Xcode) под именем `<UUID>.mobileprovision` и пишет только их имена в `$GITHUB_ENV`
+     (`WATCH_PROFILE_NAME`, `WATCH_WIDGET_PROFILE_NAME`) и `$GITHUB_OUTPUT`
+     (`watch_profile_name`, `watch_widget_profile_name`);
+   - `--out DIR` — локально записывает `.mobileprovision` в папку;
+   - `--store-secrets` — по желанию и только локально: кладёт профили в секреты `PROFILE_WATCH*` через твой `gh`.
 
-**Нужен секрет `GH_ADMIN_TOKEN`**: обычный `GITHUB_TOKEN` не умеет записывать секреты.
-Создай fine-grained token на github.com/settings/personal-access-tokens/new: Repository access ->
-только этот репозиторий, Repository permissions -> Secrets: Read and write. Срок можно поставить
-короткий (7 дней) и удалить токен после запуска. Без токена workflow сразу падает с подсказкой
-(режим `dry_run` работает и без него).
+Секреты `PROFILE_WATCH` и `PROFILE_WATCH_WIDGET` и токен с правом записи секретов **не нужны**:
+сборка берёт или создаёт профили сама при каждом запуске. Workflow «App Store provisioning»
+нужен, чтобы заранее проверить (`dry_run`, включён по умолчанию) или создать всё в Apple.
 
 **Ручной шаг: группа App Group.** В App Store Connect API нет способа привязать конкретную группу
 к bundle ID, можно только включить capability. Поэтому первый запуск, скорее всего, закончится
-предупреждением. Нужно один раз для каждого из двух ID:
+предупреждением, и профиль без группы скрипт не установит. Нужно один раз для каждого из двух ID:
 developer.apple.com/account/resources/identifiers -> `<APP_ID>.watchkitapp` -> App Groups ->
-Configure (или Edit) -> отметить `group.<APP_ID>` -> Continue -> Save. Затем запустить workflow ещё раз:
-профили пересоздадутся уже с группой, и секреты запишутся.
+Configure (или Edit) -> отметить `group.<APP_ID>` -> Continue -> Save. Затем запустить workflow
+ещё раз (без `dry_run`): профили пересоздадутся уже с группой.
+
+### Подключение к сборке (appstore.yml в ветке часов)
+
+В main таргетов часов пока нет, поэтому `appstore.yml` здесь не меняется. При слиянии ветки
+`claude/project-thread-hdy2nz` шаг «Install certificate and profiles» должен ставить профили часов
+из секретов, только если они заданы, а иначе брать их через API:
+
+1. В шаге «Check secrets» убрать `PROFILE_WATCH` и `PROFILE_WATCH_WIDGET` из обязательных.
+2. В `env:` шага «Install certificate and profiles» добавить:
+
+```yaml
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+```
+
+   (`PROFILE_WATCH`, `PROFILE_WATCH_WIDGET`, `DIST_CERT_P12`, `DIST_CERT_PASSWORD` там уже есть.)
+3. Две строки `install_profile "$PROFILE_WATCH" ...` и `install_profile "$PROFILE_WATCH_WIDGET" ...`
+   заменить на:
+
+```bash
+          if [ -n "${PROFILE_WATCH:-}" ] && [ -n "${PROFILE_WATCH_WIDGET:-}" ]; then
+            install_profile "$PROFILE_WATCH" "$APP_ID.watchkitapp" WATCH_PROFILE_NAME
+            install_profile "$PROFILE_WATCH_WIDGET" "$APP_ID.watchkitapp.widget" WATCH_WIDGET_PROFILE_NAME
+          else
+            echo "Секретов PROFILE_WATCH* нет, беру профили часов через App Store Connect API"
+            python3 -m venv "$RUNNER_TEMP/asc-venv"
+            "$RUNNER_TEMP/asc-venv/bin/pip" install -q -r tools/appstore/requirements.txt
+            APP_BUNDLE_ID="$APP_ID" "$RUNNER_TEMP/asc-venv/bin/python" tools/appstore/asc_provision_watch.py --install
+          fi
+```
+
+`--install` сам пишет `WATCH_PROFILE_NAME` и `WATCH_WIDGET_PROFILE_NAME` в `$GITHUB_ENV`,
+поэтому шаги Archive и Export IPA не меняются. Ключу API для этого нужна роль Admin
+(см. «Роль ключа API»).
 
 ### Локальный запуск на Mac
-
-Без `GH_ADMIN_TOKEN`: секреты запишет твой `gh` (нужен `gh auth login` под владельцем репозитория).
 
 ```bash
 pip3 install -r tools/appstore/requirements.txt
@@ -56,12 +97,11 @@ export ASC_KEY_ID=... ASC_ISSUER_ID=...
 export ASC_KEY_P8="$(cat ~/Downloads/AuthKey_XXXX.p8)"
 # необязательно, чтобы профиль был на тот же сертификат, что в секрете DIST_CERT_P12:
 # export DIST_CERT_P12="$(base64 -i cert.p12)" DIST_CERT_PASSWORD=...
-python3 tools/appstore/asc_provision_watch.py --dry-run                       # посмотреть план
+python3 tools/appstore/asc_provision_watch.py --dry-run                 # посмотреть план
+python3 tools/appstore/asc_provision_watch.py --out ~/Desktop/watch-profiles
+# по желанию: ещё и положить в секреты репозитория своим gh (нужен gh auth login)
 python3 tools/appstore/asc_provision_watch.py --out ~/Desktop/watch-profiles --store-secrets
 ```
-
-`--out` записывает `.mobileprovision` в папку (для Xcode), `--store-secrets` вызывает
-`gh secret set PROFILE_WATCH` / `PROFILE_WATCH_WIDGET` (значение передаётся через stdin).
 
 ## App Store screenshots
 
@@ -98,6 +138,7 @@ python3 tools/appstore/asc_provision_watch.py --out ~/Desktop/watch-profiles --s
   `docs/appstore/privacy-and-rating.md`, опубликовать в App Store Connect -> App Privacy -> Publish.
   Скрипт отправки об этом только предупреждает.
 - **Привязка App Group** к bundle ID часов (см. выше), один раз.
+- Подключение `--install` к `appstore.yml` при слиянии ветки часов (сниппет выше).
 - Встроенные покупки, которые отправляются впервые, выбираются на странице версии
   (In-App Purchases) — см. `docs/appstore/in-app-purchases.md`.
 - Ответ про экспортное шифрование, если в сборке нет `ITSAppUsesNonExemptEncryption`.
