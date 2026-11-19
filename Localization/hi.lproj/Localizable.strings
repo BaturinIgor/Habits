@@ -38,6 +38,7 @@
 "Active" = "सक्रिय";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "सक्रिय दिन: कम से कम एक आदत समय पर पूरी हो। खिलाने से %lld XP मिलता है और पालतू जल्दी बढ़ता है।";
 "Activity over %lld weeks" = "पिछले %lld हफ़्तों की गतिविधि";
+"Add ZenHab to your watch face or Smart Stack to see how many habits are done today." = "ZenHab को वॉच फ़ेस या स्मार्ट स्टैक में जोड़ें और देखें कि आज कितनी आदतें पूरी हुईं।";
 "Add a habit" = "आदत जोड़ें";
 "Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap." = "आदत का बटन कंट्रोल सेंटर, लॉक स्क्रीन या ऐक्शन बटन में जोड़ें और एक टैप में पूरा करें।";
 "Add a habit, pick days and a time, and I'll remind you." = "एक आदत जोड़ें, दिन और समय चुनें, और मैं आपको याद दिलाऊँगा।";
@@ -274,6 +275,7 @@
 "Freezes this month" = "इस महीने फ़्रीज़";
 "Full for today" = "आज के लिए पेट भर गया";
 "Full mood journal" = "पूरी मूड डायरी";
+"Get Pro on your iPhone to use the timer on Apple Watch." = "Apple Watch पर टाइमर इस्तेमाल करने के लिए अपने iPhone पर Pro लें।";
 "Get a pet" = "पालतू पाएँ";
 "Go to bed on time" = "समय पर सोएँ";
 "Goal" = "लक्ष्य";
@@ -488,6 +490,7 @@
 "One notification listing the habits not checked off yet." = "एक सूचना, जिसमें अभी बाकी आदतें होंगी।";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "केवल उसी दिन या अगले दिन की गई निशानियाँ गिनी जाती हैं। निशान हटाने पर चिंगारी वापस चली जाती है।";
 "Only you can open your habits and journal." = "आपकी आदतें और डायरी सिर्फ़ आप खोल सकते हैं।";
+"Open ZenHab on your iPhone to see your habits here." = "अपने iPhone पर ZenHab खोलें, आदतें यहाँ दिखेंगी।";
 "Open backup" = "बैकअप खोलें";
 "Open export" = "निर्यात खोलें";
 "Open groups" = "समूह खोलें";
@@ -580,8 +583,10 @@
 "Scan to get ZenHab" = "ZenHab पाने के लिए स्कैन करें";
 "Schedule" = "समय-सारिणी";
 "Scheduled notifications" = "तय सूचनाएँ";
+"See how many habits are done today." = "आज कितनी आदतें पूरी हुईं, यह देखें।";
 "See how much money you save by quitting a habit." = "देखें कि आदत छोड़कर आप कितने पैसे बचाते हैं।";
 "See how much you've saved with Pro" = "Pro से देखें कि कितनी बचत हुई";
+"See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "आज की आदतें अपनी कलाई पर देखें और एक टैप में मार्क करें। सब कुछ आपके iPhone से सिंक होता है। अगर ZenHab घड़ी पर नहीं दिखा, तो iPhone की Watch ऐप से इंस्टॉल करें।";
 "See which habits make your days better" = "देखें कौन-सी आदतें आपके दिन बेहतर बनाती हैं";
 "Send" = "भेजें";
 "Send by email" = "ईमेल से भेजें";
@@ -622,6 +627,7 @@
 "Start free trial" = "मुफ़्त ट्रायल शुरू करें";
 "Start over" = "नए सिरे से शुरू करें";
 "Start the count again?" = "गिनती फिर से शुरू करें?";
+"Start timer" = "टाइमर शुरू करें";
 "Statistics" = "आँकड़े";
 "Statistics will appear once you start checking off habits." = "आदतें पूरी करना शुरू करते ही आँकड़े दिखेंगे।";
 "Status" = "स्थिति";
@@ -682,11 +688,13 @@
 "Time's up. Well done!" = "समय पूरा हुआ। बहुत बढ़िया!";
 "Timer" = "टाइमर";
 "Timer on the Lock Screen" = "लॉक स्क्रीन पर टाइमर";
+"Timer on your wrist" = "कलाई पर टाइमर";
 "Today" = "आज";
 "Today is a good day." = "आज अच्छा दिन है।";
 "Today screen" = "'आज' स्क्रीन";
 "Today's entry" = "आज की प्रविष्टि";
 "Today's habits" = "आज की आदतें";
+"Today's progress" = "आज की प्रगति";
 "Today's progress and quick check-off right from the Home Screen." = "होम स्क्रीन से आज की प्रगति देखें और तुरंत निशान लगाएँ।";
 "Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "होम स्क्रीन से ही आज की प्रगति और तुरंत मार्क करें। समूह चुनने के लिए विजेट को दबाकर रखें।";
 "Tomorrow" = "कल";
@@ -726,6 +734,7 @@
 "Walk" = "टहलना";
 "Walk 10,000 steps" = "10,000 कदम चलें";
 "Warming up" = "वार्म-अप";
+"Watch face complications" = "वॉच फ़ेस कॉम्प्लिकेशन";
 "Water, liters" = "पानी, लीटर";
 "Week" = "हफ़्ता";
 "Week in review" = "हफ़्ते का सार";
@@ -750,6 +759,7 @@
 "With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets." = "Pro के साथ सभी निशान नोट्स और मूड सहित तालिका के रूप में Numbers, Excel या Google Sheets के लिए निर्यात करें।";
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "Pro के साथ आदत की अवधि तय करें। उलटी गिनती लॉक स्क्रीन और Dynamic Island पर चलती है और समय पूरा होने पर आदत पूरी हो जाती है।";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "Pro के साथ आदत को कदम, नींद, पानी, वर्कआउट या माइंडफ़ुल मिनट से जोड़ें, और लक्ष्य पूरा होते ही वह अपने आप पूरी हो जाएगी।";
+"With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off." = "Pro के साथ Apple Watch पर आदत का टाइमर शुरू करें। समय पूरा होने पर घड़ी कलाई पर टैप करेगी और आदत मार्क कर देगी।";
 "Without it since" = "इसके बिना कब से";
 "Words" = "शब्द";
 "Words for today are done" = "आज के शब्द पूरे हो गए";
@@ -781,6 +791,7 @@
 "Your year in review" = "आपके साल का सार";
 "Your year's results as a card you can share" = "आपके साल के नतीजे, शेयर करने लायक कार्ड में";
 "ZenHab is locked" = "ZenHab लॉक है";
+"ZenHab on Apple Watch" = "Apple Watch पर ZenHab";
 "a month" = "एक महीना";
 "a week" = "एक हफ़्ता";
 "a year" = "एक साल";

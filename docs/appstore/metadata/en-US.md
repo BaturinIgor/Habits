@@ -78,8 +78,6 @@ Privacy Policy: https://baturinigor.github.io/Habits/privacy.html
 The app is available in 14 languages: English, Russian, German, French, Spanish, Portuguese, Italian, Turkish, Polish, Indonesian, Chinese, Japanese, Korean and Hindi.
 
 ## What's New
-• Mood journal: rate your day with one tap on Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood.
-• New app icons (Pro): Sunset, Forest, Rose, Gold, Midnight and Light.
-• Face ID lock (Pro): only you can open your habits and journal.
-• Export to CSV (Pro): all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets.
-• The Pro screen now shows everything it includes, and a free trial when it's available.
+• ZenHab on Apple Watch: see today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone.
+• Watch face complications and Smart Stack: see how many habits are done today at a glance.
+• Habit timer on Apple Watch (Pro): when time is up, the watch taps your wrist and checks the habit off.

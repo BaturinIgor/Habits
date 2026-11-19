@@ -797,3 +797,14 @@ Every check-in counts. The new month is a fresh start.||Setiap centang berarti. 
 An amazing year. Keep it going!||Tahun yang luar biasa. Pertahankan!
 A solid year. Every month makes a difference.||Tahun yang bagus. Setiap bulan membawa perubahan.
 Every check-in counts. The new year is a fresh start.||Setiap centang berarti. Tahun baru adalah awal yang baru.
+Open ZenHab on your iPhone to see your habits here.||Buka ZenHab di iPhone untuk melihat kebiasaanmu di sini.
+Get Pro on your iPhone to use the timer on Apple Watch.||Aktifkan Pro di iPhone untuk memakai timer di Apple Watch.
+Start timer||Mulai timer
+Today's progress||Progres hari ini
+See how many habits are done today.||Lihat berapa kebiasaan yang sudah selesai hari ini.
+ZenHab on Apple Watch||ZenHab di Apple Watch
+See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch.||Lihat kebiasaan hari ini di pergelangan tangan dan centang dengan sekali ketuk. Semuanya tersinkron dengan iPhone. Jika ZenHab belum muncul di jam, pasang dari app Watch di iPhone.
+Watch face complications||Komplikasi tampilan jam
+Add ZenHab to your watch face or Smart Stack to see how many habits are done today.||Tambahkan ZenHab ke tampilan jam atau Tumpukan Pintar untuk melihat berapa kebiasaan yang selesai hari ini.
+Timer on your wrist||Timer di pergelangan tangan
+With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off.||Dengan Pro, mulai timer kebiasaan di Apple Watch. Saat waktu habis, jam akan mengetuk pergelangan tanganmu dan mencentang kebiasaan.

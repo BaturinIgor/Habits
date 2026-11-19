@@ -48,8 +48,6 @@ Condiciones de uso: https://www.apple.com/legal/internet-services/itunes/dev/std
 Privacidad: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Diario de ánimo: valora tu día con un toque en Hoy y añade unas palabras. Con Pro, verás todo el historial, un gráfico mensual y qué hábitos mejoran tu ánimo.
-• Nuevos iconos (Pro): Atardecer, Bosque, Rosa, Oro, Medianoche y Clara.
-• Bloqueo con Face ID (Pro): solo tú puedes abrir tus hábitos y tu diario.
-• Exportar a CSV (Pro): todas las marcas con notas y ánimo en una tabla para Numbers, Excel o Google Sheets.
-• La pantalla Pro ahora muestra todo lo que incluye y la prueba gratuita cuando está disponible.
+• ZenHab en el Apple Watch: los hábitos de hoy en tu muñeca, marcados con un toque. Todo se sincroniza con tu iPhone.
+• Complicaciones para la esfera y la pila inteligente: ve de un vistazo cuántos hábitos llevas hechos hoy.
+• Temporizador de hábitos en el Apple Watch (Pro): cuando acaba el tiempo, el reloj te avisa con un toque y marca el hábito.

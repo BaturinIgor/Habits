@@ -28,6 +28,7 @@ final class HabitStore {
         if let fresh = DataFile.loadIfAvailable() {
             data = fresh
             revision += 1
+            WatchSync.shared.push(data)
         }
     }
 
@@ -49,6 +50,7 @@ final class HabitStore {
         if syncFamily {
             FamilySync.shared.scheduleSync()
         }
+        WatchSync.shared.push(data)
     }
 
     func reschedule() async {
@@ -121,6 +123,7 @@ final class HabitStore {
         revision += 1
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()
+        WatchSync.shared.push(data)
     }
 
     // MARK: Искры, магазин, питомец
@@ -397,6 +400,16 @@ final class HabitStore {
         commit()
         Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
         notifyChain(after: id, day: day)
+    }
+
+    /// Отметка с Apple Watch: часы присылают, каким должно стать состояние привычки.
+    func applyWatchMark(_ mark: WatchMark) {
+        guard habit(mark.habitID) != nil, data.applyWatchMark(mark) else { return }
+        commit()
+        if mark.done {
+            Task { await NotificationPlanner.clearDelivered(habitID: mark.habitID, day: mark.day) }
+            if let date = DayKey.date(mark.day) { notifyChain(after: mark.habitID, day: date) }
+        }
     }
 
     func markMinimum(_ id: UUID, on day: Date) {

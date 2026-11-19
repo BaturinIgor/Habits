@@ -38,6 +38,7 @@
 "Active" = "Attivo";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Giorno attivo: almeno un'abitudine segnata in tempo. Nutrirlo dà %lld XP, così il cucciolo cresce più in fretta.";
 "Activity over %lld weeks" = "Attività nelle ultime %lld settimane";
+"Add ZenHab to your watch face or Smart Stack to see how many habits are done today." = "Aggiungi ZenHab al quadrante o allo Smart Stack per vedere quante abitudini hai completato oggi.";
 "Add a habit" = "Aggiungi abitudine";
 "Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap." = "Aggiungi un pulsante abitudine al Centro di Controllo, alla schermata di blocco o al tasto Azione e spuntala con un tocco.";
 "Add a habit, pick days and a time, and I'll remind you." = "Aggiungi un'abitudine, scegli i giorni e l'ora, e te la ricorderò.";
@@ -274,6 +275,7 @@
 "Freezes this month" = "Congelamenti questo mese";
 "Full for today" = "Sazio per oggi";
 "Full mood journal" = "Diario dell'umore completo";
+"Get Pro on your iPhone to use the timer on Apple Watch." = "Passa a Pro sull'iPhone per usare il timer su Apple Watch.";
 "Get a pet" = "Prendi un cucciolo";
 "Go to bed on time" = "Andare a letto in orario";
 "Goal" = "Obiettivo";
@@ -488,6 +490,7 @@
 "One notification listing the habits not checked off yet." = "Una notifica con le abitudini non ancora segnate.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Contano solo le spunte fatte lo stesso giorno o quello dopo. Togliere la spunta riprende la scintilla.";
 "Only you can open your habits and journal." = "Solo tu puoi aprire le tue abitudini e il diario.";
+"Open ZenHab on your iPhone to see your habits here." = "Apri ZenHab sull'iPhone per vedere qui le tue abitudini.";
 "Open backup" = "Apri backup";
 "Open export" = "Apri esportazione";
 "Open groups" = "Apri i gruppi";
@@ -580,8 +583,10 @@
 "Scan to get ZenHab" = "Scansiona per scaricare ZenHab";
 "Schedule" = "Programma";
 "Scheduled notifications" = "Notifiche programmate";
+"See how many habits are done today." = "Quante abitudini hai completato oggi.";
 "See how much money you save by quitting a habit." = "Scopri quanti soldi risparmi smettendo un'abitudine.";
 "See how much you've saved with Pro" = "Scopri quanto hai risparmiato con Pro";
+"See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "Le abitudini di oggi al polso, da spuntare con un tocco. Tutto si sincronizza con l'iPhone. Se ZenHab non compare sull'orologio, installalo dall'app Watch sull'iPhone.";
 "See which habits make your days better" = "Scopri quali abitudini migliorano le tue giornate";
 "Send" = "Invia";
 "Send by email" = "Invia via e-mail";
@@ -622,6 +627,7 @@
 "Start free trial" = "Inizia la prova gratuita";
 "Start over" = "Ricomincia";
 "Start the count again?" = "Ricominciare il conto?";
+"Start timer" = "Avvia timer";
 "Statistics" = "Statistiche";
 "Statistics will appear once you start checking off habits." = "Le statistiche compariranno quando inizierai a segnare le abitudini.";
 "Status" = "Stato";
@@ -682,11 +688,13 @@
 "Time's up. Well done!" = "Tempo scaduto. Ben fatto!";
 "Timer" = "Timer";
 "Timer on the Lock Screen" = "Timer sulla schermata di blocco";
+"Timer on your wrist" = "Timer al polso";
 "Today" = "Oggi";
 "Today is a good day." = "Oggi è una bella giornata.";
 "Today screen" = "Schermata Oggi";
 "Today's entry" = "Voce di oggi";
 "Today's habits" = "Abitudini di oggi";
+"Today's progress" = "Progressi di oggi";
 "Today's progress and quick check-off right from the Home Screen." = "I progressi di oggi e la spunta rapida direttamente dalla schermata Home.";
 "Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "I progressi del giorno e la spunta rapida dalla schermata Home. Tieni premuto il widget per scegliere un gruppo.";
 "Tomorrow" = "Domani";
@@ -726,6 +734,7 @@
 "Walk" = "Camminare";
 "Walk 10,000 steps" = "Fare 10.000 passi";
 "Warming up" = "Riscaldamento";
+"Watch face complications" = "Complicazioni sul quadrante";
 "Water, liters" = "Acqua, litri";
 "Week" = "Settimana";
 "Week in review" = "Riepilogo della settimana";
@@ -750,6 +759,7 @@
 "With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets." = "Con Pro, esporta tutte le spunte con note e umore in una tabella per Numbers, Excel o Fogli Google.";
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "Con Pro, dai una durata a un'abitudine. Il conto alla rovescia scorre sulla schermata di blocco e nella Dynamic Island e spunta l'abitudine alla fine.";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "Con Pro, collega un'abitudine a passi, sonno, acqua, allenamenti o consapevolezza: si spunta da sola quando raggiungi l'obiettivo.";
+"With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off." = "Con Pro avvii il timer di un'abitudine su Apple Watch. Allo scadere, l'orologio ti avvisa con un tocco al polso e spunta l'abitudine.";
 "Without it since" = "Senza dal";
 "Words" = "Parole";
 "Words for today are done" = "Le parole di oggi sono fatte";
@@ -781,6 +791,7 @@
 "Your year in review" = "Il riepilogo del tuo anno";
 "Your year's results as a card you can share" = "I risultati del tuo anno in una scheda da condividere";
 "ZenHab is locked" = "ZenHab è bloccato";
+"ZenHab on Apple Watch" = "ZenHab su Apple Watch";
 "a month" = "un mese";
 "a week" = "una settimana";
 "a year" = "un anno";
