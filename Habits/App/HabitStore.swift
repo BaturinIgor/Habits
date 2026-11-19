@@ -23,6 +23,16 @@ final class HabitStore {
         data = DataFile.load()
     }
 
+    #if DEBUG
+    /// Хранилище только в памяти для модульных тестов: не пишет на диск, не трогает виджеты и синхронизацию.
+    init(inMemory data: AppData) {
+        self.data = data
+        inMemory = true
+    }
+    #endif
+
+    private var inMemory = false
+
     /// Перечитывает файл: данные могли измениться из виджета или уведомления.
     func reloadFromDisk() {
         if let fresh = DataFile.loadIfAvailable() {
@@ -40,6 +50,7 @@ final class HabitStore {
 
     private func commit(syncFamily: Bool = true) {
         revision += 1
+        guard !inMemory else { return }
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()
         if #available(iOS 18.0, *) {
@@ -398,8 +409,10 @@ final class HabitStore {
 
     func toggleDone(_ id: UUID, on day: Date) {
         let key = DayKey.make(day)
+        let wasDone = data.status(id, day: key) == .done
         data.tap(habitID: id, day: key)
-        if data.status(id, day: key) == .done { petCheers += 1 }
+        // Промежуточные +1 у привычек со счётчиком питомца не радуют: только итоговая отметка.
+        if !wasDone && data.status(id, day: key) == .done { petCheers += 1 }
         commit()
         Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
         notifyChain(after: id, day: day)
@@ -407,8 +420,9 @@ final class HabitStore {
 
     func markMinimum(_ id: UUID, on day: Date) {
         let key = DayKey.make(day)
+        let wasDone = data.status(id, day: key) == .done
         data.markMinimum(habitID: id, day: key)
-        if data.status(id, day: key) == .done { petCheers += 1 }
+        if !wasDone && data.status(id, day: key) == .done { petCheers += 1 }
         commit()
         Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
         notifyChain(after: id, day: day)
@@ -422,8 +436,9 @@ final class HabitStore {
     /// - Parameter byUser: отметку поставил сам пользователь на экране приложения (питомец радуется).
     func setStatus(_ status: CheckStatus?, for id: UUID, on day: Date, byUser: Bool = false) {
         let key = DayKey.make(day)
+        let wasDone = data.status(id, day: key) == .done
         data.setStatus(status, habitID: id, day: key)
-        if byUser && status == .done { petCheers += 1 }
+        if byUser && !wasDone && status == .done { petCheers += 1 }
         commit()
         if status != nil {
             Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
@@ -478,7 +493,7 @@ final class HabitStore {
     /// Слова дня пройдены: отмечаем привычку выполненной.
     func completeWords(_ habitID: UUID) {
         guard status(habitID, on: Date()) != .done else { return }
-        setStatus(.done, for: habitID, on: Date())
+        setStatus(.done, for: habitID, on: Date(), byUser: true)
     }
 
     // MARK: Настройки

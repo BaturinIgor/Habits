@@ -110,7 +110,8 @@ struct PetScene {
 
     enum Content {
         case shape(Path, fill: Paint?, stroke: Stroke?)
-        case text(String, size: CGFloat, baseline: CGPoint, color: Color)
+        /// color nil - цвет «z», зависит от темы.
+        case text(String, size: CGFloat, baseline: CGPoint, color: Color?)
     }
 
     struct Element {
@@ -448,10 +449,9 @@ struct PetScene {
         }
 
         // Сон: «z». Отметка: искры и +1 (видны только в анимации, как в cat-animation.html).
-        let zColor = Color(petHex: 0xcfd8ff)
         if emo == 2 {
-            out.append(Element(content: .text("z", size: 22, baseline: CGPoint(x: 150, y: 44), color: zColor), inBody: false, group: .z(0)))
-            out.append(Element(content: .text("z", size: 16, baseline: CGPoint(x: 166, y: 28), color: zColor), inBody: false, group: .z(1)))
+            out.append(Element(content: .text("z", size: 22, baseline: CGPoint(x: 150, y: 44), color: nil), inBody: false, group: .z(0)))
+            out.append(Element(content: .text("z", size: 16, baseline: CGPoint(x: 166, y: 28), color: nil), inBody: false, group: .z(1)))
         }
         if emo == 3 {
             let sparks: [(CGFloat, CGFloat, CGFloat)] = [(34, 64, 1.2), (168, 48, 1), (176, 116, 0.8), (26, 128, 0.8)]
@@ -596,8 +596,15 @@ enum PetRenderer {
     static let designSize = CGSize(width: 200, height: 210)
     static let designOriginY: CGFloat = -22
 
-    /// - Parameter shadow: цвет тени; на тёмном фоне чёрная тень не видна, поэтому там она светлая.
-    static func draw(_ scene: PetScene, pose: PetPose, in context: inout GraphicsContext, size: CGSize, shadow: Color = .black) {
+    /// Цвет «z» из дизайна (для тёмного фона) и более контрастный для светлой темы.
+    static let sleepZ = Color(petHex: 0xcfd8ff)
+    static let sleepZLight = Color(petHex: 0x8a9be0)
+
+    /// - Parameters:
+    ///   - shadow: цвет тени; на тёмном фоне чёрная тень не видна, поэтому там она светлая.
+    ///   - zColor: цвет «z» во сне.
+    static func draw(_ scene: PetScene, pose: PetPose, in context: inout GraphicsContext, size: CGSize,
+                     shadow: Color = .black, zColor: Color = sleepZ) {
         let k = min(size.width / designSize.width, size.height / designSize.height)
         var root = context
         root.translateBy(x: (size.width - designSize.width * k) / 2, y: (size.height - designSize.height * k) / 2 - designOriginY * k)
@@ -657,7 +664,7 @@ enum PetRenderer {
                              style: StrokeStyle(lineWidth: stroke.width, lineCap: stroke.cap, lineJoin: stroke.join))
                 }
             case let .text(string, size, baseline, color):
-                let text = c.resolve(Text(verbatim: string).font(.system(size: size, weight: .bold)).foregroundColor(color))
+                let text = c.resolve(Text(verbatim: string).font(.system(size: size, weight: .bold)).foregroundColor(color ?? zColor))
                 let measured = text.measure(in: CGSize(width: 200, height: 200))
                 let ascent = text.firstBaseline(in: measured)
                 c.draw(text, at: CGPoint(x: baseline.x, y: baseline.y - ascent), anchor: .topLeading)
@@ -705,16 +712,18 @@ struct PetArtView: View {
         let scene = PetScene.cached(style, stage: stage, emotion: emotion)
         let level = level
         Group {
-            let shadow = colorScheme == .dark ? Color.white.opacity(0.55) : Color.black
+            let dark = colorScheme == .dark
+            let shadow = dark ? Color.white.opacity(0.55) : Color.black
+            let zColor = dark ? PetRenderer.sleepZ : PetRenderer.sleepZLight
             if level == .still {
-                Self.canvas(scene, pose: .rest, shadow: shadow)
+                Self.canvas(scene, pose: .rest, shadow: shadow, zColor: zColor)
             } else {
                 TimelineView(.animation(minimumInterval: level == .full ? 1.0 / 30 : 1.0 / 20,
                                         paused: !visible || scenePhase == .background)) { timeline in
                     let date = timeline.date
                     let pose = PetPose.at(date.timeIntervalSinceReferenceDate, emotion: emotion, full: level == .full,
                                           reaction: reactedAt.map { date.timeIntervalSince($0) })
-                    Self.canvas(scene, pose: pose, shadow: shadow)
+                    Self.canvas(scene, pose: pose, shadow: shadow, zColor: zColor)
                 }
                 .drawingGroup()
             }
@@ -738,9 +747,9 @@ struct PetArtView: View {
         }
     }
 
-    static func canvas(_ scene: PetScene, pose: PetPose, shadow: Color = .black) -> some View {
+    static func canvas(_ scene: PetScene, pose: PetPose, shadow: Color = .black, zColor: Color = PetRenderer.sleepZ) -> some View {
         Canvas { context, size in
-            PetRenderer.draw(scene, pose: pose, in: &context, size: size, shadow: shadow)
+            PetRenderer.draw(scene, pose: pose, in: &context, size: size, shadow: shadow, zColor: zColor)
         }
     }
 }

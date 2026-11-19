@@ -35,6 +35,45 @@ final class PetArtTests: XCTestCase {
         XCTAssertNil(PetStyle.style(for: "unknown"))
     }
 
+    // MARK: Реакция питомца
+
+    /// Питомец радуется только явной отметке в приложении и кормлению, а не любой смене статуса.
+    func testPetCheersOnlyOnUserCheckOffs() {
+        let today = Calendar.app.startOfDay(for: Date())
+        let start = Calendar.app.date(byAdding: .day, value: -10, to: today)!
+        var data = AppData()
+        let habit = Habit(name: "Test", schedule: HabitSchedule(startDate: start), createdAt: start)
+        var counter = Habit(name: "Water", schedule: HabitSchedule(startDate: start), createdAt: start)
+        counter.target = 3
+        data.habits = [habit, counter]
+        data.settings.proUnlocked = true
+        let store = HabitStore(inMemory: data)
+
+        store.toggleDone(habit.id, on: today)
+        XCTAssertEqual(store.petCheers, 1, "отметка тапом")
+        store.toggleDone(habit.id, on: today)
+        XCTAssertEqual(store.petCheers, 1, "снятие отметки")
+        store.setStatus(.done, for: habit.id, on: today)
+        XCTAssertEqual(store.petCheers, 1, "без byUser (виджет, Siri, Здоровье)")
+        store.setStatus(nil, for: habit.id, on: today)
+        store.setStatus(.skipped, for: habit.id, on: today, byUser: true)
+        XCTAssertEqual(store.petCheers, 1, "пропуск")
+        store.setStatus(.done, for: habit.id, on: today, byUser: true)
+        XCTAssertEqual(store.petCheers, 2, "отметка с экрана")
+        store.setStatus(.done, for: habit.id, on: today, byUser: true)
+        XCTAssertEqual(store.petCheers, 2, "уже выполнена")
+        store.markMinimum(habit.id, on: today)
+        XCTAssertEqual(store.petCheers, 2, "минимум на уже выполненной")
+
+        // Привычка со счётчиком: промежуточные +1 не радуют, только достижение цели.
+        store.toggleDone(counter.id, on: today)
+        store.toggleDone(counter.id, on: today)
+        XCTAssertEqual(store.petCheers, 2)
+        store.toggleDone(counter.id, on: today)
+        XCTAssertEqual(store.status(counter.id, on: today), .done)
+        XCTAssertEqual(store.petCheers, 3)
+    }
+
     // MARK: Геометрия и поза
 
     func testSVGPathParser() {
