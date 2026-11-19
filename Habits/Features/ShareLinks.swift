@@ -16,11 +16,11 @@ extension AppInfo {
     /// Provider token из App Store Connect (Analytics → Campaigns → Generate Campaign Link, параметр `pt`).
     /// Без него Apple не засчитывает метку `ct`, поэтому пока он пустой, ссылка идёт без меток:
     /// так QR-код короче и читается легче.
-    static let providerToken = ""
+    static let providerToken = "129723822"
 
     /// Ссылка на приложение в App Store для карточек «поделиться».
     static func appStoreURL(campaign: ShareCampaign, providerToken: String = providerToken) -> URL {
-        var components = URLComponents(string: "https://apps.apple.com/app/id\(appStoreID)")!
+        var components = URLComponents(string: "https://apps.apple.com/app/apple-store/id\(appStoreID)")!
         if !providerToken.isEmpty {
             components.queryItems = [
                 URLQueryItem(name: "pt", value: providerToken),

@@ -84,11 +84,11 @@ final class LogicTests: XCTestCase {
         // Без provider token Apple метки не считает, поэтому их нет.
         let plain = AppInfo.appStoreURL(campaign: .weekly, providerToken: "")
         XCTAssertEqual(plain.host, "apps.apple.com")
-        XCTAssertEqual(plain.path, "/app/id\(AppInfo.appStoreID)")
+        XCTAssertEqual(plain.path, "/app/apple-store/id\(AppInfo.appStoreID)")
         XCTAssertNil(plain.query)
 
         let tagged = AppInfo.appStoreURL(campaign: .month, providerToken: "123456")
-        XCTAssertEqual(tagged.path, "/app/id\(AppInfo.appStoreID)")
+        XCTAssertEqual(tagged.path, "/app/apple-store/id\(AppInfo.appStoreID)")
         let items = URLComponents(url: tagged, resolvingAgainstBaseURL: false)?.queryItems ?? []
         XCTAssertEqual(Set(items), [
             URLQueryItem(name: "pt", value: "123456"),
