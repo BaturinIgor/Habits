@@ -81,18 +81,51 @@ final class LogicTests: XCTestCase {
     // MARK: Ссылка на App Store при шеринге (1.6)
 
     func testShareLinkPointsToAppStore() {
+        // Без provider token Apple метки не считает, поэтому их нет.
+        let plain = AppInfo.appStoreURL(campaign: .weekly, providerToken: "")
+        XCTAssertEqual(plain.host, "apps.apple.com")
+        XCTAssertEqual(plain.path, "/app/id\(AppInfo.appStoreID)")
+        XCTAssertNil(plain.query)
+
+        let tagged = AppInfo.appStoreURL(campaign: .month, providerToken: "123456")
+        XCTAssertEqual(tagged.path, "/app/id\(AppInfo.appStoreID)")
+        let items = URLComponents(url: tagged, resolvingAgainstBaseURL: false)?.queryItems ?? []
+        XCTAssertEqual(Set(items), [
+            URLQueryItem(name: "pt", value: "123456"),
+            URLQueryItem(name: "ct", value: "share_month"),
+            URLQueryItem(name: "mt", value: "8"),
+        ])
+
         let url = AppInfo.appStoreURL(campaign: .weekly)
-        XCTAssertEqual(url.host, "apps.apple.com")
-        XCTAssertEqual(url.path, "/app/id\(AppInfo.appStoreID)")
-        if AppInfo.providerToken.isEmpty {
-            // Без provider token Apple метки не считает, поэтому их нет.
-            XCTAssertNil(url.query)
-        } else {
-            let items = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems ?? []
-            XCTAssertTrue(items.contains(URLQueryItem(name: "pt", value: AppInfo.providerToken)))
-            XCTAssertTrue(items.contains(URLQueryItem(name: "ct", value: "share_weekly")))
-        }
         XCTAssertTrue(ShareSheet.message(campaign: .weekly).hasSuffix(" " + url.absoluteString))
+    }
+
+    /// Длинная ссылка с метками (когда появится provider token) тоже даёт читаемый QR-код.
+    @MainActor
+    func testTaggedLinkQRCodeIsReadable() throws {
+        let link = AppInfo.appStoreURL(campaign: .achievement, providerToken: "118727439").absoluteString
+        let renderer = ImageRenderer(content:
+            qrBlock(link)
+                .padding(20)
+                .background(LinearGradient(colors: [.indigo, .purple], startPoint: .top, endPoint: .bottom))
+        )
+        renderer.scale = 3
+        let image = try XCTUnwrap(renderer.cgImage)
+        let detector = try XCTUnwrap(CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]))
+        let codes = detector.features(in: CIImage(cgImage: image)).compactMap { ($0 as? CIQRCodeFeature)?.messageString }
+        XCTAssertEqual(codes, [link])
+    }
+
+    @MainActor
+    private func qrBlock(_ link: String) -> some View {
+        let qr = QRCode(link)!
+        let module = qr.modulePoints(fitting: 88)
+        return Image(uiImage: qr.image)
+            .interpolation(.none)
+            .resizable()
+            .frame(width: module * CGFloat(qr.modules), height: module * CGFloat(qr.modules))
+            .padding(module * 3)
+            .background(Color.white)
     }
 
     /// QR-код на картинке «Итогов недели» читается и ведёт в App Store.

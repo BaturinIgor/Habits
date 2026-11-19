@@ -19,7 +19,7 @@ extension AppInfo {
     static let providerToken = ""
 
     /// Ссылка на приложение в App Store для карточек «поделиться».
-    static func appStoreURL(campaign: ShareCampaign) -> URL {
+    static func appStoreURL(campaign: ShareCampaign, providerToken: String = providerToken) -> URL {
         var components = URLComponents(string: "https://apps.apple.com/app/id\(appStoreID)")!
         if !providerToken.isEmpty {
             components.queryItems = [
@@ -32,16 +32,29 @@ extension AppInfo {
     }
 }
 
-enum QRCode {
-    /// Чёрный QR-код на белом. Рисовать с `.interpolation(.none)`, чтобы края модулей оставались чёткими.
-    static func image(for text: String) -> UIImage? {
+/// QR-код: картинка, где один пиксель — один модуль (с полем в 1 модуль от CoreImage).
+struct QRCode {
+    let image: UIImage
+    /// Сторона в модулях вместе с полем.
+    let modules: Int
+
+    private static let context = CIContext()
+
+    init?(_ text: String) {
         let filter = CIFilter.qrCodeGenerator()
         filter.message = Data(text.utf8)
         filter.correctionLevel = "M"
-        guard let output = filter.outputImage else { return nil }
-        let scaled = output.transformed(by: CGAffineTransform(scaleX: 10, y: 10))
-        guard let cgImage = CIContext().createCGImage(scaled, from: scaled.extent) else { return nil }
-        return UIImage(cgImage: cgImage)
+        guard let output = filter.outputImage,
+              let cgImage = Self.context.createCGImage(output, from: output.extent) else { return nil }
+        image = UIImage(cgImage: cgImage)
+        modules = cgImage.width
+    }
+
+    /// Размер модуля в пунктах, чтобы при рендере ×3 модуль был целым числом пикселей (без «рваных» модулей),
+    /// а весь код занимал не больше `side` пунктов.
+    func modulePoints(fitting side: CGFloat, renderScale: CGFloat = 3) -> CGFloat {
+        let pixels = max(1, (side * renderScale / CGFloat(modules)).rounded(.down))
+        return pixels / renderScale
     }
 }
 
@@ -51,6 +64,7 @@ struct ShareCardFooter: View {
     let campaign: ShareCampaign
 
     var body: some View {
+        let qr = QRCode(AppInfo.appStoreURL(campaign: campaign).absoluteString)
         HStack(alignment: .center, spacing: 12) {
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
@@ -58,20 +72,25 @@ struct ShareCardFooter: View {
                     Text(verbatim: "ZenHab")
                 }
                 .font(.subheadline.weight(.bold))
-                Text("Scan to get ZenHab")
-                    .font(.caption)
-                    .opacity(0.85)
+                // Призыв сканировать — только если код действительно нарисован.
+                if qr != nil {
+                    Text("Scan to get ZenHab")
+                        .font(.caption)
+                        .opacity(0.85)
+                }
                 Text(verbatim: "App Store")
                     .font(.caption2.weight(.semibold))
                     .opacity(0.7)
             }
             Spacer(minLength: 0)
-            if let qr = QRCode.image(for: AppInfo.appStoreURL(campaign: campaign).absoluteString) {
-                Image(uiImage: qr)
+            if let qr {
+                let module = qr.modulePoints(fitting: 88)
+                Image(uiImage: qr.image)
                     .interpolation(.none)
                     .resizable()
-                    .frame(width: 68, height: 68)
-                    .padding(6)
+                    .frame(width: module * CGFloat(qr.modules), height: module * CGFloat(qr.modules))
+                    // Поле вокруг кода по стандарту — 4 модуля: 1 уже есть в картинке, ещё 3 — белая подложка.
+                    .padding(module * 3)
                     .background(RoundedRectangle(cornerRadius: 10, style: .continuous).fill(.white))
                     .accessibilityHidden(true)
             }
@@ -94,15 +113,36 @@ enum ShareSheet {
 
     @MainActor
     private static func present(_ items: [Any]) {
-        let window = UIApplication.shared.connectedScenes
-            .compactMap { ($0 as? UIWindowScene)?.keyWindow }
-            .first
-        guard var top = window?.rootViewController else { return }
+        guard var top = keyWindow()?.rootViewController else {
+            assertionFailure("ShareSheet: no window to present from")
+            return
+        }
         while let presented = top.presentedViewController {
             top = presented
         }
+        // Второе быстрое нажатие или нажатие во время закрытия: не показываем окно поверх окна.
+        if top is UIActivityViewController || top.isBeingDismissed || top.isBeingPresented {
+            return
+        }
         let controller = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        controller.popoverPresentationController?.sourceView = top.view
+        if let popover = controller.popoverPresentationController {
+            let bounds = top.view.bounds
+            popover.sourceView = top.view
+            popover.sourceRect = CGRect(x: bounds.midX, y: bounds.maxY - 1, width: 0, height: 0)
+            popover.permittedArrowDirections = []
+        }
         top.present(controller, animated: true)
+    }
+
+    @MainActor
+    private static func keyWindow() -> UIWindow? {
+        let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+        let active = scenes.filter { $0.activationState == .foregroundActive }
+        for scene in active + scenes {
+            if let window = scene.keyWindow ?? scene.windows.first(where: \.isKeyWindow) ?? scene.windows.first {
+                return window
+            }
+        }
+        return nil
     }
 }
