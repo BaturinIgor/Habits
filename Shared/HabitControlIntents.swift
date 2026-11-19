@@ -79,7 +79,7 @@ struct SetHabitDoneIntent: SetValueIntent {
         if value {
             await NotificationPlanner.clearDelivered(habitID: id, day: day)
             if let date = DayKey.date(day) {
-                NotificationPlanner.notifyChain(after: id, day: date, data: data)
+                await NotificationPlanner.notifyChain(after: id, day: date, data: data)
             }
         }
         await NotificationPlanner.reschedule(data: data)
