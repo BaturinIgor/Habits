@@ -62,6 +62,20 @@ struct QRCode {
 /// Ссылка нарисована прямо на картинке, потому что Instagram Stories и «Фото» текст не берут.
 struct ShareCardFooter: View {
     let campaign: ShareCampaign
+    /// Призыв под названием. Параметр нужен тестам, чтобы проверить подпись на всех языках.
+    var scanText = String(localized: "Scan to get ZenHab")
+
+    /// Ширина колонки с текстом на картинке (карточка 360 pt минус поля и QR-код).
+    static func textColumnWidth(cardWidth: CGFloat = 360, campaign: ShareCampaign) -> CGFloat {
+        let qrSide: CGFloat
+        if let qr = QRCode(AppInfo.appStoreURL(campaign: campaign).absoluteString) {
+            let module = qr.modulePoints(fitting: 88)
+            qrSide = module * CGFloat(qr.modules) + module * 6
+        } else {
+            qrSide = 0
+        }
+        return cardWidth - 2 * 22 - 12 - qrSide
+    }
 
     var body: some View {
         let qr = QRCode(AppInfo.appStoreURL(campaign: campaign).absoluteString)
@@ -73,10 +87,12 @@ struct ShareCardFooter: View {
                 }
                 .font(.subheadline.weight(.bold))
                 // Призыв сканировать — только если код действительно нарисован.
+                // Переносится по словам на 2-3 строки: по-русски фраза не влезает в одну строку рядом с кодом.
                 if qr != nil {
-                    Text("Scan to get ZenHab")
+                    WordWrapText(scanText)
                         .font(.caption)
                         .opacity(0.85)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 Text(verbatim: "App Store")
                     .font(.caption2.weight(.semibold))

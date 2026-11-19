@@ -1,5 +1,6 @@
 import CoreImage
 import SwiftUI
+import UIKit
 import XCTest
 @testable import Habits
 
@@ -150,6 +151,68 @@ final class LogicTests: XCTestCase {
             XCTAssertTrue(recap.hasData, "\(period)")
             XCTAssertEqual(try qrCodes(onShareImageOf: recap), [AppInfo.appStoreURL(campaign: period.campaign).absoluteString], "\(period)")
         }
+    }
+
+    /// Подпись «Scan to get ZenHab» под названием на картинке «Поделиться» на всех 14 языках:
+    /// каждое слово целиком помещается в колонку рядом с QR-кодом (без обрезки «…» и уменьшения),
+    /// подвал не выше 3 строк, а QR-код рядом с самой длинной подписью (ru) читается. KAN-101.
+    @MainActor
+    func testShareFooterScanTextFitsInAllLanguages() throws {
+        let campaign = ShareCampaign.month
+        let column = ShareCardFooter.textColumnWidth(campaign: campaign)
+        let font = UIFont.preferredFont(forTextStyle: .caption1, compatibleWith: UITraitCollection(preferredContentSizeCategory: .large))
+        let languages = Bundle.main.localizations.filter { $0 != "Base" }
+        XCTAssertGreaterThanOrEqual(languages.count, 14, "\(languages)")
+        let link = AppInfo.appStoreURL(campaign: campaign).absoluteString
+        for language in languages {
+            let path = try XCTUnwrap(Bundle.main.path(forResource: language, ofType: "lproj"), language)
+            let bundle = try XCTUnwrap(Bundle(path: path))
+            let text = bundle.localizedString(forKey: "Scan to get ZenHab", value: nil, table: nil)
+            if language != "en" { XCTAssertNotEqual(text, "Scan to get ZenHab", "\(language): not translated") }
+            let words = WordWrapText.words(text)
+            for word in words where words.count > 1 {
+                let width = (word as NSString).size(withAttributes: [.font: font]).width
+                XCTAssertLessThan(width, column, "\(language): «\(word)» is wider than the column")
+            }
+            // Вся фраза помещается в 3 строки колонки.
+            let total = (text as NSString).size(withAttributes: [.font: font]).width
+            XCTAssertLessThan(total, column * 3 * 0.9, "\(language): «\(text)» needs more than 3 lines")
+
+            let footer = ShareCardFooter(campaign: campaign, scanText: text)
+                .frame(width: 360 - 44)
+                .padding(22)
+                .background(Color.blue)
+                .environment(\.colorScheme, .light)
+                .dynamicTypeSize(.large)
+            let renderer = ImageRenderer(content: footer)
+            renderer.scale = 3
+            let image = try XCTUnwrap(renderer.cgImage, language)
+            let detector = try XCTUnwrap(CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]))
+            let codes = detector.features(in: CIImage(cgImage: image)).compactMap { ($0 as? CIQRCodeFeature)?.messageString }
+            XCTAssertEqual(codes, [link], language)
+        }
+    }
+
+    /// Слова в WordFlowLayout переносятся только целиком: строк столько, сколько нужно по ширине слов,
+    /// и картинка не шире предложенной ширины. KAN-101.
+    @MainActor
+    func testWordWrapTextBreaksOnlyBetweenWords() throws {
+        let font = UIFont.systemFont(ofSize: 30)
+        func height(_ text: String, width: CGFloat) throws -> CGFloat {
+            let renderer = ImageRenderer(content: WordWrapText(text).font(.system(size: 30)).frame(width: width, alignment: .leading).fixedSize(horizontal: false, vertical: true))
+            renderer.scale = 1
+            return try XCTUnwrap(renderer.uiImage).size.height
+        }
+        let line = font.lineHeight
+        // «привычек выполнено» в 200 pt: два слова на двух строках, а не «выпол-нено» на третьей.
+        let two = try height("привычек выполнено", width: 200)
+        XCTAssertEqual(two, 2 * line, accuracy: line * 0.4)
+        // В широкой колонке — одна строка.
+        let one = try height("привычек выполнено", width: 600)
+        XCTAssertEqual(one, line, accuracy: line * 0.4)
+        // Слово шире колонки уменьшается и остаётся одной строкой.
+        let long = try height("Идеальные", width: 80)
+        XCTAssertLessThanOrEqual(long, line * 1.2)
     }
 
     @MainActor

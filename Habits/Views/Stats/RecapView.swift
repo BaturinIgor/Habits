@@ -4,6 +4,7 @@ import UIKit
 /// Карточка итогов недели, месяца или года. Рисуется и на экране, и в картинку, которой
 /// можно поделиться, поэтому цвета заданы явно и не зависят от темы.
 struct RecapCard: View {
+    @Environment(\.dynamicTypeSize) private var typeSize
     let recap: Recap
     /// Картинка для «Поделиться»: внизу QR-код со ссылкой на App Store вместо простой подписи.
     var forSharing = false
@@ -89,14 +90,17 @@ struct RecapCard: View {
                     .opacity(0.8)
             }
 
-            HStack(alignment: .firstTextBaseline, spacing: 8) {
-                Text(verbatim: "\(recap.percent)%")
-                    .font(.system(size: 64, weight: .heavy, design: .rounded).monospacedDigit())
-                    .minimumScaleFactor(0.6)
-                    .lineLimit(1)
-                Text("of habits done")
-                    .font(.subheadline.weight(.medium))
-                    .opacity(0.85)
+            // При очень крупном шрифте подпись под процентом: рядом ей остаётся по слову на строку.
+            if typeSize.isAccessibilitySize {
+                VStack(alignment: .leading, spacing: 0) {
+                    percentText
+                    percentLabel
+                }
+            } else {
+                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                    percentText
+                    percentLabel
+                }
             }
 
             HStack(alignment: .bottom, spacing: barSpacing) {
@@ -132,8 +136,7 @@ struct RecapCard: View {
 
             if let top = recap.top {
                 Label {
-                    Text("Most steady: \(top.name), \(top.done) of \(top.total)")
-                        .lineLimit(2)
+                    WordWrapText(String(localized: "Most steady: \(top.name), \(top.done) of \(top.total)"))
                 } icon: {
                     Image(systemName: "trophy.fill")
                 }
@@ -159,18 +162,30 @@ struct RecapCard: View {
         }
     }
 
+    private var percentText: some View {
+        Text(verbatim: "\(recap.percent)%")
+            .font(.system(size: 64, weight: .heavy, design: .rounded).monospacedDigit())
+            .minimumScaleFactor(0.6)
+            .lineLimit(1)
+    }
+
+    private var percentLabel: some View {
+        WordWrapText(String(localized: "of habits done"))
+            .font(.subheadline.weight(.medium))
+            .opacity(0.85)
+    }
+
     private func tile(value: String, title: String, symbol: String) -> some View {
         VStack(spacing: 4) {
             Image(systemName: symbol)
                 .font(.footnote)
             Text(value)
                 .font(.title3.weight(.bold).monospacedDigit())
-            Text(title)
+            // Слова целиком: обычный Text при крупном шрифте рвёт их по слогам («Отме-чено»).
+            WordWrapText(title, alignment: .center)
                 .font(.caption2)
                 .opacity(0.85)
-                .multilineTextAlignment(.center)
-                .lineLimit(2, reservesSpace: true)
-                .minimumScaleFactor(0.8)
+                .padding(.horizontal, 4)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .padding(.vertical, 10)
@@ -271,6 +286,8 @@ extension RecapCard {
             .padding(20)
             .background(Color.white)
             .environment(\.colorScheme, .light)
+            // Картинка одинаковая при любом размере шрифта в системе.
+            .dynamicTypeSize(.large)
     }
 }
 
@@ -280,7 +297,7 @@ struct RecapBanner: View {
     var onOpen: () -> Void
     var onClose: () -> Void
 
-    private var title: LocalizedStringKey {
+    private var title: String.LocalizationValue {
         switch recap.period {
         case .week: "Your week in review"
         case .month: "Your month in review"
@@ -295,7 +312,7 @@ struct RecapBanner: View {
                 .foregroundStyle(.indigo)
             Button(action: onOpen) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(title)
+                    WordWrapText(String(localized: title))
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Color.primary)
                     HStack(spacing: 4) {
