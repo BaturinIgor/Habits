@@ -209,7 +209,7 @@ enum AnalyticsSnapshot {
         let active = data.activeHabits
         let today = Date()
         let calendar = Calendar.app
-        let weekAgo = calendar.date(byAdding: .day, value: -7, to: today).map(DayKey.make) ?? ""
+        let weekAgo = calendar.date(byAdding: .day, value: -7, to: today).map { DayKey.make($0) } ?? ""
         let todayKey = DayKey.make(today)
         var checks7 = 0
         for (key, checkIn) in data.checkIns where checkIn.status == .done {
