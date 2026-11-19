@@ -783,3 +783,5 @@ ZenHab is locked||ZenHab jest zablokowany
 passcode||kod
 %lld XP||%lld XP
 Pet name||Imię zwierzaka
+Scan to get ZenHab||Zeskanuj, aby pobrać ZenHab
+Track your habits with ZenHab||Śledź swoje nawyki w ZenHab

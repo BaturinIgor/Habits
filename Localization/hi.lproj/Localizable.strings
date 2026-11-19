@@ -569,6 +569,7 @@
 "Saved: %@" = "बचत: %@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Siri से कहें: “Check off a habit in ZenHab”, “Add a habit in ZenHab” या “What's left in ZenHab”।";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "आदत का नाम बोलें, जैसे “पानी पीना”।";
+"Scan to get ZenHab" = "ZenHab पाने के लिए स्कैन करें";
 "Schedule" = "समय-सारिणी";
 "Scheduled notifications" = "तय सूचनाएँ";
 "See how much money you save by quitting a habit." = "देखें कि आदत छोड़कर आप कितने पैसे बचाते हैं।";
@@ -686,6 +687,7 @@
 "Total, days" = "कुल, दिन";
 "Track expenses" = "ख़र्च लिखें";
 "Track habits, get gentle reminders and watch your streaks grow." = "आदतें दर्ज करें, हल्के रिमाइंडर पाएँ और अपनी लगातार गिनती बढ़ते देखें।";
+"Track your habits with ZenHab" = "ZenHab के साथ अपनी आदतें ट्रैक करें";
 "Try again" = "फिर से कोशिश करें";
 "Try it" = "आज़माएँ";
 "Turn on the lock" = "लॉक चालू करें";

@@ -569,6 +569,7 @@
 "Saved: %@" = "已省下：%@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "说“在ZenHab中打卡习惯”、“在ZenHab中添加习惯”或“ZenHab还剩什么”。";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "说出习惯名称，例如“喝水”。";
+"Scan to get ZenHab" = "扫码获取 ZenHab";
 "Schedule" = "计划";
 "Scheduled notifications" = "已安排的通知";
 "See how much money you save by quitting a habit." = "看看戒掉一个习惯能省下多少钱。";
@@ -686,6 +687,7 @@
 "Total, days" = "总计，天";
 "Track expenses" = "记账";
 "Track habits, get gentle reminders and watch your streaks grow." = "记录习惯，接收温和提醒，看着连续记录不断增长。";
+"Track your habits with ZenHab" = "用 ZenHab 追踪你的习惯";
 "Try again" = "重试";
 "Try it" = "试一试";
 "Turn on the lock" = "开启锁定";

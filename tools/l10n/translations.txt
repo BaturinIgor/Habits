@@ -784,3 +784,5 @@ ZenHab is locked||ZenHab заблокирован||ZenHab ist gesperrt||ZenHab e
 passcode||код-пароль||Code||code||código||密码||パスコード||암호||पासकोड
 %lld XP||%lld опыта||%lld EP||%lld XP||%lld XP||%lld 经验||%lld XP||경험치 %lld||%lld XP
 Pet name||Имя питомца||Name des Haustiers||Nom du compagnon||Nombre de la mascota||宠物名字||ペットの名前||펫 이름||पालतू का नाम
+Scan to get ZenHab||Наведи камеру, чтобы скачать ZenHab||Scannen, um ZenHab zu laden||Scanne pour obtenir ZenHab||Escanea para descargar ZenHab||扫码获取 ZenHab||スキャンしてZenHabを入手||스캔해서 ZenHab 받기||ZenHab पाने के लिए स्कैन करें
+Track your habits with ZenHab||Отслеживай привычки в ZenHab||Verfolge deine Gewohnheiten mit ZenHab||Suis tes habitudes avec ZenHab||Sigue tus hábitos con ZenHab||用 ZenHab 追踪你的习惯||ZenHabで習慣を記録しよう||ZenHab으로 습관을 기록하세요||ZenHab के साथ अपनी आदतें ट्रैक करें

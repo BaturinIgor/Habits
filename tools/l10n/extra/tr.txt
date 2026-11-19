@@ -783,3 +783,5 @@ ZenHab is locked||ZenHab kilitli
 passcode||parola
 %lld XP||%lld XP
 Pet name||Evcil hayvanın adı
+Scan to get ZenHab||ZenHab'i indirmek için tara
+Track your habits with ZenHab||Alışkanlıklarını ZenHab ile takip et

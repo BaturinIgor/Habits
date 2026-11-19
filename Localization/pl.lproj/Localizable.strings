@@ -569,6 +569,7 @@
 "Saved: %@" = "Zaoszczędzone: %@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Powiedz Siri: „Check off a habit in ZenHab”, „Add a habit in ZenHab” lub „What's left in ZenHab”.";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Powiedz nazwę nawyku, na przykład „Pić wodę”.";
+"Scan to get ZenHab" = "Zeskanuj, aby pobrać ZenHab";
 "Schedule" = "Harmonogram";
 "Scheduled notifications" = "Zaplanowane powiadomienia";
 "See how much money you save by quitting a habit." = "Zobacz, ile pieniędzy oszczędzasz, rzucając nawyk.";
@@ -686,6 +687,7 @@
 "Total, days" = "Razem, dni";
 "Track expenses" = "Zapisywać wydatki";
 "Track habits, get gentle reminders and watch your streaks grow." = "Śledź nawyki, otrzymuj delikatne przypomnienia i patrz, jak rosną twoje serie.";
+"Track your habits with ZenHab" = "Śledź swoje nawyki w ZenHab";
 "Try again" = "Spróbuj ponownie";
 "Try it" = "Wypróbuj";
 "Turn on the lock" = "Włącz blokadę";

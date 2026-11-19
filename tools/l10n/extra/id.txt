@@ -783,3 +783,5 @@ ZenHab is locked||ZenHab terkunci
 passcode||kode sandi
 %lld XP||%lld XP
 Pet name||Nama hewan peliharaan
+Scan to get ZenHab||Pindai untuk mendapatkan ZenHab
+Track your habits with ZenHab||Pantau kebiasaanmu dengan ZenHab

@@ -569,6 +569,7 @@
 "Saved: %@" = "Dihemat: %@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Ucapkan ke Siri: “Check off a habit in ZenHab”, “Add a habit in ZenHab”, atau “What's left in ZenHab”.";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Ucapkan nama kebiasaan, misalnya “Minum air”.";
+"Scan to get ZenHab" = "Pindai untuk mendapatkan ZenHab";
 "Schedule" = "Jadwal";
 "Scheduled notifications" = "Notifikasi terjadwal";
 "See how much money you save by quitting a habit." = "Lihat berapa banyak uang yang kamu hemat dengan berhenti dari suatu kebiasaan.";
@@ -686,6 +687,7 @@
 "Total, days" = "Total, hari";
 "Track expenses" = "Catat pengeluaran";
 "Track habits, get gentle reminders and watch your streaks grow." = "Lacak kebiasaan, dapatkan pengingat yang lembut, dan lihat rentetanmu bertambah.";
+"Track your habits with ZenHab" = "Pantau kebiasaanmu dengan ZenHab";
 "Try again" = "Coba lagi";
 "Try it" = "Coba";
 "Turn on the lock" = "Aktifkan kunci";

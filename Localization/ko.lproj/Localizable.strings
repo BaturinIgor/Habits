@@ -569,6 +569,7 @@
 "Saved: %@" = "아낀 돈: %@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "\"ZenHab에서 습관 체크\", \"ZenHab에서 습관 추가\", \"ZenHab에서 뭐가 남았어\"라고 말해 보세요.";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "습관 이름을 말하세요. 예: '물 마시기'";
+"Scan to get ZenHab" = "스캔해서 ZenHab 받기";
 "Schedule" = "일정";
 "Scheduled notifications" = "예약된 알림";
 "See how much money you save by quitting a habit." = "습관을 끊어서 아낀 돈을 확인하세요.";
@@ -686,6 +687,7 @@
 "Total, days" = "합계(일)";
 "Track expenses" = "지출 기록하기";
 "Track habits, get gentle reminders and watch your streaks grow." = "습관을 기록하고, 부드러운 알림을 받고, 연속 기록이 늘어나는 걸 보세요.";
+"Track your habits with ZenHab" = "ZenHab으로 습관을 기록하세요";
 "Try again" = "다시 시도";
 "Try it" = "사용해 보기";
 "Turn on the lock" = "잠금 켜기";
