@@ -61,10 +61,30 @@ struct QRCode {
 /// Ссылка нарисована прямо на картинке, потому что Instagram Stories и «Фото» текст не берут.
 struct ShareCardFooter: View {
     let campaign: ShareCampaign
+    /// Призыв под названием. Параметр нужен тестам, чтобы проверить подпись на всех языках.
+    var scanText = String(localized: "Scan to get ZenHab")
+
+    /// Сторона QR-кода, в которую он вписывается, и отступ между текстом и кодом.
+    static let qrFitting: CGFloat = 88
+    static let spacing: CGFloat = 12
+    /// Белое поле вокруг кода: 3 модуля (ещё 1 уже есть в картинке).
+    static let quietModules: CGFloat = 3
+
+    /// Ширина колонки с текстом на картинке (карточка 360 pt минус поля и QR-код).
+    static func textColumnWidth(cardWidth: CGFloat = 360, campaign: ShareCampaign) -> CGFloat {
+        let qrSide: CGFloat
+        if let qr = QRCode(AppInfo.appStoreURL(campaign: campaign).absoluteString) {
+            let module = qr.modulePoints(fitting: qrFitting)
+            qrSide = module * CGFloat(qr.modules) + module * quietModules * 2
+        } else {
+            qrSide = 0
+        }
+        return cardWidth - 2 * RecapCard.padding - spacing - qrSide
+    }
 
     var body: some View {
         let qr = QRCode(AppInfo.appStoreURL(campaign: campaign).absoluteString)
-        HStack(alignment: .center, spacing: 12) {
+        HStack(alignment: .center, spacing: Self.spacing) {
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
                     Image(systemName: "leaf.fill")
@@ -72,10 +92,12 @@ struct ShareCardFooter: View {
                 }
                 .font(.subheadline.weight(.bold))
                 // Призыв сканировать — только если код действительно нарисован.
+                // Переносится по словам на 2-3 строки: по-русски фраза не влезает в одну строку рядом с кодом.
                 if qr != nil {
-                    Text("Scan to get ZenHab")
+                    WordWrapText(scanText)
                         .font(.caption)
                         .opacity(0.85)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 Text(verbatim: "App Store")
                     .font(.caption2.weight(.semibold))
@@ -83,13 +105,13 @@ struct ShareCardFooter: View {
             }
             Spacer(minLength: 0)
             if let qr {
-                let module = qr.modulePoints(fitting: 88)
+                let module = qr.modulePoints(fitting: Self.qrFitting)
                 Image(uiImage: qr.image)
                     .interpolation(.none)
                     .resizable()
                     .frame(width: module * CGFloat(qr.modules), height: module * CGFloat(qr.modules))
                     // Поле вокруг кода по стандарту — 4 модуля: 1 уже есть в картинке, ещё 3 — белая подложка.
-                    .padding(module * 3)
+                    .padding(module * Self.quietModules)
                     .background(RoundedRectangle(cornerRadius: 10, style: .continuous).fill(.white))
                     .accessibilityHidden(true)
             }

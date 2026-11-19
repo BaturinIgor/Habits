@@ -31,6 +31,7 @@ private struct FamilyRefresh: ViewModifier {
 struct TodayView: View {
     @Environment(HabitStore.self) private var store
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var selectedDay: Date = Calendar.app.startOfDay(for: Date())
     @State private var anchorToday: Date = Calendar.app.startOfDay(for: Date())
     @State private var path: [UUID] = []
@@ -115,6 +116,21 @@ struct TodayView: View {
         }
     }
 
+    @ViewBuilder
+    private var recapBannerRow: some View {
+        if isToday, let recap = bannerRecap {
+            RecapBanner(recap: recap) {
+                shownRecap = recap
+            } onClose: {
+                withAnimation {
+                    dismissRecap(recap)
+                    bannerRecap = nil
+                }
+            }
+            .plainRow(top: 4, bottom: 6)
+        }
+    }
+
     private func dismissRecap(_ recap: Recap) {
         switch recap.period {
         case .week: recapDismissed = recap.key
@@ -143,6 +159,12 @@ struct TodayView: View {
                 WeekStrip(selected: $selectedDay)
                     .plainRow(top: 4, bottom: 6, horizontal: 0)
 
+                // При очень крупном шрифте карточки выше занимают весь экран, и итоги оказывались
+                // под панелью вкладок: показываем их сразу под неделей.
+                if typeSize.isAccessibilitySize {
+                    recapBannerRow
+                }
+
                 DayProgressCard(progress: progress, isFuture: isFuture, celebrate: isToday)
                     .plainRow(top: 6, bottom: 6)
 
@@ -163,16 +185,8 @@ struct TodayView: View {
                     .plainRow(top: 2, bottom: 2)
                 }
 
-                if isToday, let recap = bannerRecap {
-                    RecapBanner(recap: recap) {
-                        shownRecap = recap
-                    } onClose: {
-                        withAnimation {
-                            dismissRecap(recap)
-                            bannerRecap = nil
-                        }
-                    }
-                    .plainRow(top: 4, bottom: 6)
+                if !typeSize.isAccessibilitySize {
+                    recapBannerRow
                 }
 
                 if isToday, let item = streakRepair {

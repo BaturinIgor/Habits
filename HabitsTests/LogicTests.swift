@@ -1,5 +1,6 @@
 import CoreImage
 import SwiftUI
+import UIKit
 import XCTest
 @testable import Habits
 
@@ -160,6 +161,116 @@ final class LogicTests: XCTestCase {
             let recap = Recap.current(period, in: data)
             XCTAssertTrue(recap.hasData, "\(period)")
             XCTAssertEqual(try qrCodes(onShareImageOf: recap), [AppInfo.appStoreURL(campaign: period.campaign).absoluteString], "\(period)")
+        }
+    }
+
+    /// Подпись «Scan to get ZenHab» под названием на картинке «Поделиться» на всех 14 языках:
+    /// каждое слово целиком помещается в колонку рядом с QR-кодом (без обрезки «…» и уменьшения),
+    /// подвал не выше 3 строк, а QR-код рядом с самой длинной подписью (ru) читается. KAN-101.
+    @MainActor
+    func testShareFooterScanTextFitsInAllLanguages() throws {
+        let campaign = ShareCampaign.month
+        let column = ShareCardFooter.textColumnWidth(campaign: campaign)
+        let font = UIFont.preferredFont(forTextStyle: .caption1, compatibleWith: UITraitCollection(preferredContentSizeCategory: .large))
+        let languages = Bundle.main.localizations.filter { $0 != "Base" }
+        XCTAssertGreaterThanOrEqual(languages.count, 14, "\(languages)")
+        let link = AppInfo.appStoreURL(campaign: campaign).absoluteString
+        for language in languages {
+            let path = try XCTUnwrap(Bundle.main.path(forResource: language, ofType: "lproj"), language)
+            let bundle = try XCTUnwrap(Bundle(path: path))
+            let text = bundle.localizedString(forKey: "Scan to get ZenHab", value: nil, table: nil)
+            if language != "en" { XCTAssertNotEqual(text, "Scan to get ZenHab", "\(language): not translated") }
+            let words = WordWrapText.words(text)
+            for word in words where words.count > 1 {
+                let width = (word as NSString).size(withAttributes: [.font: font]).width
+                XCTAssertLessThan(width, column, "\(language): «\(word)» is wider than the column")
+            }
+            // Вся фраза помещается в 3 строки колонки.
+            let total = (text as NSString).size(withAttributes: [.font: font]).width
+            XCTAssertLessThan(total, column * 3 * 0.9, "\(language): «\(text)» needs more than 3 lines")
+
+            let footer = ShareCardFooter(campaign: campaign, scanText: text)
+                .frame(width: 360 - 44)
+                .padding(22)
+                .background(Color.blue)
+                .environment(\.colorScheme, .light)
+                .dynamicTypeSize(.large)
+            let renderer = ImageRenderer(content: footer)
+            renderer.scale = 3
+            let image = try XCTUnwrap(renderer.cgImage, language)
+            let detector = try XCTUnwrap(CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]))
+            let codes = detector.features(in: CIImage(cgImage: image)).compactMap { ($0 as? CIQRCodeFeature)?.messageString }
+            XCTAssertEqual(codes, [link], language)
+        }
+    }
+
+    /// Слова в WordFlowLayout переносятся только целиком, а слишком длинное слово (например, имя привычки
+    /// без пробелов) не обрезается, а переносится по буквам. KAN-101.
+    @MainActor
+    func testWordWrapTextBreaksOnlyBetweenWords() throws {
+        func render(_ text: String, width: CGFloat) throws -> CGSize {
+            let renderer = ImageRenderer(content: WordWrapText(text).font(.system(size: 30)))
+            renderer.proposedSize = ProposedViewSize(width: width, height: nil)
+            renderer.scale = 1
+            return try XCTUnwrap(renderer.uiImage).size
+        }
+        let line = try render("привычек", width: 600).height
+        // «привычек выполнено» в 200 pt: ровно две строки, по слову на строку, не шире колонки.
+        let two = try render("привычек выполнено", width: 200)
+        XCTAssertEqual(two.height, 2 * line, accuracy: 1)
+        XCTAssertLessThanOrEqual(two.width, 200)
+        // В широкой колонке — одна строка.
+        XCTAssertEqual(try render("привычек выполнено", width: 600).height, line, accuracy: 1)
+        // Слово чуть шире колонки уменьшается и остаётся одной строкой.
+        let scaled = try render("Идеальные", width: 80)
+        XCTAssertLessThanOrEqual(scaled.height, line + 1)
+        XCTAssertLessThanOrEqual(scaled.width, 80)
+        // Слово намного длиннее колонки переносится по буквам на несколько строк, но не шире колонки.
+        let long = try render("Медитацияутромпередзавтраком", width: 80)
+        XCTAssertGreaterThan(long.height, line * 1.5)
+        XCTAssertLessThanOrEqual(long.width, 80)
+        // Сложные графемы (семья-эмодзи, деванагари) в узкой колонке: не шире колонки, несколько строк, без падения.
+        for word in [String(repeating: "👨‍👩‍👧‍👦", count: 12), String(repeating: "नमस्ते", count: 8)] {
+            let size = try render(word, width: 80)
+            XCTAssertLessThanOrEqual(size.width, 80, word)
+            XCTAssertGreaterThan(size.height, line * 1.5, word)
+            let phrase = try render(word + " " + word, width: 80)
+            XCTAssertLessThanOrEqual(phrase.width, 80, word)
+            XCTAssertGreaterThan(phrase.height, size.height, word)
+        }
+    }
+
+    /// Процент и «привычек выполнено» в одной строке на самом узком iPhone (SE, 375 pt): процент 64 pt
+    /// не уменьшается, а подпись переносится по словам. На всех 14 языках. KAN-101.
+    @MainActor
+    func testRecapPercentKeepsFullSizeOnNarrowestPhone() throws {
+        let width: CGFloat = 375 - 2 * 20 - 2 * RecapCard.padding
+        let heavy = UIFont.systemFont(ofSize: 64, weight: .heavy)
+        let digits = UIFont(descriptor: heavy.fontDescriptor.withDesign(.rounded) ?? heavy.fontDescriptor, size: 64)
+        let percentWidth = ("100%" as NSString).size(withAttributes: [.font: digits]).width
+        let caption = UIFont.preferredFont(forTextStyle: .subheadline, compatibleWith: UITraitCollection(preferredContentSizeCategory: .large))
+        let outDir = ProcessInfo.processInfo.environment["KAN101_RENDER_DIR"]
+        for language in Bundle.main.localizations where language != "Base" {
+            let path = try XCTUnwrap(Bundle.main.path(forResource: language, ofType: "lproj"))
+            let label = try XCTUnwrap(Bundle(path: path)).localizedString(forKey: "of habits done", value: nil, table: nil)
+            if !WordWrapText.hasCJK(label) {
+                let longest = WordWrapText.words(label).map { ($0 as NSString).size(withAttributes: [.font: caption]).width }.max() ?? 0
+                XCTAssertLessThanOrEqual(percentWidth + 8 + longest, width, "\(language): «\(label)»")
+            }
+            let row = RecapCard.percentRow(percent: 100, label: label, stacked: false)
+                .foregroundStyle(.white)
+                .frame(width: width, alignment: .leading)
+                .padding(8)
+                .background(Color.indigo)
+                .dynamicTypeSize(.large)
+            let renderer = ImageRenderer(content: row)
+            renderer.scale = 2
+            let image = try XCTUnwrap(renderer.uiImage, language)
+            // Строка не ниже, чем у процента без уменьшения (64 pt rounded heavy).
+            XCTAssertGreaterThanOrEqual(image.size.height - 16, digits.lineHeight - 2, language)
+            if let outDir {
+                try? image.pngData()?.write(to: URL(fileURLWithPath: outDir).appendingPathComponent("percent-\(language).png"))
+            }
         }
     }
 
