@@ -1,0 +1,95 @@
+name: Design screens
+
+# Макеты всех экранов, состояний и попапов (design/<версия>/screens) на iPhone 6.9",
+# в светлой и тёмной теме, на демо-данных. Снимки делает HabitsUITests/DesignCatalogUITests
+# через каталог экранов Habits/App/DesignGallery.swift.
+# PNG лежат в артефакте design-screens.
+
+on:
+  workflow_dispatch:
+    inputs:
+      language:
+        description: "Язык интерфейса (ru или en)"
+        default: "ru"
+  pull_request:
+    paths:
+      - "Habits/App/DesignGallery.swift"
+      - "HabitsUITests/DesignCatalogUITests.swift"
+      - ".github/workflows/design.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: design-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  shots:
+    runs-on: macos-26
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tools
+        run: |
+          brew install xcodegen
+          xcodebuild -version
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Boot a 6.9-inch iPhone
+        id: sim
+        run: |
+          set -euo pipefail
+          UDID=$(xcrun simctl list devices available -j | python3 -c '
+          import json, sys, re
+          data = json.load(sys.stdin)["devices"]
+          best = None
+          for runtime, devices in data.items():
+              m = re.search(r"iOS-(\d+)-(\d+)", runtime)
+              if not m:
+                  continue
+              version = (int(m.group(1)), int(m.group(2)))
+              for d in devices:
+                  if d["name"].startswith("iPhone") and "Pro Max" in d["name"]:
+                      key = (version, d["name"])
+                      if best is None or key > best[0]:
+                          best = (key, d["udid"])
+          print(best[1])
+          ')
+          [ -n "$UDID" ] || { echo "::error::No Pro Max simulator"; exit 1; }
+          xcrun simctl boot "$UDID" || true
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl status_bar "$UDID" override --time 9:41 --dataNetwork wifi --wifiMode active --wifiBars 3 --cellularMode active --cellularBars 4 --batteryState charged --batteryLevel 100
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+
+      - name: Take design screenshots
+        env:
+          TEST_RUNNER_DESIGN_DIR: ${{ github.workspace }}/design-screens
+          TEST_RUNNER_DESIGN_LANG: ${{ inputs.language || 'ru' }}
+        run: |
+          set -o pipefail
+          mkdir -p design-screens
+          xcodebuild test \
+            -project Habits.xcodeproj \
+            -scheme Habits \
+            -destination "id=${{ steps.sim.outputs.udid }}" \
+            -only-testing:HabitsUITests/DesignCatalogUITests \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=YES \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=- \
+            > test.log 2>&1 || { grep -E "error:|failed" test.log | sort -u | head -80; tail -60 test.log; exit 1; }
+          grep -E "==== DESIGN" test.log || true
+          ls design-screens | wc -l
+          cat design-screens/report-*.txt >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: design-screens
+          path: design-screens
+          if-no-files-found: ignore
