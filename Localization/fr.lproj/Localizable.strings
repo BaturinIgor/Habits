@@ -26,7 +26,9 @@
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "Une copie de tes habitudes et de ton historique est enregistrée automatiquement dans ton iCloud quand tu quittes l'app. Rien n'est perdu si tu changes de téléphone.";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "Un compte à rebours sur l'écran verrouillé et dans la Dynamic Island qui coche l'habitude à la fin.";
 "A grown pet brings up to +5 a day" = "Un compagnon qui grandit rapporte jusqu'à +5 par jour";
+"A solid month. A little more and it'll be perfect." = "Un bon mois. Encore un petit effort et ce sera parfait.";
 "A solid week. A little more and it'll be perfect." = "Une bonne semaine. Encore un petit effort et ce sera parfait.";
+"A solid year. Every month makes a difference." = "Une bonne année. Chaque mois a compté.";
 "A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets." = "Un tableau de toutes les coches avec notes et humeur pour Numbers, Excel ou Google Sheets.";
 "A week strong" = "Une semaine solide";
 "A whole year" = "Une année entière";
@@ -60,7 +62,9 @@
 "Allow notifications" = "Autoriser les notifications";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "Autorise le micro et la reconnaissance vocale pour ZenHab dans Réglages.";
 "Allowed" = "Autorisées";
+"An amazing month. Keep it going!" = "Un mois incroyable. Continue comme ça !";
 "An amazing week. Keep it going!" = "Une semaine incroyable. Continue comme ça !";
+"An amazing year. Keep it going!" = "Une année incroyable. Continue comme ça !";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "Une habitude archivée n'apparaît plus sur l'écran Aujourd'hui et n'envoie plus de notifications, mais son historique est conservé.";
 "And %lld more" = "Et %lld de plus";
 "Anytime" = "À tout moment";
@@ -221,7 +225,9 @@
 "Every" = "Tous les";
 "Every %@" = "Tous les %@";
 "Every N days" = "Tous les N jours";
+"Every check-in counts. The new month is a fresh start." = "Chaque coche compte. Le nouveau mois est un nouveau départ.";
 "Every check-in counts. The new week is a fresh start." = "Chaque coche compte. La nouvelle semaine est un nouveau départ.";
+"Every check-in counts. The new year is a fresh start." = "Chaque coche compte. La nouvelle année est un nouveau départ.";
 "Every day" = "Tous les jours";
 "Every month, on day %lld" = "Chaque mois, le %lld";
 "Every other day" = "Un jour sur deux";
@@ -353,6 +359,7 @@
 "Last 30 days" = "30 derniers jours";
 "Last 7 days" = "7 derniers jours";
 "Last backup" = "Dernière sauvegarde";
+"Last month's results as a card you can share" = "Les résultats du mois dernier en carte à partager";
 "Last week's results as a card you can share" = "Les résultats de la semaine dernière en carte à partager";
 "Last widget update" = "Dernière mise à jour du widget";
 "Learn %@" = "Vocabulaire : %@";
@@ -395,6 +402,7 @@
 "Misses are okay" = "Rater, c'est normal";
 "Misses you a lot" = "Tu lui manques beaucoup";
 "Money saved" = "Argent économisé";
+"Month in review" = "Bilan du mois";
 "Month of power" = "Mois de force";
 "Monthly" = "Mensuel";
 "Mood" = "Humeur";
@@ -411,7 +419,9 @@
 "Morning exercises" = "Gym du matin";
 "Most steady: %@, %lld of %lld" = "La plus régulière : %@, %lld sur %lld";
 "Move to archive" = "Archiver";
+"My month" = "Mon mois";
 "My week" = "Ma semaine";
+"My year" = "Mon année";
 "N times a week" = "N fois par semaine";
 "Name" = "Nom";
 "Never" = "Jamais";
@@ -750,6 +760,7 @@
 "Write 50 notes" = "Écris 50 notes";
 "Write down 3 good things" = "Noter 3 bonnes choses";
 "Write to the developer" = "Écrire au développeur";
+"Year in review" = "Bilan de l'année";
 "Yearly" = "Annuel";
 "Yesterday" = "Hier";
 "Yoga" = "Yoga";
@@ -759,6 +770,7 @@
 "Your days and the habits that lift your mood" = "Tes journées et les habitudes qui améliorent ton humeur";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Tes habitudes et ton historique sont sauvegardés automatiquement dans ton iCloud. Sur un nouvel iPhone, ZenHab propose de tout récupérer.";
 "Your message has been sent." = "Ton message a été envoyé.";
+"Your month in review" = "Le bilan de ton mois";
 "Your own emoji from the keyboard" = "Ton émoji depuis le clavier";
 "Your own name, icon and schedule" = "Ton nom, ton icône et ton planning";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Ton compagnon grandit à chaque habitude validée et devient triste si tu disparais quelques jours.";
@@ -766,6 +778,8 @@
 "Your photo" = "Ta photo";
 "Your week in review" = "Le bilan de ta semaine";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "Tout l'historique de ton humeur, un graphique du mois et les habitudes qui l'améliorent.";
+"Your year in review" = "Le bilan de ton année";
+"Your year's results as a card you can share" = "Les résultats de ton année en carte à partager";
 "ZenHab is locked" = "ZenHab est verrouillé";
 "a month" = "un mois";
 "a week" = "une semaine";

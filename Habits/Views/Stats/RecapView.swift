@@ -1,23 +1,61 @@
 import SwiftUI
 import UIKit
 
-/// Карточка итогов недели. Рисуется и на экране, и в картинку, которой можно поделиться,
-/// поэтому цвета заданы явно и не зависят от темы.
-struct WeeklyRecapCard: View {
-    let recap: WeeklyRecap
+/// Карточка итогов недели, месяца или года. Рисуется и на экране, и в картинку, которой
+/// можно поделиться, поэтому цвета заданы явно и не зависят от темы.
+struct RecapCard: View {
+    let recap: Recap
     /// Картинка для «Поделиться»: внизу QR-код со ссылкой на App Store вместо простой подписи.
     var forSharing = false
 
+    private var title: LocalizedStringKey {
+        switch recap.period {
+        case .week: "My week"
+        case .month: "My month"
+        case .year: "My year"
+        }
+    }
+
     private var range: String {
-        let start = recap.start.formatted(.dateTime.day().month(.abbreviated))
-        let end = recap.end.formatted(.dateTime.day().month(.abbreviated))
-        return "\(start) – \(end)"
+        let dayMonth = Date.FormatStyle.dateTime.day().month(.abbreviated)
+        switch recap.period {
+        case .week:
+            return "\(recap.start.formatted(dayMonth)) – \(recap.end.formatted(dayMonth))"
+        case .month:
+            return recap.start.formatted(.dateTime.month(.wide).year())
+        case .year:
+            if recap.isComplete { return recap.start.formatted(.dateTime.year()) }
+            return "\(recap.start.formatted(dayMonth)) – \(recap.end.formatted(dayMonth.year()))"
+        }
+    }
+
+    private var gradient: [Color] {
+        switch recap.period {
+        case .week: [Color(red: 0.36, green: 0.42, blue: 0.95), Color(red: 0.62, green: 0.33, blue: 0.86)]
+        case .month: [Color(red: 0.05, green: 0.55, blue: 0.60), Color(red: 0.20, green: 0.38, blue: 0.86)]
+        case .year: [Color(red: 0.92, green: 0.40, blue: 0.24), Color(red: 0.78, green: 0.20, blue: 0.52)]
+        }
+    }
+
+    /// У месяца столбиков до 31, поэтому они тоньше, а подписи только у 1, 8, 15, 22 и 29 числа.
+    private var barSpacing: CGFloat { recap.period == .month ? 3 : 8 }
+
+    private func label(for bar: DayProgress) -> String {
+        switch recap.period {
+        case .week:
+            return bar.date.formatted(.dateTime.weekday(.narrow))
+        case .month:
+            let day = Calendar.app.component(.day, from: bar.date)
+            return day % 7 == 1 ? "\(day)" : " "
+        case .year:
+            return bar.date.formatted(.dateTime.month(.narrow))
+        }
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
             VStack(alignment: .leading, spacing: 2) {
-                Text("My week")
+                Text(title)
                     .font(.headline)
                 Text(range)
                     .font(.subheadline)
@@ -34,8 +72,8 @@ struct WeeklyRecapCard: View {
                     .opacity(0.85)
             }
 
-            HStack(alignment: .bottom, spacing: 8) {
-                ForEach(recap.days) { day in
+            HStack(alignment: .bottom, spacing: barSpacing) {
+                ForEach(recap.bars) { bar in
                     VStack(spacing: 6) {
                         // Заливка обрезается по форме столбика, а не рисуется отдельной «таблеткой».
                         Capsule()
@@ -43,15 +81,17 @@ struct WeeklyRecapCard: View {
                             .overlay(alignment: .bottom) {
                                 Rectangle()
                                     .fill(.white)
-                                    .frame(height: 80 * day.fraction)
+                                    .frame(height: 80 * bar.fraction)
                             }
                             .clipShape(Capsule())
                             .frame(height: 80)
-                        Text(day.date.formatted(.dateTime.weekday(.narrow)))
+                        // Подпись может быть шире тонкого столбика месяца и просто выходит за его края.
+                        Text(verbatim: label(for: bar))
                             .font(.caption2.weight(.semibold))
                             .opacity(0.8)
+                            .fixedSize()
                     }
-                    .frame(maxWidth: .infinity)
+                    .frame(minWidth: 0, maxWidth: .infinity)
                 }
             }
 
@@ -74,7 +114,7 @@ struct WeeklyRecapCard: View {
             }
 
             if forSharing {
-                ShareCardFooter(campaign: .weekly)
+                ShareCardFooter(campaign: recap.period.campaign)
             } else {
                 HStack(spacing: 6) {
                     Image(systemName: "leaf.fill")
@@ -88,11 +128,7 @@ struct WeeklyRecapCard: View {
         .padding(22)
         .background {
             RoundedRectangle(cornerRadius: 28, style: .continuous)
-                .fill(LinearGradient(
-                    colors: [Color(red: 0.36, green: 0.42, blue: 0.95), Color(red: 0.62, green: 0.33, blue: 0.86)],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                ))
+                .fill(LinearGradient(colors: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))
         }
     }
 
@@ -115,27 +151,40 @@ struct WeeklyRecapCard: View {
     }
 }
 
-/// Экран итогов недели с кнопкой «Поделиться».
-struct WeeklyRecapView: View {
+/// Экран итогов недели, месяца или года с кнопкой «Поделиться».
+struct RecapView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.displayScale) private var displayScale
-    let recap: WeeklyRecap
+    let recap: Recap
     /// PNG-файл с картинкой карточки. Делимся файлом: SwiftUI Image в окне «Поделиться»
     /// показывал бесконечную загрузку.
     @State private var shareFile: URL?
+
+    private var navigationTitle: LocalizedStringKey {
+        switch recap.period {
+        case .week: "Week in review"
+        case .month: "Month in review"
+        case .year: "Year in review"
+        }
+    }
+
+    /// Имя экрана для UI-тестов: у недели прежнее «recap».
+    private var screenName: String {
+        recap.period == .week ? "recap" : "recap-\(recap.period.rawValue)"
+    }
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
-                    WeeklyRecapCard(recap: recap)
+                    RecapCard(recap: recap)
                     Text(message)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
                     if let shareFile {
                         Button {
-                            ShareSheet.present(image: shareFile, campaign: .weekly)
+                            ShareSheet.present(image: shareFile, campaign: recap.period.campaign)
                         } label: {
                             Label("Share", systemImage: "square.and.arrow.up")
                                 .frame(maxWidth: .infinity)
@@ -146,10 +195,10 @@ struct WeeklyRecapView: View {
                     }
                 }
                 .padding(20)
-                .uiTestScreen("recap")
+                .uiTestScreen(screenName)
             }
             .background(AppBackground())
-            .navigationTitle("Week in review")
+            .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -162,36 +211,55 @@ struct WeeklyRecapView: View {
     }
 
     private var message: String {
-        switch recap.percent {
-        case 90...: String(localized: "An amazing week. Keep it going!")
-        case 60..<90: String(localized: "A solid week. A little more and it'll be perfect.")
-        default: String(localized: "Every check-in counts. The new week is a fresh start.")
+        switch (recap.period, recap.percent) {
+        case (.week, 90...): String(localized: "An amazing week. Keep it going!")
+        case (.week, 60..<90): String(localized: "A solid week. A little more and it'll be perfect.")
+        case (.week, _): String(localized: "Every check-in counts. The new week is a fresh start.")
+        case (.month, 90...): String(localized: "An amazing month. Keep it going!")
+        case (.month, 60..<90): String(localized: "A solid month. A little more and it'll be perfect.")
+        case (.month, _): String(localized: "Every check-in counts. The new month is a fresh start.")
+        case (.year, 90...): String(localized: "An amazing year. Keep it going!")
+        case (.year, 60..<90): String(localized: "A solid year. Every month makes a difference.")
+        case (.year, _): String(localized: "Every check-in counts. The new year is a fresh start.")
         }
     }
 
     @MainActor
     private func render() {
-        let renderer = ImageRenderer(content:
-            WeeklyRecapCard(recap: recap, forSharing: true)
-                .frame(width: 360)
-                .padding(20)
-                .background(Color.white)
-                .environment(\.colorScheme, .light)
-        )
+        let renderer = ImageRenderer(content: RecapCard.shareImageContent(recap))
         renderer.scale = max(displayScale, 3)
         guard let uiImage = renderer.uiImage, let png = uiImage.pngData() else { return }
         let file = FileManager.default.temporaryDirectory
-            .appendingPathComponent("ZenHab-week-\(DayKey.make(recap.start)).png")
+            .appendingPathComponent("ZenHab-\(recap.period.rawValue)-\(recap.key).png")
         guard (try? png.write(to: file, options: .atomic)) != nil else { return }
         shareFile = file
     }
 }
 
-/// Карточка на «Сегодня» в начале недели: итоги прошлой недели, пока не закроют.
-struct WeeklyRecapBanner: View {
-    let recap: WeeklyRecap
+extension RecapCard {
+    /// Что рисуется в картинку «Поделиться»: карточка на белом поле, всегда в светлой теме.
+    static func shareImageContent(_ recap: Recap) -> some View {
+        RecapCard(recap: recap, forSharing: true)
+            .frame(width: 360)
+            .padding(20)
+            .background(Color.white)
+            .environment(\.colorScheme, .light)
+    }
+}
+
+/// Карточка на «Сегодня» в начале недели или месяца: итоги прошлого периода, пока не закроют.
+struct RecapBanner: View {
+    let recap: Recap
     var onOpen: () -> Void
     var onClose: () -> Void
+
+    private var title: LocalizedStringKey {
+        switch recap.period {
+        case .week: "Your week in review"
+        case .month: "Your month in review"
+        case .year: "Your year in review"
+        }
+    }
 
     var body: some View {
         HStack(spacing: 12) {
@@ -200,7 +268,7 @@ struct WeeklyRecapBanner: View {
                 .foregroundStyle(.indigo)
             Button(action: onOpen) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Your week in review")
+                    Text(title)
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Color.primary)
                     HStack(spacing: 4) {

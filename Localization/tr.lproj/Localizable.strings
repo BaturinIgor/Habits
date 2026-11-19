@@ -26,7 +26,9 @@
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "Uygulamadan çıktığında alışkanlıklarının ve geçmişinin bir kopyası iCloud'una kendiliğinden kaydedilir. Telefon değiştirince hiçbir şey kaybolmaz.";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "Kilit Ekranı'nda ve Dynamic Island'da geri sayım; süre dolunca alışkanlık kendiliğinden işaretlenir.";
 "A grown pet brings up to +5 a day" = "Büyümüş evcil hayvan günde +5'e kadar getirir";
+"A solid month. A little more and it'll be perfect." = "İyi bir ay. Biraz daha ve mükemmel olacak.";
 "A solid week. A little more and it'll be perfect." = "İyi bir hafta. Biraz daha ve mükemmel olacak.";
+"A solid year. Every month makes a difference." = "İyi bir yıl. Her ay bir fark yarattı.";
 "A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets." = "Tüm işaretlemeler, notlar ve ruh hâliyle bir tablo: Numbers, Excel veya Google E-Tablolar için.";
 "A week strong" = "Güçlü bir hafta";
 "A whole year" = "Koca bir yıl";
@@ -60,7 +62,9 @@
 "Allow notifications" = "Bildirimlere izin ver";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "Ayarlar'da ZenHab için mikrofona ve konuşma tanımaya izin verin.";
 "Allowed" = "İzin verildi";
+"An amazing month. Keep it going!" = "Harika bir ay. Böyle devam!";
 "An amazing week. Keep it going!" = "Harika bir hafta. Böyle devam!";
+"An amazing year. Keep it going!" = "Harika bir yıl. Böyle devam!";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "Arşivlenen alışkanlık Bugün ekranında görünmez ve bildirim göndermez, ama geçmişi saklanır.";
 "And %lld more" = "Ve %lld tane daha";
 "Anytime" = "Herhangi bir zaman";
@@ -221,7 +225,9 @@
 "Every" = "Her";
 "Every %@" = "Her %@";
 "Every N days" = "N günde bir";
+"Every check-in counts. The new month is a fresh start." = "Her işaret önemli. Yeni ay yeni bir başlangıç.";
 "Every check-in counts. The new week is a fresh start." = "Her işaret önemli. Yeni hafta yeni bir başlangıç.";
+"Every check-in counts. The new year is a fresh start." = "Her işaret önemli. Yeni yıl yeni bir başlangıç.";
 "Every day" = "Her gün";
 "Every month, on day %lld" = "Her ay %lld. gün";
 "Every other day" = "Gün aşırı";
@@ -353,6 +359,7 @@
 "Last 30 days" = "Son 30 gün";
 "Last 7 days" = "Son 7 gün";
 "Last backup" = "Son yedek";
+"Last month's results as a card you can share" = "Geçen ayın sonuçları, paylaşılabilir bir kartta";
 "Last week's results as a card you can share" = "Geçen haftanın sonuçları, paylaşılabilir bir kartta";
 "Last widget update" = "Son widget güncellemesi";
 "Learn %@" = "%@ öğren";
@@ -395,6 +402,7 @@
 "Misses are okay" = "Kaçırmak sorun değil";
 "Misses you a lot" = "Seni çok özledi";
 "Money saved" = "Biriken para";
+"Month in review" = "Ay özeti";
 "Month of power" = "Güç ayı";
 "Monthly" = "Aylık";
 "Mood" = "Ruh hâli";
@@ -411,7 +419,9 @@
 "Morning exercises" = "Sabah egzersizi";
 "Most steady: %@, %lld of %lld" = "En istikrarlı: %@, %lld/%lld";
 "Move to archive" = "Arşive taşı";
+"My month" = "Ayım";
 "My week" = "Haftam";
+"My year" = "Yılım";
 "N times a week" = "Haftada N kez";
 "Name" = "Ad";
 "Never" = "Hiç";
@@ -750,6 +760,7 @@
 "Write 50 notes" = "50 not yaz";
 "Write down 3 good things" = "3 güzel şey yaz";
 "Write to the developer" = "Geliştiriciye yaz";
+"Year in review" = "Yıl özeti";
 "Yearly" = "Yıllık";
 "Yesterday" = "Dün";
 "Yoga" = "Yoga";
@@ -759,6 +770,7 @@
 "Your days and the habits that lift your mood" = "Günlerin ve ruh hâlini iyileştiren alışkanlıklar";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Alışkanlıkların ve geçmişin iCloud'una kendiliğinden kaydedilir. Yeni bir iPhone'da ZenHab her şeyi geri getirmeyi önerir.";
 "Your message has been sent." = "Mesajın gönderildi.";
+"Your month in review" = "Ayının özeti";
 "Your own emoji from the keyboard" = "Klavyeden kendi emojin";
 "Your own name, icon and schedule" = "Kendi adın, simgen ve planın";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Evcil hayvanın işaretlediğin her alışkanlıkla büyür, birkaç gün ortadan kaybolursan üzülür.";
@@ -766,6 +778,8 @@
 "Your photo" = "Fotoğrafın";
 "Your week in review" = "Haftanın özeti";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "Tüm ruh hâli geçmişin, aylık grafik ve onu iyileştiren alışkanlıklar.";
+"Your year in review" = "Yılının özeti";
+"Your year's results as a card you can share" = "Yılının sonuçları, paylaşılabilir bir kartta";
 "ZenHab is locked" = "ZenHab kilitli";
 "a month" = "bir ay";
 "a week" = "bir hafta";

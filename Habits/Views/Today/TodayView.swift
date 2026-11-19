@@ -38,9 +38,11 @@ struct TodayView: View {
     @State private var showingCatalog = false
     @State private var wordsHabit: Habit?
     @State private var timerHabit: Habit?
-    @State private var showingRecap = false
-    /// Неделя, итоги которой уже закрыли на «Сегодня».
+    @State private var shownRecap: Recap?
+    /// Неделя, месяц и год, итоги которых уже закрыли на «Сегодня».
     @AppStorage("weeklyRecapDismissed") private var recapDismissed = ""
+    @AppStorage("monthlyRecapDismissed") private var monthRecapDismissed = ""
+    @AppStorage("yearlyRecapDismissed") private var yearRecapDismissed = ""
     @State private var showingPaywall = false
     @State private var editingHabit: Habit?
     @State private var templateHabit: Habit?
@@ -67,15 +69,39 @@ struct TodayView: View {
     }
 
     /// Первая привычка, чью вчерашнюю серию можно вернуть за искры.
-    /// Итоги прошлой недели: первые три дня новой недели, пока их не закрыли.
-    private var weeklyRecap: WeeklyRecap? {
+    /// Итоги прошлого периода в первые три дня нового, пока их не закрыли:
+    /// в начале года итоги года, в начале месяца итоги месяца, иначе в начале недели итоги недели.
+    private var periodRecap: Recap? {
         let calendar = Calendar.app
-        let weekStart = Stats.startOfWeek(Date(), calendar: calendar)
-        let daysIn = calendar.dateComponents([.day], from: weekStart, to: calendar.startOfDay(for: Date())).day ?? 0
-        guard daysIn < 3 else { return nil }
-        let recap = WeeklyRecap.lastWeek(in: store.data, calendar: calendar)
-        guard recap.hasData, recap.key != recapDismissed else { return nil }
-        return recap
+        let now = Date()
+        let today = calendar.startOfDay(for: now)
+        let dayOfMonth = calendar.component(.day, from: today)
+        if dayOfMonth <= 3 {
+            let isJanuary = calendar.component(.month, from: today) == 1
+            let period: Recap.Period = isJanuary ? .year : .month
+            let dismissed = isJanuary ? yearRecapDismissed : monthRecapDismissed
+            // Ключ известен заранее, поэтому закрытые итоги даже не считаем.
+            let startKey = isJanuary
+                ? DayKey.make(calendar.date(byAdding: .year, value: -1, to: calendar.dateInterval(of: .year, for: today)?.start ?? today) ?? today, calendar: calendar)
+                : DayKey.make(Recap.lastMonthStart(now: now, calendar: calendar), calendar: calendar)
+            if startKey != dismissed {
+                let recap = Recap.current(period, in: store.data, now: now, calendar: calendar)
+                if recap.hasData, recap.key == startKey { return recap }
+            }
+        }
+        let weekStart = Stats.startOfWeek(now, calendar: calendar)
+        let daysIn = calendar.dateComponents([.day], from: weekStart, to: today).day ?? 0
+        guard daysIn < 3, DayKey.make(Recap.lastWeekStart(now: now, calendar: calendar), calendar: calendar) != recapDismissed else { return nil }
+        let recap = Recap.lastWeek(in: store.data, now: now, calendar: calendar)
+        return recap.hasData ? recap : nil
+    }
+
+    private func dismissRecap(_ recap: Recap) {
+        switch recap.period {
+        case .week: recapDismissed = recap.key
+        case .month: monthRecapDismissed = recap.key
+        case .year: yearRecapDismissed = recap.key
+        }
     }
 
     private var streakRepair: (Habit, (day: String, streak: Int))? {
@@ -117,11 +143,11 @@ struct TodayView: View {
                     .plainRow(top: 2, bottom: 2)
                 }
 
-                if isToday, let recap = weeklyRecap {
-                    WeeklyRecapBanner(recap: recap) {
-                        showingRecap = true
+                if isToday, let recap = periodRecap {
+                    RecapBanner(recap: recap) {
+                        shownRecap = recap
                     } onClose: {
-                        withAnimation { recapDismissed = recap.key }
+                        withAnimation { dismissRecap(recap) }
                     }
                     .plainRow(top: 4, bottom: 6)
                 }
@@ -206,8 +232,8 @@ struct TodayView: View {
             .sheet(item: $timerHabit) { habit in
                 HabitTimerView(habit: habit)
             }
-            .sheet(isPresented: $showingRecap) {
-                WeeklyRecapView(recap: WeeklyRecap.lastWeek(in: store.data))
+            .sheet(item: $shownRecap) { recap in
+                RecapView(recap: recap)
             }
             .sheet(isPresented: $showingMoodJournal) {
                 MoodJournalView()

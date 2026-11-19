@@ -26,7 +26,9 @@
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "앱을 나가면 습관과 기록의 사본이 자동으로 iCloud에 저장돼요. 휴대폰을 바꿔도 잃어버리지 않아요.";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "잠금 화면과 Dynamic Island에 카운트다운이 표시되고, 시간이 끝나면 습관이 자동으로 체크돼요.";
 "A grown pet brings up to +5 a day" = "자란 펫은 하루 최대 +5를 가져와요";
+"A solid month. A little more and it'll be perfect." = "좋은 한 달이었어요. 조금만 더 하면 완벽해요.";
 "A solid week. A little more and it'll be perfect." = "좋은 한 주였어요. 조금만 더 하면 완벽해요.";
+"A solid year. Every month makes a difference." = "좋은 한 해였어요. 매달이 의미 있었어요.";
 "A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets." = "모든 체크 기록과 메모, 기분을 담은 표예요. Numbers, Excel, Google 스프레드시트에서 열 수 있어요.";
 "A week strong" = "일주일 달성";
 "A whole year" = "꼬박 1년";
@@ -60,7 +62,9 @@
 "Allow notifications" = "알림 허용";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "설정에서 ZenHab의 마이크와 음성 인식을 허용하세요.";
 "Allowed" = "허용됨";
+"An amazing month. Keep it going!" = "멋진 한 달이었어요. 계속 이어가요!";
 "An amazing week. Keep it going!" = "멋진 한 주였어요. 계속 이어가요!";
+"An amazing year. Keep it going!" = "멋진 한 해였어요. 계속 이어가요!";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "보관된 습관은 오늘 화면에 표시되지 않고 알림도 오지 않지만 기록은 유지됩니다.";
 "And %lld more" = "외 %lld개";
 "Anytime" = "언제든지";
@@ -221,7 +225,9 @@
 "Every" = "간격";
 "Every %@" = "%@마다";
 "Every N days" = "N일마다";
+"Every check-in counts. The new month is a fresh start." = "체크 하나하나가 소중해요. 새로운 한 달은 새로운 시작이에요.";
 "Every check-in counts. The new week is a fresh start." = "체크 하나하나가 소중해요. 새로운 한 주는 새로운 시작이에요.";
+"Every check-in counts. The new year is a fresh start." = "체크 하나하나가 소중해요. 새해는 새로운 시작이에요.";
 "Every day" = "매일";
 "Every month, on day %lld" = "매월 %lld일";
 "Every other day" = "이틀에 한 번";
@@ -353,6 +359,7 @@
 "Last 30 days" = "최근 30일";
 "Last 7 days" = "최근 7일";
 "Last backup" = "마지막 백업";
+"Last month's results as a card you can share" = "지난달 결과를 공유할 수 있는 카드로";
 "Last week's results as a card you can share" = "지난주 결과를 공유할 수 있는 카드로";
 "Last widget update" = "마지막 위젯 업데이트";
 "Learn %@" = "%@ 배우기";
@@ -395,6 +402,7 @@
 "Misses are okay" = "놓쳐도 괜찮아요";
 "Misses you a lot" = "많이 보고 싶어해요";
 "Money saved" = "아낀 돈";
+"Month in review" = "한 달 돌아보기";
 "Month of power" = "힘의 한 달";
 "Monthly" = "월간";
 "Mood" = "기분";
@@ -411,7 +419,9 @@
 "Morning exercises" = "아침 체조";
 "Most steady: %@, %lld of %lld" = "가장 꾸준한 습관: %@, %lld/%lld";
 "Move to archive" = "보관함으로 이동";
+"My month" = "나의 한 달";
 "My week" = "나의 한 주";
+"My year" = "나의 한 해";
 "N times a week" = "주 N회";
 "Name" = "이름";
 "Never" = "없음";
@@ -750,6 +760,7 @@
 "Write 50 notes" = "메모 50개 작성";
 "Write down 3 good things" = "좋았던 일 3가지 쓰기";
 "Write to the developer" = "개발자에게 문의";
+"Year in review" = "한 해 돌아보기";
 "Yearly" = "연간";
 "Yesterday" = "어제";
 "Yoga" = "요가";
@@ -759,6 +770,7 @@
 "Your days and the habits that lift your mood" = "나의 하루와 기분을 올려 주는 습관";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "습관과 기록이 자동으로 iCloud에 저장돼요. 새 iPhone에서는 ZenHab이 모두 되돌려 드려요.";
 "Your message has been sent." = "메시지를 보냈어요.";
+"Your month in review" = "나의 한 달 돌아보기";
 "Your own emoji from the keyboard" = "키보드로 이모지 입력";
 "Your own name, icon and schedule" = "이름, 아이콘, 일정을 직접";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "습관을 체크할 때마다 펫이 자라고, 며칠 사라지면 슬퍼해요.";
@@ -766,6 +778,8 @@
 "Your photo" = "내 사진";
 "Your week in review" = "나의 한 주 돌아보기";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "전체 기분 기록, 월간 그래프, 기분을 올려 주는 습관.";
+"Your year in review" = "나의 한 해 돌아보기";
+"Your year's results as a card you can share" = "한 해의 결과를 공유할 수 있는 카드로";
 "ZenHab is locked" = "ZenHab이 잠겨 있어요";
 "a month" = "한 달";
 "a week" = "일주일";

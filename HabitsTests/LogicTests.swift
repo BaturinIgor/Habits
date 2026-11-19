@@ -60,7 +60,7 @@ final class LogicTests: XCTestCase {
             let date = calendar.date(byAdding: .day, value: offset, to: lastWeek)!
             data.setStatus(.done, habitID: habit.id, day: DayKey.make(date))
         }
-        let recap = WeeklyRecap.lastWeek(in: data)
+        let recap = Recap.lastWeek(in: data)
         XCTAssertEqual(calendar.startOfDay(for: recap.start), lastWeek)
         XCTAssertEqual(recap.days.count, 7)
         XCTAssertEqual(recap.done, 5)
@@ -72,7 +72,7 @@ final class LogicTests: XCTestCase {
     }
 
     func testWeeklyRecapIsEmptyWithoutHabits() {
-        let recap = WeeklyRecap.lastWeek(in: AppData())
+        let recap = Recap.lastWeek(in: AppData())
         XCTAssertFalse(recap.hasData)
         XCTAssertEqual(recap.percent, 0)
         XCTAssertNil(recap.top)
@@ -133,18 +133,141 @@ final class LogicTests: XCTestCase {
     func testWeeklyRecapShareImageHasReadableQRCode() throws {
         var data = AppData()
         data.habits = [dailyHabit(startOffset: -40)]
-        let renderer = ImageRenderer(content:
-            WeeklyRecapCard(recap: WeeklyRecap.lastWeek(in: data), forSharing: true)
-                .frame(width: 360)
-                .padding(20)
-                .background(Color.white)
-                .environment(\.colorScheme, .light)
-        )
+        XCTAssertEqual(try qrCodes(onShareImageOf: Recap.lastWeek(in: data)), [AppInfo.appStoreURL(campaign: .weekly).absoluteString])
+    }
+
+    /// QR-коды на картинках «Итогов месяца» и «Итогов года» читаются и несут свои метки кампании.
+    @MainActor
+    func testMonthAndYearRecapShareImagesHaveReadableQRCode() throws {
+        var data = AppData()
+        let habit = dailyHabit(startOffset: -400)
+        data.habits = [habit]
+        for offset in -400 ... -1 where offset % 3 != 0 {
+            data.setStatus(.done, habitID: habit.id, day: DayKey.make(day(offset)))
+        }
+        for period in [Recap.Period.month, .year] {
+            let recap = Recap.current(period, in: data)
+            XCTAssertTrue(recap.hasData, "\(period)")
+            XCTAssertEqual(try qrCodes(onShareImageOf: recap), [AppInfo.appStoreURL(campaign: period.campaign).absoluteString], "\(period)")
+        }
+    }
+
+    @MainActor
+    private func qrCodes(onShareImageOf recap: Recap) throws -> [String] {
+        let renderer = ImageRenderer(content: RecapCard.shareImageContent(recap))
         renderer.scale = 3
         let image = try XCTUnwrap(renderer.cgImage)
         let detector = try XCTUnwrap(CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]))
-        let codes = detector.features(in: CIImage(cgImage: image)).compactMap { ($0 as? CIQRCodeFeature)?.messageString }
-        XCTAssertEqual(codes, [AppInfo.appStoreURL(campaign: .weekly).absoluteString])
+        return detector.features(in: CIImage(cgImage: image)).compactMap { ($0 as? CIQRCodeFeature)?.messageString }
+    }
+
+    // MARK: Итоги месяца и года (1.6)
+
+    private func date(_ year: Int, _ month: Int, _ day: Int, hour: Int = 12) -> Date {
+        calendar.date(from: DateComponents(year: year, month: month, day: day, hour: hour))!
+    }
+
+    private func habit(from start: Date) -> Habit {
+        Habit(name: "Test", schedule: HabitSchedule(startDate: start), createdAt: start)
+    }
+
+    func testMonthlyRecapCountsLastFullMonth() {
+        var data = AppData()
+        let habit = habit(from: date(2026, 1, 1))
+        data.habits = [habit]
+        // Февраль 2026 (28 дней): пропущены 10, 11 и 12, 20-е пропущено по уважительной причине.
+        for d in 1 ... 28 where ![10, 11, 12, 20].contains(d) {
+            data.setStatus(.done, habitID: habit.id, day: DayKey.make(date(2026, 2, d)))
+        }
+        data.setStatus(.skipped, habitID: habit.id, day: DayKey.make(date(2026, 2, 20)))
+        // Отметки за соседние месяцы в итоги февраля не попадают.
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(date(2026, 1, 31)))
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(date(2026, 3, 1)))
+
+        let recap = Recap.lastMonth(in: data, now: date(2026, 3, 15))
+        XCTAssertEqual(recap.period, .month)
+        XCTAssertEqual(recap.start, calendar.startOfDay(for: date(2026, 2, 1)))
+        XCTAssertEqual(recap.end, calendar.startOfDay(for: date(2026, 2, 28)))
+        XCTAssertEqual(recap.days.count, 28)
+        XCTAssertEqual(recap.bars.count, 28)
+        XCTAssertEqual(recap.done, 24)
+        XCTAssertEqual(recap.total, 27)
+        XCTAssertEqual(recap.perfectDays, 24)
+        XCTAssertEqual(recap.percent, 89)
+        // 1–9 февраля, 10 и 11 спасли заморозки, 12-е прервало серию; потом 13–28 без 20-го (пропуск не рвёт).
+        XCTAssertEqual(recap.streak, 15)
+        XCTAssertEqual(recap.streakName, "Test")
+        XCTAssertEqual(recap.top, Recap.Top(name: "Test", done: 24, total: 27))
+        XCTAssertTrue(recap.isComplete)
+    }
+
+    func testYearlyRecapShowsLastFullYearWithTwelveMonths() {
+        var data = AppData()
+        let habit = habit(from: date(2025, 1, 1))
+        data.habits = [habit]
+        for d in 1 ... 31 {
+            data.setStatus(.done, habitID: habit.id, day: DayKey.make(date(2025, 3, d)))
+        }
+        let recap = Recap.year(in: data, now: date(2026, 3, 15))
+        XCTAssertEqual(recap.start, calendar.startOfDay(for: date(2025, 1, 1)))
+        XCTAssertEqual(recap.end, calendar.startOfDay(for: date(2025, 12, 31)))
+        XCTAssertTrue(recap.isComplete)
+        XCTAssertEqual(recap.days.count, 365)
+        XCTAssertEqual(recap.bars.count, 12)
+        XCTAssertEqual(recap.bars[0].done, 0)
+        XCTAssertEqual(recap.bars[0].total, 31)
+        XCTAssertEqual(recap.bars[2].done, 31)
+        XCTAssertEqual(recap.bars[2].fraction, 1)
+        XCTAssertEqual(recap.bars[1].total, 28)
+        XCTAssertEqual(recap.done, 31)
+        XCTAssertEqual(recap.total, 365)
+        XCTAssertEqual(recap.perfectDays, 31)
+        XCTAssertEqual(recap.percent, 8)
+        XCTAssertEqual(recap.streak, 31)
+        XCTAssertEqual(recap.top?.done, 31)
+    }
+
+    func testYearlyRecapInDecemberIsYearToDate() {
+        var data = AppData()
+        let habit = habit(from: date(2025, 6, 1))
+        data.habits = [habit]
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(date(2026, 12, 9)))
+        // Сегодняшняя отметка в итоги не идёт: день ещё не закончился.
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(date(2026, 12, 10)))
+        let recap = Recap.year(in: data, now: date(2026, 12, 10))
+        XCTAssertEqual(recap.start, calendar.startOfDay(for: date(2026, 1, 1)))
+        XCTAssertEqual(recap.end, calendar.startOfDay(for: date(2026, 12, 9)))
+        XCTAssertFalse(recap.isComplete)
+        XCTAssertEqual(recap.bars.count, 12)
+        XCTAssertEqual(recap.bars[11].total, 9)
+        XCTAssertEqual(recap.bars[11].done, 1)
+        XCTAssertEqual(recap.done, 1)
+    }
+
+    func testYearlyRecapFallsBackToThisYearWithoutLastYearData() {
+        var data = AppData()
+        let habit = habit(from: date(2026, 2, 1))
+        data.habits = [habit]
+        let recap = Recap.year(in: data, now: date(2026, 3, 15))
+        XCTAssertEqual(recap.start, calendar.startOfDay(for: date(2026, 1, 1)))
+        XCTAssertEqual(recap.end, calendar.startOfDay(for: date(2026, 3, 14)))
+        XCTAssertFalse(recap.isComplete)
+        // Февраль и 14 дней марта.
+        XCTAssertEqual(recap.total, 28 + 14)
+        XCTAssertEqual(recap.bars[3].total, 0)
+    }
+
+    func testMonthAndYearRecapsAreEmptyWithoutHabits() {
+        for period in [Recap.Period.month, .year] {
+            let recap = Recap.current(period, in: AppData())
+            XCTAssertFalse(recap.hasData, "\(period)")
+            XCTAssertEqual(recap.percent, 0)
+            XCTAssertEqual(recap.perfectDays, 0)
+            XCTAssertEqual(recap.streak, 0)
+            XCTAssertNil(recap.streakName)
+            XCTAssertNil(recap.top)
+        }
+        XCTAssertEqual(Recap.year(in: AppData()).bars.count, 12)
     }
 
     // MARK: Бросаю
