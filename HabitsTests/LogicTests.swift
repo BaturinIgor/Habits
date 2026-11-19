@@ -85,11 +85,11 @@ final class LogicTests: XCTestCase {
         // Без provider token Apple метки не считает, поэтому их нет.
         let plain = AppInfo.appStoreURL(campaign: .weekly, providerToken: "")
         XCTAssertEqual(plain.host, "apps.apple.com")
-        XCTAssertEqual(plain.path, "/app/id\(AppInfo.appStoreID)")
+        XCTAssertEqual(plain.path, "/app/apple-store/id\(AppInfo.appStoreID)")
         XCTAssertNil(plain.query)
 
         let tagged = AppInfo.appStoreURL(campaign: .month, providerToken: "123456")
-        XCTAssertEqual(tagged.path, "/app/id\(AppInfo.appStoreID)")
+        XCTAssertEqual(tagged.path, "/app/apple-store/id\(AppInfo.appStoreID)")
         let items = URLComponents(url: tagged, resolvingAgainstBaseURL: false)?.queryItems ?? []
         XCTAssertEqual(Set(items), [
             URLQueryItem(name: "pt", value: "123456"),
@@ -99,9 +99,20 @@ final class LogicTests: XCTestCase {
 
         let url = AppInfo.appStoreURL(campaign: .weekly)
         XCTAssertTrue(ShareSheet.message(campaign: .weekly).hasSuffix(" " + url.absoluteString))
+
+        // Каждая карточка — своя метка `ct`: не длиннее 40 символов (лимит Apple), только [a-z0-9_].
+        let allowed = Set("abcdefghijklmnopqrstuvwxyz0123456789_")
+        for campaign in ShareCampaign.allCases {
+            let link = AppInfo.appStoreURL(campaign: campaign, providerToken: "123456")
+            let ct = URLComponents(url: link, resolvingAgainstBaseURL: false)?.queryItems?.first { $0.name == "ct" }?.value
+            XCTAssertEqual(ct, campaign.rawValue)
+            XCTAssertLessThanOrEqual(campaign.rawValue.count, 40)
+            XCTAssertTrue(Set(campaign.rawValue).isSubset(of: allowed), campaign.rawValue)
+        }
+        XCTAssertEqual(Set(ShareCampaign.allCases.map(\.rawValue)).count, ShareCampaign.allCases.count)
     }
 
-    /// Длинная ссылка с метками (когда появится provider token) тоже даёт читаемый QR-код.
+    /// Длинная ссылка с метками даёт читаемый QR-код.
     @MainActor
     func testTaggedLinkQRCodeIsReadable() throws {
         let link = AppInfo.appStoreURL(campaign: .achievement, providerToken: "118727439").absoluteString
