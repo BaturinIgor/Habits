@@ -9,8 +9,8 @@
 
 Тип экрана определяется по размеру картинки. 1320x2868, 1290x2796 и 1260x2736 (iPhone 6.9")
 в API называются APP_IPHONE_67: отдельного типа для 6.9" в App Store Connect API нет.
-Наборы, где те же файлы уже лежат (совпадают MD5 и порядок), не трогаем. Иначе старые
-скриншоты набора удаляем и грузим новые. Языки без папки пропускаем: App Store покажет
+Наборы, где те же файлы уже лежат (совпадают MD5 и порядок), не трогаем. Иначе грузим новые
+и только после их обработки удаляем старые (если вместе их не больше 10; иначе сначала удаляем). Языки без папки пропускаем: App Store покажет
 скриншоты основного языка.
 
 Переменные окружения: ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8, APP_BUNDLE_ID.
@@ -52,6 +52,8 @@ SIZES = {
 def image_size(data):
     """(ширина, высота) для PNG и JPEG по заголовку, без Pillow."""
     if data[:8] == b"\x89PNG\r\n\x1a\n":
+        if len(data) < 24 or data[12:16] != b"IHDR":
+            raise ValueError("битый PNG: нет заголовка IHDR")
         return struct.unpack(">II", data[16:24])
     if data[:2] == b"\xff\xd8":
         i = 2
@@ -97,9 +99,10 @@ def local_sets(locale_dir):
         if not os.path.isdir(folder):
             continue
         for name in sorted(os.listdir(folder)):
-            if not name.lower().endswith(IMAGE_EXT):
-                continue
             path = os.path.join(folder, name)
+            # ._01.png и прочие скрытые файлы — мусор macOS в архивах.
+            if name.startswith(".") or not name.lower().endswith(IMAGE_EXT) or os.path.islink(path):
+                continue
             with open(path, "rb") as f:
                 data = f.read()
             try:
@@ -120,6 +123,22 @@ def local_sets(locale_dir):
         if len(files) > MAX_PER_SET:
             errors.append(f"{locale_dir}: {kind} — {len(files)} файлов, максимум {MAX_PER_SET}")
     return sets, errors
+
+
+def find_shots_root(path, locales, depth=3):
+    """Папка, в которой лежат подпапки языков. Ищет в path и глубже (для zip с общей папкой),
+    пропуская __MACOSX и скрытые. None, если не нашлось."""
+    def visible_dirs(p):
+        return sorted(d for d in os.listdir(p) if not d.startswith(".") and d != "__MACOSX"
+                      and os.path.isdir(os.path.join(p, d)) and not os.path.islink(os.path.join(p, d)))
+
+    level = [path]
+    for _ in range(depth + 1):
+        for p in level:
+            if any(d in locales for d in visible_dirs(p)):
+                return p
+        level = [os.path.join(p, d) for p in level for d in visible_dirs(p)]
+    return None
 
 
 def screenshot_payload(set_id, file_name, file_size):
@@ -176,6 +195,47 @@ def wait_processed(client, ids, timeout=300):
     return failed, sorted(pending)
 
 
+def replace_strategy(existing_count, new_count):
+    """upload_first: новые грузим рядом со старыми и удаляем старые только после обработки новых,
+    чтобы при сбое набор не остался пустым. Возможно, только если вместе их не больше 10."""
+    return "upload_first" if existing_count + new_count <= MAX_PER_SET else "delete_first"
+
+
+def replace_set(client, set_id, existing, files, label):
+    """Заменяет скриншоты набора. При сбое печатает понятную ошибку и завершает работу."""
+    strategy = replace_strategy(len(existing), len(files))
+    ids = []
+    try:
+        if strategy == "delete_first":
+            for e in existing:
+                client.call("DELETE", f"/appScreenshots/{e['id']}", ok_statuses=(404,))
+        for item in files:
+            ids.append(upload(client, set_id, item))
+        failed, pending = wait_processed(client, ids)
+    except ApiError as e:
+        state = ("старые скриншоты на месте, новые загружены не все" if strategy == "upload_first"
+                 else "набор пустой или неполный")
+        print(f"::error::{label}: {e}. {state}. Запусти workflow ещё раз.")
+        sys.exit(1)
+    if failed or pending:
+        what = f"Apple не приняла {len(failed)}" if failed else f"не обработаны за 5 минут {len(pending)}"
+        state = ("старые скриншоты оставлены" if strategy == "upload_first" else "набор неполный")
+        print(f"::error::{label}: {what} из {len(ids)} новых скриншотов, {state}. Запусти workflow ещё раз.")
+        sys.exit(1)
+    try:
+        if strategy == "upload_first":
+            for e in existing:
+                client.call("DELETE", f"/appScreenshots/{e['id']}", ok_statuses=(404,))
+        client.call("PATCH", f"/appScreenshotSets/{set_id}/relationships/appScreenshots",
+                    json={"data": [{"type": "appScreenshots", "id": i} for i in ids]})
+    except ApiError as e:
+        print(f"::error::{label}: новые скриншоты загружены, но {e}. В наборе могут остаться старые "
+              f"или порядок может быть другим. Запусти workflow ещё раз.")
+        sys.exit(1)
+    print(f"{label}: заменено, {len(ids)} шт.")
+    return ids
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--version", required=True)
@@ -201,12 +261,21 @@ def main(argv=None):
         locs, _ = client.get_all(f"/appStoreVersions/{ver['id']}/appStoreVersionLocalizations")
         locs = {l["attributes"]["locale"]: l["id"] for l in locs}
         wanted = set(args.locales.split(",")) if args.locales else None
-        on_disk = sorted(d for d in os.listdir(args.dir) if os.path.isdir(os.path.join(args.dir, d)))
+        root = find_shots_root(args.dir, set(locs))
+        if root is None:
+            print(f"::error::В {args.dir} нет ни одной папки языка из версии {args.version} "
+                  f"({', '.join(sorted(locs))}). Нужна структура <dir>/<язык>/01.png")
+            sys.exit(1)
+        if root != args.dir:
+            print(f"Папки языков найдены в {os.path.relpath(root, args.dir)}")
+        args.dir = root
+        on_disk = sorted(d for d in os.listdir(args.dir) if os.path.isdir(os.path.join(args.dir, d))
+                         and not d.startswith(".") and d != "__MACOSX")
         for d in on_disk:
             if d not in locs and (wanted is None or d in wanted):
                 print(f"::warning::Папка {d}: такого языка нет в версии {args.version}, пропускаю")
 
-        errors, uploaded, changed = [], [], 0
+        errors, uploaded, changed, processed = [], [], 0, 0
         for locale in sorted(locs):
             if wanted is not None and locale not in wanted:
                 continue
@@ -218,6 +287,10 @@ def main(argv=None):
             if errs:
                 errors += errs
                 continue
+            if not sets:
+                print(f"::warning::{locale}: в папке нет картинок PNG/JPEG, пропускаю")
+                continue
+            processed += 1
             remote = {s["attributes"]["screenshotDisplayType"]: s["id"] for s in
                       client.get_all(f"/appStoreVersionLocalizations/{locs[locale]}/appScreenshotSets")[0]}
             for kind, files in sorted(sets.items()):
@@ -227,17 +300,14 @@ def main(argv=None):
                     print(f"{locale} {kind}: без изменений ({len(files)} шт.)")
                     continue
                 changed += 1
-                print(f"{locale} {kind}: заменить {len(existing)} -> {len(files)} шт.")
+                order = {"upload_first": "сначала загрузка", "delete_first": "сначала удаление"}
+                print(f"{locale} {kind}: заменить {len(existing)} -> {len(files)} шт. "
+                      f"({order[replace_strategy(len(existing), len(files))]})")
                 if args.dry_run:
                     continue
                 set_id = remote.get(kind) or client.call(
                     "POST", "/appScreenshotSets", json=set_payload(locs[locale], kind))["data"]["id"]
-                for e in existing:
-                    client.call("DELETE", f"/appScreenshots/{e['id']}", ok_statuses=(404,))
-                ids = [upload(client, set_id, item) for item in files]
-                client.call("PATCH", f"/appScreenshotSets/{set_id}/relationships/appScreenshots",
-                            json={"data": [{"type": "appScreenshots", "id": i} for i in ids]})
-                uploaded += ids
+                uploaded += replace_set(client, set_id, existing, files, f"{locale} {kind}")
             if args.prune:
                 families = {k.startswith("APP_WATCH") for k in sets}
                 for kind, set_id in sorted(remote.items()):
@@ -253,18 +323,14 @@ def main(argv=None):
             for e in errors:
                 print(f"::error::{e}")
             sys.exit(1)
+        if not processed:
+            print(f"::error::В {args.dir} нет ни одной папки языка из версии {args.version} "
+                  f"({', '.join(sorted(locs))}). Проверь структуру: <dir>/<язык>/01.png")
+            sys.exit(1)
         if args.dry_run:
-            print(f"Dry run: изменится наборов: {changed}. Ничего не загружено.")
+            print(f"Dry run: языков {processed}, изменится наборов: {changed}. Ничего не загружено.")
             return
-        if uploaded:
-            print(f"Загружено {len(uploaded)} скриншотов, жду обработки...")
-            failed, pending = wait_processed(client, uploaded)
-            if failed:
-                print(f"::error::Apple не приняла скриншоты: {', '.join(failed)}")
-                sys.exit(1)
-            if pending:
-                print(f"::warning::Ещё обрабатываются: {len(pending)} шт., проверь позже в App Store Connect")
-        print(f"Готово, изменено наборов: {changed}")
+        print(f"Готово: языков {processed}, изменено наборов {changed}, загружено скриншотов {len(uploaded)}")
     except ApiError as e:
         print(f"::error::{e}")
         sys.exit(1)

@@ -120,13 +120,28 @@ class ProvisionPureTests(unittest.TestCase):
             "invalid": profile("P1", ident, state="INVALID"),
             "no group": profile("P1", ident, groups=()),
             "other cert": profile("P1", ident, cert="C2"),
-            "other bundle": profile("P1", ident, bundle_db="B9"),
-            "expiring": profile("P1", ident, expires=NOW + dt.timedelta(days=3)),
+            "expired": profile("P1", ident, expires=NOW - dt.timedelta(days=1)),
             "wrong id": profile("P1", APP + ".other"),
         }
         for name, p in cases.items():
             with self.subTest(name):
                 self.assertEqual(prov.decide_profile([p], "B1", ident, "C1", GROUP, NOW), ("create", None, ["P1"]))
+
+    def test_decide_never_deletes_foreign_profiles(self):
+        ident = APP + ".watchkitapp"
+        other_bundle = profile("P1", ident, bundle_db="B9")
+        other_type = profile("P2", ident)
+        other_type["attributes"]["profileType"] = "IOS_APP_DEVELOPMENT"
+        broken = profile("P3", ident, state="INVALID")
+        self.assertEqual(prov.decide_profile([other_bundle, other_type, broken], "B1", ident, "C1", GROUP, NOW),
+                         ("foreign", None, ["P1", "P2"]))
+
+    def test_decide_keeps_valid_expiring_profile(self):
+        ident = APP + ".watchkitapp"
+        p = profile("P1", ident, expires=NOW + dt.timedelta(days=3))
+        self.assertEqual(prov.decide_profile([p], "B1", ident, "C1", GROUP, NOW), ("reuse_expiring", p, []))
+        good = profile("P2", ident)
+        self.assertEqual(prov.decide_profile([p, good], "B1", ident, "C1", GROUP, NOW), ("reuse", good, []))
 
     def test_decide_create_when_none(self):
         self.assertEqual(prov.decide_profile([], "B1", "x", "C1", GROUP, NOW), ("create", None, []))
@@ -189,6 +204,48 @@ class ProvisionFlowTests(unittest.TestCase):
         body = [j for m, path, j, _ in c.calls if (m, path) == ("POST", "/bundleIds")][0]
         self.assertEqual(body["data"]["attributes"]["platform"], "IOS")
 
+    def test_foreign_profile_is_not_deleted(self):
+        foreign = profile("P1", self.ident, bundle_db="B9")
+        c = FakeClient({("GET", "/profiles"): {"data": [foreign]}})
+        p = prov.Provisioner(c, APP)
+        content, out = self.run_quiet(p.ensure_profile, self.target, "B1", "C1")
+        self.assertIsNone(content)
+        self.assertTrue(p.failed)
+        self.assertEqual(c.writes(), [])
+        self.assertIn("другой", out)
+
+    def test_expiring_profile_is_kept(self):
+        expiring = profile("P1", self.ident, expires=dt.datetime.now(dt.timezone.utc) + dt.timedelta(days=3))
+        c = FakeClient({("GET", "/profiles"): {"data": [expiring]}})
+        p = prov.Provisioner(c, APP)
+        content, out = self.run_quiet(p.ensure_profile, self.target, "B1", "C1")
+        self.assertIsNotNone(content)
+        self.assertEqual(c.writes(), [])
+        self.assertIn("::warning::", out)
+
+    def test_create_failure_is_reported(self):
+        def fail(kw):
+            raise asc_common.ApiError("POST", "/profiles", 409, ["ENTITY_ERROR"])
+        c = FakeClient({("GET", "/profiles"): {"data": []}, ("POST", "/profiles"): fail})
+        p = prov.Provisioner(c, APP)
+        with self.assertRaises(SystemExit), redirect_stdout(io.StringIO()) as out:
+            p.ensure_profile(self.target, "B1", "C1")
+        self.assertIn("не создан", out.getvalue())
+
+    def test_install_refuses_unreadable_p12(self):
+        with tempfile.TemporaryDirectory() as d:
+            c, out, code = self.main_with(self.full_routes(), ["--install"],
+                                          {"GITHUB_ENV": os.path.join(d, "env"), "APP_BUNDLE_ID": APP,
+                                           "DIST_CERT_P12": "P12"}, serial=None)
+            self.assertEqual(code, 1)
+            self.assertIn("DIST_CERT_P12", out)
+            self.assertFalse(os.path.exists(os.path.join(d, "env")))
+
+    def test_written_profiles_are_private(self):
+        with tempfile.TemporaryDirectory() as d:
+            prov.install_profile(profile_content(self.ident, uuid="U9"), (d,))
+            self.assertEqual(os.stat(os.path.join(d, "U9.mobileprovision")).st_mode & 0o777, 0o600)
+
     def test_profile_without_group_warns_and_is_not_returned(self):
         c = FakeClient({
             ("GET", "/profiles"): {"data": []},
@@ -237,10 +294,10 @@ class ProvisionFlowTests(unittest.TestCase):
             self.assertEqual(read_text(env), "WATCH_PROFILE_NAME=ZenHab Watch App Store\n")
             self.assertEqual(read_text(out), "watch_profile_name=ZenHab Watch App Store\n")
 
-    def main_with(self, routes, args, env):
+    def main_with(self, routes, args, env, serial="1ABC"):
         c = FakeClient(routes)
         with mock.patch.object(prov, "Client", return_value=c), mock.patch.dict(os.environ, env, clear=False), \
-                redirect_stdout(io.StringIO()) as out:
+                mock.patch.object(prov, "p12_serial", return_value=serial), redirect_stdout(io.StringIO()) as out:
             try:
                 prov.main(args)
                 code = 0
@@ -264,7 +321,8 @@ class ProvisionFlowTests(unittest.TestCase):
 
         routes = {
             ("GET", "/certificates"): {"data": [{"id": "C1", "attributes": {
-                "certificateType": "DISTRIBUTION", "expirationDate": "2099-01-01T00:00:00Z"}}]},
+                "certificateType": "DISTRIBUTION", "expirationDate": "2099-01-01T00:00:00Z",
+                "serialNumber": "1ABC"}}]},
             ("GET", "/bundleIds"): bundles,
             ("GET", "/profiles"): profiles,
         }
@@ -275,7 +333,7 @@ class ProvisionFlowTests(unittest.TestCase):
     def test_main_install_writes_profiles_and_only_names(self):
         with tempfile.TemporaryDirectory() as d:
             env_file, out_file = os.path.join(d, "env"), os.path.join(d, "out")
-            env = {"GITHUB_ENV": env_file, "GITHUB_OUTPUT": out_file, "APP_BUNDLE_ID": APP, "DIST_CERT_P12": ""}
+            env = {"GITHUB_ENV": env_file, "GITHUB_OUTPUT": out_file, "APP_BUNDLE_ID": APP, "DIST_CERT_P12": "P12"}
             with mock.patch.object(prov, "PROFILE_DIRS", (os.path.join(d, "profiles"),)), \
                     mock.patch.object(prov, "install_profile", wraps=lambda c: prov.parse_profile(c)["name"]) as inst:
                 c, out, code = self.main_with(self.full_routes(), ["--install"], env)
@@ -298,7 +356,7 @@ class ProvisionFlowTests(unittest.TestCase):
             env_file = os.path.join(d, "env")
             with mock.patch.object(prov, "install_profile", side_effect=AssertionError("нельзя ставить")):
                 _, out, code = self.main_with(routes, ["--install"],
-                                              {"GITHUB_ENV": env_file, "APP_BUNDLE_ID": APP, "DIST_CERT_P12": ""})
+                                              {"GITHUB_ENV": env_file, "APP_BUNDLE_ID": APP, "DIST_CERT_P12": "P12"})
             self.assertEqual(code, 1)
             self.assertIn("App Groups", out)
             self.assertFalse(os.path.exists(env_file))
@@ -402,12 +460,127 @@ class ScreenshotTests(unittest.TestCase):
             c.calls.clear()
             with mock.patch.object(shots, "Client", return_value=c), redirect_stdout(io.StringIO()):
                 shots.main(["--version", "1.6", "--dir", d])
+            # Сначала новые, старые удаляются только после обработки новых.
             self.assertEqual(c.writes(), [
-                ("DELETE", "/appScreenshots/stale"), ("POST", "/appScreenshots"),
-                ("PUT", "https://upload.example/x"), ("PATCH", "/appScreenshots/N1"),
+                ("POST", "/appScreenshots"), ("PUT", "https://upload.example/x"),
+                ("PATCH", "/appScreenshots/N1"), ("DELETE", "/appScreenshots/stale"),
                 ("PATCH", "/appScreenshotSets/Sru/relationships/appScreenshots")])
             commit = [j for m, p, j, _ in c.calls if (m, p) == ("PATCH", "/appScreenshots/N1")][0]
             self.assertEqual(commit["data"]["attributes"], {"uploaded": True, "sourceFileChecksum": checksum})
+
+
+class ScreenshotSafetyTests(unittest.TestCase):
+    """Замена набора: при сбое старые скриншоты не теряются, понятные ошибки, поиск папки в архиве."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+
+    def write(self, rel, data):
+        path = os.path.join(self.tmp.name, rel)
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "wb") as f:
+            f.write(data)
+
+    def client(self, old_count=1, fail_put=False, state="COMPLETE"):
+        old = [{"id": f"old{i}", "attributes": {"sourceFileChecksum": f"x{i}",
+                                                 "assetDeliveryState": {"state": "COMPLETE"}}}
+               for i in range(old_count)]
+        routes = {
+            ("GET", "/apps"): {"data": [{"id": "A", "attributes": {"bundleId": APP}}]},
+            ("GET", "/apps/A/appStoreVersions"): {"data": [{"id": "V", "attributes": {"appVersionState": "PREPARE_FOR_SUBMISSION"}}]},
+            ("GET", "/appStoreVersions/V/appStoreVersionLocalizations"): {"data": [{"id": "L", "attributes": {"locale": "ru"}}]},
+            ("GET", "/appStoreVersionLocalizations/L/appScreenshotSets"): {"data": [
+                {"id": "S", "attributes": {"screenshotDisplayType": "APP_IPHONE_67"}}]},
+            ("GET", "/appScreenshotSets/S/appScreenshots"): {"data": old},
+            ("POST", "/appScreenshots"): {"data": {"id": "N1", "attributes": {"uploadOperations": [
+                {"url": "https://upload.example/x", "offset": 0, "length": 5, "requestHeaders": []}]}}},
+            ("PATCH", "/appScreenshots/N1"): {},
+            ("GET", "/appScreenshots/N1"): {"data": {"attributes": {"assetDeliveryState": {"state": state}}}},
+            ("PATCH", "/appScreenshotSets/S/relationships/appScreenshots"): {},
+        }
+        for o in old:
+            routes[("DELETE", f"/appScreenshots/{o['id']}")] = {}
+        c = FakeClient(routes)
+        if fail_put:
+            def put_raw(url, data, headers):
+                raise asc_common.ApiError("PUT", "<upload url>", 503, [])
+            c.put_raw = put_raw
+        return c
+
+    def run_main(self, c, *extra):
+        with mock.patch.object(shots, "Client", return_value=c), redirect_stdout(io.StringIO()) as out:
+            try:
+                shots.main(["--version", "1.6", "--dir", self.tmp.name, *extra])
+                code = 0
+            except SystemExit as e:
+                code = e.code
+        return out.getvalue(), code
+
+    def test_replace_strategy(self):
+        self.assertEqual(shots.replace_strategy(3, 7), "upload_first")
+        self.assertEqual(shots.replace_strategy(8, 8), "delete_first")
+
+    def test_failed_upload_keeps_old_screenshots(self):
+        self.write("ru/01.png", png(1320, 2868))
+        c = self.client(fail_put=True)
+        out, code = self.run_main(c)
+        self.assertEqual(code, 1)
+        self.assertNotIn(("DELETE", "/appScreenshots/old0"), c.writes())
+        self.assertIn("старые скриншоты на месте", out)
+        self.assertIn("Запусти workflow ещё раз", out)
+
+    def test_rejected_upload_keeps_old_screenshots(self):
+        self.write("ru/01.png", png(1320, 2868))
+        c = self.client(state="FAILED")
+        out, code = self.run_main(c)
+        self.assertEqual(code, 1)
+        self.assertNotIn(("DELETE", "/appScreenshots/old0"), c.writes())
+        self.assertIn("старые скриншоты оставлены", out)
+
+    def test_full_set_deletes_first_and_reports_incomplete(self):
+        self.write("ru/01.png", png(1320, 2868))
+        c = self.client(old_count=10, fail_put=True)
+        out, code = self.run_main(c)
+        self.assertEqual(code, 1)
+        self.assertEqual(c.writes()[0], ("DELETE", "/appScreenshots/old0"))
+        self.assertIn("набор пустой или неполный", out)
+
+    def test_no_locale_folder_fails(self):
+        self.write("de-DE/01.png", png(1320, 2868))
+        out, code = self.run_main(self.client())
+        self.assertEqual(code, 1)
+        self.assertIn("нет ни одной папки языка", out)
+
+    def test_empty_locale_folder_fails(self):
+        os.makedirs(os.path.join(self.tmp.name, "ru"))
+        out, code = self.run_main(self.client())
+        self.assertEqual(code, 1)
+
+    def test_find_root_in_zip_layout(self):
+        self.write("__MACOSX/ru/._01.png", b"junk")
+        self.write(".hidden/ru/01.png", png(1320, 2868))
+        self.write("ZenHab shots/ru/01.png", png(1320, 2868))
+        self.write("ZenHab shots/ru/._01.png", b"\x00\x05\x16\x07 AppleDouble")
+        root = shots.find_shots_root(self.tmp.name, {"ru", "en-US"})
+        self.assertEqual(root, os.path.join(self.tmp.name, "ZenHab shots"))
+        sets, errors = shots.local_sets(os.path.join(root, "ru"))
+        self.assertEqual(errors, [])
+        self.assertEqual(len(sets["APP_IPHONE_67"]), 1)
+        self.assertIsNone(shots.find_shots_root(os.path.join(self.tmp.name, "__MACOSX", "ru"), {"en-US"}))
+
+    def test_dry_run_from_nested_root(self):
+        self.write("pack/ru/01.png", png(1320, 2868))
+        c = self.client()
+        out, code = self.run_main(c, "--dry-run")
+        self.assertEqual(code, 0, out)
+        self.assertEqual(c.writes(), [])
+
+    def test_truncated_png(self):
+        with self.assertRaises(ValueError):
+            shots.image_size(b"\x89PNG\r\n\x1a\n\x00\x00")
+        with self.assertRaises(ValueError):
+            shots.image_size(b"\x89PNG\r\n\x1a\n" + b"\x00\x00\x00\x0dXXXX" + b"\x00" * 8)
 
 
 # ---------- Отправка на ревью ----------
@@ -472,6 +645,15 @@ class SubmitTests(unittest.TestCase):
         self.assertEqual(submit.submission_plan([{"id": "S", "state": "WAITING_FOR_REVIEW", "version_ids": ["V"]}], "V"),
                          ("done", "S", False))
 
+    def test_submission_plan_refuses_other_version(self):
+        other = {"id": "S15", "state": "READY_FOR_REVIEW", "version_ids": ["V15"]}
+        self.assertEqual(submit.submission_plan([other], "V"), ("conflict", "S15", False))
+        mixed = {"id": "S", "state": "UNRESOLVED_ISSUES", "version_ids": ["V", "V15"]}
+        self.assertEqual(submit.submission_plan([mixed], "V"), ("conflict", "S", False))
+        # Отправка 1.5, которая уже на ревью, не открыта: её не трогаем и создаём свою.
+        in_review = {"id": "S15", "state": "IN_REVIEW", "version_ids": ["V15"]}
+        self.assertEqual(submit.submission_plan([in_review], "V"), ("create", None, True))
+
     def test_payloads(self):
         self.assertEqual(submit.submission_payload("A")["data"]["attributes"], {"platform": "IOS"})
         item = submit.item_payload("S", "V")["data"]["relationships"]
@@ -530,6 +712,26 @@ class SubmitTests(unittest.TestCase):
                                       ("PATCH", "/reviewSubmissions/S")])
         self.assertIn("App Privacy", out.getvalue())
 
+    def test_open_submission_with_other_version_is_not_submitted(self):
+        c = self.flow_client()
+        c.routes[("GET", "/reviewSubmissions")] = {"data": [{"id": "S15", "attributes": {"state": "READY_FOR_REVIEW"}}]}
+        c.routes[("GET", "/reviewSubmissions/S15/items")] = {"data": [
+            {"relationships": {"appStoreVersion": {"data": {"type": "appStoreVersions", "id": "V0"}}}}]}
+        with mock.patch.object(submit, "Client", return_value=c), redirect_stdout(io.StringIO()) as out, \
+                self.assertRaises(SystemExit) as e:
+            submit.main(["--version", "1.6", "--confirm", "yes"])
+        self.assertEqual(e.exception.code, 1)
+        self.assertEqual(c.writes(), [])
+        self.assertIn("S15", out.getvalue())
+
+    def test_empty_app_infos(self):
+        c = self.flow_client()
+        c.routes[("GET", "/apps/A/appInfos")] = {"data": []}
+        with mock.patch.object(submit, "Client", return_value=c), redirect_stdout(io.StringIO()), \
+                self.assertRaises(SystemExit) as e:
+            submit.main(["--version", "1.6", "--confirm", "yes"])
+        self.assertIn("appInfos", str(e.exception.code))
+
 
 # ---------- Общие помощники ----------
 
@@ -557,6 +759,42 @@ class CommonTests(unittest.TestCase):
         self.assertNotIn("xxx", text)
         self.assertNotIn("whatsNew", text)
         self.assertEqual(text, "POST /appStoreVersions -> HTTP 409 ENTITY_ERROR.ATTRIBUTE.REQUIRED")
+
+    def retry_client(self, responses):
+        session = mock.Mock()
+        session.request.side_effect = responses
+        client = asc_common.Client.__new__(asc_common.Client)
+        client._session, client._issued, client._key = session, 10 ** 12, None
+        client._sleep = mock.Mock()
+        return client, session
+
+    @staticmethod
+    def resp(status, body="{}"):
+        r = mock.Mock()
+        r.status_code, r.text = status, body
+        r.json.return_value = {"data": []} if status < 400 else {"errors": [{"code": "X"}]}
+        return r
+
+    def test_retries_get_on_429_and_5xx(self):
+        client, session = self.retry_client([self.resp(429), self.resp(503), self.resp(200)])
+        self.assertEqual(client.call("GET", "/apps"), {"data": []})
+        self.assertEqual(session.request.call_count, 3)
+        self.assertEqual([c.args[0] for c in client._sleep.call_args_list], [2, 4])
+
+    def test_post_not_retried_on_5xx(self):
+        client, session = self.retry_client([self.resp(500), self.resp(200)])
+        with self.assertRaises(asc_common.ApiError) as e:
+            client.call("POST", "/profiles")
+        self.assertEqual(e.exception.status, 500)
+        self.assertEqual(session.request.call_count, 1)
+
+    def test_network_error_becomes_api_error(self):
+        client, session = self.retry_client(OSError("connection reset"))
+        with self.assertRaises(asc_common.ApiError) as e:
+            client.call("GET", "/apps")
+        self.assertEqual(e.exception.status, 0)
+        self.assertEqual(session.request.call_count, asc_common.Client.RETRIES + 1)
+        self.assertNotIn("reset", str(e.exception))
 
     def test_metadata_locales(self):
         self.assertEqual(len(asc_common.metadata_locales()), 14)

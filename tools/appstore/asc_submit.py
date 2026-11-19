@@ -111,16 +111,21 @@ def check_screenshots(report, primary_locale, shots_by_locale):
 
 
 def submission_plan(open_submissions, version_id):
-    """open_submissions: [{"id", "state", "version_ids"}]. Возвращает ("reuse", id, нужно_добавить_версию),
-    ("done", id, False), если версия уже ждёт ревью, или ("create", None, True). Берём незавершённую отправку, в которой уже есть эта версия, иначе любую открытую."""
+    """open_submissions: [{"id", "state", "version_ids"}]. Возвращает (действие, id, нужно_добавить_версию):
+    ("done", id, False)     — версия уже в отправке, которая ждёт ревью или на ревью;
+    ("reuse", id, False)    — открытая отправка, где из версий только эта;
+    ("reuse", id, True)     — открытая отправка без версий (например, только покупки);
+    ("conflict", id, False) — открытая отправка с другой версией: её нельзя отправлять заодно;
+    ("create", None, True)  — открытых нет."""
     for s in open_submissions:
-        if version_id in s["version_ids"]:
-            if s["state"] in OPEN_SUBMISSION_STATES:
-                return "reuse", s["id"], False
+        if version_id in s["version_ids"] and s["state"] not in OPEN_SUBMISSION_STATES:
             return "done", s["id"], False
     for s in open_submissions:
-        if s["state"] in OPEN_SUBMISSION_STATES:
-            return "reuse", s["id"], True
+        if s["state"] not in OPEN_SUBMISSION_STATES:
+            continue
+        if any(v != version_id for v in s["version_ids"]):
+            return "conflict", s["id"], False
+        return "reuse", s["id"], not s["version_ids"]
     return "create", None, True
 
 
@@ -148,6 +153,8 @@ def collect(client, app, ver):
     version_locs = {l["attributes"]["locale"]: l["attributes"] for l in locs}
 
     infos = client.call("GET", f"/apps/{app_id}/appInfos")["data"]
+    if not infos:
+        raise SystemExit("::error::У приложения нет appInfos: App Store Connect вернул пустой список")
     editable = [i for i in infos if (i["attributes"].get("appStoreState") or i["attributes"].get("state"))
                 not in ("READY_FOR_SALE", "READY_FOR_DISTRIBUTION", "REPLACED_WITH_NEW_INFO")]
     info = (editable or infos)[0]
@@ -226,6 +233,11 @@ def main(argv=None):
         if action == "done":
             print(f"Версия уже в отправке {sub_id}, которая ждёт ревью. Делать нечего.")
             return
+        if action == "conflict":
+            print(f"::error::Есть незавершённая отправка на ревью {sub_id} с другой версией. Отправлять её заодно "
+                  f"с {args.version} не буду. Убери ту версию из отправки в App Store Connect (приложение -> "
+                  f"App Review -> отправка -> Remove) или удали отправку, затем запусти ещё раз.")
+            sys.exit(1)
         if action == "create":
             sub_id = client.call("POST", "/reviewSubmissions", json=submission_payload(app["id"]))["data"]["id"]
             print(f"Создана отправка на ревью {sub_id}")

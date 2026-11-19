@@ -45,6 +45,15 @@ def safe_error_codes(response):
     return [str(e.get("code")) for e in errors[:5] if isinstance(e, dict) and e.get("code")]
 
 
+def _network_errors():
+    try:
+        import requests
+
+        return (requests.RequestException, OSError)
+    except ImportError:  # юнит-тесты без requests
+        return (OSError,)
+
+
 class Client:
     """Тонкая обёртка над requests. Токен живёт 15 минут, поэтому обновляем его каждые 10."""
 
@@ -62,12 +71,36 @@ class Client:
                                           "Content-Type": "application/json"})
             self._issued = time.time()
 
+    RETRIES = 4
+    _sleep = staticmethod(time.sleep)
+
+    def _with_retry(self, method, label, send):
+        """Повторяет запрос при 429, 5xx и сетевых ошибках (2, 4, 8, 16 с).
+        POST повторяем только при 429: при 5xx объект мог уже создаться, дубль хуже ошибки."""
+        for attempt in range(self.RETRIES + 1):
+            try:
+                r = send()
+            except _network_errors() as e:
+                if attempt == self.RETRIES or method == "POST":
+                    raise ApiError(method, label, 0, [f"NETWORK_{type(e).__name__}"]) from None
+            else:
+                retry = r.status_code == 429 or (r.status_code >= 500 and method != "POST")
+                if not retry or attempt == self.RETRIES:
+                    return r
+            self._sleep(2 ** (attempt + 1))
+        raise AssertionError("unreachable")
+
     def call(self, method, path, ok_statuses=(), **kw):
-        self._auth()
         url = API + path if path.startswith("/") else path
-        r = self._session.request(method, url, timeout=60, **kw)
+        label = path.split("?")[0].replace(API, "")
+
+        def send():
+            self._auth()
+            return self._session.request(method, url, timeout=60, **kw)
+
+        r = self._with_retry(method, label, send)
         if r.status_code >= 400 and r.status_code not in ok_statuses:
-            raise ApiError(method, path.split("?")[0], r.status_code, safe_error_codes(r))
+            raise ApiError(method, label, r.status_code, safe_error_codes(r))
         if r.status_code in ok_statuses or not r.text:
             return {}
         return r.json()
@@ -91,7 +124,7 @@ class Client:
         """Загрузка части файла по uploadOperations (без авторизации ASC)."""
         import requests
 
-        r = requests.put(url, data=data, headers=headers, timeout=120)
+        r = self._with_retry("PUT", "<upload url>", lambda: requests.put(url, data=data, headers=headers, timeout=120))
         if r.status_code >= 400:
             raise ApiError("PUT", "<upload url>", r.status_code, [])
 

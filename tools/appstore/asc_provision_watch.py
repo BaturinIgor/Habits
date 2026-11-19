@@ -60,6 +60,14 @@ PROFILE_DIRS = ("~/Library/MobileDevice/Provisioning Profiles",
                 "~/Library/Developer/Xcode/UserData/Provisioning Profiles")
 
 
+def write_private(path, data):
+    """Пишет файл сразу с правами 600, без окна, когда он доступен другим."""
+    fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    with os.fdopen(fd, "wb") as f:
+        f.write(data)
+    os.chmod(path, 0o600)
+
+
 def install_profile(content_b64, dirs=PROFILE_DIRS):
     """Кладёт профиль туда, где его ищет xcodebuild, под именем <UUID>.mobileprovision. Возвращает имя."""
     info = parse_profile(content_b64)
@@ -67,10 +75,7 @@ def install_profile(content_b64, dirs=PROFILE_DIRS):
     for d in dirs:
         folder = os.path.expanduser(d)
         os.makedirs(folder, exist_ok=True)
-        path = os.path.join(folder, f"{info['uuid']}.mobileprovision")
-        with open(path, "wb") as f:
-            f.write(data)
-        os.chmod(path, 0o600)
+        write_private(os.path.join(folder, f"{info['uuid']}.mobileprovision"), data)
     return info["name"]
 
 
@@ -133,6 +138,9 @@ def _rel_ids(profile, rel):
     return [d["id"] for d in (data if isinstance(data, list) else [data])]
 
 
+EXPIRING = "истекает меньше чем через 14 дней"
+
+
 def profile_problems(profile, bundle_db_id, identifier, cert_id, group, now=None):
     """Пустой список, если профиль можно использовать. Иначе причины (без секретных данных)."""
     now = now or dt.datetime.now(dt.timezone.utc)
@@ -163,23 +171,41 @@ def profile_problems(profile, bundle_db_id, identifier, cert_id, group, now=None
     if expires is not None:
         if expires.tzinfo is None:
             expires = expires.replace(tzinfo=dt.timezone.utc)
-        if expires < now + dt.timedelta(days=14):
-            problems.append("истекает меньше чем через 14 дней")
+        if expires < now:
+            problems.append("истёк")
+        elif expires < now + dt.timedelta(days=14):
+            problems.append(EXPIRING)
     return problems
 
 
+def is_foreign(profile, bundle_db_id):
+    """Профиль с нашим именем, но для другого bundle ID или другого типа: его не трогаем."""
+    return (profile["attributes"].get("profileType") != PROFILE_TYPE
+            or bundle_db_id not in _rel_ids(profile, "bundleId"))
+
+
 def decide_profile(existing, bundle_db_id, identifier, cert_id, group, now=None):
-    """Решение по профилям с нужным именем: ("reuse", профиль, []) или ("create", None, [id на удаление])."""
-    good, bad = None, []
+    """Решение по профилям с нужным именем. Возвращает (действие, профиль, [id на удаление]):
+    ("reuse", p, [])        — есть годный профиль;
+    ("reuse_expiring", p, []) — годный, но скоро истекает: пользуемся, пока он действует, не удаляем;
+    ("foreign", None, [id]) — с таким именем есть чужие профили (другой bundle ID или тип): стоп;
+    ("create", None, [id])  — годных нет; удаляем только наши непригодные (тот же bundle ID и тип)."""
+    expiring, foreign, broken = None, [], []
     for p in existing:
-        if good is None and not profile_problems(p, bundle_db_id, identifier, cert_id, group, now):
-            good = p
+        problems = profile_problems(p, bundle_db_id, identifier, cert_id, group, now)
+        if not problems:
+            return "reuse", p, []
+        if problems == [EXPIRING]:
+            expiring = expiring or p
+        elif is_foreign(p, bundle_db_id):
+            foreign.append(p["id"])
         else:
-            bad.append(p["id"])
-    if good is not None:
-        # Лишние профили с тем же именем мешают Xcode выбрать нужный, но трогать действующий не будем.
-        return "reuse", good, []
-    return "create", None, bad
+            broken.append(p["id"])
+    if expiring is not None:
+        return "reuse_expiring", expiring, []
+    if foreign:
+        return "foreign", None, foreign
+    return "create", None, broken
 
 
 def serial_hex(value):
@@ -226,8 +252,8 @@ def p12_serial(p12_b64, password):
 # ---------- Работа с API ----------
 
 class Provisioner:
-    def __init__(self, client, app_id, dry_run=False):
-        self.client, self.app_id, self.dry_run = client, app_id, dry_run
+    def __init__(self, client, app_id, dry_run=False, strict_cert=False):
+        self.client, self.app_id, self.dry_run, self.strict_cert = client, app_id, dry_run, strict_cert
         self.group = f"group.{app_id}"
         self.failed = False
 
@@ -263,8 +289,16 @@ class Provisioner:
         certs, _ = self.client.get_all("/certificates", params={
             "filter[certificateType]": ",".join(DIST_CERT_TYPES)})
         serial = None
+        if self.strict_cert and not os.environ.get("DIST_CERT_P12"):
+            print("::error::Для --install нужен DIST_CERT_P12: профиль должен быть на тот же сертификат, "
+                  "которым подписывается сборка.")
+            sys.exit(1)
         if os.environ.get("DIST_CERT_P12"):
             serial = p12_serial(os.environ["DIST_CERT_P12"], os.environ.get("DIST_CERT_PASSWORD"))
+            if serial is None and self.strict_cert:
+                print("::error::Не удалось прочитать DIST_CERT_P12 (проверь DIST_CERT_PASSWORD). Для --install "
+                      "самый свежий сертификат не подставляю: подпись может не совпасть.")
+                sys.exit(1)
             if serial is None:
                 print("::warning::Не удалось прочитать DIST_CERT_P12, беру самый свежий сертификат Apple Distribution")
         cert = choose_certificate(certs, serial)
@@ -290,9 +324,18 @@ class Provisioner:
             "filter[name]": t["profile"], "include": "bundleId,certificates"})
         existing = [p for p in existing if p["attributes"].get("name") == t["profile"]]
         action, profile, to_delete = decide_profile(existing, bundle_db_id, t["identifier"], cert_id, self.group)
-        if action == "reuse":
+        if action in ("reuse", "reuse_expiring"):
             print(f"профиль «{t['profile']}»: действующий, UUID {profile['attributes'].get('uuid')}")
+            if action == "reuse_expiring":
+                print(f"::warning::Профиль «{t['profile']}» истекает меньше чем через 14 дней. Он ещё действует, "
+                      f"поэтому не удаляю: после истечения следующий запуск создаст новый.")
             return profile["attributes"]["profileContent"]
+        if action == "foreign":
+            self.failed = True
+            print(f"::warning::Профили с именем «{t['profile']}» (id {', '.join(to_delete)}) выписаны на другой "
+                  f"bundle ID или другого типа. Удалять чужое не буду: переименуй или удали их на "
+                  f"developer.apple.com -> Profiles и запусти ещё раз.")
+            return None
         for p in existing:
             if p["id"] in to_delete:
                 reasons = ", ".join(profile_problems(p, bundle_db_id, t["identifier"], cert_id, self.group))
@@ -304,7 +347,13 @@ class Provisioner:
         if self.dry_run:
             print(f"[dry-run] профиль «{t['profile']}»: будет создан")
             return None
-        created = self.client.call("POST", "/profiles", json=profile_payload(t["profile"], bundle_db_id, cert_id))["data"]
+        try:
+            created = self.client.call("POST", "/profiles",
+                                       json=profile_payload(t["profile"], bundle_db_id, cert_id))["data"]
+        except ApiError as e:
+            print(f"::error::Профиль «{t['profile']}» не создан ({e}). Непригодные старые профили уже удалены, "
+                  f"годных не было. Запусти ещё раз.")
+            raise SystemExit(1) from None
         content = created["attributes"]["profileContent"]
         info = parse_profile(content)
         print(f"профиль «{t['profile']}»: создан, UUID {info['uuid']}")
@@ -358,7 +407,7 @@ def main(argv=None):
             sys.exit(1)
 
     app_id = os.environ.get("APP_BUNDLE_ID") or DEFAULT_BUNDLE_ID
-    prov = Provisioner(Client(), app_id, dry_run=args.dry_run)
+    prov = Provisioner(Client(), app_id, dry_run=args.dry_run, strict_cert=args.install)
     try:
         cert_id = prov.find_certificate()
         results = {}
@@ -388,8 +437,7 @@ def main(argv=None):
         if args.out:
             os.makedirs(os.path.expanduser(args.out), exist_ok=True)
             path = os.path.join(os.path.expanduser(args.out), f"{t['profile'].replace(' ', '_')}.mobileprovision")
-            with open(path, "wb") as f:
-                f.write(base64.b64decode(content))
+            write_private(path, base64.b64decode(content))
             print(f"Записан {path}")
         if args.store_secrets:
             store_secret(args.repo, secret, content)
