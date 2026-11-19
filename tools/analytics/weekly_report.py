@@ -2,13 +2,12 @@
 """Еженедельный отчёт ZenHab: продажи и подписки из App Store Connect за последние 7 дней.
 
 Скачивает дневные отчёты Sales and Trends (SALES/SUMMARY, SUBSCRIPTION, SUBSCRIPTION_EVENT),
-сравнивает с предыдущей неделей и пишет:
-- <REPORT_DIR>/<дата>.md  — отчёт для чтения;
-- <REPORT_DIR>/<дата>.json — те же цифры для машин;
-- короткое сообщение в Telegram (бот отзывов), если заданы FEEDBACK_BOT_TOKEN и FEEDBACK_CHAT_ID.
+сравнивает с предыдущей неделей и отправляет короткую сводку в Telegram (бот отзывов), если заданы
+FEEDBACK_BOT_TOKEN и FEEDBACK_CHAT_ID. Полный отчёт пишется во временные файлы <REPORT_DIR>/<дата>.md и .json:
+в workflow это временная папка раннера, файлы никуда не публикуются и исчезают вместе с раннером.
 
-Репозиторий публичный: цифры дохода не печатаются в лог (логи Actions видны всем) и не коммитятся,
-файлы в REPORT_DIR остаются только на временном диске раннера, наружу уходит лишь сводка в Telegram.
+Репозиторий публичный: цифры дохода, номер поставщика и ответы Apple не печатаются в лог (логи Actions видны всем),
+в лог идут только коды HTTP-ответов.
 
 Поведение в приложении (экраны, нажатия, воронка) смотрим в Firebase / Google Analytics.
 Позже сюда можно добавить и их через бесплатный Google Analytics Data API (нужен сервисный аккаунт).
@@ -106,14 +105,15 @@ def fetch(report_type, sub_type, day, versions):
             return list(csv.DictReader(io.StringIO(text), delimiter="\t"))
         if r.status_code == 404:
             return None
+        # Тело ответа Apple только для разбора, в лог не печатаем: в нём может быть номер поставщика.
         body = r.text[:400]
         # Неподходящая версия отчёта: пробуем следующую.
         if r.status_code == 400 and "version" in body.lower():
             continue
         if r.status_code in (401, 403):
-            print(f"::error::Нет доступа к отчётам продаж ({r.status_code}). Ключу API нужна роль Sales, Finance или Admin. {body}")
+            print(f"::error::Нет доступа к отчётам продаж (HTTP {r.status_code}). Ключу API нужна роль Sales, Finance или Admin.")
             sys.exit(1)
-        print(f"::warning::{report_type}/{sub_type} {day}: {r.status_code} {body}")
+        print(f"::warning::{report_type}/{sub_type} {day}: HTTP {r.status_code}")
         return None
     print(f"::warning::{report_type}/{sub_type}: ни одна версия отчёта не подошла ({versions})")
     return None

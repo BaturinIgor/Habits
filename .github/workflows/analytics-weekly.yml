@@ -25,6 +25,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Install
         run: pip install pyjwt==2.10.1 cryptography==44.0.2 requests==2.32.3
       - name: Build report
