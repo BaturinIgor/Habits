@@ -783,3 +783,17 @@ ZenHab is locked||ZenHab è bloccato
 passcode||codice
 Scan to get ZenHab||Scansiona per scaricare ZenHab
 Track your habits with ZenHab||Segui le tue abitudini con ZenHab
+My month||Il mio mese
+My year||Il mio anno
+Month in review||Riepilogo del mese
+Year in review||Riepilogo dell'anno
+Your month in review||Il riepilogo del tuo mese
+Your year in review||Il riepilogo del tuo anno
+Last month's results as a card you can share||I risultati del mese scorso in una scheda da condividere
+Your year's results as a card you can share||I risultati del tuo anno in una scheda da condividere
+An amazing month. Keep it going!||Un mese fantastico. Continua così!
+A solid month. A little more and it'll be perfect.||Un buon mese. Ancora un po' e sarà perfetto.
+Every check-in counts. The new month is a fresh start.||Ogni spunta conta. Il nuovo mese è un nuovo inizio.
+An amazing year. Keep it going!||Un anno fantastico. Continua così!
+A solid year. Every month makes a difference.||Un buon anno. Ogni mese ha fatto la differenza.
+Every check-in counts. The new year is a fresh start.||Ogni spunta conta. Il nuovo anno è un nuovo inizio.

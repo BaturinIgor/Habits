@@ -26,7 +26,9 @@
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "Salinan kebiasaan dan riwayatmu tersimpan otomatis ke iCloud saat kamu keluar dari aplikasi, jadi tidak ada yang hilang saat ganti ponsel.";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "Hitung mundur di Layar Terkunci dan Dynamic Island yang mencentang kebiasaan saat waktunya habis.";
 "A grown pet brings up to +5 a day" = "Hewan yang sudah besar memberi hingga +5 per hari";
+"A solid month. A little more and it'll be perfect." = "Bulan yang bagus. Sedikit lagi dan akan sempurna.";
 "A solid week. A little more and it'll be perfect." = "Minggu yang bagus. Sedikit lagi dan akan sempurna.";
+"A solid year. Every month makes a difference." = "Tahun yang bagus. Setiap bulan membawa perubahan.";
 "A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets." = "Tabel semua centang beserta catatan dan suasana hati untuk Numbers, Excel, atau Google Sheets.";
 "A week strong" = "Seminggu penuh";
 "A whole year" = "Setahun penuh";
@@ -60,7 +62,9 @@
 "Allow notifications" = "Izinkan notifikasi";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "Izinkan mikrofon dan pengenalan suara untuk ZenHab di Pengaturan.";
 "Allowed" = "Diizinkan";
+"An amazing month. Keep it going!" = "Bulan yang luar biasa. Pertahankan!";
 "An amazing week. Keep it going!" = "Minggu yang luar biasa. Pertahankan!";
+"An amazing year. Keep it going!" = "Tahun yang luar biasa. Pertahankan!";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "Kebiasaan yang diarsipkan tidak tampil di layar Hari Ini dan tidak mengirim notifikasi, tetapi riwayatnya tetap disimpan.";
 "And %lld more" = "Dan %lld lagi";
 "Anytime" = "Kapan saja";
@@ -221,7 +225,9 @@
 "Every" = "Setiap";
 "Every %@" = "Setiap %@";
 "Every N days" = "Setiap N hari";
+"Every check-in counts. The new month is a fresh start." = "Setiap centang berarti. Bulan baru adalah awal yang baru.";
 "Every check-in counts. The new week is a fresh start." = "Setiap centang berarti. Minggu baru adalah awal yang baru.";
+"Every check-in counts. The new year is a fresh start." = "Setiap centang berarti. Tahun baru adalah awal yang baru.";
 "Every day" = "Setiap hari";
 "Every month, on day %lld" = "Setiap bulan, tanggal %lld";
 "Every other day" = "Selang sehari";
@@ -353,6 +359,7 @@
 "Last 30 days" = "30 hari terakhir";
 "Last 7 days" = "7 hari terakhir";
 "Last backup" = "Cadangan terakhir";
+"Last month's results as a card you can share" = "Hasil bulan lalu dalam kartu yang bisa dibagikan";
 "Last week's results as a card you can share" = "Hasil minggu lalu dalam kartu yang bisa dibagikan";
 "Last widget update" = "Pembaruan widget terakhir";
 "Learn %@" = "Belajar %@";
@@ -395,6 +402,7 @@
 "Misses are okay" = "Terlewat itu wajar";
 "Misses you a lot" = "Sangat merindukanmu";
 "Money saved" = "Uang yang dihemat";
+"Month in review" = "Ringkasan bulan";
 "Month of power" = "Bulan penuh tenaga";
 "Monthly" = "Bulanan";
 "Mood" = "Suasana hati";
@@ -411,7 +419,9 @@
 "Morning exercises" = "Senam pagi";
 "Most steady: %@, %lld of %lld" = "Paling konsisten: %@, %lld dari %lld";
 "Move to archive" = "Pindahkan ke arsip";
+"My month" = "Bulanku";
 "My week" = "Mingguku";
+"My year" = "Tahunku";
 "N times a week" = "N kali seminggu";
 "Name" = "Nama";
 "Never" = "Belum pernah";
@@ -750,6 +760,7 @@
 "Write 50 notes" = "Tulis 50 catatan";
 "Write down 3 good things" = "Tulis 3 hal baik";
 "Write to the developer" = "Tulis ke pengembang";
+"Year in review" = "Ringkasan tahun";
 "Yearly" = "Tahunan";
 "Yesterday" = "Kemarin";
 "Yoga" = "Yoga";
@@ -759,6 +770,7 @@
 "Your days and the habits that lift your mood" = "Hari-harimu dan kebiasaan yang memperbaiki suasana hati";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Kebiasaan dan riwayatmu tersimpan otomatis di iCloud. Di iPhone baru, ZenHab akan menawarkan untuk memulihkan semuanya.";
 "Your message has been sent." = "Pesanmu sudah terkirim.";
+"Your month in review" = "Ringkasan bulanmu";
 "Your own emoji from the keyboard" = "Emoji sendiri dari papan ketik";
 "Your own name, icon and schedule" = "Nama, ikon, dan jadwal sendiri";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Hewan peliharaanmu tumbuh setiap kali kamu mencentang kebiasaan dan sedih kalau kamu menghilang beberapa hari.";
@@ -766,6 +778,8 @@
 "Your photo" = "Fotomu";
 "Your week in review" = "Ringkasan minggumu";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "Seluruh riwayat suasana hati, grafik bulanan, dan kebiasaan yang memperbaikinya.";
+"Your year in review" = "Ringkasan tahunmu";
+"Your year's results as a card you can share" = "Hasil tahunmu dalam kartu yang bisa dibagikan";
 "ZenHab is locked" = "ZenHab terkunci";
 "a month" = "sebulan";
 "a week" = "seminggu";

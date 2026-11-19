@@ -60,7 +60,7 @@ final class LogicTests: XCTestCase {
             let date = calendar.date(byAdding: .day, value: offset, to: lastWeek)!
             data.setStatus(.done, habitID: habit.id, day: DayKey.make(date))
         }
-        let recap = WeeklyRecap.lastWeek(in: data)
+        let recap = Recap.lastWeek(in: data)
         XCTAssertEqual(calendar.startOfDay(for: recap.start), lastWeek)
         XCTAssertEqual(recap.days.count, 7)
         XCTAssertEqual(recap.done, 5)
@@ -72,7 +72,7 @@ final class LogicTests: XCTestCase {
     }
 
     func testWeeklyRecapIsEmptyWithoutHabits() {
-        let recap = WeeklyRecap.lastWeek(in: AppData())
+        let recap = Recap.lastWeek(in: AppData())
         XCTAssertFalse(recap.hasData)
         XCTAssertEqual(recap.percent, 0)
         XCTAssertNil(recap.top)
@@ -144,18 +144,322 @@ final class LogicTests: XCTestCase {
     func testWeeklyRecapShareImageHasReadableQRCode() throws {
         var data = AppData()
         data.habits = [dailyHabit(startOffset: -40)]
-        let renderer = ImageRenderer(content:
-            WeeklyRecapCard(recap: WeeklyRecap.lastWeek(in: data), forSharing: true)
-                .frame(width: 360)
-                .padding(20)
-                .background(Color.white)
-                .environment(\.colorScheme, .light)
-        )
+        XCTAssertEqual(try qrCodes(onShareImageOf: Recap.lastWeek(in: data)), [AppInfo.appStoreURL(campaign: .weekly).absoluteString])
+    }
+
+    /// QR-коды на картинках «Итогов месяца» и «Итогов года» читаются и несут свои метки кампании.
+    @MainActor
+    func testMonthAndYearRecapShareImagesHaveReadableQRCode() throws {
+        var data = AppData()
+        let habit = dailyHabit(startOffset: -400)
+        data.habits = [habit]
+        for offset in -400 ... -1 where offset % 3 != 0 {
+            data.setStatus(.done, habitID: habit.id, day: DayKey.make(day(offset)))
+        }
+        for period in [Recap.Period.month, .year] {
+            let recap = Recap.current(period, in: data)
+            XCTAssertTrue(recap.hasData, "\(period)")
+            XCTAssertEqual(try qrCodes(onShareImageOf: recap), [AppInfo.appStoreURL(campaign: period.campaign).absoluteString], "\(period)")
+        }
+    }
+
+    @MainActor
+    private func qrCodes(onShareImageOf recap: Recap) throws -> [String] {
+        let renderer = ImageRenderer(content: RecapCard.shareImageContent(recap))
         renderer.scale = 3
         let image = try XCTUnwrap(renderer.cgImage)
         let detector = try XCTUnwrap(CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]))
-        let codes = detector.features(in: CIImage(cgImage: image)).compactMap { ($0 as? CIQRCodeFeature)?.messageString }
-        XCTAssertEqual(codes, [AppInfo.appStoreURL(campaign: .weekly).absoluteString])
+        return detector.features(in: CIImage(cgImage: image)).compactMap { ($0 as? CIQRCodeFeature)?.messageString }
+    }
+
+    // MARK: Итоги месяца и года (1.6)
+
+    private func date(_ year: Int, _ month: Int, _ day: Int, hour: Int = 12) -> Date {
+        calendar.date(from: DateComponents(year: year, month: month, day: day, hour: hour))!
+    }
+
+    private func habit(from start: Date) -> Habit {
+        Habit(name: "Test", schedule: HabitSchedule(startDate: start), createdAt: start)
+    }
+
+    func testMonthlyRecapCountsLastFullMonth() {
+        var data = AppData()
+        let habit = habit(from: date(2026, 1, 1))
+        data.habits = [habit]
+        // Февраль 2026 (28 дней): пропущены 10, 11 и 12, 20-е пропущено по уважительной причине.
+        for d in 1 ... 28 where ![10, 11, 12, 20].contains(d) {
+            data.setStatus(.done, habitID: habit.id, day: DayKey.make(date(2026, 2, d)))
+        }
+        data.setStatus(.skipped, habitID: habit.id, day: DayKey.make(date(2026, 2, 20)))
+        // Отметки за соседние месяцы в итоги февраля не попадают.
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(date(2026, 1, 31)))
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(date(2026, 3, 1)))
+
+        let recap = Recap.lastMonth(in: data, now: date(2026, 3, 15))
+        XCTAssertEqual(recap.period, .month)
+        XCTAssertEqual(recap.start, calendar.startOfDay(for: date(2026, 2, 1)))
+        XCTAssertEqual(recap.end, calendar.startOfDay(for: date(2026, 2, 28)))
+        XCTAssertEqual(recap.days.count, 28)
+        XCTAssertEqual(recap.bars.count, 28)
+        XCTAssertEqual(recap.done, 24)
+        XCTAssertEqual(recap.total, 27)
+        XCTAssertEqual(recap.perfectDays, 24)
+        XCTAssertEqual(recap.percent, 89)
+        // 1–9 февраля, 10 и 11 спасли заморозки, 12-е прервало серию; потом 13–28 без 20-го (пропуск не рвёт).
+        XCTAssertEqual(recap.streak, 15)
+        XCTAssertEqual(recap.streakName, "Test")
+        XCTAssertEqual(recap.top, Recap.Top(name: "Test", done: 24, total: 27))
+        XCTAssertTrue(recap.isComplete)
+    }
+
+    func testYearlyRecapShowsLastFullYearWithTwelveMonths() {
+        var data = AppData()
+        let habit = habit(from: date(2025, 1, 1))
+        data.habits = [habit]
+        for d in 1 ... 31 {
+            data.setStatus(.done, habitID: habit.id, day: DayKey.make(date(2025, 3, d)))
+        }
+        let recap = Recap.year(in: data, now: date(2026, 3, 15))
+        XCTAssertEqual(recap.start, calendar.startOfDay(for: date(2025, 1, 1)))
+        XCTAssertEqual(recap.end, calendar.startOfDay(for: date(2025, 12, 31)))
+        XCTAssertTrue(recap.isComplete)
+        XCTAssertEqual(recap.days.count, 365)
+        XCTAssertEqual(recap.bars.count, 12)
+        XCTAssertEqual(recap.bars[0].done, 0)
+        XCTAssertEqual(recap.bars[0].total, 31)
+        XCTAssertEqual(recap.bars[2].done, 31)
+        XCTAssertEqual(recap.bars[2].fraction, 1)
+        XCTAssertEqual(recap.bars[1].total, 28)
+        XCTAssertEqual(recap.done, 31)
+        XCTAssertEqual(recap.total, 365)
+        XCTAssertEqual(recap.perfectDays, 31)
+        XCTAssertEqual(recap.percent, 8)
+        XCTAssertEqual(recap.streak, 31)
+        XCTAssertEqual(recap.top?.done, 31)
+    }
+
+    func testYearlyRecapInDecemberIsYearToDate() {
+        var data = AppData()
+        let habit = habit(from: date(2025, 6, 1))
+        data.habits = [habit]
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(date(2026, 12, 9)))
+        // Сегодняшняя отметка в итоги не идёт: день ещё не закончился.
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(date(2026, 12, 10)))
+        let recap = Recap.year(in: data, now: date(2026, 12, 10))
+        XCTAssertEqual(recap.start, calendar.startOfDay(for: date(2026, 1, 1)))
+        XCTAssertEqual(recap.end, calendar.startOfDay(for: date(2026, 12, 9)))
+        XCTAssertFalse(recap.isComplete)
+        XCTAssertEqual(recap.bars.count, 12)
+        XCTAssertEqual(recap.bars[11].total, 9)
+        XCTAssertEqual(recap.bars[11].done, 1)
+        XCTAssertEqual(recap.done, 1)
+    }
+
+    func testYearlyRecapFallsBackToThisYearWithoutLastYearData() {
+        var data = AppData()
+        let habit = habit(from: date(2026, 2, 1))
+        data.habits = [habit]
+        let recap = Recap.year(in: data, now: date(2026, 3, 15))
+        XCTAssertEqual(recap.start, calendar.startOfDay(for: date(2026, 1, 1)))
+        XCTAssertEqual(recap.end, calendar.startOfDay(for: date(2026, 3, 14)))
+        XCTAssertFalse(recap.isComplete)
+        // Февраль и 14 дней марта.
+        XCTAssertEqual(recap.total, 28 + 14)
+        XCTAssertEqual(recap.bars[3].total, 0)
+    }
+
+    func testMonthAndYearRecapsAreEmptyWithoutHabits() {
+        for period in [Recap.Period.month, .year] {
+            let recap = Recap.current(period, in: AppData())
+            XCTAssertFalse(recap.hasData, "\(period)")
+            XCTAssertEqual(recap.percent, 0)
+            XCTAssertEqual(recap.perfectDays, 0)
+            XCTAssertEqual(recap.streak, 0)
+            XCTAssertNil(recap.streakName)
+            XCTAssertNil(recap.top)
+        }
+        XCTAssertEqual(Recap.year(in: AppData()).bars.count, 12)
+    }
+
+    /// Порог «самой стабильной» считается от нужных дней самой привычки: привычка по понедельникам
+    /// может победить в месяце, а заведённая во второй половине периода не обходит старые.
+    func testMostSteadyAcceptsWeekdayHabitAndSkipsLateNewcomer() {
+        var data = AppData()
+        let daily = habit(from: date(2026, 1, 1))
+        var mondays = Habit(name: "Mondays", schedule: HabitSchedule(weekdays: [2], startDate: date(2026, 1, 1)), createdAt: date(2026, 1, 1))
+        mondays.sortOrder = 1
+        var late = Habit(name: "Late", schedule: HabitSchedule(startDate: date(2026, 2, 20)), createdAt: date(2026, 2, 20))
+        late.sortOrder = 2
+        data.habits = [daily, mondays, late]
+        for d in 1 ... 28 {
+            let key = DayKey.make(date(2026, 2, d))
+            if d != 14 { data.setStatus(.done, habitID: daily.id, day: key) }
+            if [2, 9, 16, 23].contains(d) { data.setStatus(.done, habitID: mondays.id, day: key) }
+            if d >= 20 { data.setStatus(.done, habitID: late.id, day: key) }
+        }
+        let recap = Recap.lastMonth(in: data, now: date(2026, 3, 15))
+        XCTAssertEqual(recap.top, Recap.Top(name: "Mondays", done: 4, total: 4))
+    }
+
+    /// Карточка на «Сегодня» сохраняет текущую серию у недели (а не серию внутри недели).
+    func testWeeklyRecapKeepsCurrentStreak() {
+        var data = AppData()
+        let habit = dailyHabit(startOffset: -40)
+        data.habits = [habit]
+        for offset in -19 ... 0 {
+            data.setStatus(.done, habitID: habit.id, day: DayKey.make(day(offset)))
+        }
+        let recap = Recap.lastWeek(in: data)
+        XCTAssertEqual(recap.streak, 20)
+        XCTAssertEqual(recap.streakName, "Test")
+    }
+
+    func testYearRecapAroundNewYear() {
+        var data = AppData()
+        data.habits = [habit(from: date(2026, 1, 1))]
+        // 31 декабря: текущий год по 30 декабря.
+        let december = Recap.interval(.year, in: data, now: date(2026, 12, 31))
+        XCTAssertEqual(december, Recap.Interval(start: calendar.startOfDay(for: date(2026, 1, 1)), end: calendar.startOfDay(for: date(2026, 12, 30))))
+        XCTAssertTrue(Recap.isAvailable(.year, in: data, now: date(2026, 12, 31)))
+        // 1 января: прошлый полный год.
+        let newYear = Recap.year(in: data, now: date(2027, 1, 1))
+        XCTAssertEqual(newYear.start, calendar.startOfDay(for: date(2026, 1, 1)))
+        XCTAssertEqual(newYear.end, calendar.startOfDay(for: date(2026, 12, 31)))
+        XCTAssertTrue(newYear.isComplete)
+        XCTAssertTrue(newYear.hasData)
+
+        // Привычки только с нового года: 1 января итоги года пустые, 3 января в них два дня.
+        // В «Статистике» их не предлагаем.
+        var fresh = AppData()
+        fresh.habits = [habit(from: date(2027, 1, 1))]
+        XCTAssertFalse(Recap.year(in: fresh, now: date(2027, 1, 1)).hasData)
+        XCTAssertFalse(Recap.isAvailable(.year, in: fresh, now: date(2027, 1, 1)))
+        XCTAssertEqual(Recap.year(in: fresh, now: date(2027, 1, 3)).days.count, 2)
+        XCTAssertFalse(Recap.isAvailable(.year, in: fresh, now: date(2027, 1, 3)))
+        XCTAssertFalse(Recap.isAvailable(.month, in: fresh, now: date(2027, 1, 3)))
+        XCTAssertTrue(Recap.isAvailable(.year, in: fresh, now: date(2027, 1, 9)))
+    }
+
+    func testBannerCandidatesPickPeriodByDay() {
+        // Неделя с понедельника, чтобы тест не зависел от региона симулятора.
+        var cal = Calendar(identifier: .gregorian)
+        cal.firstWeekday = 2
+        cal.timeZone = .current
+        func at(_ y: Int, _ m: Int, _ d: Int) -> Date { cal.date(from: DateComponents(year: y, month: m, day: d, hour: 12))! }
+        func day(_ y: Int, _ m: Int, _ d: Int) -> Date { cal.startOfDay(for: at(y, m, d)) }
+        func candidates(_ now: Date, dismissed: [Recap.Period: String] = [:]) -> [Recap.BannerCandidate] {
+            Recap.bannerCandidates(dismissed: dismissed, now: now, calendar: cal)
+        }
+        func interval(_ a: Date, _ b: Date) -> Recap.Interval { Recap.Interval(start: a, end: b) }
+
+        // 1 января 2026 (четверг): прошлый год, затем декабрь. Неделя началась 29 декабря, это уже 4-й день.
+        XCTAssertEqual(candidates(at(2026, 1, 1)), [
+            .init(period: .year, interval: interval(day(2025, 1, 1), day(2025, 12, 31))),
+            .init(period: .month, interval: interval(day(2025, 12, 1), day(2025, 12, 31))),
+        ])
+        // 3-е число ещё с итогами месяца, 4-е уже без них.
+        XCTAssertEqual(candidates(at(2026, 3, 3)).map(\.period), [.month, .week])
+        XCTAssertEqual(candidates(at(2026, 3, 4)).map(\.period), [.week])
+        XCTAssertEqual(candidates(at(2026, 3, 5)), [])
+        // Понедельник 1 июня: месяц важнее недели, а если месяц закрыли, остаётся неделя.
+        XCTAssertEqual(candidates(at(2026, 6, 1)), [
+            .init(period: .month, interval: interval(day(2026, 5, 1), day(2026, 5, 31))),
+            .init(period: .week, interval: interval(day(2026, 5, 25), day(2026, 5, 31))),
+        ])
+        XCTAssertEqual(candidates(at(2026, 6, 1), dismissed: [.month: "2026-05-01"]).map(\.period), [.week])
+        XCTAssertEqual(candidates(at(2026, 6, 1), dismissed: [.month: "2026-05-01", .week: "2026-05-25"]), [])
+        // Прошлогодний ключ не мешает итогам нового месяца.
+        XCTAssertEqual(candidates(at(2026, 6, 1), dismissed: [.month: "2026-04-01"]).first?.period, .month)
+        // Високосный год: февраль 2024 до 29-го.
+        XCTAssertEqual(candidates(at(2024, 3, 1)), [
+            .init(period: .month, interval: interval(day(2024, 2, 1), day(2024, 2, 29))),
+        ])
+    }
+
+    func testBannerTakesFirstPeriodWithData() {
+        var data = AppData()
+        let habit = habit(from: date(2026, 5, 25))
+        data.habits = [habit]
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(date(2026, 5, 26)))
+        // 1 июня: за май привычка была (с 25-го), поэтому показываем месяц.
+        XCTAssertEqual(Recap.banner(in: data, dismissed: [:], now: date(2026, 6, 1))?.period, .month)
+        // Месяц закрыли: остаются итоги недели.
+        let monthKey = DayKey.make(Recap.lastMonthInterval(now: date(2026, 6, 1)).start)
+        let weekly = Recap.banner(in: data, dismissed: [.month: monthKey], now: date(2026, 6, 1))
+        if Recap.bannerCandidates(dismissed: [:], now: date(2026, 6, 1)).contains(where: { $0.period == .week }) {
+            XCTAssertEqual(weekly?.period, .week)
+        } else {
+            XCTAssertNil(weekly)
+        }
+        XCTAssertNil(Recap.banner(in: AppData(), dismissed: [:], now: date(2026, 6, 1)))
+    }
+
+    /// Месяц и год предлагаются, только если привычки прожили в них хотя бы неделю,
+    /// а не просто если период длинный: привычка от 30 декабря не даёт «итогов года» из двух дней.
+    func testShortLivedHabitsDoNotOfferMonthOrYear() {
+        var cal = Calendar(identifier: .gregorian)
+        cal.firstWeekday = 2
+        cal.timeZone = .current
+        func at(_ y: Int, _ m: Int, _ d: Int) -> Date { cal.date(from: DateComponents(year: y, month: m, day: d, hour: 12))! }
+
+        var data = AppData()
+        let habit = Habit(name: "Test", schedule: HabitSchedule(startDate: at(2026, 12, 30)), createdAt: at(2026, 12, 30))
+        data.habits = [habit]
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(at(2026, 12, 30)))
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(at(2026, 12, 31)))
+        // 1 января 2027 (пятница): год и декабрь по два дня, неделя уже не в первых трёх днях.
+        XCTAssertFalse(Recap.isAvailable(.year, in: data, now: at(2027, 1, 1), calendar: cal))
+        XCTAssertFalse(Recap.isAvailable(.month, in: data, now: at(2027, 1, 1), calendar: cal))
+        XCTAssertNil(Recap.banner(in: data, dismissed: [:], now: at(2027, 1, 1), calendar: cal))
+        // 10 февраля: прошлый год из двух дней не в счёт, берём этот год по вчера.
+        let year = Recap.interval(.year, in: data, now: at(2027, 2, 10), calendar: cal)
+        XCTAssertEqual(year.start, cal.startOfDay(for: at(2027, 1, 1)))
+        XCTAssertTrue(Recap.isAvailable(.year, in: data, now: at(2027, 2, 10), calendar: cal))
+
+        // Понедельник 1 июня 2026, привычка с 30 мая: вместо месяца из двух дней итоги недели.
+        var june = AppData()
+        let fresh = Habit(name: "Fresh", schedule: HabitSchedule(startDate: at(2026, 5, 30)), createdAt: at(2026, 5, 30))
+        june.habits = [fresh]
+        june.setStatus(.done, habitID: fresh.id, day: DayKey.make(at(2026, 5, 30)))
+        XCTAssertFalse(Recap.isAvailable(.month, in: june, now: at(2026, 6, 1), calendar: cal))
+        XCTAssertEqual(Recap.banner(in: june, dismissed: [:], now: at(2026, 6, 1), calendar: cal)?.period, .week)
+    }
+
+    /// Привычки «N раз в неделю» в месяц и год не идут (у них нет нужных дней), поэтому
+    /// и пункты не предлагаются, чтобы не открывать пустую карточку.
+    func testWeeklyOnlyHabitsDoNotOfferMonthOrYear() {
+        var data = AppData()
+        data.habits = [Habit(name: "Gym", schedule: HabitSchedule(kind: .weekly, startDate: date(2025, 1, 1), timesPerWeek: 3), createdAt: date(2025, 1, 1))]
+        XCTAssertFalse(Recap.isAvailable(.month, in: data, now: date(2026, 3, 15)))
+        XCTAssertFalse(Recap.isAvailable(.year, in: data, now: date(2026, 3, 15)))
+        XCTAssertNil(Recap.banner(in: data, dismissed: [.week: DayKey.make(Recap.lastWeekInterval(now: date(2026, 3, 2)).start)], now: date(2026, 3, 2)))
+    }
+
+    /// Для недели всё как раньше: у привычек «N раз в неделю» с отметками баннер недели есть.
+    func testWeeklyOnlyHabitsStillGetWeekBanner() {
+        var cal = Calendar(identifier: .gregorian)
+        cal.firstWeekday = 2
+        cal.timeZone = .current
+        func at(_ y: Int, _ m: Int, _ d: Int) -> Date { cal.date(from: DateComponents(year: y, month: m, day: d, hour: 12))! }
+        var data = AppData()
+        let gym = Habit(name: "Gym", schedule: HabitSchedule(kind: .weekly, startDate: at(2025, 1, 1), timesPerWeek: 3), createdAt: at(2025, 1, 1))
+        data.habits = [gym]
+        // Неделя 23 февраля – 1 марта 2026, отметки во вторник и четверг.
+        data.setStatus(.done, habitID: gym.id, day: DayKey.make(at(2026, 2, 24)))
+        data.setStatus(.done, habitID: gym.id, day: DayKey.make(at(2026, 2, 26)))
+        // Вторник 3 марта: месяц ей не предлагается, неделя есть.
+        let recap = Recap.banner(in: data, dismissed: [:], now: at(2026, 3, 3), calendar: cal)
+        XCTAssertEqual(recap?.period, .week)
+        XCTAssertEqual(recap?.start, cal.startOfDay(for: at(2026, 2, 23)))
+        XCTAssertEqual(recap?.done, 2)
+        XCTAssertEqual(recap?.percent, 100)
+    }
+
+    func testMonthTitleHasNoYearSuffix() {
+        XCTAssertEqual(RecapCard.monthTitle(date(2026, 10, 1), locale: Locale(identifier: "ru")), "Октябрь 2026")
+        XCTAssertEqual(RecapCard.monthTitle(date(2026, 10, 1), locale: Locale(identifier: "en")), "October 2026")
+        XCTAssertEqual(RecapCard.monthTitle(date(2026, 10, 1), locale: Locale(identifier: "ja")), "2026年10月")
+        XCTAssertEqual(RecapCard.monthTitle(date(2026, 10, 1), locale: Locale(identifier: "es")), "Octubre de 2026")
     }
 
     // MARK: Бросаю

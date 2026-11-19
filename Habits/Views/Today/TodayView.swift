@@ -38,9 +38,11 @@ struct TodayView: View {
     @State private var showingCatalog = false
     @State private var wordsHabit: Habit?
     @State private var timerHabit: Habit?
-    @State private var showingRecap = false
-    /// Неделя, итоги которой уже закрыли на «Сегодня».
+    @State private var shownRecap: Recap?
+    /// Неделя, месяц и год, итоги которых уже закрыли на «Сегодня».
     @AppStorage("weeklyRecapDismissed") private var recapDismissed = ""
+    @AppStorage("monthlyRecapDismissed") private var monthRecapDismissed = ""
+    @AppStorage("yearlyRecapDismissed") private var yearRecapDismissed = ""
     @State private var showingPaywall = false
     @State private var editingHabit: Habit?
     @State private var templateHabit: Habit?
@@ -66,18 +68,62 @@ struct TodayView: View {
         return all.filter { $0.groupID == groupFilter }
     }
 
-    /// Первая привычка, чью вчерашнюю серию можно вернуть за искры.
-    /// Итоги прошлой недели: первые три дня новой недели, пока их не закрыли.
-    private var weeklyRecap: WeeklyRecap? {
-        let calendar = Calendar.app
-        let weekStart = Stats.startOfWeek(Date(), calendar: calendar)
-        let daysIn = calendar.dateComponents([.day], from: weekStart, to: calendar.startOfDay(for: Date())).day ?? 0
-        guard daysIn < 3 else { return nil }
-        let recap = WeeklyRecap.lastWeek(in: store.data, calendar: calendar)
-        guard recap.hasData, recap.key != recapDismissed else { return nil }
-        return recap
+    /// Итоги прошлого периода для карточки на «Сегодня». Считаются в `.task`, а не в `body`:
+    /// в начале января это целый год отметок.
+    @State private var bannerRecap: Recap?
+    /// День и закрытые итоги, для которых карточка уже посчитана.
+    @State private var bannerContext: String?
+
+    private var recapDismissedKeys: [Recap.Period: String] {
+        [.week: recapDismissed, .month: monthRecapDismissed, .year: yearRecapDismissed]
     }
 
+    private var bannerContextKey: String {
+        "\(DayKey.make(anchorToday))|\(recapDismissed)|\(monthRecapDismissed)|\(yearRecapDismissed)"
+    }
+
+    /// Пересчитать карточку итогов, когда сменился день, данные или её закрыли.
+    private var bannerTaskID: String {
+        "\(bannerContextKey)|\(store.revision)"
+    }
+
+    private func updateBannerRecap() async {
+        let context = bannerContextKey
+        let dismissed = recapDismissedKeys
+        let now = Date()
+        // Без кандидатов (большая часть дней) ничего не считаем и не копируем данные.
+        guard !Recap.bannerCandidates(dismissed: dismissed, now: now).isEmpty else {
+            bannerRecap = nil
+            bannerContext = context
+            return
+        }
+        // Карточка уже есть и поменялись только данные (отметки сегодня, на прошлый период
+        // почти не влияют): ждём паузы в касаниях, новая отметка отменит эту задачу.
+        // Первый расчёт, например после загрузки данных, идёт сразу.
+        if bannerContext == context, bannerRecap != nil {
+            try? await Task.sleep(for: .seconds(2))
+            guard !Task.isCancelled else { return }
+        }
+        let data = store.data
+        let recap = await Task.detached(priority: .userInitiated) {
+            Recap.banner(in: data, dismissed: dismissed, now: now)
+        }.value
+        guard !Task.isCancelled else { return }
+        bannerContext = context
+        if recap != bannerRecap {
+            withAnimation { bannerRecap = recap }
+        }
+    }
+
+    private func dismissRecap(_ recap: Recap) {
+        switch recap.period {
+        case .week: recapDismissed = recap.key
+        case .month: monthRecapDismissed = recap.key
+        case .year: yearRecapDismissed = recap.key
+        }
+    }
+
+    /// Первая привычка, чью вчерашнюю серию можно вернуть за искры.
     private var streakRepair: (Habit, (day: String, streak: Int))? {
         for habit in store.data.trackedHabits {
             if let repair = store.streakRepair(for: habit) { return (habit, repair) }
@@ -117,11 +163,14 @@ struct TodayView: View {
                     .plainRow(top: 2, bottom: 2)
                 }
 
-                if isToday, let recap = weeklyRecap {
-                    WeeklyRecapBanner(recap: recap) {
-                        showingRecap = true
+                if isToday, let recap = bannerRecap {
+                    RecapBanner(recap: recap) {
+                        shownRecap = recap
                     } onClose: {
-                        withAnimation { recapDismissed = recap.key }
+                        withAnimation {
+                            dismissRecap(recap)
+                            bannerRecap = nil
+                        }
                     }
                     .plainRow(top: 4, bottom: 6)
                 }
@@ -153,6 +202,7 @@ struct TodayView: View {
             .onChange(of: scenePhase) { _, phase in
                 if phase == .active { rollOverDay() }
             }
+            .task(id: bannerTaskID) { await updateBannerRecap() }
             .onReceive(NotificationCenter.default.publisher(for: .NSCalendarDayChanged).receive(on: RunLoop.main)) { _ in
                 rollOverDay()
             }
@@ -206,8 +256,8 @@ struct TodayView: View {
             .sheet(item: $timerHabit) { habit in
                 HabitTimerView(habit: habit)
             }
-            .sheet(isPresented: $showingRecap) {
-                WeeklyRecapView(recap: WeeklyRecap.lastWeek(in: store.data))
+            .sheet(item: $shownRecap) { recap in
+                RecapView(recap: recap)
             }
             .sheet(isPresented: $showingMoodJournal) {
                 MoodJournalView()
