@@ -1,0 +1,85 @@
+name: App Store screenshots
+
+# Загружает скриншоты в версию App Store Connect по всем языкам, заменяя старые наборы.
+# Папка: <dir>/<язык>/01.png ... (iPhone 1320x2868) и <dir>/<язык>/watch/01.png ... (часы).
+# Источник: папка в репозитории или zip по ссылке (например, файл из GitHub Release).
+# По умолчанию dry run: только показывает, что изменится. Подробности: tools/appstore/README.md.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Версия, например 1.6"
+        required: true
+        default: "1.6"
+      dir:
+        description: "Папка со скриншотами в репозитории"
+        required: false
+        default: "docs/appstore/screenshots/final"
+      zip_url:
+        description: "Или ссылка на zip с такой же структурой (тогда dir не используется)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Только показать, что изменится"
+        type: boolean
+        default: true
+      prune:
+        description: "Удалить наборы других размеров iPhone/часов"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: appstore-screenshots
+  cancel-in-progress: false
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install
+        run: pip install -r tools/appstore/requirements.txt
+
+      - name: Get screenshots
+        env:
+          ZIP_URL: ${{ inputs.zip_url }}
+          DIR: ${{ inputs.dir }}
+        run: |
+          set -euo pipefail
+          if [ -z "$ZIP_URL" ]; then
+            echo "SHOTS_DIR=$DIR" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          mkdir -p "$RUNNER_TEMP/zip" "$RUNNER_TEMP/shots"
+          curl -fsSL "$ZIP_URL" -o "$RUNNER_TEMP/zip/shots.zip"
+          unzip -q "$RUNNER_TEMP/zip/shots.zip" -d "$RUNNER_TEMP/shots"
+          root="$RUNNER_TEMP/shots"
+          # Если в архиве одна общая папка, заходим в неё.
+          entries=$(ls -A "$root")
+          if [ "$(echo "$entries" | wc -l)" -eq 1 ] && [ -d "$root/$entries" ] && [ ! -d "$root/en-US" ]; then
+            root="$root/$entries"
+          fi
+          echo "SHOTS_DIR=$root" >> "$GITHUB_ENV"
+
+      - name: Upload screenshots
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          APP_BUNDLE_ID: ${{ vars.APP_BUNDLE_ID || 'com.baturinigor.zenhab' }}
+          VERSION: ${{ inputs.version }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          PRUNE: ${{ inputs.prune }}
+        run: |
+          args=(--version "$VERSION" --dir "$SHOTS_DIR")
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          if [ "$PRUNE" = "true" ]; then args+=(--prune); fi
+          python3 tools/appstore/asc_screenshots.py "${args[@]}"

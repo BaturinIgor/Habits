@@ -1,0 +1,72 @@
+name: App Store provisioning
+
+# Готовит подпись для Apple Watch: регистрирует bundle ID <APP_ID>.watchkitapp и
+# <APP_ID>.watchkitapp.widget, включает App Groups, создаёт профили App Store и кладёт их
+# в секреты PROFILE_WATCH и PROFILE_WATCH_WIDGET. Повторный запуск безопасен.
+#
+# Нужен секрет GH_ADMIN_TOKEN: fine-grained token только на этот репозиторий с правом
+# «Secrets: Read and write» (GITHUB_TOKEN секреты записывать не умеет).
+# Подробности: tools/appstore/README.md.
+# Репозиторий публичный: скрипт печатает только ID, статусы и HTTP-коды.
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Только показать, что будет сделано"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: appstore-provisioning
+  cancel-in-progress: false
+
+jobs:
+  provision:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check secrets
+        env:
+          GH_ADMIN_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          missing=0
+          for name in ASC_KEY_ID ASC_ISSUER_ID ASC_KEY_P8; do
+            if [ -z "${!name}" ]; then echo "::error::Не задан секрет $name"; missing=1; fi
+          done
+          if [ "$DRY_RUN" != "true" ] && [ -z "$GH_ADMIN_TOKEN" ]; then
+            echo "::error::Не задан секрет GH_ADMIN_TOKEN. Создай fine-grained token (github.com/settings/personal-access-tokens/new): только репозиторий ${GITHUB_REPOSITORY}, Repository permissions -> Secrets: Read and write. Положи его в Settings -> Secrets and variables -> Actions под именем GH_ADMIN_TOKEN. Или запусти скрипт локально (tools/appstore/README.md)."
+            missing=1
+          fi
+          exit $missing
+
+      - name: Install
+        run: pip install -r tools/appstore/requirements.txt
+
+      - name: Provision watch profiles
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          DIST_CERT_P12: ${{ secrets.DIST_CERT_P12 }}
+          DIST_CERT_PASSWORD: ${{ secrets.DIST_CERT_PASSWORD }}
+          APP_BUNDLE_ID: ${{ vars.APP_BUNDLE_ID || 'com.baturinigor.zenhab' }}
+          GH_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            python3 tools/appstore/asc_provision_watch.py --dry-run
+          else
+            python3 tools/appstore/asc_provision_watch.py --store-secrets --repo "$GITHUB_REPOSITORY"
+          fi
