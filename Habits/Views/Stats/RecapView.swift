@@ -32,7 +32,10 @@ struct RecapCard: View {
     /// «Октябрь 2026»: месяц в именительном падеже и год без приписки «г.», которую добавляет
     /// русский формат. В остальных языках порядок и слова из системного шаблона («octubre de 2026», «2026年10月»).
     static func monthTitle(_ date: Date, locale: Locale = .autoupdatingCurrent) -> String {
-        let text = monthFormatter(locale).string(from: date)
+        let formatter = monthFormatter(locale)
+        // Часовой пояс мог смениться после того, как форматтер попал в кэш.
+        formatter.timeZone = Calendar.app.timeZone
+        let text = formatter.string(from: date)
         return text.prefix(1).uppercased(with: locale) + text.dropFirst()
     }
 

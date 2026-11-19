@@ -424,6 +424,26 @@ final class LogicTests: XCTestCase {
         XCTAssertNil(Recap.banner(in: data, dismissed: [.week: DayKey.make(Recap.lastWeekInterval(now: date(2026, 3, 2)).start)], now: date(2026, 3, 2)))
     }
 
+    /// Для недели всё как раньше: у привычек «N раз в неделю» с отметками баннер недели есть.
+    func testWeeklyOnlyHabitsStillGetWeekBanner() {
+        var cal = Calendar(identifier: .gregorian)
+        cal.firstWeekday = 2
+        cal.timeZone = .current
+        func at(_ y: Int, _ m: Int, _ d: Int) -> Date { cal.date(from: DateComponents(year: y, month: m, day: d, hour: 12))! }
+        var data = AppData()
+        let gym = Habit(name: "Gym", schedule: HabitSchedule(kind: .weekly, startDate: at(2025, 1, 1), timesPerWeek: 3), createdAt: at(2025, 1, 1))
+        data.habits = [gym]
+        // Неделя 23 февраля – 1 марта 2026, отметки во вторник и четверг.
+        data.setStatus(.done, habitID: gym.id, day: DayKey.make(at(2026, 2, 24)))
+        data.setStatus(.done, habitID: gym.id, day: DayKey.make(at(2026, 2, 26)))
+        // Вторник 3 марта: месяц ей не предлагается, неделя есть.
+        let recap = Recap.banner(in: data, dismissed: [:], now: at(2026, 3, 3), calendar: cal)
+        XCTAssertEqual(recap?.period, .week)
+        XCTAssertEqual(recap?.start, cal.startOfDay(for: at(2026, 2, 23)))
+        XCTAssertEqual(recap?.done, 2)
+        XCTAssertEqual(recap?.percent, 100)
+    }
+
     func testMonthTitleHasNoYearSuffix() {
         XCTAssertEqual(RecapCard.monthTitle(date(2026, 10, 1), locale: Locale(identifier: "ru")), "Октябрь 2026")
         XCTAssertEqual(RecapCard.monthTitle(date(2026, 10, 1), locale: Locale(identifier: "en")), "October 2026")

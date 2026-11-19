@@ -97,9 +97,10 @@ struct TodayView: View {
             bannerContext = context
             return
         }
-        // Поменялись только данные (отметки сегодня, на прошлый период почти не влияют):
-        // ждём паузы в касаниях, новая отметка отменит эту задачу.
-        if bannerContext == context {
+        // Карточка уже есть и поменялись только данные (отметки сегодня, на прошлый период
+        // почти не влияют): ждём паузы в касаниях, новая отметка отменит эту задачу.
+        // Первый расчёт, например после загрузки данных, идёт сразу.
+        if bannerContext == context, bannerRecap != nil {
             try? await Task.sleep(for: .seconds(2))
             guard !Task.isCancelled else { return }
         }
