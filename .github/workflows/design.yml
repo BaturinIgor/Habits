@@ -3,7 +3,7 @@ name: Design screens
 # Макеты всех экранов, состояний и попапов (design/<версия>/screens) на iPhone 6.9",
 # в светлой и тёмной теме, на демо-данных. Снимки делает HabitsUITests/DesignCatalogUITests
 # через каталог экранов Habits/App/DesignGallery.swift.
-# PNG лежат в артефакте design-screens.
+# PNG лежат в артефакте design-screens и коммитятся в ветку в design/<версия>/screens.
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ on:
       - ".github/workflows/design.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: design-${{ github.ref }}
@@ -30,6 +30,8 @@ jobs:
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
 
       - name: Install tools
         run: |
@@ -93,3 +95,18 @@ jobs:
           name: design-screens
           path: design-screens
           if-no-files-found: ignore
+
+      - name: Commit screenshots to design/<version>/screens
+        run: |
+          set -euo pipefail
+          VERSION=$(grep -m1 'MARKETING_VERSION' project.yml | sed 's/.*: *//; s/"//g')
+          DEST="design/$VERSION/screens"
+          rm -rf "$DEST" && mkdir -p "$DEST"
+          cp design-screens/*.png "$DEST"/
+          cp design-screens/report-*.txt "$DEST"/ || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$DEST"
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Design screens $VERSION: $(ls "$DEST"/*.png | wc -l | tr -d ' ') screenshots"
+          git push origin HEAD:${{ github.head_ref || github.ref_name }}
