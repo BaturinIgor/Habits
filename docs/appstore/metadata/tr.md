@@ -46,8 +46,6 @@ Kullanım Koşulları: https://www.apple.com/legal/internet-services/itunes/dev/
 Gizlilik: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Ruh hâli günlüğü: Bugün ekranında tek dokunuşla gününü puanla ve birkaç kelime ekle. Pro ile tüm geçmişi, aylık grafiği ve ruh hâlini iyileştiren alışkanlıkları gör.
-• Yeni uygulama simgeleri (Pro): Gün batımı, Orman, Pembe, Altın, Gece yarısı ve Açık.
-• Face ID kilidi (Pro): alışkanlıklarını ve günlüğünü yalnızca sen açabilirsin.
-• CSV olarak dışa aktar (Pro): tüm işaretlemeler notlar ve ruh hâliyle Numbers, Excel veya Google E-Tablolar için tablo hâlinde.
-• Pro ekranı artık içerdiği her şeyi ve varsa ücretsiz denemeyi gösteriyor.
+• Apple Watch'ta ZenHab: bugünün alışkanlıkları bileğinde, tek dokunuşla işaretle. Her şey iPhone'unla eşitlenir.
+• Saat kadranı komplikasyonları ve Akıllı Yığın: bugün kaç alışkanlığı tamamladığını bir bakışta gör.
+• Apple Watch'ta alışkanlık zamanlayıcısı (Pro): süre dolunca saat bileğine dokunur ve alışkanlığı işaretler.

@@ -46,8 +46,6 @@ Conditions d'utilisation : https://www.apple.com/legal/internet-services/itunes/
 Confidentialité : https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Journal d'humeur : note ta journée d'un geste sur Aujourd'hui et ajoute quelques mots. Avec Pro, vois tout l'historique, un graphique du mois et les habitudes qui améliorent ton humeur.
-• Nouvelles icônes (Pro) : Coucher de soleil, Forêt, Rose, Or, Minuit et Clair.
-• Verrouillage Face ID (Pro) : toi seul peux ouvrir tes habitudes et ton journal.
-• Export CSV (Pro) : toutes les coches avec notes et humeur en tableau pour Numbers, Excel ou Google Sheets.
-• L'écran Pro montre maintenant tout ce qu'il comprend, et l'essai gratuit quand il est disponible.
+• ZenHab sur l'Apple Watch : les habitudes du jour à ton poignet, cochées d'un geste. Tout se synchronise avec ton iPhone.
+• Complications pour le cadran et la Pile intelligente : vois d'un coup d'œil combien d'habitudes sont faites aujourd'hui.
+• Minuteur d'habitude sur l'Apple Watch (Pro) : à la fin, la montre tapote ton poignet et coche l'habitude.

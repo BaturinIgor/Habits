@@ -46,8 +46,6 @@ Warunki korzystania: https://www.apple.com/legal/internet-services/itunes/dev/st
 Prywatność: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Dziennik nastroju: oceń dzień jednym dotknięciem na ekranie Dziś i dopisz kilka słów. Z Pro zobaczysz całą historię, wykres miesiąca i nawyki, które poprawiają nastrój.
-• Nowe ikony aplikacji (Pro): Zachód słońca, Las, Róż, Złoto, Północ i Jasna.
-• Blokada Face ID (Pro): tylko ty otworzysz swoje nawyki i dziennik.
-• Eksport do CSV (Pro): wszystkie odhaczenia z notatkami i nastrojem jako tabela do Numbers, Excela lub Arkuszy Google.
-• Ekran Pro pokazuje teraz wszystko, co zawiera, oraz darmowy okres próbny, gdy jest dostępny.
+• ZenHab na Apple Watch: dzisiejsze nawyki na nadgarstku, odhaczane jednym dotknięciem. Wszystko synchronizuje się z iPhone'em.
+• Komplikacje na tarczy i w Inteligentnym stosie: od razu widać, ile nawyków masz dziś zrobionych.
+• Minutnik nawyku na Apple Watch (Pro): gdy czas minie, zegarek stuknie w nadgarstek i odhaczy nawyk.

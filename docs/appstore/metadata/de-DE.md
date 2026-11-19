@@ -46,8 +46,6 @@ Nutzungsbedingungen: https://www.apple.com/legal/internet-services/itunes/dev/st
 Datenschutz: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Stimmungstagebuch: Bewerte deinen Tag mit einem Tipp auf „Heute“ und schreib ein paar Worte dazu. Mit Pro siehst du den ganzen Verlauf, ein Monatsdiagramm und welche Gewohnheiten deine Stimmung heben.
-• Neue App-Symbole (Pro): Sonnenuntergang, Wald, Rosé, Gold, Mitternacht und Hell.
-• Sperre mit Face ID (Pro): Nur du kannst deine Gewohnheiten und dein Tagebuch öffnen.
-• Export als CSV (Pro): alle Einträge mit Notizen und Stimmung als Tabelle für Numbers, Excel oder Google Sheets.
-• Der Pro-Bildschirm zeigt jetzt alles, was dazugehört, und einen kostenlosen Testzeitraum, wenn verfügbar.
+• ZenHab auf der Apple Watch: die heutigen Gewohnheiten am Handgelenk, mit einem Tippen abgehakt. Alles wird mit deinem iPhone synchronisiert.
+• Komplikationen fürs Zifferblatt und den Smart-Stapel: auf einen Blick sehen, wie viele Gewohnheiten heute erledigt sind.
+• Gewohnheits-Timer auf der Apple Watch (Pro): Ist die Zeit um, tippt die Uhr ans Handgelenk und hakt die Gewohnheit ab.

@@ -4,12 +4,11 @@ import SwiftUI
 /// Что нового в версии: показывается один раз после обновления.
 struct WhatsNewView: View {
     /// Меняется, когда появляются новые карточки.
-    static let version = "1.5"
+    static let version = "1.6"
 
     /// Открыть окно новой привычки, чтобы попробовать новое.
     let onTryVoice: () -> Void
     @Environment(\.dismiss) private var dismiss
-    @State private var showingMood = false
 
     var body: some View {
         NavigationStack {
@@ -20,56 +19,28 @@ struct WhatsNewView: View {
                         .padding(.bottom, 4)
 
                     card(
-                        icon: "face.smiling",
+                        icon: "applewatch",
+                        color: .indigo,
+                        title: "ZenHab on Apple Watch",
+                        text: "See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch."
+                    ) {
+                        EmptyView()
+                    }
+
+                    card(
+                        icon: "watch.analog",
+                        color: .green,
+                        title: "Watch face complications",
+                        text: "Add ZenHab to your watch face or Smart Stack to see how many habits are done today."
+                    ) {
+                        EmptyView()
+                    }
+
+                    card(
+                        icon: "timer",
                         color: .orange,
-                        title: "Mood journal",
-                        text: "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood."
-                    ) {
-                        Button("Open journal") { showingMood = true }
-                    }
-
-                    card(
-                        icon: "app.badge.fill",
-                        color: .pink,
-                        title: "New app icons",
-                        text: "Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro."
-                    ) {
-                        NavigationLink {
-                            AppIconView()
-                        } label: {
-                            Text("Choose an icon")
-                        }
-                    }
-
-                    if AppLock.isAvailable {
-                        card(
-                            icon: AppLock.methodSymbol,
-                            color: .green,
-                            title: "Lock with Face ID",
-                            text: "With Pro, ZenHab asks for Face ID or your passcode when you open it, so your habits and journal stay private. Turn it on in Settings."
-                        ) {
-                            EmptyView()
-                        }
-                    }
-
-                    card(
-                        icon: "tablecells.fill",
-                        color: .teal,
-                        title: "Export to CSV",
-                        text: "With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets."
-                    ) {
-                        NavigationLink {
-                            BackupSettingsView()
-                        } label: {
-                            Text("Open export")
-                        }
-                    }
-
-                    card(
-                        icon: "crown.fill",
-                        color: .yellow,
-                        title: "Clearer Pro",
-                        text: "The Pro screen now lists everything it includes, and opens on the feature you tapped."
+                        title: "Timer on your wrist",
+                        text: "With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off."
                     ) {
                         EmptyView()
                     }
@@ -78,9 +49,6 @@ struct WhatsNewView: View {
                 .uiTestScreen("whatsnew")
             }
             .appBackground()
-            .sheet(isPresented: $showingMood) {
-                MoodJournalView()
-            }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }

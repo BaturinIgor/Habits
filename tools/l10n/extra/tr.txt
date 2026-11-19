@@ -781,6 +781,17 @@ Your days and the habits that lift your mood||Günlerin ve ruh hâlini iyileşti
 Your whole mood history, a monthly chart and which habits lift your mood.||Tüm ruh hâli geçmişin, aylık grafik ve onu iyileştiren alışkanlıklar.
 ZenHab is locked||ZenHab kilitli
 passcode||parola
+Open ZenHab on your iPhone to see your habits here.||Alışkanlıklarını burada görmek için iPhone'unda ZenHab'i aç.
+Get Pro on your iPhone to use the timer on Apple Watch.||Apple Watch'ta zamanlayıcıyı kullanmak için iPhone'unda Pro'ya geç.
+Start timer||Zamanlayıcıyı başlat
+Today's progress||Bugünün ilerlemesi
+See how many habits are done today.||Bugün kaç alışkanlığı tamamladığını gör.
+ZenHab on Apple Watch||Apple Watch'ta ZenHab
+See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch.||Bugünün alışkanlıkları artık bileğinde, tek dokunuşla işaretle. Her şey iPhone'unla eşitlenir. ZenHab saatinde görünmediyse iPhone'daki Watch uygulamasından yükle.
+Watch face complications||Saat kadranı komplikasyonları
+Add ZenHab to your watch face or Smart Stack to see how many habits are done today.||Bugün kaç alışkanlığı tamamladığını görmek için ZenHab'i saat kadranına veya Akıllı Yığın'a ekle.
+Timer on your wrist||Bileğinde zamanlayıcı
+With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off.||Pro ile Apple Watch'ta alışkanlık zamanlayıcısını başlat. Süre dolunca saat bileğine dokunur ve alışkanlığı işaretler.
 %lld XP||%lld XP
 Pet name||Evcil hayvanın adı
 Scan to get ZenHab||ZenHab'i indirmek için tara
