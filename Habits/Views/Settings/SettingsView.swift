@@ -22,7 +22,7 @@ struct SettingsView: View {
     @State private var showingProfile = false
     @State private var showingFeedback = false
     @AppStorage("appLanguage") private var appLanguage = "system"
-    @AppStorage(Analytics.optOutKey) private var analyticsOptOut = false
+    @AppStorage(Analytics.optOutKey) private var analyticsOptOut = !Analytics.enabledByDefault
 
     private static let languages: [(code: String, name: String)] = [
         ("en", "English"), ("ru", "Русский"), ("de", "Deutsch"), ("fr", "Français"), ("es", "Español"),

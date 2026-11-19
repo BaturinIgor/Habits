@@ -77,7 +77,6 @@ enum AnalyticsAction: String, CaseIterable {
     case exportJSON = "Data.exportJSON"
     case exportCSV = "Data.exportCSV"
     case importData = "Data.import"
-    case restoreBackup = "Data.restoreBackup"
     // Прочее
     case settingsChange = "Settings.change"
     case recapShare = "Recap.share"

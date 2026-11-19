@@ -3,9 +3,12 @@
 
 Скачивает дневные отчёты Sales and Trends (SALES/SUMMARY, SUBSCRIPTION, SUBSCRIPTION_EVENT),
 сравнивает с предыдущей неделей и пишет:
-- reports/weekly/<дата>.md  — отчёт для чтения (его же читает Claude для сводки по понедельникам);
-- reports/weekly/<дата>.json — те же цифры для машин;
+- <REPORT_DIR>/<дата>.md  — отчёт для чтения;
+- <REPORT_DIR>/<дата>.json — те же цифры для машин;
 - короткое сообщение в Telegram (бот отзывов), если заданы FEEDBACK_BOT_TOKEN и FEEDBACK_CHAT_ID.
+
+Репозиторий публичный: цифры дохода не печатаются в лог (логи Actions видны всем) и не коммитятся,
+workflow хранит файлы только артефактом запуска на короткий срок.
 
 Поведение в приложении (экраны, нажатия, воронка) смотрим в Firebase / Google Analytics.
 Позже сюда можно добавить и их через бесплатный Google Analytics Data API (нужен сервисный аккаунт).
@@ -61,6 +64,23 @@ SESSION = requests.Session()
 VENDOR = ""
 
 
+def get_with_retry(params, attempts=3):
+    """GET к App Store Connect с повтором при сетевых ошибках и 5xx. None, если так и не ответил."""
+    for attempt in range(attempts):
+        try:
+            r = SESSION.get(API, params=params, timeout=60)
+        except requests.RequestException as error:
+            # Только тип ошибки: в тексте мог бы оказаться адрес запроса.
+            print(f"::warning::Сеть ({type(error).__name__}), попытка {attempt + 1} из {attempts}")
+        else:
+            if r.status_code < 500:
+                return r
+            print(f"::warning::App Store Connect ответил {r.status_code}, попытка {attempt + 1} из {attempts}")
+        if attempt + 1 < attempts:
+            time.sleep(5 * (attempt + 1))
+    return None
+
+
 def fetch(report_type, sub_type, day, versions):
     """Строки дневного отчёта или None, если отчёта за этот день ещё нет."""
     for version in versions:
@@ -72,7 +92,10 @@ def fetch(report_type, sub_type, day, versions):
             "filter[reportDate]": day.isoformat(),
             "filter[version]": version,
         }
-        r = SESSION.get(API, params=params, timeout=60)
+        r = get_with_retry(params)
+        if r is None:
+            print(f"::warning::{report_type}/{sub_type} {day}: App Store Connect не отвечает")
+            return None
         if r.status_code == 200:
             raw = r.content
             try:
@@ -228,7 +251,8 @@ def main():
     lines += ["", "## Поведение в приложении", "",
               "Экраны, нажатия, воронка пейвола и удержание: Firebase → Analytics (события screen_view, paywall_shown, purchase_*).", ""]
     report = "\n".join(lines)
-    print(report)
+    # Сам отчёт в лог не печатаем: логи публичного репозитория видны всем.
+    print(f"Отчёт за {period} готов.")
 
     out_dir = os.environ.get("REPORT_DIR", "reports/weekly")
     os.makedirs(out_dir, exist_ok=True)
@@ -249,10 +273,17 @@ def main():
         trials = sum(v for k, v in events.items() if "Introductory" in k or "Free Trial" in k)
         if trials:
             short.append(f"Пробные периоды и переходы из них: {trials}")
-        r = requests.post(f"https://api.telegram.org/bot{bot}/sendMessage",
-                          data={"chat_id": chat, "text": "\n".join(short)}, timeout=30)
-        if r.status_code != 200:
-            print(f"::warning::Telegram: {r.status_code}")
+        try:
+            r = requests.post(f"https://api.telegram.org/bot{bot}/sendMessage",
+                              data={"chat_id": chat, "text": "\n".join(short)}, timeout=30)
+        except requests.RequestException as error:
+            # Только тип ошибки: в тексте исключения есть адрес с токеном бота.
+            print(f"::warning::Telegram недоступен ({type(error).__name__})")
+        else:
+            if r.status_code != 200:
+                print(f"::warning::Telegram: {r.status_code}")
+            else:
+                print("Сводка отправлена в Telegram.")
 
 
 if __name__ == "__main__":

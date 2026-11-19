@@ -83,7 +83,9 @@ targets:
         GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS: false
         GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED: false
         GOOGLE_ANALYTICS_REGISTRATION_WITH_AD_NETWORK_ENABLED: false
-        GOOGLE_ANALYTICS_ADID_COLLECTION_ENABLED: false
+        # Firebase сам ничего не собирает: сбор включает код (Analytics.start) по выбору пользователя.
+        # Opt-out или opt-in задаёт Analytics.enabledByDefault.
+        FIREBASE_ANALYTICS_COLLECTION_ENABLED: false
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.personal.habits

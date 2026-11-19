@@ -10,11 +10,11 @@
 | Событие | Когда |
 |---|---|
 | `screen_view` (`screen_name`) | показ экрана; из этого Firebase считает время, сессии и пути между экранами |
-| `gesture` (`screen`, `kind`: tap, longPress, swipeLeft/Right/Up/Down) | каждое нажатие и свайп |
+| `gesture` (`screen`, `kind`: tap, longPress, swipeLeft/Right/Up/Down) | каждое нажатие и свайп в окне приложения, в том числе по пустому месту (это не только нажатия на кнопки). Активации через VoiceOver и другие спецвозможности не считаются: они не проходят как касания |
 | `habit_check`, `habit_skip`, `pet_feed`, `data_export_csv`... (`screen`) | действия из `AnalyticsAction` |
 | `app_installed`, `onboarding_completed`, `habit_created`, `habit_deleted`, `paywall_shown`, `purchase_started/completed/cancelled/failed`, `purchase_restored`, `pro_changed`, `pet_adopted`, `pet_stage_reached`, `achievement_unlocked`, `rating_prompt_shown`, `family_group_created/joined`, `feedback_sent`, `backup_restored` | важные события с параметрами из `AnalyticsEvent` |
 | `daily_state` | раз в день: число привычек, групп, отметок и записей настроения за 7 дней, питомец, настройки |
-| user properties `is_pro`, `install_week` | для сравнения групп и когорт |
+| user properties `is_pro`, `first_seen_week` | для сравнения групп и когорт. `first_seen_week` и `daily_state.user_days_since_first_seen` считаются от первого запуска версии 1.6+, у обновившихся это не неделя установки (их отличает `app_installed.app_is_update = 1`) |
 
 Лимиты Firebase: 500 разных событий, 25 параметров на событие, имена до 40 символов. Поэтому имена только из перечислений.
 
@@ -33,14 +33,19 @@ IDFV, рекламные сигналы и подмена делегата пр�
   положить plist в `Habits/Resources/`, `xcodegen generate`, запустить с аргументами `-AnalyticsDebug -FIRDebugEnabled`
   и смотреть Firebase → DebugView.
 - Пользователь может выключить: Настройки → «Отправлять анонимную статистику» (переключатель виден, только когда Firebase подключён).
-  Выключение останавливает отправку и стирает данные Firebase на устройстве (`resetAnalyticsData`).
+  Выключение останавливает отправку и стирает данные Firebase на устройстве (`resetAnalyticsData`), повторное включение
+  сразу возвращает наблюдение жестов и свойства пользователя.
+- Согласие: сейчас opt-out (собираем, пока пользователь не выключит). В Info.plist `FIREBASE_ANALYTICS_COLLECTION_ENABLED = false`,
+  сбор включает только код. Перейти на opt-in: `Analytics.enabledByDefault = false` в `Habits/Features/Analytics.swift`
+  (одна строка; тогда нужен и запрос согласия в интерфейсе).
 - App Privacy в App Store Connect: Identifiers → Device ID, Location → Coarse Location,
   Purchases → Purchase History, Usage Data → Product Interaction. Везде Analytics, не связано, не для отслеживания.
 
 ## Еженедельный отчёт
 
 Workflow `Weekly report` (понедельник 05:00 UTC и вручную) собирает установки, покупки, подписки
-и доход из App Store Connect, кладёт отчёт в ветку `analytics-reports` (`reports/weekly/<дата>.md`)
-и шлёт короткую сводку в Telegram. Нужны секреты `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8` (ключ с ролью Sales,
+и доход из App Store Connect и шлёт короткую сводку в Telegram. Репозиторий публичный, поэтому отчёт не коммитится
+и не печатается в лог: полный отчёт (.md и .json) лежит артефактом запуска 3 дня (артефакт может скачать любой
+вошедший пользователь GitHub). Нужны секреты `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8` (ключ с ролью Sales,
 Finance или Admin) и `ASC_VENDOR_NUMBER` (секрет или переменная). Без них workflow падает с понятной ошибкой
 (`Не заданы секреты: ...`), секреты в лог не печатаются.

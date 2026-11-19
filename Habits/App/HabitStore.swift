@@ -61,10 +61,11 @@ final class HabitStore {
         data.habits.first { $0.id == id }
     }
 
-    func upsert(_ habit: Habit, source: HabitSource = .editor) {
+    /// source: откуда сохранена привычка (для статистики). Правкой считается только сохранение из редактора.
+    func upsert(_ habit: Habit, source: HabitSource) {
         if let index = data.habits.firstIndex(where: { $0.id == habit.id }) {
             data.habits[index] = habit
-            Analytics.shared.action(.edit)
+            if source == .editor { Analytics.shared.action(.edit) }
         } else {
             var new = habit
             new.sortOrder = (data.habits.map(\.sortOrder).max() ?? -1) + 1
@@ -300,12 +301,16 @@ final class HabitStore {
         let current = PetStage.stage(xp: Pets.xp(pet, data: data))
         let now = Date()
         var reached: PetStage?
+        var newStages = 0
         for stage in PetStage.allCases where stage > .egg && stage <= current && pet.stageReached[String(stage.rawValue)] == nil {
             pet.stageReached[String(stage.rawValue)] = now
             reached = stage
+            newStages += 1
         }
         guard let reached else { return nil }
-        Analytics.shared.send(.petStageReached(stage: reached.rawValue))
+        // Несколько стадий сразу - это догоняющее заполнение (обновление, импорт, восстановление),
+        // а не настоящий переход: в статистику не шлём, чтобы не портить воронку.
+        if newStages == 1 { Analytics.shared.send(.petStageReached(stage: reached.rawValue)) }
         data.wallet.pet = pet
         commit()
         return reached

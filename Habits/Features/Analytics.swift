@@ -19,17 +19,27 @@ import UIKit
 final class Analytics {
     static let shared = Analytics()
 
-    /// Выключатель в настройках. Хранится только на устройстве.
-    static let optOutKey = "analyticsOptOut"
+    /// Выключатель в настройках. Хранится только на устройстве: true - выключено, false - включено, нет значения -
+    /// пользователь ещё не выбирал (тогда действует enabledByDefault).
+    nonisolated static let optOutKey = "analyticsOptOut"
+
+    /// Собирать ли статистику, пока пользователь не трогал выключатель. Сейчас: да, пока не выключит (opt-out).
+    /// Чтобы перейти на явное согласие (opt-in), достаточно поменять на false: в Info.plist
+    /// FIREBASE_ANALYTICS_COLLECTION_ENABLED = false, поэтому Firebase сам ничего не собирает, пока код не включит сбор.
+    nonisolated static let enabledByDefault = true
 
     private let defaults = UserDefaults.standard
     private var configured = false
     private var screenStack: [AnalyticsScreen] = []
 
+    /// daily_state уже считается в фоне: не запускаем второй расчёт при быстрых повторных активациях.
+    private var stateInFlight = false
+
     private enum Key {
         static let stateDay = "analytics.stateDay"
         static let installSent = "analytics.installSent"
-        static let firstLaunch = "analytics.firstLaunch"
+        /// Первый запуск версии со статистикой (1.6+), а не установка: у обновившихся это день обновления.
+        static let firstSeen = "analytics.firstLaunch"
     }
 
     private init() {}
@@ -52,21 +62,37 @@ final class Analytics {
         ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil || NSClassFromString("XCTestCase") != nil
     }
 
+    /// Включена ли статистика пользователем (или по умолчанию, если он не выбирал).
+    nonisolated static func isUserEnabled(_ defaults: UserDefaults) -> Bool {
+        (defaults.object(forKey: optOutKey) as? Bool).map { !$0 } ?? enabledByDefault
+    }
+
     /// Работает ли отправка: Firebase настроен и пользователь не выключил статистику.
-    var isActive: Bool { configured && !defaults.bool(forKey: Self.optOutKey) }
+    var isActive: Bool { configured && Self.isUserEnabled(defaults) }
 
     /// Вызывается при запуске приложения.
     func start() {
-        guard Self.isAvailable, !configured else { return }
-        FirebaseApp.configure()
+        guard Self.isAvailable, !configured,
+              let path = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist"),
+              // Испорченный plist: FirebaseApp.configure() уронил бы приложение, а так просто нет статистики.
+              let options = FirebaseOptions(contentsOfFile: path) else { return }
+        FirebaseApp.configure(options: options)
         configured = true
-        FirebaseAnalytics.Analytics.setAnalyticsCollectionEnabled(!defaults.bool(forKey: Self.optOutKey))
-        if defaults.object(forKey: Key.firstLaunch) == nil {
-            defaults.set(Date(), forKey: Key.firstLaunch)
+        if defaults.object(forKey: Key.firstSeen) == nil {
+            defaults.set(Date(), forKey: Key.firstSeen)
         }
-        if let first = defaults.object(forKey: Key.firstLaunch) as? Date {
-            FirebaseAnalytics.Analytics.setUserProperty(Self.weekKey(first), forName: "install_week")
+        // В Info.plist сбор выключен (FIREBASE_ANALYTICS_COLLECTION_ENABLED = false): включаем только здесь.
+        let enabled = Self.isUserEnabled(defaults)
+        FirebaseAnalytics.Analytics.setAnalyticsCollectionEnabled(enabled)
+        if enabled { setUserProperties() }
+    }
+
+    /// Свойства пользователя для когорт. resetAnalyticsData() их стирает, поэтому ставим и при повторном включении.
+    private func setUserProperties() {
+        if let first = defaults.object(forKey: Key.firstSeen) as? Date {
+            FirebaseAnalytics.Analytics.setUserProperty(Self.weekKey(first), forName: "first_seen_week")
         }
+        FirebaseAnalytics.Analytics.setUserProperty(HabitStore.shared.data.isPro ? "1" : "0", forName: "is_pro")
     }
 
     // MARK: Жизненный цикл
@@ -83,20 +109,24 @@ final class Analytics {
         let data = HabitStore.shared.data
         FirebaseAnalytics.Analytics.setUserProperty(data.isPro ? "1" : "0", forName: "is_pro")
         let today = DayKey.make(Date())
-        if defaults.string(forKey: Key.stateDay) != today {
-            defaults.set(today, forKey: Key.stateDay)
-            let daysSinceInstall = (defaults.object(forKey: Key.firstLaunch) as? Date).map {
+        if defaults.string(forKey: Key.stateDay) != today, !stateInFlight {
+            stateInFlight = true
+            let daysSinceFirstSeen = (defaults.object(forKey: Key.firstSeen) as? Date).map {
                 max(0, Calendar.app.dateComponents([.day], from: $0, to: Date()).day ?? 0)
             }
             // Снимок проходит по всем отметкам (на больших данных это сотни мс): считаем не на главном потоке,
             // чтобы не тормозить запуск.
             Task.detached(priority: .utility) {
                 var payload = AnalyticsSnapshot.make(data)
-                if let daysSinceInstall { payload["User.daysSinceInstall"] = daysSinceInstall }
+                if let daysSinceFirstSeen { payload["User.daysSinceFirstSeen"] = daysSinceFirstSeen }
                 let parameters = Self.firebaseParameters(payload)
                 await MainActor.run {
-                    guard Analytics.shared.isActive else { return }
+                    let analytics = Analytics.shared
+                    analytics.stateInFlight = false
+                    guard analytics.isActive else { return }
                     FirebaseAnalytics.Analytics.logEvent("daily_state", parameters: parameters)
+                    // День отмечаем только после отправки: если статистику выключили на время расчёта, отправим позже.
+                    analytics.defaults.set(today, forKey: Key.stateDay)
                 }
             }
         }
@@ -107,7 +137,13 @@ final class Analytics {
         defaults.set(!enabled, forKey: Self.optOutKey)
         guard configured else { return }
         FirebaseAnalytics.Analytics.setAnalyticsCollectionEnabled(enabled)
-        if !enabled { FirebaseAnalytics.Analytics.resetAnalyticsData() }
+        if enabled {
+            // Включили посреди сессии: жесты и свойства пользователя сразу, не дожидаясь следующего запуска.
+            setUserProperties()
+            AnalyticsGestures.attachToWindows()
+        } else {
+            FirebaseAnalytics.Analytics.resetAnalyticsData()
+        }
     }
 
     // MARK: Экраны, действия, жесты
@@ -189,7 +225,9 @@ final class Analytics {
             case let flag as Bool: result[name] = flag ? 1 : 0
             case let number as Int: result[name] = number
             case let number as Double: result[name] = number
-            default: result[name] = String(String(describing: value).prefix(100))
+            case let text as String: result[name] = String(text.prefix(100))
+            // Другие типы не отправляем: их текстовое описание могло бы унести лишнее.
+            default: continue
             }
         }
         return result

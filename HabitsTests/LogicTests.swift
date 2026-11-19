@@ -289,6 +289,47 @@ final class LogicTests: XCTestCase {
         }
     }
 
+    /// Выключатель статистики: без выбора действует enabledByDefault, выбор пользователя сохраняется.
+    func testAnalyticsUserChoice() {
+        let defaults = UserDefaults(suiteName: "analytics-tests-\(UUID().uuidString)")!
+        XCTAssertEqual(Analytics.isUserEnabled(defaults), Analytics.enabledByDefault)
+        defaults.set(true, forKey: Analytics.optOutKey)
+        XCTAssertFalse(Analytics.isUserEnabled(defaults))
+        defaults.set(false, forKey: Analytics.optOutKey)
+        XCTAssertTrue(Analytics.isUserEnabled(defaults))
+    }
+
+    /// В тестах Firebase не настроен: отправки нет ни при выключенной, ни при включённой статистике,
+    /// а выключатель записывает выбор пользователя.
+    @MainActor
+    func testAnalyticsSetEnabledAndInactiveInTests() {
+        let defaults = UserDefaults.standard
+        let saved = defaults.object(forKey: Analytics.optOutKey)
+        defer { defaults.set(saved, forKey: Analytics.optOutKey) }
+        XCTAssertFalse(Analytics.isAvailable)
+        Analytics.shared.start()
+        Analytics.shared.setEnabled(false)
+        XCTAssertEqual(defaults.object(forKey: Analytics.optOutKey) as? Bool, true)
+        XCTAssertFalse(Analytics.isUserEnabled(defaults))
+        XCTAssertFalse(Analytics.shared.isActive)
+        Analytics.shared.setEnabled(true)
+        XCTAssertEqual(defaults.object(forKey: Analytics.optOutKey) as? Bool, false)
+        XCTAssertTrue(Analytics.isUserEnabled(defaults))
+        XCTAssertFalse(Analytics.shared.isActive, "в тестах статистика не отправляется")
+        // Вызовы без Firebase ничего не делают и не падают.
+        Analytics.shared.gesture(.tap)
+        Analytics.shared.action(.check)
+        Analytics.shared.appBecameActive()
+    }
+
+    /// Неизвестные типы значений не превращаются в текст.
+    func testFirebaseParametersSkipUnknownTypes() {
+        let params = Analytics.firebaseParameters(["Some.date": Date(), "Some.text": "ok", "Some.count": 2])
+        XCTAssertNil(params["some_date"])
+        XCTAssertEqual(params["some_text"] as? String, "ok")
+        XCTAssertEqual(params["some_count"] as? Int, 2)
+    }
+
     /// Все имена событий, экранов и параметров укладываются в лимиты Firebase и не заняты им самим.
     func testAnalyticsNamesFitFirebaseLimits() {
         let reservedPrefixes = ["firebase_", "google_", "ga_"]
@@ -324,7 +365,8 @@ final class LogicTests: XCTestCase {
         }
         let snapshot = AnalyticsSnapshot.make(AppData())
         snapshot.keys.forEach { check($0) }
-        // + User.daysSinceInstall, который добавляется в appBecameActive.
+        // + User.daysSinceFirstSeen, который добавляется в appBecameActive.
+        check("User.daysSinceFirstSeen")
         XCTAssertLessThanOrEqual(snapshot.count + 1, 25)
         // Всего разных событий намного меньше лимита в 500.
         XCTAssertLessThan(actions.count + events.count + 3, 500)

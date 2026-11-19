@@ -30,9 +30,14 @@ fi
 
 # Испорченный файл уронил бы приложение в FirebaseApp.configure(), поэтому проверяем ключи.
 for key in BUNDLE_ID GOOGLE_APP_ID API_KEY GCM_SENDER_ID PROJECT_ID; do
-  /usr/libexec/PlistBuddy -c "Print :$key" "$DEST" >/dev/null 2>&1 \
+  value="$(/usr/libexec/PlistBuddy -c "Print :$key" "$DEST" 2>/dev/null)" \
     || skip "В GoogleService-Info.plist нет ключа $key."
+  [ -n "$value" ] || skip "В GoogleService-Info.plist пустой ключ $key."
 done
+GOOGLE_APP_ID="$(/usr/libexec/PlistBuddy -c "Print :GOOGLE_APP_ID" "$DEST")"
+# Значение не печатаем: проверяем только формат iOS-приложения Firebase.
+[[ "$GOOGLE_APP_ID" =~ ^1:[0-9]+:ios:[0-9a-f]+$ ]] \
+  || skip "GOOGLE_APP_ID в GoogleService-Info.plist не похож на iOS-приложение Firebase (1:<номер>:ios:<hex>)."
 BUNDLE_ID="$(/usr/libexec/PlistBuddy -c "Print :BUNDLE_ID" "$DEST")"
 if [ -n "$EXPECTED_ID" ] && [ "$BUNDLE_ID" != "$EXPECTED_ID" ]; then
   skip "GoogleService-Info.plist выписан на $BUNDLE_ID, а приложение собирается как $EXPECTED_ID."
