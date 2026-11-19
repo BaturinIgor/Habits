@@ -2,8 +2,8 @@ name: Weekly report
 
 # Отчёт за неделю: установки, покупки, подписки и доход из App Store Connect.
 # Запускается сам по понедельникам в 05:00 UTC и вручную: Actions -> Weekly report -> Run workflow.
-# Репозиторий публичный, поэтому отчёт НЕ коммитится в репозиторий и не печатается в лог:
-# короткая сводка уходит в Telegram, полный отчёт хранится артефактом запуска 3 дня.
+# Репозиторий публичный, поэтому отчёт не коммитится, не печатается в лог и не сохраняется артефактом:
+# сводка уходит только в Telegram (FEEDBACK_BOT_TOKEN, FEEDBACK_CHAT_ID). Без них запуск успешен, но отчёт не отправлен.
 # Нужны секреты ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8 (ключ с ролью Sales, Finance или Admin)
 # и ASC_VENDOR_NUMBER (секрет или переменная).
 
@@ -37,11 +37,3 @@ jobs:
           FEEDBACK_CHAT_ID: ${{ secrets.FEEDBACK_CHAT_ID }}
           REPORT_DIR: ${{ runner.temp }}/weekly
         run: python3 tools/analytics/weekly_report.py
-      # Внимание: артефакты публичного репозитория может скачать любой вошедший пользователь GitHub,
-      # поэтому срок хранения минимальный.
-      - uses: actions/upload-artifact@v4
-        with:
-          name: weekly-report
-          path: ${{ runner.temp }}/weekly
-          retention-days: 3
-          if-no-files-found: ignore

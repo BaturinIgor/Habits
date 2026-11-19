@@ -8,7 +8,7 @@
 - короткое сообщение в Telegram (бот отзывов), если заданы FEEDBACK_BOT_TOKEN и FEEDBACK_CHAT_ID.
 
 Репозиторий публичный: цифры дохода не печатаются в лог (логи Actions видны всем) и не коммитятся,
-workflow хранит файлы только артефактом запуска на короткий срок.
+файлы в REPORT_DIR остаются только на временном диске раннера, наружу уходит лишь сводка в Telegram.
 
 Поведение в приложении (экраны, нажатия, воронка) смотрим в Firebase / Google Analytics.
 Позже сюда можно добавить и их через бесплатный Google Analytics Data API (нужен сервисный аккаунт).
@@ -264,8 +264,10 @@ def main():
                    "subscriptionEvents": events, "previousSubscriptionEvents": prev_events,
                    "activeSubscriptions": active}, f, ensure_ascii=False, indent=2)
 
-    bot, chat = os.environ.get("FEEDBACK_BOT_TOKEN"), os.environ.get("FEEDBACK_CHAT_ID")
-    if bot and chat:
+    bot, chat = os.environ.get("FEEDBACK_BOT_TOKEN", "").strip(), os.environ.get("FEEDBACK_CHAT_ID", "").strip()
+    if not (bot and chat):
+        print("Telegram not configured, report not sent (нужны FEEDBACK_BOT_TOKEN и FEEDBACK_CHAT_ID).")
+    else:
         short = [f"ZenHab, неделя {period}",
                  f"Установки: {sales['downloads']}{delta(sales['downloads'], prev_sales['downloads'])}",
                  f"Покупки: {sales['iap_units']}{delta(sales['iap_units'], prev_sales['iap_units'])}",
