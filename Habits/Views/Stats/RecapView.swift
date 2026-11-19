@@ -320,12 +320,9 @@ struct RecapBanner: View {
                     WordWrapText(String(localized: title))
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Color.primary)
-                    HStack(spacing: 4) {
-                        Text(verbatim: "\(recap.percent)% ·")
-                        Text("Perfect days: \(recap.perfectDays)")
-                    }
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                    WordWrapText("\(recap.percent)% · " + String(localized: "Perfect days: \(recap.perfectDays)"))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .contentShape(Rectangle())
