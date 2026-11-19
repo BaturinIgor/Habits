@@ -26,7 +26,7 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .habits: .tab(.habits)
         case .stats: .tab(.stats)
         case .settings: .tab(.settings)
-        case .habitDetail, ..notifications, .todayScreen, .groups, .groupDetail, .backup: .push
+        case .habitDetail, .notifications, .todayScreen, .groups, .groupDetail, .backup: .push
         case .onboarding, .words: .cover
         default: .sheet
         }
