@@ -1,0 +1,88 @@
+name: App Store screenshots
+
+# Загружает скриншоты в версию App Store Connect по всем языкам, заменяя старые наборы.
+# Папка: <dir>/<язык>/01.png ... (iPhone 1320x2868) и <dir>/<язык>/watch/01.png ... (часы).
+# Источник: папка в репозитории или zip по ссылке (например, файл из GitHub Release).
+# По умолчанию dry run: только показывает, что изменится. Подробности: tools/appstore/README.md.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Версия, например 1.6"
+        required: true
+        default: "1.6"
+      dir:
+        description: "Папка со скриншотами в репозитории"
+        required: false
+        default: "docs/appstore/screenshots/final"
+      zip_url:
+        description: "Или ссылка на zip с такой же структурой (тогда dir не используется)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Только показать, что изменится"
+        type: boolean
+        default: true
+      prune:
+        description: "Удалить наборы других размеров iPhone/часов"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: appstore-screenshots
+  cancel-in-progress: false
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install
+        run: pip install -r tools/appstore/requirements.txt
+
+      - name: Get screenshots
+        id: shots
+        env:
+          ZIP_URL: ${{ inputs.zip_url }}
+          DIR: ${{ inputs.dir }}
+        run: |
+          set -euo pipefail
+          if [ -z "$ZIP_URL" ]; then
+            case "$DIR" in *$'\n'*|*$'\r'*) echo "::error::Перенос строки в dir"; exit 1;; esac
+            echo "dir=$DIR" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          mkdir -p "$RUNNER_TEMP/zip" "$RUNNER_TEMP/shots"
+          curl --proto '=https' --tlsv1.2 -fsSL --max-filesize 200000000 --max-time 120 \
+            --url "$ZIP_URL" -o "$RUNNER_TEMP/zip/shots.zip"
+          unzip -q "$RUNNER_TEMP/zip/shots.zip" -d "$RUNNER_TEMP/shots"
+          if [ -n "$(find "$RUNNER_TEMP/shots" -type l -print -quit)" ]; then
+            echo "::error::В архиве есть символические ссылки, такой архив не принимаю"
+            exit 1
+          fi
+          # Папку с языками (en-US/, ru/ ...) внутри архива скрипт найдёт сам, __MACOSX и скрытые пропустит.
+          echo "dir=$RUNNER_TEMP/shots" >> "$GITHUB_OUTPUT"
+
+      - name: Upload screenshots
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          APP_BUNDLE_ID: ${{ vars.APP_BUNDLE_ID || 'com.baturinigor.zenhab' }}
+          VERSION: ${{ inputs.version }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          PRUNE: ${{ inputs.prune }}
+          SHOTS_DIR: ${{ steps.shots.outputs.dir }}
+        run: |
+          args=(--version "$VERSION" --dir "$SHOTS_DIR")
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          if [ "$PRUNE" = "true" ]; then args+=(--prune); fi
+          python3 tools/appstore/asc_screenshots.py "${args[@]}"

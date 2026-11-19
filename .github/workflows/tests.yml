@@ -9,8 +9,6 @@ name: Tests
 on:
   pull_request:
     paths-ignore:
-      - "android/**"
-      - ".github/workflows/android.yml"
       - "README.md"
       - "docs/**"
   workflow_dispatch:
@@ -23,6 +21,19 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  appstore-tools:
+    # Юнит-тесты скриптов App Store Connect (tools/appstore), без обращения к Apple.
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install
+        run: pip install -r tools/appstore/requirements.txt
+      - name: Unit tests
+        run: python3 -m unittest discover -s tools/appstore/tests -v
+
   test:
     runs-on: macos-26
     timeout-minutes: 60
@@ -33,6 +44,14 @@ jobs:
         run: |
           brew install xcodegen
           xcodebuild -version
+
+      - name: Check watchOS platform
+        # Приложение для часов собирается вместе с приложением для iPhone.
+        run: |
+          if ! xcodebuild -showsdks | grep -q watchos; then
+            xcodebuild -downloadPlatform watchOS
+          fi
+          xcodebuild -showsdks | grep -i watch
 
       - name: Generate Xcode project
         run: xcodegen generate

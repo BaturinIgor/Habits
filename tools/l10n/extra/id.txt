@@ -783,3 +783,32 @@ ZenHab is locked||ZenHab terkunci
 passcode||kode sandi
 Share anonymous statistics||Bagikan statistik anonim
 Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood.||Membantu meningkatkan ZenHab: hanya layar dan tombol yang dipakai. Tidak pernah kebiasaan, catatan, atau suasana hatimu.
+Open ZenHab on your iPhone to see your habits here.||Buka ZenHab di iPhone untuk melihat kebiasaanmu di sini.
+Get Pro on your iPhone to use the timer on Apple Watch.||Aktifkan Pro di iPhone untuk memakai timer di Apple Watch.
+Start timer||Mulai timer
+Today's progress||Progres hari ini
+See how many habits are done today.||Lihat berapa kebiasaan yang sudah selesai hari ini.
+ZenHab on Apple Watch||ZenHab di Apple Watch
+See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch.||Lihat kebiasaan hari ini di pergelangan tangan dan centang dengan sekali ketuk. Semuanya tersinkron dengan iPhone. Jika ZenHab belum muncul di jam, pasang dari app Watch di iPhone.
+Watch face complications||Komplikasi tampilan jam
+Add ZenHab to your watch face or Smart Stack to see how many habits are done today.||Tambahkan ZenHab ke tampilan jam atau Tumpukan Pintar untuk melihat berapa kebiasaan yang selesai hari ini.
+Timer on your wrist||Timer di pergelangan tangan
+With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off.||Dengan Pro, mulai timer kebiasaan di Apple Watch. Saat waktu habis, jam akan mengetuk pergelangan tanganmu dan mencentang kebiasaan.
+%lld XP||%lld XP
+Pet name||Nama hewan peliharaan
+Scan to get ZenHab||Pindai untuk mendapatkan ZenHab
+Track your habits with ZenHab||Pantau kebiasaanmu dengan ZenHab
+My month||Bulanku
+My year||Tahunku
+Month in review||Ringkasan bulan
+Year in review||Ringkasan tahun
+Your month in review||Ringkasan bulanmu
+Your year in review||Ringkasan tahunmu
+Last month's results as a card you can share||Hasil bulan lalu dalam kartu yang bisa dibagikan
+Your year's results as a card you can share||Hasil tahunmu dalam kartu yang bisa dibagikan
+An amazing month. Keep it going!||Bulan yang luar biasa. Pertahankan!
+A solid month. A little more and it'll be perfect.||Bulan yang bagus. Sedikit lagi dan akan sempurna.
+Every check-in counts. The new month is a fresh start.||Setiap centang berarti. Bulan baru adalah awal yang baru.
+An amazing year. Keep it going!||Tahun yang luar biasa. Pertahankan!
+A solid year. Every month makes a difference.||Tahun yang bagus. Setiap bulan membawa perubahan.
+Every check-in counts. The new year is a fresh start.||Setiap centang berarti. Tahun baru adalah awal yang baru.

@@ -12,7 +12,7 @@ struct PetCard: View {
                     let xp = Pets.xp(pet, data: store.data)
                     let stage = Pets.stage(pet, data: store.data)
                     let mood = Pets.mood(pet, data: store.data)
-                    PetAvatar(pet: pet, stage: stage, mood: mood, size: 64)
+                    PetAvatar(pet: pet, stage: stage, mood: mood, size: 64, reaction: store.petCheers)
                     VStack(alignment: .leading, spacing: 3) {
                         Text(pet.name).font(.headline)
                         Text("\(stage.title) · \(mood.title)")
@@ -94,7 +94,7 @@ struct PetView: View {
             }
             .sheet(isPresented: $showingPaywall) { PaywallView(highlight: .pets) }
             .alert("Rename", isPresented: $renaming) {
-                TextField("Name", text: $renameText)
+                TextField("Pet name", text: $renameText)
                 Button("Save") { store.renamePet(renameText) }
                 Button("Cancel", role: .cancel) {}
             }
@@ -112,7 +112,7 @@ struct PetView: View {
 
         VStack(spacing: 10) {
             ZStack(alignment: .top) {
-                PetAvatar(pet: pet, stage: stage, mood: mood, size: 200)
+                PetAvatar(pet: pet, stage: stage, mood: mood, size: 200, reaction: hearts)
                     .id("\(pet.species)-\(stage.rawValue)")
                     .onTapGesture { pat() }
                     .sensoryFeedback(.impact(weight: .light), trigger: hearts)
@@ -229,7 +229,7 @@ struct PetView: View {
                         }
                         Spacer(minLength: 0)
                         if !reached {
-                            Text(verbatim: "\(stage.threshold) XP")
+                            Text("\(stage.threshold) XP")
                                 .font(.caption.weight(.semibold))
                                 .monospacedDigit()
                                 .foregroundStyle(.secondary)
@@ -278,7 +278,15 @@ struct PetView: View {
         let owned = Pets.isOwned(species, data: store.data)
         return Button(action: action) {
             VStack(spacing: 4) {
-                Text(species.baby).font(.system(size: 38))
+                if let style = PetStyle.style(for: species.id) {
+                    // У малыша верх рисунка пустой: показываем нижнюю часть квадрата.
+                    PetArtView(style: style, stage: 0, mood: .happy, size: 64, motion: .none)
+                        .frame(height: 44, alignment: .bottom)
+                        .clipped()
+                        .accessibilityHidden(true)
+                } else {
+                    Text(species.baby).font(.system(size: 38))
+                }
                 Text(species.title).font(.caption.weight(.medium)).lineLimit(1)
                 if !owned {
                     if species.needsPro {
@@ -320,7 +328,7 @@ struct PetView: View {
                     }
                 }
             }
-            TextField("Name", text: $name)
+            TextField("Pet name", text: $name)
                 .textFieldStyle(.roundedBorder)
                 .submitLabel(.done)
             Button {

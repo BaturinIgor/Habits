@@ -5,6 +5,7 @@
 "%@ free, then %@. Cancel anytime." = "%1$@ 무료, 이후 %2$@. 언제든 해지할 수 있어요.";
 "%@ is already done today." = "%@ 오늘 이미 완료했어요.";
 "%@: the streak broke" = "%@: 연속 기록이 끊겼어요";
+"%lld XP" = "경험치 %lld";
 "%lld min" = "%lld분";
 "%lld more to %@" = "%2$@까지 %1$lld 남음";
 "%lld of %lld" = "%lld / %lld";
@@ -26,7 +27,9 @@
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "앱을 나가면 습관과 기록의 사본이 자동으로 iCloud에 저장돼요. 휴대폰을 바꿔도 잃어버리지 않아요.";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "잠금 화면과 Dynamic Island에 카운트다운이 표시되고, 시간이 끝나면 습관이 자동으로 체크돼요.";
 "A grown pet brings up to +5 a day" = "자란 펫은 하루 최대 +5를 가져와요";
+"A solid month. A little more and it'll be perfect." = "좋은 한 달이었어요. 조금만 더 하면 완벽해요.";
 "A solid week. A little more and it'll be perfect." = "좋은 한 주였어요. 조금만 더 하면 완벽해요.";
+"A solid year. Every month makes a difference." = "좋은 한 해였어요. 매달이 의미 있었어요.";
 "A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets." = "모든 체크 기록과 메모, 기분을 담은 표예요. Numbers, Excel, Google 스프레드시트에서 열 수 있어요.";
 "A week strong" = "일주일 달성";
 "A whole year" = "꼬박 1년";
@@ -36,6 +39,7 @@
 "Active" = "활성";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "활동한 날: 습관을 하나 이상 제때 체크한 날. 먹이를 주면 경험치 %lld을 얻어 더 빨리 자라요.";
 "Activity over %lld weeks" = "최근 %lld주 활동";
+"Add ZenHab to your watch face or Smart Stack to see how many habits are done today." = "ZenHab을 워치 페이스나 스마트 스택에 추가하면 오늘 완료한 습관 수를 볼 수 있어요.";
 "Add a habit" = "습관 추가";
 "Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap." = "습관 버튼을 제어 센터, 잠금 화면, 동작 버튼에 추가하고 한 번에 체크하세요.";
 "Add a habit, pick days and a time, and I'll remind you." = "습관을 추가하고 요일과 시간을 고르면 알려 드릴게요.";
@@ -60,7 +64,9 @@
 "Allow notifications" = "알림 허용";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "설정에서 ZenHab의 마이크와 음성 인식을 허용하세요.";
 "Allowed" = "허용됨";
+"An amazing month. Keep it going!" = "멋진 한 달이었어요. 계속 이어가요!";
 "An amazing week. Keep it going!" = "멋진 한 주였어요. 계속 이어가요!";
+"An amazing year. Keep it going!" = "멋진 한 해였어요. 계속 이어가요!";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "보관된 습관은 오늘 화면에 표시되지 않고 알림도 오지 않지만 기록은 유지됩니다.";
 "And %lld more" = "외 %lld개";
 "Anytime" = "언제든지";
@@ -221,7 +227,9 @@
 "Every" = "간격";
 "Every %@" = "%@마다";
 "Every N days" = "N일마다";
+"Every check-in counts. The new month is a fresh start." = "체크 하나하나가 소중해요. 새로운 한 달은 새로운 시작이에요.";
 "Every check-in counts. The new week is a fresh start." = "체크 하나하나가 소중해요. 새로운 한 주는 새로운 시작이에요.";
+"Every check-in counts. The new year is a fresh start." = "체크 하나하나가 소중해요. 새해는 새로운 시작이에요.";
 "Every day" = "매일";
 "Every month, on day %lld" = "매월 %lld일";
 "Every other day" = "이틀에 한 번";
@@ -268,6 +276,7 @@
 "Freezes this month" = "이번 달 프리즈";
 "Full for today" = "오늘은 배불러요";
 "Full mood journal" = "전체 기분 일기";
+"Get Pro on your iPhone to use the timer on Apple Watch." = "Apple Watch에서 타이머를 쓰려면 iPhone에서 Pro를 이용하세요.";
 "Get a pet" = "펫 데려오기";
 "Go to bed on time" = "제시간에 자기";
 "Goal" = "목표";
@@ -354,6 +363,7 @@
 "Last 30 days" = "최근 30일";
 "Last 7 days" = "최근 7일";
 "Last backup" = "마지막 백업";
+"Last month's results as a card you can share" = "지난달 결과를 공유할 수 있는 카드로";
 "Last week's results as a card you can share" = "지난주 결과를 공유할 수 있는 카드로";
 "Last widget update" = "마지막 위젯 업데이트";
 "Learn %@" = "%@ 배우기";
@@ -396,6 +406,7 @@
 "Misses are okay" = "놓쳐도 괜찮아요";
 "Misses you a lot" = "많이 보고 싶어해요";
 "Money saved" = "아낀 돈";
+"Month in review" = "한 달 돌아보기";
 "Month of power" = "힘의 한 달";
 "Monthly" = "월간";
 "Mood" = "기분";
@@ -412,7 +423,9 @@
 "Morning exercises" = "아침 체조";
 "Most steady: %@, %lld of %lld" = "가장 꾸준한 습관: %@, %lld/%lld";
 "Move to archive" = "보관함으로 이동";
+"My month" = "나의 한 달";
 "My week" = "나의 한 주";
+"My year" = "나의 한 해";
 "N times a week" = "주 N회";
 "Name" = "이름";
 "Never" = "없음";
@@ -479,6 +492,7 @@
 "One notification listing the habits not checked off yet." = "아직 체크하지 않은 습관을 알림 하나로 알려 드려요.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "당일이나 다음 날 체크만 인정돼요. 체크를 취소하면 스파크도 돌아가요.";
 "Only you can open your habits and journal." = "습관과 일기는 본인만 열 수 있어요.";
+"Open ZenHab on your iPhone to see your habits here." = "iPhone에서 ZenHab을 열면 여기에 습관이 표시돼요.";
 "Open backup" = "백업 열기";
 "Open export" = "내보내기 열기";
 "Open groups" = "그룹 열기";
@@ -505,6 +519,7 @@
 "Perfect week" = "완벽한 한 주";
 "Pet" = "펫";
 "Pet gifts" = "펫의 선물";
+"Pet name" = "펫 이름";
 "Phoenix" = "불사조";
 "Pick a template or create your own." = "템플릿을 고르거나 직접 만드세요.";
 "Plan the day" = "하루 계획하기";
@@ -568,10 +583,13 @@
 "Saved: %@" = "아낀 돈: %@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "\"ZenHab에서 습관 체크\", \"ZenHab에서 습관 추가\", \"ZenHab에서 뭐가 남았어\"라고 말해 보세요.";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "습관 이름을 말하세요. 예: '물 마시기'";
+"Scan to get ZenHab" = "스캔해서 ZenHab 받기";
 "Schedule" = "일정";
 "Scheduled notifications" = "예약된 알림";
+"See how many habits are done today." = "오늘 완료한 습관 수를 보여 줘요.";
 "See how much money you save by quitting a habit." = "습관을 끊어서 아낀 돈을 확인하세요.";
 "See how much you've saved with Pro" = "Pro로 아낀 돈을 확인하세요";
+"See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "오늘의 습관을 손목에서 보고 한 번의 탭으로 체크하세요. 모든 내용은 iPhone과 동기화돼요. 워치에 ZenHab이 보이지 않으면 iPhone의 Watch 앱에서 설치하세요.";
 "See which habits make your days better" = "어떤 습관이 하루를 더 좋게 만드는지 확인하세요";
 "Send" = "보내기";
 "Send by email" = "메일로 보내기";
@@ -613,6 +631,7 @@
 "Start free trial" = "무료 체험 시작";
 "Start over" = "새로 시작";
 "Start the count again?" = "다시 셀까요?";
+"Start timer" = "타이머 시작";
 "Statistics" = "통계";
 "Statistics will appear once you start checking off habits." = "습관을 체크하기 시작하면 통계가 표시돼요.";
 "Status" = "상태";
@@ -673,11 +692,13 @@
 "Time's up. Well done!" = "시간이 끝났어요. 잘했어요!";
 "Timer" = "타이머";
 "Timer on the Lock Screen" = "잠금 화면 타이머";
+"Timer on your wrist" = "손목 위의 타이머";
 "Today" = "오늘";
 "Today is a good day." = "오늘은 좋은 날이에요.";
 "Today screen" = "오늘 화면";
 "Today's entry" = "오늘의 기록";
 "Today's habits" = "오늘의 습관";
+"Today's progress" = "오늘의 진행률";
 "Today's progress and quick check-off right from the Home Screen." = "홈 화면에서 오늘의 진행률을 보고 바로 체크하세요.";
 "Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "홈 화면에서 오늘의 진행 상황을 보고 바로 체크하세요. 위젯을 길게 눌러 그룹을 고를 수 있어요.";
 "Tomorrow" = "내일";
@@ -686,6 +707,7 @@
 "Total, days" = "합계(일)";
 "Track expenses" = "지출 기록하기";
 "Track habits, get gentle reminders and watch your streaks grow." = "습관을 기록하고, 부드러운 알림을 받고, 연속 기록이 늘어나는 걸 보세요.";
+"Track your habits with ZenHab" = "ZenHab으로 습관을 기록하세요";
 "Try again" = "다시 시도";
 "Try it" = "사용해 보기";
 "Turn on the lock" = "잠금 켜기";
@@ -716,6 +738,7 @@
 "Walk" = "산책";
 "Walk 10,000 steps" = "만 보 걷기";
 "Warming up" = "워밍업";
+"Watch face complications" = "워치 페이스 컴플리케이션";
 "Water, liters" = "물(리터)";
 "Week" = "주";
 "Week in review" = "한 주 돌아보기";
@@ -740,6 +763,7 @@
 "With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets." = "Pro에서는 모든 체크 기록을 메모와 기분까지 표로 내보내 Numbers, Excel, Google 스프레드시트에서 쓸 수 있어요.";
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "Pro에서는 습관에 시간을 정할 수 있어요. 잠금 화면과 Dynamic Island에서 카운트다운되고, 시간이 끝나면 습관이 체크돼요.";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "Pro에서는 습관을 걸음 수, 수면, 물, 운동, 마음챙김과 연결할 수 있고, 목표에 도달하면 자동으로 체크돼요.";
+"With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off." = "Pro로 Apple Watch에서 습관 타이머를 시작하세요. 시간이 끝나면 워치가 손목을 톡 치고 습관을 체크해요.";
 "Without it since" = "끊은 날짜";
 "Words" = "단어";
 "Words for today are done" = "오늘의 단어 완료";
@@ -750,6 +774,7 @@
 "Write 50 notes" = "메모 50개 작성";
 "Write down 3 good things" = "좋았던 일 3가지 쓰기";
 "Write to the developer" = "개발자에게 문의";
+"Year in review" = "한 해 돌아보기";
 "Yearly" = "연간";
 "Yesterday" = "어제";
 "Yoga" = "요가";
@@ -759,6 +784,7 @@
 "Your days and the habits that lift your mood" = "나의 하루와 기분을 올려 주는 습관";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "습관과 기록이 자동으로 iCloud에 저장돼요. 새 iPhone에서는 ZenHab이 모두 되돌려 드려요.";
 "Your message has been sent." = "메시지를 보냈어요.";
+"Your month in review" = "나의 한 달 돌아보기";
 "Your own emoji from the keyboard" = "키보드로 이모지 입력";
 "Your own name, icon and schedule" = "이름, 아이콘, 일정을 직접";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "습관을 체크할 때마다 펫이 자라고, 며칠 사라지면 슬퍼해요.";
@@ -766,7 +792,10 @@
 "Your photo" = "내 사진";
 "Your week in review" = "나의 한 주 돌아보기";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "전체 기분 기록, 월간 그래프, 기분을 올려 주는 습관.";
+"Your year in review" = "나의 한 해 돌아보기";
+"Your year's results as a card you can share" = "한 해의 결과를 공유할 수 있는 카드로";
 "ZenHab is locked" = "ZenHab이 잠겨 있어요";
+"ZenHab on Apple Watch" = "Apple Watch용 ZenHab";
 "a month" = "한 달";
 "a week" = "일주일";
 "a year" = "1년";

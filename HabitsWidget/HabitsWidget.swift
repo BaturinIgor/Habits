@@ -525,12 +525,12 @@ struct PetWidgetView: View {
                         Spacer(minLength: 0)
                         SparkBadge(amount: entry.balance, font: .caption2.weight(.bold))
                     }
-                    PetAvatar(pet: pet, stage: entry.stage, mood: entry.mood, size: 78)
+                    PetAvatar(pet: pet, stage: entry.stage, mood: entry.mood, size: 78, motion: .none)
                     feedButton(compact: true)
                 }
             } else {
                 HStack(spacing: 14) {
-                    PetAvatar(pet: pet, stage: entry.stage, mood: entry.mood, size: 110)
+                    PetAvatar(pet: pet, stage: entry.stage, mood: entry.mood, size: 110, motion: .none)
                     VStack(alignment: .leading, spacing: 5) {
                         HStack {
                             Text(pet.name).font(.headline).lineLimit(1)

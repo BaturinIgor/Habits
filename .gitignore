@@ -5,12 +5,6 @@ DerivedData/
 Payload/
 *.ipa
 xcuserdata/
-android/.gradle/
-android/build/
-android/app/build/
-android/local.properties
-android/build.log
-android/Habits.apk
 __pycache__/
 Habits/Resources/GoogleService-Info.plist
 tools/analytics/GoogleService-Info.plist

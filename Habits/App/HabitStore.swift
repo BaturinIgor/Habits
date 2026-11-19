@@ -23,19 +23,35 @@ final class HabitStore {
         data = DataFile.load()
     }
 
+    #if DEBUG
+    /// Хранилище только в памяти для модульных тестов: не пишет на диск, не трогает виджеты и синхронизацию.
+    init(inMemory data: AppData) {
+        self.data = data
+        inMemory = true
+    }
+    #endif
+
+    private var inMemory = false
+
     /// Перечитывает файл: данные могли измениться из виджета или уведомления.
     func reloadFromDisk() {
         if let fresh = DataFile.loadIfAvailable() {
             data = fresh
             revision += 1
+            WatchSync.shared.push(data)
         }
     }
 
     /// Растёт при каждом сохранении, чтобы экраны могли реагировать на любые изменения.
     private(set) var revision = 0
 
+    /// Растёт, только когда пользователь сам отметил привычку в приложении или покормил питомца:
+    /// питомец подпрыгивает. Отметки из виджета, Siri, Здоровья и синхронизации сюда не попадают.
+    private(set) var petCheers = 0
+
     private func commit(syncFamily: Bool = true) {
         revision += 1
+        guard !inMemory else { return }
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()
         if #available(iOS 18.0, *) {
@@ -49,6 +65,7 @@ final class HabitStore {
         if syncFamily {
             FamilySync.shared.scheduleSync()
         }
+        WatchSync.shared.push(data)
     }
 
     func reschedule() async {
@@ -131,6 +148,7 @@ final class HabitStore {
         revision += 1
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()
+        WatchSync.shared.push(data)
     }
 
     // MARK: Искры, магазин, питомец
@@ -282,6 +300,7 @@ final class HabitStore {
         // выражении приводили к падению (одновременный доступ к памяти).
         guard var pet = data.wallet.pet else { return false }
         pet.feeds[DayKey.make(Date()), default: 0] += 1
+        petCheers += 1
         // Старые записи о кормлении не нужны дольше года.
         if let cutoff = Calendar.app.date(byAdding: .day, value: -400, to: Date()) {
             let old = DayKey.make(cutoff)
@@ -424,15 +443,34 @@ final class HabitStore {
         let wasDone = data.status(id, day: key) == .done
         data.tap(habitID: id, day: key)
         trackCheck(data.status(id, day: key) == .done && !wasDone ? .check : .uncheck, day: key)
+        // Промежуточные +1 у привычек со счётчиком питомца не радуют: только итоговая отметка.
+        if !wasDone && data.status(id, day: key) == .done { petCheers += 1 }
         commit()
         Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
         notifyChain(after: id, day: day)
     }
 
+    /// Отметки с Apple Watch: часы присылают, каким должно стать состояние привычки.
+    func applyWatchMarks(_ marks: [WatchMark]) {
+        let applied = data.applyWatchMarks(marks)
+        guard !applied.isEmpty else { return }
+        commit()
+        // Итог по каждой привычке и дню: важна последняя применённая отметка.
+        var last: [String: WatchMark] = [:]
+        for mark in applied { last[mark.key] = mark }
+        for mark in last.values { Analytics.shared.action(mark.done ? .checkFromWatch : .uncheckFromWatch) }
+        for mark in last.values where mark.done {
+            Task { await NotificationPlanner.clearDelivered(habitID: mark.habitID, day: mark.day) }
+            if let date = DayKey.date(mark.day) { notifyChain(after: mark.habitID, day: date) }
+        }
+    }
+
     func markMinimum(_ id: UUID, on day: Date) {
         let key = DayKey.make(day)
+        let wasDone = data.status(id, day: key) == .done
         data.markMinimum(habitID: id, day: key)
         trackCheck(.minimum, day: key)
+        if !wasDone && data.status(id, day: key) == .done { petCheers += 1 }
         commit()
         Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
         notifyChain(after: id, day: day)
@@ -448,10 +486,13 @@ final class HabitStore {
         NotificationPlanner.notifyChain(after: id, day: day, data: data)
     }
 
-    func setStatus(_ status: CheckStatus?, for id: UUID, on day: Date) {
+    /// - Parameter byUser: отметку поставил сам пользователь на экране приложения (питомец радуется).
+    func setStatus(_ status: CheckStatus?, for id: UUID, on day: Date, byUser: Bool = false) {
         let key = DayKey.make(day)
+        let wasDone = data.status(id, day: key) == .done
         data.setStatus(status, habitID: id, day: key)
         trackCheck(status == .done ? .check : status == nil ? .clearStatus : .skip, day: key)
+        if byUser && !wasDone && status == .done { petCheers += 1 }
         commit()
         if status != nil {
             Task { await NotificationPlanner.clearDelivered(habitID: id, day: key) }
@@ -510,7 +551,7 @@ final class HabitStore {
     /// Слова дня пройдены: отмечаем привычку выполненной.
     func completeWords(_ habitID: UUID) {
         guard status(habitID, on: Date()) != .done else { return }
-        setStatus(.done, for: habitID, on: Date())
+        setStatus(.done, for: habitID, on: Date(), byUser: true)
     }
 
     // MARK: Настройки

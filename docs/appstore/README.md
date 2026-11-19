@@ -49,6 +49,9 @@
 1. "+" -> **App Groups** -> Description `ZenHab Group`, Identifier `group.com.baturinigor.zenhab`.
 2. "+" -> **App IDs** -> App -> Description `ZenHab`, Bundle ID **Explicit** `com.baturinigor.zenhab`. В Capabilities включи **App Groups**, нажми Configure и выбери группу из пункта 1. In-App Purchase включён по умолчанию.
 3. Ещё один App ID: Description `ZenHab Widget`, Bundle ID `com.baturinigor.zenhab.widget`, тоже **App Groups** с той же группой.
+4. С версии 1.6 есть приложение для Apple Watch, ему нужны ещё два App ID, оба с **App Groups** и той же группой:
+   - Description `ZenHab Watch`, Bundle ID `com.baturinigor.zenhab.watchkitapp`;
+   - Description `ZenHab Watch Widget`, Bundle ID `com.baturinigor.zenhab.watchkitapp.widget`.
 
 Если Apple скажет, что ID занят, возьми другой (например `com.baturinigor.zenhab.app`) и используй его везде дальше.
 
@@ -82,6 +85,7 @@ openssl pkcs12 -export -legacy -inkey dist.key -in distribution.pem -out dist.p1
 
 1. "+" -> Distribution -> **App Store Connect** -> App ID `com.baturinigor.zenhab` -> сертификат из шага 3 -> имя `ZenHab AppStore` -> скачай.
 2. То же для `com.baturinigor.zenhab.widget`, имя `ZenHab Widget AppStore`.
+3. С версии 1.6: то же для `com.baturinigor.zenhab.watchkitapp` (имя `ZenHab Watch AppStore`) и `com.baturinigor.zenhab.watchkitapp.widget` (имя `ZenHab Watch Widget AppStore`).
 
 Профили действуют год, вместе с сертификатом. Если поменяешь capabilities у App ID, профили нужно перевыпустить и обновить в секретах.
 
@@ -106,6 +110,8 @@ openssl pkcs12 -export -legacy -inkey dist.key -in distribution.pem -out dist.p1
 | `DIST_CERT_PASSWORD` | Пароль от p12 |
 | `PROFILE_APP` | `ZenHab_AppStore.mobileprovision` в base64 |
 | `PROFILE_WIDGET` | Профиль виджета в base64 |
+| `PROFILE_WATCH` | Профиль приложения для часов в base64 (с версии 1.6) |
+| `PROFILE_WATCH_WIDGET` | Профиль компликаций для часов в base64 (с версии 1.6) |
 | `ASC_KEY_ID` | Key ID |
 | `ASC_ISSUER_ID` | Issuer ID |
 | `ASC_KEY_P8` | Содержимое `.p8` целиком (открой в блокноте и скопируй) |

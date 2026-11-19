@@ -4,7 +4,7 @@ import UIKit
 
 struct StatsView: View {
     @Environment(HabitStore.self) private var store
-    @State private var showingRecap = false
+    @State private var recapPeriod: Recap.Period?
     @State private var showingMood = false
 
     var body: some View {
@@ -23,7 +23,7 @@ struct StatsView: View {
                         )
                     } else {
                         summary
-                        recapButton
+                        recapButtons
                         moodButton
                         WeekChartCard(days: Stats.lastDays(7, in: store.data))
                         HeatmapCard(data: store.data)
@@ -39,8 +39,8 @@ struct StatsView: View {
             .navigationDestination(for: UUID.self) { id in
                 HabitDetailView(habitID: id)
             }
-            .sheet(isPresented: $showingRecap) {
-                WeeklyRecapView(recap: WeeklyRecap.lastWeek(in: store.data))
+            .sheet(item: $recapPeriod) { period in
+                RecapView(recap: Recap.current(period, in: store.data))
             }
             .sheet(isPresented: $showingMood) {
                 MoodJournalView()
@@ -48,19 +48,58 @@ struct StatsView: View {
         }
     }
 
-    private var recapButton: some View {
-        Button {
-            showingRecap = true
-        } label: {
+    /// Итоги недели, месяца и года карточками, которыми можно поделиться.
+    private var recapButtons: some View {
+        VStack(spacing: 10) {
+            entryButton(
+                title: "Week in review",
+                subtitle: "Last week's results as a card you can share",
+                symbol: "calendar.badge.checkmark",
+                color: .indigo,
+                id: "stats.recap"
+            ) { recapPeriod = .week }
+            // Месяц и год только когда в них есть что показать: в первые дни января
+            // «итоги года» были бы пустыми или из одного-двух дней.
+            if Recap.isAvailable(.month, in: store.data) {
+                entryButton(
+                    title: "Month in review",
+                    subtitle: "Last month's results as a card you can share",
+                    symbol: "calendar",
+                    color: .teal,
+                    id: "stats.recap.month"
+                ) { recapPeriod = .month }
+            }
+            if Recap.isAvailable(.year, in: store.data) {
+                entryButton(
+                    title: "Year in review",
+                    subtitle: "Your year's results as a card you can share",
+                    symbol: "sparkles",
+                    color: .pink,
+                    id: "stats.recap.year"
+                ) { recapPeriod = .year }
+            }
+        }
+    }
+
+    private func entryButton(
+        title: LocalizedStringKey,
+        subtitle: LocalizedStringKey,
+        symbol: String,
+        color: Color,
+        id: String,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
             HStack(spacing: 12) {
-                Image(systemName: "calendar.badge.checkmark")
+                Image(systemName: symbol)
                     .font(.title3)
-                    .foregroundStyle(.indigo)
+                    .foregroundStyle(color)
+                    .frame(width: 28)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Week in review")
+                    Text(title)
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Color.primary)
-                    Text("Last week's results as a card you can share")
+                    Text(subtitle)
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -77,39 +116,17 @@ struct StatsView: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(PressableStyle())
-        .accessibilityIdentifier("stats.recap")
+        .accessibilityIdentifier(id)
     }
 
     private var moodButton: some View {
-        Button {
-            showingMood = true
-        } label: {
-            HStack(spacing: 12) {
-                Image(systemName: "face.smiling")
-                    .font(.title3)
-                    .foregroundStyle(.orange)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Mood journal")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(Color.primary)
-                    Text("Your days and the habits that lift your mood")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-                Spacer(minLength: 0)
-                Image(systemName: "chevron.right")
-                    .font(.footnote.weight(.semibold))
-                    .foregroundStyle(.tertiary)
-            }
-            .padding(14)
-            .background {
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .fill(Color(uiColor: .secondarySystemGroupedBackground))
-            }
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(PressableStyle())
-        .accessibilityIdentifier("stats.mood")
+        entryButton(
+            title: "Mood journal",
+            subtitle: "Your days and the habits that lift your mood",
+            symbol: "face.smiling",
+            color: .orange,
+            id: "stats.mood"
+        ) { showingMood = true }
     }
 
     private var summary: some View {

@@ -1,0 +1,51 @@
+name: App Store provisioning
+
+# Проверяет и готовит в Apple всё для подписи Apple Watch: bundle ID <APP_ID>.watchkitapp и
+# <APP_ID>.watchkitapp.widget, capability App Groups и профили App Store с группой.
+# Секреты не пишет: сборка (appstore.yml) сама берёт или создаёт профили через
+# `asc_provision_watch.py --install`. Повторный запуск безопасен.
+# Подробности: tools/appstore/README.md.
+# Репозиторий публичный: скрипт печатает только ID, статусы, HTTP-коды и коды ошибок Apple.
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Только проверить и показать, что будет сделано"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: appstore-provisioning
+  cancel-in-progress: false
+
+jobs:
+  provision:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install
+        run: pip install -r tools/appstore/requirements.txt
+
+      - name: Check or create watch provisioning
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          DIST_CERT_P12: ${{ secrets.DIST_CERT_P12 }}
+          DIST_CERT_PASSWORD: ${{ secrets.DIST_CERT_PASSWORD }}
+          APP_BUNDLE_ID: ${{ vars.APP_BUNDLE_ID || 'com.baturinigor.zenhab' }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            python3 tools/appstore/asc_provision_watch.py --dry-run
+          else
+            python3 tools/appstore/asc_provision_watch.py --create
+          fi

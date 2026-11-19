@@ -1,0 +1,9 @@
+<html><body style="margin:0;background:#4a5566;font-family:-apple-system,Helvetica,sans-serif;color:#fff">
+<div id="g" style="display:grid;grid-template-columns:130px repeat(4,200px);gap:6px 10px;padding:20px;align-items:center"></div>
+<script src="pets.js"></script>
+<script>
+const keys=(location.hash.slice(1)||'dog,chick,bunny,turtle,fox').split(',');
+const g=document.getElementById('g');
+g.innerHTML='<div></div>'+['Малыш','Подросток','Взрослый','Легенда'].map(t=>`<div style="text-align:center;font-weight:600">${t}</div>`).join('');
+keys.forEach(k=>{g.innerHTML+=`<div style="font-weight:600;font-size:18px">${SP[k].name}</div>`+[0,1,2,3].map(s=>`<div style="text-align:center">${pet(k,s,0)}</div>`).join('')});
+</script></body></html>

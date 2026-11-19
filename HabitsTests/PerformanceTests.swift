@@ -75,7 +75,13 @@ final class PerformanceTests: XCTestCase {
             for habit in data.habits { _ = Stats.weeklyRates(habit, in: data, weeks: 12) }
         }
         time("week in review", limit: 0.6) {
-            _ = WeeklyRecap.lastWeek(in: data)
+            _ = Recap.lastWeek(in: data)
+        }
+        time("month in review", limit: 0.6) {
+            _ = Recap.lastMonth(in: data)
+        }
+        time("year in review", limit: 0.8) {
+            _ = Recap.year(in: data)
         }
     }
 

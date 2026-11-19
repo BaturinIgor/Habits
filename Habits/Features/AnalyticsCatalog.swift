@@ -25,6 +25,8 @@ enum AnalyticsScreen: String, CaseIterable {
     case timer = "Timer"
     case words = "Words"
     case weeklyRecap = "WeeklyRecap"
+    case monthlyRecap = "MonthlyRecap"
+    case yearlyRecap = "YearlyRecap"
     case moodEditor = "MoodEditor"
     case moodJournal = "MoodJournal"
     case paywall = "Paywall"
@@ -49,6 +51,8 @@ enum AnalyticsAction: String, CaseIterable {
     case checkPastDay = "Habit.checkPastDay"
     case checkFromNotification = "Notification.done"
     case skipFromNotification = "Notification.skip"
+    case checkFromWatch = "Watch.check"
+    case uncheckFromWatch = "Watch.uncheck"
     // Привычки
     case edit = "Habit.edit"
     case archive = "Habit.archive"

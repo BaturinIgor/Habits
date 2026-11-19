@@ -1,0 +1,47 @@
+name: App Store submit
+
+# Проверяет версию (сборка обработана, тексты на всех языках, скриншоты) и отправляет её на ревью.
+# Без confirm=yes только проверяет и завершается с ошибкой, ничего не отправляя.
+# App Privacy через API не проверить: перед запуском убедись, что ответы опубликованы.
+# Подробности: tools/appstore/README.md.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Версия, например 1.6"
+        required: true
+        default: "1.6"
+      confirm:
+        description: "Напиши yes, чтобы действительно отправить на ревью"
+        required: true
+        default: "no"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: appstore-submit
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install
+        run: pip install -r tools/appstore/requirements.txt
+
+      - name: Check and submit
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          APP_BUNDLE_ID: ${{ vars.APP_BUNDLE_ID || 'com.baturinigor.zenhab' }}
+          VERSION: ${{ inputs.version }}
+          CONFIRM: ${{ inputs.confirm }}
+        run: python3 tools/appstore/asc_submit.py --version "$VERSION" --confirm "$CONFIRM"

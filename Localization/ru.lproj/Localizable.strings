@@ -5,6 +5,7 @@
 "%@ free, then %@. Cancel anytime." = "%1$@ бесплатно, затем %2$@. Отмена в любой момент.";
 "%@ is already done today." = "%@ уже выполнено сегодня.";
 "%@: the streak broke" = "%@: серия прервалась";
+"%lld XP" = "%lld опыта";
 "%lld min" = "%lld мин";
 "%lld more to %@" = "Ещё %lld до стадии \"%@\"";
 "%lld of %lld" = "%lld из %lld";
@@ -26,7 +27,9 @@
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "Копия привычек и истории сама сохраняется в твой iCloud, когда ты выходишь из приложения. При смене телефона ничего не потеряется.";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "Обратный отсчёт на экране блокировки и в Dynamic Island, а когда время выйдет, привычка отметится сама.";
 "A grown pet brings up to +5 a day" = "Подросший питомец приносит до +5 в день";
+"A solid month. A little more and it'll be perfect." = "Хороший месяц. Ещё чуть-чуть, и будет идеально.";
 "A solid week. A little more and it'll be perfect." = "Хорошая неделя. Ещё чуть-чуть, и будет идеально.";
+"A solid year. Every month makes a difference." = "Хороший год. Каждый месяц был не зря.";
 "A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets." = "Таблица всех отметок с заметками и настроением для Numbers, Excel или Google Таблиц.";
 "A week strong" = "Неделя силы";
 "A whole year" = "Целый год";
@@ -36,6 +39,7 @@
 "Active" = "Активен";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Активный день: хотя бы одна привычка отмечена вовремя. Кормление даёт %lld опыта, и питомец растёт быстрее.";
 "Activity over %lld weeks" = "Активность за %lld недель";
+"Add ZenHab to your watch face or Smart Stack to see how many habits are done today." = "Добавь ZenHab на циферблат или в Смарт-стопку, чтобы видеть, сколько привычек уже выполнено.";
 "Add a habit" = "Добавить привычку";
 "Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap." = "Добавь кнопку привычки в Пункт управления, на экран блокировки или на кнопку действия и отмечай одним касанием.";
 "Add a habit, pick days and a time, and I'll remind you." = "Добавь привычку, выбери дни и время, и я напомню о ней.";
@@ -60,7 +64,9 @@
 "Allow notifications" = "Разрешить уведомления";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "Разреши ZenHab доступ к микрофону и распознаванию речи в Настройках.";
 "Allowed" = "Разрешены";
+"An amazing month. Keep it going!" = "Отличный месяц. Так держать!";
 "An amazing week. Keep it going!" = "Отличная неделя. Так держать!";
+"An amazing year. Keep it going!" = "Отличный год. Так держать!";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "Архивная привычка не показывается на главном экране и не присылает уведомления, но её история сохраняется.";
 "And %lld more" = "И ещё %lld";
 "Anytime" = "В любое время";
@@ -221,7 +227,9 @@
 "Every" = "Раз в";
 "Every %@" = "Раз в %@";
 "Every N days" = "Раз в N дней";
+"Every check-in counts. The new month is a fresh start." = "Каждая отметка важна. Новый месяц — новый старт.";
 "Every check-in counts. The new week is a fresh start." = "Каждая отметка важна. Новая неделя — новый старт.";
+"Every check-in counts. The new year is a fresh start." = "Каждая отметка важна. Новый год — новый старт.";
 "Every day" = "Каждый день";
 "Every month, on day %lld" = "Каждый месяц, %lld-го числа";
 "Every other day" = "Через день";
@@ -268,6 +276,7 @@
 "Freezes this month" = "Заморозки в этом месяце";
 "Full for today" = "На сегодня сыт";
 "Full mood journal" = "Полный дневник настроения";
+"Get Pro on your iPhone to use the timer on Apple Watch." = "Подключи Pro на iPhone, чтобы пользоваться таймером на Apple Watch.";
 "Get a pet" = "Завести питомца";
 "Go to bed on time" = "Лечь спать вовремя";
 "Goal" = "Цель";
@@ -354,6 +363,7 @@
 "Last 30 days" = "За 30 дней";
 "Last 7 days" = "Последние 7 дней";
 "Last backup" = "Последняя копия";
+"Last month's results as a card you can share" = "Итоги прошлого месяца карточкой, которой можно поделиться";
 "Last week's results as a card you can share" = "Итоги прошлой недели карточкой, которой можно поделиться";
 "Last widget update" = "Последнее обновление виджета";
 "Learn %@" = "Учить %@";
@@ -396,6 +406,7 @@
 "Misses are okay" = "Пропуски - это нормально";
 "Misses you a lot" = "Очень скучает";
 "Money saved" = "Сэкономленные деньги";
+"Month in review" = "Итоги месяца";
 "Month of power" = "Месяц силы";
 "Monthly" = "На месяц";
 "Mood" = "Настроение";
@@ -412,7 +423,9 @@
 "Morning exercises" = "Зарядка";
 "Most steady: %@, %lld of %lld" = "Самая стабильная: %@, %lld из %lld";
 "Move to archive" = "Переместить в архив";
+"My month" = "Мой месяц";
 "My week" = "Моя неделя";
+"My year" = "Мой год";
 "N times a week" = "N раз в неделю";
 "Name" = "Название";
 "Never" = "Никогда";
@@ -479,6 +492,7 @@
 "One notification listing the habits not checked off yet." = "Одно уведомление со списком привычек, которые ещё не отмечены.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Засчитываются только отметки, поставленные в тот же день или на следующий. Если снять отметку, искра вернётся обратно.";
 "Only you can open your habits and journal." = "Открыть привычки и дневник сможешь только ты.";
+"Open ZenHab on your iPhone to see your habits here." = "Открой ZenHab на iPhone, и привычки появятся здесь.";
 "Open backup" = "Открыть копию";
 "Open export" = "Открыть экспорт";
 "Open groups" = "Открыть группы";
@@ -505,6 +519,7 @@
 "Perfect week" = "Идеальная неделя";
 "Pet" = "Питомец";
 "Pet gifts" = "Подарки питомца";
+"Pet name" = "Имя питомца";
 "Phoenix" = "Феникс";
 "Pick a template or create your own." = "Выбери шаблон или создай свою.";
 "Plan the day" = "Спланировать день";
@@ -568,10 +583,13 @@
 "Saved: %@" = "Сэкономлено: %@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Скажи: «Отметь привычку в ZenHab», «Добавь привычку в ZenHab» или «Что осталось в ZenHab».";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Скажи, например: «Таблетки собаке раз в месяц 15 числа в 9 утра» или «Читать через день вечером».";
+"Scan to get ZenHab" = "Наведи камеру, чтобы скачать ZenHab";
 "Schedule" = "Расписание";
 "Scheduled notifications" = "Запланировано уведомлений";
+"See how many habits are done today." = "Сколько привычек выполнено сегодня.";
 "See how much money you save by quitting a habit." = "Сколько денег ты экономишь, бросив привычку.";
 "See how much you've saved with Pro" = "Сколько сэкономлено, покажет Pro";
+"See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "Привычки на сегодня теперь на запястье, отмечай их одним касанием. Всё синхронизируется с iPhone. Если ZenHab не появился на часах, установи его в приложении Watch на iPhone.";
 "See which habits make your days better" = "Узнай, какие привычки делают дни лучше";
 "Send" = "Отправить";
 "Send by email" = "Отправить письмом";
@@ -613,6 +631,7 @@
 "Start free trial" = "Попробовать бесплатно";
 "Start over" = "Начать заново";
 "Start the count again?" = "Начать счёт заново?";
+"Start timer" = "Запустить таймер";
 "Statistics" = "Статистика";
 "Statistics will appear once you start checking off habits." = "Статистика появится, когда ты начнёшь отмечать привычки.";
 "Status" = "Статус";
@@ -673,11 +692,13 @@
 "Time's up. Well done!" = "Время вышло. Молодец!";
 "Timer" = "Таймер";
 "Timer on the Lock Screen" = "Таймер на экране блокировки";
+"Timer on your wrist" = "Таймер на запястье";
 "Today" = "Сегодня";
 "Today is a good day." = "Сегодня хороший день.";
 "Today screen" = "Главный экран";
 "Today's entry" = "Запись за сегодня";
 "Today's habits" = "Привычки на сегодня";
+"Today's progress" = "Прогресс дня";
 "Today's progress and quick check-off right from the Home Screen." = "Прогресс дня и отметка привычек прямо с экрана Домой.";
 "Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "Прогресс дня и отметка прямо с экрана «Домой». Зажми виджет, чтобы выбрать группу.";
 "Tomorrow" = "Завтра";
@@ -686,6 +707,7 @@
 "Total, days" = "Всего, дней";
 "Track expenses" = "Записать расходы";
 "Track habits, get gentle reminders and watch your streaks grow." = "Отмечай привычки, получай мягкие напоминания и смотри, как растут серии.";
+"Track your habits with ZenHab" = "Отслеживай привычки в ZenHab";
 "Try again" = "Попробовать ещё раз";
 "Try it" = "Попробовать";
 "Turn on the lock" = "Включить блокировку";
@@ -716,6 +738,7 @@
 "Walk" = "Прогулка";
 "Walk 10,000 steps" = "Пройти 10 000 шагов";
 "Warming up" = "Разминка";
+"Watch face complications" = "Компликации на циферблате";
 "Water, liters" = "Вода, литры";
 "Week" = "Неделя";
 "Week in review" = "Итоги недели";
@@ -740,6 +763,7 @@
 "With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets." = "С Pro можно выгрузить все отметки с заметками и настроением таблицей для Numbers, Excel или Google Таблиц.";
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "С Pro у привычки может быть длительность. Обратный отсчёт идёт на экране блокировки и в Dynamic Island, а когда время выйдет, привычка отметится.";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "С Pro привычку можно связать с шагами, сном, водой, тренировками или минутами осознанности. Она отметится сама, когда ты достигнешь цели.";
+"With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off." = "С Pro таймер привычки можно запустить на Apple Watch. Когда время выйдет, часы коснутся запястья и отметят привычку.";
 "Without it since" = "Без неё с";
 "Words" = "Слова";
 "Words for today are done" = "Слова на сегодня пройдены";
@@ -750,6 +774,7 @@
 "Write 50 notes" = "Напиши 50 заметок";
 "Write down 3 good things" = "Записать 3 хороших события";
 "Write to the developer" = "Написать разработчику";
+"Year in review" = "Итоги года";
 "Yearly" = "На год";
 "Yesterday" = "Вчера";
 "Yoga" = "Йога";
@@ -759,6 +784,7 @@
 "Your days and the habits that lift your mood" = "Твои дни и привычки, которые поднимают настроение";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Привычки и история сами сохраняются в твой iCloud. На новом iPhone ZenHab предложит всё вернуть.";
 "Your message has been sent." = "Сообщение отправлено.";
+"Your month in review" = "Итоги твоего месяца";
 "Your own emoji from the keyboard" = "Свой эмодзи с клавиатуры";
 "Your own name, icon and schedule" = "Своё название, иконка и расписание";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Питомец растёт с каждой отмеченной привычкой и грустит, если ты пропадаешь на несколько дней.";
@@ -766,7 +792,10 @@
 "Your photo" = "Своё фото";
 "Your week in review" = "Итоги твоей недели";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "Вся история настроения, график за месяц и привычки, которые его поднимают.";
+"Your year in review" = "Итоги твоего года";
+"Your year's results as a card you can share" = "Итоги года карточкой, которой можно поделиться";
 "ZenHab is locked" = "ZenHab заблокирован";
+"ZenHab on Apple Watch" = "ZenHab на Apple Watch";
 "a month" = "месяц";
 "a week" = "неделя";
 "a year" = "год";
