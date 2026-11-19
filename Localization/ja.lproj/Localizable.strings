@@ -567,6 +567,7 @@
 "Saved: %@" = "節約：%@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "「ZenHabで習慣をチェック」「ZenHabで習慣を追加」「ZenHabで残りは」と話しかけてください。";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "習慣の名前を話してください。例：「水を飲む」";
+"Scan to get ZenHab" = "スキャンしてZenHabを入手";
 "Schedule" = "スケジュール";
 "Scheduled notifications" = "予定された通知";
 "See how much money you save by quitting a habit." = "習慣をやめて節約できたお金がわかります。";
@@ -684,6 +685,7 @@
 "Total, days" = "合計（日）";
 "Track expenses" = "支出を記録する";
 "Track habits, get gentle reminders and watch your streaks grow." = "習慣を記録し、やさしい通知を受け取り、連続記録を伸ばしましょう。";
+"Track your habits with ZenHab" = "ZenHabで習慣を記録しよう";
 "Try again" = "再試行";
 "Try it" = "試してみる";
 "Turn on the lock" = "ロックをオンにする";

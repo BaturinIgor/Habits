@@ -567,6 +567,7 @@
 "Saved: %@" = "Gespart: %@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Sag „Hake eine Gewohnheit in ZenHab ab“, „Füge eine Gewohnheit in ZenHab hinzu“ oder „Was ist offen in ZenHab“.";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Sag den Namen der Gewohnheit, zum Beispiel „Wasser trinken“.";
+"Scan to get ZenHab" = "Scannen, um ZenHab zu laden";
 "Schedule" = "Zeitplan";
 "Scheduled notifications" = "Geplante Mitteilungen";
 "See how much money you save by quitting a habit." = "Sieh, wie viel Geld du sparst, wenn du eine Gewohnheit aufgibst.";
@@ -684,6 +685,7 @@
 "Total, days" = "Gesamt, Tage";
 "Track expenses" = "Ausgaben notieren";
 "Track habits, get gentle reminders and watch your streaks grow." = "Verfolge Gewohnheiten, erhalte sanfte Erinnerungen und sieh deine Serien wachsen.";
+"Track your habits with ZenHab" = "Verfolge deine Gewohnheiten mit ZenHab";
 "Try again" = "Erneut versuchen";
 "Try it" = "Ausprobieren";
 "Turn on the lock" = "Sperre einschalten";

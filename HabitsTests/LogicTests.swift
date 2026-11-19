@@ -1,3 +1,5 @@
+import CoreImage
+import SwiftUI
 import XCTest
 @testable import Habits
 
@@ -74,6 +76,86 @@ final class LogicTests: XCTestCase {
         XCTAssertFalse(recap.hasData)
         XCTAssertEqual(recap.percent, 0)
         XCTAssertNil(recap.top)
+    }
+
+    // MARK: Ссылка на App Store при шеринге (1.6)
+
+    func testShareLinkPointsToAppStore() {
+        // Без provider token Apple метки не считает, поэтому их нет.
+        let plain = AppInfo.appStoreURL(campaign: .weekly, providerToken: "")
+        XCTAssertEqual(plain.host, "apps.apple.com")
+        XCTAssertEqual(plain.path, "/app/apple-store/id\(AppInfo.appStoreID)")
+        XCTAssertNil(plain.query)
+
+        let tagged = AppInfo.appStoreURL(campaign: .month, providerToken: "123456")
+        XCTAssertEqual(tagged.path, "/app/apple-store/id\(AppInfo.appStoreID)")
+        let items = URLComponents(url: tagged, resolvingAgainstBaseURL: false)?.queryItems ?? []
+        XCTAssertEqual(Set(items), [
+            URLQueryItem(name: "pt", value: "123456"),
+            URLQueryItem(name: "ct", value: "share_month"),
+            URLQueryItem(name: "mt", value: "8"),
+        ])
+
+        let url = AppInfo.appStoreURL(campaign: .weekly)
+        XCTAssertTrue(ShareSheet.message(campaign: .weekly).hasSuffix(" " + url.absoluteString))
+
+        // Каждая карточка — своя метка `ct`: не длиннее 40 символов (лимит Apple), только [a-z0-9_].
+        let allowed = Set("abcdefghijklmnopqrstuvwxyz0123456789_")
+        for campaign in ShareCampaign.allCases {
+            let link = AppInfo.appStoreURL(campaign: campaign, providerToken: "123456")
+            let ct = URLComponents(url: link, resolvingAgainstBaseURL: false)?.queryItems?.first { $0.name == "ct" }?.value
+            XCTAssertEqual(ct, campaign.rawValue)
+            XCTAssertLessThanOrEqual(campaign.rawValue.count, 40)
+            XCTAssertTrue(Set(campaign.rawValue).isSubset(of: allowed), campaign.rawValue)
+        }
+        XCTAssertEqual(Set(ShareCampaign.allCases.map(\.rawValue)).count, ShareCampaign.allCases.count)
+    }
+
+    /// Длинная ссылка с метками даёт читаемый QR-код.
+    @MainActor
+    func testTaggedLinkQRCodeIsReadable() throws {
+        let link = AppInfo.appStoreURL(campaign: .achievement, providerToken: "118727439").absoluteString
+        let renderer = ImageRenderer(content:
+            qrBlock(link)
+                .padding(20)
+                .background(LinearGradient(colors: [.indigo, .purple], startPoint: .top, endPoint: .bottom))
+        )
+        renderer.scale = 3
+        let image = try XCTUnwrap(renderer.cgImage)
+        let detector = try XCTUnwrap(CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]))
+        let codes = detector.features(in: CIImage(cgImage: image)).compactMap { ($0 as? CIQRCodeFeature)?.messageString }
+        XCTAssertEqual(codes, [link])
+    }
+
+    @MainActor
+    private func qrBlock(_ link: String) -> some View {
+        let qr = QRCode(link)!
+        let module = qr.modulePoints(fitting: 88)
+        return Image(uiImage: qr.image)
+            .interpolation(.none)
+            .resizable()
+            .frame(width: module * CGFloat(qr.modules), height: module * CGFloat(qr.modules))
+            .padding(module * 3)
+            .background(Color.white)
+    }
+
+    /// QR-код на картинке «Итогов недели» читается и ведёт в App Store.
+    @MainActor
+    func testWeeklyRecapShareImageHasReadableQRCode() throws {
+        var data = AppData()
+        data.habits = [dailyHabit(startOffset: -40)]
+        let renderer = ImageRenderer(content:
+            WeeklyRecapCard(recap: WeeklyRecap.lastWeek(in: data), forSharing: true)
+                .frame(width: 360)
+                .padding(20)
+                .background(Color.white)
+                .environment(\.colorScheme, .light)
+        )
+        renderer.scale = 3
+        let image = try XCTUnwrap(renderer.cgImage)
+        let detector = try XCTUnwrap(CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]))
+        let codes = detector.features(in: CIImage(cgImage: image)).compactMap { ($0 as? CIQRCodeFeature)?.messageString }
+        XCTAssertEqual(codes, [AppInfo.appStoreURL(campaign: .weekly).absoluteString])
     }
 
     // MARK: Бросаю

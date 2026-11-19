@@ -567,6 +567,7 @@
 "Saved: %@" = "Biriken: %@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "“ZenHab içinde alışkanlık işaretle”, “ZenHab içine alışkanlık ekle” ya da “ZenHab'da ne kaldı” deyin.";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Alışkanlığın adını söyleyin, örneğin “Su içmek”.";
+"Scan to get ZenHab" = "ZenHab'i indirmek için tara";
 "Schedule" = "Plan";
 "Scheduled notifications" = "Planlanan bildirimler";
 "See how much money you save by quitting a habit." = "Bir alışkanlığı bırakarak ne kadar para biriktirdiğini gör.";
@@ -684,6 +685,7 @@
 "Total, days" = "Toplam, gün";
 "Track expenses" = "Harcamaları kaydet";
 "Track habits, get gentle reminders and watch your streaks grow." = "Alışkanlıklarını takip et, nazik hatırlatmalar al ve serilerinin büyüdüğünü izle.";
+"Track your habits with ZenHab" = "Alışkanlıklarını ZenHab ile takip et";
 "Try again" = "Tekrar dene";
 "Try it" = "Dene";
 "Turn on the lock" = "Kilidi etkinleştir";

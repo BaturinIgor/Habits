@@ -781,3 +781,5 @@ Your days and the habits that lift your mood||Seus dias e os hábitos que melhor
 Your whole mood history, a monthly chart and which habits lift your mood.||Todo o histórico de humor, um gráfico mensal e quais hábitos o melhoram.
 ZenHab is locked||O ZenHab está bloqueado
 passcode||código
+Scan to get ZenHab||Escaneie para baixar o ZenHab
+Track your habits with ZenHab||Acompanhe seus hábitos com o ZenHab
