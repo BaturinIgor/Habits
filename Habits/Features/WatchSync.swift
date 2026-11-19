@@ -60,13 +60,8 @@ final class WatchSync: NSObject {
         let store = HabitStore.shared
         // Приложение могло быть не запущено: берём свежие данные с диска.
         store.reloadFromDisk()
-        // Отметки из очереди могут прийти не по порядку: применяем от старых к новым.
-        for mark in marks.sorted(by: { $0.at < $1.at }) {
-            store.applyWatchMark(mark)
-            if acks[mark.key].map({ $0 < mark.at }) ?? true {
-                acks[mark.key] = mark.at
-            }
-        }
+        store.applyWatchMarks(marks)
+        acks = WatchAcks.recording(marks, into: acks, now: Date())
         saveAcks()
         // Даже если ничего не поменялось, часы должны получить подтверждение.
         push(store.data, force: true)
@@ -127,10 +122,7 @@ extension WatchSync {
     /// Подтверждения за последние дни: часы ждут их и для дней, которых уже нет в снимке
     /// (например, таймер закончился после полуночи). Более старые не нужны.
     fileprivate func currentAcks(for snapshot: WatchSnapshot) -> [String: Date] {
-        let oldest = WatchDayKey.ackHorizon(before: snapshot.generatedAt)
-        let fresh = acks.filter { key, _ in
-            String(key.split(separator: "|").last ?? "") >= oldest
-        }
+        let fresh = WatchAcks.pruned(acks, at: snapshot.generatedAt)
         if fresh.count != acks.count {
             acks = fresh
             saveAcks()
@@ -147,6 +139,30 @@ extension WatchSync {
     fileprivate func saveAcks() {
         guard let raw = try? JSONEncoder().encode(acks) else { return }
         UserDefaults.standard.set(raw, forKey: Self.acksKey)
+    }
+}
+
+/// Подтверждения отметок с часов: ключ отметки и время самой свежей полученной.
+enum WatchAcks {
+    /// Время подтверждения не позже текущего: если часы спешат, подтверждение «из будущего»
+    /// закрыло бы на часах и более позднюю отметку, которую iPhone ещё не получил.
+    static func recording(_ marks: [WatchMark], into acks: [String: Date], now: Date) -> [String: Date] {
+        var result = acks
+        for mark in marks {
+            let at = min(mark.at, now)
+            if result[mark.key].map({ $0 < at }) ?? true {
+                result[mark.key] = at
+            }
+        }
+        return result
+    }
+
+    /// Подтверждения за последние дни: часы ждут их и для дней, которых уже нет в снимке.
+    static func pruned(_ acks: [String: Date], at date: Date) -> [String: Date] {
+        let oldest = WatchDayKey.ackHorizon(before: date)
+        return acks.filter { key, _ in
+            String(key.split(separator: "|").last ?? "") >= oldest
+        }
     }
 }
 
@@ -204,11 +220,18 @@ extension WatchSnapshot {
 // MARK: - Отметка с часов
 
 extension AppData {
+    /// Пачка отметок с часов. Из очереди они могут прийти не по порядку,
+    /// поэтому применяются от старых к новым. Возвращает те, что что-то поменяли.
+    mutating func applyWatchMarks(_ marks: [WatchMark]) -> [WatchMark] {
+        marks.sorted { $0.at < $1.at }.filter { applyWatchMark($0) }
+    }
+
     /// Ставит привычке состояние, выбранное на часах.
     /// Возвращает false, если менять нечего или на iPhone отметили позже.
     /// Время отметки берётся с часов: так несколько отметок, пришедших пачкой после работы
     /// без связи, применяются по порядку и побеждает последняя, а не первая доставленная.
     mutating func applyWatchMark(_ mark: WatchMark) -> Bool {
+        guard habits.contains(where: { $0.id == mark.habitID }) else { return false }
         let k = Self.key(mark.habitID, mark.day)
         var entry = checkIns[k] ?? CheckIn(status: nil, note: nil, updatedAt: .distantPast)
         if entry.updatedAt > mark.at { return false }

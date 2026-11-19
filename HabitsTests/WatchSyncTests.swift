@@ -235,6 +235,62 @@ final class WatchSyncTests: XCTestCase {
         state.receive(snapshot([], day: todayKey, at: Date().addingTimeInterval(1), acks: [mark.key: mark.at]))
         XCTAssertTrue(state.pending.isEmpty)
     }
+
+    // MARK: Пачка отметок и подтверждения
+
+    func testBatchInReverseOrderAppliesOldestFirst() {
+        var data = AppData()
+        let h = habit()
+        data.habits = [h]
+        let now = Date()
+        let t1 = WatchMark(habitID: h.id, day: todayKey, done: true, count: 1, at: now.addingTimeInterval(-120))
+        let t2 = WatchMark(habitID: h.id, day: todayKey, done: false, count: 0, at: now.addingTimeInterval(-60))
+        // Пришли в обратном порядке: сначала снятие, потом отметка.
+        let applied = data.applyWatchMarks([t2, t1])
+        XCTAssertEqual(applied, [t1, t2])
+        XCTAssertNil(data.status(h.id, day: todayKey))
+    }
+
+    func testBatchSkipsUnknownHabit() {
+        var data = AppData()
+        let mark = WatchMark(habitID: UUID(), day: todayKey, done: true, count: 1, at: Date())
+        XCTAssertTrue(data.applyWatchMarks([mark]).isEmpty)
+        XCTAssertTrue(data.checkIns.isEmpty)
+    }
+
+    func testAckFromFastWatchClockIsClamped() {
+        let now = Date()
+        let id = UUID()
+        // Часы спешат на час: отметка «из будущего».
+        let early = WatchMark(habitID: id, day: todayKey, done: true, count: 1, at: now.addingTimeInterval(3600))
+        let acks = WatchAcks.recording([early], into: [:], now: now)
+        XCTAssertEqual(acks[early.key], now)
+        // Более поздняя отметка, которую iPhone ещё не получил, на часах не закрывается.
+        let later = WatchMark(habitID: id, day: todayKey, done: false, count: 0, at: now.addingTimeInterval(1800))
+        var state = WatchState()
+        state.pending[later.key] = later
+        state.receive(snapshot([watchHabit(id: id, count: 1, done: true)], day: todayKey, acks: acks))
+        XCTAssertNotNil(state.pending[later.key])
+        // Более старое подтверждение не затирает свежее.
+        let older = WatchMark(habitID: id, day: todayKey, done: true, count: 1, at: now.addingTimeInterval(-60))
+        XCTAssertEqual(WatchAcks.recording([older], into: acks, now: now)[early.key], now)
+    }
+
+    func testOldAcksArePruned() {
+        let now = Date()
+        let recent = UUID().uuidString + "|" + DayKey.make(calendar.date(byAdding: .day, value: -1, to: now)!)
+        let old = UUID().uuidString + "|" + DayKey.make(calendar.date(byAdding: .day, value: -5, to: now)!)
+        let pruned = WatchAcks.pruned([recent: now, old: now], at: now)
+        XCTAssertNotNil(pruned[recent])
+        XCTAssertNil(pruned[old])
+    }
+
+    func testTimerRunWithoutTargetDecodes() throws {
+        let json = #"{"habitID":"6F9619FF-8B86-D011-B42D-00C04FC964FF","day":"2026-11-20","start":0,"end":600}"#
+        let run = try JSONDecoder().decode(WatchTimerRun.self, from: Data(json.utf8))
+        XCTAssertNil(run.target)
+        XCTAssertEqual(run.completionMark(now: Date()).count, 1)
+    }
 }
 
 private extension WatchMark {

@@ -402,11 +402,15 @@ final class HabitStore {
         notifyChain(after: id, day: day)
     }
 
-    /// Отметка с Apple Watch: часы присылают, каким должно стать состояние привычки.
-    func applyWatchMark(_ mark: WatchMark) {
-        guard habit(mark.habitID) != nil, data.applyWatchMark(mark) else { return }
+    /// Отметки с Apple Watch: часы присылают, каким должно стать состояние привычки.
+    func applyWatchMarks(_ marks: [WatchMark]) {
+        let applied = data.applyWatchMarks(marks)
+        guard !applied.isEmpty else { return }
         commit()
-        if mark.done {
+        // Итог по каждой привычке и дню: важна последняя применённая отметка.
+        var last: [String: WatchMark] = [:]
+        for mark in applied { last[mark.key] = mark }
+        for mark in last.values where mark.done {
             Task { await NotificationPlanner.clearDelivered(habitID: mark.habitID, day: mark.day) }
             if let date = DayKey.date(mark.day) { notifyChain(after: mark.habitID, day: date) }
         }
