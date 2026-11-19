@@ -810,3 +810,5 @@ Timer on your wrist||Timer al polso
 With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off.||Con Pro avvii il timer di un'abitudine su Apple Watch. Allo scadere, l'orologio ti avvisa con un tocco al polso e spunta l'abitudine.
 Share anonymous statistics||Condividi statistiche anonime
 Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood.||Aiuta a migliorare ZenHab: solo quali schermate e pulsanti vengono usati. Mai le tue abitudini, note o umore.
+%lld XP||%lld XP
+Pet name||Nome del cucciolo

@@ -5,6 +5,7 @@
 "%@ free, then %@. Cancel anytime." = "免费 %1$@，之后 %2$@。可随时取消。";
 "%@ is already done today." = "%@ 今天已完成。";
 "%@: the streak broke" = "%@：连续记录中断了";
+"%lld XP" = "%lld 经验";
 "%lld min" = "%lld 分钟";
 "%lld more to %@" = "再 %lld 点到达%@";
 "%lld of %lld" = "%lld / %lld";
@@ -518,6 +519,7 @@
 "Perfect week" = "完美的一周";
 "Pet" = "宠物";
 "Pet gifts" = "宠物礼物";
+"Pet name" = "宠物名字";
 "Phoenix" = "凤凰";
 "Pick a template or create your own." = "选择模板或自己创建。";
 "Plan the day" = "规划一天";

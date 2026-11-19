@@ -5,6 +5,7 @@
 "%@ free, then %@. Cancel anytime." = "%1$@ ücretsiz, sonra %2$@. İstediğin zaman iptal et.";
 "%@ is already done today." = "%@ bugün zaten yapıldı.";
 "%@: the streak broke" = "%@: seri bozuldu";
+"%lld XP" = "%lld XP";
 "%lld min" = "%lld dk";
 "%lld more to %@" = "\"%@\" için %lld kaldı";
 "%lld of %lld" = "%lld/%lld";
@@ -518,6 +519,7 @@
 "Perfect week" = "Kusursuz hafta";
 "Pet" = "Evcil hayvan";
 "Pet gifts" = "Evcil hayvan hediyeleri";
+"Pet name" = "Evcil hayvanın adı";
 "Phoenix" = "Anka kuşu";
 "Pick a template or create your own." = "Bir şablon seç ya da kendininkini oluştur.";
 "Plan the day" = "Günü planla";

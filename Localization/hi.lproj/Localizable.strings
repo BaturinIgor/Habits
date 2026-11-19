@@ -5,6 +5,7 @@
 "%@ free, then %@. Cancel anytime." = "%1$@ मुफ़्त, फिर %2$@। कभी भी रद्द करें।";
 "%@ is already done today." = "%@ आज पहले ही पूरा हो चुका है।";
 "%@: the streak broke" = "%@: लगातार गिनती टूटी";
+"%lld XP" = "%lld XP";
 "%lld min" = "%lld मिनट";
 "%lld more to %@" = "%@ तक %lld और";
 "%lld of %lld" = "%2$lld में से %1$lld";
@@ -518,6 +519,7 @@
 "Perfect week" = "परफ़ेक्ट हफ़्ता";
 "Pet" = "पालतू";
 "Pet gifts" = "पालतू के उपहार";
+"Pet name" = "पालतू का नाम";
 "Phoenix" = "फ़ीनिक्स";
 "Pick a template or create your own." = "टेम्पलेट चुनें या अपनी बनाएँ।";
 "Plan the day" = "दिन की योजना बनाएँ";

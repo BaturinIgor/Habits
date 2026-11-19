@@ -810,3 +810,5 @@ Timer on your wrist||Timer di pergelangan tangan
 With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off.||Dengan Pro, mulai timer kebiasaan di Apple Watch. Saat waktu habis, jam akan mengetuk pergelangan tanganmu dan mencentang kebiasaan.
 Share anonymous statistics||Bagikan statistik anonim
 Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood.||Membantu meningkatkan ZenHab: hanya layar dan tombol yang dipakai. Tidak pernah kebiasaan, catatan, atau suasana hatimu.
+%lld XP||%lld XP
+Pet name||Nama hewan peliharaan

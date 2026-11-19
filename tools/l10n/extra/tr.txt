@@ -810,3 +810,5 @@ Timer on your wrist||Bileğinde zamanlayıcı
 With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off.||Pro ile Apple Watch'ta alışkanlık zamanlayıcısını başlat. Süre dolunca saat bileğine dokunur ve alışkanlığı işaretler.
 Share anonymous statistics||Anonim istatistik paylaş
 Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood.||ZenHab'ı geliştirmeye yardımcı olur: yalnızca hangi ekranların ve düğmelerin kullanıldığı. Alışkanlıkların, notların veya ruh halin asla.
+%lld XP||%lld XP
+Pet name||Evcil hayvanın adı

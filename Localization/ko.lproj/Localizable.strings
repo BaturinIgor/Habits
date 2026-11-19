@@ -5,6 +5,7 @@
 "%@ free, then %@. Cancel anytime." = "%1$@ 무료, 이후 %2$@. 언제든 해지할 수 있어요.";
 "%@ is already done today." = "%@ 오늘 이미 완료했어요.";
 "%@: the streak broke" = "%@: 연속 기록이 끊겼어요";
+"%lld XP" = "경험치 %lld";
 "%lld min" = "%lld분";
 "%lld more to %@" = "%2$@까지 %1$lld 남음";
 "%lld of %lld" = "%lld / %lld";
@@ -518,6 +519,7 @@
 "Perfect week" = "완벽한 한 주";
 "Pet" = "펫";
 "Pet gifts" = "펫의 선물";
+"Pet name" = "펫 이름";
 "Phoenix" = "불사조";
 "Pick a template or create your own." = "템플릿을 고르거나 직접 만드세요.";
 "Plan the day" = "하루 계획하기";

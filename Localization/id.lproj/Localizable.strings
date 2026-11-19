@@ -5,6 +5,7 @@
 "%@ free, then %@. Cancel anytime." = "Gratis %1$@, lalu %2$@. Batalkan kapan saja.";
 "%@ is already done today." = "%@ sudah selesai hari ini.";
 "%@: the streak broke" = "%@: rentetan terputus";
+"%lld XP" = "%lld XP";
 "%lld min" = "%lld mnt";
 "%lld more to %@" = "%lld lagi menuju \"%@\"";
 "%lld of %lld" = "%lld dari %lld";
@@ -518,6 +519,7 @@
 "Perfect week" = "Minggu sempurna";
 "Pet" = "Hewan peliharaan";
 "Pet gifts" = "Hadiah hewan";
+"Pet name" = "Nama hewan peliharaan";
 "Phoenix" = "Phoenix";
 "Pick a template or create your own." = "Pilih templat atau buat sendiri.";
 "Plan the day" = "Rencanakan hari";

@@ -5,6 +5,7 @@
 "%@ free, then %@. Cancel anytime." = "%1$@ grátis, depois %2$@. Cancele quando quiser.";
 "%@ is already done today." = "%@ já foi feito hoje.";
 "%@: the streak broke" = "%@: sequência interrompida";
+"%lld XP" = "%lld XP";
 "%lld min" = "%lld min";
 "%lld more to %@" = "Faltam %lld para \"%@\"";
 "%lld of %lld" = "%lld de %lld";
@@ -518,6 +519,7 @@
 "Perfect week" = "Semana perfeita";
 "Pet" = "Bichinho";
 "Pet gifts" = "Presentes do bichinho";
+"Pet name" = "Nome do bichinho";
 "Phoenix" = "Fênix";
 "Pick a template or create your own." = "Escolha um modelo ou crie o seu.";
 "Plan the day" = "Planejar o dia";
