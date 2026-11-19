@@ -27,9 +27,12 @@ enum UITestSupport {
 
         data.settings.onboardingDone = true
         data.settings.gestureHintShown = true
-        data.settings.proUnlocked = true
+        // Бесплатная версия для макетов состояний «нет доступа».
+        data.settings.proUnlocked = !TestMode.has("-uitest-free")
         data.settings.whatsNewSeen = TestMode.has("-uitest-whatsnew") ? "" : WhatsNewView.version
         data.settings.seenAchievements = Achievements.all.map(\.id)
+        // Пустое приложение: макеты пустых состояний.
+        if TestMode.has("-uitest-empty") { return data }
 
         func habit(_ n: Int, _ en: String, _ ruName: String, icon: String, color: Int,
                    schedule: HabitSchedule = HabitSchedule(startDate: start),
@@ -83,6 +86,9 @@ enum UITestSupport {
         }
         // Сегодня уже кое-что сделано.
         data.setStatus(.done, habitID: steps.id, day: DayKey.make(today))
+        if TestMode.has("-design") {
+            DesignGallery.enrich(&data, day: day, start: start, ru: ru)
+        }
         return data
     }
 }
