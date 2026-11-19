@@ -229,6 +229,15 @@ final class LogicTests: XCTestCase {
         let long = try render("Медитацияутромпередзавтраком", width: 80)
         XCTAssertGreaterThan(long.height, line * 1.5)
         XCTAssertLessThanOrEqual(long.width, 80)
+        // Сложные графемы (семья-эмодзи, деванагари) в узкой колонке: не шире колонки, несколько строк, без падения.
+        for word in [String(repeating: "👨‍👩‍👧‍👦", count: 12), String(repeating: "नमस्ते", count: 8)] {
+            let size = try render(word, width: 80)
+            XCTAssertLessThanOrEqual(size.width, 80, word)
+            XCTAssertGreaterThan(size.height, line * 1.5, word)
+            let phrase = try render(word + " " + word, width: 80)
+            XCTAssertLessThanOrEqual(phrase.width, 80, word)
+            XCTAssertGreaterThan(phrase.height, size.height, word)
+        }
     }
 
     /// Процент и «привычек выполнено» в одной строке на самом узком iPhone (SE, 375 pt): процент 64 pt

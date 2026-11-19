@@ -64,13 +64,13 @@ struct ShareCardFooter: View {
     /// Призыв под названием. Параметр нужен тестам, чтобы проверить подпись на всех языках.
     var scanText = String(localized: "Scan to get ZenHab")
 
-    /// Ширина колонки с текстом на картинке (карточка 360 pt минус поля и QR-код).
     /// Сторона QR-кода, в которую он вписывается, и отступ между текстом и кодом.
     static let qrFitting: CGFloat = 88
     static let spacing: CGFloat = 12
     /// Белое поле вокруг кода: 3 модуля (ещё 1 уже есть в картинке).
     static let quietModules: CGFloat = 3
 
+    /// Ширина колонки с текстом на картинке (карточка 360 pt минус поля и QR-код).
     static func textColumnWidth(cardWidth: CGFloat = 360, campaign: ShareCampaign) -> CGFloat {
         let qrSide: CGFloat
         if let qr = QRCode(AppInfo.appStoreURL(campaign: campaign).absoluteString) {
