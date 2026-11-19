@@ -569,7 +569,7 @@ struct TodayView: View {
         .swipeActions(edge: .leading, allowsFullSwipe: true) {
             if canToggle {
                 Button {
-                    withAnimation { store.setStatus(isDone ? nil : .done, for: habit.id, on: selectedDay) }
+                    withAnimation { store.setStatus(isDone ? nil : .done, for: habit.id, on: selectedDay, byUser: true) }
                 } label: {
                     Label(isDone ? String(localized: "Uncheck") : String(localized: "Mark as done"),
                           systemImage: isDone ? "arrow.uturn.backward" : "checkmark")
