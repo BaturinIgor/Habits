@@ -7,7 +7,7 @@ ZenHab: Gewohnheitstracker
 Routinen, Serien und Ziele
 
 ## Promotional text
-Gewohnheiten, die bleiben, jetzt auch auf der Apple Watch: am Handgelenk abhaken, Monats- und Jahresrückblick ansehen, mit einem Haustier, das mit dir wächst. Ohne Konto.
+Gewohnheiten, die bleiben, jetzt auch auf der Apple Watch: am Handgelenk abhaken, Monats- und Jahresrückblick ansehen, dein Haustier wächst mit. Ohne Konto.
 
 ## Keywords
 gewohnheiten,routine,planer,täglich,ziele,erinnerung,serie,widget,produktivität,wasser,tagebuch
@@ -36,7 +36,7 @@ FORTSCHRITT UND MOTIVATION
 • Apple Watch: heutige Gewohnheiten am Handgelenk abhaken, Komplikationen fürs Zifferblatt, Timer mit Pro
 
 PRIVAT
-• Deine Gewohnheiten bleiben auf deinem iPhone. Kein Konto, keine Werbung, kein Tracking
+• Deine Gewohnheiten bleiben auf deinem iPhone und in deiner iCloud. Kein Konto, keine Werbung, kein Tracking
 • Anonyme Nutzungsstatistik, in den Einstellungen abschaltbar
 • Backup exportieren und importieren
 
@@ -54,6 +54,6 @@ Datenschutz: https://baturinigor.github.io/Habits/privacy.html
 • Gewohnheits-Timer auf der Apple Watch (Pro): Ist die Zeit um, tippt dir die Uhr ans Handgelenk und hakt die Gewohnheit ab.
 • Monatsrückblick und Jahresrückblick: in der Statistik oder zum Monatsanfang auf „Heute“, als Bild zum Teilen.
 • Geteilte Bilder haben jetzt einen QR-Code, und mit dem Bild geht ein Link zu ZenHab im App Store mit.
-• Alle 11 Haustiere sind neu gezeichnet: weicher, plastischer Look, 4 Wachstumsstufen, Gefühle und sanfte Animationen. Sie atmen, blinzeln, wedeln mit dem Schwanz und hüpfen, wenn du eine Gewohnheit abhakst.
-• Anonyme Nutzungsstatistiken zeigen uns, was wir verbessern können. Nichts, was du eintippst, wird gesendet, und du kannst sie in den Einstellungen ausschalten.
+• Alle 11 Haustiere sind neu gezeichnet: weicher, plastischer Look, 4 Wachstumsstufen, Gefühle und sanfte Animationen. Sie atmen, blinzeln, manche wedeln mit dem Schwanz, und alle hüpfen, wenn du eine Gewohnheit abhakst.
+• Anonyme Nutzungsstatistiken zeigen uns, was wir verbessern können. Sie enthalten nie etwas, das du eintippst, und du kannst sie in den Einstellungen ausschalten.
 • Die Rückblick-Karten sehen mit großer Schrift besser aus, und der Haustier-Bildschirm ist jetzt komplett übersetzt.

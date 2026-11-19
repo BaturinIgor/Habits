@@ -9,7 +9,7 @@ ZenHab: hábitos y rutinas
 Rachas, metas y recordatorios
 
 ## Promotional text
-Hábitos que se quedan, ahora también en el Apple Watch: márcalos desde la muñeca, mira tu resumen del mes y del año, con una mascota que crece contigo. Sin cuenta.
+Hábitos que se quedan, ahora también en el Apple Watch: márcalos desde la muñeca, mira tu resumen del mes y del año y haz crecer a tu mascota. Sin cuenta.
 
 ## Keywords
 habito,seguimiento,tracker,planificador,diario,metas,recordatorio,widget,productividad,agua,racha
@@ -38,7 +38,7 @@ PROGRESO Y MOTIVACIÓN
 • Apple Watch: marca los hábitos de hoy desde la muñeca, complicaciones para la esfera y temporizador con Pro
 
 PRIVADO
-• Tus hábitos se quedan en tu iPhone. Sin cuenta, sin anuncios, sin rastreo
+• Tus hábitos se quedan en tu iPhone y en tu iCloud. Sin cuenta, sin anuncios, sin rastreo
 • Estadísticas de uso anónimas, que puedes desactivar en Ajustes
 • Exporta e importa copias de seguridad
 
@@ -56,6 +56,6 @@ Privacidad: https://baturinigor.github.io/Habits/privacy.html
 • Temporizador de hábitos en el Apple Watch (Pro): cuando acaba el tiempo, el reloj te da un toque en la muñeca y marca el hábito.
 • Resumen mensual y Resumen anual: en Estadísticas o en Hoy al empezar el mes, y puedes compartirlos como imagen.
 • Las imágenes que compartes ahora llevan un código QR y se envían junto con un enlace a ZenHab en el App Store.
-• Las 11 mascotas tienen dibujo nuevo: más suave y con volumen, 4 etapas, emociones y animaciones tranquilas. Respiran, parpadean, mueven la cola y dan un salto cuando marcas un hábito.
-• Estadísticas de uso anónimas para saber qué mejorar. Nunca se envía nada de lo que escribes, y puedes desactivarlas en Ajustes.
+• Hemos redibujado las 11 mascotas: más suaves y con volumen, 4 etapas, emociones y animaciones tranquilas. Respiran, parpadean, algunas mueven la cola y todas dan un salto cuando marcas un hábito.
+• Estadísticas de uso anónimas para saber qué mejorar. Nunca incluyen nada de lo que escribes, y puedes desactivarlas en Ajustes.
 • Las tarjetas de resumen se ven mejor con texto grande, y la pantalla de la mascota ya está traducida del todo.

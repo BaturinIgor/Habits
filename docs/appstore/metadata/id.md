@@ -36,7 +36,7 @@ KEMAJUAN DAN MOTIVASI
 • Apple Watch: centang kebiasaan hari ini dari pergelangan tangan, komplikasi tampilan jam, dan timer dengan Pro
 
 PRIVAT
-• Kebiasaanmu tetap di iPhone-mu. Tanpa akun, iklan, dan pelacakan
+• Kebiasaanmu tetap di iPhone dan iCloud-mu. Tanpa akun, iklan, dan pelacakan
 • Statistik penggunaan anonim yang bisa dimatikan di Pengaturan
 • Ekspor dan impor cadangan
 
@@ -54,6 +54,6 @@ Privasi: https://baturinigor.github.io/Habits/privacy.html
 • Timer kebiasaan di Apple Watch (Pro): saat waktu habis, jam mengetuk pergelangan tanganmu dan mencentang kebiasaan.
 • Ringkasan bulan dan Ringkasan tahun: ada di Statistik atau di Hari Ini saat awal bulan, dan bisa dibagikan sebagai gambar.
 • Gambar yang kamu bagikan kini punya kode QR dan dikirim bersama tautan ke ZenHab di App Store.
-• Ke-11 hewan peliharaan digambar ulang: gaya baru yang lembut dan bervolume, 4 tahap, emosi, dan animasi halus. Mereka bernapas, berkedip, mengibaskan ekor, dan melompat saat kamu mencentang kebiasaan.
-• Statistik penggunaan anonim membantu kami tahu apa yang perlu diperbaiki. Apa pun yang kamu ketik tidak pernah dikirim, dan kamu bisa mematikannya di Pengaturan.
+• Ke-11 hewan peliharaan digambar ulang: gaya baru yang lembut dan bervolume, 4 tahap, emosi, dan animasi halus. Mereka bernapas, berkedip, sebagian mengibaskan ekor, dan semuanya melompat saat kamu mencentang kebiasaan.
+• Statistik penggunaan anonim membantu kami tahu apa yang perlu diperbaiki. Statistik ini tidak pernah memuat apa pun yang kamu ketik, dan kamu bisa mematikannya di Pengaturan.
 • Kartu ringkasan tampil lebih baik dengan teks besar, dan layar hewan peliharaan kini sepenuhnya diterjemahkan.

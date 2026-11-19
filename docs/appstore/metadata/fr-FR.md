@@ -36,7 +36,7 @@ PROGRÈS ET MOTIVATION
 • Apple Watch : coche les habitudes du jour depuis ton poignet, complications pour le cadran et minuteur avec Pro
 
 CONFIDENTIEL
-• Tes habitudes restent sur ton iPhone. Pas de compte, pas de pub, pas de pistage
+• Tes habitudes restent sur ton iPhone et dans ton iCloud. Pas de compte, pas de pub, pas de pistage
 • Statistiques d'utilisation anonymes, désactivables dans Réglages
 • Export et import de sauvegarde
 
@@ -49,11 +49,11 @@ Conditions d'utilisation : https://www.apple.com/legal/internet-services/itunes/
 Confidentialité : https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab sur l'Apple Watch : les habitudes du jour à ton poignet, cochées d'un geste (pour les habitudes à compter, chaque toucher ajoute un). Fonctionne hors ligne et se synchronise avec ton iPhone.
+• ZenHab sur l'Apple Watch : les habitudes du jour à ton poignet, cochées d'un geste (pour les habitudes à compter, chaque appui ajoute 1). Fonctionne hors ligne et se synchronise avec ton iPhone.
 • Complications pour le cadran : ronde, en coin, rectangulaire et en ligne. Tes progrès du jour d'un coup d'œil.
 • Minuteur d'habitude sur l'Apple Watch (Pro) : à la fin, la montre tapote ton poignet et coche l'habitude.
 • Bilan du mois et Bilan de l'année : dans Statistiques ou sur Aujourd'hui en début de mois, à partager en image.
 • Les images partagées ont maintenant un QR code, et elles partent avec un lien vers ZenHab sur l'App Store.
-• Les 11 compagnons ont été redessinés : un nouveau style tout doux, 4 stades, des émotions et de petites animations. Ils respirent, clignent des yeux, remuent la queue et sautent quand tu coches une habitude.
-• Des statistiques d'utilisation anonymes nous aident à savoir quoi améliorer. Rien de ce que tu écris n'est envoyé, et tu peux les désactiver dans Réglages.
+• Les 11 compagnons ont été redessinés : un nouveau style tout doux, 4 stades, des émotions et de petites animations. Ils respirent, clignent des yeux, certains remuent la queue, et tous sautent quand tu coches une habitude.
+• Des statistiques d'utilisation anonymes nous aident à savoir quoi améliorer. Elles ne contiennent jamais rien de ce que tu écris, et tu peux les désactiver dans Réglages.
 • Les cartes de bilan s'affichent mieux en grand texte, et l'écran du compagnon est maintenant entièrement traduit.

@@ -89,7 +89,7 @@ The app is available in 14 languages: English, Russian, German, French, Spanish,
 • Watch face complications: circular, corner, rectangular and inline, so you see today's progress at a glance.
 • Habit timer on Apple Watch (Pro): when time is up, the watch taps your wrist and checks the habit off.
 • Month in review and Year in review: find them in Statistics, or on Today at the start of a month, and share them as a picture.
-• Shared pictures now have a QR code, and they go out with a link to ZenHab on the App Store.
-• All 11 pets are redrawn: soft new art, 4 growth stages, emotions and gentle animations. They breathe, blink, wag their tails and jump when you check off a habit.
-• Anonymous usage statistics help us see what to improve. Nothing you type is ever sent, and you can turn them off in Settings.
+• Shared pictures now include a QR code and come with a link to ZenHab on the App Store.
+• All 11 pets are redrawn: soft new art, 4 growth stages, emotions and gentle animations. They breathe, blink, some wag their tails, and all of them jump when you check off a habit.
+• Anonymous usage statistics help us see what to improve. They never include anything you type, and you can turn them off in Settings.
 • Review cards look better with large text, and the pet screen is now fully translated.

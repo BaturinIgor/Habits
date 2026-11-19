@@ -36,7 +36,7 @@ POSTĘPY I MOTYWACJA
 • Apple Watch: odhaczaj dzisiejsze nawyki z nadgarstka, komplikacje na tarczę i minutnik z Pro
 
 PRYWATNIE
-• Twoje nawyki zostają na twoim iPhonie. Bez konta, reklam i śledzenia
+• Twoje nawyki zostają na twoim iPhonie i w twoim iCloud. Bez konta, reklam i śledzenia
 • Anonimowe statystyki użycia, które wyłączysz w Ustawieniach
 • Eksport i import kopii zapasowej
 
@@ -54,6 +54,6 @@ Prywatność: https://baturinigor.github.io/Habits/privacy.html
 • Minutnik nawyku na Apple Watch (Pro): gdy czas minie, zegarek stuknie cię w nadgarstek i odhaczy nawyk.
 • Podsumowanie miesiąca i Podsumowanie roku: w Statystykach albo na ekranie Dziś na początku miesiąca, do udostępnienia jako obrazek.
 • Udostępniane obrazki mają teraz kod QR, a razem z obrazkiem wysyłany jest link do ZenHab w App Store.
-• Wszystkie 11 zwierzaków narysowaliśmy od nowa: miękka, przestrzenna grafika, 4 etapy, emocje i spokojne animacje. Oddychają, mrugają, machają ogonem i podskakują, gdy odhaczasz nawyk.
-• Anonimowe statystyki użycia pomagają nam zobaczyć, co poprawić. Nic, co wpisujesz, nie jest wysyłane, a statystyki wyłączysz w Ustawieniach.
+• Wszystkie 11 zwierzaków narysowaliśmy od nowa: miękka, przestrzenna grafika, 4 etapy, emocje i spokojne animacje. Oddychają, mrugają, niektóre machają ogonem, a wszystkie podskakują, gdy odhaczasz nawyk.
+• Anonimowe statystyki użycia pomagają nam zobaczyć, co poprawić. Nigdy nie trafia do nich nic, co wpisujesz, a wyłączysz je w Ustawieniach.
 • Karty podsumowań lepiej wyglądają przy dużym tekście, a ekran zwierzaka jest już w pełni przetłumaczony.

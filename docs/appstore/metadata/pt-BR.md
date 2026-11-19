@@ -36,7 +36,7 @@ PROGRESSO E MOTIVAÇÃO
 • Apple Watch: marque os hábitos de hoje pelo pulso, complicações no mostrador e timer com o Pro
 
 PRIVADO
-• Seus hábitos ficam no seu iPhone. Sem conta, sem anúncios, sem rastreamento
+• Seus hábitos ficam no seu iPhone e no seu iCloud. Sem conta, sem anúncios, sem rastreamento
 • Estatísticas de uso anônimas, que você pode desligar em Ajustes
 • Exporte e importe backups
 
@@ -54,6 +54,6 @@ Privacidade: https://baturinigor.github.io/Habits/privacy.html
 • Timer de hábitos no Apple Watch (Pro): quando o tempo acabar, o relógio dá um toque no seu pulso e marca o hábito.
 • Resumo do mês e Resumo do ano: em Estatísticas ou em Hoje no começo do mês, para compartilhar como imagem.
 • As imagens compartilhadas agora têm um QR code e vão junto com um link para o ZenHab na App Store.
-• Os 11 bichinhos foram redesenhados: traço novo, macio e com volume, 4 fases, emoções e animações suaves. Eles respiram, piscam, mexem o rabo e dão um pulinho quando você marca um hábito.
-• Estatísticas de uso anônimas ajudam a saber o que melhorar. Nada do que você escreve é enviado, e dá para desligar em Ajustes.
+• Os 11 bichinhos foram redesenhados: traço novo, macio e com volume, 4 fases, emoções e animações suaves. Eles respiram, piscam, alguns mexem o rabo e todos dão um pulinho quando você marca um hábito.
+• Estatísticas de uso anônimas ajudam a saber o que melhorar. Elas nunca incluem nada do que você escreve, e dá para desligar em Ajustes.
 • Os cards de resumo ficam melhores com texto grande, e a tela do bichinho agora está toda traduzida.

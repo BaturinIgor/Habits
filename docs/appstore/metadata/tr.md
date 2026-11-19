@@ -36,7 +36,7 @@ SANA GÖRE ALIŞKANLIKLAR
 • Apple Watch: bugünün alışkanlıklarını bileğinden işaretle, saat kadranı komplikasyonları ve Pro ile zamanlayıcı
 
 GİZLİ
-• Alışkanlıkların iPhone'unda kalır. Hesap yok, reklam yok, izleme yok
+• Alışkanlıkların iPhone'unda ve iCloud'unda kalır. Hesap yok, reklam yok, izleme yok
 • Ayarlar'dan kapatılabilen anonim kullanım istatistikleri
 • Yedeği dışa ve içe aktar
 
@@ -49,11 +49,11 @@ Kullanım Koşulları: https://www.apple.com/legal/internet-services/itunes/dev/
 Gizlilik: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Apple Watch'ta ZenHab: bugünün alışkanlıkları bileğinde, tek dokunuşla işaretle (sayılı alışkanlıklarda her dokunuş bir ekler). İnternetsiz de çalışır ve iPhone'unla eşitlenir.
+• Apple Watch'ta ZenHab: bugünün alışkanlıkları bileğinde, tek dokunuşla işaretle (sayılı alışkanlıklarda her dokunuş bir ekler). iPhone yanında olmasa da çalışır, sonra eşitlenir.
 • Saat kadranı komplikasyonları: dairesel, köşe, dikdörtgen ve satır içi. Günün ilerlemesini bir bakışta gör.
 • Apple Watch'ta alışkanlık zamanlayıcısı (Pro): süre dolunca saat bileğine hafifçe dokunur ve alışkanlığı işaretler.
 • Ay özeti ve Yıl özeti: İstatistikler'de ya da ay başında Bugün ekranında. Resim olarak paylaşabilirsin.
-• Paylaştığın resimlerde artık bir QR kod var ve resimle birlikte ZenHab'in App Store bağlantısı da gidiyor.
-• 11 evcil hayvanın hepsi yeniden çizildi: yumuşak, hacimli yeni çizimler, 4 büyüme evresi, duygular ve sakin animasyonlar. Nefes alıyor, göz kırpıyor, kuyruk sallıyor ve bir alışkanlığı işaretlediğinde zıplıyorlar.
-• Anonim kullanım istatistikleri neyi iyileştireceğimizi görmemize yardım eder. Yazdığın hiçbir şey gönderilmez ve Ayarlar'dan kapatabilirsin.
+• Paylaştığın resimlerde artık bir QR kod var ve resimle birlikte ZenHab'ın App Store bağlantısı da gidiyor.
+• 11 evcil hayvanın hepsi yeniden çizildi: yumuşak, hacimli yeni çizimler, 4 büyüme evresi, duygular ve sakin animasyonlar. Nefes alıyor, göz kırpıyor, bazıları kuyruk sallıyor ve bir alışkanlığı işaretlediğinde hepsi zıplıyor.
+• Anonim kullanım istatistikleri neyi iyileştireceğimizi görmemize yardım eder. Yazdığın hiçbir şey bu istatistiklere girmez ve Ayarlar'dan kapatabilirsin.
 • Özet kartları büyük yazıda daha iyi görünüyor ve evcil hayvan ekranı artık tamamen çevrildi.

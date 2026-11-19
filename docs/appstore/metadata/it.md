@@ -36,7 +36,7 @@ PROGRESSI E MOTIVAZIONE
 • Apple Watch: spunta le abitudini di oggi dal polso, complicazioni per il quadrante e timer con Pro
 
 PRIVATO
-• Le tue abitudini restano sul tuo iPhone. Nessun account, nessuna pubblicità, nessun tracciamento
+• Le tue abitudini restano sul tuo iPhone e nel tuo iCloud. Nessun account, nessuna pubblicità, nessun tracciamento
 • Statistiche d'uso anonime, disattivabili in Impostazioni
 • Esporta e importa i backup
 
@@ -54,6 +54,6 @@ Privacy: https://baturinigor.github.io/Habits/privacy.html
 • Timer delle abitudini su Apple Watch (Pro): allo scadere, l'orologio ti dà un colpetto al polso e spunta l'abitudine.
 • Riepilogo del mese e Riepilogo dell'anno: in Statistiche o in Oggi a inizio mese, da condividere come immagine.
 • Le immagini che condividi ora hanno un codice QR e partono insieme a un link a ZenHab sull'App Store.
-• Tutti gli 11 cuccioli sono stati ridisegnati: un nuovo stile morbido, 4 fasi di crescita, emozioni e animazioni delicate. Respirano, sbattono le palpebre, muovono la coda e fanno un salto quando spunti un'abitudine.
-• Statistiche d'uso anonime per capire cosa migliorare. Non viene mai inviato nulla di ciò che scrivi, e puoi disattivarle in Impostazioni.
+• Tutti gli 11 cuccioli sono stati ridisegnati: un nuovo stile morbido, 4 fasi di crescita, emozioni e animazioni delicate. Respirano, sbattono le palpebre, alcuni muovono la coda e tutti fanno un salto quando spunti un'abitudine.
+• Statistiche d'uso anonime per capire cosa migliorare. Non contengono mai nulla di ciò che scrivi, e puoi disattivarle in Impostazioni.
 • Le schede di riepilogo si leggono meglio con il testo grande, e la schermata del cucciolo ora è tutta tradotta.
