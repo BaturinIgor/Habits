@@ -278,15 +278,46 @@ enum Pets {
     ]
 }
 
-/// Питомец: эмодзи по виду и стадии, настроение и украшения.
+/// Питомец: нарисованный по design/pets (эмодзи только для яйца и видов без рисунка), настроение и украшения.
 struct PetAvatar: View {
     let pet: PetState
     let stage: PetStage
     let mood: PetMood
     var size: CGFloat = 120
+    /// Растёт при отметке привычки или кормлении: питомец подпрыгивает.
+    var reaction: Int = 0
+    /// .none в виджете: статичная картинка.
+    var motion: PetMotion = .automatic
     @State private var bounce = false
 
+    private var accessibilityText: String {
+        let species = Pets.species(pet.species)
+        return "\(String(localized: species.title)), \(stage.title), \(mood.title)"
+    }
+
     var body: some View {
+        Group {
+            if let style = PetStyle.style(for: pet.species), let index = PetArt.stageIndex(stage) {
+                PetArtView(style: style, stage: index, mood: mood, size: size, reaction: reaction, motion: motion)
+                    .overlay(alignment: .bottomTrailing) {
+                        // Лицо уже показывает грусть и сон; сердце отличает «очень скучает» от простой грусти.
+                        if mood == .lonely {
+                            Text(mood.bubble)
+                                .font(.system(size: size * 0.16))
+                                .padding(size * 0.035)
+                                .background(Circle().fill(.background).shadow(color: .black.opacity(0.12), radius: 3, y: 1))
+                        }
+                    }
+            } else {
+                emojiBody
+            }
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(accessibilityText)
+    }
+
+    @ViewBuilder
+    private var emojiBody: some View {
         let species = Pets.species(pet.species)
         let emoji = stage == .egg ? "🥚" : (stage.rawValue >= PetStage.adult.rawValue ? species.adult : species.baby)
         let scale: CGFloat = switch stage {
@@ -324,6 +355,7 @@ struct PetAvatar: View {
         }
         .frame(width: size, height: size)
         .onAppear {
+            guard motion != .none else { return }
             withAnimation(.easeInOut(duration: mood == .sleeping ? 2.4 : 1.1).repeatForever(autoreverses: true)) {
                 bounce = true
             }
