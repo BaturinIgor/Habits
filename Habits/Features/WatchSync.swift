@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 import WatchConnectivity
 
 /// Связь с приложением на Apple Watch.
@@ -7,6 +8,7 @@ import WatchConnectivity
 @MainActor
 final class WatchSync: NSObject {
     static let shared = WatchSync()
+    private static let log = Logger(subsystem: "com.personal.habits", category: "WatchSync")
 
     private var session: WCSession? { WCSession.isSupported() ? WCSession.default : nil }
     /// Последний отправленный снимок без времени создания: не шлём одно и то же.
@@ -39,7 +41,7 @@ final class WatchSync: NSObject {
             lastSentPro = snapshot.isPro
             lastSentAcks = snapshot.acks
         } catch {
-            print("Watch context failed: \(error)")
+            Self.log.error("Watch context failed: \(error.localizedDescription, privacy: .public)")
         }
         // Компликацию будим отдельно, только когда меняется прогресс дня.
         let today = snapshot.days.first
@@ -58,7 +60,8 @@ final class WatchSync: NSObject {
         let store = HabitStore.shared
         // Приложение могло быть не запущено: берём свежие данные с диска.
         store.reloadFromDisk()
-        for mark in marks {
+        // Отметки из очереди могут прийти не по порядку: применяем от старых к новым.
+        for mark in marks.sorted(by: { $0.at < $1.at }) {
             store.applyWatchMark(mark)
             if acks[mark.key].map({ $0 < mark.at }) ?? true {
                 acks[mark.key] = mark.at
@@ -121,11 +124,12 @@ extension WatchSync {
         return snapshot
     }
 
-    /// Подтверждения только для дней из снимка: старые часам уже не нужны.
+    /// Подтверждения за последние дни: часы ждут их и для дней, которых уже нет в снимке
+    /// (например, таймер закончился после полуночи). Более старые не нужны.
     fileprivate func currentAcks(for snapshot: WatchSnapshot) -> [String: Date] {
-        let days = Set(snapshot.days.map(\.day))
+        let oldest = WatchDayKey.ackHorizon(before: snapshot.generatedAt)
         let fresh = acks.filter { key, _ in
-            days.contains(String(key.split(separator: "|").last ?? ""))
+            String(key.split(separator: "|").last ?? "") >= oldest
         }
         if fresh.count != acks.count {
             acks = fresh
@@ -202,23 +206,27 @@ extension WatchSnapshot {
 extension AppData {
     /// Ставит привычке состояние, выбранное на часах.
     /// Возвращает false, если менять нечего или на iPhone отметили позже.
+    /// Время отметки берётся с часов: так несколько отметок, пришедших пачкой после работы
+    /// без связи, применяются по порядку и побеждает последняя, а не первая доставленная.
     mutating func applyWatchMark(_ mark: WatchMark) -> Bool {
         let k = Self.key(mark.habitID, mark.day)
         var entry = checkIns[k] ?? CheckIn(status: nil, note: nil, updatedAt: .distantPast)
         if entry.updatedAt > mark.at { return false }
+        let target = habits.first(where: { $0.id == mark.habitID })?.dailyTarget(isPro: isPro) ?? 1
         if mark.done {
             // Как setStatus: повторная отметка не меняет время, чтобы не пропали искры за честную отметку.
             if entry.status == .done && entry.isMinimum != true { return false }
             entry.status = .done
             entry.count = nil
         } else {
-            let count = max(0, mark.count)
+            let count = min(max(0, mark.count), target)
             if entry.status == nil && (entry.count ?? 0) == count { return false }
             entry.status = nil
             entry.count = count > 0 ? count : nil
         }
         entry.isMinimum = nil
-        entry.updatedAt = Date()
+        // Часы могут спешить: время из будущего не ставим.
+        entry.updatedAt = min(mark.at, Date())
         let hasNote = !(entry.note ?? "").isEmpty
         if entry.status == nil && !hasNote && (entry.count ?? 0) == 0 {
             checkIns[k] = nil

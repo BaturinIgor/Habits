@@ -162,4 +162,83 @@ final class WatchSyncTests: XCTestCase {
         let decoded = try JSONDecoder().decode(WatchSnapshot.self, from: Data(json.utf8))
         XCTAssertNil(decoded.acks)
     }
+
+    // MARK: Отметки после работы без связи
+
+    func testOfflineMarksAppliedInOrderLastIntentWins() {
+        var data = AppData()
+        let h = habit()
+        data.habits = [h]
+        let now = Date()
+        // Без связи: отметили, потом сняли отметку. Обе пришли пачкой позже.
+        let t1 = WatchMark(habitID: h.id, day: todayKey, done: true, count: 1, at: now.addingTimeInterval(-120))
+        let t2 = WatchMark(habitID: h.id, day: todayKey, done: false, count: 0, at: now.addingTimeInterval(-60))
+        XCTAssertTrue(data.applyWatchMark(t1))
+        XCTAssertTrue(data.applyWatchMark(t2))
+        XCTAssertNil(data.status(h.id, day: todayKey))
+
+        // В обратном порядке старая отметка не перебивает новую.
+        var reversed = AppData()
+        reversed.habits = [h]
+        let t3 = WatchMark(habitID: h.id, day: todayKey, done: true, count: 1, at: now.addingTimeInterval(-30))
+        XCTAssertTrue(reversed.applyWatchMark(t3))
+        XCTAssertFalse(reversed.applyWatchMark(t1.with(done: false, at: now.addingTimeInterval(-90))))
+        XCTAssertEqual(reversed.status(h.id, day: todayKey), .done)
+    }
+
+    func testWatchMarkTimeFromFutureIsClamped() {
+        var data = AppData()
+        let h = habit()
+        data.habits = [h]
+        let mark = WatchMark(habitID: h.id, day: todayKey, done: true, count: 1, at: Date().addingTimeInterval(3600))
+        XCTAssertTrue(data.applyWatchMark(mark))
+        XCTAssertLessThanOrEqual(data.checkIns[AppData.key(h.id, todayKey)]!.updatedAt, Date())
+    }
+
+    func testCountMarkIsClampedToTarget() {
+        var data = AppData()
+        data.settings.proUnlocked = true
+        let h = habit(target: 3)
+        data.habits = [h]
+        let mark = WatchMark(habitID: h.id, day: todayKey, done: false, count: 99, at: Date())
+        XCTAssertTrue(data.applyWatchMark(mark))
+        XCTAssertEqual(data.checkIns[AppData.key(h.id, todayKey)]?.count, 3)
+    }
+
+    // MARK: Таймер после полуночи
+
+    func testTimerCompletionMarkDoesNotNeedSnapshot() {
+        let end = Date().addingTimeInterval(-600)
+        let run = WatchTimerRun(habitID: UUID(), day: "2026-01-01", start: end.addingTimeInterval(-900), end: end, target: 4)
+        let mark = run.completionMark(now: Date())
+        XCTAssertTrue(mark.done)
+        XCTAssertEqual(mark.count, 4)
+        XCTAssertEqual(mark.day, "2026-01-01")
+        XCTAssertEqual(mark.at, end)
+        // Закончили раньше: время отметки — сейчас.
+        let early = Date().addingTimeInterval(-1200)
+        XCTAssertEqual(run.completionMark(now: early).at, early)
+    }
+
+    func testPendingForVanishedDayWaitsForAck() {
+        let yesterday = DayKey.make(calendar.date(byAdding: .day, value: -1, to: Date())!)
+        let longAgo = DayKey.make(calendar.date(byAdding: .day, value: -10, to: Date())!)
+        let mark = WatchMark(habitID: UUID(), day: yesterday, done: true, count: 1, at: Date().addingTimeInterval(-3600))
+        let stale = WatchMark(habitID: UUID(), day: longAgo, done: true, count: 1, at: Date().addingTimeInterval(-10 * 86_400))
+        var state = WatchState()
+        state.pending[mark.key] = mark
+        state.pending[stale.key] = stale
+        state.receive(snapshot([], day: todayKey))
+        XCTAssertNotNil(state.pending[mark.key])
+        XCTAssertNil(state.pending[stale.key])
+
+        state.receive(snapshot([], day: todayKey, at: Date().addingTimeInterval(1), acks: [mark.key: mark.at]))
+        XCTAssertTrue(state.pending.isEmpty)
+    }
+}
+
+private extension WatchMark {
+    func with(done: Bool, at: Date) -> WatchMark {
+        WatchMark(habitID: habitID, day: day, done: done, count: done ? 1 : 0, at: at)
+    }
 }

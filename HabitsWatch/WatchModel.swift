@@ -5,14 +5,6 @@ import WatchConnectivity
 import WatchKit
 import WidgetKit
 
-/// Таймер привычки на часах.
-struct WatchTimerRun: Codable, Equatable {
-    let habitID: UUID
-    let day: String
-    let start: Date
-    let end: Date
-}
-
 /// Данные на часах: снимок с iPhone, неподтверждённые отметки и таймер.
 /// Привычки живут на iPhone, часы только просят их отметить.
 @MainActor
@@ -105,7 +97,9 @@ final class WatchModel {
         // До подключения отметки лежат в pending и уйдут после него.
         guard session.activationState == .activated else { return }
         let payload: [String: Any] = [WatchKeys.mark: raw]
-        if session.isReachable {
+        // В фоне ответа на сообщение можно не дождаться: часы уснут раньше, и запасной путь
+        // через очередь не сработает. Поэтому в фоне сразу кладём отметки в очередь доставки.
+        if session.isReachable && WKApplication.shared().applicationState == .active {
             let box = Payload(payload)
             session.sendMessage(payload, replyHandler: { @Sendable reply in
                 let answer = Payload(reply)
@@ -136,12 +130,15 @@ final class WatchModel {
         set(next, day: todayKey)
     }
 
-    private func set(_ habit: WatchHabit, day: String, at: Date = Date()) {
-        let mark = WatchMark(habitID: habit.id, day: day, done: habit.done, count: habit.count, at: at)
+    private func set(_ habit: WatchHabit, day: String) {
+        record(WatchMark(habitID: habit.id, day: day, done: habit.done, count: habit.count, at: Date()))
+    }
+
+    private func record(_ mark: WatchMark) {
         state.pending[mark.key] = mark
         save()
         send([mark])
-        WKInterfaceDevice.current().play(habit.done ? .success : .click)
+        WKInterfaceDevice.current().play(mark.done ? .success : .click)
     }
 
     // MARK: Таймер (Pro)
@@ -150,7 +147,7 @@ final class WatchModel {
         guard isPro, let minutes = habit.timerMinutes, minutes > 0 else { return }
         let start = Date()
         let end = start.addingTimeInterval(TimeInterval(minutes * 60))
-        timer = WatchTimerRun(habitID: habit.id, day: todayKey, start: start, end: end)
+        timer = WatchTimerRun(habitID: habit.id, day: todayKey, start: start, end: end, target: habit.target)
         scheduleNotification(name: habit.name, after: end.timeIntervalSince(start))
         // Отметить привычку, даже если приложение к этому времени уйдёт в фон.
         WKApplication.shared().scheduleBackgroundRefresh(withPreferredDate: end, userInfo: nil) { _ in }
@@ -179,14 +176,10 @@ final class WatchModel {
         markDone(run)
     }
 
+    /// Отметка строится из самого таймера: после полуночи дня таймера в снимке уже может не быть.
     private func markDone(_ run: WatchTimerRun) {
-        guard var habit = self.habit(run.habitID, day: run.day), !habit.done else { return }
-        habit.done = true
-        habit.count = max(1, habit.target)
-        habit.skipped = false
-        // Время отметки — конец таймера, а не момент, когда приложение это заметило:
-        // иначе поздняя проверка перебила бы то, что успели поменять на iPhone.
-        set(habit, day: run.day, at: min(Date(), run.end))
+        if let habit = self.habit(run.habitID, day: run.day), habit.done { return }
+        record(run.completionMark(now: Date()))
     }
 
     private func saveTimer() {

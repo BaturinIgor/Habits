@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 
 // Обмен данными между iPhone и Apple Watch.
 // Файл общий для приложения на iPhone, приложения на часах и компликаций.
@@ -90,6 +91,22 @@ struct WatchMark: Codable, Hashable {
     var key: String { habitID.uuidString + "|" + day }
 }
 
+/// Таймер привычки на часах.
+struct WatchTimerRun: Codable, Equatable {
+    let habitID: UUID
+    let day: String
+    let start: Date
+    let end: Date
+    /// Цель привычки на день: чтобы отметить её, даже если дня уже нет в снимке.
+    var target: Int? = nil
+
+    /// Отметка «сделано» по таймеру. Время — конец таймера, а не момент, когда это заметили:
+    /// иначе поздняя проверка перебила бы то, что успели поменять на iPhone.
+    func completionMark(now: Date) -> WatchMark {
+        WatchMark(habitID: habitID, day: day, done: true, count: max(1, target ?? 1), at: min(now, end))
+    }
+}
+
 /// Всё, что знают часы: последний снимок и отметки, которые iPhone ещё не подтвердил.
 /// Его же читают компликации.
 struct WatchState: Codable, Hashable {
@@ -114,11 +131,16 @@ struct WatchState: Codable, Hashable {
         if let old = snapshot, old.generatedAt > fresh.generatedAt { return }
         snapshot = fresh
         let acks = fresh.acks ?? [:]
+        let oldest = WatchDayKey.ackHorizon(before: fresh.generatedAt)
         pending = pending.filter { key, mark in
             if let acked = acks[key], acked >= mark.at { return false }
-            guard let habit = fresh.day(mark.day)?.habits.first(where: { $0.id == mark.habitID }) else {
-                // Дня уже нет в снимке или привычку удалили: показывать отметку негде.
-                // Сама отметка остаётся в очереди WatchConnectivity и дойдёт до iPhone.
+            guard let day = fresh.day(mark.day) else {
+                // Дня уже нет в снимке (например, таймер закончился после полуночи):
+                // ждём подтверждения, но не дольше нескольких дней.
+                return mark.day >= oldest
+            }
+            guard let habit = day.habits.first(where: { $0.id == mark.habitID }) else {
+                // Привычку удалили или убрали из этого дня.
                 return false
             }
             return !habit.matches(mark)
@@ -141,6 +163,11 @@ enum WatchDayKey {
         return String(format: "%04d-%02d-%02d", c.year ?? 0, c.month ?? 0, c.day ?? 0)
     }
 
+    /// Самый старый день, отметки за который ещё ждут подтверждения (и iPhone их помнит).
+    static func ackHorizon(before date: Date) -> String {
+        make(date.addingTimeInterval(-3 * 86_400))
+    }
+
     static func nextMidnight(after date: Date) -> Date {
         var calendar = Calendar(identifier: .gregorian)
         calendar.timeZone = .current
@@ -151,13 +178,22 @@ enum WatchDayKey {
 
 /// Файл состояния на часах в общей папке приложения и компликаций.
 enum WatchStateFile {
-    static var url: URL {
+    private static let log = Logger(subsystem: "com.personal.habits", category: "WatchState")
+
+    static let url: URL = {
         let fm = FileManager.default
-        let base = fm.containerURL(forSecurityApplicationGroupIdentifier: WatchKeys.appGroup)
-            ?? fm.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+        let base: URL
+        if let group = fm.containerURL(forSecurityApplicationGroupIdentifier: WatchKeys.appGroup) {
+            base = group
+        } else {
+            // Без App Group приложение и компликации пишут в разные папки,
+            // и компликация остаётся пустой. Обычно это значит, что не настроена подпись.
+            log.error("App Group \(WatchKeys.appGroup, privacy: .public) is unavailable, falling back to Application Support; complications will not see watch data")
+            base = fm.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+        }
         try? fm.createDirectory(at: base, withIntermediateDirectories: true)
         return base.appendingPathComponent("watch-state.json")
-    }
+    }()
 
     static func load() -> WatchState {
         guard let raw = try? Data(contentsOf: url),
