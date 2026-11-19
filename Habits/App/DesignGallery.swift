@@ -9,10 +9,10 @@ enum DesignScreen: String, CaseIterable, Identifiable {
     // Вкладки
     case today, habits, stats, settings
     // Экраны внутри навигации
-    case habitDetail, quitDetail, notifications, todayScreen, groups, groupDetail, appIcon, backup
+    case habitDetail, quitDetail, notifications, todayScreen, groups, groupDetail, backup
     // Шиты
-    case catalog, editorNew, editorEdit, editorTemplate, iconPicker, timer, recap, moodJournal, moodEntry
-    case profile, sparks, pet, paywall, paywallFeature, feedback, voice, note, whatsNew
+    case catalog, editorNew, editorEdit, editorTemplate, iconPicker, timer, recap
+    case profile, sparks, pet, paywall, feedback, voice, note, whatsNew
     // Во весь экран
     case onboarding, words
 
@@ -26,7 +26,7 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .habits: .tab(.habits)
         case .stats: .tab(.stats)
         case .settings: .tab(.settings)
-        case .habitDetail, .quitDetail, .notifications, .todayScreen, .groups, .groupDetail, .appIcon, .backup: .push
+        case .habitDetail, .quitDetail, .notifications, .todayScreen, .groups, .groupDetail, .backup: .push
         case .onboarding, .words: .cover
         default: .sheet
         }
@@ -51,7 +51,6 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .todayScreen: TodayScreenSettingsView()
         case .groups: GroupsView()
         case .groupDetail: GroupDetailView(groupID: DesignGallery.groupID)
-        case .appIcon: AppIconView()
         case .backup: BackupSettingsView()
         case .catalog: HabitCatalogView()
         case .editorNew: HabitEditorView(habit: nil)
@@ -60,13 +59,10 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .iconPicker: DesignGallery.IconPicker()
         case .timer: DesignGallery.TimerSheet()
         case .recap: DesignGallery.Recap()
-        case .moodJournal: MoodJournalView()
-        case .moodEntry: MoodEntryEditor(dayKey: DayKey.make(Date()))
         case .profile: ProfileView()
         case .sparks: SparksView()
         case .pet: PetView()
         case .paywall: PaywallView()
-        case .paywallFeature: PaywallView(highlight: .health)
         case .feedback: FeedbackView()
         case .voice: VoiceHabitSheet { _ in }
         case .note: NoteEditorView(target: NoteTarget(habitID: UITestSupport.id(1), day: DayKey.make(Date())))
@@ -99,15 +95,6 @@ enum DesignGallery {
         words.schedule.startDate = start
         words.sortOrder = 8
         data.habits.append(words)
-
-        // Настроение за две недели с заметками.
-        let notes = ru
-            ? ["Отличная тренировка", "Плохо спал", "Встреча с друзьями", nil]
-            : ["Great workout", "Slept badly", "Dinner with friends", nil]
-        for offset in -14 ... -1 {
-            let level = [4, 3, 5, 2, 4, 4, 3][(offset + 14) % 7]
-            data.moods[DayKey.make(day(offset))] = MoodEntry(level: level, note: notes[(offset + 14) % 4], updatedAt: day(offset))
-        }
 
         // Питомец.
         var pet = PetState(species: "cat", name: ru ? "Барсик" : "Whiskers", adoptedAt: day(-20))

@@ -48,9 +48,6 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "27-words", screen: "words"),
         // Статистика и настроение
         Shot(name: "28-week-recap", screen: "recap"),
-        Shot(name: "29-mood-journal", screen: "moodJournal"),
-        Shot(name: "30-mood-journal-free", screen: "moodJournal", flags: ["-uitest-free"]),
-        Shot(name: "31-mood-entry", screen: "moodEntry"),
         // Профиль, искры, питомец
         Shot(name: "32-profile", screen: "profile"),
         Shot(name: "33-sparks", screen: "sparks"),
@@ -58,7 +55,6 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "35-pet-rename", screen: "pet", alert: "petRename"),
         // Pro
         Shot(name: "36-paywall", screen: "paywall", flags: ["-uitest-free"]),
-        Shot(name: "37-paywall-feature", screen: "paywallFeature", flags: ["-uitest-free"]),
         Shot(name: "38-paywall-pro-active", screen: "paywall"),
         // Настройки
         Shot(name: "39-notifications", screen: "notifications"),
@@ -67,8 +63,6 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "42-groups-new", screen: "groups", alert: "groupNew"),
         Shot(name: "43-group-family", screen: "groupDetail"),
         Shot(name: "44-group-family-stop", screen: "groupDetail", alert: "familyEnd"),
-        Shot(name: "45-app-icon", screen: "appIcon"),
-        Shot(name: "46-app-icon-free", screen: "appIcon", flags: ["-uitest-free"]),
         Shot(name: "47-backup", screen: "backup"),
         Shot(name: "48-backup-restored", screen: "backup", alert: "restored"),
         Shot(name: "49-settings-restart-hint", screen: "settings", alert: "restartHint"),

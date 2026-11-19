@@ -11,6 +11,9 @@ on:
       language:
         description: "Язык интерфейса (ru или en)"
         default: "ru"
+  push:
+    branches:
+      - "design/**"
   pull_request:
     paths:
       - "Habits/App/DesignGallery.swift"
