@@ -59,8 +59,11 @@ struct Recap: Equatable, Identifiable {
         let interval: Interval
     }
 
-    /// Меньше недели в итогах показывать нечего: «год» из 1–2 дней в начале января.
-    static let minimumDays = 7
+    /// Сколько дней привычки должны были прожить в периоде, чтобы его итоги имели смысл:
+    /// месяц или год из 1–2 дней в карточке выглядит странно, а у недели как и раньше хватает дня.
+    static func minimumDays(_ period: Period) -> Int {
+        period == .week ? 1 : 7
+    }
 
     static func current(_ period: Period, in data: AppData, now: Date = Date(), calendar: Calendar = .app) -> Recap {
         let range = interval(period, in: data, now: now, calendar: calendar)
@@ -76,19 +79,28 @@ struct Recap: Equatable, Identifiable {
         }
     }
 
-    /// Есть ли смысл предлагать итоги периода: в нём хотя бы неделя и были привычки.
+    /// Есть ли смысл предлагать итоги периода: привычки прожили в нём достаточно дней.
     /// Считается без обхода дней, поэтому годится для `body`.
     static func isAvailable(_ period: Period, in data: AppData, now: Date = Date(), calendar: Calendar = .app) -> Bool {
         let range = interval(period, in: data, now: now, calendar: calendar)
-        let days = (calendar.dateComponents([.day], from: range.start, to: range.end).day ?? 0) + 1
-        return days >= minimumDays && hasHabits(in: range, data: data, calendar: calendar)
+        return activeDays(in: range, data: data, calendar: calendar) >= minimumDays(period)
     }
 
-    /// Были ли в эти дни привычки, которые отмечают (по датам начала и конца, без обхода дней).
-    static func hasHabits(in range: Interval, data: AppData, calendar: Calendar = .app) -> Bool {
-        data.trackedHabits.contains { habit in
-            habit.firstDay(calendar: calendar) <= range.end && (habit.lastDay(calendar: calendar) ?? range.end) >= range.start
+    /// Сколько дней периода покрывают привычки: от самого раннего начала до самого позднего
+    /// конца в пределах периода (по датам начала и конца, без обхода дней). Привычки
+    /// «N раз в неделю» не считаются: в итогах у них нет нужных дней, только отметки.
+    static func activeDays(in range: Interval, data: AppData, calendar: Calendar = .app) -> Int {
+        var first: Date?
+        var last: Date?
+        for habit in data.trackedHabits where habit.schedule.kind != .weekly {
+            let start = max(habit.firstDay(calendar: calendar), range.start)
+            let end = min(habit.lastDay(calendar: calendar) ?? range.end, range.end)
+            guard start <= end else { continue }
+            first = min(first ?? start, start)
+            last = max(last ?? end, end)
         }
+        guard let first, let last else { return 0 }
+        return (calendar.dateComponents([.day], from: first, to: last).day ?? 0) + 1
     }
 
     static func lastWeekInterval(now: Date = Date(), calendar: Calendar = .app) -> Interval {
@@ -120,7 +132,7 @@ struct Recap: Equatable, Identifiable {
         guard yesterday >= thisYear else { return lastYearInterval(now: now, calendar: calendar) }
         if calendar.component(.month, from: today) == 12 { return thisYearSoFar }
         let lastYear = lastYearInterval(now: now, calendar: calendar)
-        return hasHabits(in: lastYear, data: data, calendar: calendar) ? lastYear : thisYearSoFar
+        return activeDays(in: lastYear, data: data, calendar: calendar) >= minimumDays(.year) ? lastYear : thisYearSoFar
     }
 
     static func lastWeek(in data: AppData, now: Date = Date(), calendar: Calendar = .app) -> Recap {
@@ -161,7 +173,8 @@ struct Recap: Equatable, Identifiable {
     /// Итоги для карточки на «Сегодня»: первый кандидат, за который есть отметки.
     static func banner(in data: AppData, dismissed: [Period: String], now: Date = Date(), calendar: Calendar = .app) -> Recap? {
         for candidate in bannerCandidates(dismissed: dismissed, now: now, calendar: calendar)
-        where hasHabits(in: candidate.interval, data: data, calendar: calendar) {
+        // Неделя как раньше: достаточно отметок. Месяц и год только если привычки прожили в них неделю.
+        where candidate.period == .week || activeDays(in: candidate.interval, data: data, calendar: calendar) >= minimumDays(candidate.period) {
             let recap = make(candidate.period, from: candidate.interval.start, to: candidate.interval.end, in: data, now: now, calendar: calendar)
             if recap.hasData { return recap }
         }

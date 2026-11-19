@@ -383,6 +383,47 @@ final class LogicTests: XCTestCase {
         XCTAssertNil(Recap.banner(in: AppData(), dismissed: [:], now: date(2026, 6, 1)))
     }
 
+    /// Месяц и год предлагаются, только если привычки прожили в них хотя бы неделю,
+    /// а не просто если период длинный: привычка от 30 декабря не даёт «итогов года» из двух дней.
+    func testShortLivedHabitsDoNotOfferMonthOrYear() {
+        var cal = Calendar(identifier: .gregorian)
+        cal.firstWeekday = 2
+        cal.timeZone = .current
+        func at(_ y: Int, _ m: Int, _ d: Int) -> Date { cal.date(from: DateComponents(year: y, month: m, day: d, hour: 12))! }
+
+        var data = AppData()
+        let habit = Habit(name: "Test", schedule: HabitSchedule(startDate: at(2026, 12, 30)), createdAt: at(2026, 12, 30))
+        data.habits = [habit]
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(at(2026, 12, 30)))
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(at(2026, 12, 31)))
+        // 1 января 2027 (пятница): год и декабрь по два дня, неделя уже не в первых трёх днях.
+        XCTAssertFalse(Recap.isAvailable(.year, in: data, now: at(2027, 1, 1), calendar: cal))
+        XCTAssertFalse(Recap.isAvailable(.month, in: data, now: at(2027, 1, 1), calendar: cal))
+        XCTAssertNil(Recap.banner(in: data, dismissed: [:], now: at(2027, 1, 1), calendar: cal))
+        // 10 февраля: прошлый год из двух дней не в счёт, берём этот год по вчера.
+        let year = Recap.interval(.year, in: data, now: at(2027, 2, 10), calendar: cal)
+        XCTAssertEqual(year.start, cal.startOfDay(for: at(2027, 1, 1)))
+        XCTAssertTrue(Recap.isAvailable(.year, in: data, now: at(2027, 2, 10), calendar: cal))
+
+        // Понедельник 1 июня 2026, привычка с 30 мая: вместо месяца из двух дней итоги недели.
+        var june = AppData()
+        let fresh = Habit(name: "Fresh", schedule: HabitSchedule(startDate: at(2026, 5, 30)), createdAt: at(2026, 5, 30))
+        june.habits = [fresh]
+        june.setStatus(.done, habitID: fresh.id, day: DayKey.make(at(2026, 5, 30)))
+        XCTAssertFalse(Recap.isAvailable(.month, in: june, now: at(2026, 6, 1), calendar: cal))
+        XCTAssertEqual(Recap.banner(in: june, dismissed: [:], now: at(2026, 6, 1), calendar: cal)?.period, .week)
+    }
+
+    /// Привычки «N раз в неделю» в месяц и год не идут (у них нет нужных дней), поэтому
+    /// и пункты не предлагаются, чтобы не открывать пустую карточку.
+    func testWeeklyOnlyHabitsDoNotOfferMonthOrYear() {
+        var data = AppData()
+        data.habits = [Habit(name: "Gym", schedule: HabitSchedule(kind: .weekly, startDate: date(2025, 1, 1), timesPerWeek: 3), createdAt: date(2025, 1, 1))]
+        XCTAssertFalse(Recap.isAvailable(.month, in: data, now: date(2026, 3, 15)))
+        XCTAssertFalse(Recap.isAvailable(.year, in: data, now: date(2026, 3, 15)))
+        XCTAssertNil(Recap.banner(in: data, dismissed: [.week: DayKey.make(Recap.lastWeekInterval(now: date(2026, 3, 2)).start)], now: date(2026, 3, 2)))
+    }
+
     func testMonthTitleHasNoYearSuffix() {
         XCTAssertEqual(RecapCard.monthTitle(date(2026, 10, 1), locale: Locale(identifier: "ru")), "Октябрь 2026")
         XCTAssertEqual(RecapCard.monthTitle(date(2026, 10, 1), locale: Locale(identifier: "en")), "October 2026")

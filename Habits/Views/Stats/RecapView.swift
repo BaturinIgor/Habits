@@ -32,6 +32,16 @@ struct RecapCard: View {
     /// «Октябрь 2026»: месяц в именительном падеже и год без приписки «г.», которую добавляет
     /// русский формат. В остальных языках порядок и слова из системного шаблона («octubre de 2026», «2026年10月»).
     static func monthTitle(_ date: Date, locale: Locale = .autoupdatingCurrent) -> String {
+        let text = monthFormatter(locale).string(from: date)
+        return text.prefix(1).uppercased(with: locale) + text.dropFirst()
+    }
+
+    private static let monthFormatters = NSCache<NSString, DateFormatter>()
+
+    /// Форматтер на язык: создавать его на каждую отрисовку дорого.
+    private static func monthFormatter(_ locale: Locale) -> DateFormatter {
+        let key = locale.identifier as NSString
+        if let cached = monthFormatters.object(forKey: key) { return cached }
         let formatter = DateFormatter()
         formatter.locale = locale
         formatter.setLocalizedDateFormatFromTemplate("LLLLy")
@@ -39,8 +49,8 @@ struct RecapCard: View {
            let suffix = format.range(of: #"y\s*'[^']*'\.?$"#, options: .regularExpression) {
             formatter.dateFormat = format.replacingCharacters(in: suffix, with: "y")
         }
-        let text = formatter.string(from: date)
-        return text.prefix(1).uppercased(with: locale) + text.dropFirst()
+        monthFormatters.setObject(formatter, forKey: key)
+        return formatter
     }
 
     private var gradient: [Color] {

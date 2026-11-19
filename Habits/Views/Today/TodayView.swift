@@ -68,34 +68,50 @@ struct TodayView: View {
         return all.filter { $0.groupID == groupFilter }
     }
 
-    /// Первая привычка, чью вчерашнюю серию можно вернуть за искры.
     /// Итоги прошлого периода для карточки на «Сегодня». Считаются в `.task`, а не в `body`:
     /// в начале января это целый год отметок.
     @State private var bannerRecap: Recap?
+    /// День и закрытые итоги, для которых карточка уже посчитана.
+    @State private var bannerContext: String?
 
     private var recapDismissedKeys: [Recap.Period: String] {
         [.week: recapDismissed, .month: monthRecapDismissed, .year: yearRecapDismissed]
     }
 
+    private var bannerContextKey: String {
+        "\(DayKey.make(anchorToday))|\(recapDismissed)|\(monthRecapDismissed)|\(yearRecapDismissed)"
+    }
+
     /// Пересчитать карточку итогов, когда сменился день, данные или её закрыли.
     private var bannerTaskID: String {
-        "\(DayKey.make(anchorToday))|\(store.revision)|\(recapDismissed)|\(monthRecapDismissed)|\(yearRecapDismissed)"
+        "\(bannerContextKey)|\(store.revision)"
     }
 
     private func updateBannerRecap() async {
+        let context = bannerContextKey
         let dismissed = recapDismissedKeys
         let now = Date()
         // Без кандидатов (большая часть дней) ничего не считаем и не копируем данные.
         guard !Recap.bannerCandidates(dismissed: dismissed, now: now).isEmpty else {
             bannerRecap = nil
+            bannerContext = context
             return
+        }
+        // Поменялись только данные (отметки сегодня, на прошлый период почти не влияют):
+        // ждём паузы в касаниях, новая отметка отменит эту задачу.
+        if bannerContext == context {
+            try? await Task.sleep(for: .seconds(2))
+            guard !Task.isCancelled else { return }
         }
         let data = store.data
         let recap = await Task.detached(priority: .userInitiated) {
             Recap.banner(in: data, dismissed: dismissed, now: now)
         }.value
         guard !Task.isCancelled else { return }
-        bannerRecap = recap
+        bannerContext = context
+        if recap != bannerRecap {
+            withAnimation { bannerRecap = recap }
+        }
     }
 
     private func dismissRecap(_ recap: Recap) {
@@ -106,6 +122,7 @@ struct TodayView: View {
         }
     }
 
+    /// Первая привычка, чью вчерашнюю серию можно вернуть за искры.
     private var streakRepair: (Habit, (day: String, streak: Int))? {
         for habit in store.data.trackedHabits {
             if let repair = store.streakRepair(for: habit) { return (habit, repair) }
