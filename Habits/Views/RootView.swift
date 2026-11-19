@@ -61,6 +61,9 @@ struct RootView: View {
             }
         }
         .sensoryFeedback(.success, trigger: banner?.achievement.id)
+        #if DEBUG
+        .modifier(DesignGalleryPresenter(selection: $selection))
+        #endif
         .fullScreenCover(isPresented: onboardingBinding) {
             OnboardingView()
         }

@@ -161,6 +161,7 @@ struct SettingsView: View {
             .sheet(isPresented: $showingFeedback) {
                 FeedbackView()
             }
+            .designAlert("restartHint", $showingRestartHint)
             .alert("Restart the app", isPresented: $showingRestartHint) {
                 Button("OK", role: .cancel) {}
             } message: {
@@ -474,6 +475,7 @@ struct GroupsView: View {
                 EditButton()
             }
         }
+        .designAlert("groupNew", $showingNew)
         .alert("New group", isPresented: $showingNew) {
             TextField("Name", text: $newName)
             Button("Cancel", role: .cancel) {}

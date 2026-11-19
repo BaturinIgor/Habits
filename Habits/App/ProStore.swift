@@ -55,6 +55,8 @@ final class ProStore {
         #if SIDELOAD
         return
         #else
+        // В макетах Pro включён демо-данными, а покупок в симуляторе нет.
+        if TestMode.isUITest { return }
         var active = false
         for await result in Transaction.currentEntitlements {
             if case .verified(let transaction) = result,
