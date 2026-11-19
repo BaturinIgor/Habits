@@ -128,12 +128,35 @@ final class DesignCatalogUITests: XCTestCase {
             if !ready { missing.append(shot.name) }
             // Даём анимациям закончиться.
             sleep(2)
-            let file = "\(shot.name)-\(dark ? "dark" : "light").png"
-            try? app.screenshot().pngRepresentation.write(to: dir.appendingPathComponent(file))
+            let theme = dark ? "dark" : "light"
+            let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+            if springboard.alerts.firstMatch.exists {
+                // Системный запрос доступа (микрофон, распознавание речи) — тоже состояние экрана.
+                let file = "\(shot.name)-permission-\(theme).png"
+                try? XCUIScreen.main.screenshot().pngRepresentation.write(to: dir.appendingPathComponent(file))
+                allowSystemAlerts(springboard)
+                sleep(2)
+            }
+            let file = "\(shot.name)-\(theme).png"
+            try? XCUIScreen.main.screenshot().pngRepresentation.write(to: dir.appendingPathComponent(file))
             app.terminate()
+            // Запрос доступа не должен перейти на следующие снимки.
+            allowSystemAlerts(springboard)
         }
         let note = missing.isEmpty ? "all screens shown" : "not confirmed: " + missing.joined(separator: ", ")
         try? note.write(to: dir.appendingPathComponent("report-\(dark ? "dark" : "light").txt"), atomically: true, encoding: .utf8)
         print("==== DESIGN \(dark ? "dark" : "light"): \(note)")
+    }
+
+    /// Отвечает «Разрешить» на системные запросы доступа поверх приложения.
+    private func allowSystemAlerts(_ springboard: XCUIApplication) {
+        for _ in 0..<4 {
+            let alert = springboard.alerts.firstMatch
+            guard alert.waitForExistence(timeout: 1) else { return }
+            let button = ["Allow", "OK", "Разрешить"].lazy.map { alert.buttons[$0] }.first { $0.exists }
+                ?? alert.buttons.element(boundBy: alert.buttons.count - 1)
+            button.tap()
+            sleep(1)
+        }
     }
 }
