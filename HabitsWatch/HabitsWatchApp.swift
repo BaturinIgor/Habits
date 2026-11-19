@@ -10,7 +10,15 @@ struct HabitsWatchApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
+                #if DEBUG
+                if WatchDesign.has("-design-complications") {
+                    WatchComplicationGallery()
+                } else {
+                    TodayView()
+                }
+                #else
                 TodayView()
+                #endif
             }
             .environment(model)
         }

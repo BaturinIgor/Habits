@@ -154,6 +154,8 @@ targets:
     sources:
       - path: HabitsWatch
       - path: WatchShared
+      # Для макетов: компликации на экране приложения (WatchComplicationGallery).
+      - path: HabitsWatchWidget/ProgressComplication.swift
       - path: Localization
         excludes:
           - "**/AppShortcuts.strings"

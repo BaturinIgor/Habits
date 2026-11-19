@@ -29,6 +29,12 @@ final class WatchModel {
         if let raw = UserDefaults.standard.data(forKey: Self.timerKey) {
             timer = try? JSONDecoder().decode(WatchTimerRun.self, from: raw)
         }
+        #if DEBUG
+        if let demo = WatchDesign.state {
+            state = demo
+            timer = WatchDesign.timer
+        }
+        #endif
     }
 
     // MARK: Что показывать
@@ -45,6 +51,9 @@ final class WatchModel {
     // MARK: Связь с iPhone
 
     func start() {
+        #if DEBUG
+        if WatchDesign.isOn { return }
+        #endif
         guard WCSession.isSupported() else { return }
         let session = WCSession.default
         guard session.delegate == nil else { return }

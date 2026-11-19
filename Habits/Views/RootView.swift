@@ -67,6 +67,7 @@ struct RootView: View {
         .overlay(alignment: .topLeading) {
             if TestMode.isUITest { HangReport() }
         }
+        .modifier(DesignGalleryPresenter(selection: $selection))
         #endif
         .fullScreenCover(isPresented: onboardingBinding) {
             OnboardingView()

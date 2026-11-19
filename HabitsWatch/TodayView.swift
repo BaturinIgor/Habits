@@ -3,7 +3,11 @@ import SwiftUI
 /// Главный экран: привычки на сегодня, отметка в одно касание.
 struct TodayView: View {
     @Environment(WatchModel.self) private var model
+    #if DEBUG
+    @State private var timerHabit: UUID? = WatchDesign.openTimer
+    #else
     @State private var timerHabit: UUID?
+    #endif
 
     var body: some View {
         content

@@ -84,7 +84,11 @@ struct TodayView: View {
 
     private func updateBannerRecap() async {
         let dismissed = recapDismissedKeys
+        #if DEBUG
+        let now = DesignScreen.now ?? Date()
+        #else
         let now = Date()
+        #endif
         // Без кандидатов (большая часть дней) ничего не считаем и не копируем данные.
         guard !Recap.bannerCandidates(dismissed: dismissed, now: now).isEmpty else {
             bannerRecap = nil

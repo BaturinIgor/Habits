@@ -190,11 +190,13 @@ struct SettingsView: View {
                 }
 
                 // Без Firebase (сборка для SideStore, отладка, автотесты) статистика не отправляется: выключатель не нужен.
-                if Analytics.isAvailable {
+                // Макеты (design/1.6): -design-analytics показывает выключатель без Firebase.
+                if Analytics.isAvailable || TestMode.has("-design-analytics") {
                     Section {
                         Toggle(isOn: Binding(get: { !analyticsOptOut }, set: { Analytics.shared.setEnabled($0) })) {
                             Label("Share anonymous statistics", systemImage: "chart.line.uptrend.xyaxis")
                         }
+                        .accessibilityIdentifier("settings.analytics")
                     } footer: {
                         Text("Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood.")
                     }
@@ -220,6 +222,7 @@ struct SettingsView: View {
             .sheet(isPresented: $showingFeedback) {
                 FeedbackView()
             }
+            .designAlert("restartHint", $showingRestartHint)
             .alert("Restart the app", isPresented: $showingRestartHint) {
                 Button("OK", role: .cancel) {}
             } message: {
@@ -577,6 +580,7 @@ struct BackupSettingsView: View {
         } message: { copy in
             Text("Current habits and history will be replaced with the backup from \(Fmt.backupDate(copy.info.date)).")
         }
+        .designAlert("restored", $restored)
         .alert("Data restored", isPresented: $restored) {
             Button("OK", role: .cancel) {}
         }
@@ -671,6 +675,7 @@ struct GroupsView: View {
                 EditButton()
             }
         }
+        .designAlert("groupNew", $showingNew)
         .alert("New group", isPresented: $showingNew) {
             TextField("Name", text: $newName)
             Button("Cancel", role: .cancel) {}
@@ -711,6 +716,7 @@ struct GroupDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear { name = group?.name ?? "" }
         .onDisappear(perform: saveName)
+        .designAlert("familyEnd", $confirmEnd)
         .confirmationDialog(
             family?.isOwner == false ? String(localized: "Leave group?") : String(localized: "Stop sharing?"),
             isPresented: $confirmEnd,

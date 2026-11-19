@@ -4,13 +4,6 @@ import WidgetKit
 // Компликации ZenHab на циферблате и в Смарт-стопке: сколько привычек сделано сегодня.
 // Данные берутся из файла, который ведёт приложение на часах.
 
-@main
-struct HabitsWatchWidgets: WidgetBundle {
-    var body: some Widget {
-        ProgressComplication()
-    }
-}
-
 struct ProgressEntry: TimelineEntry {
     let date: Date
     let done: Int
@@ -64,11 +57,13 @@ struct ProgressComplication: Widget {
 struct ProgressComplicationView: View {
     @Environment(\.widgetFamily) private var family
     let entry: ProgressEntry
+    /// Для макетов в приложении на часах: там нет widgetFamily.
+    var familyOverride: WidgetFamily? = nil
 
     private var fraction: String { "\(entry.done)/\(entry.total)" }
 
     var body: some View {
-        switch family {
+        switch familyOverride ?? family {
         case .accessoryCircular:
             Gauge(value: entry.progress) {
                 Image(systemName: "leaf.fill")
