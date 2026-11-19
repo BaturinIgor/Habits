@@ -9,8 +9,6 @@ name: Tests
 on:
   pull_request:
     paths-ignore:
-      - "android/**"
-      - ".github/workflows/android.yml"
       - "README.md"
       - "docs/**"
   workflow_dispatch:
