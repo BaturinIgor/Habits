@@ -21,6 +21,19 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  appstore-tools:
+    # Юнит-тесты скриптов App Store Connect (tools/appstore), без обращения к Apple.
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install
+        run: pip install -r tools/appstore/requirements.txt
+      - name: Unit tests
+        run: python3 -m unittest discover -s tools/appstore/tests -v
+
   test:
     runs-on: macos-26
     timeout-minutes: 60
