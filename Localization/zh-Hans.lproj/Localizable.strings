@@ -5,6 +5,7 @@
 "%@ free, then %@. Cancel anytime." = "免费 %1$@，之后 %2$@。可随时取消。";
 "%@ is already done today." = "%@ 今天已完成。";
 "%@: the streak broke" = "%@：连续记录中断了";
+"%lld XP" = "%lld 经验";
 "%lld min" = "%lld 分钟";
 "%lld more to %@" = "再 %lld 点到达%@";
 "%lld of %lld" = "%lld / %lld";
@@ -26,7 +27,9 @@
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "离开应用时，习惯和历史记录的副本会自动保存到你的 iCloud，换手机也不会丢失。";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "锁定屏幕和灵动岛上的倒计时，时间到了自动打卡。";
 "A grown pet brings up to +5 a day" = "长大的宠物每天最多带来 +5";
+"A solid month. A little more and it'll be perfect." = "不错的一个月，再加把劲就完美了。";
 "A solid week. A little more and it'll be perfect." = "不错的一周，再加把劲就完美了。";
+"A solid year. Every month makes a difference." = "不错的一年，每个月都有收获。";
 "A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets." = "包含所有打卡、备注和心情的表格，可用于 Numbers、Excel 或 Google 表格。";
 "A week strong" = "坚持一周";
 "A whole year" = "整整一年";
@@ -61,7 +64,9 @@
 "Allow notifications" = "允许通知";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "请在“设置”中允许 ZenHab 使用麦克风和语音识别。";
 "Allowed" = "已允许";
+"An amazing month. Keep it going!" = "了不起的一个月，继续保持！";
 "An amazing week. Keep it going!" = "了不起的一周，继续保持！";
+"An amazing year. Keep it going!" = "了不起的一年，继续保持！";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "归档的习惯不会显示在“今天”页面，也不会发送通知，但历史记录会保留。";
 "And %lld more" = "还有 %lld 个";
 "Anytime" = "随时";
@@ -222,7 +227,9 @@
 "Every" = "每隔";
 "Every %@" = "每 %@";
 "Every N days" = "每 N 天";
+"Every check-in counts. The new month is a fresh start." = "每次打卡都算数，新的一个月是新的开始。";
 "Every check-in counts. The new week is a fresh start." = "每次打卡都算数，新的一周是新的开始。";
+"Every check-in counts. The new year is a fresh start." = "每次打卡都算数，新的一年是新的开始。";
 "Every day" = "每天";
 "Every month, on day %lld" = "每月 %lld 日";
 "Every other day" = "隔天";
@@ -355,6 +362,7 @@
 "Last 30 days" = "最近 30 天";
 "Last 7 days" = "最近 7 天";
 "Last backup" = "上次备份";
+"Last month's results as a card you can share" = "上个月成果卡片，可分享";
 "Last week's results as a card you can share" = "上周成果卡片，可分享";
 "Last widget update" = "小组件上次更新";
 "Learn %@" = "学%@";
@@ -397,6 +405,7 @@
 "Misses are okay" = "偶尔错过也没关系";
 "Misses you a lot" = "非常想你";
 "Money saved" = "省下的钱";
+"Month in review" = "月度回顾";
 "Month of power" = "力量之月";
 "Monthly" = "按月";
 "Mood" = "心情";
@@ -413,7 +422,9 @@
 "Morning exercises" = "晨练";
 "Most steady: %@, %lld of %lld" = "最稳定：%@，%lld/%lld";
 "Move to archive" = "移至归档";
+"My month" = "我的一个月";
 "My week" = "我的一周";
+"My year" = "我的一年";
 "N times a week" = "每周 N 次";
 "Name" = "名称";
 "Never" = "从未";
@@ -507,6 +518,7 @@
 "Perfect week" = "完美的一周";
 "Pet" = "宠物";
 "Pet gifts" = "宠物礼物";
+"Pet name" = "宠物名字";
 "Phoenix" = "凤凰";
 "Pick a template or create your own." = "选择模板或自己创建。";
 "Plan the day" = "规划一天";
@@ -570,6 +582,7 @@
 "Saved: %@" = "已省下：%@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "说“在ZenHab中打卡习惯”、“在ZenHab中添加习惯”或“ZenHab还剩什么”。";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "说出习惯名称，例如“喝水”。";
+"Scan to get ZenHab" = "扫码获取 ZenHab";
 "Schedule" = "计划";
 "Scheduled notifications" = "已安排的通知";
 "See how many habits are done today." = "查看今天完成了多少个习惯。";
@@ -692,6 +705,7 @@
 "Total, days" = "总计，天";
 "Track expenses" = "记账";
 "Track habits, get gentle reminders and watch your streaks grow." = "记录习惯，接收温和提醒，看着连续记录不断增长。";
+"Track your habits with ZenHab" = "用 ZenHab 追踪你的习惯";
 "Try again" = "重试";
 "Try it" = "试一试";
 "Turn on the lock" = "开启锁定";
@@ -758,6 +772,7 @@
 "Write 50 notes" = "写 50 条备注";
 "Write down 3 good things" = "写下3件好事";
 "Write to the developer" = "联系开发者";
+"Year in review" = "年度回顾";
 "Yearly" = "按年";
 "Yesterday" = "昨天";
 "Yoga" = "瑜伽";
@@ -767,6 +782,7 @@
 "Your days and the habits that lift your mood" = "你的每一天，以及让你心情变好的习惯";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "习惯和历史记录会自动保存到你的 iCloud。在新 iPhone 上，ZenHab 会提示你恢复全部数据。";
 "Your message has been sent." = "消息已发送。";
+"Your month in review" = "你的月度回顾";
 "Your own emoji from the keyboard" = "用键盘输入表情";
 "Your own name, icon and schedule" = "自定名称、图标和计划";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "每完成一个习惯，宠物就会成长；你消失几天，它会难过。";
@@ -774,6 +790,8 @@
 "Your photo" = "自己的照片";
 "Your week in review" = "你的一周回顾";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "完整的心情历史、月度图表，以及让你心情变好的习惯。";
+"Your year in review" = "你的年度回顾";
+"Your year's results as a card you can share" = "你的年度成果卡片，可分享";
 "ZenHab is locked" = "ZenHab 已锁定";
 "ZenHab on Apple Watch" = "Apple Watch 版 ZenHab";
 "a month" = "一个月";

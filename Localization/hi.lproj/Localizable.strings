@@ -5,6 +5,7 @@
 "%@ free, then %@. Cancel anytime." = "%1$@ मुफ़्त, फिर %2$@। कभी भी रद्द करें।";
 "%@ is already done today." = "%@ आज पहले ही पूरा हो चुका है।";
 "%@: the streak broke" = "%@: लगातार गिनती टूटी";
+"%lld XP" = "%lld XP";
 "%lld min" = "%lld मिनट";
 "%lld more to %@" = "%@ तक %lld और";
 "%lld of %lld" = "%2$lld में से %1$lld";
@@ -26,7 +27,9 @@
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "ऐप से बाहर जाने पर आपकी आदतों और इतिहास की कॉपी अपने आप आपके iCloud में सेव हो जाती है, ताकि फ़ोन बदलने पर कुछ न खोए।";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "लॉक स्क्रीन और Dynamic Island पर उलटी गिनती, जो समय पूरा होने पर आदत पर निशान लगा देती है।";
 "A grown pet brings up to +5 a day" = "बड़ा पालतू रोज़ +5 तक लाता है";
+"A solid month. A little more and it'll be perfect." = "अच्छा महीना। थोड़ा और, और यह परफ़ेक्ट होगा।";
 "A solid week. A little more and it'll be perfect." = "अच्छा हफ़्ता। थोड़ा और, और यह परफ़ेक्ट होगा।";
+"A solid year. Every month makes a difference." = "अच्छा साल। हर महीने ने फ़र्क डाला।";
 "A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets." = "सभी निशानों, नोट्स और मूड की तालिका, Numbers, Excel या Google Sheets के लिए।";
 "A week strong" = "एक मज़बूत हफ़्ता";
 "A whole year" = "पूरा एक साल";
@@ -61,7 +64,9 @@
 "Allow notifications" = "सूचनाओं की अनुमति दें";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "सेटिंग्स में ZenHab को माइक्रोफ़ोन और वाणी पहचान की अनुमति दें।";
 "Allowed" = "अनुमति है";
+"An amazing month. Keep it going!" = "शानदार महीना। ऐसे ही जारी रखें!";
 "An amazing week. Keep it going!" = "शानदार हफ़्ता। ऐसे ही जारी रखें!";
+"An amazing year. Keep it going!" = "शानदार साल। ऐसे ही जारी रखें!";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "संग्रहित आदत 'आज' स्क्रीन पर नहीं दिखती और सूचनाएँ नहीं भेजती, लेकिन उसका इतिहास बना रहता है।";
 "And %lld more" = "और %lld";
 "Anytime" = "कभी भी";
@@ -222,7 +227,9 @@
 "Every" = "हर";
 "Every %@" = "हर %@";
 "Every N days" = "हर N दिन";
+"Every check-in counts. The new month is a fresh start." = "हर निशान मायने रखता है। नया महीना नई शुरुआत है।";
 "Every check-in counts. The new week is a fresh start." = "हर निशान मायने रखता है। नया हफ़्ता नई शुरुआत है।";
+"Every check-in counts. The new year is a fresh start." = "हर निशान मायने रखता है। नया साल नई शुरुआत है।";
 "Every day" = "हर दिन";
 "Every month, on day %lld" = "हर महीने की %lld तारीख";
 "Every other day" = "एक दिन छोड़कर";
@@ -355,6 +362,7 @@
 "Last 30 days" = "पिछले 30 दिन";
 "Last 7 days" = "पिछले 7 दिन";
 "Last backup" = "पिछला बैकअप";
+"Last month's results as a card you can share" = "पिछले महीने के नतीजे, शेयर करने लायक कार्ड में";
 "Last week's results as a card you can share" = "पिछले हफ़्ते के नतीजे, शेयर करने लायक कार्ड में";
 "Last widget update" = "विजेट का पिछला अपडेट";
 "Learn %@" = "%@ सीखें";
@@ -397,6 +405,7 @@
 "Misses are okay" = "चूक जाना ठीक है";
 "Misses you a lot" = "आपको बहुत याद कर रहा है";
 "Money saved" = "बचाए पैसे";
+"Month in review" = "महीने का सार";
 "Month of power" = "ताक़त का महीना";
 "Monthly" = "मासिक";
 "Mood" = "मूड";
@@ -413,7 +422,9 @@
 "Morning exercises" = "सुबह की कसरत";
 "Most steady: %@, %lld of %lld" = "सबसे नियमित: %@, %lld में से %lld";
 "Move to archive" = "संग्रह में भेजें";
+"My month" = "मेरा महीना";
 "My week" = "मेरा हफ़्ता";
+"My year" = "मेरा साल";
 "N times a week" = "हफ़्ते में N बार";
 "Name" = "नाम";
 "Never" = "कभी नहीं";
@@ -507,6 +518,7 @@
 "Perfect week" = "परफ़ेक्ट हफ़्ता";
 "Pet" = "पालतू";
 "Pet gifts" = "पालतू के उपहार";
+"Pet name" = "पालतू का नाम";
 "Phoenix" = "फ़ीनिक्स";
 "Pick a template or create your own." = "टेम्पलेट चुनें या अपनी बनाएँ।";
 "Plan the day" = "दिन की योजना बनाएँ";
@@ -570,6 +582,7 @@
 "Saved: %@" = "बचत: %@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Siri से कहें: “Check off a habit in ZenHab”, “Add a habit in ZenHab” या “What's left in ZenHab”।";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "आदत का नाम बोलें, जैसे “पानी पीना”।";
+"Scan to get ZenHab" = "ZenHab पाने के लिए स्कैन करें";
 "Schedule" = "समय-सारिणी";
 "Scheduled notifications" = "तय सूचनाएँ";
 "See how many habits are done today." = "आज कितनी आदतें पूरी हुईं, यह देखें।";
@@ -692,6 +705,7 @@
 "Total, days" = "कुल, दिन";
 "Track expenses" = "ख़र्च लिखें";
 "Track habits, get gentle reminders and watch your streaks grow." = "आदतें दर्ज करें, हल्के रिमाइंडर पाएँ और अपनी लगातार गिनती बढ़ते देखें।";
+"Track your habits with ZenHab" = "ZenHab के साथ अपनी आदतें ट्रैक करें";
 "Try again" = "फिर से कोशिश करें";
 "Try it" = "आज़माएँ";
 "Turn on the lock" = "लॉक चालू करें";
@@ -758,6 +772,7 @@
 "Write 50 notes" = "50 नोट लिखें";
 "Write down 3 good things" = "3 अच्छी बातें लिखें";
 "Write to the developer" = "डेवलपर को लिखें";
+"Year in review" = "साल का सार";
 "Yearly" = "वार्षिक";
 "Yesterday" = "बीता कल";
 "Yoga" = "योग";
@@ -767,6 +782,7 @@
 "Your days and the habits that lift your mood" = "आपके दिन और मूड बेहतर करने वाली आदतें";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "आपकी आदतें और इतिहास अपने आप iCloud में सेव होते हैं। नए iPhone पर ZenHab सब कुछ वापस लाने का विकल्प देगा।";
 "Your message has been sent." = "आपका संदेश भेज दिया गया।";
+"Your month in review" = "आपके महीने का सार";
 "Your own emoji from the keyboard" = "कीबोर्ड से अपना इमोजी";
 "Your own name, icon and schedule" = "अपना नाम, आइकन और समय";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "हर पूरी की गई आदत के साथ आपका पालतू बढ़ता है और कुछ दिन गायब रहने पर उदास हो जाता है।";
@@ -774,6 +790,8 @@
 "Your photo" = "आपकी फ़ोटो";
 "Your week in review" = "आपके हफ़्ते का सार";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "पूरा मूड इतिहास, मासिक चार्ट और मूड बेहतर करने वाली आदतें।";
+"Your year in review" = "आपके साल का सार";
+"Your year's results as a card you can share" = "आपके साल के नतीजे, शेयर करने लायक कार्ड में";
 "ZenHab is locked" = "ZenHab लॉक है";
 "ZenHab on Apple Watch" = "Apple Watch पर ZenHab";
 "a month" = "एक महीना";

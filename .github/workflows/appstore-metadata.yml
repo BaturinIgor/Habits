@@ -26,7 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install
-        run: pip install pyjwt cryptography requests
+        run: pip install -r tools/appstore/requirements.txt
       - name: Fill What's New
         env:
           ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}

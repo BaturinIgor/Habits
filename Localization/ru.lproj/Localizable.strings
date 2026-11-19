@@ -5,6 +5,7 @@
 "%@ free, then %@. Cancel anytime." = "%1$@ бесплатно, затем %2$@. Отмена в любой момент.";
 "%@ is already done today." = "%@ уже выполнено сегодня.";
 "%@: the streak broke" = "%@: серия прервалась";
+"%lld XP" = "%lld опыта";
 "%lld min" = "%lld мин";
 "%lld more to %@" = "Ещё %lld до стадии \"%@\"";
 "%lld of %lld" = "%lld из %lld";
@@ -26,7 +27,9 @@
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "Копия привычек и истории сама сохраняется в твой iCloud, когда ты выходишь из приложения. При смене телефона ничего не потеряется.";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "Обратный отсчёт на экране блокировки и в Dynamic Island, а когда время выйдет, привычка отметится сама.";
 "A grown pet brings up to +5 a day" = "Подросший питомец приносит до +5 в день";
+"A solid month. A little more and it'll be perfect." = "Хороший месяц. Ещё чуть-чуть, и будет идеально.";
 "A solid week. A little more and it'll be perfect." = "Хорошая неделя. Ещё чуть-чуть, и будет идеально.";
+"A solid year. Every month makes a difference." = "Хороший год. Каждый месяц был не зря.";
 "A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets." = "Таблица всех отметок с заметками и настроением для Numbers, Excel или Google Таблиц.";
 "A week strong" = "Неделя силы";
 "A whole year" = "Целый год";
@@ -61,7 +64,9 @@
 "Allow notifications" = "Разрешить уведомления";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "Разреши ZenHab доступ к микрофону и распознаванию речи в Настройках.";
 "Allowed" = "Разрешены";
+"An amazing month. Keep it going!" = "Отличный месяц. Так держать!";
 "An amazing week. Keep it going!" = "Отличная неделя. Так держать!";
+"An amazing year. Keep it going!" = "Отличный год. Так держать!";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "Архивная привычка не показывается на главном экране и не присылает уведомления, но её история сохраняется.";
 "And %lld more" = "И ещё %lld";
 "Anytime" = "В любое время";
@@ -222,7 +227,9 @@
 "Every" = "Раз в";
 "Every %@" = "Раз в %@";
 "Every N days" = "Раз в N дней";
+"Every check-in counts. The new month is a fresh start." = "Каждая отметка важна. Новый месяц — новый старт.";
 "Every check-in counts. The new week is a fresh start." = "Каждая отметка важна. Новая неделя — новый старт.";
+"Every check-in counts. The new year is a fresh start." = "Каждая отметка важна. Новый год — новый старт.";
 "Every day" = "Каждый день";
 "Every month, on day %lld" = "Каждый месяц, %lld-го числа";
 "Every other day" = "Через день";
@@ -355,6 +362,7 @@
 "Last 30 days" = "За 30 дней";
 "Last 7 days" = "Последние 7 дней";
 "Last backup" = "Последняя копия";
+"Last month's results as a card you can share" = "Итоги прошлого месяца карточкой, которой можно поделиться";
 "Last week's results as a card you can share" = "Итоги прошлой недели карточкой, которой можно поделиться";
 "Last widget update" = "Последнее обновление виджета";
 "Learn %@" = "Учить %@";
@@ -397,6 +405,7 @@
 "Misses are okay" = "Пропуски - это нормально";
 "Misses you a lot" = "Очень скучает";
 "Money saved" = "Сэкономленные деньги";
+"Month in review" = "Итоги месяца";
 "Month of power" = "Месяц силы";
 "Monthly" = "На месяц";
 "Mood" = "Настроение";
@@ -413,7 +422,9 @@
 "Morning exercises" = "Зарядка";
 "Most steady: %@, %lld of %lld" = "Самая стабильная: %@, %lld из %lld";
 "Move to archive" = "Переместить в архив";
+"My month" = "Мой месяц";
 "My week" = "Моя неделя";
+"My year" = "Мой год";
 "N times a week" = "N раз в неделю";
 "Name" = "Название";
 "Never" = "Никогда";
@@ -507,6 +518,7 @@
 "Perfect week" = "Идеальная неделя";
 "Pet" = "Питомец";
 "Pet gifts" = "Подарки питомца";
+"Pet name" = "Имя питомца";
 "Phoenix" = "Феникс";
 "Pick a template or create your own." = "Выбери шаблон или создай свою.";
 "Plan the day" = "Спланировать день";
@@ -570,6 +582,7 @@
 "Saved: %@" = "Сэкономлено: %@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Скажи: «Отметь привычку в ZenHab», «Добавь привычку в ZenHab» или «Что осталось в ZenHab».";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Скажи, например: «Таблетки собаке раз в месяц 15 числа в 9 утра» или «Читать через день вечером».";
+"Scan to get ZenHab" = "Наведи камеру, чтобы скачать ZenHab";
 "Schedule" = "Расписание";
 "Scheduled notifications" = "Запланировано уведомлений";
 "See how many habits are done today." = "Сколько привычек выполнено сегодня.";
@@ -692,6 +705,7 @@
 "Total, days" = "Всего, дней";
 "Track expenses" = "Записать расходы";
 "Track habits, get gentle reminders and watch your streaks grow." = "Отмечай привычки, получай мягкие напоминания и смотри, как растут серии.";
+"Track your habits with ZenHab" = "Отслеживай привычки в ZenHab";
 "Try again" = "Попробовать ещё раз";
 "Try it" = "Попробовать";
 "Turn on the lock" = "Включить блокировку";
@@ -758,6 +772,7 @@
 "Write 50 notes" = "Напиши 50 заметок";
 "Write down 3 good things" = "Записать 3 хороших события";
 "Write to the developer" = "Написать разработчику";
+"Year in review" = "Итоги года";
 "Yearly" = "На год";
 "Yesterday" = "Вчера";
 "Yoga" = "Йога";
@@ -767,6 +782,7 @@
 "Your days and the habits that lift your mood" = "Твои дни и привычки, которые поднимают настроение";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Привычки и история сами сохраняются в твой iCloud. На новом iPhone ZenHab предложит всё вернуть.";
 "Your message has been sent." = "Сообщение отправлено.";
+"Your month in review" = "Итоги твоего месяца";
 "Your own emoji from the keyboard" = "Свой эмодзи с клавиатуры";
 "Your own name, icon and schedule" = "Своё название, иконка и расписание";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Питомец растёт с каждой отмеченной привычкой и грустит, если ты пропадаешь на несколько дней.";
@@ -774,6 +790,8 @@
 "Your photo" = "Своё фото";
 "Your week in review" = "Итоги твоей недели";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "Вся история настроения, график за месяц и привычки, которые его поднимают.";
+"Your year in review" = "Итоги твоего года";
+"Your year's results as a card you can share" = "Итоги года карточкой, которой можно поделиться";
 "ZenHab is locked" = "ZenHab заблокирован";
 "ZenHab on Apple Watch" = "ZenHab на Apple Watch";
 "a month" = "месяц";

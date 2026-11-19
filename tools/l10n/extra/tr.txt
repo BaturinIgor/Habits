@@ -792,3 +792,21 @@ Watch face complications||Saat kadranı komplikasyonları
 Add ZenHab to your watch face or Smart Stack to see how many habits are done today.||Bugün kaç alışkanlığı tamamladığını görmek için ZenHab'i saat kadranına veya Akıllı Yığın'a ekle.
 Timer on your wrist||Bileğinde zamanlayıcı
 With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off.||Pro ile Apple Watch'ta alışkanlık zamanlayıcısını başlat. Süre dolunca saat bileğine dokunur ve alışkanlığı işaretler.
+%lld XP||%lld XP
+Pet name||Evcil hayvanın adı
+Scan to get ZenHab||ZenHab'i indirmek için tara
+Track your habits with ZenHab||Alışkanlıklarını ZenHab ile takip et
+My month||Ayım
+My year||Yılım
+Month in review||Ay özeti
+Year in review||Yıl özeti
+Your month in review||Ayının özeti
+Your year in review||Yılının özeti
+Last month's results as a card you can share||Geçen ayın sonuçları, paylaşılabilir bir kartta
+Your year's results as a card you can share||Yılının sonuçları, paylaşılabilir bir kartta
+An amazing month. Keep it going!||Harika bir ay. Böyle devam!
+A solid month. A little more and it'll be perfect.||İyi bir ay. Biraz daha ve mükemmel olacak.
+Every check-in counts. The new month is a fresh start.||Her işaret önemli. Yeni ay yeni bir başlangıç.
+An amazing year. Keep it going!||Harika bir yıl. Böyle devam!
+A solid year. Every month makes a difference.||İyi bir yıl. Her ay bir fark yarattı.
+Every check-in counts. The new year is a fresh start.||Her işaret önemli. Yeni yıl yeni bir başlangıç.

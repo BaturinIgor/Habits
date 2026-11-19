@@ -792,3 +792,21 @@ Watch face complications||Complicações no mostrador
 Add ZenHab to your watch face or Smart Stack to see how many habits are done today.||Adicione o ZenHab ao mostrador ou à Pilha Inteligente para ver quantos hábitos você já fez hoje.
 Timer on your wrist||Timer no pulso
 With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off.||Com o Pro, inicie o timer de um hábito no Apple Watch. Quando o tempo acabar, o relógio toca no seu pulso e marca o hábito.
+%lld XP||%lld XP
+Pet name||Nome do bichinho
+Scan to get ZenHab||Escaneie para baixar o ZenHab
+Track your habits with ZenHab||Acompanhe seus hábitos com o ZenHab
+My month||Meu mês
+My year||Meu ano
+Month in review||Resumo do mês
+Year in review||Resumo do ano
+Your month in review||Seu resumo do mês
+Your year in review||Seu resumo do ano
+Last month's results as a card you can share||Os resultados do mês passado em um cartão para compartilhar
+Your year's results as a card you can share||Os resultados do seu ano em um cartão para compartilhar
+An amazing month. Keep it going!||Um mês incrível. Continue assim!
+A solid month. A little more and it'll be perfect.||Um bom mês. Mais um pouco e fica perfeito.
+Every check-in counts. The new month is a fresh start.||Cada marcação conta. O novo mês é um novo começo.
+An amazing year. Keep it going!||Um ano incrível. Continue assim!
+A solid year. Every month makes a difference.||Um bom ano. Cada mês fez diferença.
+Every check-in counts. The new year is a fresh start.||Cada marcação conta. O novo ano é um novo começo.

@@ -5,6 +5,7 @@
 "%@ free, then %@. Cancel anytime." = "%1$@無料、その後%2$@。いつでも解約できます。";
 "%@ is already done today." = "%@は今日もう完了しています。";
 "%@: the streak broke" = "%@：連続記録が途切れました";
+"%lld XP" = "%lld XP";
 "%lld min" = "%lld分";
 "%lld more to %@" = "%2$@まであと%1$lld";
 "%lld of %lld" = "%lld / %lld";
@@ -26,7 +27,9 @@
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "アプリを閉じると、習慣と履歴のコピーが自動で iCloud に保存されます。機種変更でもデータは失われません。";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "ロック画面とDynamic Islandでカウントダウンし、時間になると習慣を自動でチェックします。";
 "A grown pet brings up to +5 a day" = "育ったペットは1日最大 +5 くれます";
+"A solid month. A little more and it'll be perfect." = "いい1か月でした。あと少しで完璧です。";
 "A solid week. A little more and it'll be perfect." = "いい1週間でした。あと少しで完璧です。";
+"A solid year. Every month makes a difference." = "いい1年でした。毎月の積み重ねが力になっています。";
 "A table of all check-ins with notes and mood for Numbers, Excel or Google Sheets." = "すべての記録とメモ、気分をまとめた表。Numbers、Excel、Googleスプレッドシートで使えます。";
 "A week strong" = "1週間達成";
 "A whole year" = "まる1年";
@@ -61,7 +64,9 @@
 "Allow notifications" = "通知を許可";
 "Allow the microphone and speech recognition for ZenHab in Settings." = "設定でZenHabのマイクと音声認識を許可してください。";
 "Allowed" = "許可済み";
+"An amazing month. Keep it going!" = "すばらしい1か月でした。この調子で！";
 "An amazing week. Keep it going!" = "すばらしい1週間でした。この調子で！";
+"An amazing year. Keep it going!" = "すばらしい1年でした。この調子で！";
 "An archived habit is hidden from the Today screen and sends no notifications, but its history is kept." = "アーカイブした習慣は「今日」に表示されず通知も届きませんが、履歴は残ります。";
 "And %lld more" = "ほか%lld件";
 "Anytime" = "いつでも";
@@ -222,7 +227,9 @@
 "Every" = "間隔";
 "Every %@" = "%@ごと";
 "Every N days" = "N日ごと";
+"Every check-in counts. The new month is a fresh start." = "チェックひとつひとつに意味があります。新しい月は新しいスタート。";
 "Every check-in counts. The new week is a fresh start." = "チェックひとつひとつに意味があります。新しい週は新しいスタート。";
+"Every check-in counts. The new year is a fresh start." = "チェックひとつひとつに意味があります。新しい年は新しいスタート。";
 "Every day" = "毎日";
 "Every month, on day %lld" = "毎月%lld日";
 "Every other day" = "1日おき";
@@ -355,6 +362,7 @@
 "Last 30 days" = "過去30日間";
 "Last 7 days" = "過去7日間";
 "Last backup" = "前回のバックアップ";
+"Last month's results as a card you can share" = "先月の結果を共有できるカードで";
 "Last week's results as a card you can share" = "先週の結果を共有できるカードで";
 "Last widget update" = "ウィジェットの最終更新";
 "Learn %@" = "%@を学ぶ";
@@ -397,6 +405,7 @@
 "Misses are okay" = "休んでも大丈夫";
 "Misses you a lot" = "とても寂しがっている";
 "Money saved" = "節約したお金";
+"Month in review" = "今月のふり返り";
 "Month of power" = "パワーの1か月";
 "Monthly" = "月額";
 "Mood" = "気分";
@@ -413,7 +422,9 @@
 "Morning exercises" = "朝の体操";
 "Most steady: %@, %lld of %lld" = "いちばん安定：%@、%lld/%lld";
 "Move to archive" = "アーカイブへ移動";
+"My month" = "私の1か月";
 "My week" = "私の1週間";
+"My year" = "私の1年";
 "N times a week" = "週N回";
 "Name" = "名前";
 "Never" = "なし";
@@ -507,6 +518,7 @@
 "Perfect week" = "パーフェクトな週";
 "Pet" = "ペット";
 "Pet gifts" = "ペットのおくりもの";
+"Pet name" = "ペットの名前";
 "Phoenix" = "フェニックス";
 "Pick a template or create your own." = "テンプレートを選ぶか、自分で作成しましょう。";
 "Plan the day" = "1日の計画を立てる";
@@ -570,6 +582,7 @@
 "Saved: %@" = "節約：%@";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "「ZenHabで習慣をチェック」「ZenHabで習慣を追加」「ZenHabで残りは」と話しかけてください。";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "習慣の名前を話してください。例：「水を飲む」";
+"Scan to get ZenHab" = "スキャンしてZenHabを入手";
 "Schedule" = "スケジュール";
 "Scheduled notifications" = "予定された通知";
 "See how many habits are done today." = "今日いくつの習慣を達成したかを表示します。";
@@ -692,6 +705,7 @@
 "Total, days" = "合計（日）";
 "Track expenses" = "支出を記録する";
 "Track habits, get gentle reminders and watch your streaks grow." = "習慣を記録し、やさしい通知を受け取り、連続記録を伸ばしましょう。";
+"Track your habits with ZenHab" = "ZenHabで習慣を記録しよう";
 "Try again" = "再試行";
 "Try it" = "試してみる";
 "Turn on the lock" = "ロックをオンにする";
@@ -758,6 +772,7 @@
 "Write 50 notes" = "メモを50件書く";
 "Write down 3 good things" = "良かったことを3つ書く";
 "Write to the developer" = "開発者に連絡";
+"Year in review" = "1年のふり返り";
 "Yearly" = "年額";
 "Yesterday" = "昨日";
 "Yoga" = "ヨガ";
@@ -767,6 +782,7 @@
 "Your days and the habits that lift your mood" = "毎日の記録と、気分を上げる習慣";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "習慣と履歴は自動で iCloud に保存されます。新しい iPhone では ZenHab がすべての復元を提案します。";
 "Your message has been sent." = "メッセージを送信しました。";
+"Your month in review" = "あなたの1か月";
 "Your own emoji from the keyboard" = "キーボードから絵文字を入力";
 "Your own name, icon and schedule" = "名前、アイコン、予定を自由に";
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "習慣をチェックするたびにペットは成長し、数日いなくなると寂しがります。";
@@ -774,6 +790,8 @@
 "Your photo" = "自分の写真";
 "Your week in review" = "あなたの1週間";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "気分の全履歴、月間グラフ、気分を上げる習慣。";
+"Your year in review" = "あなたの1年";
+"Your year's results as a card you can share" = "1年の結果を共有できるカードで";
 "ZenHab is locked" = "ZenHabはロックされています";
 "ZenHab on Apple Watch" = "Apple WatchでZenHab";
 "a month" = "1か月";

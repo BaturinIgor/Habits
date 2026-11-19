@@ -792,3 +792,21 @@ Watch face complications||Komplikasi tampilan jam
 Add ZenHab to your watch face or Smart Stack to see how many habits are done today.||Tambahkan ZenHab ke tampilan jam atau Tumpukan Pintar untuk melihat berapa kebiasaan yang selesai hari ini.
 Timer on your wrist||Timer di pergelangan tangan
 With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off.||Dengan Pro, mulai timer kebiasaan di Apple Watch. Saat waktu habis, jam akan mengetuk pergelangan tanganmu dan mencentang kebiasaan.
+%lld XP||%lld XP
+Pet name||Nama hewan peliharaan
+Scan to get ZenHab||Pindai untuk mendapatkan ZenHab
+Track your habits with ZenHab||Pantau kebiasaanmu dengan ZenHab
+My month||Bulanku
+My year||Tahunku
+Month in review||Ringkasan bulan
+Year in review||Ringkasan tahun
+Your month in review||Ringkasan bulanmu
+Your year in review||Ringkasan tahunmu
+Last month's results as a card you can share||Hasil bulan lalu dalam kartu yang bisa dibagikan
+Your year's results as a card you can share||Hasil tahunmu dalam kartu yang bisa dibagikan
+An amazing month. Keep it going!||Bulan yang luar biasa. Pertahankan!
+A solid month. A little more and it'll be perfect.||Bulan yang bagus. Sedikit lagi dan akan sempurna.
+Every check-in counts. The new month is a fresh start.||Setiap centang berarti. Bulan baru adalah awal yang baru.
+An amazing year. Keep it going!||Tahun yang luar biasa. Pertahankan!
+A solid year. Every month makes a difference.||Tahun yang bagus. Setiap bulan membawa perubahan.
+Every check-in counts. The new year is a fresh start.||Setiap centang berarti. Tahun baru adalah awal yang baru.

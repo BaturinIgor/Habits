@@ -34,9 +34,3 @@
 ## App Store
 
 Всё для публикации лежит в [docs/appstore](docs/appstore/README.md): пошаговая инструкция, тексты на 14 языках, ответы для анкет и план скриншотов. Сборка для App Store запускается вручную: Actions -> App Store -> Run workflow.
-
-## Android
-
-Исходники в папке `android/` (Kotlin, Jetpack Compose, Glance для виджета). Каждый push в `android/**` собирает подписанный `Habits.apk` и публикует его в Releases с тегом `android-N`.
-
-Установка: скачай `Habits.apk` на телефон, открой его и разреши установку из этого источника. Новые сборки ставятся поверх, данные сохраняются.
