@@ -1,5 +1,6 @@
 import CoreImage
 import SwiftUI
+import UIKit
 import XCTest
 @testable import Habits
 
@@ -161,6 +162,68 @@ final class LogicTests: XCTestCase {
             XCTAssertTrue(recap.hasData, "\(period)")
             XCTAssertEqual(try qrCodes(onShareImageOf: recap), [AppInfo.appStoreURL(campaign: period.campaign).absoluteString], "\(period)")
         }
+    }
+
+    /// Подпись «Scan to get ZenHab» под названием на картинке «Поделиться» на всех 14 языках:
+    /// каждое слово целиком помещается в колонку рядом с QR-кодом (без обрезки «…» и уменьшения),
+    /// подвал не выше 3 строк, а QR-код рядом с самой длинной подписью (ru) читается. KAN-101.
+    @MainActor
+    func testShareFooterScanTextFitsInAllLanguages() throws {
+        let campaign = ShareCampaign.month
+        let column = ShareCardFooter.textColumnWidth(campaign: campaign)
+        let font = UIFont.preferredFont(forTextStyle: .caption1, compatibleWith: UITraitCollection(preferredContentSizeCategory: .large))
+        let languages = Bundle.main.localizations.filter { $0 != "Base" }
+        XCTAssertGreaterThanOrEqual(languages.count, 14, "\(languages)")
+        let link = AppInfo.appStoreURL(campaign: campaign).absoluteString
+        for language in languages {
+            let path = try XCTUnwrap(Bundle.main.path(forResource: language, ofType: "lproj"), language)
+            let bundle = try XCTUnwrap(Bundle(path: path))
+            let text = bundle.localizedString(forKey: "Scan to get ZenHab", value: nil, table: nil)
+            if language != "en" { XCTAssertNotEqual(text, "Scan to get ZenHab", "\(language): not translated") }
+            let words = WordWrapText.words(text)
+            for word in words where words.count > 1 {
+                let width = (word as NSString).size(withAttributes: [.font: font]).width
+                XCTAssertLessThan(width, column, "\(language): «\(word)» is wider than the column")
+            }
+            // Вся фраза помещается в 3 строки колонки.
+            let total = (text as NSString).size(withAttributes: [.font: font]).width
+            XCTAssertLessThan(total, column * 3 * 0.9, "\(language): «\(text)» needs more than 3 lines")
+
+            let footer = ShareCardFooter(campaign: campaign, scanText: text)
+                .frame(width: 360 - 44)
+                .padding(22)
+                .background(Color.blue)
+                .environment(\.colorScheme, .light)
+                .dynamicTypeSize(.large)
+            let renderer = ImageRenderer(content: footer)
+            renderer.scale = 3
+            let image = try XCTUnwrap(renderer.cgImage, language)
+            let detector = try XCTUnwrap(CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]))
+            let codes = detector.features(in: CIImage(cgImage: image)).compactMap { ($0 as? CIQRCodeFeature)?.messageString }
+            XCTAssertEqual(codes, [link], language)
+        }
+    }
+
+    /// Слова в WordFlowLayout переносятся только целиком: строк столько, сколько нужно по ширине слов,
+    /// и картинка не шире предложенной ширины. KAN-101.
+    @MainActor
+    func testWordWrapTextBreaksOnlyBetweenWords() throws {
+        let font = UIFont.systemFont(ofSize: 30)
+        func height(_ text: String, width: CGFloat) throws -> CGFloat {
+            let renderer = ImageRenderer(content: WordWrapText(text).font(.system(size: 30)).frame(width: width, alignment: .leading).fixedSize(horizontal: false, vertical: true))
+            renderer.scale = 1
+            return try XCTUnwrap(renderer.uiImage).size.height
+        }
+        let line = font.lineHeight
+        // «привычек выполнено» в 200 pt: два слова на двух строках, а не «выпол-нено» на третьей.
+        let two = try height("привычек выполнено", width: 200)
+        XCTAssertEqual(two, 2 * line, accuracy: line * 0.4)
+        // В широкой колонке — одна строка.
+        let one = try height("привычек выполнено", width: 600)
+        XCTAssertEqual(one, line, accuracy: line * 0.4)
+        // Слово шире колонки уменьшается и остаётся одной строкой.
+        let long = try height("Идеальные", width: 80)
+        XCTAssertLessThanOrEqual(long, line * 1.2)
     }
 
     @MainActor
@@ -392,6 +455,67 @@ final class LogicTests: XCTestCase {
             XCTAssertNil(weekly)
         }
         XCTAssertNil(Recap.banner(in: AppData(), dismissed: [:], now: date(2026, 6, 1)))
+    }
+
+    /// Месяц и год предлагаются, только если привычки прожили в них хотя бы неделю,
+    /// а не просто если период длинный: привычка от 30 декабря не даёт «итогов года» из двух дней.
+    func testShortLivedHabitsDoNotOfferMonthOrYear() {
+        var cal = Calendar(identifier: .gregorian)
+        cal.firstWeekday = 2
+        cal.timeZone = .current
+        func at(_ y: Int, _ m: Int, _ d: Int) -> Date { cal.date(from: DateComponents(year: y, month: m, day: d, hour: 12))! }
+
+        var data = AppData()
+        let habit = Habit(name: "Test", schedule: HabitSchedule(startDate: at(2026, 12, 30)), createdAt: at(2026, 12, 30))
+        data.habits = [habit]
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(at(2026, 12, 30)))
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(at(2026, 12, 31)))
+        // 1 января 2027 (пятница): год и декабрь по два дня, неделя уже не в первых трёх днях.
+        XCTAssertFalse(Recap.isAvailable(.year, in: data, now: at(2027, 1, 1), calendar: cal))
+        XCTAssertFalse(Recap.isAvailable(.month, in: data, now: at(2027, 1, 1), calendar: cal))
+        XCTAssertNil(Recap.banner(in: data, dismissed: [:], now: at(2027, 1, 1), calendar: cal))
+        // 10 февраля: прошлый год из двух дней не в счёт, берём этот год по вчера.
+        let year = Recap.interval(.year, in: data, now: at(2027, 2, 10), calendar: cal)
+        XCTAssertEqual(year.start, cal.startOfDay(for: at(2027, 1, 1)))
+        XCTAssertTrue(Recap.isAvailable(.year, in: data, now: at(2027, 2, 10), calendar: cal))
+
+        // Понедельник 1 июня 2026, привычка с 30 мая: вместо месяца из двух дней итоги недели.
+        var june = AppData()
+        let fresh = Habit(name: "Fresh", schedule: HabitSchedule(startDate: at(2026, 5, 30)), createdAt: at(2026, 5, 30))
+        june.habits = [fresh]
+        june.setStatus(.done, habitID: fresh.id, day: DayKey.make(at(2026, 5, 30)))
+        XCTAssertFalse(Recap.isAvailable(.month, in: june, now: at(2026, 6, 1), calendar: cal))
+        XCTAssertEqual(Recap.banner(in: june, dismissed: [:], now: at(2026, 6, 1), calendar: cal)?.period, .week)
+    }
+
+    /// Привычки «N раз в неделю» в месяц и год не идут (у них нет нужных дней), поэтому
+    /// и пункты не предлагаются, чтобы не открывать пустую карточку.
+    func testWeeklyOnlyHabitsDoNotOfferMonthOrYear() {
+        var data = AppData()
+        data.habits = [Habit(name: "Gym", schedule: HabitSchedule(kind: .weekly, startDate: date(2025, 1, 1), timesPerWeek: 3), createdAt: date(2025, 1, 1))]
+        XCTAssertFalse(Recap.isAvailable(.month, in: data, now: date(2026, 3, 15)))
+        XCTAssertFalse(Recap.isAvailable(.year, in: data, now: date(2026, 3, 15)))
+        XCTAssertNil(Recap.banner(in: data, dismissed: [.week: DayKey.make(Recap.lastWeekInterval(now: date(2026, 3, 2)).start)], now: date(2026, 3, 2)))
+    }
+
+    /// Для недели всё как раньше: у привычек «N раз в неделю» с отметками баннер недели есть.
+    func testWeeklyOnlyHabitsStillGetWeekBanner() {
+        var cal = Calendar(identifier: .gregorian)
+        cal.firstWeekday = 2
+        cal.timeZone = .current
+        func at(_ y: Int, _ m: Int, _ d: Int) -> Date { cal.date(from: DateComponents(year: y, month: m, day: d, hour: 12))! }
+        var data = AppData()
+        let gym = Habit(name: "Gym", schedule: HabitSchedule(kind: .weekly, startDate: at(2025, 1, 1), timesPerWeek: 3), createdAt: at(2025, 1, 1))
+        data.habits = [gym]
+        // Неделя 23 февраля – 1 марта 2026, отметки во вторник и четверг.
+        data.setStatus(.done, habitID: gym.id, day: DayKey.make(at(2026, 2, 24)))
+        data.setStatus(.done, habitID: gym.id, day: DayKey.make(at(2026, 2, 26)))
+        // Вторник 3 марта: месяц ей не предлагается, неделя есть.
+        let recap = Recap.banner(in: data, dismissed: [:], now: at(2026, 3, 3), calendar: cal)
+        XCTAssertEqual(recap?.period, .week)
+        XCTAssertEqual(recap?.start, cal.startOfDay(for: at(2026, 2, 23)))
+        XCTAssertEqual(recap?.done, 2)
+        XCTAssertEqual(recap?.percent, 100)
     }
 
     func testMonthTitleHasNoYearSuffix() {
