@@ -89,6 +89,7 @@ struct PetView: View {
                 }
             }
             .sheet(isPresented: $showingPaywall) { PaywallView() }
+            .designAlert("petRename", $renaming)
             .alert("Rename", isPresented: $renaming) {
                 TextField("Name", text: $renameText)
                 Button("Save") { store.renamePet(renameText) }

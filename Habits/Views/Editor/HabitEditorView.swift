@@ -179,6 +179,7 @@ struct HabitEditorView: View {
                         .disabled(!canSave)
                 }
             }
+            .designAlert("newGroup", $showingNewGroup)
             .alert("New group", isPresented: $showingNewGroup) {
                 TextField("Name", text: $newGroupName)
                 Button("Cancel", role: .cancel) { newGroupName = "" }
@@ -188,6 +189,7 @@ struct HabitEditorView: View {
                     newGroupName = ""
                 }
             }
+            .designAlert("deleteHabit", $confirmDelete)
             .alert("Delete habit?", isPresented: $confirmDelete) {
                 Button("Delete", role: .destructive) {
                     if let original {

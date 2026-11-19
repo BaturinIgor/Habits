@@ -151,6 +151,7 @@ struct QuitDetailSection: View {
             RoundedRectangle(cornerRadius: 24, style: .continuous)
                 .fill(Color(uiColor: .secondarySystemGroupedBackground))
         }
+        .designAlert("relapse", $confirmRelapse)
         .confirmationDialog("Start the count again?", isPresented: $confirmRelapse, titleVisibility: .visible) {
             Button("I slipped", role: .destructive) {
                 withAnimation { store.relapse(habit.id) }
