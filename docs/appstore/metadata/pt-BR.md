@@ -7,7 +7,7 @@ ZenHab: hábitos e rotina
 Sequências, metas e lembretes
 
 ## Promotional text
-Hábitos que ficam: lembretes gentis, sequências, um bichinho que cresce com você e widgets para marcar com um toque. Sem conta, seus dados ficam no seu iPhone.
+Hábitos que ficam, agora também no Apple Watch: marque pelo pulso, veja o resumo do mês e do ano, com um bichinho que cresce com você. Sem conta.
 
 ## Keywords
 habito,rastreador,planner,diario,metas,lembrete,sequencia,widget,produtividade,agua,objetivos
@@ -29,12 +29,15 @@ LEMBRETES QUE FUNCIONAM
 
 PROGRESSO E MOTIVAÇÃO
 • Sequência atual e recorde, taxa de conclusão, calendário, gráficos e mapa de calor
+• Resumo da semana, do mês e do ano para compartilhar como imagem
 • Conquistas, um bichinho que cresce a cada hábito e faíscas para novos bichinhos, avatares e fundos
 • Aprenda palavras: 500 palavras comuns em 14 idiomas, com pronúncia e repetição espaçada
 • Widgets para a tela de início e a tela bloqueada
+• Apple Watch: marque os hábitos de hoje pelo pulso, complicações no mostrador e timer com o Pro
 
 PRIVADO
-• Todos os seus dados ficam no seu iPhone. Sem conta, sem anúncios, sem rastreamento
+• Seus hábitos ficam no seu iPhone e no seu iCloud. Sem conta, sem anúncios, sem rastreamento
+• Estatísticas de uso anônimas, que você pode desligar em Ajustes
 • Exporte e importe backups
 
 ZENHAB PRO
@@ -46,6 +49,11 @@ Termos de uso: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacidade: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab no Apple Watch: veja os hábitos de hoje no pulso e marque com um toque. Tudo sincroniza com o iPhone.
-• Complicações no mostrador e na Pilha Inteligente: veja num relance quantos hábitos você já fez hoje.
-• Timer de hábitos no Apple Watch (Pro): quando o tempo acabar, o relógio toca no seu pulso e marca o hábito.
+• ZenHab no Apple Watch: os hábitos de hoje no pulso, marcados com um toque (nos hábitos com contagem, cada toque soma um). Funciona offline e sincroniza com o iPhone.
+• Complicações para o mostrador: circular, de canto, retangular e em linha. Veja o progresso do dia num relance.
+• Timer de hábitos no Apple Watch (Pro): quando o tempo acabar, o relógio dá um toque no seu pulso e marca o hábito.
+• Resumo do mês e Resumo do ano: em Estatísticas ou em Hoje no começo do mês, para compartilhar como imagem.
+• As imagens compartilhadas agora têm um QR code e vão junto com um link para o ZenHab na App Store.
+• Os 11 bichinhos foram redesenhados: traço novo, macio e com volume, 4 fases, emoções e animações suaves. Eles respiram, piscam, alguns mexem o rabo e todos dão um pulinho quando você marca um hábito.
+• Estatísticas de uso anônimas ajudam a saber o que melhorar. Elas nunca incluem nada do que você escreve, e dá para desligar em Ajustes.
+• Os cards de resumo ficam melhores com texto grande, e a tela do bichinho agora está toda traduzida.

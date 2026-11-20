@@ -700,7 +700,7 @@ of habits done||привычек выполнено||der Gewohnheiten erledigt||
 Checked off||Отмечено||Abgehakt||Cochées||Marcados||已打卡||チェック済み||체크함||पूरे किए
 Most steady: %@, %lld of %lld||Самая стабильная: %@, %lld из %lld||Am beständigsten: %@, %lld von %lld||La plus régulière : %@, %lld sur %lld||La más constante: %@, %lld de %lld||最稳定：%@，%lld/%lld||いちばん安定：%@、%lld/%lld||가장 꾸준한 습관: %@, %lld/%lld||सबसे नियमित: %@, %lld में से %lld
 Share||Поделиться||Teilen||Partager||Compartir||分享||共有||공유||शेयर करें
-Week in review||Итоги недели||Wochenrückblick||Bilan de la semaine||Resumen semanal||一周回顾||今週のふり返り||한 주 돌아보기||हफ़्ते का सार
+Week in review||Итоги недели||Wochenrückblick||Bilan de la semaine||Resumen semanal||一周回顾||先週のふり返り||한 주 돌아보기||हफ़्ते का सार
 An amazing week. Keep it going!||Отличная неделя. Так держать!||Eine großartige Woche. Weiter so!||Une semaine incroyable. Continue comme ça !||Una semana increíble. ¡Sigue así!||了不起的一周，继续保持！||すばらしい1週間でした。この調子で！||멋진 한 주였어요. 계속 이어가요!||शानदार हफ़्ता। ऐसे ही जारी रखें!
 A solid week. A little more and it'll be perfect.||Хорошая неделя. Ещё чуть-чуть, и будет идеально.||Eine solide Woche. Noch ein bisschen, dann ist sie perfekt.||Une bonne semaine. Encore un petit effort et ce sera parfait.||Una buena semana. Un poco más y será perfecta.||不错的一周，再加把劲就完美了。||いい1週間でした。あと少しで完璧です。||좋은 한 주였어요. 조금만 더 하면 완벽해요.||अच्छा हफ़्ता। थोड़ा और, और यह परफ़ेक्ट होगा।
 Every check-in counts. The new week is a fresh start.||Каждая отметка важна. Новая неделя — новый старт.||Jedes Häkchen zählt. Die neue Woche ist ein Neuanfang.||Chaque coche compte. La nouvelle semaine est un nouveau départ.||Cada marca cuenta. La nueva semana es un nuevo comienzo.||每次打卡都算数，新的一周是新的开始。||チェックひとつひとつに意味があります。新しい週は新しいスタート。||체크 하나하나가 소중해요. 새로운 한 주는 새로운 시작이에요.||हर निशान मायने रखता है। नया हफ़्ता नई शुरुआत है।
@@ -801,7 +801,7 @@ Scan to get ZenHab||Наведи камеру, чтобы скачать ZenHab|
 Track your habits with ZenHab||Отслеживай привычки в ZenHab||Verfolge deine Gewohnheiten mit ZenHab||Suis tes habitudes avec ZenHab||Sigue tus hábitos con ZenHab||用 ZenHab 追踪你的习惯||ZenHabで習慣を記録しよう||ZenHab으로 습관을 기록하세요||ZenHab के साथ अपनी आदतें ट्रैक करें
 My month||Мой месяц||Mein Monat||Mon mois||Mi mes||我的一个月||私の1か月||나의 한 달||मेरा महीना
 My year||Мой год||Mein Jahr||Mon année||Mi año||我的一年||私の1年||나의 한 해||मेरा साल
-Month in review||Итоги месяца||Monatsrückblick||Bilan du mois||Resumen mensual||月度回顾||今月のふり返り||한 달 돌아보기||महीने का सार
+Month in review||Итоги месяца||Monatsrückblick||Bilan du mois||Resumen mensual||月度回顾||先月のふり返り||한 달 돌아보기||महीने का सार
 Year in review||Итоги года||Jahresrückblick||Bilan de l'année||Resumen anual||年度回顾||1年のふり返り||한 해 돌아보기||साल का सार
 Your month in review||Итоги твоего месяца||Dein Monatsrückblick||Le bilan de ton mois||Tu resumen mensual||你的月度回顾||あなたの1か月||나의 한 달 돌아보기||आपके महीने का सार
 Your year in review||Итоги твоего года||Dein Jahresrückblick||Le bilan de ton année||Tu resumen anual||你的年度回顾||あなたの1年||나의 한 해 돌아보기||आपके साल का सार

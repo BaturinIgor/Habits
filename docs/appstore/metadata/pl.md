@@ -7,10 +7,10 @@ ZenHab: tracker nawyków
 Rutyna, serie i cele
 
 ## Promotional text
-Nawyki, które zostają: łagodne przypomnienia, serie, zwierzak, który rośnie razem z tobą, i widżety do odhaczania jednym dotknięciem. Bez konta, dane zostają na iPhonie.
+Nawyki, które zostają, teraz także na Apple Watch: odhaczaj z nadgarstka, oglądaj podsumowanie miesiąca i roku, a zwierzak rośnie razem z tobą. Bez konta.
 
 ## Keywords
-nawyki,rutyna,planer,codzienne,cele,przypomnienie,seria,widżet,produktywność,woda,dziennik
+nawyki,rutyna,planer,codzienne,cele,przypomnienie,seria,widżet,produktywność,woda,dziennik,zegarek
 
 ## Description
 ZenHab pomaga budować dobre nawyki i ich nie porzucać, spokojnie, dzień po dniu.
@@ -29,12 +29,15 @@ PRZYPOMNIENIA, KTÓRE DZIAŁAJĄ
 
 POSTĘPY I MOTYWACJA
 • Obecna i najlepsza seria, procent wykonania, kalendarz, wykresy i mapa aktywności
+• Podsumowanie tygodnia, miesiąca i roku do udostępnienia jako obrazek
 • Osiągnięcia, zwierzak, który rośnie z każdym nawykiem, i iskry na nowe zwierzaki, awatary i tła
 • Nauka słówek: 500 częstych słów w 14 językach z wymową i powtórkami w odstępach
 • Widżety na ekran początkowy i ekran blokady
+• Apple Watch: odhaczaj dzisiejsze nawyki z nadgarstka, komplikacje na tarczę i minutnik z Pro
 
 PRYWATNIE
-• Wszystkie dane zostają na twoim iPhonie. Bez konta, reklam i śledzenia
+• Twoje nawyki zostają na twoim iPhonie i w twoim iCloud. Bez konta, reklam i śledzenia
+• Anonimowe statystyki użycia, które wyłączysz w Ustawieniach
 • Eksport i import kopii zapasowej
 
 ZENHAB PRO
@@ -46,6 +49,11 @@ Warunki korzystania: https://www.apple.com/legal/internet-services/itunes/dev/st
 Prywatność: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab na Apple Watch: dzisiejsze nawyki na nadgarstku, odhaczane jednym dotknięciem. Wszystko synchronizuje się z iPhone'em.
-• Komplikacje na tarczy i w Inteligentnym stosie: od razu widać, ile nawyków masz dziś zrobionych.
-• Minutnik nawyku na Apple Watch (Pro): gdy czas minie, zegarek stuknie w nadgarstek i odhaczy nawyk.
+• ZenHab na Apple Watch: dzisiejsze nawyki na nadgarstku, odhaczane jednym dotknięciem (przy nawykach z licznikiem każde dotknięcie dodaje jeden). Działa offline i synchronizuje się z iPhone'em.
+• Komplikacje na tarczę: okrągła, narożna, prostokątna i w linii. Postęp dnia widać od razu.
+• Minutnik nawyku na Apple Watch (Pro): gdy czas minie, zegarek stuknie cię w nadgarstek i odhaczy nawyk.
+• Podsumowanie miesiąca i Podsumowanie roku: w Statystykach albo na ekranie Dziś na początku miesiąca, do udostępnienia jako obrazek.
+• Udostępniane obrazki mają teraz kod QR, a razem z obrazkiem wysyłany jest link do ZenHab w App Store.
+• Wszystkie 11 zwierzaków narysowaliśmy od nowa: miękka, przestrzenna grafika, 4 etapy, emocje i spokojne animacje. Oddychają, mrugają, niektóre machają ogonem, a wszystkie podskakują, gdy odhaczasz nawyk.
+• Anonimowe statystyki użycia pomagają nam zobaczyć, co poprawić. Nigdy nie trafia do nich nic, co wpisujesz, a wyłączysz je w Ustawieniach.
+• Karty podsumowań lepiej wyglądają przy dużym tekście, a ekran zwierzaka jest już w pełni przetłumaczony.

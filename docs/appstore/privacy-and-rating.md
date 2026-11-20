@@ -15,6 +15,21 @@
 
 Если когда-нибудь добавишь аналитику, крашлитику (Firebase, Sentry и т. п.) или синхронизацию через свой сервер, ответы и `Shared/PrivacyInfo.xcprivacy` нужно будет обновить.
 
+### С версии 1.6: статистика Firebase (PR #33)
+
+Ответы выше годятся только для сборок без Firebase. Если 1.6 выходит с анонимной статистикой (Google Analytics for Firebase), до отправки на ревью App Privacy нужно поменять так, чтобы оно совпадало с `Shared/PrivacyInfo.xcprivacy` из PR #33:
+
+1. **Do you or your third-party partners collect data from this app?** -> **Yes, we collect data from this app.**
+2. Типы данных (отметить четыре):
+   - **Identifiers -> Device ID** (случайный идентификатор установки Firebase, IDFA не используется);
+   - **Location -> Coarse Location** (Google определяет страну и город по замаскированному IP);
+   - **Purchases -> Purchase History** (Firebase учитывает покупки в App Store);
+   - **Usage Data -> Product Interaction** (экраны, нажатия, функции).
+3. Для каждого типа: Purpose **Analytics** (только), **Not linked to the user's identity**, **Not used for tracking**.
+4. Нажми Publish. Карточка в App Store станет "Data Not Linked to You".
+
+Политика конфиденциальности (`docs/privacy.html`) с разделом «Usage statistics» / «Статистика использования» обновляется в том же PR #33. Если PR #33 не войдёт в 1.6, всё остаётся как выше, а строку про статистику нужно убрать из «Что нового» и описаний в `metadata/`.
+
 ## Возрастной рейтинг (App Information -> Age Rating)
 
 С 2025 года у Apple новая анкета и рейтинги 4+, 9+, 13+, 16+, 18+.
