@@ -15,6 +15,10 @@ on:
         description: "Номер сборки, которую прикрепить (необязательно), например 11"
         required: false
         default: ""
+      overwrite:
+        description: "Заменить описание, ключевые слова, промотекст, название, подзаголовок и заметки для ревьюера текстами из репозитория"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -35,4 +39,5 @@ jobs:
           APP_BUNDLE_ID: ${{ vars.APP_BUNDLE_ID || 'com.baturinigor.zenhab' }}
           VERSION: ${{ inputs.version }}
           BUILD_NUMBER: ${{ inputs.build }}
+          OVERWRITE: ${{ inputs.overwrite }}
         run: python3 tools/appstore/asc_whats_new.py
