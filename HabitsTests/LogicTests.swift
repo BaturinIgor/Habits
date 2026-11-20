@@ -745,4 +745,179 @@ final class LogicTests: XCTestCase {
         XCTAssertTrue(lines[1].contains(",4,"))
         XCTAssertTrue(lines[1].hasSuffix("\"line1\nline2\""))
     }
+
+    // MARK: Статистика
+
+    /// В статистику не должно уходить ничего личного: ни названия, ни описания, ни заметки, ни имени питомца,
+    /// ни названия группы. Проверяем то, что реально уходит в Firebase (после firebaseParameters), для всех событий.
+    func testAnalyticsSendsNoPersonalText() {
+        var habit = dailyHabit()
+        habit.name = "SECRET-NAME"
+        habit.details = "SECRET-DETAILS"
+        var data = AppData()
+        data.habits = [habit]
+        data.groups = [HabitGroup(name: "SECRET-GROUP", family: FamilyShare(zoneName: "SECRET-ZONE", ownerName: "SECRET-OWNER", isOwner: true, url: nil))]
+        data.wallet.pet = PetState(species: Pets.all.first?.id ?? "cat", name: "SECRET-PET", adoptedAt: Date())
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(today))
+        data.setNote("SECRET-NOTE", habitID: habit.id, day: DayKey.make(today))
+        data.moods[DayKey.make(today)] = MoodEntry(level: 4, note: "SECRET-MOOD", updatedAt: Date())
+        let events: [AnalyticsEvent] = [
+            .appInstalled(isUpdate: true), .onboardingCompleted(seconds: 5, restoredFromCloud: false),
+            .habitCreated(habit, source: .editor), .habitDeleted(ageDays: 3, isQuit: false),
+            .paywallShown(source: "settings"), .purchaseStarted(product: "pro", source: "settings"),
+            .restoreFinished(found: false), .proChanged(active: true), .petAdopted(species: "cat"),
+            .petStageReached(stage: 1), .achievementUnlocked(id: "first"), .ratingPromptShown,
+            .familyGroupCreated, .familyGroupJoined, .feedbackSent(channel: "email"), .backupRestored,
+        ]
+        var payloads = [Analytics.firebaseParameters(AnalyticsSnapshot.make(data))]
+        payloads += events.map { Analytics.firebaseParameters($0.payload) }
+        let all = payloads.flatMap { $0.map { "\($0.key)=\($0.value)" } }.sorted().joined(separator: " ")
+        XCTAssertFalse(all.contains("SECRET"), all)
+        // Снимок не пустой: проверка выше действительно что-то проверяла.
+        XCTAssertTrue(all.contains("state_checks7d=1"), all)
+        XCTAssertTrue(all.contains("state_moods7d=1"), all)
+        XCTAssertTrue(all.contains("state_family_groups=1"), all)
+        XCTAssertTrue(all.contains("state_has_pet=1"), all)
+        // Значения только числа и короткие строки-идентификаторы, без пробелов (текст пользователя был бы с ними).
+        for payload in payloads {
+            for (key, value) in payload {
+                if let text = value as? String { XCTAssertFalse(text.contains(" "), "\(key)=\(text)") }
+            }
+        }
+    }
+
+    /// Нажатия на кружок в статистике: +1 у счётчика - increment, достижение цели - check,
+    /// снятие выполненной - uncheck. Частичное +1 не должно считаться снятием отметки.
+    func testAnalyticsTapActions() {
+        var data = AppData()
+        data.settings.proUnlocked = true
+        var habit = dailyHabit()
+        habit.target = 3
+        data.habits = [habit]
+        let day = DayKey.make(today)
+        func tap() -> AnalyticsAction? {
+            let before = data.status(habit.id, day: day)
+            let countBefore = data.count(of: habit, day: day)
+            data.tap(habitID: habit.id, day: day)
+            return AnalyticsCheck.tap(before: before, after: data.status(habit.id, day: day),
+                                      countBefore: countBefore, countAfter: data.count(of: habit, day: day))
+        }
+        XCTAssertEqual(tap(), .increment)
+        XCTAssertEqual(tap(), .increment)
+        XCTAssertEqual(tap(), .check)
+        XCTAssertEqual(tap(), .uncheck)
+
+        // Обычная привычка: отметка и снятие.
+        var simple = AppData()
+        let single = dailyHabit()
+        simple.habits = [single]
+        let before = simple.status(single.id, day: day)
+        simple.tap(habitID: single.id, day: day)
+        XCTAssertEqual(AnalyticsCheck.tap(before: before, after: simple.status(single.id, day: day), countBefore: 0, countAfter: 1), .check)
+        simple.tap(habitID: single.id, day: day)
+        XCTAssertEqual(AnalyticsCheck.tap(before: .done, after: simple.status(single.id, day: day), countBefore: 1, countAfter: 0), .uncheck)
+
+        // Явная установка статуса: повтор того же статуса ничего не отправляет.
+        XCTAssertEqual(AnalyticsCheck.set(before: nil, after: .done), .check)
+        XCTAssertNil(AnalyticsCheck.set(before: .done, after: .done))
+        XCTAssertEqual(AnalyticsCheck.set(before: .done, after: .skipped), .skip)
+        XCTAssertEqual(AnalyticsCheck.set(before: .skipped, after: nil), .clearStatus)
+        XCTAssertNil(AnalyticsCheck.set(before: nil, after: nil))
+    }
+
+    /// Выключатель статистики: без выбора действует enabledByDefault, выбор пользователя сохраняется.
+    func testAnalyticsUserChoice() {
+        let defaults = UserDefaults(suiteName: "analytics-tests-\(UUID().uuidString)")!
+        XCTAssertEqual(Analytics.isUserEnabled(defaults), Analytics.enabledByDefault)
+        defaults.set(true, forKey: Analytics.optOutKey)
+        XCTAssertFalse(Analytics.isUserEnabled(defaults))
+        defaults.set(false, forKey: Analytics.optOutKey)
+        XCTAssertTrue(Analytics.isUserEnabled(defaults))
+    }
+
+    /// В тестах Firebase не настроен: отправки нет ни при выключенной, ни при включённой статистике,
+    /// а выключатель записывает выбор пользователя.
+    @MainActor
+    func testAnalyticsSetEnabledAndInactiveInTests() {
+        let defaults = UserDefaults.standard
+        let saved = defaults.object(forKey: Analytics.optOutKey)
+        defer { defaults.set(saved, forKey: Analytics.optOutKey) }
+        XCTAssertFalse(Analytics.isAvailable)
+        Analytics.shared.start()
+        Analytics.shared.setEnabled(false)
+        XCTAssertEqual(defaults.object(forKey: Analytics.optOutKey) as? Bool, true)
+        XCTAssertFalse(Analytics.isUserEnabled(defaults))
+        XCTAssertFalse(Analytics.shared.isActive)
+        Analytics.shared.setEnabled(true)
+        XCTAssertEqual(defaults.object(forKey: Analytics.optOutKey) as? Bool, false)
+        XCTAssertTrue(Analytics.isUserEnabled(defaults))
+        XCTAssertFalse(Analytics.shared.isActive, "в тестах статистика не отправляется")
+        // Вызовы без Firebase ничего не делают и не падают.
+        Analytics.shared.gesture(.tap)
+        Analytics.shared.action(.check)
+        Analytics.shared.appBecameActive()
+    }
+
+    /// Неизвестные типы значений не превращаются в текст.
+    func testFirebaseParametersSkipUnknownTypes() {
+        let params = Analytics.firebaseParameters(["Some.date": Date(), "Some.text": "ok", "Some.count": 2])
+        XCTAssertNil(params["some_date"])
+        XCTAssertEqual(params["some_text"] as? String, "ok")
+        XCTAssertEqual(params["some_count"] as? Int, 2)
+    }
+
+    /// Все имена событий, экранов и параметров укладываются в лимиты Firebase и не заняты им самим.
+    func testAnalyticsNamesFitFirebaseLimits() {
+        let reservedPrefixes = ["firebase_", "google_", "ga_"]
+        func check(_ raw: String, file: StaticString = #filePath, line: UInt = #line) {
+            let name = Analytics.firebaseName(raw)
+            XCTAssertFalse(name.isEmpty, raw, file: file, line: line)
+            XCTAssertLessThan(name.count, 40, "\(raw) обрезается до 40 символов", file: file, line: line)
+            XCTAssertTrue(name.first?.isLetter == true, name, file: file, line: line)
+            XCTAssertTrue(name.allSatisfy { $0.isASCII && ($0.isLetter || $0.isNumber || $0 == "_") }, name, file: file, line: line)
+            XCTAssertFalse(reservedPrefixes.contains { name.hasPrefix($0) }, name, file: file, line: line)
+        }
+        let actions = AnalyticsAction.allCases.map(\.rawValue)
+        actions.forEach { check($0) }
+        AnalyticsScreen.allCases.forEach { check($0.rawValue) }
+        // Разные действия не должны склеиваться в одно имя.
+        XCTAssertEqual(Set(actions.map(Analytics.firebaseName)).count, actions.count)
+        var habit = dailyHabit()
+        habit.reminder = nil
+        let events: [AnalyticsEvent] = [
+            .appInstalled(isUpdate: true), .onboardingCompleted(seconds: 5, restoredFromCloud: false),
+            .habitCreated(habit, source: .catalog), .habitDeleted(ageDays: 3, isQuit: false),
+            .paywallShown(source: "settings"), .purchaseStarted(product: "pro", source: "settings"),
+            .purchaseCompleted(product: "pro", source: "settings"), .purchaseCancelled(product: "pro", source: "settings"),
+            .purchaseFailed(product: "pro", source: "settings"), .restoreFinished(found: false), .proChanged(active: true),
+            .petAdopted(species: "cat"), .petStageReached(stage: 1), .achievementUnlocked(id: "first"),
+            .ratingPromptShown, .familyGroupCreated, .familyGroupJoined, .feedbackSent(channel: "email"), .backupRestored,
+        ]
+        for event in events {
+            check(event.type)
+            event.payload.keys.forEach { check($0) }
+            // + value и screen, которые добавляет Analytics.send.
+            XCTAssertLessThanOrEqual(event.payload.count + 2, 25, event.type)
+        }
+        let snapshot = AnalyticsSnapshot.make(AppData())
+        snapshot.keys.forEach { check($0) }
+        // + User.daysSinceFirstSeen, который добавляется в appBecameActive.
+        check("User.daysSinceFirstSeen")
+        XCTAssertLessThanOrEqual(snapshot.count + 1, 25)
+        // Всего разных событий намного меньше лимита в 500.
+        XCTAssertLessThan(actions.count + events.count + 3, 500)
+    }
+
+    /// Имена и параметры в формате Firebase: только буквы, цифры и _, до 40 символов, не больше 25 параметров.
+    func testFirebaseNames() {
+        XCTAssertEqual(Analytics.firebaseName("Habit.hasReminder"), "habit_has_reminder")
+        XCTAssertEqual(Analytics.firebaseName("Data.exportCSV"), "data_export_csv")
+        XCTAssertEqual(Analytics.firebaseName("State.checks7d"), "state_checks7d")
+        var many: [String: Any] = [:]
+        for index in 0..<40 { many["Key.number\(index)"] = index }
+        many["Flag.on"] = true
+        let params = Analytics.firebaseParameters(many)
+        XCTAssertEqual(params.count, 25)
+        XCTAssertEqual(Analytics.firebaseParameters(["Flag.on": true])["flag_on"] as? Int, 1)
+    }
 }

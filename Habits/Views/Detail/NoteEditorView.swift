@@ -9,6 +9,10 @@ struct NoteEditorView: View {
     @FocusState private var focused: Bool
 
     var body: some View {
+        analyticsBody.analyticsScreen(.noteEditor)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 14) {
                 if let habit = store.habit(target.habitID) {

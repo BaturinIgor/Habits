@@ -309,6 +309,7 @@
 "Hatches after a few check-ins" = "打卡几次后就会孵化";
 "Have 30 perfect days" = "累计 30 个完美日";
 "Health" = "健康";
+"Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood." = "帮助改进 ZenHab：仅统计使用了哪些页面和按钮，绝不包含你的习惯、备注或心情。";
 "Hide keyboard" = "隐藏键盘";
 "Hours of sleep" = "睡眠小时数";
 "How are you today?" = "今天感觉怎么样？";
@@ -597,6 +598,7 @@
 "Settings" = "设置";
 "Share" = "分享";
 "Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "与家人共享一个分组，比如“狗狗”或“家务”。大家看到相同的习惯，都能打卡并收到提醒。";
+"Share anonymous statistics" = "共享匿名统计数据";
 "Share with family" = "与家人共享";
 "Shared data" = "共享数据";
 "Shared with you" = "与你共享";

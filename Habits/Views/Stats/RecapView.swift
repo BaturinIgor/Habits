@@ -221,7 +221,20 @@ struct RecapView: View {
         recap.period == .week ? "recap" : "recap-\(recap.period.rawValue)"
     }
 
+    /// Экран для статистики: у недели прежнее имя WeeklyRecap.
+    private var analyticsScreen: AnalyticsScreen {
+        switch recap.period {
+        case .week: .weeklyRecap
+        case .month: .monthlyRecap
+        case .year: .yearlyRecap
+        }
+    }
+
     var body: some View {
+        analyticsBody.analyticsScreen(analyticsScreen)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
@@ -232,6 +245,7 @@ struct RecapView: View {
                         .multilineTextAlignment(.center)
                     if let shareFile {
                         Button {
+                            Analytics.shared.action(.recapShare)
                             ShareSheet.present(image: shareFile, campaign: recap.period.campaign)
                         } label: {
                             Label("Share", systemImage: "square.and.arrow.up")

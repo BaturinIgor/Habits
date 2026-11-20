@@ -28,6 +28,10 @@ struct WordsSessionView: View {
     }
 
     var body: some View {
+        analyticsBody.analyticsScreen(.words)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             VStack(spacing: 20) {
                 if !started {

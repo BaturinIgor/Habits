@@ -309,6 +309,7 @@
 "Hatches after a few check-ins" = "数回チェックすると孵化します";
 "Have 30 perfect days" = "完璧な日を30日";
 "Health" = "健康";
+"Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood." = "ZenHab の改善に役立ちます。使われた画面とボタンだけで、習慣・メモ・気分は送信しません。";
 "Hide keyboard" = "キーボードを隠す";
 "Hours of sleep" = "睡眠時間";
 "How are you today?" = "今日の気分は？";
@@ -597,6 +598,7 @@
 "Settings" = "設定";
 "Share" = "共有";
 "Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "「犬」や「家」などのグループを家族と共有できます。全員が同じ習慣を見てチェックでき、リマインダーも届きます。";
+"Share anonymous statistics" = "匿名の統計を送信";
 "Share with family" = "家族と共有";
 "Shared data" = "共有データ";
 "Shared with you" = "あなたと共有中";

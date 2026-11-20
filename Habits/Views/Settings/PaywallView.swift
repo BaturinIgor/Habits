@@ -67,6 +67,8 @@ struct PaywallView: View {
                 .padding(20)
             }
             .background(AppBackground())
+            .analyticsScreen(.paywall)
+            .onAppear { Analytics.shared.send(.paywallShown(source: analyticsSource)) }
             .task {
                 await shop.loadProducts()
                 await loadTrialEligibility()
@@ -82,6 +84,7 @@ struct PaywallView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
+                        Analytics.shared.action(.paywallClose)
                         dismiss()
                     } label: {
                         Image(systemName: "xmark")
@@ -94,6 +97,9 @@ struct PaywallView: View {
 }
 
 extension PaywallView {
+    /// Откуда открыли экран Pro: функция, ради которой его показали, или раздел настроек.
+    var analyticsSource: String { highlight?.rawValue ?? "settings" }
+
     @ViewBuilder
     var purchaseSection: some View {
         #if SIDELOAD
@@ -115,7 +121,7 @@ extension PaywallView {
             Button {
                 guard let product = shop.products.first(where: { $0.id == selectedID }) else { return }
                 Task {
-                    if await shop.purchase(product) { dismiss() }
+                    if await shop.purchase(product, source: analyticsSource) { dismiss() }
                 }
             } label: {
                 Group {
@@ -146,6 +152,7 @@ extension PaywallView {
 
             HStack(spacing: 16) {
                 Button("Restore purchases") {
+                    Analytics.shared.action(.restoreTap)
                     Task { await shop.restore() }
                 }
                 Button("Terms of Use") { openURL(AppInfo.termsURL) }

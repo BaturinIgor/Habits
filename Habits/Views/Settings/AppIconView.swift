@@ -39,6 +39,10 @@ struct AppIconView: View {
     private let columns = [GridItem(.adaptive(minimum: 92), spacing: 16)]
 
     var body: some View {
+        analyticsBody.analyticsScreen(.appIcon)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 if !store.data.isPro {
@@ -114,6 +118,7 @@ struct AppIconView: View {
         Task {
             do {
                 try await UIApplication.shared.setAlternateIconName(item.assetName)
+                Analytics.shared.action(.appIconChange)
                 errorText = nil
                 selected = item.id
             } catch {

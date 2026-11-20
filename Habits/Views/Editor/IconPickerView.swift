@@ -31,6 +31,10 @@ struct IconPickerView: View {
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 6)
 
     var body: some View {
+        analyticsBody.analyticsScreen(.iconPicker)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
                 HabitIconView(icon: icon, color: color, size: 92)

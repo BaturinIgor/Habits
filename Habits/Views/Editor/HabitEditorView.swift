@@ -139,6 +139,10 @@ struct HabitEditorView: View {
     }
 
     var body: some View {
+        analyticsBody.analyticsScreen(.editor)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
             Form {
                 headerSection
@@ -735,7 +739,7 @@ struct HabitEditorView: View {
             habit.repeatCount = customRepeat ? repeatCount : nil
             habit.repeatInterval = customRepeat ? repeatInterval : nil
         }
-        store.upsert(habit)
+        store.upsert(habit, source: .editor)
         if habit.reminder != nil {
             Task {
                 await NotificationPlanner.requestAuthorizationIfNeeded()
@@ -774,7 +778,7 @@ extension HabitEditorView {
         habit.minimumVersion = nil
         habit.health = nil
         habit.timerMinutes = nil
-        store.upsert(habit)
+        store.upsert(habit, source: .editor)
         dismiss()
     }
 }

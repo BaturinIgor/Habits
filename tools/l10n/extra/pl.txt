@@ -781,6 +781,8 @@ Your days and the habits that lift your mood||Twoje dni i nawyki, które poprawi
 Your whole mood history, a monthly chart and which habits lift your mood.||Cała historia nastroju, wykres miesiąca i nawyki, które go poprawiają.
 ZenHab is locked||ZenHab jest zablokowany
 passcode||kod
+Share anonymous statistics||Wysyłaj anonimowe statystyki
+Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood.||Pomaga ulepszać ZenHab: tylko które ekrany i przyciski są używane. Nigdy twoje nawyki, notatki ani nastrój.
 Open ZenHab on your iPhone to see your habits here.||Otwórz ZenHab na iPhonie, a nawyki pojawią się tutaj.
 Get Pro on your iPhone to use the timer on Apple Watch.||Włącz Pro na iPhonie, aby korzystać z minutnika na Apple Watch.
 Start timer||Uruchom minutnik

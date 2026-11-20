@@ -781,6 +781,8 @@ Your days and the habits that lift your mood||Günlerin ve ruh hâlini iyileşti
 Your whole mood history, a monthly chart and which habits lift your mood.||Tüm ruh hâli geçmişin, aylık grafik ve onu iyileştiren alışkanlıklar.
 ZenHab is locked||ZenHab kilitli
 passcode||parola
+Share anonymous statistics||Anonim istatistik paylaş
+Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood.||ZenHab'ı geliştirmeye yardımcı olur: yalnızca hangi ekranların ve düğmelerin kullanıldığı. Alışkanlıkların, notların veya ruh halin asla.
 Open ZenHab on your iPhone to see your habits here.||Alışkanlıklarını burada görmek için iPhone'unda ZenHab'i aç.
 Get Pro on your iPhone to use the timer on Apple Watch.||Apple Watch'ta zamanlayıcıyı kullanmak için iPhone'unda Pro'ya geç.
 Start timer||Zamanlayıcıyı başlat

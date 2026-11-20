@@ -781,6 +781,8 @@ Your days and the habits that lift your mood||Hari-harimu dan kebiasaan yang mem
 Your whole mood history, a monthly chart and which habits lift your mood.||Seluruh riwayat suasana hati, grafik bulanan, dan kebiasaan yang memperbaikinya.
 ZenHab is locked||ZenHab terkunci
 passcode||kode sandi
+Share anonymous statistics||Bagikan statistik anonim
+Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood.||Membantu meningkatkan ZenHab: hanya layar dan tombol yang dipakai. Tidak pernah kebiasaan, catatan, atau suasana hatimu.
 Open ZenHab on your iPhone to see your habits here.||Buka ZenHab di iPhone untuk melihat kebiasaanmu di sini.
 Get Pro on your iPhone to use the timer on Apple Watch.||Aktifkan Pro di iPhone untuk memakai timer di Apple Watch.
 Start timer||Mulai timer
