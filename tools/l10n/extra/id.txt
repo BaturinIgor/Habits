@@ -812,3 +812,5 @@ Every check-in counts. The new month is a fresh start.||Setiap centang berarti. 
 An amazing year. Keep it going!||Tahun yang luar biasa. Pertahankan!
 A solid year. Every month makes a difference.||Tahun yang bagus. Setiap bulan membawa perubahan.
 Every check-in counts. The new year is a fresh start.||Setiap centang berarti. Tahun baru adalah awal yang baru.
+What will you call them?||Mau kamu beri nama apa?
+Each pet keeps its own name. Growth and mood stay shared.||Setiap peliharaan punya namanya sendiri. Pertumbuhan dan suasana hati tetap sama.

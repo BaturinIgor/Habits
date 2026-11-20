@@ -812,3 +812,5 @@ Every check-in counts. The new month is a fresh start.||Her işaret önemli. Yen
 An amazing year. Keep it going!||Harika bir yıl. Böyle devam!
 A solid year. Every month makes a difference.||İyi bir yıl. Her ay bir fark yarattı.
 Every check-in counts. The new year is a fresh start.||Her işaret önemli. Yeni yıl yeni bir başlangıç.
+What will you call them?||Adını ne koyacaksın?
+Each pet keeps its own name. Growth and mood stay shared.||Her evcil hayvanın kendi adı olur. Gelişim ve ruh hali ortaktır.

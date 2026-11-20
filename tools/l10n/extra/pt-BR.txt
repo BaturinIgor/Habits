@@ -812,3 +812,5 @@ Every check-in counts. The new month is a fresh start.||Cada marcação conta. O
 An amazing year. Keep it going!||Um ano incrível. Continue assim!
 A solid year. Every month makes a difference.||Um bom ano. Cada mês fez diferença.
 Every check-in counts. The new year is a fresh start.||Cada marcação conta. O novo ano é um novo começo.
+What will you call them?||Como vai chamá-lo?
+Each pet keeps its own name. Growth and mood stay shared.||Cada pet tem seu próprio nome. O crescimento e o humor são compartilhados.

@@ -56,6 +56,10 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "33-sparks", screen: "sparks"),
         Shot(name: "34-pet", screen: "pet"),
         Shot(name: "35-pet-rename", screen: "pet", alert: "petRename"),
+        // 1.6, KAN-105: своё имя у каждого вида
+        Shot(name: "pet-names-01-switched", screen: "petSwitched"),
+        Shot(name: "pet-names-02-naming-sheet", screen: "petNaming", flags: ["-design-alert", "petNaming"]),
+        Shot(name: "pet-names-03-species-grid", screen: "petSpecies"),
         // Pro
         Shot(name: "36-paywall", screen: "paywall", flags: ["-uitest-free"]),
         Shot(name: "37-paywall-feature", screen: "paywallFeature", flags: ["-uitest-free"]),
@@ -104,7 +108,9 @@ final class DesignCatalogUITests: XCTestCase {
         let language = ProcessInfo.processInfo.environment["DESIGN_LANG"] ?? "ru"
         let locale = language == "ru" ? "ru_RU" : "en_US"
         var missing: [String] = []
-        for shot in Self.shots {
+        // DESIGN_ONLY=<префикс>: снять только часть экранов (например, pet-names).
+        let only = ProcessInfo.processInfo.environment["DESIGN_ONLY"] ?? ""
+        for shot in Self.shots where only.isEmpty || shot.name.hasPrefix(only) {
             let app = XCUIApplication()
             var args = ["-uitest", "-design", "-design-screen", shot.screen,
                         "-AppleLanguages", "(\(language))", "-AppleLocale", locale]

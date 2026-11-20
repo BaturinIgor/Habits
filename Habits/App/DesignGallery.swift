@@ -12,7 +12,7 @@ enum DesignScreen: String, CaseIterable, Identifiable {
     case habitDetail, quitDetail, notifications, todayScreen, groups, groupDetail, appIcon, backup
     // Шиты
     case catalog, editorNew, editorEdit, editorTemplate, iconPicker, timer, recap, moodJournal, moodEntry
-    case profile, sparks, pet, paywall, paywallFeature, feedback, voice, note, whatsNew
+    case profile, sparks, pet, petSwitched, petNaming, petSpecies, paywall, paywallFeature, feedback, voice, note, whatsNew
     // Во весь экран
     case onboarding, words
 
@@ -65,6 +65,9 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .profile: ProfileView()
         case .sparks: SparksView()
         case .pet: PetView()
+        // 1.6, KAN-105: своё имя у каждого вида питомца.
+        case .petSwitched, .petNaming: PetView()
+        case .petSpecies: PetView(scrollToSpecies: true)
         case .paywall: PaywallView()
         case .paywallFeature: PaywallView(highlight: .health)
         case .feedback: FeedbackView()
@@ -113,6 +116,22 @@ enum DesignGallery {
         var pet = PetState(species: "cat", name: ru ? "Барсик" : "Whiskers", adoptedAt: day(-20))
         for offset in -20 ... -1 { pet.feeds[DayKey.make(day(offset))] = 2 }
         data.wallet.pet = pet
+
+        // 1.6, KAN-105: питомец уже был котиком, потом стал лисёнком со своим именем.
+        let requested = DesignScreen.requested
+        if [.petSwitched, .petNaming, .petSpecies].contains(requested) {
+            data.wallet.ownedPets = ["bunny", "fox"]
+            pet.names = ["cat": pet.name, "fox": ru ? "Рыжик" : "Ginger"]
+            if requested == .petNaming {
+                // Только что выбран зайчик, его ещё не называли: имя по виду, шит спрашивает своё.
+                pet.species = "bunny"
+                pet.name = Pets.defaultName(Pets.species("bunny"))
+            } else {
+                pet.species = "fox"
+                pet.name = pet.names["fox"] ?? ""
+            }
+            data.wallet.pet = pet
+        }
     }
 
     /// Шит редактора для существующей привычки.

@@ -208,6 +208,7 @@
 "Drink water" = "Minum air";
 "Duration" = "Durasi";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "Selama jeda, kebiasaan disembunyikan dan tidak mengirim pengingat, dan rentetanmu tetap terjaga.";
+"Each pet keeps its own name. Growth and mood stay shared." = "Setiap peliharaan punya namanya sendiri. Pertumbuhan dan suasana hati tetap sama.";
 "Early bird" = "Bangun pagi";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "Raih pencapaian untuk membuka avatar dan latar, dan naik level setiap kali mencentang.";
 "Earn sparks for check-ins, spend them in the shop and raise a pet that grows with your habits." = "Dapatkan percikan dari centang, belanjakan di toko, dan besarkan hewan yang tumbuh bersama kebiasaanmu.";
@@ -754,6 +755,7 @@
 "What lifts your mood" = "Apa yang memperbaiki suasana hatimu";
 "What should I add?" = "Apa yang ingin ditambahkan?";
 "What to add" = "Yang ditambahkan";
+"What will you call them?" = "Mau kamu beri nama apa?";
 "What's left today" = "Yang tersisa hari ini";
 "What's new" = "Yang baru";
 "When you come back to the app, it asks for %@ first." = "Saat kembali ke aplikasi, kamu akan diminta %@ dulu.";

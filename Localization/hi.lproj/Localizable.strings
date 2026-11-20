@@ -208,6 +208,7 @@
 "Drink water" = "पानी पिएँ";
 "Duration" = "अवधि";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "विराम के दौरान आदत छिपी रहती है, रिमाइंडर नहीं आते और आपकी लगातार गिनती बनी रहती है।";
+"Each pet keeps its own name. Growth and mood stay shared." = "हर पालतू का अपना नाम होता है। बढ़त और मूड साझा रहते हैं।";
 "Early bird" = "जल्दी उठने वाला";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "उपलब्धियाँ पाएँ, अवतार और पृष्ठभूमि खोलें, और हर बार पूरा करने पर लेवल बढ़ाएँ।";
 "Earn sparks for check-ins, spend them in the shop and raise a pet that grows with your habits." = "आदतें पूरी करके चिंगारियाँ कमाएँ, दुकान में खर्च करें और अपनी आदतों के साथ बढ़ने वाला पालतू पालें।";
@@ -754,6 +755,7 @@
 "What lifts your mood" = "आपका मूड क्या बेहतर करता है";
 "What should I add?" = "क्या जोड़ूँ?";
 "What to add" = "क्या जोड़ना है";
+"What will you call them?" = "इसका नाम क्या रखोगे?";
 "What's left today" = "आज क्या बाकी है";
 "What's new" = "नया क्या है";
 "When you come back to the app, it asks for %@ first." = "ऐप पर लौटने पर पहले %@ माँगा जाएगा।";

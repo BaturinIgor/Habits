@@ -208,6 +208,7 @@
 "Drink water" = "喝水";
 "Duration" = "时长";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "暂停期间习惯会隐藏且不提醒，连续记录会保留。";
+"Each pet keeps its own name. Growth and mood stay shared." = "每只宠物都有自己的名字，成长和心情是共享的。";
 "Early bird" = "早起鸟";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "获得成就解锁头像和背景，每次打卡都会升级。";
 "Earn sparks for check-ins, spend them in the shop and raise a pet that grows with your habits." = "打卡赚火花，在商店里使用，并养一只随习惯成长的宠物。";
@@ -754,6 +755,7 @@
 "What lifts your mood" = "什么让你心情变好";
 "What should I add?" = "要添加什么？";
 "What to add" = "添加内容";
+"What will you call them?" = "给它起个名字吧？";
 "What's left today" = "今天还剩什么";
 "What's new" = "新功能";
 "When you come back to the app, it asks for %@ first." = "回到应用时，会先要求%@。";

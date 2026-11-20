@@ -206,6 +206,9 @@ enum Pets {
 
     static func species(_ id: String) -> PetSpecies { all.first { $0.id == id } ?? all[0] }
 
+    /// Имя по умолчанию для вида, который ещё не назвали: название вида («Лисёнок», «Fox»).
+    static func defaultName(_ species: PetSpecies) -> String { String(localized: species.title) }
+
     static func isOwned(_ species: PetSpecies, data: AppData) -> Bool {
         if species.needsPro { return data.isPro }
         return species.price == nil || data.wallet.ownedPets.contains(species.id)
