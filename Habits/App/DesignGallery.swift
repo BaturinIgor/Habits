@@ -59,7 +59,7 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .editorTemplate: DesignGallery.TemplateEditor()
         case .iconPicker: DesignGallery.IconPicker()
         case .timer: DesignGallery.TimerSheet()
-        case .recap: DesignGallery.Recap()
+        case .recap: DesignGallery.RecapScreen()
         case .moodJournal: MoodJournalView()
         case .moodEntry: MoodEntryEditor(dayKey: DayKey.make(Date()))
         case .profile: ProfileView()
@@ -146,10 +146,10 @@ enum DesignGallery {
         }
     }
 
-    struct Recap: View {
+    struct RecapScreen: View {
         @Environment(HabitStore.self) private var store
         var body: some View {
-            WeeklyRecapView(recap: WeeklyRecap.lastWeek(in: store.data))
+            RecapView(recap: Recap.lastWeek(in: store.data))
         }
     }
 }
