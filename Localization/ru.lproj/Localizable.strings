@@ -57,7 +57,6 @@
 "After: %@" = "После: %@";
 "Afternoon" = "День";
 "All" = "Все";
-"All data is stored only on this iPhone." = "Все данные хранятся только на этом iPhone.";
 "All done" = "Всё выполнено";
 "All done!" = "Всё выполнено!";
 "All your check-ins as a table for Numbers, Excel or Google Sheets." = "Все отметки таблицей для Numbers, Excel или Google Таблиц.";
@@ -783,6 +782,8 @@
 "Young" = "Подросток";
 "Your days and the habits that lift your mood" = "Твои дни и привычки, которые поднимают настроение";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Привычки и история сами сохраняются в твой iCloud. На новом iPhone ZenHab предложит всё вернуть.";
+"Your habits stay on your iPhone and in your own iCloud." = "Привычки хранятся на твоём iPhone и в твоём iCloud.";
+"Your habits stay only on your iPhone." = "Привычки хранятся только на твоём iPhone.";
 "Your message has been sent." = "Сообщение отправлено.";
 "Your month in review" = "Итоги твоего месяца";
 "Your own emoji from the keyboard" = "Свой эмодзи с клавиатуры";

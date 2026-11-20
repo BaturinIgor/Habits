@@ -3,7 +3,6 @@ Activity over %lld weeks||Attività nelle ultime %lld settimane
 Add a habit, pick days and a time, and I'll remind you.||Aggiungi un'abitudine, scegli i giorni e l'ora, e te la ricorderò.
 Add habit||Aggiungi abitudine
 Add note||Aggiungi nota
-All data is stored only on this iPhone.||Tutti i dati restano solo su questo iPhone.
 All done||Tutto fatto
 All done!||Tutto fatto!
 Allow notifications||Consenti notifiche
@@ -812,3 +811,5 @@ Every check-in counts. The new month is a fresh start.||Ogni spunta conta. Il nu
 An amazing year. Keep it going!||Un anno fantastico. Continua così!
 A solid year. Every month makes a difference.||Un buon anno. Ogni mese ha fatto la differenza.
 Every check-in counts. The new year is a fresh start.||Ogni spunta conta. Il nuovo anno è un nuovo inizio.
+Your habits stay on your iPhone and in your own iCloud.||Le tue abitudini restano sul tuo iPhone e nel tuo iCloud.
+Your habits stay only on your iPhone.||Le tue abitudini restano solo sul tuo iPhone.
