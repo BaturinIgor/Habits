@@ -7,10 +7,10 @@ ZenHab : suivi d'habitudes
 Routines, séries et objectifs
 
 ## Promotional text
-Des habitudes qui durent : rappels en douceur, séries, un compagnon qui grandit avec toi et des widgets pour cocher en un geste. Sans compte, données sur ton iPhone.
+Des habitudes qui durent, aussi sur l'Apple Watch : coche depuis ton poignet, vois ton bilan du mois et de l'année, avec un compagnon qui grandit avec toi. Sans compte.
 
 ## Keywords
-habitudes,routine,planning,quotidien,objectifs,rappel,série,widget,productivité,eau,journal
+habitudes,routine,planning,quotidien,objectifs,rappel,série,widget,productivité,eau,journal,montre
 
 ## Description
 ZenHab t'aide à prendre de bonnes habitudes et à les garder, jour après jour, en toute sérénité.
@@ -29,12 +29,15 @@ DES RAPPELS EFFICACES
 
 PROGRÈS ET MOTIVATION
 • Série actuelle et record, taux de réussite, calendrier, graphiques, carte de chaleur
+• Bilan de la semaine, du mois et de l'année, à partager en image
 • Succès, un compagnon qui grandit à chaque habitude cochée, et des étincelles pour de nouveaux compagnons, avatars et fonds
 • Apprendre des mots : 500 mots courants en 14 langues, avec prononciation et répétition espacée
 • Widgets pour l'écran d'accueil et l'écran verrouillé
+• Apple Watch : coche les habitudes du jour depuis ton poignet, complications pour le cadran et minuteur avec Pro
 
 CONFIDENTIEL
-• Toutes tes données restent sur ton iPhone. Pas de compte, pas de pub, pas de pistage
+• Tes habitudes restent sur ton iPhone et dans ton iCloud. Pas de compte, pas de pub, pas de pistage
+• Statistiques d'utilisation anonymes, désactivables dans Réglages
 • Export et import de sauvegarde
 
 ZENHAB PRO
@@ -46,6 +49,11 @@ Conditions d'utilisation : https://www.apple.com/legal/internet-services/itunes/
 Confidentialité : https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab sur l'Apple Watch : les habitudes du jour à ton poignet, cochées d'un geste. Tout se synchronise avec ton iPhone.
-• Complications pour le cadran et la Pile intelligente : vois d'un coup d'œil combien d'habitudes sont faites aujourd'hui.
+• ZenHab sur l'Apple Watch : les habitudes du jour à ton poignet, cochées d'un geste (pour les habitudes à compter, chaque appui ajoute 1). Fonctionne hors ligne et se synchronise avec ton iPhone.
+• Complications pour le cadran : ronde, en coin, rectangulaire et en ligne. Tes progrès du jour d'un coup d'œil.
 • Minuteur d'habitude sur l'Apple Watch (Pro) : à la fin, la montre tapote ton poignet et coche l'habitude.
+• Bilan du mois et Bilan de l'année : dans Statistiques ou sur Aujourd'hui en début de mois, à partager en image.
+• Les images partagées ont maintenant un QR code, et elles partent avec un lien vers ZenHab sur l'App Store.
+• Les 11 compagnons ont été redessinés : un nouveau style tout doux, 4 stades, des émotions et de petites animations. Ils respirent, clignent des yeux, certains remuent la queue, et tous sautent quand tu coches une habitude.
+• Des statistiques d'utilisation anonymes nous aident à savoir quoi améliorer. Elles ne contiennent jamais rien de ce que tu écris, et tu peux les désactiver dans Réglages.
+• Les cartes de bilan s'affichent mieux en grand texte, et l'écran du compagnon est maintenant entièrement traduit.

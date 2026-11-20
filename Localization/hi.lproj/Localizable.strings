@@ -57,7 +57,6 @@
 "After: %@" = "इसके बाद: %@";
 "Afternoon" = "दोपहर";
 "All" = "सभी";
-"All data is stored only on this iPhone." = "सारा डेटा सिर्फ़ इसी iPhone पर रहता है।";
 "All done" = "सब पूरा";
 "All done!" = "सब पूरा!";
 "All your check-ins as a table for Numbers, Excel or Google Sheets." = "आपके सभी निशान तालिका के रूप में, Numbers, Excel या Google Sheets के लिए।";
@@ -783,6 +782,8 @@
 "Young" = "किशोर";
 "Your days and the habits that lift your mood" = "आपके दिन और मूड बेहतर करने वाली आदतें";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "आपकी आदतें और इतिहास अपने आप iCloud में सेव होते हैं। नए iPhone पर ZenHab सब कुछ वापस लाने का विकल्प देगा।";
+"Your habits stay on your iPhone and in your own iCloud." = "आपकी आदतें सिर्फ़ आपके iPhone और आपके iCloud में रहती हैं।";
+"Your habits stay only on your iPhone." = "आपकी आदतें सिर्फ़ आपके iPhone पर रहती हैं।";
 "Your message has been sent." = "आपका संदेश भेज दिया गया।";
 "Your month in review" = "आपके महीने का सार";
 "Your own emoji from the keyboard" = "कीबोर्ड से अपना इमोजी";

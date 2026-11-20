@@ -57,7 +57,6 @@
 "After: %@" = "다음 뒤: %@";
 "Afternoon" = "오후";
 "All" = "전체";
-"All data is stored only on this iPhone." = "모든 데이터는 이 iPhone에만 저장됩니다.";
 "All done" = "모두 완료";
 "All done!" = "모두 완료!";
 "All your check-ins as a table for Numbers, Excel or Google Sheets." = "모든 체크 기록을 표로 내보내 Numbers, Excel, Google 스프레드시트에서 보세요.";
@@ -783,6 +782,8 @@
 "Young" = "청소년";
 "Your days and the habits that lift your mood" = "나의 하루와 기분을 올려 주는 습관";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "습관과 기록이 자동으로 iCloud에 저장돼요. 새 iPhone에서는 ZenHab이 모두 되돌려 드려요.";
+"Your habits stay on your iPhone and in your own iCloud." = "습관 데이터는 iPhone과 내 iCloud에만 저장돼요.";
+"Your habits stay only on your iPhone." = "습관 데이터는 이 iPhone에만 저장돼요.";
 "Your message has been sent." = "메시지를 보냈어요.";
 "Your month in review" = "나의 한 달 돌아보기";
 "Your own emoji from the keyboard" = "키보드로 이모지 입력";

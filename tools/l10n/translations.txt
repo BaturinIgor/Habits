@@ -3,7 +3,6 @@ Activity over %lld weeks||Активность за %lld недель||Aktivitä
 Add a habit, pick days and a time, and I'll remind you.||Добавь привычку, выбери дни и время, и я напомню о ней.||Füge eine Gewohnheit hinzu, wähle Tage und Uhrzeit, und ich erinnere dich daran.||Ajoute une habitude, choisis les jours et l'heure, et je te la rappellerai.||Añade un hábito, elige los días y la hora, y te lo recordaré.||添加一个习惯，选择日期和时间，我会提醒你。||習慣を追加して曜日と時刻を選ぶと、お知らせします。||습관을 추가하고 요일과 시간을 고르면 알려 드릴게요.||एक आदत जोड़ें, दिन और समय चुनें, और मैं आपको याद दिलाऊँगा।
 Add habit||Добавить привычку||Gewohnheit hinzufügen||Ajouter une habitude||Añadir hábito||添加习惯||習慣を追加||습관 추가||आदत जोड़ें
 Add note||Добавить заметку||Notiz hinzufügen||Ajouter une note||Añadir nota||添加备注||メモを追加||메모 추가||नोट जोड़ें
-All data is stored only on this iPhone.||Все данные хранятся только на этом iPhone.||Alle Daten werden nur auf diesem iPhone gespeichert.||Toutes les données restent uniquement sur cet iPhone.||Todos los datos se guardan solo en este iPhone.||所有数据仅保存在这台 iPhone 上。||すべてのデータはこのiPhoneにのみ保存されます。||모든 데이터는 이 iPhone에만 저장됩니다.||सारा डेटा सिर्फ़ इसी iPhone पर रहता है।
 All done||Всё выполнено||Alles erledigt||Tout est fait||Todo hecho||全部完成||すべて完了||모두 완료||सब पूरा
 All done!||Всё выполнено!||Alles erledigt!||Tout est fait !||¡Todo hecho!||全部完成！||すべて完了！||모두 완료!||सब पूरा!
 Allow notifications||Разрешить уведомления||Mitteilungen erlauben||Autoriser les notifications||Permitir notificaciones||允许通知||通知を許可||알림 허용||सूचनाओं की अनुमति दें
@@ -283,7 +282,6 @@ Unlock: %@||Как открыть: %@||Freischalten: %@||Pour débloquer : %@||P
 Warming up||Разминка||Aufwärmen||Échauffement||Calentando||热身||ウォームアップ||워밍업||वार्म-अप
 Weekly hero||Герой недели||Wochenheld||Héros de la semaine||Héroe semanal||每周英雄||週間ヒーロー||주간 영웅||साप्ताहिक हीरो
 Write 10 notes||Напиши 10 заметок||Schreibe 10 Notizen||Écris 10 notes||Escribe 10 notas||写 10 条备注||メモを10件書く||메모 10개 쓰기||10 नोट लिखें
-
 Nothing yet. Add a note by swiping a habit left on the Today screen or by pressing and holding a day in the calendar.||Пока пусто. Добавь заметку, смахнув привычку влево на главном экране, или удерживая день в календаре.||Noch nichts. Füge eine Notiz hinzu, indem du eine Gewohnheit auf dem Startbildschirm nach links wischst oder einen Tag im Kalender gedrückt hältst.||Rien pour l'instant. Ajoute une note en balayant une habitude vers la gauche sur l'écran Aujourd'hui ou en maintenant un jour du calendrier.||Aún no hay nada. Añade una nota deslizando un hábito a la izquierda en la pantalla Hoy o manteniendo pulsado un día del calendario.||暂无内容。在“今天”页向左滑动习惯，或长按日历中的某天即可添加备注。||まだありません。「今日」画面で習慣を左にスワイプするか、カレンダーの日を長押ししてメモを追加できます。||아직 없어요. 오늘 화면에서 습관을 왼쪽으로 밀거나 달력의 날짜를 길게 눌러 메모를 추가하세요.||अभी कुछ नहीं। आज स्क्रीन पर आदत को बाएँ स्वाइप करके या कैलेंडर में किसी दिन को दबाकर रखकर नोट जोड़ें।
 Report a bug||Сообщить об ошибке||Fehler melden||Signaler un bug||Informar de un error||报告问题||不具合を報告||버그 신고||बग की सूचना दें
 Suggest an idea||Предложить идею||Idee vorschlagen||Proposer une idée||Sugerir una idea||提个建议||アイデアを提案||아이디어 제안||सुझाव दें
@@ -700,7 +698,7 @@ of habits done||привычек выполнено||der Gewohnheiten erledigt||
 Checked off||Отмечено||Abgehakt||Cochées||Marcados||已打卡||チェック済み||체크함||पूरे किए
 Most steady: %@, %lld of %lld||Самая стабильная: %@, %lld из %lld||Am beständigsten: %@, %lld von %lld||La plus régulière : %@, %lld sur %lld||La más constante: %@, %lld de %lld||最稳定：%@，%lld/%lld||いちばん安定：%@、%lld/%lld||가장 꾸준한 습관: %@, %lld/%lld||सबसे नियमित: %@, %lld में से %lld
 Share||Поделиться||Teilen||Partager||Compartir||分享||共有||공유||शेयर करें
-Week in review||Итоги недели||Wochenrückblick||Bilan de la semaine||Resumen semanal||一周回顾||今週のふり返り||한 주 돌아보기||हफ़्ते का सार
+Week in review||Итоги недели||Wochenrückblick||Bilan de la semaine||Resumen semanal||一周回顾||先週のふり返り||한 주 돌아보기||हफ़्ते का सार
 An amazing week. Keep it going!||Отличная неделя. Так держать!||Eine großartige Woche. Weiter so!||Une semaine incroyable. Continue comme ça !||Una semana increíble. ¡Sigue así!||了不起的一周，继续保持！||すばらしい1週間でした。この調子で！||멋진 한 주였어요. 계속 이어가요!||शानदार हफ़्ता। ऐसे ही जारी रखें!
 A solid week. A little more and it'll be perfect.||Хорошая неделя. Ещё чуть-чуть, и будет идеально.||Eine solide Woche. Noch ein bisschen, dann ist sie perfekt.||Une bonne semaine. Encore un petit effort et ce sera parfait.||Una buena semana. Un poco más y será perfecta.||不错的一周，再加把劲就完美了。||いい1週間でした。あと少しで完璧です。||좋은 한 주였어요. 조금만 더 하면 완벽해요.||अच्छा हफ़्ता। थोड़ा और, और यह परफ़ेक्ट होगा।
 Every check-in counts. The new week is a fresh start.||Каждая отметка важна. Новая неделя — новый старт.||Jedes Häkchen zählt. Die neue Woche ist ein Neuanfang.||Chaque coche compte. La nouvelle semaine est un nouveau départ.||Cada marca cuenta. La nueva semana es un nuevo comienzo.||每次打卡都算数，新的一周是新的开始。||チェックひとつひとつに意味があります。新しい週は新しいスタート。||체크 하나하나가 소중해요. 새로운 한 주는 새로운 시작이에요.||हर निशान मायने रखता है। नया हफ़्ता नई शुरुआत है।
@@ -801,7 +799,7 @@ Scan to get ZenHab||Наведи камеру, чтобы скачать ZenHab|
 Track your habits with ZenHab||Отслеживай привычки в ZenHab||Verfolge deine Gewohnheiten mit ZenHab||Suis tes habitudes avec ZenHab||Sigue tus hábitos con ZenHab||用 ZenHab 追踪你的习惯||ZenHabで習慣を記録しよう||ZenHab으로 습관을 기록하세요||ZenHab के साथ अपनी आदतें ट्रैक करें
 My month||Мой месяц||Mein Monat||Mon mois||Mi mes||我的一个月||私の1か月||나의 한 달||मेरा महीना
 My year||Мой год||Mein Jahr||Mon année||Mi año||我的一年||私の1年||나의 한 해||मेरा साल
-Month in review||Итоги месяца||Monatsrückblick||Bilan du mois||Resumen mensual||月度回顾||今月のふり返り||한 달 돌아보기||महीने का सार
+Month in review||Итоги месяца||Monatsrückblick||Bilan du mois||Resumen mensual||月度回顾||先月のふり返り||한 달 돌아보기||महीने का सार
 Year in review||Итоги года||Jahresrückblick||Bilan de l'année||Resumen anual||年度回顾||1年のふり返り||한 해 돌아보기||साल का सार
 Your month in review||Итоги твоего месяца||Dein Monatsrückblick||Le bilan de ton mois||Tu resumen mensual||你的月度回顾||あなたの1か月||나의 한 달 돌아보기||आपके महीने का सार
 Your year in review||Итоги твоего года||Dein Jahresrückblick||Le bilan de ton année||Tu resumen anual||你的年度回顾||あなたの1年||나의 한 해 돌아보기||आपके साल का सार
@@ -813,3 +811,5 @@ Every check-in counts. The new month is a fresh start.||Каждая отмет�
 An amazing year. Keep it going!||Отличный год. Так держать!||Ein großartiges Jahr. Weiter so!||Une année incroyable. Continue comme ça !||Un año increíble. ¡Sigue así!||了不起的一年，继续保持！||すばらしい1年でした。この調子で！||멋진 한 해였어요. 계속 이어가요!||शानदार साल। ऐसे ही जारी रखें!
 A solid year. Every month makes a difference.||Хороший год. Каждый месяц был не зря.||Ein solides Jahr. Jeder Monat hat etwas bewirkt.||Une bonne année. Chaque mois a compté.||Un buen año. Cada mes ha contado.||不错的一年，每个月都有收获。||いい1年でした。毎月の積み重ねが力になっています。||좋은 한 해였어요. 매달이 의미 있었어요.||अच्छा साल। हर महीने ने फ़र्क डाला।
 Every check-in counts. The new year is a fresh start.||Каждая отметка важна. Новый год — новый старт.||Jedes Häkchen zählt. Das neue Jahr ist ein Neuanfang.||Chaque coche compte. La nouvelle année est un nouveau départ.||Cada marca cuenta. El nuevo año es un nuevo comienzo.||每次打卡都算数，新的一年是新的开始。||チェックひとつひとつに意味があります。新しい年は新しいスタート。||체크 하나하나가 소중해요. 새해는 새로운 시작이에요.||हर निशान मायने रखता है। नया साल नई शुरुआत है।
+Your habits stay on your iPhone and in your own iCloud.||Привычки хранятся на твоём iPhone и в твоём iCloud.||Deine Gewohnheiten bleiben auf deinem iPhone und in deiner iCloud.||Tes habitudes restent sur ton iPhone et dans ton iCloud.||Tus hábitos se quedan en tu iPhone y en tu iCloud.||你的习惯只保存在你的 iPhone 和你自己的 iCloud 中。||習慣のデータはiPhoneとあなたのiCloudにだけ保存されます。||습관 데이터는 iPhone과 내 iCloud에만 저장돼요.||आपकी आदतें सिर्फ़ आपके iPhone और आपके iCloud में रहती हैं।
+Your habits stay only on your iPhone.||Привычки хранятся только на твоём iPhone.||Deine Gewohnheiten bleiben nur auf deinem iPhone.||Tes habitudes restent uniquement sur ton iPhone.||Tus hábitos se quedan solo en tu iPhone.||你的习惯只保存在你的 iPhone 上。||習慣のデータはこのiPhoneにだけ保存されます。||습관 데이터는 이 iPhone에만 저장돼요.||आपकी आदतें सिर्फ़ आपके iPhone पर रहती हैं।

@@ -7,7 +7,7 @@ ZenHab: Pelacak Kebiasaan
 Rutinitas, streak, dan target
 
 ## Promotional text
-Kebiasaan yang bertahan: pengingat lembut, streak, hewan peliharaan yang tumbuh bersamamu, dan widget untuk menandai dengan satu ketuk. Tanpa akun, data tetap di iPhone.
+Kebiasaan yang bertahan, kini juga di Apple Watch: centang dari pergelangan tangan, lihat ringkasan bulan dan tahun, dan hewan peliharaan tumbuh bersamamu. Tanpa akun.
 
 ## Keywords
 kebiasaan,rutinitas,planner,harian,target,pengingat,streak,widget,produktivitas,air,jurnal
@@ -29,12 +29,15 @@ PENGINGAT YANG BEKERJA
 
 KEMAJUAN DAN MOTIVASI
 • Streak saat ini dan terbaik, persentase penyelesaian, kalender, grafik, dan peta aktivitas
+• Ringkasan minggu, bulan, dan tahun untuk dibagikan sebagai gambar
 • Pencapaian, hewan peliharaan yang tumbuh di setiap kebiasaan, dan percikan untuk hewan, avatar, dan latar baru
 • Belajar kata: 500 kata umum dalam 14 bahasa dengan pelafalan dan pengulangan berjarak
 • Widget layar utama dan layar kunci
+• Apple Watch: centang kebiasaan hari ini dari pergelangan tangan, komplikasi tampilan jam, dan timer dengan Pro
 
 PRIVAT
-• Semua data tetap di iPhone-mu. Tanpa akun, iklan, dan pelacakan
+• Kebiasaanmu tetap di iPhone dan iCloud-mu. Tanpa akun, iklan, dan pelacakan
+• Statistik penggunaan anonim yang bisa dimatikan di Pengaturan
 • Ekspor dan impor cadangan
 
 ZENHAB PRO
@@ -46,6 +49,11 @@ Ketentuan Penggunaan: https://www.apple.com/legal/internet-services/itunes/dev/s
 Privasi: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab di Apple Watch: lihat kebiasaan hari ini di pergelangan tangan dan centang dengan sekali ketuk. Semuanya tersinkron dengan iPhone.
-• Komplikasi tampilan jam dan Tumpukan Pintar: lihat sekilas berapa kebiasaan yang selesai hari ini.
+• ZenHab di Apple Watch: kebiasaan hari ini di pergelangan tangan, dicentang dengan sekali ketuk (untuk kebiasaan dengan hitungan, setiap ketukan menambah satu). Tetap jalan tanpa internet dan tersinkron dengan iPhone.
+• Komplikasi tampilan jam: bulat, sudut, persegi panjang, dan sebaris. Lihat kemajuan hari ini sekilas.
 • Timer kebiasaan di Apple Watch (Pro): saat waktu habis, jam mengetuk pergelangan tanganmu dan mencentang kebiasaan.
+• Ringkasan bulan dan Ringkasan tahun: ada di Statistik atau di Hari Ini saat awal bulan, dan bisa dibagikan sebagai gambar.
+• Gambar yang kamu bagikan kini punya kode QR dan dikirim bersama tautan ke ZenHab di App Store.
+• Ke-11 hewan peliharaan digambar ulang: gaya baru yang lembut dan bervolume, 4 tahap, emosi, dan animasi halus. Mereka bernapas, berkedip, sebagian mengibaskan ekor, dan semuanya melompat saat kamu mencentang kebiasaan.
+• Statistik penggunaan anonim membantu kami tahu apa yang perlu diperbaiki. Statistik ini tidak pernah memuat apa pun yang kamu ketik, dan kamu bisa mematikannya di Pengaturan.
+• Kartu ringkasan tampil lebih baik dengan teks besar, dan layar hewan peliharaan kini sepenuhnya diterjemahkan.
