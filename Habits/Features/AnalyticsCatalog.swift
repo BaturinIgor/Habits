@@ -231,10 +231,11 @@ enum AnalyticsSnapshot {
         let calendar = Calendar.app
         let weekAgo = calendar.date(byAdding: .day, value: -7, to: today).map { DayKey.make($0) } ?? ""
         let todayKey = DayKey.make(today)
+        // Отметки за 7 дней: прямой поиск по ключам вместо обхода всей истории (её бывают десятки тысяч).
+        let days = (0..<7).compactMap { calendar.date(byAdding: .day, value: -$0, to: today).map { DayKey.make($0) } }
         var checks7 = 0
-        for (key, checkIn) in data.checkIns where checkIn.status == .done {
-            let day = key.split(separator: "|").last.map(String.init) ?? ""
-            if day > weekAgo && day <= todayKey { checks7 += 1 }
+        for habit in data.habits {
+            for day in days where data.checkIns[AppData.key(habit.id, day)]?.status == .done { checks7 += 1 }
         }
         let moods7 = data.moods.keys.filter { $0 > weekAgo && $0 <= todayKey }.count
         let pet = data.wallet.pet
@@ -252,7 +253,8 @@ enum AnalyticsSnapshot {
             "State.moods7d": moods7,
             "State.hasPet": pet != nil,
             "State.petSpecies": pet?.species ?? "none",
-            "State.petStage": pet.map { PetStage.stage(xp: Pets.xp($0, data: data)).rawValue } ?? -1,
+            // Стадия из уже запомненных (syncPetStage), без пересчёта опыта по всей истории.
+            "State.petStage": pet.map { ($0.highestReached ?? .egg).rawValue } ?? -1,
             "State.achievements": data.settings.seenAchievements.count,
             "State.remindersOn": data.settings.remindersEnabled,
             "State.summaryOn": data.settings.summaryEnabled,
