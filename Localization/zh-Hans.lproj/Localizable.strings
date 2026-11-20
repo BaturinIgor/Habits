@@ -57,7 +57,6 @@
 "After: %@" = "之后：%@";
 "Afternoon" = "下午";
 "All" = "全部";
-"All data is stored only on this iPhone." = "所有数据仅保存在这台 iPhone 上。";
 "All done" = "全部完成";
 "All done!" = "全部完成！";
 "All your check-ins as a table for Numbers, Excel or Google Sheets." = "把所有打卡导出为表格，用于 Numbers、Excel 或 Google 表格。";
@@ -785,6 +784,8 @@
 "Young" = "少年";
 "Your days and the habits that lift your mood" = "你的每一天，以及让你心情变好的习惯";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "习惯和历史记录会自动保存到你的 iCloud。在新 iPhone 上，ZenHab 会提示你恢复全部数据。";
+"Your habits stay on your iPhone and in your own iCloud." = "你的习惯只保存在你的 iPhone 和你自己的 iCloud 中。";
+"Your habits stay only on your iPhone." = "你的习惯只保存在你的 iPhone 上。";
 "Your message has been sent." = "消息已发送。";
 "Your month in review" = "你的月度回顾";
 "Your own emoji from the keyboard" = "用键盘输入表情";

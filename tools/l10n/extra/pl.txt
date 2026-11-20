@@ -3,7 +3,6 @@ Activity over %lld weeks||Aktywność z %lld tygodni
 Add a habit, pick days and a time, and I'll remind you.||Dodaj nawyk, wybierz dni i godzinę, a ja ci o nim przypomnę.
 Add habit||Dodaj nawyk
 Add note||Dodaj notatkę
-All data is stored only on this iPhone.||Wszystkie dane są przechowywane tylko na tym iPhonie.
 All done||Wszystko zrobione
 All done!||Wszystko zrobione!
 Allow notifications||Zezwól na powiadomienia
@@ -814,3 +813,5 @@ A solid year. Every month makes a difference.||Dobry rok. Każdy miesiąc miał 
 Every check-in counts. The new year is a fresh start.||Każde odhaczenie się liczy. Nowy rok to nowy start.
 What will you call them?||Jak go nazwiesz?
 Each pet keeps its own name. Growth and mood stay shared.||Każdy zwierzak ma własne imię. Rozwój i nastrój są wspólne.
+Your habits stay on your iPhone and in your own iCloud.||Twoje nawyki zostają na twoim iPhonie i w twoim iCloud.
+Your habits stay only on your iPhone.||Twoje nawyki zostają tylko na twoim iPhonie.

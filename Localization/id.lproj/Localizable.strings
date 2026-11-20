@@ -57,7 +57,6 @@
 "After: %@" = "Setelah: %@";
 "Afternoon" = "Siang";
 "All" = "Semua";
-"All data is stored only on this iPhone." = "Semua data hanya disimpan di iPhone ini.";
 "All done" = "Semua selesai";
 "All done!" = "Semua selesai!";
 "All your check-ins as a table for Numbers, Excel or Google Sheets." = "Semua centang sebagai tabel untuk Numbers, Excel, atau Google Sheets.";
@@ -785,6 +784,8 @@
 "Young" = "Remaja";
 "Your days and the habits that lift your mood" = "Hari-harimu dan kebiasaan yang memperbaiki suasana hati";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Kebiasaan dan riwayatmu tersimpan otomatis di iCloud. Di iPhone baru, ZenHab akan menawarkan untuk memulihkan semuanya.";
+"Your habits stay on your iPhone and in your own iCloud." = "Kebiasaanmu tetap di iPhone dan iCloud-mu.";
+"Your habits stay only on your iPhone." = "Kebiasaanmu hanya tersimpan di iPhone-mu.";
 "Your message has been sent." = "Pesanmu sudah terkirim.";
 "Your month in review" = "Ringkasan bulanmu";
 "Your own emoji from the keyboard" = "Emoji sendiri dari papan ketik";

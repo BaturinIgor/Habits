@@ -57,7 +57,6 @@
 "After: %@" = "Sonra: %@";
 "Afternoon" = "Öğleden sonra";
 "All" = "Tümü";
-"All data is stored only on this iPhone." = "Tüm veriler yalnızca bu iPhone'da saklanır.";
 "All done" = "Hepsi tamam";
 "All done!" = "Hepsi tamam!";
 "All your check-ins as a table for Numbers, Excel or Google Sheets." = "Tüm işaretlemelerin Numbers, Excel veya Google E-Tablolar için tablo hâlinde.";
@@ -785,6 +784,8 @@
 "Young" = "Genç";
 "Your days and the habits that lift your mood" = "Günlerin ve ruh hâlini iyileştiren alışkanlıklar";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Alışkanlıkların ve geçmişin iCloud'una kendiliğinden kaydedilir. Yeni bir iPhone'da ZenHab her şeyi geri getirmeyi önerir.";
+"Your habits stay on your iPhone and in your own iCloud." = "Alışkanlıkların iPhone'unda ve iCloud'unda kalır.";
+"Your habits stay only on your iPhone." = "Alışkanlıkların yalnızca iPhone'unda kalır.";
 "Your message has been sent." = "Mesajın gönderildi.";
 "Your month in review" = "Ayının özeti";
 "Your own emoji from the keyboard" = "Klavyeden kendi emojin";

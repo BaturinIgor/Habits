@@ -32,10 +32,13 @@ def token():
 
 
 S = requests.Session()
-S.headers.update({"Authorization": f"Bearer {token()}", "Content-Type": "application/json"})
+S.headers.update({"Content-Type": "application/json"})
 
 
 def call(method, path, **kw):
+    # Токен создаётся при первом запросе: так модуль можно импортировать в тестах без ключа.
+    if "Authorization" not in S.headers:
+        S.headers["Authorization"] = f"Bearer {token()}"
     r = S.request(method, API + path if path.startswith("/") else path, **kw)
     if r.status_code >= 400:
         print(f"::error::{method} {path} -> {r.status_code}: {r.text[:1500]}")
@@ -61,9 +64,17 @@ def sections(locale):
     return result
 
 
-def fill_missing_texts(app_id, ver_id):
+def fill_missing_texts(app_id, ver_id, overwrite=False):
     """Языки, добавленные только ради «Что нового», получают описание, ключевые слова,
-    рекламный текст, URL поддержки, а также название и подзаголовок. Уже заполненные поля не трогаем."""
+    рекламный текст, URL поддержки, а также название и подзаголовок. Уже заполненные поля не трогаем.
+
+    С overwrite=True описание, ключевые слова, рекламный текст, название и подзаголовок
+    заменяются текстами из docs/appstore/metadata: новая версия получает их копию из прошлой."""
+    texts_from_repo = {"description", "keywords", "promotionalText", "name", "subtitle"}
+
+    def changes(wanted, current):
+        return {k: v for k, v in wanted.items()
+                if v and (not current.get(k) or (overwrite and k in texts_from_repo and current.get(k) != v))}
     locs = call("GET", f"/appStoreVersions/{ver_id}/appStoreVersionLocalizations", params={"limit": 50})["data"]
     base = next((l["attributes"] for l in locs if l["attributes"]["locale"] == "en-US"), {})
     for loc in locs:
@@ -76,11 +87,11 @@ def fill_missing_texts(app_id, ver_id):
             "supportUrl": base.get("supportUrl"),
             "marketingUrl": base.get("marketingUrl"),
         }
-        patch = {k: v for k, v in wanted.items() if v and not a.get(k)}
+        patch = changes(wanted, a)
         if patch:
             call("PATCH", f"/appStoreVersionLocalizations/{loc['id']}", json={"data": {
                 "type": "appStoreVersionLocalizations", "id": loc["id"], "attributes": patch}})
-            print(f"  {locale}: дозаполнено {', '.join(sorted(patch))}")
+            print(f"  {locale}: обновлено {', '.join(sorted(patch))}")
 
     infos = call("GET", f"/apps/{app_id}/appInfos")["data"]
     editable = [i for i in infos if (i["attributes"].get("appStoreState") or i["attributes"].get("state"))
@@ -98,11 +109,11 @@ def fill_missing_texts(app_id, ver_id):
         wanted = {"name": sec.get("Name"), "subtitle": sec.get("Subtitle"), "privacyPolicyUrl": privacy}
         if locale in info_locs:
             a = info_locs[locale]["attributes"]
-            patch = {k: v for k, v in wanted.items() if v and not a.get(k)}
+            patch = changes(wanted, a)
             if patch:
                 call("PATCH", f"/appInfoLocalizations/{info_locs[locale]['id']}", json={"data": {
                     "type": "appInfoLocalizations", "id": info_locs[locale]["id"], "attributes": patch}})
-                print(f"  {locale}: дозаполнено {', '.join(sorted(patch))}")
+                print(f"  {locale}: обновлено {', '.join(sorted(patch))}")
         elif wanted["name"]:
             attrs = {k: v for k, v in wanted.items() if v}
             attrs["locale"] = locale
@@ -110,6 +121,40 @@ def fill_missing_texts(app_id, ver_id):
                 "type": "appInfoLocalizations", "attributes": attrs,
                 "relationships": {"appInfo": {"data": {"type": "appInfos", "id": info_id}}}}})
             print(f"  {locale}: добавлены название и подзаголовок")
+
+
+def review_notes():
+    """Текст для App Review Information > Notes: первый блок ``` в docs/appstore/review-notes.md."""
+    path = os.path.join(ROOT, "docs/appstore/review-notes.md")
+    if not os.path.exists(path):
+        return None
+    text = open(path, encoding="utf-8").read()
+    start = text.find("```")
+    end = text.find("```", start + 3) if start >= 0 else -1
+    if start < 0 or end < 0:
+        return None
+    notes = text[text.index("\n", start) + 1:end].strip()
+    if len(notes) > 4000:
+        print("::error::Заметки для ревьюера длиннее 4000 символов")
+        sys.exit(1)
+    return notes
+
+
+def fill_review_notes(ver_id):
+    notes = review_notes()
+    if not notes:
+        print("::warning::Заметки для ревьюера не найдены в docs/appstore/review-notes.md")
+        return
+    detail = call("GET", f"/appStoreVersions/{ver_id}/appStoreReviewDetail").get("data")
+    attrs = {"notes": notes, "demoAccountRequired": False}
+    if detail:
+        call("PATCH", f"/appStoreReviewDetails/{detail['id']}", json={"data": {
+            "type": "appStoreReviewDetails", "id": detail["id"], "attributes": attrs}})
+    else:
+        call("POST", "/appStoreReviewDetails", json={"data": {
+            "type": "appStoreReviewDetails", "attributes": attrs,
+            "relationships": {"appStoreVersion": {"data": {"type": "appStoreVersions", "id": ver_id}}}}})
+    print(f"Заметки для ревьюера обновлены ({len(notes)} символов)")
 
 
 def whats_new_texts():
@@ -135,6 +180,7 @@ def main():
     bundle = os.environ.get("APP_BUNDLE_ID") or "com.baturinigor.zenhab"
     version = os.environ["VERSION"]
     build_number = os.environ.get("BUILD_NUMBER", "").strip()
+    overwrite = os.environ.get("OVERWRITE", "").strip().lower() in ("1", "true", "yes")
 
     apps = call("GET", "/apps", params={"filter[bundleId]": bundle})["data"]
     if not apps:
@@ -175,7 +221,9 @@ def main():
                 "relationships": {"appStoreVersion": {"data": {"type": "appStoreVersions", "id": ver_id}}}}})
         print(f"  {locale}: «Что нового» заполнено")
 
-    fill_missing_texts(app_id, ver_id)
+    fill_missing_texts(app_id, ver_id, overwrite=overwrite)
+    if overwrite:
+        fill_review_notes(ver_id)
 
     if build_number:
         builds = call("GET", "/builds", params={

@@ -41,21 +41,29 @@ def load_captions(lang):
     return {row['num']: row[lang] for row in table}
 
 
-def fit_font(path, text, max_width, size):
+def load_font(path, size, weight=None):
+    font = ImageFont.truetype(path, size)
+    if weight:
+        # Шрифт с вариациями (например SFNSRounded.ttf): выбираем начертание по имени.
+        font.set_variation_by_name(weight)
+    return font
+
+
+def fit_font(path, text, max_width, size, weight=None):
     while size > 40:
-        font = ImageFont.truetype(path, size)
+        font = load_font(path, size, weight)
         if max(font.getlength(line) for line in text) <= max_width:
             return font
         size -= 4
-    return ImageFont.truetype(path, size)
+    return load_font(path, size, weight)
 
 
-def compose(shot_path, caption, font_path):
+def compose(shot_path, caption, font_path, weight=None):
     canvas = gradient()
     draw = ImageDraw.Draw(canvas)
 
     lines = [part.strip() for part in caption.split('|')]
-    font = fit_font(font_path, lines, W - 160, 112)
+    font = fit_font(font_path, lines, W - 160, 112, weight)
     y = 170
     for line in lines:
         width = font.getlength(line)
@@ -71,7 +79,8 @@ def compose(shot_path, caption, font_path):
     ImageDraw.Draw(mask).rounded_rectangle([0, 0, shot.width - 1, shot.height - 1], radius, fill=255)
 
     x = (W - shot.width) // 2
-    top = y + 70
+    # Обрезанный по высоте скриншот (например уведомление без клавиатуры) ставим по центру свободного места.
+    top = y + 70 + max(0, (target_h - shot.height) // 2)
     shadow = Image.new('L', (W, H), 0)
     ImageDraw.Draw(shadow).rounded_rectangle([x, top + 24, x + shot.width, top + shot.height + 24], radius, fill=110)
     shadow = shadow.filter(ImageFilter.GaussianBlur(40))
@@ -86,6 +95,7 @@ def main():
     parser.add_argument('--lang', default='en-US', help='колонка из captions.tsv')
     parser.add_argument('--out', required=True)
     parser.add_argument('--font', required=True, help='жирный TTF/OTF шрифт')
+    parser.add_argument('--weight', help='начертание шрифта с вариациями, например Bold для SFNSRounded.ttf')
     args = parser.parse_args()
 
     captions = load_captions(args.lang)
@@ -96,7 +106,7 @@ def main():
             src = os.path.join(args.input, f'{num}.{ext}')
             if os.path.exists(src):
                 out = os.path.join(args.out, f'{num}.png')
-                compose(src, caption, args.font).save(out, optimize=True)
+                compose(src, caption, args.font, args.weight).save(out, optimize=True)
                 print(f'{src} -> {out}')
                 done += 1
                 break
