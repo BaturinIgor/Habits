@@ -420,6 +420,8 @@ struct PetNamingSheet: View {
         }
         .padding(20)
         .presentationDetents([.medium, .large])
+        // Непрозрачный фон: сквозь стеклянный шит просвечивала кнопка «Покормить».
+        .presentationBackground { AppBackground() }
         .interactiveDismissDisabled()
         .onAppear { text = store.data.wallet.pet?.name ?? "" }
     }

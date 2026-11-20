@@ -302,6 +302,10 @@ final class HabitStore {
         pet.name = clean.isEmpty ? Pets.defaultName(Pets.species(pet.species)) : clean
         pet.names[pet.species] = pet.name
         data.wallet.pet = pet
+        // Своё имя (не «Пропустить» и не имя по умолчанию) считаем переименованием.
+        if !clean.isEmpty, clean != Pets.defaultName(Pets.species(pet.species)) {
+            Analytics.shared.action(.petRename)
+        }
         commit()
     }
 
