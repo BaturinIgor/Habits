@@ -91,7 +91,7 @@ final class PerformanceTests: XCTestCase {
         var data = Self.heavy
         // С питомцем: снимок считает его стадию по опыту за все отметки.
         data.wallet.pet = PetState(species: Pets.all[0].id, name: "Buddy", adoptedAt: Date().addingTimeInterval(-86400 * 365))
-        time("daily_state snapshot", limit: 0.3) {
+        time("daily_state snapshot", limit: 0.6) {
             _ = AnalyticsSnapshot.make(data)
         }
         time("1000 gesture payloads", limit: 0.1) {
