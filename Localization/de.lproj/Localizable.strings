@@ -39,6 +39,7 @@
 "Active" = "Aktiv";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Aktiver Tag: mindestens eine Gewohnheit rechtzeitig abgehakt. Füttern gibt %lld EP, so wächst dein Haustier schneller.";
 "Activity over %lld weeks" = "Aktivität der letzten %lld Wochen";
+"Add ZenHab to your watch face or Smart Stack to see how many habits are done today." = "Füge ZenHab zu deinem Zifferblatt oder Smart-Stapel hinzu, um zu sehen, wie viele Gewohnheiten heute erledigt sind.";
 "Add a habit" = "Gewohnheit hinzufügen";
 "Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap." = "Füge einen Gewohnheits-Button zum Kontrollzentrum, Sperrbildschirm oder zur Aktionstaste hinzu und hake mit einem Tippen ab.";
 "Add a habit, pick days and a time, and I'll remind you." = "Füge eine Gewohnheit hinzu, wähle Tage und Uhrzeit, und ich erinnere dich daran.";
@@ -275,6 +276,7 @@
 "Freezes this month" = "Freezes diesen Monat";
 "Full for today" = "Für heute satt";
 "Full mood journal" = "Volles Stimmungstagebuch";
+"Get Pro on your iPhone to use the timer on Apple Watch." = "Hol dir Pro auf deinem iPhone, um den Timer auf der Apple Watch zu nutzen.";
 "Get a pet" = "Haustier holen";
 "Go to bed on time" = "Pünktlich ins Bett";
 "Goal" = "Ziel";
@@ -307,6 +309,7 @@
 "Hatches after a few check-ins" = "Schlüpft nach ein paar Abhaken";
 "Have 30 perfect days" = "Sammle 30 perfekte Tage";
 "Health" = "Gesundheit";
+"Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood." = "Hilft, ZenHab zu verbessern: nur welche Bildschirme und Tasten genutzt werden. Niemals deine Gewohnheiten, Notizen oder Stimmung.";
 "Hide keyboard" = "Tastatur ausblenden";
 "Hours of sleep" = "Stunden Schlaf";
 "How are you today?" = "Wie geht's dir heute?";
@@ -489,6 +492,7 @@
 "One notification listing the habits not checked off yet." = "Eine Mitteilung mit den Gewohnheiten, die noch offen sind.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Es zählen nur Abhaken am selben oder nächsten Tag. Wird eine Gewohnheit abgewählt, ist der Funke wieder weg.";
 "Only you can open your habits and journal." = "Nur du kannst deine Gewohnheiten und dein Tagebuch öffnen.";
+"Open ZenHab on your iPhone to see your habits here." = "Öffne ZenHab auf deinem iPhone, dann erscheinen deine Gewohnheiten hier.";
 "Open backup" = "Sicherung öffnen";
 "Open export" = "Export öffnen";
 "Open groups" = "Gruppen öffnen";
@@ -582,8 +586,10 @@
 "Scan to get ZenHab" = "Scannen, um ZenHab zu laden";
 "Schedule" = "Zeitplan";
 "Scheduled notifications" = "Geplante Mitteilungen";
+"See how many habits are done today." = "Wie viele Gewohnheiten heute erledigt sind.";
 "See how much money you save by quitting a habit." = "Sieh, wie viel Geld du sparst, wenn du eine Gewohnheit aufgibst.";
 "See how much you've saved with Pro" = "Mit Pro siehst du, wie viel du gespart hast";
+"See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "Sieh die heutigen Gewohnheiten am Handgelenk und hake sie mit einem Tippen ab. Alles wird mit deinem iPhone synchronisiert. Ist ZenHab noch nicht auf deiner Uhr, installiere es in der Watch-App auf deinem iPhone.";
 "See which habits make your days better" = "Finde heraus, welche Gewohnheiten deine Tage besser machen";
 "Send" = "Senden";
 "Send by email" = "Per E-Mail senden";
@@ -592,6 +598,7 @@
 "Settings" = "Einstellungen";
 "Share" = "Teilen";
 "Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "Teile eine Gruppe mit deiner Familie, zum Beispiel „Hund“ oder „Zuhause“. Alle sehen dieselben Gewohnheiten, haken sie ab und bekommen Erinnerungen.";
+"Share anonymous statistics" = "Anonyme Statistik senden";
 "Share with family" = "Mit Familie teilen";
 "Shared data" = "Gemeinsame Daten";
 "Shared with you" = "Mit dir geteilt";
@@ -624,6 +631,7 @@
 "Start free trial" = "Gratis testen";
 "Start over" = "Neu anfangen";
 "Start the count again?" = "Zählung neu starten?";
+"Start timer" = "Timer starten";
 "Statistics" = "Statistik";
 "Statistics will appear once you start checking off habits." = "Die Statistik erscheint, sobald du Gewohnheiten abhakst.";
 "Status" = "Status";
@@ -684,11 +692,13 @@
 "Time's up. Well done!" = "Die Zeit ist um. Gut gemacht!";
 "Timer" = "Timer";
 "Timer on the Lock Screen" = "Timer auf dem Sperrbildschirm";
+"Timer on your wrist" = "Timer am Handgelenk";
 "Today" = "Heute";
 "Today is a good day." = "Heute ist ein guter Tag.";
 "Today screen" = "Heute-Bildschirm";
 "Today's entry" = "Heutiger Eintrag";
 "Today's habits" = "Heutige Gewohnheiten";
+"Today's progress" = "Tagesfortschritt";
 "Today's progress and quick check-off right from the Home Screen." = "Tagesfortschritt und schnelles Abhaken direkt auf dem Home-Bildschirm.";
 "Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "Tagesfortschritt und schnelles Abhaken direkt auf dem Home-Bildschirm. Halte das Widget gedrückt, um eine Gruppe zu wählen.";
 "Tomorrow" = "Morgen";
@@ -728,6 +738,7 @@
 "Walk" = "Spaziergang";
 "Walk 10,000 steps" = "10.000 Schritte gehen";
 "Warming up" = "Aufwärmen";
+"Watch face complications" = "Komplikationen fürs Zifferblatt";
 "Water, liters" = "Wasser, Liter";
 "Week" = "Woche";
 "Week in review" = "Wochenrückblick";
@@ -752,6 +763,7 @@
 "With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets." = "Mit Pro exportierst du alle Einträge mit Notizen und Stimmung als Tabelle für Numbers, Excel oder Google Sheets.";
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "Mit Pro gibst du einer Gewohnheit eine Dauer. Der Countdown läuft auf dem Sperrbildschirm und in der Dynamic Island und hakt die Gewohnheit am Ende ab.";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "Mit Pro verknüpfst du eine Gewohnheit mit Schritten, Schlaf, Wasser, Workouts oder Achtsamkeit, und sie wird beim Erreichen des Ziels von selbst abgehakt.";
+"With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off." = "Mit Pro startest du den Gewohnheits-Timer auf der Apple Watch. Ist die Zeit um, tippt die Uhr ans Handgelenk und hakt die Gewohnheit ab.";
 "Without it since" = "Ohne seit";
 "Words" = "Wörter";
 "Words for today are done" = "Die Wörter für heute sind geschafft";
@@ -783,6 +795,7 @@
 "Your year in review" = "Dein Jahresrückblick";
 "Your year's results as a card you can share" = "Die Ergebnisse deines Jahres als Karte zum Teilen";
 "ZenHab is locked" = "ZenHab ist gesperrt";
+"ZenHab on Apple Watch" = "ZenHab auf der Apple Watch";
 "a month" = "ein Monat";
 "a week" = "eine Woche";
 "a year" = "ein Jahr";

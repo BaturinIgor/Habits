@@ -73,26 +73,32 @@ final class ProStore {
 
     /// Возвращает true, если покупка прошла.
     @discardableResult
-    func purchase(_ product: Product) async -> Bool {
+    func purchase(_ product: Product, source: String = "unknown") async -> Bool {
         isPurchasing = true
         defer { isPurchasing = false }
+        let analytics = Analytics.shared
+        analytics.send(.purchaseStarted(product: product.id, source: source))
         do {
             switch try await product.purchase() {
             case .success(let verification):
                 guard case .verified(let transaction) = verification else {
                     errorMessage = String(localized: "The purchase could not be verified.")
+                    analytics.send(.purchaseFailed(product: product.id, source: source))
                     return false
                 }
                 await transaction.finish()
                 await refreshEntitlements()
+                analytics.send(.purchaseCompleted(product: product.id, source: source))
                 return true
             case .pending, .userCancelled:
+                analytics.send(.purchaseCancelled(product: product.id, source: source))
                 return false
             @unknown default:
                 return false
             }
         } catch {
             errorMessage = error.localizedDescription
+            analytics.send(.purchaseFailed(product: product.id, source: source))
             return false
         }
     }
@@ -106,6 +112,7 @@ final class ProStore {
             errorMessage = error.localizedDescription
         }
         await refreshEntitlements()
+        Analytics.shared.send(.restoreFinished(found: HabitStore.shared.data.isPro))
         if !HabitStore.shared.data.isPro {
             errorMessage = String(localized: "No purchases found for this Apple Account.")
         }

@@ -45,6 +45,14 @@ jobs:
           brew install xcodegen
           xcodebuild -version
 
+      - name: Check watchOS platform
+        # Приложение для часов собирается вместе с приложением для iPhone.
+        run: |
+          if ! xcodebuild -showsdks | grep -q watchos; then
+            xcodebuild -downloadPlatform watchOS
+          fi
+          xcodebuild -showsdks | grep -i watch
+
       - name: Generate Xcode project
         run: xcodegen generate
 

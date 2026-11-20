@@ -20,8 +20,11 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
+        Analytics.shared.start()
         UNUserNotificationCenter.current().delegate = self
         NotificationPlanner.registerCategories()
+        // Apple Watch: отметки с часов могут прийти, даже когда приложение запущено в фоне.
+        if !TestMode.isUITest { WatchSync.shared.start() }
         if FamilySync.isAvailable {
             // Тихие push от iCloud, когда родные меняют общую группу.
             application.registerForRemoteNotifications()

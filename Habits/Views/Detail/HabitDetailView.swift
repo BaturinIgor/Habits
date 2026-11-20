@@ -16,6 +16,10 @@ struct HabitDetailView: View {
     @AppStorage("siriTipHabitDetail") private var showSiriTip = true
 
     var body: some View {
+        analyticsBody.analyticsScreen(.detail)
+    }
+
+    @ViewBuilder private var analyticsBody: some View {
         Group {
             if let habit = store.habit(habitID) {
                 content(habit)

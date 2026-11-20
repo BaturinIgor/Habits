@@ -781,6 +781,19 @@ Your days and the habits that lift your mood||Le tue giornate e le abitudini che
 Your whole mood history, a monthly chart and which habits lift your mood.||Tutta la cronologia dell'umore, un grafico mensile e le abitudini che lo migliorano.
 ZenHab is locked||ZenHab è bloccato
 passcode||codice
+Share anonymous statistics||Condividi statistiche anonime
+Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood.||Aiuta a migliorare ZenHab: solo quali schermate e pulsanti vengono usati. Mai le tue abitudini, note o umore.
+Open ZenHab on your iPhone to see your habits here.||Apri ZenHab sull'iPhone per vedere qui le tue abitudini.
+Get Pro on your iPhone to use the timer on Apple Watch.||Passa a Pro sull'iPhone per usare il timer su Apple Watch.
+Start timer||Avvia timer
+Today's progress||Progressi di oggi
+See how many habits are done today.||Quante abitudini hai completato oggi.
+ZenHab on Apple Watch||ZenHab su Apple Watch
+See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch.||Le abitudini di oggi al polso, da spuntare con un tocco. Tutto si sincronizza con l'iPhone. Se ZenHab non compare sull'orologio, installalo dall'app Watch sull'iPhone.
+Watch face complications||Complicazioni sul quadrante
+Add ZenHab to your watch face or Smart Stack to see how many habits are done today.||Aggiungi ZenHab al quadrante o allo Smart Stack per vedere quante abitudini hai completato oggi.
+Timer on your wrist||Timer al polso
+With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off.||Con Pro avvii il timer di un'abitudine su Apple Watch. Allo scadere, l'orologio ti avvisa con un tocco al polso e spunta l'abitudine.
 %lld XP||%lld XP
 Pet name||Nome del cucciolo
 Scan to get ZenHab||Scansiona per scaricare ZenHab

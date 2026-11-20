@@ -40,6 +40,7 @@ final class HabitTimer {
     // MARK: Управление
 
     func start(_ habit: Habit, minutes: Int) async {
+        Analytics.shared.action(.timerStart)
         await stop()
         let now = Date()
         let end = now.addingTimeInterval(TimeInterval(max(1, minutes) * 60))

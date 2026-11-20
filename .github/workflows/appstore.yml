@@ -10,7 +10,7 @@ on:
       version:
         description: "Версия для пользователей (MARKETING_VERSION), например 1.0"
         required: true
-        default: "1.5"
+        default: "1.6"
       upload:
         description: "Загрузить в App Store Connect"
         type: boolean
@@ -42,12 +42,14 @@ jobs:
           DIST_CERT_PASSWORD: ${{ secrets.DIST_CERT_PASSWORD }}
           PROFILE_APP: ${{ secrets.PROFILE_APP }}
           PROFILE_WIDGET: ${{ secrets.PROFILE_WIDGET }}
+          PROFILE_WATCH: ${{ secrets.PROFILE_WATCH }}
+          PROFILE_WATCH_WIDGET: ${{ secrets.PROFILE_WATCH_WIDGET }}
           ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
           ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
           ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
         run: |
           missing=0
-          for name in TEAM_ID DIST_CERT_P12 DIST_CERT_PASSWORD PROFILE_APP PROFILE_WIDGET ASC_KEY_ID ASC_ISSUER_ID ASC_KEY_P8; do
+          for name in TEAM_ID DIST_CERT_P12 DIST_CERT_PASSWORD PROFILE_APP PROFILE_WIDGET PROFILE_WATCH PROFILE_WATCH_WIDGET ASC_KEY_ID ASC_ISSUER_ID ASC_KEY_P8; do
             if [ -z "${!name}" ]; then
               echo "::error::Не задан секрет ${name/TEAM_ID/APPLE_TEAM_ID}"
               missing=1
@@ -66,6 +68,19 @@ jobs:
       - name: Apply App Store identifiers
         run: tools/appstore/set_bundle_id.sh "$APP_ID"
 
+      - name: Check watchOS platform
+        # Приложение для часов собирается вместе с приложением для iPhone.
+        run: |
+          if ! xcodebuild -showsdks | grep -q watchos; then
+            xcodebuild -downloadPlatform watchOS
+          fi
+          xcodebuild -showsdks | grep -i watch
+
+      - name: Add Firebase config (analytics)
+        env:
+          GOOGLE_SERVICE_INFO_PLIST: ${{ secrets.GOOGLE_SERVICE_INFO_PLIST }}
+        run: tools/analytics/add_firebase_config.sh "$APP_ID"
+
       - name: Generate Xcode project
         run: xcodegen generate
 
@@ -81,6 +96,8 @@ jobs:
           DIST_CERT_PASSWORD: ${{ secrets.DIST_CERT_PASSWORD }}
           PROFILE_APP: ${{ secrets.PROFILE_APP }}
           PROFILE_WIDGET: ${{ secrets.PROFILE_WIDGET }}
+          PROFILE_WATCH: ${{ secrets.PROFILE_WATCH }}
+          PROFILE_WATCH_WIDGET: ${{ secrets.PROFILE_WATCH_WIDGET }}
         run: |
           set -euo pipefail
           KEYCHAIN="$RUNNER_TEMP/appstore.keychain-db"
@@ -123,6 +140,8 @@ jobs:
           }
           install_profile "$PROFILE_APP" "$APP_ID" APP_PROFILE_NAME
           install_profile "$PROFILE_WIDGET" "$APP_ID.widget" WIDGET_PROFILE_NAME
+          install_profile "$PROFILE_WATCH" "$APP_ID.watchkitapp" WATCH_PROFILE_NAME
+          install_profile "$PROFILE_WATCH_WIDGET" "$APP_ID.watchkitapp.widget" WATCH_WIDGET_PROFILE_NAME
 
       - name: Archive
         run: |
@@ -140,6 +159,8 @@ jobs:
             DEVELOPMENT_TEAM="$TEAM_ID" \
             APP_PROFILE_NAME="$APP_PROFILE_NAME" \
             WIDGET_PROFILE_NAME="$WIDGET_PROFILE_NAME" \
+            WATCH_PROFILE_NAME="$WATCH_PROFILE_NAME" \
+            WATCH_WIDGET_PROFILE_NAME="$WATCH_WIDGET_PROFILE_NAME" \
             OTHER_CODE_SIGN_FLAGS="--keychain $KEYCHAIN" \
             MARKETING_VERSION="$VERSION" \
             CURRENT_PROJECT_VERSION="$BUILD_NUMBER" \
@@ -169,6 +190,8 @@ jobs:
             <dict>
               <key>$APP_ID</key><string>$APP_PROFILE_NAME</string>
               <key>$APP_ID.widget</key><string>$WIDGET_PROFILE_NAME</string>
+              <key>$APP_ID.watchkitapp</key><string>$WATCH_PROFILE_NAME</string>
+              <key>$APP_ID.watchkitapp.widget</key><string>$WATCH_WIDGET_PROFILE_NAME</string>
             </dict>
             <key>iCloudContainerEnvironment</key><string>Production</string>
             <key>uploadSymbols</key><true/>

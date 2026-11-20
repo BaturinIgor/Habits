@@ -39,6 +39,7 @@
 "Active" = "已启用";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "活跃日：至少按时完成一个习惯。喂食可获得 %lld 经验，宠物长得更快。";
 "Activity over %lld weeks" = "近 %lld 周活动";
+"Add ZenHab to your watch face or Smart Stack to see how many habits are done today." = "将 ZenHab 添加到表盘或智能叠放，查看今天完成了多少个习惯。";
 "Add a habit" = "添加习惯";
 "Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap." = "把习惯按钮加到控制中心、锁定屏幕或操作按钮，一点即可打卡。";
 "Add a habit, pick days and a time, and I'll remind you." = "添加一个习惯，选择日期和时间，我会提醒你。";
@@ -275,6 +276,7 @@
 "Freezes this month" = "本月冻结";
 "Full for today" = "今天吃饱了";
 "Full mood journal" = "完整心情日记";
+"Get Pro on your iPhone to use the timer on Apple Watch." = "在 iPhone 上开通 Pro，即可在 Apple Watch 上使用计时器。";
 "Get a pet" = "领养宠物";
 "Go to bed on time" = "按时睡觉";
 "Goal" = "目标";
@@ -307,6 +309,7 @@
 "Hatches after a few check-ins" = "打卡几次后就会孵化";
 "Have 30 perfect days" = "累计 30 个完美日";
 "Health" = "健康";
+"Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood." = "帮助改进 ZenHab：仅统计使用了哪些页面和按钮，绝不包含你的习惯、备注或心情。";
 "Hide keyboard" = "隐藏键盘";
 "Hours of sleep" = "睡眠小时数";
 "How are you today?" = "今天感觉怎么样？";
@@ -489,6 +492,7 @@
 "One notification listing the habits not checked off yet." = "一条通知，列出尚未打卡的习惯。";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "只有当天或第二天的打卡才算数。取消打卡会收回火花。";
 "Only you can open your habits and journal." = "只有你能打开自己的习惯和日记。";
+"Open ZenHab on your iPhone to see your habits here." = "在 iPhone 上打开 ZenHab，习惯就会显示在这里。";
 "Open backup" = "打开备份";
 "Open export" = "打开导出";
 "Open groups" = "打开分组";
@@ -582,8 +586,10 @@
 "Scan to get ZenHab" = "扫码获取 ZenHab";
 "Schedule" = "计划";
 "Scheduled notifications" = "已安排的通知";
+"See how many habits are done today." = "查看今天完成了多少个习惯。";
 "See how much money you save by quitting a habit." = "看看戒掉一个习惯能省下多少钱。";
 "See how much you've saved with Pro" = "Pro 可显示你省下了多少钱";
+"See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "在手腕上查看今天的习惯，轻点一下即可打卡。所有数据与 iPhone 同步。如果手表上还没有 ZenHab，请在 iPhone 的 Watch App 中安装。";
 "See which habits make your days better" = "看看哪些习惯让你的日子更好";
 "Send" = "发送";
 "Send by email" = "通过邮件发送";
@@ -592,6 +598,7 @@
 "Settings" = "设置";
 "Share" = "分享";
 "Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "与家人共享一个分组，比如“狗狗”或“家务”。大家看到相同的习惯，都能打卡并收到提醒。";
+"Share anonymous statistics" = "共享匿名统计数据";
 "Share with family" = "与家人共享";
 "Shared data" = "共享数据";
 "Shared with you" = "与你共享";
@@ -624,6 +631,7 @@
 "Start free trial" = "开始免费试用";
 "Start over" = "重新开始";
 "Start the count again?" = "重新开始计数？";
+"Start timer" = "开始计时";
 "Statistics" = "统计";
 "Statistics will appear once you start checking off habits." = "开始打卡后就会显示统计。";
 "Status" = "状态";
@@ -684,11 +692,13 @@
 "Time's up. Well done!" = "时间到了，做得好！";
 "Timer" = "计时器";
 "Timer on the Lock Screen" = "锁定屏幕计时器";
+"Timer on your wrist" = "手腕上的计时器";
 "Today" = "今天";
 "Today is a good day." = "今天是美好的一天。";
 "Today screen" = "“今天”页面";
 "Today's entry" = "今天的记录";
 "Today's habits" = "今日习惯";
+"Today's progress" = "今日进度";
 "Today's progress and quick check-off right from the Home Screen." = "在主屏幕查看今日进度并快速打卡。";
 "Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "在主屏幕查看今日进度并快速打卡。长按小组件可选择分组。";
 "Tomorrow" = "明天";
@@ -728,6 +738,7 @@
 "Walk" = "散步";
 "Walk 10,000 steps" = "走一万步";
 "Warming up" = "热身";
+"Watch face complications" = "表盘复杂功能";
 "Water, liters" = "饮水（升）";
 "Week" = "周";
 "Week in review" = "一周回顾";
@@ -752,6 +763,7 @@
 "With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets." = "开通 Pro 后，可将所有打卡连同备注和心情导出为表格，用于 Numbers、Excel 或 Google 表格。";
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "开通 Pro 后，可为习惯设定时长。倒计时显示在锁定屏幕和灵动岛上，时间到后自动打卡。";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "开通 Pro 后，可将习惯与步数、睡眠、饮水、体能训练或正念分钟数关联，达到目标即自动打卡。";
+"With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off." = "开通 Pro 后，可在 Apple Watch 上开始习惯计时。时间到时，手表会轻触手腕并自动打卡。";
 "Without it since" = "戒除开始于";
 "Words" = "单词";
 "Words for today are done" = "今天的单词完成了";
@@ -783,6 +795,7 @@
 "Your year in review" = "你的年度回顾";
 "Your year's results as a card you can share" = "你的年度成果卡片，可分享";
 "ZenHab is locked" = "ZenHab 已锁定";
+"ZenHab on Apple Watch" = "Apple Watch 版 ZenHab";
 "a month" = "一个月";
 "a week" = "一周";
 "a year" = "一年";

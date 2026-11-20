@@ -29,6 +29,7 @@ struct HabitsApp: App {
             switch phase {
             case .active:
                 store.reloadFromDisk()
+                Analytics.shared.appBecameActive()
                 Task { await AppLock.shared.unlockIfNeeded() }
                 Task {
                     // Пользователь в приложении: новые уведомления увидены, счётчик на иконке с нуля.

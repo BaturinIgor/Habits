@@ -39,6 +39,7 @@
 "Active" = "Etkin";
 "Active day: at least one habit checked off on time. Feeding gives %lld XP, so your pet grows faster." = "Aktif gün: en az bir alışkanlık zamanında işaretlendi. Beslemek %lld XP verir, evcil hayvanın daha hızlı büyür.";
 "Activity over %lld weeks" = "Son %lld haftalık etkinlik";
+"Add ZenHab to your watch face or Smart Stack to see how many habits are done today." = "Bugün kaç alışkanlığı tamamladığını görmek için ZenHab'i saat kadranına veya Akıllı Yığın'a ekle.";
 "Add a habit" = "Alışkanlık ekle";
 "Add a habit button to Control Center, the Lock Screen or the Action button and check it off in one tap." = "Denetim Merkezi'ne, Kilit Ekranı'na veya Eylem düğmesine bir alışkanlık düğmesi ekle ve tek dokunuşla işaretle.";
 "Add a habit, pick days and a time, and I'll remind you." = "Bir alışkanlık ekle, günleri ve saati seç, ben de sana hatırlatayım.";
@@ -275,6 +276,7 @@
 "Freezes this month" = "Bu ayki dondurmalar";
 "Full for today" = "Bugünlük tok";
 "Full mood journal" = "Tam ruh hâli günlüğü";
+"Get Pro on your iPhone to use the timer on Apple Watch." = "Apple Watch'ta zamanlayıcıyı kullanmak için iPhone'unda Pro'ya geç.";
 "Get a pet" = "Bir evcil hayvan edin";
 "Go to bed on time" = "Zamanında yat";
 "Goal" = "Hedef";
@@ -307,6 +309,7 @@
 "Hatches after a few check-ins" = "Birkaç işaretlemeden sonra yumurtadan çıkar";
 "Have 30 perfect days" = "30 kusursuz gün yaşa";
 "Health" = "Sağlık";
+"Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood." = "ZenHab'ı geliştirmeye yardımcı olur: yalnızca hangi ekranların ve düğmelerin kullanıldığı. Alışkanlıkların, notların veya ruh halin asla.";
 "Hide keyboard" = "Klavyeyi gizle";
 "Hours of sleep" = "Uyku saati";
 "How are you today?" = "Bugün nasılsın?";
@@ -489,6 +492,7 @@
 "One notification listing the habits not checked off yet." = "Henüz işaretlenmemiş alışkanlıkları listeleyen tek bildirim.";
 "Only check-ins made the same day or the next one count. Unchecking a habit takes its spark back." = "Yalnızca aynı gün veya ertesi gün yapılan işaretlemeler sayılır. İşareti kaldırmak kıvılcımı geri alır.";
 "Only you can open your habits and journal." = "Alışkanlıklarını ve günlüğünü yalnızca sen açabilirsin.";
+"Open ZenHab on your iPhone to see your habits here." = "Alışkanlıklarını burada görmek için iPhone'unda ZenHab'i aç.";
 "Open backup" = "Yedeği aç";
 "Open export" = "Dışa aktarmayı aç";
 "Open groups" = "Grupları aç";
@@ -582,8 +586,10 @@
 "Scan to get ZenHab" = "ZenHab'i indirmek için tara";
 "Schedule" = "Plan";
 "Scheduled notifications" = "Planlanan bildirimler";
+"See how many habits are done today." = "Bugün kaç alışkanlığı tamamladığını gör.";
 "See how much money you save by quitting a habit." = "Bir alışkanlığı bırakarak ne kadar para biriktirdiğini gör.";
 "See how much you've saved with Pro" = "Ne kadar biriktirdiğini Pro ile gör";
+"See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "Bugünün alışkanlıkları artık bileğinde, tek dokunuşla işaretle. Her şey iPhone'unla eşitlenir. ZenHab saatinde görünmediyse iPhone'daki Watch uygulamasından yükle.";
 "See which habits make your days better" = "Hangi alışkanlıkların günlerini güzelleştirdiğini gör";
 "Send" = "Gönder";
 "Send by email" = "E-postayla gönder";
@@ -592,6 +598,7 @@
 "Settings" = "Ayarlar";
 "Share" = "Paylaş";
 "Share a group with your family, for example “Dog” or “Home”. Everyone sees the same habits, checks them off and gets reminders." = "Bir grubu ailenizle paylaşın, örneğin “Köpek” ya da “Ev”. Herkes aynı alışkanlıkları görür, işaretler ve hatırlatma alır.";
+"Share anonymous statistics" = "Anonim istatistik paylaş";
 "Share with family" = "Aileyle paylaş";
 "Shared data" = "Paylaşılan veriler";
 "Shared with you" = "Sizinle paylaşıldı";
@@ -624,6 +631,7 @@
 "Start free trial" = "Ücretsiz denemeyi başlat";
 "Start over" = "Baştan başla";
 "Start the count again?" = "Sayım baştan başlasın mı?";
+"Start timer" = "Zamanlayıcıyı başlat";
 "Statistics" = "İstatistikler";
 "Statistics will appear once you start checking off habits." = "Alışkanlıkları işaretlemeye başladığında istatistikler görünecek.";
 "Status" = "Durum";
@@ -684,11 +692,13 @@
 "Time's up. Well done!" = "Süre doldu. Aferin!";
 "Timer" = "Zamanlayıcı";
 "Timer on the Lock Screen" = "Kilit Ekranı'nda zamanlayıcı";
+"Timer on your wrist" = "Bileğinde zamanlayıcı";
 "Today" = "Bugün";
 "Today is a good day." = "Bugün güzel bir gün.";
 "Today screen" = "Bugün ekranı";
 "Today's entry" = "Bugünün kaydı";
 "Today's habits" = "Bugünün alışkanlıkları";
+"Today's progress" = "Bugünün ilerlemesi";
 "Today's progress and quick check-off right from the Home Screen." = "Bugünün ilerlemesi ve Ana Ekran'dan hızlı işaretleme.";
 "Today's progress and quick check-off right from the Home Screen. Hold the widget to pick a group." = "Ana ekrandan günün ilerlemesi ve hızlı işaretleme. Grup seçmek için widget'a basılı tutun.";
 "Tomorrow" = "Yarın";
@@ -728,6 +738,7 @@
 "Walk" = "Yürüyüş";
 "Walk 10,000 steps" = "10.000 adım yürü";
 "Warming up" = "Isınma";
+"Watch face complications" = "Saat kadranı komplikasyonları";
 "Water, liters" = "Su, litre";
 "Week" = "Hafta";
 "Week in review" = "Hafta özeti";
@@ -752,6 +763,7 @@
 "With Pro, export all check-ins with notes and mood as a table for Numbers, Excel or Google Sheets." = "Pro ile tüm işaretlemeleri notlar ve ruh hâliyle birlikte Numbers, Excel veya Google E-Tablolar için tablo olarak dışa aktar.";
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "Pro ile bir alışkanlığa süre ver. Geri sayım Kilit Ekranı'nda ve Dynamic Island'da görünür, süre bitince alışkanlık işaretlenir.";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "Pro ile bir alışkanlığı adım, uyku, su, antrenman veya farkındalık dakikalarına bağla; hedefe ulaştığında kendiliğinden işaretlenir.";
+"With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off." = "Pro ile Apple Watch'ta alışkanlık zamanlayıcısını başlat. Süre dolunca saat bileğine dokunur ve alışkanlığı işaretler.";
 "Without it since" = "Şu tarihten beri onsuz";
 "Words" = "Kelimeler";
 "Words for today are done" = "Bugünün kelimeleri tamam";
@@ -783,6 +795,7 @@
 "Your year in review" = "Yılının özeti";
 "Your year's results as a card you can share" = "Yılının sonuçları, paylaşılabilir bir kartta";
 "ZenHab is locked" = "ZenHab kilitli";
+"ZenHab on Apple Watch" = "Apple Watch'ta ZenHab";
 "a month" = "bir ay";
 "a week" = "bir hafta";
 "a year" = "bir yıl";
