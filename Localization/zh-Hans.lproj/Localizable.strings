@@ -74,6 +74,7 @@
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "应用和 iOS 版本、设备型号及语言。你的习惯和备注不会被发送。";
 "Appearance" = "外观";
 "Apple Health" = "Apple Health";
+"Apple Health: %@" = "Apple Health：%@";
 "Architect" = "建筑师";
 "Archive" = "归档";
 "Archive (%lld)" = "归档 (%lld)";
@@ -130,6 +131,7 @@
 "Check off habits 1000 times" = "打卡 1000 次";
 "Check off habits 50 times" = "打卡 50 次";
 "Check off habits 500 times" = "打卡 500 次";
+"Check off habits by Apple Health" = "根据 Apple 健康自动打卡";
 "Check off habits on 30 different days" = "在 30 个不同的日子打卡";
 "Check off habits on 365 different days" = "在 365 个不同的日子打卡";
 "Check off habits to earn more." = "完成习惯即可获得更多。";
@@ -382,6 +384,8 @@
 "Level" = "水平";
 "Level %lld" = "等级 %lld";
 "Light" = "浅色";
+"Link a habit to steps, sleep, water, exercise, workouts or mindful minutes. When you reach the goal in the Health app, the habit is checked off by itself." = "将习惯与步数、睡眠、饮水、锻炼、体能训练或正念分钟数关联。在“健康” App 中达成目标后，习惯会自动打卡。";
+"Linked habits" = "已关联的习惯";
 "Listen" = "收听";
 "Listen to a podcast" = "听播客";
 "Listening…" = "正在聆听…";
@@ -450,6 +454,7 @@
 "No fast food" = "不吃快餐";
 "No group" = "未分组";
 "No habits" = "没有习惯";
+"No habits are linked yet." = "还没有关联的习惯。";
 "No habits are planned for this day." = "这一天没有计划的习惯。";
 "No habits today" = "今天没有习惯";
 "No habits yet" = "还没有习惯";
@@ -499,6 +504,7 @@
 "Open iOS Settings" = "打开 iOS 设置";
 "Open journal" = "打开日记";
 "Open mail app" = "打开邮件应用";
+"Open the Health app" = "打开“健康” App";
 "Open the app to adopt one." = "打开应用来领养一只。";
 "Order" = "顺序";
 "Organization" = "整理";
@@ -693,6 +699,7 @@
 "Timer" = "计时器";
 "Timer on the Lock Screen" = "锁定屏幕计时器";
 "Timer on your wrist" = "手腕上的计时器";
+"To link a habit, open it and choose Apple Health → Check off by." = "要关联习惯，请打开它并选择 Apple Health → 自动打卡依据。";
 "Today" = "今天";
 "Today is a good day." = "今天是美好的一天。";
 "Today screen" = "“今天”页面";
@@ -749,6 +756,7 @@
 "Weekly review" = "每周回顾";
 "Welcome to Habit Tracker" = "欢迎使用习惯追踪";
 "What %@ gives you" = "%@ 能带给你什么";
+"What ZenHab reads" = "ZenHab 读取的数据";
 "What happened and what did you expect?" = "发生了什么？你原本期望什么？";
 "What happened today? What helped?" = "今天发生了什么？什么帮到了你？";
 "What lifts your mood" = "什么让你心情变好";
@@ -779,6 +787,7 @@
 "Yearly" = "按年";
 "Yesterday" = "昨天";
 "Yoga" = "瑜伽";
+"You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "你可以在“设置”→“隐私与安全性”→“健康”→ZenHab 中允许或拒绝访问每种数据。";
 "You're doing great!" = "你做得很棒！";
 "You've gone through the whole dictionary" = "你已学完整个词库";
 "Young" = "少年";
@@ -799,6 +808,8 @@
 "Your year's results as a card you can share" = "你的年度成果卡片，可分享";
 "ZenHab is locked" = "ZenHab 已锁定";
 "ZenHab on Apple Watch" = "Apple Watch 版 ZenHab";
+"ZenHab only reads these data and never writes to Apple Health. Health data is not stored or sent anywhere: only the check-off of the habit is saved." = "ZenHab 只读取这些数据，从不写入 Apple 健康。健康数据不会被存储或发送到任何地方，只保存习惯的打卡记录。";
+"ZenHab works with Apple Health" = "ZenHab 支持 Apple 健康";
 "a month" = "一个月";
 "a week" = "一周";
 "a year" = "一年";

@@ -74,6 +74,7 @@
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "アプリと iOS のバージョン、機種、言語。習慣やメモは送信されません。";
 "Appearance" = "外観";
 "Apple Health" = "Apple Health";
+"Apple Health: %@" = "Apple Health：%@";
 "Architect" = "建築家";
 "Archive" = "アーカイブ";
 "Archive (%lld)" = "アーカイブ (%lld)";
@@ -130,6 +131,7 @@
 "Check off habits 1000 times" = "1000回チェック";
 "Check off habits 50 times" = "習慣を50回チェック";
 "Check off habits 500 times" = "習慣を500回チェック";
+"Check off habits by Apple Health" = "Appleヘルスケアで習慣をチェック";
 "Check off habits on 30 different days" = "30日間チェック";
 "Check off habits on 365 different days" = "365日間チェック";
 "Check off habits to earn more." = "習慣をチェックしてもっと集めよう。";
@@ -382,6 +384,8 @@
 "Level" = "レベル";
 "Level %lld" = "レベル %lld";
 "Light" = "ライト";
+"Link a habit to steps, sleep, water, exercise, workouts or mindful minutes. When you reach the goal in the Health app, the habit is checked off by itself." = "習慣を歩数、睡眠、水分、エクササイズ、ワークアウト、マインドフルネスの時間と連携できます。ヘルスケアAppで目標に届くと、習慣が自動でチェックされます。";
+"Linked habits" = "連携中の習慣";
 "Listen" = "聞く";
 "Listen to a podcast" = "ポッドキャストを聴く";
 "Listening…" = "聞いています…";
@@ -450,6 +454,7 @@
 "No fast food" = "ファストフードなし";
 "No group" = "グループなし";
 "No habits" = "習慣なし";
+"No habits are linked yet." = "まだ連携している習慣はありません。";
 "No habits are planned for this day." = "この日に予定された習慣はありません。";
 "No habits today" = "今日の習慣はありません";
 "No habits yet" = "まだ習慣がありません";
@@ -499,6 +504,7 @@
 "Open iOS Settings" = "iOSの設定を開く";
 "Open journal" = "日記を開く";
 "Open mail app" = "メールアプリを開く";
+"Open the Health app" = "ヘルスケアAppを開く";
 "Open the app to adopt one." = "アプリを開いて迎えましょう。";
 "Order" = "並び順";
 "Organization" = "整理";
@@ -693,6 +699,7 @@
 "Timer" = "タイマー";
 "Timer on the Lock Screen" = "ロック画面のタイマー";
 "Timer on your wrist" = "手首でタイマー";
+"To link a habit, open it and choose Apple Health → Check off by." = "習慣を連携するには、習慣を開いて Apple Health → 自動チェックの基準 を選びます。";
 "Today" = "今日";
 "Today is a good day." = "今日はいい日だね。";
 "Today screen" = "「今日」画面";
@@ -749,6 +756,7 @@
 "Weekly review" = "週の振り返り";
 "Welcome to Habit Tracker" = "習慣トラッカーへようこそ";
 "What %@ gives you" = "%@ がくれるもの";
+"What ZenHab reads" = "ZenHabが読み取るデータ";
 "What happened and what did you expect?" = "何が起きて、どうなるはずでしたか？";
 "What happened today? What helped?" = "今日は何があった？何が助けになった？";
 "What lifts your mood" = "気分を上げるもの";
@@ -779,6 +787,7 @@
 "Yearly" = "年額";
 "Yesterday" = "昨日";
 "Yoga" = "ヨガ";
+"You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "各データへのアクセスは「設定」→「プライバシーとセキュリティ」→「ヘルスケア」→ ZenHab で許可または拒否できます。";
 "You're doing great!" = "すごくいい調子！";
 "You've gone through the whole dictionary" = "辞書の単語をすべて学びました";
 "Young" = "子ども";
@@ -799,6 +808,8 @@
 "Your year's results as a card you can share" = "1年の結果を共有できるカードで";
 "ZenHab is locked" = "ZenHabはロックされています";
 "ZenHab on Apple Watch" = "Apple WatchでZenHab";
+"ZenHab only reads these data and never writes to Apple Health. Health data is not stored or sent anywhere: only the check-off of the habit is saved." = "ZenHabはこれらのデータを読み取るだけで、Appleヘルスケアに書き込むことはありません。健康データは保存も送信もされず、保存されるのは習慣のチェックだけです。";
+"ZenHab works with Apple Health" = "ZenHabはAppleヘルスケアと連携します";
 "a month" = "1か月";
 "a week" = "1週間";
 "a year" = "1年";

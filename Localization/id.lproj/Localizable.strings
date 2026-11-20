@@ -74,6 +74,7 @@
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "Versi aplikasi, versi iOS, model perangkat, dan bahasa. Kebiasaan dan catatanmu tidak pernah dikirim.";
 "Appearance" = "Tampilan";
 "Apple Health" = "Apple Health";
+"Apple Health: %@" = "Apple Health: %@";
 "Architect" = "Arsitek";
 "Archive" = "Arsipkan";
 "Archive (%lld)" = "Arsip (%lld)";
@@ -130,6 +131,7 @@
 "Check off habits 1000 times" = "Centang kebiasaan 1000 kali";
 "Check off habits 50 times" = "Centang kebiasaan 50 kali";
 "Check off habits 500 times" = "Centang kebiasaan 500 kali";
+"Check off habits by Apple Health" = "Centang kebiasaan lewat Apple Kesehatan";
 "Check off habits on 30 different days" = "Centang kebiasaan di 30 hari berbeda";
 "Check off habits on 365 different days" = "Centang kebiasaan di 365 hari berbeda";
 "Check off habits to earn more." = "Centang kebiasaan untuk mendapat lebih banyak.";
@@ -382,6 +384,8 @@
 "Level" = "Tingkat";
 "Level %lld" = "Level %lld";
 "Light" = "Terang";
+"Link a habit to steps, sleep, water, exercise, workouts or mindful minutes. When you reach the goal in the Health app, the habit is checked off by itself." = "Hubungkan kebiasaan dengan langkah, tidur, air, olahraga, latihan, atau menit kesadaran. Saat target tercapai di app Kesehatan, kebiasaan tercentang sendiri.";
+"Linked habits" = "Kebiasaan terhubung";
 "Listen" = "Dengarkan";
 "Listen to a podcast" = "Dengarkan podcast";
 "Listening…" = "Mendengarkan…";
@@ -450,6 +454,7 @@
 "No fast food" = "Tanpa makanan cepat saji";
 "No group" = "Tanpa grup";
 "No habits" = "Tidak ada kebiasaan";
+"No habits are linked yet." = "Belum ada kebiasaan yang terhubung.";
 "No habits are planned for this day." = "Tidak ada kebiasaan yang direncanakan untuk hari ini.";
 "No habits today" = "Tidak ada kebiasaan hari ini";
 "No habits yet" = "Belum ada kebiasaan";
@@ -499,6 +504,7 @@
 "Open iOS Settings" = "Buka Pengaturan iOS";
 "Open journal" = "Buka jurnal";
 "Open mail app" = "Buka aplikasi email";
+"Open the Health app" = "Buka app Kesehatan";
 "Open the app to adopt one." = "Buka aplikasi untuk mengadopsi.";
 "Order" = "Urutan";
 "Organization" = "Penataan";
@@ -693,6 +699,7 @@
 "Timer" = "Pengatur waktu";
 "Timer on the Lock Screen" = "Timer di Layar Terkunci";
 "Timer on your wrist" = "Timer di pergelangan tangan";
+"To link a habit, open it and choose Apple Health → Check off by." = "Untuk menghubungkan kebiasaan, buka kebiasaan itu dan pilih Apple Health → Centang berdasarkan.";
 "Today" = "Hari Ini";
 "Today is a good day." = "Hari ini hari yang baik.";
 "Today screen" = "Layar Hari Ini";
@@ -749,6 +756,7 @@
 "Weekly review" = "Tinjauan mingguan";
 "Welcome to Habit Tracker" = "Selamat datang di Pelacak Kebiasaan";
 "What %@ gives you" = "Yang diberikan %@";
+"What ZenHab reads" = "Data yang dibaca ZenHab";
 "What happened and what did you expect?" = "Apa yang terjadi dan apa yang kamu harapkan?";
 "What happened today? What helped?" = "Apa yang terjadi hari ini? Apa yang membantu?";
 "What lifts your mood" = "Apa yang memperbaiki suasana hatimu";
@@ -779,6 +787,7 @@
 "Yearly" = "Tahunan";
 "Yesterday" = "Kemarin";
 "Yoga" = "Yoga";
+"You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "Kamu bisa mengizinkan atau menolak akses ke setiap jenis data di Pengaturan → Privasi & Keamanan → Kesehatan → ZenHab.";
 "You're doing great!" = "Kamu hebat!";
 "You've gone through the whole dictionary" = "Kamu sudah menyelesaikan seluruh kamus";
 "Young" = "Remaja";
@@ -799,6 +808,8 @@
 "Your year's results as a card you can share" = "Hasil tahunmu dalam kartu yang bisa dibagikan";
 "ZenHab is locked" = "ZenHab terkunci";
 "ZenHab on Apple Watch" = "ZenHab di Apple Watch";
+"ZenHab only reads these data and never writes to Apple Health. Health data is not stored or sent anywhere: only the check-off of the habit is saved." = "ZenHab hanya membaca data ini dan tidak pernah menulis ke Apple Kesehatan. Data kesehatan tidak disimpan atau dikirim ke mana pun: hanya centang kebiasaan yang disimpan.";
+"ZenHab works with Apple Health" = "ZenHab terhubung dengan Apple Kesehatan";
 "a month" = "sebulan";
 "a week" = "seminggu";
 "a year" = "setahun";
