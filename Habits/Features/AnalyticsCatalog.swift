@@ -34,6 +34,7 @@ enum AnalyticsScreen: String, CaseIterable {
     case notificationSettings = "NotificationSettings"
     case todaySettings = "TodaySettings"
     case backupSettings = "BackupSettings"
+    case healthSettings = "HealthSettings"
     case groups = "Groups"
     case groupDetail = "GroupDetail"
     case appIcon = "AppIcon"

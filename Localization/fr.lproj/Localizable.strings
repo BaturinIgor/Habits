@@ -74,6 +74,7 @@
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "Versions de l'app et d'iOS, modèle d'appareil et langue. Tes habitudes et notes ne sont jamais envoyées.";
 "Appearance" = "Apparence";
 "Apple Health" = "Apple Health";
+"Apple Health: %@" = "Apple Health : %@";
 "Architect" = "Architecte";
 "Archive" = "Archiver";
 "Archive (%lld)" = "Archives (%lld)";
@@ -130,6 +131,7 @@
 "Check off habits 1000 times" = "Valide des habitudes 1000 fois";
 "Check off habits 50 times" = "Valide des habitudes 50 fois";
 "Check off habits 500 times" = "Valide des habitudes 500 fois";
+"Check off habits by Apple Health" = "Cocher les habitudes avec Apple Santé";
 "Check off habits on 30 different days" = "Valide des habitudes 30 jours différents";
 "Check off habits on 365 different days" = "Valide des habitudes 365 jours différents";
 "Check off habits to earn more." = "Valide des habitudes pour en gagner plus.";
@@ -382,6 +384,8 @@
 "Level" = "Niveau";
 "Level %lld" = "Niveau %lld";
 "Light" = "Clair";
+"Link a habit to steps, sleep, water, exercise, workouts or mindful minutes. When you reach the goal in the Health app, the habit is checked off by itself." = "Associe une habitude aux pas, au sommeil, à l'eau, à l'exercice, aux entraînements ou aux minutes de pleine conscience. Quand l'objectif est atteint dans l'app Santé, l'habitude se coche toute seule.";
+"Linked habits" = "Habitudes associées";
 "Listen" = "Écouter";
 "Listen to a podcast" = "Écouter un podcast";
 "Listening…" = "J'écoute…";
@@ -450,6 +454,7 @@
 "No fast food" = "Pas de fast-food";
 "No group" = "Sans groupe";
 "No habits" = "Aucune habitude";
+"No habits are linked yet." = "Aucune habitude associée pour l'instant.";
 "No habits are planned for this day." = "Aucune habitude n'est prévue ce jour-là.";
 "No habits today" = "Aucune habitude aujourd'hui";
 "No habits yet" = "Pas encore d'habitudes";
@@ -499,6 +504,7 @@
 "Open iOS Settings" = "Ouvrir les réglages iOS";
 "Open journal" = "Ouvrir le journal";
 "Open mail app" = "Ouvrir l'app de mail";
+"Open the Health app" = "Ouvrir l'app Santé";
 "Open the app to adopt one." = "Ouvre l'app pour en adopter un.";
 "Order" = "Ordre";
 "Organization" = "Organisation";
@@ -693,6 +699,7 @@
 "Timer" = "Minuteur";
 "Timer on the Lock Screen" = "Minuteur sur l'écran verrouillé";
 "Timer on your wrist" = "Minuteur au poignet";
+"To link a habit, open it and choose Apple Health → Check off by." = "Pour associer une habitude, ouvre-la et choisis Apple Health → Cocher selon.";
 "Today" = "Aujourd'hui";
 "Today is a good day." = "Aujourd'hui est une bonne journée.";
 "Today screen" = "Écran Aujourd'hui";
@@ -749,6 +756,7 @@
 "Weekly review" = "Bilan de la semaine";
 "Welcome to Habit Tracker" = "Bienvenue dans Suivi d'habitudes";
 "What %@ gives you" = "Ce que %@ t'apporte";
+"What ZenHab reads" = "Ce que ZenHab lit";
 "What happened and what did you expect?" = "Que s'est-il passé et qu'attendais-tu ?";
 "What happened today? What helped?" = "Que s'est-il passé aujourd'hui ? Qu'est-ce qui a aidé ?";
 "What lifts your mood" = "Ce qui améliore ton humeur";
@@ -779,6 +787,7 @@
 "Yearly" = "Annuel";
 "Yesterday" = "Hier";
 "Yoga" = "Yoga";
+"You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "Tu peux autoriser ou refuser l'accès à chaque type de données dans Réglages → Confidentialité et sécurité → Santé → ZenHab.";
 "You're doing great!" = "Tu t'en sors très bien !";
 "You've gone through the whole dictionary" = "Tu as parcouru tout le dictionnaire";
 "Young" = "Jeune";
@@ -799,6 +808,8 @@
 "Your year's results as a card you can share" = "Les résultats de ton année en carte à partager";
 "ZenHab is locked" = "ZenHab est verrouillé";
 "ZenHab on Apple Watch" = "ZenHab sur l'Apple Watch";
+"ZenHab only reads these data and never writes to Apple Health. Health data is not stored or sent anywhere: only the check-off of the habit is saved." = "ZenHab lit uniquement ces données et n'écrit jamais dans Apple Santé. Les données de santé ne sont ni stockées ni envoyées : seule la coche de l'habitude est enregistrée.";
+"ZenHab works with Apple Health" = "ZenHab fonctionne avec Apple Health";
 "a month" = "un mois";
 "a week" = "une semaine";
 "a year" = "un an";

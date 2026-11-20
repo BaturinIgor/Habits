@@ -922,8 +922,14 @@ struct HabitCard: View {
             if target > 1 {
                 Label(amountText, systemImage: "target")
             }
-            if let healthText, let link = habit.health {
-                Label(healthText, systemImage: link.metric.symbol)
+            if let healthText, habit.health != nil {
+                // Сердце «Здоровья»: видно, что прогресс берётся из Apple Health (App Review 2.5.1).
+                Label {
+                    Text(healthText)
+                } icon: {
+                    Image(systemName: "heart.fill").foregroundStyle(HealthIcon.tint)
+                }
+                .accessibilityLabel(Text("Apple Health: \(healthText)"))
             }
             switch timer {
             case .running(let range):

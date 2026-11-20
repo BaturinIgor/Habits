@@ -110,6 +110,18 @@ struct SettingsView: View {
                             Label("Notifications", systemImage: "bell.badge.fill")
                         }
                     }
+                    // Интеграция с HealthKit должна быть видна в интерфейсе всем (App Review 2.5.1).
+                    if HealthSync.isAvailable {
+                        NavigationLink {
+                            HealthSettingsView()
+                        } label: {
+                            Label {
+                                Text("Apple Health")
+                            } icon: {
+                                HealthIcon(size: 28)
+                            }
+                        }
+                    }
                     NavigationLink {
                         TodayScreenSettingsView()
                     } label: {

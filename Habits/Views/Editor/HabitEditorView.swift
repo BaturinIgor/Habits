@@ -56,6 +56,8 @@ struct HabitEditorView: View {
     }
 
     private let calendar = Calendar.app
+    /// Макеты: сразу прокрутить к разделу Apple Health.
+    private var scrollToHealth = false
 
     init(habit: Habit?) {
         self.init(original: habit, base: habit)
@@ -144,6 +146,7 @@ struct HabitEditorView: View {
 
     @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
+            ScrollViewReader { proxy in
             Form {
                 headerSection
                 if draft.isWords {
@@ -157,11 +160,12 @@ struct HabitEditorView: View {
                     scheduleSection
                     reminderSection
                     if !draft.isWords {
+                        // Apple Health выше цели и таймера: интеграция должна быть заметна (App Review 2.5.1).
+                        if HealthSync.isAvailable {
+                            healthSection.id("health")
+                        }
                         goalSection
                         timerSection
-                        if HealthSync.isAvailable {
-                            healthSection
-                        }
                     }
                     flexibilitySection
                 }
@@ -172,6 +176,11 @@ struct HabitEditorView: View {
                 if original != nil {
                     dangerSection
                 }
+            }
+            .onAppear {
+                guard scrollToHealth else { return }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { proxy.scrollTo("health", anchor: .center) }
+            }
             }
             .scrollDismissesKeyboard(.interactively)
             .uiTestScreen("editor")
@@ -460,7 +469,10 @@ struct HabitEditorView: View {
                 lockedRow("Apple Health", .health)
             }
         } header: {
-            Text("Apple Health")
+            HStack(spacing: 6) {
+                HealthIcon(size: 18)
+                Text("Apple Health")
+            }
         } footer: {
             Text("The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes.")
         }
@@ -884,5 +896,14 @@ struct ColorRow: View {
         }
         .contentMargins(.horizontal, 20, for: .scrollContent)
         .scrollIndicators(.hidden)
+    }
+}
+
+extension HabitEditorView {
+    /// Макеты (DesignGallery): открыть редактор сразу на разделе Apple Health.
+    func scrollingToHealth() -> Self {
+        var copy = self
+        copy.scrollToHealth = true
+        return copy
     }
 }

@@ -74,6 +74,7 @@
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "앱 및 iOS 버전, 기기 모델, 언어. 습관과 메모는 전송되지 않아요.";
 "Appearance" = "모양";
 "Apple Health" = "Apple Health";
+"Apple Health: %@" = "Apple Health: %@";
 "Architect" = "건축가";
 "Archive" = "보관";
 "Archive (%lld)" = "보관함 (%lld)";
@@ -130,6 +131,7 @@
 "Check off habits 1000 times" = "습관을 1000번 체크";
 "Check off habits 50 times" = "습관 50번 체크";
 "Check off habits 500 times" = "습관 500번 체크";
+"Check off habits by Apple Health" = "Apple 건강으로 습관 체크";
 "Check off habits on 30 different days" = "30일 동안 체크";
 "Check off habits on 365 different days" = "365일 동안 체크";
 "Check off habits to earn more." = "습관을 체크해서 더 모아요.";
@@ -382,6 +384,8 @@
 "Level" = "수준";
 "Level %lld" = "레벨 %lld";
 "Light" = "라이트";
+"Link a habit to steps, sleep, water, exercise, workouts or mindful minutes. When you reach the goal in the Health app, the habit is checked off by itself." = "습관을 걸음 수, 수면, 물, 운동, 체력 단련, 마음챙김 시간과 연결하세요. 건강 앱에서 목표에 도달하면 습관이 저절로 체크돼요.";
+"Linked habits" = "연결된 습관";
 "Listen" = "듣기";
 "Listen to a podcast" = "팟캐스트 듣기";
 "Listening…" = "듣고 있어요…";
@@ -450,6 +454,7 @@
 "No fast food" = "패스트푸드 끊기";
 "No group" = "그룹 없음";
 "No habits" = "습관 없음";
+"No habits are linked yet." = "아직 연결된 습관이 없어요.";
 "No habits are planned for this day." = "이날 예정된 습관이 없어요.";
 "No habits today" = "오늘은 습관이 없어요";
 "No habits yet" = "아직 습관이 없어요";
@@ -499,6 +504,7 @@
 "Open iOS Settings" = "iOS 설정 열기";
 "Open journal" = "일기 열기";
 "Open mail app" = "메일 앱 열기";
+"Open the Health app" = "건강 앱 열기";
 "Open the app to adopt one." = "앱을 열어 데려오세요.";
 "Order" = "순서";
 "Organization" = "정리";
@@ -693,6 +699,7 @@
 "Timer" = "타이머";
 "Timer on the Lock Screen" = "잠금 화면 타이머";
 "Timer on your wrist" = "손목 위의 타이머";
+"To link a habit, open it and choose Apple Health → Check off by." = "습관을 연결하려면 습관을 열고 Apple Health → 자동 체크 기준을 선택하세요.";
 "Today" = "오늘";
 "Today is a good day." = "오늘은 좋은 날이에요.";
 "Today screen" = "오늘 화면";
@@ -749,6 +756,7 @@
 "Weekly review" = "주간 돌아보기";
 "Welcome to Habit Tracker" = "습관 트래커에 오신 걸 환영해요";
 "What %@ gives you" = "%@이(가) 주는 것";
+"What ZenHab reads" = "ZenHab이 읽는 데이터";
 "What happened and what did you expect?" = "무슨 일이 있었고 어떻게 되길 기대했나요?";
 "What happened today? What helped?" = "오늘 무슨 일이 있었나요? 무엇이 도움이 됐나요?";
 "What lifts your mood" = "기분을 올려 주는 것";
@@ -779,6 +787,7 @@
 "Yearly" = "연간";
 "Yesterday" = "어제";
 "Yoga" = "요가";
+"You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "데이터 종류별 접근은 설정 → 개인정보 보호 및 보안 → 건강 → ZenHab에서 허용하거나 거부할 수 있어요.";
 "You're doing great!" = "정말 잘하고 있어요!";
 "You've gone through the whole dictionary" = "사전의 모든 단어를 학습했어요";
 "Young" = "청소년";
@@ -799,6 +808,8 @@
 "Your year's results as a card you can share" = "한 해의 결과를 공유할 수 있는 카드로";
 "ZenHab is locked" = "ZenHab이 잠겨 있어요";
 "ZenHab on Apple Watch" = "Apple Watch용 ZenHab";
+"ZenHab only reads these data and never writes to Apple Health. Health data is not stored or sent anywhere: only the check-off of the habit is saved." = "ZenHab은 이 데이터를 읽기만 하고 Apple 건강에 기록하지 않아요. 건강 데이터는 저장되거나 어디로도 전송되지 않으며, 습관 체크만 저장돼요.";
+"ZenHab works with Apple Health" = "ZenHab은 Apple 건강과 연동돼요";
 "a month" = "한 달";
 "a week" = "일주일";
 "a year" = "1년";

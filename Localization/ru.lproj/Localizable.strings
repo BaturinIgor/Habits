@@ -74,6 +74,7 @@
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "Версия приложения и iOS, модель устройства и язык. Привычки и заметки не отправляются.";
 "Appearance" = "Оформление";
 "Apple Health" = "Apple Health";
+"Apple Health: %@" = "Apple Health: %@";
 "Architect" = "Архитектор";
 "Archive" = "В архив";
 "Archive (%lld)" = "Архив (%lld)";
@@ -130,6 +131,7 @@
 "Check off habits 1000 times" = "Отметь привычки 1000 раз";
 "Check off habits 50 times" = "Отметь привычки 50 раз";
 "Check off habits 500 times" = "Отметь привычки 500 раз";
+"Check off habits by Apple Health" = "Отмечать привычки по Apple Health";
 "Check off habits on 30 different days" = "Отмечай привычки 30 разных дней";
 "Check off habits on 365 different days" = "Отмечай привычки 365 разных дней";
 "Check off habits to earn more." = "Отмечай привычки, чтобы заработать ещё.";
@@ -382,6 +384,8 @@
 "Level" = "Уровень";
 "Level %lld" = "Уровень %lld";
 "Light" = "Светлая";
+"Link a habit to steps, sleep, water, exercise, workouts or mindful minutes. When you reach the goal in the Health app, the habit is checked off by itself." = "Свяжи привычку с шагами, сном, водой, активностью, тренировками или минутами осознанности. Когда в приложении «Здоровье» цель будет достигнута, привычка отметится сама.";
+"Linked habits" = "Связанные привычки";
 "Listen" = "Послушать";
 "Listen to a podcast" = "Слушать подкаст";
 "Listening…" = "Слушаю…";
@@ -450,6 +454,7 @@
 "No fast food" = "Без фастфуда";
 "No group" = "Без группы";
 "No habits" = "Привычек нет";
+"No habits are linked yet." = "Пока нет связанных привычек.";
 "No habits are planned for this day." = "На этот день привычек не запланировано.";
 "No habits today" = "На сегодня привычек нет";
 "No habits yet" = "Привычек пока нет";
@@ -499,6 +504,7 @@
 "Open iOS Settings" = "Открыть настройки iOS";
 "Open journal" = "Открыть дневник";
 "Open mail app" = "Открыть почтовое приложение";
+"Open the Health app" = "Открыть «Здоровье»";
 "Open the app to adopt one." = "Открой приложение, чтобы завести.";
 "Order" = "Порядок";
 "Organization" = "Организация";
@@ -693,6 +699,7 @@
 "Timer" = "Таймер";
 "Timer on the Lock Screen" = "Таймер на экране блокировки";
 "Timer on your wrist" = "Таймер на запястье";
+"To link a habit, open it and choose Apple Health → Check off by." = "Чтобы связать привычку, открой её и выбери Apple Health → Отмечать по.";
 "Today" = "Сегодня";
 "Today is a good day." = "Сегодня хороший день.";
 "Today screen" = "Главный экран";
@@ -749,6 +756,7 @@
 "Weekly review" = "Итоги недели";
 "Welcome to Habit Tracker" = "Добро пожаловать в Трекер привычек";
 "What %@ gives you" = "Что даёт %@";
+"What ZenHab reads" = "Что читает ZenHab";
 "What happened and what did you expect?" = "Что произошло и что ты ожидал увидеть?";
 "What happened today? What helped?" = "Что сегодня было? Что помогло?";
 "What lifts your mood" = "Что поднимает настроение";
@@ -779,6 +787,7 @@
 "Yearly" = "На год";
 "Yesterday" = "Вчера";
 "Yoga" = "Йога";
+"You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "Доступ к каждому типу данных можно разрешить или запретить в Настройки → Конфиденциальность и безопасность → Здоровье → ZenHab.";
 "You're doing great!" = "У тебя отлично получается!";
 "You've gone through the whole dictionary" = "Ты прошёл весь словарь";
 "Young" = "Подросток";
@@ -799,6 +808,8 @@
 "Your year's results as a card you can share" = "Итоги года карточкой, которой можно поделиться";
 "ZenHab is locked" = "ZenHab заблокирован";
 "ZenHab on Apple Watch" = "ZenHab на Apple Watch";
+"ZenHab only reads these data and never writes to Apple Health. Health data is not stored or sent anywhere: only the check-off of the habit is saved." = "ZenHab только читает эти данные и ничего не записывает в Apple Health. Данные о здоровье нигде не хранятся и никуда не отправляются: сохраняется только отметка привычки.";
+"ZenHab works with Apple Health" = "ZenHab работает с Apple Health";
 "a month" = "месяц";
 "a week" = "неделя";
 "a year" = "год";
