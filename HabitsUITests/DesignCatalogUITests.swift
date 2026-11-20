@@ -76,6 +76,12 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "47-backup", screen: "backup"),
         Shot(name: "48-backup-restored", screen: "backup", alert: "restored"),
         Shot(name: "49-settings-restart-hint", screen: "settings", alert: "restartHint"),
+        // 1.6, App Review 2.5.1: Apple Health в интерфейсе
+        Shot(name: "health-01-settings", screen: "settings"),
+        Shot(name: "health-02-health-settings", screen: "healthSettings"),
+        Shot(name: "health-03-health-settings-free", screen: "healthSettings", flags: ["-uitest-free"]),
+        Shot(name: "health-04-editor", screen: "editorHealth"),
+        Shot(name: "health-05-editor-free", screen: "editorHealth", flags: ["-uitest-free"]),
         // Обратная связь
         Shot(name: "50-feedback", screen: "feedback"),
         Shot(name: "51-feedback-send-options", screen: "feedback", alert: "sendOptions"),

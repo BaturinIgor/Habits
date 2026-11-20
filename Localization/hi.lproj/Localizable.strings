@@ -74,6 +74,7 @@
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "ऐप और iOS संस्करण, डिवाइस मॉडल और भाषा। आपकी आदतें और नोट्स कभी नहीं भेजे जाते।";
 "Appearance" = "रूप";
 "Apple Health" = "Apple Health";
+"Apple Health: %@" = "Apple Health: %@";
 "Architect" = "वास्तुकार";
 "Archive" = "संग्रहित करें";
 "Archive (%lld)" = "संग्रह (%lld)";
@@ -130,6 +131,7 @@
 "Check off habits 1000 times" = "1000 बार आदतें पूरी करें";
 "Check off habits 50 times" = "आदतें 50 बार पूरी करें";
 "Check off habits 500 times" = "आदतें 500 बार पूरी करें";
+"Check off habits by Apple Health" = "Apple Health से आदतें पूरी करें";
 "Check off habits on 30 different days" = "30 अलग-अलग दिनों में आदतें पूरी करें";
 "Check off habits on 365 different days" = "365 अलग-अलग दिनों में आदतें पूरी करें";
 "Check off habits to earn more." = "और कमाने के लिए आदतें पूरी करें।";
@@ -382,6 +384,8 @@
 "Level" = "स्तर";
 "Level %lld" = "लेवल %lld";
 "Light" = "हल्का";
+"Link a habit to steps, sleep, water, exercise, workouts or mindful minutes. When you reach the goal in the Health app, the habit is checked off by itself." = "किसी आदत को कदम, नींद, पानी, व्यायाम, वर्कआउट या माइंडफ़ुल मिनटों से जोड़ें। जब स्वास्थ्य ऐप में लक्ष्य पूरा होगा, आदत अपने-आप पूरी हो जाएगी।";
+"Linked habits" = "जुड़ी हुई आदतें";
 "Listen" = "सुनें";
 "Listen to a podcast" = "पॉडकास्ट सुनें";
 "Listening…" = "सुन रहा हूँ…";
@@ -450,6 +454,7 @@
 "No fast food" = "फ़ास्ट फ़ूड नहीं";
 "No group" = "बिना समूह";
 "No habits" = "कोई आदत नहीं";
+"No habits are linked yet." = "अभी कोई आदत जुड़ी नहीं है।";
 "No habits are planned for this day." = "इस दिन के लिए कोई आदत तय नहीं है।";
 "No habits today" = "आज कोई आदत नहीं";
 "No habits yet" = "अभी कोई आदत नहीं";
@@ -499,6 +504,7 @@
 "Open iOS Settings" = "iOS सेटिंग्स खोलें";
 "Open journal" = "डायरी खोलें";
 "Open mail app" = "मेल ऐप खोलें";
+"Open the Health app" = "स्वास्थ्य ऐप खोलें";
 "Open the app to adopt one." = "अपनाने के लिए ऐप खोलें।";
 "Order" = "क्रम";
 "Organization" = "व्यवस्था";
@@ -693,6 +699,7 @@
 "Timer" = "टाइमर";
 "Timer on the Lock Screen" = "लॉक स्क्रीन पर टाइमर";
 "Timer on your wrist" = "कलाई पर टाइमर";
+"To link a habit, open it and choose Apple Health → Check off by." = "किसी आदत को जोड़ने के लिए उसे खोलें और Apple Health → इसके आधार पर पूरा करें चुनें।";
 "Today" = "आज";
 "Today is a good day." = "आज अच्छा दिन है।";
 "Today screen" = "'आज' स्क्रीन";
@@ -749,6 +756,7 @@
 "Weekly review" = "हफ़्ते की समीक्षा";
 "Welcome to Habit Tracker" = "आदत ट्रैकर में आपका स्वागत है";
 "What %@ gives you" = "%@ आपको क्या देता है";
+"What ZenHab reads" = "ZenHab क्या पढ़ता है";
 "What happened and what did you expect?" = "क्या हुआ और आपने क्या उम्मीद की थी?";
 "What happened today? What helped?" = "आज क्या हुआ? किस चीज़ ने मदद की?";
 "What lifts your mood" = "आपका मूड क्या बेहतर करता है";
@@ -779,6 +787,7 @@
 "Yearly" = "वार्षिक";
 "Yesterday" = "बीता कल";
 "Yoga" = "योग";
+"You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "हर तरह के डेटा की अनुमति सेटिंग्ज़ → गोपनीयता और सुरक्षा → स्वास्थ्य → ZenHab में दी या हटाई जा सकती है।";
 "You're doing great!" = "आप बहुत अच्छा कर रहे हैं!";
 "You've gone through the whole dictionary" = "आपने पूरा शब्दकोश पूरा कर लिया";
 "Young" = "किशोर";
@@ -799,6 +808,8 @@
 "Your year's results as a card you can share" = "आपके साल के नतीजे, शेयर करने लायक कार्ड में";
 "ZenHab is locked" = "ZenHab लॉक है";
 "ZenHab on Apple Watch" = "Apple Watch पर ZenHab";
+"ZenHab only reads these data and never writes to Apple Health. Health data is not stored or sent anywhere: only the check-off of the habit is saved." = "ZenHab ये डेटा सिर्फ़ पढ़ता है और Apple Health में कुछ नहीं लिखता। स्वास्थ्य डेटा न तो सहेजा जाता है और न कहीं भेजा जाता है: सिर्फ़ आदत पूरी होने का निशान सहेजा जाता है।";
+"ZenHab works with Apple Health" = "ZenHab Apple Health के साथ काम करता है";
 "a month" = "एक महीना";
 "a week" = "एक हफ़्ता";
 "a year" = "एक साल";

@@ -74,6 +74,7 @@
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "Uygulama sürümü, iOS sürümü, cihaz modeli ve dil. Alışkanlıkların ve notların asla gönderilmez.";
 "Appearance" = "Görünüm";
 "Apple Health" = "Apple Health";
+"Apple Health: %@" = "Apple Health: %@";
 "Architect" = "Mimar";
 "Archive" = "Arşivle";
 "Archive (%lld)" = "Arşiv (%lld)";
@@ -130,6 +131,7 @@
 "Check off habits 1000 times" = "Alışkanlıkları 1000 kez işaretle";
 "Check off habits 50 times" = "Alışkanlıkları 50 kez işaretle";
 "Check off habits 500 times" = "Alışkanlıkları 500 kez işaretle";
+"Check off habits by Apple Health" = "Alışkanlıkları Apple Sağlık ile işaretle";
 "Check off habits on 30 different days" = "30 farklı günde alışkanlık işaretle";
 "Check off habits on 365 different days" = "365 farklı günde alışkanlık işaretle";
 "Check off habits to earn more." = "Daha fazla kazanmak için alışkanlık işaretle.";
@@ -382,6 +384,8 @@
 "Level" = "Seviye";
 "Level %lld" = "Seviye %lld";
 "Light" = "Açık";
+"Link a habit to steps, sleep, water, exercise, workouts or mindful minutes. When you reach the goal in the Health app, the habit is checked off by itself." = "Bir alışkanlığı adım, uyku, su, egzersiz, antrenman veya farkındalık dakikalarına bağla. Sağlık uygulamasında hedefe ulaşınca alışkanlık kendiliğinden işaretlenir.";
+"Linked habits" = "Bağlı alışkanlıklar";
 "Listen" = "Dinle";
 "Listen to a podcast" = "Podcast dinle";
 "Listening…" = "Dinliyorum…";
@@ -450,6 +454,7 @@
 "No fast food" = "Fast food yok";
 "No group" = "Grup yok";
 "No habits" = "Alışkanlık yok";
+"No habits are linked yet." = "Henüz bağlı alışkanlık yok.";
 "No habits are planned for this day." = "Bu gün için planlanmış alışkanlık yok.";
 "No habits today" = "Bugün alışkanlık yok";
 "No habits yet" = "Henüz alışkanlık yok";
@@ -499,6 +504,7 @@
 "Open iOS Settings" = "iOS Ayarları'nı aç";
 "Open journal" = "Günlüğü aç";
 "Open mail app" = "E-posta uygulamasını aç";
+"Open the Health app" = "Sağlık uygulamasını aç";
 "Open the app to adopt one." = "Sahiplenmek için uygulamayı aç.";
 "Order" = "Sıra";
 "Organization" = "Düzen";
@@ -693,6 +699,7 @@
 "Timer" = "Zamanlayıcı";
 "Timer on the Lock Screen" = "Kilit Ekranı'nda zamanlayıcı";
 "Timer on your wrist" = "Bileğinde zamanlayıcı";
+"To link a habit, open it and choose Apple Health → Check off by." = "Bir alışkanlığı bağlamak için onu aç ve Apple Health → Şuna göre işaretle'yi seç.";
 "Today" = "Bugün";
 "Today is a good day." = "Bugün güzel bir gün.";
 "Today screen" = "Bugün ekranı";
@@ -749,6 +756,7 @@
 "Weekly review" = "Haftalık değerlendirme";
 "Welcome to Habit Tracker" = "Alışkanlık Takibi'ne hoş geldin";
 "What %@ gives you" = "%@ sana ne verir";
+"What ZenHab reads" = "ZenHab'in okuduğu veriler";
 "What happened and what did you expect?" = "Ne oldu ve ne bekliyordun?";
 "What happened today? What helped?" = "Bugün ne oldu? Ne iyi geldi?";
 "What lifts your mood" = "Ruh hâlini ne iyileştiriyor";
@@ -779,6 +787,7 @@
 "Yearly" = "Yıllık";
 "Yesterday" = "Dün";
 "Yoga" = "Yoga";
+"You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "Her veri türüne erişimi Ayarlar → Gizlilik ve Güvenlik → Sağlık → ZenHab bölümünden açıp kapatabilirsin.";
 "You're doing great!" = "Harika gidiyorsun!";
 "You've gone through the whole dictionary" = "Tüm sözlüğü bitirdin";
 "Young" = "Genç";
@@ -799,6 +808,8 @@
 "Your year's results as a card you can share" = "Yılının sonuçları, paylaşılabilir bir kartta";
 "ZenHab is locked" = "ZenHab kilitli";
 "ZenHab on Apple Watch" = "Apple Watch'ta ZenHab";
+"ZenHab only reads these data and never writes to Apple Health. Health data is not stored or sent anywhere: only the check-off of the habit is saved." = "ZenHab bu verileri yalnızca okur ve Apple Sağlık'a hiçbir şey yazmaz. Sağlık verileri saklanmaz ve hiçbir yere gönderilmez: yalnızca alışkanlığın işareti kaydedilir.";
+"ZenHab works with Apple Health" = "ZenHab, Apple Sağlık ile çalışır";
 "a month" = "bir ay";
 "a week" = "bir hafta";
 "a year" = "bir yıl";

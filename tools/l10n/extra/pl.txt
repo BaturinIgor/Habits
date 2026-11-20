@@ -815,3 +815,14 @@ What will you call them?||Jak go nazwiesz?
 Each pet keeps its own name. Growth and mood stay shared.||Każdy zwierzak ma własne imię. Rozwój i nastrój są wspólne.
 Your habits stay on your iPhone and in your own iCloud.||Twoje nawyki zostają na twoim iPhonie i w twoim iCloud.
 Your habits stay only on your iPhone.||Twoje nawyki zostają tylko na twoim iPhonie.
+ZenHab works with Apple Health||ZenHab współpracuje z Apple Zdrowie
+Link a habit to steps, sleep, water, exercise, workouts or mindful minutes. When you reach the goal in the Health app, the habit is checked off by itself.||Połącz nawyk z krokami, snem, wodą, ćwiczeniami, treningami lub minutami uważności. Gdy osiągniesz cel w aplikacji Zdrowie, nawyk odhaczy się sam.
+What ZenHab reads||Co odczytuje ZenHab
+ZenHab only reads these data and never writes to Apple Health. Health data is not stored or sent anywhere: only the check-off of the habit is saved.||ZenHab tylko odczytuje te dane i nigdy nie zapisuje niczego w Apple Zdrowie. Dane o zdrowiu nie są przechowywane ani nigdzie wysyłane: zapisywane jest tylko odhaczenie nawyku.
+Check off habits by Apple Health||Odhaczaj nawyki według Apple Zdrowie
+No habits are linked yet.||Nie ma jeszcze połączonych nawyków.
+Linked habits||Połączone nawyki
+To link a habit, open it and choose Apple Health → Check off by.||Aby połączyć nawyk, otwórz go i wybierz Apple Health → Odhaczaj według.
+Open the Health app||Otwórz aplikację Zdrowie
+You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Dostęp do każdego rodzaju danych możesz zezwolić lub zablokować w Ustawienia → Prywatność i ochrona → Zdrowie → ZenHab.
+Apple Health: %@||Apple Health: %@

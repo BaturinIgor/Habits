@@ -74,6 +74,7 @@
 "App version, iOS version, device model and language. Your habits and notes are never sent." = "Wersja aplikacji, wersja iOS, model urządzenia i język. Twoje nawyki i notatki nigdy nie są wysyłane.";
 "Appearance" = "Wygląd";
 "Apple Health" = "Apple Health";
+"Apple Health: %@" = "Apple Health: %@";
 "Architect" = "Architekt";
 "Archive" = "Archiwizuj";
 "Archive (%lld)" = "Archiwum (%lld)";
@@ -130,6 +131,7 @@
 "Check off habits 1000 times" = "Odhacz nawyki 1000 razy";
 "Check off habits 50 times" = "Odhacz nawyki 50 razy";
 "Check off habits 500 times" = "Odhacz nawyki 500 razy";
+"Check off habits by Apple Health" = "Odhaczaj nawyki według Apple Zdrowie";
 "Check off habits on 30 different days" = "Odhaczaj nawyki w 30 różnych dniach";
 "Check off habits on 365 different days" = "Odhaczaj nawyki w 365 różnych dniach";
 "Check off habits to earn more." = "Odhaczaj nawyki, aby zdobyć więcej.";
@@ -382,6 +384,8 @@
 "Level" = "Poziom";
 "Level %lld" = "Poziom %lld";
 "Light" = "Jasna";
+"Link a habit to steps, sleep, water, exercise, workouts or mindful minutes. When you reach the goal in the Health app, the habit is checked off by itself." = "Połącz nawyk z krokami, snem, wodą, ćwiczeniami, treningami lub minutami uważności. Gdy osiągniesz cel w aplikacji Zdrowie, nawyk odhaczy się sam.";
+"Linked habits" = "Połączone nawyki";
 "Listen" = "Posłuchaj";
 "Listen to a podcast" = "Słuchać podcastu";
 "Listening…" = "Słucham…";
@@ -450,6 +454,7 @@
 "No fast food" = "Bez fast foodów";
 "No group" = "Bez grupy";
 "No habits" = "Brak nawyków";
+"No habits are linked yet." = "Nie ma jeszcze połączonych nawyków.";
 "No habits are planned for this day." = "Na ten dzień nie zaplanowano nawyków.";
 "No habits today" = "Dziś brak nawyków";
 "No habits yet" = "Jeszcze nie ma nawyków";
@@ -499,6 +504,7 @@
 "Open iOS Settings" = "Otwórz Ustawienia iOS";
 "Open journal" = "Otwórz dziennik";
 "Open mail app" = "Otwórz aplikację pocztową";
+"Open the Health app" = "Otwórz aplikację Zdrowie";
 "Open the app to adopt one." = "Otwórz aplikację, aby go adoptować.";
 "Order" = "Kolejność";
 "Organization" = "Porządek";
@@ -693,6 +699,7 @@
 "Timer" = "Minutnik";
 "Timer on the Lock Screen" = "Minutnik na ekranie blokady";
 "Timer on your wrist" = "Minutnik na nadgarstku";
+"To link a habit, open it and choose Apple Health → Check off by." = "Aby połączyć nawyk, otwórz go i wybierz Apple Health → Odhaczaj według.";
 "Today" = "Dziś";
 "Today is a good day." = "Dziś jest dobry dzień.";
 "Today screen" = "Ekran Dziś";
@@ -749,6 +756,7 @@
 "Weekly review" = "Podsumowanie tygodnia";
 "Welcome to Habit Tracker" = "Witaj w Trackerze Nawyków";
 "What %@ gives you" = "Co daje ci %@";
+"What ZenHab reads" = "Co odczytuje ZenHab";
 "What happened and what did you expect?" = "Co się stało i czego się spodziewałeś?";
 "What happened today? What helped?" = "Co się dziś wydarzyło? Co pomogło?";
 "What lifts your mood" = "Co poprawia ci nastrój";
@@ -779,6 +787,7 @@
 "Yearly" = "Rocznie";
 "Yesterday" = "Wczoraj";
 "Yoga" = "Joga";
+"You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "Dostęp do każdego rodzaju danych możesz zezwolić lub zablokować w Ustawienia → Prywatność i ochrona → Zdrowie → ZenHab.";
 "You're doing great!" = "Świetnie ci idzie!";
 "You've gone through the whole dictionary" = "Przeszedłeś cały słownik";
 "Young" = "Młody";
@@ -799,6 +808,8 @@
 "Your year's results as a card you can share" = "Wyniki twojego roku na karcie do udostępnienia";
 "ZenHab is locked" = "ZenHab jest zablokowany";
 "ZenHab on Apple Watch" = "ZenHab na Apple Watch";
+"ZenHab only reads these data and never writes to Apple Health. Health data is not stored or sent anywhere: only the check-off of the habit is saved." = "ZenHab tylko odczytuje te dane i nigdy nie zapisuje niczego w Apple Zdrowie. Dane o zdrowiu nie są przechowywane ani nigdzie wysyłane: zapisywane jest tylko odhaczenie nawyku.";
+"ZenHab works with Apple Health" = "ZenHab współpracuje z Apple Zdrowie";
 "a month" = "miesiąc";
 "a week" = "tydzień";
 "a year" = "rok";

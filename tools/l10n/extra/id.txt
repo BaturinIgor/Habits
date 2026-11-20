@@ -815,3 +815,14 @@ What will you call them?||Mau kamu beri nama apa?
 Each pet keeps its own name. Growth and mood stay shared.||Setiap peliharaan punya namanya sendiri. Pertumbuhan dan suasana hati tetap sama.
 Your habits stay on your iPhone and in your own iCloud.||Kebiasaanmu tetap di iPhone dan iCloud-mu.
 Your habits stay only on your iPhone.||Kebiasaanmu hanya tersimpan di iPhone-mu.
+ZenHab works with Apple Health||ZenHab terhubung dengan Apple Kesehatan
+Link a habit to steps, sleep, water, exercise, workouts or mindful minutes. When you reach the goal in the Health app, the habit is checked off by itself.||Hubungkan kebiasaan dengan langkah, tidur, air, olahraga, latihan, atau menit kesadaran. Saat target tercapai di app Kesehatan, kebiasaan tercentang sendiri.
+What ZenHab reads||Data yang dibaca ZenHab
+ZenHab only reads these data and never writes to Apple Health. Health data is not stored or sent anywhere: only the check-off of the habit is saved.||ZenHab hanya membaca data ini dan tidak pernah menulis ke Apple Kesehatan. Data kesehatan tidak disimpan atau dikirim ke mana pun: hanya centang kebiasaan yang disimpan.
+Check off habits by Apple Health||Centang kebiasaan lewat Apple Kesehatan
+No habits are linked yet.||Belum ada kebiasaan yang terhubung.
+Linked habits||Kebiasaan terhubung
+To link a habit, open it and choose Apple Health → Check off by.||Untuk menghubungkan kebiasaan, buka kebiasaan itu dan pilih Apple Health → Centang berdasarkan.
+Open the Health app||Buka app Kesehatan
+You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Kamu bisa mengizinkan atau menolak akses ke setiap jenis data di Pengaturan → Privasi & Keamanan → Kesehatan → ZenHab.
+Apple Health: %@||Apple Health: %@

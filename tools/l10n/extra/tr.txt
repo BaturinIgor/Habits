@@ -815,3 +815,14 @@ What will you call them?||Adını ne koyacaksın?
 Each pet keeps its own name. Growth and mood stay shared.||Her evcil hayvanın kendi adı olur. Gelişim ve ruh hali ortaktır.
 Your habits stay on your iPhone and in your own iCloud.||Alışkanlıkların iPhone'unda ve iCloud'unda kalır.
 Your habits stay only on your iPhone.||Alışkanlıkların yalnızca iPhone'unda kalır.
+ZenHab works with Apple Health||ZenHab, Apple Sağlık ile çalışır
+Link a habit to steps, sleep, water, exercise, workouts or mindful minutes. When you reach the goal in the Health app, the habit is checked off by itself.||Bir alışkanlığı adım, uyku, su, egzersiz, antrenman veya farkındalık dakikalarına bağla. Sağlık uygulamasında hedefe ulaşınca alışkanlık kendiliğinden işaretlenir.
+What ZenHab reads||ZenHab'in okuduğu veriler
+ZenHab only reads these data and never writes to Apple Health. Health data is not stored or sent anywhere: only the check-off of the habit is saved.||ZenHab bu verileri yalnızca okur ve Apple Sağlık'a hiçbir şey yazmaz. Sağlık verileri saklanmaz ve hiçbir yere gönderilmez: yalnızca alışkanlığın işareti kaydedilir.
+Check off habits by Apple Health||Alışkanlıkları Apple Sağlık ile işaretle
+No habits are linked yet.||Henüz bağlı alışkanlık yok.
+Linked habits||Bağlı alışkanlıklar
+To link a habit, open it and choose Apple Health → Check off by.||Bir alışkanlığı bağlamak için onu aç ve Apple Health → Şuna göre işaretle'yi seç.
+Open the Health app||Sağlık uygulamasını aç
+You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Her veri türüne erişimi Ayarlar → Gizlilik ve Güvenlik → Sağlık → ZenHab bölümünden açıp kapatabilirsin.
+Apple Health: %@||Apple Health: %@

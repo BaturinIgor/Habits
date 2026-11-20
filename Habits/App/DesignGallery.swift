@@ -9,10 +9,10 @@ enum DesignScreen: String, CaseIterable, Identifiable {
     // Вкладки
     case today, habits, stats, settings
     // Экраны внутри навигации
-    case habitDetail, quitDetail, notifications, todayScreen, groups, groupDetail, appIcon, backup
+    case habitDetail, quitDetail, notifications, todayScreen, groups, groupDetail, appIcon, backup, healthSettings
     // Шиты
     case catalog, editorNew, editorEdit, editorTemplate, iconPicker, timer, recap, moodJournal, moodEntry
-    case profile, sparks, pet, petSwitched, petNaming, petSpecies, paywall, paywallFeature, feedback, voice, note, whatsNew
+    case editorHealth, profile, sparks, pet, petSwitched, petNaming, petSpecies, paywall, paywallFeature, feedback, voice, note, whatsNew
     // Во весь экран
     case onboarding, words
 
@@ -26,7 +26,7 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .habits: .tab(.habits)
         case .stats: .tab(.stats)
         case .settings: .tab(.settings)
-        case .habitDetail, .quitDetail, .notifications, .todayScreen, .groups, .groupDetail, .appIcon, .backup: .push
+        case .habitDetail, .quitDetail, .notifications, .todayScreen, .groups, .groupDetail, .appIcon, .backup, .healthSettings: .push
         case .onboarding, .words: .cover
         default: .sheet
         }
@@ -53,6 +53,9 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .groupDetail: GroupDetailView(groupID: DesignGallery.groupID)
         case .appIcon: AppIconView()
         case .backup: BackupSettingsView()
+        // 1.6, App Review 2.5.1: интеграция с Apple Health видна в интерфейсе.
+        case .healthSettings: HealthSettingsView(scrollToLinked: true)
+        case .editorHealth: DesignGallery.HealthEditor()
         case .catalog: HabitCatalogView()
         case .editorNew: HabitEditorView(habit: nil)
         case .editorEdit: DesignGallery.Editor(id: UITestSupport.id(1))
@@ -140,6 +143,16 @@ enum DesignGallery {
         let id: UUID
         var body: some View {
             if let habit = store.habit(id) { HabitEditorView(habit: habit) }
+        }
+    }
+
+    /// Редактор привычки, связанной с Apple Health («Пройти 10 000 шагов»), сразу на разделе Здоровья.
+    struct HealthEditor: View {
+        @Environment(HabitStore.self) private var store
+        var body: some View {
+            if let habit = store.data.activeHabits.first(where: { $0.health != nil }) {
+                HabitEditorView(habit: habit).scrollingToHealth()
+            }
         }
     }
 

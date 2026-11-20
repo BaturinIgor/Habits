@@ -16,7 +16,11 @@ final class HealthSync {
     static let shared = HealthSync()
 
     static var isAvailable: Bool {
-        (Bundle.main.object(forInfoDictionaryKey: "HealthEnabled") as? Bool) == true
+        #if DEBUG
+        // Макеты (DesignGallery) показывают раздел Apple Health и без прав HealthKit.
+        if TestMode.has("-design") { return true }
+        #endif
+        return (Bundle.main.object(forInfoDictionaryKey: "HealthEnabled") as? Bool) == true
             && HKHealthStore.isHealthDataAvailable()
     }
 
