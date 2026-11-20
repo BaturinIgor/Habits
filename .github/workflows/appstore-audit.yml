@@ -1,0 +1,40 @@
+name: App Store audit
+
+# Только читает App Store Connect и сверяет версию с репозиторием: сборка, тексты по языкам,
+# скриншоты по контрольным суммам, заметки для ревьюера, рейтинг, покупки. Ничего не меняет.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Версия, например 1.6"
+        required: true
+        default: "1.6"
+  pull_request:
+    paths:
+      - "tools/appstore/asc_audit.py"
+      - ".github/workflows/appstore-audit.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    # Секреты не передаются в PR из форков; запускаем только для веток этого репозитория.
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install
+        run: pip install -r tools/appstore/requirements.txt
+      - name: Audit
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          APP_BUNDLE_ID: ${{ vars.APP_BUNDLE_ID || 'com.baturinigor.zenhab' }}
+          VERSION: ${{ inputs.version || '1.6' }}
+        run: python3 tools/appstore/asc_audit.py --version "$VERSION"
