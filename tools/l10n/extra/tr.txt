@@ -3,7 +3,6 @@ Activity over %lld weeks||Son %lld haftalık etkinlik
 Add a habit, pick days and a time, and I'll remind you.||Bir alışkanlık ekle, günleri ve saati seç, ben de sana hatırlatayım.
 Add habit||Alışkanlık ekle
 Add note||Not ekle
-All data is stored only on this iPhone.||Tüm veriler yalnızca bu iPhone'da saklanır.
 All done||Hepsi tamam
 All done!||Hepsi tamam!
 Allow notifications||Bildirimlere izin ver
@@ -812,3 +811,5 @@ Every check-in counts. The new month is a fresh start.||Her işaret önemli. Yen
 An amazing year. Keep it going!||Harika bir yıl. Böyle devam!
 A solid year. Every month makes a difference.||İyi bir yıl. Her ay bir fark yarattı.
 Every check-in counts. The new year is a fresh start.||Her işaret önemli. Yeni yıl yeni bir başlangıç.
+Your habits stay on your iPhone and in your own iCloud.||Alışkanlıkların iPhone'unda ve iCloud'unda kalır.
+Your habits stay only on your iPhone.||Alışkanlıkların yalnızca iPhone'unda kalır.

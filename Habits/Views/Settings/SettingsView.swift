@@ -203,7 +203,12 @@ struct SettingsView: View {
                 Section {
                     LabeledContent("Version", value: AppInfo.version)
                 } footer: {
-                    Text("All data is stored only on this iPhone.")
+                    // Где лежат привычки: в сборке для App Store ещё и в личном iCloud (копия, семейные группы).
+                    if CloudBackup.isAvailable {
+                        Text("Your habits stay on your iPhone and in your own iCloud.")
+                    } else {
+                        Text("Your habits stay only on your iPhone.")
+                    }
                 }
             }
             .appBackground()

@@ -3,7 +3,6 @@ Activity over %lld weeks||Aktivitas %lld minggu terakhir
 Add a habit, pick days and a time, and I'll remind you.||Tambahkan kebiasaan, pilih hari dan jam, dan aku akan mengingatkanmu.
 Add habit||Tambah kebiasaan
 Add note||Tambah catatan
-All data is stored only on this iPhone.||Semua data hanya disimpan di iPhone ini.
 All done||Semua selesai
 All done!||Semua selesai!
 Allow notifications||Izinkan notifikasi
@@ -812,3 +811,5 @@ Every check-in counts. The new month is a fresh start.||Setiap centang berarti. 
 An amazing year. Keep it going!||Tahun yang luar biasa. Pertahankan!
 A solid year. Every month makes a difference.||Tahun yang bagus. Setiap bulan membawa perubahan.
 Every check-in counts. The new year is a fresh start.||Setiap centang berarti. Tahun baru adalah awal yang baru.
+Your habits stay on your iPhone and in your own iCloud.||Kebiasaanmu tetap di iPhone dan iCloud-mu.
+Your habits stay only on your iPhone.||Kebiasaanmu hanya tersimpan di iPhone-mu.
