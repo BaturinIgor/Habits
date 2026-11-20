@@ -207,6 +207,7 @@
 "Drink water" = "물 마시기";
 "Duration" = "시간";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "일시 정지 중에는 습관이 숨겨지고 알림이 오지 않으며 연속 기록은 유지돼요.";
+"Each pet keeps its own name. Growth and mood stay shared." = "펫마다 이름이 따로 있어요. 성장과 기분은 함께 이어져요.";
 "Early bird" = "얼리버드";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "업적으로 아바타와 배경을 열고, 체크할 때마다 레벨업하세요.";
 "Earn sparks for check-ins, spend them in the shop and raise a pet that grows with your habits." = "체크로 스파크를 모아 상점에서 쓰고, 습관과 함께 자라는 펫을 키워요.";
@@ -753,6 +754,7 @@
 "What lifts your mood" = "기분을 올려 주는 것";
 "What should I add?" = "무엇을 추가할까요?";
 "What to add" = "추가할 내용";
+"What will you call them?" = "이름을 뭐라고 지을까요?";
 "What's left today" = "오늘 남은 것";
 "What's new" = "새로운 기능";
 "When you come back to the app, it asks for %@ first." = "앱으로 돌아오면 먼저 %@을(를) 요청해요.";

@@ -46,8 +46,12 @@ struct Wallet: Codable, Hashable {
 
 struct PetState: Codable, Hashable {
     var species: String
+    /// Имя текущего вида (его же показывают виджеты и часы).
     var name: String
     var adoptedAt: Date
+    /// Имена по видам: id вида -> имя. Опыт, стадия и настроение общие, имя у каждого вида своё.
+    /// Нет записи - вид ещё не назван, при переходе на него спрашиваем имя.
+    var names: [String: String] = [:]
     /// Кормления по дням: "yyyy-MM-dd" -> сколько раз.
     var feeds: [String: Int] = [:]
     /// Когда питомец впервые дошёл до стадии: rawValue стадии -> дата.
@@ -55,6 +59,9 @@ struct PetState: Codable, Hashable {
     var stageReached: [String: Date] = [:]
 
     var totalFeeds: Int { feeds.values.reduce(0, +) }
+
+    /// Назван ли текущий вид.
+    var isNamed: Bool { names[species] != nil }
 
     var highestReached: PetStage? {
         stageReached.keys.compactMap { Int($0).flatMap(PetStage.init(rawValue:)) }.max()
@@ -69,5 +76,8 @@ extension PetState {
         adoptedAt = try c.decode(Date.self, forKey: .adoptedAt)
         feeds = try c.decodeIfPresent([String: Int].self, forKey: .feeds) ?? [:]
         stageReached = try c.decodeIfPresent([String: Date].self, forKey: .stageReached) ?? [:]
+        names = try c.decodeIfPresent([String: String].self, forKey: .names) ?? [:]
+        // Старые данные без имён по видам: прежнее имя остаётся у текущего вида.
+        if names[species] == nil { names[species] = name }
     }
 }

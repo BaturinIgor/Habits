@@ -207,6 +207,7 @@
 "Drink water" = "水を飲む";
 "Duration" = "時間";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "一時停止中は習慣が非表示になり通知も届かず、連続記録は保たれます。";
+"Each pet keeps its own name. Growth and mood stay shared." = "ペットごとに名前を付けられます。成長と気分は共通です。";
 "Early bird" = "早起き";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "実績でアバターや背景を解放し、チェックするたびにレベルアップ。";
 "Earn sparks for check-ins, spend them in the shop and raise a pet that grows with your habits." = "チェックでスパークを集めてショップで使い、習慣と一緒に育つペットを育てよう。";
@@ -753,6 +754,7 @@
 "What lifts your mood" = "気分を上げるもの";
 "What should I add?" = "何を追加しますか？";
 "What to add" = "追加する内容";
+"What will you call them?" = "名前はどうする？";
 "What's left today" = "今日の残り";
 "What's new" = "新機能";
 "When you come back to the app, it asks for %@ first." = "アプリに戻ると、最初に%@を求めます。";

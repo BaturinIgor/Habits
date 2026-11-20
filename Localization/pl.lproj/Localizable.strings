@@ -207,6 +207,7 @@
 "Drink water" = "Pić wodę";
 "Duration" = "Czas trwania";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "Podczas przerwy nawyk jest ukryty i nie wysyła przypomnień, a seria zostaje zachowana.";
+"Each pet keeps its own name. Growth and mood stay shared." = "Każdy zwierzak ma własne imię. Rozwój i nastrój są wspólne.";
 "Early bird" = "Ranny ptaszek";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "Zdobywaj osiągnięcia, aby odblokować awatary i tła, i awansuj z każdym odhaczeniem.";
 "Earn sparks for check-ins, spend them in the shop and raise a pet that grows with your habits." = "Zdobywaj iskry za odhaczenia, wydawaj je w sklepie i wychowuj zwierzaka, który rośnie razem z twoimi nawykami.";
@@ -753,6 +754,7 @@
 "What lifts your mood" = "Co poprawia ci nastrój";
 "What should I add?" = "Co dodać?";
 "What to add" = "Co dodać";
+"What will you call them?" = "Jak go nazwiesz?";
 "What's left today" = "Co zostało na dziś";
 "What's new" = "Co nowego";
 "When you come back to the app, it asks for %@ first." = "Po powrocie do aplikacji najpierw poprosi o %@.";

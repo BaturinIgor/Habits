@@ -811,5 +811,7 @@ Every check-in counts. The new month is a fresh start.||Każde odhaczenie się l
 An amazing year. Keep it going!||Świetny rok. Tak trzymaj!
 A solid year. Every month makes a difference.||Dobry rok. Każdy miesiąc miał znaczenie.
 Every check-in counts. The new year is a fresh start.||Każde odhaczenie się liczy. Nowy rok to nowy start.
+What will you call them?||Jak go nazwiesz?
+Each pet keeps its own name. Growth and mood stay shared.||Każdy zwierzak ma własne imię. Rozwój i nastrój są wspólne.
 Your habits stay on your iPhone and in your own iCloud.||Twoje nawyki zostają na twoim iPhonie i w twoim iCloud.
 Your habits stay only on your iPhone.||Twoje nawyki zostają tylko na twoim iPhonie.

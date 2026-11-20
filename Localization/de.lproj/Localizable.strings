@@ -207,6 +207,7 @@
 "Drink water" = "Wasser trinken";
 "Duration" = "Dauer";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "Während einer Pause ist die Gewohnheit ausgeblendet, sendet keine Erinnerungen, und deine Serie bleibt erhalten.";
+"Each pet keeps its own name. Growth and mood stay shared." = "Jedes Haustier hat seinen eigenen Namen. Wachstum und Stimmung bleiben gemeinsam.";
 "Early bird" = "Frühaufsteher";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "Sammle Erfolge, schalte Avatare und Hintergründe frei und steige mit jedem Abhaken im Level auf.";
 "Earn sparks for check-ins, spend them in the shop and raise a pet that grows with your habits." = "Verdiene Funken fürs Abhaken, gib sie im Shop aus und zieh ein Haustier groß, das mit deinen Gewohnheiten wächst.";
@@ -753,6 +754,7 @@
 "What lifts your mood" = "Was deine Stimmung hebt";
 "What should I add?" = "Was soll ich hinzufügen?";
 "What to add" = "Was hinzufügen";
+"What will you call them?" = "Wie soll er heißen?";
 "What's left today" = "Was heute noch offen ist";
 "What's new" = "Neu in ZenHab";
 "When you come back to the app, it asks for %@ first." = "Wenn du zur App zurückkehrst, fragt sie zuerst nach %@.";

@@ -207,6 +207,7 @@
 "Drink water" = "Su iç";
 "Duration" = "Süre";
 "During a pause the habit is hidden and sends no reminders, and your streak is kept." = "Mola sırasında alışkanlık gizlenir ve hatırlatma göndermez, serin korunur.";
+"Each pet keeps its own name. Growth and mood stay shared." = "Her evcil hayvanın kendi adı olur. Gelişim ve ruh hali ortaktır.";
 "Early bird" = "Erkenci";
 "Earn achievements to unlock avatars and backgrounds, and level up with every check-in." = "Avatar ve arka plan açmak için başarı kazan, her işaretlemeyle seviye atla.";
 "Earn sparks for check-ins, spend them in the shop and raise a pet that grows with your habits." = "İşaretlemelerle kıvılcım kazan, mağazada harca ve alışkanlıklarınla büyüyen bir evcil hayvan yetiştir.";
@@ -753,6 +754,7 @@
 "What lifts your mood" = "Ruh hâlini ne iyileştiriyor";
 "What should I add?" = "Ne ekleyeyim?";
 "What to add" = "Ne eklenecek";
+"What will you call them?" = "Adını ne koyacaksın?";
 "What's left today" = "Bugün ne kaldı";
 "What's new" = "Yenilikler";
 "When you come back to the app, it asks for %@ first." = "Uygulamaya döndüğünde önce %@ istenir.";

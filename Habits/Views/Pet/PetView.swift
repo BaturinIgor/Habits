@@ -59,6 +59,10 @@ struct PetView: View {
     @State private var hearts = 0
     @State private var showingPaywall = false
     @State private var purchase: SparkPurchase?
+    /// Шит «Как назовёшь?» после перехода на вид, который ещё не называли.
+    @State private var naming = false
+    /// Для макетов: сразу прокрутить к выбору вида.
+    var scrollToSpecies = false
 
     private let grid = [GridItem(.adaptive(minimum: 76), spacing: 12)]
 
@@ -68,16 +72,21 @@ struct PetView: View {
 
     @ViewBuilder private var analyticsBody: some View {
         NavigationStack {
-            ScrollView {
-                VStack(spacing: 22) {
-                    if let pet = store.data.wallet.pet {
-                        petSection(pet)
-                    } else {
-                        adoptSection
+            ScrollViewReader { proxy in
+                ScrollView {
+                    VStack(spacing: 22) {
+                        if let pet = store.data.wallet.pet {
+                            petSection(pet)
+                        } else {
+                            adoptSection
+                        }
                     }
+                    .padding(16)
+                    .padding(.bottom, 24)
                 }
-                .padding(16)
-                .padding(.bottom, 24)
+                .onAppear {
+                    if scrollToSpecies { proxy.scrollTo("species", anchor: .bottom) }
+                }
             }
             .background(AppBackground())
             .navigationTitle(store.data.wallet.pet?.name ?? String(localized: "Pet"))
@@ -100,6 +109,8 @@ struct PetView: View {
                 Button("Cancel", role: .cancel) {}
             }
             .sparkPurchaseAlert($purchase)
+            .designAlert("petNaming", $naming)
+            .sheet(isPresented: $naming) { PetNamingSheet() }
         }
     }
 
@@ -263,20 +274,29 @@ struct PetView: View {
                             showingPaywall = true
                         } else if !Pets.isOwned(species, data: store.data), let price = species.price {
                             purchase = SparkPurchase(title: String(localized: species.title), price: price) {
-                                _ = store.setPetSpecies(species)
+                                switchSpecies(species)
                             }
                         } else {
-                            withAnimation(.snappy) { _ = store.setPetSpecies(species) }
+                            withAnimation(.snappy) { switchSpecies(species) }
                         }
                     }
                 }
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .id("species")
     }
 
-    private func speciesTile(_ species: PetSpecies, selected: Bool, action: @escaping () -> Void) -> some View {
+    /// Сменить вид; если этот вид ещё не называли, спросить имя.
+    private func switchSpecies(_ species: PetSpecies) {
+        guard store.setPetSpecies(species) else { return }
+        if store.data.wallet.pet?.isNamed == false { naming = true }
+    }
+
+    private func speciesTile(_ species: PetSpecies, selected: Bool, showsName: Bool = true, action: @escaping () -> Void) -> some View {
         let owned = Pets.isOwned(species, data: store.data)
+        // Имя под видом, который уже называли: видно, кто из питомцев кем был.
+        let petName = showsName ? store.data.wallet.pet?.names[species.id] : nil
         return Button(action: action) {
             VStack(spacing: 4) {
                 if let style = PetStyle.style(for: species.id) {
@@ -289,6 +309,13 @@ struct PetView: View {
                     Text(species.baby).font(.system(size: 38))
                 }
                 Text(species.title).font(.caption.weight(.medium)).lineLimit(1)
+                if owned, let petName {
+                    Text(petName)
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                        .padding(.horizontal, 4)
+                }
                 if !owned {
                     if species.needsPro {
                         ProBadge().scaleEffect(0.8)
@@ -300,6 +327,8 @@ struct PetView: View {
             .foregroundStyle(Color.primary)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 10)
+            // Плитки в ряду одной высоты, даже если под одной есть имя питомца.
+            .frame(maxHeight: .infinity, alignment: .top)
             .background(RoundedRectangle(cornerRadius: 18, style: .continuous).fill(.background.opacity(0.7)))
             .overlay {
                 RoundedRectangle(cornerRadius: 18, style: .continuous)
@@ -324,7 +353,7 @@ struct PetView: View {
                 .multilineTextAlignment(.center)
             LazyVGrid(columns: grid, spacing: 12) {
                 ForEach(Pets.all.filter { Pets.isOwned($0, data: store.data) }) { species in
-                    speciesTile(species, selected: species.id == selectedSpecies) {
+                    speciesTile(species, selected: species.id == selectedSpecies, showsName: false) {
                         selectedSpecies = species.id
                     }
                 }
@@ -345,6 +374,61 @@ struct PetView: View {
                 .font(.footnote)
                 .foregroundStyle(.secondary)
         }
+    }
+}
+
+/// Шит «Как назовёшь?»: у каждого вида своё имя, опыт и стадия общие.
+struct PetNamingSheet: View {
+    @Environment(HabitStore.self) private var store
+    @Environment(\.dismiss) private var dismiss
+    @State private var text = ""
+    @FocusState private var focused: Bool
+
+    var body: some View {
+        VStack(spacing: 16) {
+            if let pet = store.data.wallet.pet {
+                PetAvatar(pet: pet, stage: Pets.stage(pet, data: store.data), mood: .happy, size: 120, reaction: 0)
+                    .padding(.top, 8)
+            }
+            VStack(spacing: 6) {
+                Text("What will you call them?")
+                    .font(.title2.weight(.bold))
+                    .multilineTextAlignment(.center)
+                Text("Each pet keeps its own name. Growth and mood stay shared.")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            TextField("Pet name", text: $text)
+                .textFieldStyle(.roundedBorder)
+                .submitLabel(.done)
+                .focused($focused)
+                .onSubmit(save)
+            Button(action: save) {
+                Text("Done")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 6)
+            }
+            .glassButtonStyle(prominent: true)
+            Button("Skip") {
+                store.confirmPetName(nil)
+                dismiss()
+            }
+            .foregroundStyle(.secondary)
+        }
+        .padding(20)
+        .presentationDetents([.medium, .large])
+        // Непрозрачный фон: сквозь стеклянный шит просвечивала кнопка «Покормить».
+        .presentationBackground { AppBackground() }
+        .interactiveDismissDisabled()
+        .onAppear { text = store.data.wallet.pet?.name ?? "" }
+    }
+
+    private func save() {
+        store.confirmPetName(text)
+        dismiss()
     }
 }
 

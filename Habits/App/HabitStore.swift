@@ -277,7 +277,8 @@ final class HabitStore {
 
     func adoptPet(species: String, name: String) {
         let clean = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        data.wallet.pet = PetState(species: species, name: clean.isEmpty ? String(localized: "Buddy") : clean, adoptedAt: Date())
+        let petName = clean.isEmpty ? String(localized: "Buddy") : clean
+        data.wallet.pet = PetState(species: species, name: petName, adoptedAt: Date(), names: [species: petName])
         data.wallet.keptPetXP = 0
         Analytics.shared.send(.petAdopted(species: species))
         commit()
@@ -285,9 +286,26 @@ final class HabitStore {
 
     func renamePet(_ name: String) {
         let clean = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !clean.isEmpty else { return }
-        data.wallet.pet?.name = clean
+        guard !clean.isEmpty, var pet = data.wallet.pet else { return }
+        // Имя меняется только у текущего вида.
+        pet.name = clean
+        pet.names[pet.species] = clean
+        data.wallet.pet = pet
         Analytics.shared.action(.petRename)
+        commit()
+    }
+
+    /// Подтвердить имя только что выбранного вида: из шита «Как назовёшь?» или по «Пропустить».
+    func confirmPetName(_ name: String?) {
+        guard var pet = data.wallet.pet else { return }
+        let clean = (name ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        pet.name = clean.isEmpty ? Pets.defaultName(Pets.species(pet.species)) : clean
+        pet.names[pet.species] = pet.name
+        data.wallet.pet = pet
+        // Своё имя (не «Пропустить» и не имя по умолчанию) считаем переименованием.
+        if !clean.isEmpty, clean != Pets.defaultName(Pets.species(pet.species)) {
+            Analytics.shared.action(.petRename)
+        }
         commit()
     }
 
@@ -342,7 +360,14 @@ final class HabitStore {
             guard !species.needsPro, let price = species.price, spend(price) else { return false }
             data.wallet.ownedPets.append(species.id)
         }
-        data.wallet.pet?.species = species.id
+        if var pet = data.wallet.pet, pet.species != species.id {
+            // Опыт, стадия и настроение общие, имя у каждого вида своё.
+            pet.names[pet.species] = pet.name
+            pet.species = species.id
+            // Вид, который ещё не называли, получает имя по виду, пока его не назовут (PetView спросит).
+            pet.name = pet.names[species.id] ?? Pets.defaultName(species)
+            data.wallet.pet = pet
+        }
         Analytics.shared.action(.petSpecies)
         commit()
         return true
