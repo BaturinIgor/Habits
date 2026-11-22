@@ -4,6 +4,7 @@ import UIKit
 
 struct StatsView: View {
     @Environment(HabitStore.self) private var store
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var recapPeriod: Recap.Period?
     @State private var showingMood = false
 
@@ -137,7 +138,9 @@ struct StatsView: View {
         // У привычек "N раз в неделю" серия в неделях, в днях её сравнивать нельзя.
         let bestCurrent = allStats.filter { !$0.isWeekly }.map(\.currentStreak).max() ?? 0
         let totalDone = allStats.map(\.totalDone).reduce(0, +)
-        return LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
+        // При крупном шрифте плитки в одну колонку, иначе подписи обрезаются («Last 30 d…»).
+        let columns = Array(repeating: GridItem(.flexible(), spacing: 12), count: typeSize.isAccessibilitySize ? 1 : 2)
+        return LazyVGrid(columns: columns, spacing: 12) {
             StatTile(title: "Today", value: String(localized: "\(today.done) of \(today.total)"), systemImage: "checkmark.circle.fill", color: .accentColor)
             StatTile(title: "Last 30 days", value: "\(Int((rate30 * 100).rounded()))%", systemImage: "chart.pie.fill", color: .green)
             StatTile(title: "Best current streak", value: Fmt.days(bestCurrent), systemImage: "flame.fill", color: .orange)
@@ -161,7 +164,8 @@ struct StatsView: View {
                                 Text(habit.name)
                                     .font(.subheadline.weight(.semibold))
                                     .foregroundStyle(Color.primary)
-                                    .lineLimit(1)
+                                    .multilineTextAlignment(.leading)
+                                    .lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
                                 Spacer()
                                 if stats.currentStreak > 0 {
                                     Label("\(stats.currentStreak)", systemImage: "flame.fill")
@@ -191,23 +195,31 @@ struct StatsView: View {
 
 struct WeekChartCard: View {
     let days: [DayProgress]
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     private struct Bar: Identifiable {
         let id: String
-        let label: String
+        /// Ключ дня: по нему столбцы, подпись отдельно (одинаковые буквы «В»/«T» склеивали бы дни).
+        let day: String
         let kind: String
         let value: Int
     }
 
     private var bars: [Bar] {
         days.flatMap { day -> [Bar] in
-            let label = Fmt.weekdayShort(day.date)
             let key = DayKey.make(day.date)
             return [
-                Bar(id: key + "d", label: label, kind: String(localized: "Completed"), value: day.done),
-                Bar(id: key + "r", label: label, kind: String(localized: "Remaining"), value: max(0, day.total - day.done))
+                Bar(id: key + "d", day: key, kind: String(localized: "Completed"), value: day.done),
+                Bar(id: key + "r", day: key, kind: String(localized: "Remaining"), value: max(0, day.total - day.done))
             ]
         }
+    }
+
+    /// Подписи дней на оси. При крупном шрифте «Пн»/«Mon» обрезались: одна буква.
+    private var labels: [String: String] {
+        Dictionary(uniqueKeysWithValues: days.map { day in
+            (DayKey.make(day.date), typeSize.isAccessibilitySize ? Fmt.weekdayVeryShort(day.date) : Fmt.weekdayShort(day.date))
+        })
     }
 
     var body: some View {
@@ -216,7 +228,7 @@ struct WeekChartCard: View {
                 .font(.headline)
             Chart(bars) { bar in
                 BarMark(
-                    x: .value("Day", bar.label),
+                    x: .value("Day", bar.day),
                     y: .value("Habits", bar.value)
                 )
                 .foregroundStyle(by: .value("Status", bar.kind))
@@ -226,6 +238,13 @@ struct WeekChartCard: View {
                 String(localized: "Completed"): Color.accentColor,
                 String(localized: "Remaining"): Color.gray.opacity(0.25)
             ])
+            .chartXAxis {
+                AxisMarks { value in
+                    AxisGridLine()
+                    AxisTick()
+                    AxisValueLabel(labels[value.as(String.self) ?? ""] ?? "")
+                }
+            }
             .chartLegend(position: .bottom, alignment: .leading)
             .frame(height: 180)
         }
@@ -251,7 +270,8 @@ struct HeatmapCard: View {
             HStack(alignment: .top, spacing: 4) {
                 VStack(spacing: 4) {
                     ForEach(Weekdays.ordered, id: \.self) { weekday in
-                        Text(Weekdays.short(weekday))
+                        // Одна буква: «Пн»/«Mon» в 18 пунктов не влезали и обрезались до «M…».
+                        Text(Weekdays.veryShort(weekday))
                             .font(.system(size: 9, weight: .medium))
                             .foregroundStyle(.secondary)
                             .frame(maxHeight: .infinity)

@@ -27,3 +27,13 @@ smart-03-editor-off
 insights-01-top
 insights-02-few-days
 insights-03-free
+
+# KAN-114: окно «Как назовёшь?» при крупном шрифте
+a11y-04-pet-naming-xl
+# KAN-116: подписи при крупном шрифте, дни недели в тепловой карте
+a11y-01-stats-xl
+a11y-02-stats-scrolled-xl
+a11y-03-today-xl
+a11y-05-pet-species-xl
+a11y-06-heatmap
+a11y-07-today-habits-xl
