@@ -52,8 +52,8 @@ Privacidad: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
 • Empieza con una meta: elige qué quieres cambiar y ZenHab te propone hábitos listos para usar.
-• Recordatorios inteligentes: se adaptan a la hora en que de verdad marcas tus hábitos.
-• Ánimo y hábitos: descubre qué hábitos van de la mano con tu mejor estado de ánimo.
-• Más Siri y Atajos: registra tu estado de ánimo o inicia un temporizador con la voz, y encuentra tus hábitos en Spotlight.
-• Oferta de Año Nuevo en ZenHab Pro, por tiempo limitado.
+• Hora de recordatorio inteligente: actívala y el recordatorio se moverá a la hora en que sueles marcar el hábito. Gratis para todos.
+• Ánimo y hábitos con ZenHab Pro: descubre qué hábitos van de la mano con tu mejor estado de ánimo.
+• Más Siri y Atajos: registra tu estado de ánimo o inicia el temporizador de un hábito (Pro) con la voz, y encuentra tus hábitos en Spotlight.
+• Oferta de Año Nuevo: del 20 de diciembre al 10 de enero, el primer año de ZenHab Pro tiene un 50 % de descuento.
 • Mejor con texto grande y VoiceOver.

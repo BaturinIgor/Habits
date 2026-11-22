@@ -50,8 +50,8 @@ Privasi: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
 • Mulai dari tujuan: pilih apa yang ingin kamu ubah, dan ZenHab menyiapkan kebiasaan yang siap dipakai.
-• Pengingat pintar: menyesuaikan diri dengan jam saat kamu benar-benar mencentang kebiasaan.
-• Wawasan suasana hati: lihat kebiasaan mana yang berkaitan dengan suasana hati terbaikmu.
-• Lebih banyak Siri dan Pintasan: catat suasana hati atau mulai timer dengan suara, dan temukan kebiasaan di Spotlight.
-• Penawaran Tahun Baru untuk ZenHab Pro, waktu terbatas.
+• Waktu pengingat pintar: nyalakan, dan pengingat pindah ke jam kamu biasa mencentang kebiasaan. Gratis untuk semua.
+• Wawasan suasana hati di ZenHab Pro: lihat kebiasaan mana yang berkaitan dengan suasana hati terbaikmu.
+• Lebih banyak Siri dan Pintasan: catat suasana hati atau mulai timer kebiasaan (Pro) dengan suara, dan temukan kebiasaan di Spotlight.
+• Penawaran Tahun Baru: 20 Desember sampai 10 Januari, tahun pertama ZenHab Pro diskon 50%.
 • Lebih nyaman dengan teks besar dan VoiceOver.

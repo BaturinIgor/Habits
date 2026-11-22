@@ -50,8 +50,8 @@ Privacidade: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
 • Comece por uma meta: escolha o que quer mudar e o ZenHab sugere hábitos prontos para você.
-• Lembretes inteligentes: eles se ajustam ao horário em que você realmente marca seus hábitos.
-• Humor e hábitos: veja quais hábitos combinam com seus dias de melhor humor.
-• Mais Siri e Atalhos: registre o humor ou inicie um timer por voz e encontre seus hábitos no Spotlight.
-• Oferta de Ano-Novo no ZenHab Pro, por tempo limitado.
+• Horário inteligente dos lembretes: ative e o lembrete passa para a hora em que você costuma marcar o hábito. Grátis para todos.
+• Humor e hábitos no ZenHab Pro: veja quais hábitos combinam com seus dias de melhor humor.
+• Mais Siri e Atalhos: registre o humor ou inicie o timer de um hábito (Pro) por voz e encontre seus hábitos no Spotlight.
+• Oferta de Ano-Novo: de 20 de dezembro a 10 de janeiro, o primeiro ano do ZenHab Pro sai com 50% de desconto.
 • Melhor com texto grande e VoiceOver.

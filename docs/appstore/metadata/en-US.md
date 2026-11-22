@@ -17,7 +17,7 @@ goal,widget,self,care,mood,reminder,checklist,adhd,quit,bad,builder,timer,journa
 ## Description
 ZenHab is a daily habit tracker and routine planner: build good habits, keep your streaks and reach your goals, one calm day at a time.
 
-Pick a goal and start with a ready-made set of habits. Reminders learn when you actually check off, and mood insights show which habits make your days better.
+Pick a goal and start with a ready-made set of habits. Smart reminders follow your check-off time, and Pro mood insights show which habits make your days better.
 
 Add a habit in seconds, choose the days and a reminder time, and check it off right from the notification or a Home Screen widget. Your streaks, calendar and charts show how far you've come.
 
@@ -40,7 +40,7 @@ SEE YOUR PROGRESS
 • Current and best streaks, completion rate
 • Calendar, charts and an activity heatmap
 • Achievements for streaks, perfect days and weeks
-• Mood journal: see which habits go with your best mood
+• Mood journal, and with Pro: which habits go with your best mood
 • Week, month and year in review cards, shared as a picture
 
 STAY MOTIVATED
@@ -86,12 +86,12 @@ Pro is available as a monthly or yearly subscription or as a one-time lifetime p
 Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacy Policy: https://baturinigor.github.io/Habits/privacy.html
 
-The app is available in 14 languages: English, Russian, German, French, Spanish, Portuguese, Italian, Turkish, Polish, Indonesian, Chinese, Japanese, Korean and Hindi.
+Available in 14 languages: English, Russian, German, French, Spanish, Portuguese, Italian, Turkish, Polish, Indonesian, Chinese, Japanese, Korean and Hindi.
 
 ## What's New
 • Start with a goal: pick what you want to change, and ZenHab sets up a ready-made set of habits for you.
-• Smart reminders: they learn when you actually check habits off and move to that time.
-• Mood insights: see which habits go together with your best mood.
-• More Siri and Shortcuts: log your mood or start a timer by voice, and find your habits in Spotlight.
-• New Year offer on ZenHab Pro, for a limited time.
+• Smart reminder time: turn it on for a reminder, and it moves to when you usually check the habit off. Free for everyone.
+• Mood insights in ZenHab Pro: see which habits go together with your best mood.
+• More Siri and Shortcuts: log your mood or start a habit timer (Pro) by voice, and find your habits in Spotlight.
+• New Year offer: from December 20 to January 10, your first year of ZenHab Pro is 50% off.
 • Better with large text and VoiceOver.

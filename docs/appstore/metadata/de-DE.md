@@ -50,8 +50,8 @@ Datenschutz: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
 • Starte mit einem Ziel: Wähl aus, was du ändern willst, und ZenHab stellt dir passende Gewohnheiten zusammen.
-• Smarte Erinnerungen: Sie passen sich an die Zeit an, zu der du deine Gewohnheiten wirklich abhakst.
-• Stimmungs-Einblicke: Sieh, welche Gewohnheiten mit deiner besten Laune zusammenhängen.
-• Mehr Siri und Kurzbefehle: Stimmung eintragen oder Timer starten per Sprache, Gewohnheiten direkt in Spotlight finden.
-• Neujahrsangebot für ZenHab Pro, nur für kurze Zeit.
+• Smarte Erinnerungszeit: Schalte sie ein, und die Erinnerung rückt zu der Zeit, zu der du die Gewohnheit meist abhakst. Kostenlos für alle.
+• Stimmungs-Einblicke in ZenHab Pro: Sieh, welche Gewohnheiten mit deiner besten Laune zusammenhängen.
+• Mehr Siri und Kurzbefehle: Stimmung eintragen oder Gewohnheits-Timer (Pro) per Sprache starten, Gewohnheiten direkt in Spotlight finden.
+• Neujahrsangebot: Vom 20. Dezember bis 10. Januar kostet das erste Jahr ZenHab Pro 50 % weniger.
 • Besser mit großer Schrift und VoiceOver.
