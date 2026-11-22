@@ -135,7 +135,7 @@ openssl pkcs12 -export -legacy -inkey dist.key -in distribution.pem -out dist.p1
 - https://baturinigor.github.io/Habits/support.html (Support URL, обязателен)
 - https://baturinigor.github.io/Habits/privacy.html (Privacy Policy URL, обязателен; эта же ссылка уже зашита в приложение)
 
-Почта поддержки на страницах и в приложении: `zdrgvretrsyhtrse@mail.ru`. Если хочешь более понятный адрес (его увидят пользователи), скажи, поменяю везде.
+Почта поддержки на страницах и в приложении: `dawnwell.app+zenhab@gmail.com`.
 
 ## Шаг 8. Карточка приложения в App Store Connect
 
