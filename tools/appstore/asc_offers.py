@@ -7,7 +7,9 @@
 - promo  — promotional offer `newyear2027`: PAY_UP_FRONT, ONE_YEAR, цена ≈ −50%. Приложение только
            читает его цену (Habits/Features/NewYearOffer.swift, priceOfferID);
 - code   — offer code `NEWYEAR2027` с теми же ценами, для new/existing/expired, custom code
-           `NEWYEAR2027` до 10.01.2027.
+           `NEWYEAR2027` до 11.01.2027 (истекает в 00:00 PT 11.01, то есть 10.01 работает весь день).
+           Дату у custom code менять нельзя (PATCH принимает только `active`), поэтому при другой дате
+           создаётся новая партия с той же строкой, а старая активная партия деактивируется.
 
 Цена со скидкой в каждой территории — ближайшая price point не выше половины текущей цены yearly.
 Повторный запуск ничего не дублирует: то, что уже заведено, пропускается.
@@ -38,7 +40,7 @@ PROMO = {"offerCode": "newyear2027", "name": "New Year 2027 price",
 CODE = {"name": "NEWYEAR2027", "customerEligibilities": ["NEW", "EXISTING", "EXPIRED"],
         "offerEligibility": "STACK_WITH_INTRO_OFFERS",
         "offerMode": "PAY_UP_FRONT", "duration": "ONE_YEAR", "numberOfPeriods": 1}
-CUSTOM_CODE = {"customCode": "NEWYEAR2027", "numberOfCodes": 10000, "expirationDate": "2027-01-10"}
+CUSTOM_CODE = {"customCode": "NEWYEAR2027", "numberOfCodes": 10000, "expirationDate": "2027-01-11"}
 DISCOUNT = Decimal("0.5")
 KEY_TERRITORIES = ("USA", "RUS", "DEU", "FRA", "GBR", "JPN", "IND", "BRA")
 
@@ -116,9 +118,10 @@ def plan(territories, yearly_prices, points_by_territory, existing):
     "custom": {offer_code_id: [custom codes]}}. points_by_territory: {терр: [(id, price)]} или None,
     если цены точек не загружались (тогда цены в плане не считаются).
     Возвращает dict шагов: intro=[терр], intro_conflicts=[терр], promo/code=None|{терр: (id, цена)},
-    custom=None|offer_code_id|"new", skipped=[терр без цены], warnings=[...]."""
+    custom=None|offer_code_id|"new", deactivate=[ID активных custom codes с другой датой],
+    skipped=[терр без цены], warnings=[...]."""
     result = {"intro": [], "intro_conflicts": [], "promo": None, "code": None, "custom": None,
-              "skipped": [], "warnings": []}
+              "deactivate": [], "skipped": [], "warnings": []}
     for t in sorted(territories):
         attrs = existing["intro"].get(t)
         if attrs is None:
@@ -151,9 +154,18 @@ def plan(territories, yearly_prices, points_by_territory, existing):
         code_id = codes[0]["id"]
         customs = [c for c in existing["custom"].get(code_id, [])
                    if (c.get("attributes") or {}).get("customCode") == CUSTOM_CODE["customCode"]]
-        if not customs:
+        active = [c for c in customs if (c.get("attributes") or {}).get("active") is not False]
+        current = [c for c in active if expiration(c) == CUSTOM_CODE["expirationDate"]]
+        if not current:
             result["custom"] = code_id
+        result["deactivate"] = [c["id"] for c in active if expiration(c) != CUSTOM_CODE["expirationDate"]]
     return result
+
+
+def expiration(custom_code):
+    """Дата истечения custom code (YYYY-MM-DD) или None, если без срока."""
+    value = (custom_code.get("attributes") or {}).get("expirationDate")
+    return value[:10] if value else None
 
 
 def offer_payload(kind, subscription_id, prices):
@@ -178,6 +190,11 @@ def intro_payload(subscription_id, territory):
     return {"data": {"type": "subscriptionIntroductoryOffers", "attributes": dict(INTRO), "relationships": {
         "subscription": {"data": {"type": "subscriptions", "id": subscription_id}},
         "territory": {"data": {"type": "territories", "id": territory}}}}}
+
+
+def deactivate_payload(custom_code_id):
+    return {"data": {"type": "subscriptionOfferCodeCustomCodes", "id": custom_code_id,
+                     "attributes": {"active": False}}}
 
 
 def custom_code_payload(offer_code_id):
@@ -328,7 +345,7 @@ def main():
     for o in existing["codes"]:
         a = o["attributes"]
         print(f"  есть offer code {o['id']}: {a.get('name')}, active={a.get('active')}, "
-              f"custom: {[c['attributes'].get('customCode') for c in existing['custom'][o['id']]]}")
+              f"custom: {[(c['id'], c['attributes'].get('customCode'), expiration(c), c['attributes'].get('active')) for c in existing['custom'][o['id']]]}")
 
     pre = plan(territories, yearly_prices, None, existing)
     need_points = (("promo" in steps and pre["promo"] is not None) or ("code" in steps and pre["code"] is not None))
@@ -360,12 +377,15 @@ def main():
             print(f"    {t}: {yearly_prices[t][1]} -> {prices[t][1]} {currency.get(t, '')}")
     if "code" in steps:
         if todo["custom"] is None:
-            print(f"  custom code {CUSTOM_CODE['customCode']}: уже есть")
+            print(f"  custom code {CUSTOM_CODE['customCode']} до {CUSTOM_CODE['expirationDate']}: уже есть")
         else:
             print(f"  custom code {CUSTOM_CODE['customCode']}: создать ({CUSTOM_CODE['numberOfCodes']} погашений, "
                   f"до {CUSTOM_CODE['expirationDate']})")
+        for cid in todo["deactivate"]:
+            print(f"  custom code {cid}: деактивировать (другая дата истечения)")
     nothing = (("intro" not in steps or not todo["intro"]) and ("promo" not in steps or todo["promo"] is None)
-               and ("code" not in steps or (todo["code"] is None and todo["custom"] is None)))
+               and ("code" not in steps or (todo["code"] is None and todo["custom"] is None
+                                         and not todo["deactivate"])))
     if nothing:
         print("ИТОГ: план пустой, всё уже заведено")
     if args.dry_run or nothing:
@@ -402,11 +422,41 @@ def main():
             if r:
                 code_id = r["data"]["id"]
                 print(f"  ✓ offer code {code_id} ({CODE['name']})")
+        deactivated = set()
+
+        def deactivate():
+            for cid in todo["deactivate"]:
+                if cid not in deactivated and attempt(
+                        f"deactivate {cid}", lambda cid=cid: client.call(
+                            "PATCH", f"/subscriptionOfferCodeCustomCodes/{cid}",
+                            json=deactivate_payload(cid))) is not None:
+                    deactivated.add(cid)
+                    print(f"  ✓ custom code {cid} деактивирован")
+
+        def create_custom():
+            return client.call("POST", "/subscriptionOfferCodeCustomCodes", json=custom_code_payload(code_id))
+
+        created = not code_id
         if code_id:
-            r = attempt("custom code", lambda: client.call("POST", "/subscriptionOfferCodeCustomCodes",
-                                                           json=custom_code_payload(code_id)))
+            # Сначала новая партия: так код не пропадает ни на минуту. Если Apple не даёт завести
+            # ту же строку рядом с активной партией (409), деактивируем старую и пробуем ещё раз.
+            try:
+                r = create_custom()
+            except ApiError as e:
+                r = None
+                if e.status == 409 and todo["deactivate"]:
+                    print(f"  custom code: {e}; деактивирую старую партию и повторяю")
+                    deactivate()
+                    r = attempt("custom code", create_custom)
+                else:
+                    errors.append(f"custom code: {e}")
+                    print(f"  ✗ custom code: {e}")
             if r:
-                print(f"  ✓ custom code {r['data']['id']} ({CUSTOM_CODE['customCode']})")
+                created = True
+                print(f"  ✓ custom code {r['data']['id']} ({CUSTOM_CODE['customCode']}, "
+                      f"до {CUSTOM_CODE['expirationDate']})")
+        if created:
+            deactivate()
     if errors:
         for e in errors:
             print(f"::error::{e}")
