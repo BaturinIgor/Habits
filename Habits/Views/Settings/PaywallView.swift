@@ -27,14 +27,15 @@ struct PaywallView: View {
     /// Функция, ради которой открыли экран: её показываем первой и выделяем.
     let highlight: ProFeature?
 
-    /// Откуда открыли экран (аналитика). Без явного значения: функция → `.feature`, иначе `.settings`.
+    /// Откуда открыли экран (аналитика): уходит в paywall_view и purchase_*.
     let source: PaywallSource
 
     @State private var trialEligible: Set<String> = []
 
-    init(highlight: ProFeature? = nil, source: PaywallSource? = nil) {
+    /// source обязателен: так у каждого показа в аналитике есть источник (KAN-123).
+    init(highlight: ProFeature? = nil, source: PaywallSource) {
         self.highlight = highlight
-        self.source = source ?? (highlight == nil ? .settings : .feature)
+        self.source = source
     }
 
     private var features: [ProFeature] {
@@ -86,7 +87,7 @@ struct PaywallView: View {
             }
             .background(AppBackground())
             .analyticsScreen(.paywall)
-            .onAppear { Analytics.shared.send(.paywallShown(source: analyticsSource)) }
+            .onAppear { Analytics.shared.send(.paywallShown(source: source, feature: highlight)) }
             .task {
                 await shop.loadProducts()
                 await loadTrialEligibility()
@@ -115,9 +116,6 @@ struct PaywallView: View {
 }
 
 extension PaywallView {
-    /// Откуда открыли экран Pro: функция, ради которой его показали, или раздел настроек.
-    var analyticsSource: String { highlight?.rawValue ?? "settings" }
-
     @ViewBuilder
     var purchaseSection: some View {
         #if SIDELOAD
@@ -139,7 +137,7 @@ extension PaywallView {
             Button {
                 guard let product = shop.products.first(where: { $0.id == selectedID }) else { return }
                 Task {
-                    if await shop.purchase(product, source: analyticsSource) { dismiss() }
+                    if await shop.purchase(product, source: source) { dismiss() }
                 }
             } label: {
                 Group {

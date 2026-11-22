@@ -1,20 +1,24 @@
 import FirebaseAnalytics
 import FirebaseCore
 import Foundation
+import StoreKit
 import SwiftUI
 import UIKit
 
 /// Анонимная статистика через Google Analytics for Firebase.
 ///
 /// - Экраны уходят как `screen_view`, из них Firebase сам считает время на экранах, сессии и переходы.
-/// - Каждое действие, нажатие и свайп уходит своим событием (`habit_check`, `gesture` и т. д.):
-///   у Firebase нет лимита на число событий, а отправляет он их пачками сам.
+/// - Каждое действие уходит своим событием (`habit_check` и т. д.): у Firebase нет лимита на число событий,
+///   а отправляет он их пачками сам. Нажатия и свайпы только считаются и уходят одним событием `gestures`
+///   за заход в приложение (KAN-167): по событию на нажатие забивало топ событий.
+/// - user property `build_type` (debug / testflight / appstore): в GA4 отчёты фильтруются по appstore.
 /// - Раз в день уходит `daily_state`: числа и флаги о состоянии приложения.
 ///
 /// Личные данные не отправляются никогда: ни названий привычек, ни заметок, ни текста настроения.
 /// Все имена событий и параметров берутся только из перечислений в AnalyticsCatalog.swift.
 /// IDFA не собирается (AdSupport не подключён, окна ATT нет), IDFV и рекламные сигналы выключены в Info.plist.
-/// Без GoogleService-Info.plist (сборка для SideStore, локальная сборка) и в автотестах ничего не отправляется.
+/// Без GoogleService-Info.plist (сборка для SideStore, локальная сборка), в автотестах, в Debug и на симуляторе
+/// ничего не отправляется.
 @MainActor
 final class Analytics {
     static let shared = Analytics()
@@ -35,26 +39,72 @@ final class Analytics {
     /// daily_state уже считается в фоне: не запускаем второй расчёт при быстрых повторных активациях.
     private var stateInFlight = false
 
+    /// Нажатия и свайпы с последнего входа в приложение: уходят одним событием `gestures` при уходе из него.
+    private var gestureCounts: [AnalyticsGestures.Kind: Int] = [:]
+
+    /// Шаги онбординга, уже отправленные за этот запуск: листание назад и вперёд не дублирует шаг.
+    private var sentOnboardingSteps = Set<Int>()
+
     private enum Key {
         static let stateDay = "analytics.stateDay"
         static let installSent = "analytics.installSent"
         /// Первый запуск версии со статистикой (1.6+), а не установка: у обновившихся это день обновления.
         static let firstSeen = "analytics.firstLaunch"
+        /// Событие first_check уже ушло (или у пользователя были отметки до 1.7, и первой оно не было бы).
+        static let firstCheckDone = "analytics.firstCheckDone"
     }
 
     private init() {}
 
-    /// Firebase настроен (есть GoogleService-Info.plist), это не автотест и не отладочная сборка.
-    /// В отладочной сборке статистику можно включить аргументом запуска -AnalyticsDebug (вместе с -FIRDebugEnabled
-    /// события видны в Firebase DebugView).
+    /// Firebase настроен (есть GoogleService-Info.plist), это не автотест, не отладочная сборка и не симулятор.
+    /// В отладочной сборке и на симуляторе статистику можно включить аргументом запуска -AnalyticsDebug
+    /// (вместе с -FIRDebugEnabled события видны в Firebase DebugView).
     static var isAvailable: Bool {
         guard !TestMode.isUITest, !isRunningTests,
               Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil else { return false }
+        return sendsFrom(isDebug: isDebugBuild, isSimulator: isSimulator,
+                         forced: ProcessInfo.processInfo.arguments.contains("-AnalyticsDebug"))
+    }
+
+    /// Отправлять ли из этой сборки: свои Debug-сборки и симулятор (KAN-167) только по явному -AnalyticsDebug.
+    nonisolated static func sendsFrom(isDebug: Bool, isSimulator: Bool, forced: Bool) -> Bool {
+        forced || (!isDebug && !isSimulator)
+    }
+
+    nonisolated static var isDebugBuild: Bool {
         #if DEBUG
-        return ProcessInfo.processInfo.arguments.contains("-AnalyticsDebug")
+        true
         #else
-        return true
+        false
         #endif
+    }
+
+    nonisolated static var isSimulator: Bool {
+        #if targetEnvironment(simulator)
+        true
+        #else
+        false
+        #endif
+    }
+
+    /// Тип сборки для user property `build_type`: по нему в GA4 отсекаются свои устройства.
+    enum BuildType: String {
+        case debug, testflight, appstore
+
+        /// Debug и симулятор - debug; Release из песочницы App Store (TestFlight, Xcode) - testflight.
+        nonisolated static func make(isDebug: Bool, isSimulator: Bool, isSandbox: Bool) -> BuildType {
+            if isDebug || isSimulator { return .debug }
+            return isSandbox ? .testflight : .appstore
+        }
+    }
+
+    /// Песочница App Store: TestFlight или установка из Xcode. AppTransaction (iOS 16+) не показывает запросов входа.
+    private static func isSandbox() async -> Bool {
+        guard let result = try? await AppTransaction.shared else { return false }
+        switch result {
+        case .verified(let transaction), .unverified(let transaction, _):
+            return transaction.environment != .production
+        }
     }
 
     /// Юнит-тесты запускают приложение как хост: там статистика не нужна даже с GoogleService-Info.plist.
@@ -85,6 +135,12 @@ final class Analytics {
         let enabled = Self.isUserEnabled(defaults)
         FirebaseAnalytics.Analytics.setAnalyticsCollectionEnabled(enabled)
         if enabled { setUserProperties() }
+        // У тех, кто отмечал привычки до 1.7, следующая отметка уже не первая: first_check им не отправляем.
+        if !defaults.bool(forKey: Key.firstCheckDone),
+           HabitStore.shared.data.checkIns.values.contains(where: { $0.status == .done }) {
+            defaults.set(true, forKey: Key.firstCheckDone)
+        }
+        NotificationPlanner.onPermissionResult = { granted in Analytics.shared.notificationPermission(granted: granted) }
     }
 
     /// Свойства пользователя для когорт. resetAnalyticsData() их стирает, поэтому ставим и при повторном включении.
@@ -93,6 +149,10 @@ final class Analytics {
             FirebaseAnalytics.Analytics.setUserProperty(Self.weekKey(first), forName: "first_seen_week")
         }
         FirebaseAnalytics.Analytics.setUserProperty(HabitStore.shared.data.isPro ? "1" : "0", forName: "is_pro")
+        Task {
+            let type = BuildType.make(isDebug: Self.isDebugBuild, isSimulator: Self.isSimulator, isSandbox: await Self.isSandbox())
+            FirebaseAnalytics.Analytics.setUserProperty(type.rawValue, forName: "build_type")
+        }
     }
 
     // MARK: Жизненный цикл
@@ -132,6 +192,21 @@ final class Analytics {
         }
     }
 
+    /// Приложение ушло в фон или его перекрыли: нажатия за этот заход уходят одним событием.
+    func appResignedActive() {
+        guard !gestureCounts.isEmpty else { return }
+        let payload = Self.gesturePayload(gestureCounts)
+        gestureCounts = [:]
+        log("gestures", payload)
+    }
+
+    /// Параметры события gestures: число нажатий и свайпов по видам и всего.
+    nonisolated static func gesturePayload(_ counts: [AnalyticsGestures.Kind: Int]) -> [String: Any] {
+        var payload: [String: Any] = ["total": counts.values.reduce(0, +)]
+        for (kind, count) in counts { payload[kind.rawValue] = count }
+        return payload
+    }
+
     /// Пользователь выключил или включил статистику в настройках.
     func setEnabled(_ enabled: Bool) {
         defaults.set(!enabled, forKey: Self.optOutKey)
@@ -169,9 +244,43 @@ final class Analytics {
         log(action.rawValue, ["screen": currentScreen?.rawValue ?? "Other"])
     }
 
-    /// Нажатие или жест на текущем экране (считает AnalyticsGestures).
+    /// Показан ли экран сейчас (в том числе под листом): например, пейволл или онбординг.
+    func isShowing(_ screen: AnalyticsScreen) -> Bool { screenStack.contains(screen) }
+
+    /// Нажатие или жест (считает AnalyticsGestures). Не отправляется сразу: см. appResignedActive().
     func gesture(_ kind: AnalyticsGestures.Kind) {
-        log("gesture", ["screen": currentScreen?.rawValue ?? "Other", "kind": kind.rawValue])
+        guard isActive else { return }
+        gestureCounts[kind, default: 0] += 1
+    }
+
+    // MARK: Воронка активации (KAN-168)
+
+    /// Показан шаг онбординга, с 1. Вызывать на каждую смену страницы: повтор того же шага не отправляется.
+    func onboardingStep(_ step: Int) {
+        guard sentOnboardingSteps.insert(step).inserted else { return }
+        send(.onboardingStep(step))
+    }
+
+    /// Ответ на системный запрос уведомлений. Ещё и user property `notifications`, чтобы видеть по пользователям.
+    func notificationPermission(granted: Bool) {
+        send(.notificationPermissionResult(granted: granted))
+        guard isActive else { return }
+        FirebaseAnalytics.Analytics.setUserProperty(granted ? "granted" : "denied", forName: "notifications")
+    }
+
+    /// Привычку отметили выполненной. Первая отметка в жизни приложения уходит событием first_check.
+    func habitChecked(now: Date = Date()) {
+        guard let seconds = Self.firstCheckSeconds(defaults, now: now) else { return }
+        send(.firstCheck(secondsSinceFirstOpen: seconds))
+    }
+
+    /// Секунды от первого запуска до первой отметки, если эта отметка первая (и запоминает, что она была).
+    /// -1, если момент первого запуска неизвестен. nil - отметка не первая.
+    nonisolated static func firstCheckSeconds(_ defaults: UserDefaults, now: Date) -> Int? {
+        guard !defaults.bool(forKey: Key.firstCheckDone) else { return nil }
+        defaults.set(true, forKey: Key.firstCheckDone)
+        guard let first = defaults.object(forKey: Key.firstSeen) as? Date else { return -1 }
+        return max(0, Int(now.timeIntervalSince(first)))
     }
 
     /// Редкое важное событие (покупка, пейвол, новая привычка...).

@@ -101,7 +101,7 @@ struct PetView: View {
                         .accessibilityLabel("Sparks")
                 }
             }
-            .sheet(isPresented: $showingPaywall) { PaywallView(highlight: .pets) }
+            .sheet(isPresented: $showingPaywall) { PaywallView(highlight: .pets, source: .pet) }
             .designAlert("petRename", $renaming)
             .alert("Rename", isPresented: $renaming) {
                 TextField("Pet name", text: $renameText)

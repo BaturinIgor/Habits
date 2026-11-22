@@ -56,6 +56,7 @@ struct OnboardingView: View {
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
+            .onChange(of: page, initial: true) { Analytics.shared.onboardingStep(page + 1) }
             .indexViewStyle(.page(backgroundDisplayMode: .always))
 
             VStack(spacing: 10) {

@@ -164,7 +164,7 @@ struct QuitDetailSection: View {
             Text("It happens. Your record and the total stay, and the count of days starts from now.")
         }
         .sheet(isPresented: $showingPaywall) {
-            PaywallView(highlight: .quitMoney)
+            PaywallView(highlight: .quitMoney, source: .feature)
         }
     }
 

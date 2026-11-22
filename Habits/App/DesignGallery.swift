@@ -71,8 +71,8 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         // 1.6, KAN-105: своё имя у каждого вида питомца.
         case .petSwitched, .petNaming: PetView()
         case .petSpecies: PetView(scrollToSpecies: true)
-        case .paywall: PaywallView()
-        case .paywallFeature: PaywallView(highlight: .health)
+        case .paywall: PaywallView(source: .settings)
+        case .paywallFeature: PaywallView(highlight: .health, source: .feature)
         case .feedback: FeedbackView()
         case .voice: VoiceHabitSheet { _ in }
         case .note: NoteEditorView(target: NoteTarget(habitID: UITestSupport.id(1), day: DayKey.make(Date())))

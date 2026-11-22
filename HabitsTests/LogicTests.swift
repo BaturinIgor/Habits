@@ -764,10 +764,12 @@ final class LogicTests: XCTestCase {
         let events: [AnalyticsEvent] = [
             .appInstalled(isUpdate: true), .onboardingCompleted(seconds: 5, restoredFromCloud: false),
             .habitCreated(habit, source: .editor), .habitDeleted(ageDays: 3, isQuit: false),
-            .paywallShown(source: "settings"), .purchaseStarted(product: "pro", source: "settings"),
+            .paywallShown(source: .settings, feature: nil), .purchaseStarted(product: "pro", source: .settings),
+            .purchaseCompleted(product: "pro", source: .limit, price: 9.99, currency: "USD"),
             .restoreFinished(found: false), .proChanged(active: true), .petAdopted(species: "cat"),
-            .petStageReached(stage: 1), .achievementUnlocked(id: "first"), .ratingPromptShown,
+            .petStageReached(stage: 1), .achievementUnlocked(id: "first"), .reviewPromptShown(streakDays: 3),
             .familyGroupCreated, .familyGroupJoined, .feedbackSent(channel: "email"), .backupRestored,
+            .onboardingStep(2), .notificationPermissionResult(granted: true), .firstCheck(secondsSinceFirstOpen: 60),
         ]
         var payloads = [Analytics.firebaseParameters(AnalyticsSnapshot.make(data))]
         payloads += events.map { Analytics.firebaseParameters($0.payload) }
@@ -858,6 +860,109 @@ final class LogicTests: XCTestCase {
         Analytics.shared.appBecameActive()
     }
 
+    /// Имена новых событий 1.7 такие, как их ждут воронка в GA4 и еженедельный отчёт (KAN-123, KAN-168, KAN-171).
+    func testAnalyticsFunnelEventNames() {
+        func name(_ event: AnalyticsEvent) -> String { Analytics.firebaseName(event.type) }
+        XCTAssertEqual(name(.onboardingStep(1)), "onboarding_step")
+        XCTAssertEqual(name(.notificationPermissionResult(granted: true)), "notification_permission_result")
+        XCTAssertEqual(name(.firstCheck(secondsSinceFirstOpen: 1)), "first_check")
+        XCTAssertEqual(name(.paywallShown(source: .settings, feature: nil)), "paywall_view")
+        XCTAssertEqual(name(.purchaseCompleted(product: "pro", source: .settings)), "purchase")
+        XCTAssertEqual(name(.reviewPromptShown(streakDays: 3)), "review_prompt_shown")
+
+        let view = Analytics.firebaseParameters(AnalyticsEvent.paywallShown(source: .newYearOffer, feature: .health).payload)
+        XCTAssertEqual(view["paywall_source"] as? String, "new_year_offer")
+        XCTAssertEqual(view["paywall_feature"] as? String, "health")
+        let event = AnalyticsEvent.purchaseCompleted(product: "com.example.pro.yearly", source: .limit, price: 9.99, currency: "USD")
+        let purchase = Analytics.firebaseParameters(event.payload)
+        XCTAssertEqual(purchase["paywall_source"] as? String, "limit")
+        XCTAssertEqual(purchase["purchase_product_id"] as? String, "com.example.pro.yearly")
+        XCTAssertEqual(purchase["currency"] as? String, "USD")
+        XCTAssertEqual(event.floatValue, 9.99)
+        XCTAssertEqual(Analytics.firebaseParameters(AnalyticsEvent.onboardingStep(3).payload)["step"] as? Int, 3)
+        XCTAssertEqual(Analytics.firebaseParameters(AnalyticsEvent.notificationPermissionResult(granted: false).payload)["result"] as? String, "denied")
+        XCTAssertEqual(AnalyticsEvent.firstCheck(secondsSinceFirstOpen: 42).floatValue, 42)
+        XCTAssertNil(AnalyticsEvent.firstCheck(secondsSinceFirstOpen: -1).floatValue)
+    }
+
+    /// first_check уходит один раз: секунды от первого запуска, -1 без него, повторно - nil.
+    func testFirstCheckSecondsOnlyOnce() {
+        let defaults = UserDefaults(suiteName: "test.firstCheck.\(UUID().uuidString)")!
+        let start = Date(timeIntervalSince1970: 1_000_000)
+        defaults.set(start, forKey: "analytics.firstLaunch")
+        XCTAssertEqual(Analytics.firstCheckSeconds(defaults, now: start.addingTimeInterval(90)), 90)
+        XCTAssertNil(Analytics.firstCheckSeconds(defaults, now: start.addingTimeInterval(200)))
+        let fresh = UserDefaults(suiteName: "test.firstCheck.\(UUID().uuidString)")!
+        XCTAssertEqual(Analytics.firstCheckSeconds(fresh, now: start), -1)
+        XCTAssertNil(Analytics.firstCheckSeconds(fresh, now: start))
+    }
+
+    /// Свои сборки не шлют статистику (KAN-167), build_type различает debug / testflight / appstore.
+    func testAnalyticsBuildType() {
+        XCTAssertFalse(Analytics.sendsFrom(isDebug: true, isSimulator: false, forced: false))
+        XCTAssertFalse(Analytics.sendsFrom(isDebug: false, isSimulator: true, forced: false))
+        XCTAssertTrue(Analytics.sendsFrom(isDebug: true, isSimulator: true, forced: true))
+        XCTAssertTrue(Analytics.sendsFrom(isDebug: false, isSimulator: false, forced: false))
+        XCTAssertEqual(Analytics.BuildType.make(isDebug: true, isSimulator: false, isSandbox: false), .debug)
+        XCTAssertEqual(Analytics.BuildType.make(isDebug: false, isSimulator: true, isSandbox: true), .debug)
+        XCTAssertEqual(Analytics.BuildType.make(isDebug: false, isSimulator: false, isSandbox: true), .testflight)
+        XCTAssertEqual(Analytics.BuildType.make(isDebug: false, isSimulator: false, isSandbox: false), .appstore)
+    }
+
+    /// Нажатия за заход сводятся в одно событие: по видам и всего.
+    func testGesturePayloadAggregates() {
+        let payload = Analytics.firebaseParameters(Analytics.gesturePayload([.tap: 5, .swipeLeft: 2]))
+        XCTAssertEqual(payload["total"] as? Int, 7)
+        XCTAssertEqual(payload["tap"] as? Int, 5)
+        XCTAssertEqual(payload["swipe_left"] as? Int, 2)
+        XCTAssertNil(payload["long_press"])
+    }
+
+    /// Шаги онбординга: повтор того же шага не отправляется (в тестах Firebase нет, проверяем, что не падает).
+    @MainActor
+    func testOnboardingStepAndPaywallVisibility() {
+        Analytics.shared.onboardingStep(1)
+        Analytics.shared.onboardingStep(1)
+        Analytics.shared.notificationPermission(granted: true)
+        XCTAssertFalse(Analytics.shared.isShowing(.paywall))
+        Analytics.shared.screenAppeared(.paywall)
+        XCTAssertTrue(Analytics.shared.isShowing(.paywall))
+        Analytics.shared.screenDisappeared(.paywall)
+        XCTAssertFalse(Analytics.shared.isShowing(.paywall))
+    }
+
+    // MARK: Запрос оценки (KAN-171)
+
+    /// Серия считается по дням с хотя бы одной выполненной привычкой, сегодня обязательно.
+    func testRatingPromptStreak() {
+        var data = AppData()
+        let habit = dailyHabit()
+        let other = dailyHabit()
+        data.habits = [habit, other]
+        XCTAssertEqual(RatingPrompt.checkStreak(data, today: today), 0)
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(day(-1)))
+        data.setStatus(.done, habitID: other.id, day: DayKey.make(day(-2)))
+        XCTAssertEqual(RatingPrompt.checkStreak(data, today: today), 0, "без отметки сегодня не просим")
+        data.setStatus(.done, habitID: habit.id, day: DayKey.make(today))
+        XCTAssertEqual(RatingPrompt.checkStreak(data, today: today), 3)
+        data.setStatus(.skipped, habitID: habit.id, day: DayKey.make(day(-1)))
+        XCTAssertEqual(RatingPrompt.checkStreak(data, today: today), 1, "пропуск не считается отметкой")
+    }
+
+    /// Просим только после 3 дней подряд, после онбординга, не поверх пейволла и раз на версию.
+    func testRatingPromptCondition() {
+        func ask(streak: Int = 3, onboardingDone: Bool = true, blocking: Bool = false, asked: String? = nil) -> Bool {
+            RatingPrompt.shouldAsk(streak: streak, onboardingDone: onboardingDone, blockingScreenShown: blocking,
+                                   askedVersion: asked, version: "1.7")
+        }
+        XCTAssertTrue(ask())
+        XCTAssertTrue(ask(asked: "1.6"), "в новой версии можно снова")
+        XCTAssertFalse(ask(streak: 2))
+        XCTAssertFalse(ask(onboardingDone: false))
+        XCTAssertFalse(ask(blocking: true))
+        XCTAssertFalse(ask(asked: "1.7"))
+    }
+
     /// Неизвестные типы значений не превращаются в текст.
     func testFirebaseParametersSkipUnknownTypes() {
         let params = Analytics.firebaseParameters(["Some.date": Date(), "Some.text": "ok", "Some.count": 2])
@@ -887,11 +992,14 @@ final class LogicTests: XCTestCase {
         let events: [AnalyticsEvent] = [
             .appInstalled(isUpdate: true), .onboardingCompleted(seconds: 5, restoredFromCloud: false),
             .habitCreated(habit, source: .catalog), .habitDeleted(ageDays: 3, isQuit: false),
-            .paywallShown(source: "settings"), .purchaseStarted(product: "pro", source: "settings"),
-            .purchaseCompleted(product: "pro", source: "settings"), .purchaseCancelled(product: "pro", source: "settings"),
-            .purchaseFailed(product: "pro", source: "settings"), .restoreFinished(found: false), .proChanged(active: true),
+            .paywallShown(source: .newYearOffer, feature: .health), .purchaseStarted(product: "pro", source: .settings),
+            .purchaseCompleted(product: "pro", source: .settings, price: 9.99, currency: "USD"),
+            .purchaseCancelled(product: "pro", source: .settings),
+            .purchaseFailed(product: "pro", source: .settings), .restoreFinished(found: false), .proChanged(active: true),
             .petAdopted(species: "cat"), .petStageReached(stage: 1), .achievementUnlocked(id: "first"),
-            .ratingPromptShown, .familyGroupCreated, .familyGroupJoined, .feedbackSent(channel: "email"), .backupRestored,
+            .reviewPromptShown(streakDays: 3), .familyGroupCreated, .familyGroupJoined, .feedbackSent(channel: "email"),
+            .backupRestored, .onboardingStep(1), .notificationPermissionResult(granted: false),
+            .firstCheck(secondsSinceFirstOpen: 5),
         ]
         for event in events {
             check(event.type)
@@ -899,6 +1007,10 @@ final class LogicTests: XCTestCase {
             // + value и screen, которые добавляет Analytics.send.
             XCTAssertLessThanOrEqual(event.payload.count + 2, 25, event.type)
         }
+        // Агрегат нажатий за заход в приложение.
+        check("gestures")
+        Analytics.gesturePayload([.tap: 1, .longPress: 1, .swipeLeft: 1, .swipeRight: 1, .swipeUp: 1, .swipeDown: 1])
+            .keys.forEach { check($0) }
         let snapshot = AnalyticsSnapshot.make(AppData())
         snapshot.keys.forEach { check($0) }
         // + User.daysSinceFirstSeen, который добавляется в appBecameActive.

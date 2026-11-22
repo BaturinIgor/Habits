@@ -102,16 +102,23 @@ enum NotificationPlanner {
         await UNUserNotificationCenter.current().notificationSettings().authorizationStatus
     }
 
+    /// Ответ пользователя на системный запрос (только когда запрос правда показывали): для аналитики в приложении.
+    static var onPermissionResult: (@MainActor (Bool) -> Void)?
+
     @discardableResult
     static func requestAuthorization() async -> Bool {
         // В автотестах системный запрос закрыл бы экран.
         if TestMode.isUITest { return false }
+        let asked = await authorizationStatus() == .notDetermined
+        let granted: Bool
         do {
-            return try await UNUserNotificationCenter.current()
+            granted = try await UNUserNotificationCenter.current()
                 .requestAuthorization(options: [.alert, .sound, .badge])
         } catch {
-            return false
+            granted = false
         }
+        if asked { onPermissionResult?(granted) }
+        return granted
     }
 
     static func requestAuthorizationIfNeeded() async {

@@ -73,7 +73,7 @@ final class ProStore {
 
     /// Возвращает true, если покупка прошла.
     @discardableResult
-    func purchase(_ product: Product, source: String = "unknown") async -> Bool {
+    func purchase(_ product: Product, source: PaywallSource) async -> Bool {
         isPurchasing = true
         defer { isPurchasing = false }
         let analytics = Analytics.shared
@@ -88,7 +88,9 @@ final class ProStore {
                 }
                 await transaction.finish()
                 await refreshEntitlements()
-                analytics.send(.purchaseCompleted(product: product.id, source: source))
+                analytics.send(.purchaseCompleted(product: product.id, source: source,
+                                                  price: NSDecimalNumber(decimal: product.price).doubleValue,
+                                                  currency: product.priceFormatStyle.currencyCode))
                 return true
             case .pending, .userCancelled:
                 analytics.send(.purchaseCancelled(product: product.id, source: source))

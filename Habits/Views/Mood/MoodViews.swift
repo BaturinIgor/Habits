@@ -247,7 +247,7 @@ struct MoodJournalView: View {
                 MoodEntryEditor(dayKey: day.key)
             }
             .sheet(isPresented: $showingPaywall) {
-                PaywallView(highlight: .mood)
+                PaywallView(highlight: .mood, source: .mood)
             }
         }
     }

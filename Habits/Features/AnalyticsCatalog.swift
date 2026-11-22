@@ -126,17 +126,26 @@ enum AnalyticsEvent {
     case onboardingCompleted(seconds: Int, restoredFromCloud: Bool)
     case habitCreated(Habit, source: HabitSource)
     case habitDeleted(ageDays: Int, isQuit: Bool)
-    case paywallShown(source: String)
-    case purchaseStarted(product: String, source: String)
-    case purchaseCompleted(product: String, source: String)
-    case purchaseCancelled(product: String, source: String)
-    case purchaseFailed(product: String, source: String)
+    /// Шаг онбординга, с 1 (KAN-168).
+    case onboardingStep(Int)
+    /// Ответ на системный запрос уведомлений (KAN-168).
+    case notificationPermissionResult(granted: Bool)
+    /// Первая отметка в приложении: секунды от первого запуска, -1 если неизвестно (KAN-168).
+    case firstCheck(secondsSinceFirstOpen: Int)
+    /// Показ пейволла: откуда открыли и ради какой функции (KAN-123).
+    case paywallShown(source: PaywallSource, feature: ProFeature?)
+    case purchaseStarted(product: String, source: PaywallSource)
+    /// Покупка прошла: стандартное событие GA4 `purchase` с ценой и валютой (доход в отчётах GA4).
+    case purchaseCompleted(product: String, source: PaywallSource, price: Double? = nil, currency: String? = nil)
+    case purchaseCancelled(product: String, source: PaywallSource)
+    case purchaseFailed(product: String, source: PaywallSource)
     case restoreFinished(found: Bool)
     case proChanged(active: Bool)
     case petAdopted(species: String)
     case petStageReached(stage: Int)
     case achievementUnlocked(id: String)
-    case ratingPromptShown
+    /// Показан системный запрос оценки (KAN-171): серия дней подряд с отметкой.
+    case reviewPromptShown(streakDays: Int)
     case familyGroupCreated
     case familyGroupJoined
     case feedbackSent(channel: String)
@@ -148,9 +157,12 @@ enum AnalyticsEvent {
         case .onboardingCompleted: "Onboarding.completed"
         case .habitCreated: "Habit.created"
         case .habitDeleted: "Habit.deleted"
-        case .paywallShown: "Paywall.shown"
+        case .onboardingStep: "Onboarding.step"
+        case .notificationPermissionResult: "Notification.permissionResult"
+        case .firstCheck: "First.check"
+        case .paywallShown: "Paywall.view"
         case .purchaseStarted: "Purchase.started"
-        case .purchaseCompleted: "Purchase.completed"
+        case .purchaseCompleted: "Purchase"
         case .purchaseCancelled: "Purchase.cancelled"
         case .purchaseFailed: "Purchase.failed"
         case .restoreFinished: "Purchase.restored"
@@ -158,7 +170,7 @@ enum AnalyticsEvent {
         case .petAdopted: "Pet.adopted"
         case .petStageReached: "Pet.stageReached"
         case .achievementUnlocked: "Achievement.unlocked"
-        case .ratingPromptShown: "Rating.promptShown"
+        case .reviewPromptShown: "Review.promptShown"
         case .familyGroupCreated: "Family.groupCreated"
         case .familyGroupJoined: "Family.groupJoined"
         case .feedbackSent: "Feedback.sent"
@@ -170,6 +182,8 @@ enum AnalyticsEvent {
         switch self {
         case .onboardingCompleted(let seconds, _): Double(seconds)
         case .habitDeleted(let age, _): Double(age)
+        case .firstCheck(let seconds): seconds >= 0 ? Double(seconds) : nil
+        case .purchaseCompleted(_, _, let price, _): price
         default: nil
         }
     }
@@ -199,13 +213,22 @@ enum AnalyticsEvent {
             ]
         case .habitDeleted(let age, let isQuit):
             return ["Habit.ageDays": age, "Habit.isQuit": isQuit]
-        case .paywallShown(let source):
-            return ["Paywall.source": source]
+        case .onboardingStep(let step):
+            return ["step": step]
+        case .notificationPermissionResult(let granted):
+            return ["result": granted ? "granted" : "denied"]
+        case .firstCheck(let seconds):
+            return ["secondsSinceFirstOpen": seconds]
+        case .paywallShown(let source, let feature):
+            return ["Paywall.source": source.rawValue, "Paywall.feature": feature?.rawValue ?? "none"]
+        case .purchaseCompleted(let product, let source, _, let currency):
+            var payload: [String: Any] = ["Purchase.productId": product, "Paywall.source": source.rawValue]
+            if let currency { payload["currency"] = currency }
+            return payload
         case .purchaseStarted(let product, let source),
-             .purchaseCompleted(let product, let source),
              .purchaseCancelled(let product, let source),
              .purchaseFailed(let product, let source):
-            return ["Purchase.product": product, "Paywall.source": source]
+            return ["Purchase.productId": product, "Paywall.source": source.rawValue]
         case .restoreFinished(let found):
             return ["Purchase.found": found]
         case .proChanged(let active):
@@ -218,7 +241,9 @@ enum AnalyticsEvent {
             return ["Achievement.id": id]
         case .feedbackSent(let channel):
             return ["Feedback.channel": channel]
-        case .ratingPromptShown, .familyGroupCreated, .familyGroupJoined, .backupRestored:
+        case .reviewPromptShown(let streak):
+            return ["Review.streakDays": streak]
+        case .familyGroupCreated, .familyGroupJoined, .backupRestored:
             return [:]
         }
     }
