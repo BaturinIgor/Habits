@@ -14,10 +14,14 @@ struct PetCard: View {
                     let mood = Pets.mood(pet, data: store.data)
                     PetAvatar(pet: pet, stage: stage, mood: mood, size: 64, reaction: store.petCheers)
                     VStack(alignment: .leading, spacing: 3) {
-                        Text(pet.name).font(.headline)
-                        Text("\(stage.title) · \(mood.title)")
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
+                        // Имя, стадию и настроение VoiceOver уже прочитал в подписи аватара.
+                        Group {
+                            Text(pet.name).font(.headline)
+                            Text("\(stage.title) · \(mood.title)")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                        .accessibilityHidden(true)
                         if let next = stage.next {
                             ProgressView(value: Double(min(max(0, xp - stage.threshold), next.threshold - stage.threshold)),
                                          total: Double(next.threshold - stage.threshold))
@@ -101,7 +105,7 @@ struct PetView: View {
                         .accessibilityLabel("Sparks")
                 }
             }
-            .sheet(isPresented: $showingPaywall) { PaywallView(highlight: .pets) }
+            .sheet(isPresented: $showingPaywall) { PaywallView(highlight: .pets, source: .pet) }
             .designAlert("petRename", $renaming)
             .alert("Rename", isPresented: $renaming) {
                 TextField("Pet name", text: $renameText)

@@ -120,7 +120,7 @@ struct ProfileView: View {
                     Button("Done") { dismiss() }.fontWeight(.semibold)
                 }
             }
-            .sheet(isPresented: $showingPaywall) { PaywallView(highlight: .looks) }
+            .sheet(isPresented: $showingPaywall) { PaywallView(highlight: .looks, source: .feature) }
             .sheet(isPresented: $showingSparks) { SparksView() }
             .sheet(isPresented: $showingPet) { PetView() }
             .sparkPurchaseAlert($purchase)

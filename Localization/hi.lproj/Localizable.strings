@@ -100,6 +100,7 @@
 "Best streak" = "सबसे लंबी लगातार";
 "Best, days" = "सबसे अच्छा, दिन";
 "Better than nothing" = "कुछ न करने से बेहतर";
+"Blue" = "नीला";
 "Break bad habits" = "बुरी आदतें छोड़ें";
 "Breathing exercise" = "साँस का अभ्यास";
 "Bring back %@ in a row for sparks." = "स्पार्क देकर लगातार %@ वापस पाएँ।";
@@ -162,6 +163,7 @@
 "Copy address" = "पता कॉपी करें";
 "Copy message" = "संदेश कॉपी करें";
 "Copy message and address" = "संदेश और पता कॉपी करें";
+"Coral" = "मूंगा";
 "Couldn't create an invitation link. Try again later." = "आमंत्रण लिंक नहीं बन सका। बाद में फिर कोशिश करें।";
 "Couldn't read the file" = "फ़ाइल पढ़ी नहीं जा सकी";
 "Couldn't send the message" = "संदेश भेजा नहीं जा सका";
@@ -284,6 +286,7 @@
 "Goal" = "लक्ष्य";
 "Gold" = "सुनहरा";
 "Good" = "अच्छा";
+"Graphite" = "ग्रेफ़ाइट";
 "Great" = "बहुत अच्छा";
 "Great job, keep it up" = "बहुत बढ़िया, ऐसे ही जारी रखें";
 "Group" = "समूह";
@@ -335,6 +338,7 @@
 "Import data" = "डेटा आयात करें";
 "In progress: %lld" = "सीख रहे हैं: %lld";
 "Include technical info" = "तकनीकी जानकारी जोड़ें";
+"Indigo" = "जामुनी";
 "Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept." = "रोज़ टिक करने की जगह दिखेगा कि आप कितने दिन से इसके बिना हैं। चूक होने पर गिनती फिर शुरू होगी, पर आपका रिकॉर्ड रहेगा।";
 "Intermediate" = "मध्यम";
 "Interval" = "अंतराल";
@@ -406,6 +410,7 @@
 "Mindfulness" = "सजगता";
 "Minimum" = "न्यूनतम";
 "Minimum version, for example 5 squats" = "न्यूनतम रूप, जैसे 5 स्क्वॉट";
+"Mint" = "पुदीना";
 "Minus one" = "एक कम";
 "Minutes" = "मिनट";
 "Missed" = "छूटा";
@@ -532,6 +537,7 @@
 "Pet name" = "पालतू का नाम";
 "Phoenix" = "फ़ीनिक्स";
 "Pick a template or create your own." = "टेम्पलेट चुनें या अपनी बनाएँ।";
+"Pink" = "गुलाबी";
 "Plan the day" = "दिन की योजना बनाएँ";
 "Practice an instrument" = "वाद्य का अभ्यास";
 "Privacy Policy" = "गोपनीयता नीति";
@@ -545,12 +551,14 @@
 "Profile section" = "प्रोफ़ाइल अनुभाग";
 "Purchase failed" = "खरीद विफल रही";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "खरीदारी केवल App Store संस्करण में काम करती है। इस बिल्ड में सेटिंग्स में परीक्षण के लिए Pro चालू किया जा सकता है।";
+"Purple" = "बैंगनी";
 "Push-ups" = "पुश-अप";
 "Put money aside" = "पैसे बचाएँ";
 "Put the habit in a group to share it with your family." = "परिवार के साथ साझा करने के लिए आदत को किसी समूह में रखें।";
 "Quit a bad habit" = "बुरी आदत छोड़ें";
 "Quitting" = "छोड़ रहा हूँ";
 "Quitting: %@" = "छोड़े हुए: %@";
+"Raspberry" = "रसभरी";
 "Rate the app" = "ऐप को रेटिंग दें";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "“आज” के नीचे एक टैप में अपने दिन को रेट करें और कुछ शब्द जोड़ें। Pro के साथ पूरा इतिहास, मासिक चार्ट और मूड बेहतर करने वाली आदतें देखें।";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "दिन में एक बार “आज” स्क्रीन पर मूड रेट करें। कुछ हफ़्तों में दिखेगा कि कौन-सी आदतें इसे बेहतर करती हैं।";
@@ -625,6 +633,7 @@
 "Skin care" = "त्वचा की देखभाल";
 "Skip" = "छोड़ें";
 "Skipped" = "छोड़ा";
+"Sky blue" = "आसमानी";
 "Sleeping" = "सो रहा है";
 "Small steps add up." = "छोटे कदम मिलकर बड़े बनते हैं।";
 "Small steps every day" = "हर दिन छोटे कदम";
@@ -662,6 +671,7 @@
 "Subscribe" = "सदस्यता लें";
 "Subscriptions renew automatically until cancelled. Cancel anytime in Settings, Apple Account, Subscriptions, at least 24 hours before the period ends." = "सदस्यता रद्द होने तक अपने आप नवीनीकृत होती है। अवधि खत्म होने से कम से कम 24 घंटे पहले सेटिंग्स, Apple खाता, सदस्यताएँ में कभी भी रद्द करें।";
 "Suggest an idea" = "सुझाव दें";
+"Sunflower" = "सूरजमुखी";
 "Sunrise club" = "सूर्योदय क्लब";
 "Sunset" = "सूर्यास्त";
 "Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro." = "सूर्यास्त, जंगल, गुलाबी, सुनहरा, आधी रात और हल्का। Pro के साथ सेटिंग्स में चुनें।";
@@ -672,6 +682,7 @@
 "System" = "सिस्टम";
 "Take a break for a trip or illness without losing your streak." = "यात्रा या बीमारी में लगातार गिनती खोए बिना विराम लें।";
 "Take vitamins" = "विटामिन लें";
+"Tangerine" = "नारंगी";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "दिन पर टैप करके पूरा करें। छोड़ने या नोट जोड़ने के लिए दबाकर रखें।";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "पूरा करने के लिए गोले पर टैप करें या दाएँ स्वाइप करें। छोड़ने, नोट या बदलाव के लिए बाएँ स्वाइप करें। क्रम बदलने के लिए दबाकर रखें।";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "टाइमर शुरू करने के लिए गोले पर टैप करें। यह लॉक स्क्रीन पर चलता है और समय पूरा होने पर आदत पूरी कर देता है।";
@@ -728,6 +739,7 @@
 "Try it" = "आज़माएँ";
 "Turn on the lock" = "लॉक चालू करें";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "किसी आदत में “मैं यह आदत छोड़ रहा हूँ” चालू करें और देखें कि आप कितने दिन से इसके बिना हैं, आपका रिकॉर्ड और अगला पड़ाव। Pro में बचाए पैसे भी।";
+"Turquoise" = "फ़िरोज़ी";
 "Turtle" = "कछुआ";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "महीने में दो चूक से लगातार गिनती नहीं टूटेगी, और मुश्किल दिन न्यूनतम रूप भी गिना जाएगा।";
 "Two weeks" = "दो हफ़्ते";

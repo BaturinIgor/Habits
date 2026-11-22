@@ -835,3 +835,15 @@ Starts a countdown with a Live Activity. When time's up, the habit is checked of
 Minutes||Minutos
 The habit timer is part of Pro. Open ZenHab to get Pro.||O timer de hábito faz parte do Pro. Abra o ZenHab para obter o Pro.
 Timer started: %@, %lld min.||Timer iniciado: %@, %lld min.
+Coral||Coral
+Tangerine||Tangerina
+Sunflower||Girassol
+Mint||Menta
+Turquoise||Turquesa
+Sky blue||Azul-céu
+Blue||Azul
+Indigo||Índigo
+Purple||Roxo
+Pink||Rosa
+Raspberry||Framboesa
+Graphite||Grafite

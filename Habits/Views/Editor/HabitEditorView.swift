@@ -234,7 +234,7 @@ struct HabitEditorView: View {
                 if original == nil { nameFocused = true }
             }
             .sheet(item: $paywallFeature) { feature in
-                PaywallView(highlight: feature)
+                PaywallView(highlight: feature, source: feature == .unlimited ? .limit : .feature)
             }
             .sheet(isPresented: $showingVoice) {
                 VoiceHabitSheet { apply($0) }
@@ -828,6 +828,8 @@ struct WeekdayPicker: View {
                             }
                         }
                         .sensoryFeedback(.selection, trigger: isOn)
+                        .accessibilityLabel(Weekdays.full(weekday))
+                        .accessibilityAddTraits(isOn ? [.isButton, .isSelected] : .isButton)
                 }
             }
             HStack(spacing: 8) {
@@ -857,6 +859,7 @@ struct WeekdayPicker: View {
             .onTapGesture {
                 withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) { selection = days }
             }
+            .accessibilityAddTraits(active ? [.isButton, .isSelected] : .isButton)
     }
 }
 
@@ -890,6 +893,9 @@ struct ColorRow: View {
                             withAnimation(.spring(response: 0.3, dampingFraction: 0.65)) { selection = index }
                         }
                         .sensoryFeedback(.selection, trigger: isSelected)
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityLabel(Text(Palette.names[index % Palette.names.count]))
+                        .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
                 }
             }
             .padding(.vertical, 4)

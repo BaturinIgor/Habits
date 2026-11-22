@@ -105,7 +105,7 @@ struct AppIconView: View {
         .navigationTitle("App icon")
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showingPaywall) {
-            PaywallView(highlight: .appIcons)
+            PaywallView(highlight: .appIcons, source: .feature)
         }
     }
 

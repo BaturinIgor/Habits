@@ -521,7 +521,9 @@ struct PetWidgetView: View {
             if family == .systemSmall {
                 VStack(spacing: 4) {
                     HStack {
+                        // Имя VoiceOver читает в подписи аватара.
                         Text(pet.name).font(.caption.weight(.semibold)).lineLimit(1)
+                            .accessibilityHidden(true)
                         Spacer(minLength: 0)
                         SparkBadge(amount: entry.balance, font: .caption2.weight(.bold))
                     }
@@ -534,6 +536,7 @@ struct PetWidgetView: View {
                     VStack(alignment: .leading, spacing: 5) {
                         HStack {
                             Text(pet.name).font(.headline).lineLimit(1)
+                                .accessibilityHidden(true)
                             Spacer(minLength: 0)
                             SparkBadge(amount: entry.balance, font: .caption.weight(.bold))
                         }
@@ -541,6 +544,7 @@ struct PetWidgetView: View {
                             .font(.caption)
                             .foregroundStyle(.secondary)
                             .lineLimit(1)
+                            .accessibilityHidden(true)
                         if let next = entry.stage.next {
                             ProgressView(value: Double(entry.xp - entry.stage.threshold),
                                          total: Double(next.threshold - entry.stage.threshold))

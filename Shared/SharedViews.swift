@@ -18,6 +18,12 @@ enum Palette {
         Color(red: 0.47, green: 0.55, blue: 0.64)  // графит
     ]
 
+    /// Названия цветов для VoiceOver, в том же порядке, что colors.
+    static let names: [LocalizedStringResource] = [
+        "Coral", "Tangerine", "Sunflower", "Mint", "Turquoise", "Sky blue",
+        "Blue", "Indigo", "Purple", "Pink", "Raspberry", "Graphite",
+    ]
+
     static func color(_ index: Int) -> Color {
         let n = colors.count
         return colors[((index % n) + n) % n]

@@ -835,3 +835,15 @@ Starts a countdown with a Live Activity. When time's up, the habit is checked of
 Minutes||Dakika
 The habit timer is part of Pro. Open ZenHab to get Pro.||Alışkanlık zamanlayıcısı Pro'ya dahil. Pro almak için ZenHab'ı aç.
 Timer started: %@, %lld min.||Zamanlayıcı başladı: %@, %lld dk.
+Coral||Mercan
+Tangerine||Mandalina
+Sunflower||Ayçiçeği
+Mint||Nane
+Turquoise||Turkuaz
+Sky blue||Gök mavisi
+Blue||Mavi
+Indigo||Çivit
+Purple||Mor
+Pink||Pembe
+Raspberry||Ahududu
+Graphite||Grafit

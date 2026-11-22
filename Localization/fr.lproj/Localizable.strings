@@ -100,6 +100,7 @@
 "Best streak" = "Meilleure série";
 "Best, days" = "Record, jours";
 "Better than nothing" = "Mieux que rien";
+"Blue" = "Bleu";
 "Break bad habits" = "Arrêter les mauvaises habitudes";
 "Breathing exercise" = "Exercice de respiration";
 "Bring back %@ in a row for sparks." = "Récupère %@ d'affilée contre des étincelles.";
@@ -162,6 +163,7 @@
 "Copy address" = "Copier l'adresse";
 "Copy message" = "Copier le message";
 "Copy message and address" = "Copier le message et l'adresse";
+"Coral" = "Corail";
 "Couldn't create an invitation link. Try again later." = "Impossible de créer le lien d'invitation. Réessaie plus tard.";
 "Couldn't read the file" = "Impossible de lire le fichier";
 "Couldn't send the message" = "Impossible d'envoyer le message";
@@ -284,6 +286,7 @@
 "Goal" = "Objectif";
 "Gold" = "Or";
 "Good" = "Bien";
+"Graphite" = "Graphite";
 "Great" = "Super";
 "Great job, keep it up" = "Bravo, continue comme ça";
 "Group" = "Groupe";
@@ -335,6 +338,7 @@
 "Import data" = "Importer des données";
 "In progress: %lld" = "En cours : %lld";
 "Include technical info" = "Inclure les infos techniques";
+"Indigo" = "Indigo";
 "Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept." = "Au lieu de cocher chaque jour, tu vois depuis combien de jours tu t'en passes. Si tu craques, le compteur repart, mais ton record reste.";
 "Intermediate" = "Intermédiaire";
 "Interval" = "Intervalle";
@@ -406,6 +410,7 @@
 "Mindfulness" = "Pleine conscience";
 "Minimum" = "Minimum";
 "Minimum version, for example 5 squats" = "Version minimale, par exemple 5 squats";
+"Mint" = "Menthe";
 "Minus one" = "Moins un";
 "Minutes" = "Minutes";
 "Missed" = "Manqué";
@@ -532,6 +537,7 @@
 "Pet name" = "Nom du compagnon";
 "Phoenix" = "Phénix";
 "Pick a template or create your own." = "Choisis un modèle ou crée la tienne.";
+"Pink" = "Rose";
 "Plan the day" = "Planifier sa journée";
 "Practice an instrument" = "Pratiquer un instrument";
 "Privacy Policy" = "Confidentialité";
@@ -545,12 +551,14 @@
 "Profile section" = "Section du profil";
 "Purchase failed" = "Échec de l'achat";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Les achats ne fonctionnent que dans la version App Store. Dans cette version, Pro peut être activé pour les tests dans Réglages.";
+"Purple" = "Violet";
 "Push-ups" = "Pompes";
 "Put money aside" = "Mettre de l'argent de côté";
 "Put the habit in a group to share it with your family." = "Mets l'habitude dans un groupe pour la partager avec ta famille.";
 "Quit a bad habit" = "Arrêter une mauvaise habitude";
 "Quitting" = "J'arrête";
 "Quitting: %@" = "Arrêt : %@";
+"Raspberry" = "Framboise";
 "Rate the app" = "Noter l'app";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "Note ta journée d'un geste en bas d'Aujourd'hui et ajoute quelques mots. Avec Pro, vois tout l'historique, un graphique du mois et les habitudes qui améliorent ton humeur.";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "Note ton humeur une fois par jour sur l'écran Aujourd'hui. Après quelques semaines, tu verras quelles habitudes l'améliorent.";
@@ -625,6 +633,7 @@
 "Skin care" = "Soin de la peau";
 "Skip" = "Passer";
 "Skipped" = "Passée";
+"Sky blue" = "Bleu ciel";
 "Sleeping" = "Dort";
 "Small steps add up." = "Les petits pas s'additionnent.";
 "Small steps every day" = "Des petits pas chaque jour";
@@ -662,6 +671,7 @@
 "Subscribe" = "S'abonner";
 "Subscriptions renew automatically until cancelled. Cancel anytime in Settings, Apple Account, Subscriptions, at least 24 hours before the period ends." = "Les abonnements se renouvellent automatiquement jusqu'à résiliation. Résilie à tout moment dans Réglages, Compte Apple, Abonnements, au moins 24 heures avant la fin de la période.";
 "Suggest an idea" = "Proposer une idée";
+"Sunflower" = "Tournesol";
 "Sunrise club" = "Club de l'aube";
 "Sunset" = "Coucher de soleil";
 "Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro." = "Coucher de soleil, Forêt, Rose, Or, Minuit et Clair. Choisis-en une dans Réglages avec Pro.";
@@ -672,6 +682,7 @@
 "System" = "Système";
 "Take a break for a trip or illness without losing your streak." = "Fais une pause pendant un voyage ou une maladie sans perdre ta série.";
 "Take vitamins" = "Prendre ses vitamines";
+"Tangerine" = "Mandarine";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Touche un jour pour le valider. Maintiens pour le passer ou ajouter une note.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Touche le cercle ou balaie vers la droite pour valider. Balaie vers la gauche pour passer, noter ou modifier. Maintiens pour réordonner.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Touche le cercle pour lancer le minuteur. Il défile sur l'écran verrouillé et coche l'habitude à la fin.";
@@ -728,6 +739,7 @@
 "Try it" = "Essayer";
 "Turn on the lock" = "Activer le verrouillage";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "Active « J'arrête cette habitude » dans une habitude pour voir depuis combien de jours tu t'en passes, ton record et le prochain palier. Avec Pro, l'argent économisé aussi.";
+"Turquoise" = "Turquoise";
 "Turtle" = "Tortue";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Deux ratés par mois ne cassent pas ta série, et les jours difficiles la version minimale compte aussi.";
 "Two weeks" = "Deux semaines";

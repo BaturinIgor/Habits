@@ -80,7 +80,7 @@ struct HabitCatalogView: View {
                 HabitEditorView(habit: nil)
             }
             .sheet(isPresented: $showingPaywall) {
-                PaywallView(highlight: .unlimited)
+                PaywallView(highlight: .unlimited, source: .limit)
             }
         }
     }

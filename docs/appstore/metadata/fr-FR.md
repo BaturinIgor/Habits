@@ -49,11 +49,9 @@ Conditions d'utilisation : https://www.apple.com/legal/internet-services/itunes/
 Confidentialité : https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab sur l'Apple Watch : les habitudes du jour à ton poignet, cochées d'un geste (pour les habitudes à compter, chaque appui ajoute 1). Fonctionne hors ligne et se synchronise avec ton iPhone.
-• Complications pour le cadran : ronde, en coin, rectangulaire et en ligne. Tes progrès du jour d'un coup d'œil.
-• Minuteur d'habitude sur l'Apple Watch (Pro) : à la fin, la montre tapote ton poignet et coche l'habitude.
-• Bilan du mois et Bilan de l'année : dans Statistiques ou sur Aujourd'hui en début de mois, à partager en image.
-• Les images partagées ont maintenant un QR code, et elles partent avec un lien vers ZenHab sur l'App Store.
-• Les 11 compagnons ont été redessinés : un nouveau style tout doux, 4 stades, des émotions et de petites animations. Ils respirent, clignent des yeux, certains remuent la queue, et tous sautent quand tu coches une habitude.
-• Des statistiques d'utilisation anonymes nous aident à savoir quoi améliorer. Elles ne contiennent jamais rien de ce que tu écris, et tu peux les désactiver dans Réglages.
-• Les cartes de bilan s'affichent mieux en grand texte, et l'écran du compagnon est maintenant entièrement traduit.
+• Commence par un objectif : choisis ce que tu veux changer, et ZenHab te propose des habitudes toutes prêtes.
+• Rappels intelligents : ils s'adaptent à l'heure à laquelle tu coches vraiment tes habitudes.
+• Humeur et habitudes : découvre quelles habitudes vont de pair avec ta meilleure humeur.
+• Plus de Siri et de Raccourcis : note ton humeur ou lance un minuteur à la voix, et retrouve tes habitudes dans Spotlight.
+• Offre du Nouvel An sur ZenHab Pro, pour une durée limitée.
+• Plus agréable avec les grandes tailles de texte et VoiceOver.

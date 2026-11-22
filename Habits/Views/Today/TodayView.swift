@@ -284,7 +284,7 @@ struct TodayView: View {
                 MoodEntryEditor(dayKey: day.key)
             }
             .sheet(isPresented: $showingPaywall) {
-                PaywallView(highlight: .unlimited)
+                PaywallView(highlight: .unlimited, source: .limit)
             }
             .sheet(isPresented: $showingProfile) {
                 ProfileView()

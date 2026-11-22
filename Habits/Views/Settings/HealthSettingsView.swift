@@ -104,7 +104,7 @@ struct HealthSettingsView: View {
         .navigationTitle("Apple Health")
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showingPaywall) {
-            PaywallView(highlight: .health)
+            PaywallView(highlight: .health, source: .feature)
         }
     }
 }
