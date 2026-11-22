@@ -1,0 +1,66 @@
+name: App Store offers
+
+# Предложения годовой подписки Pro (KAN-170, KAN-124): бесплатная неделя, promotional offer
+# newyear2027 и offer code NEWYEAR2027 с ценой −50%. Плюс сводка: где у monthly, yearly и lifetime
+# нет цены. Повторный запуск ничего не дублирует. Подробности: tools/appstore/README.md.
+# Репозиторий публичный: скрипт печатает только ID, статусы, цены, HTTP-коды и коды ошибок Apple.
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Только проверить и показать план"
+        type: boolean
+        default: true
+      intro:
+        description: "Бесплатная неделя (introductory offer)"
+        type: boolean
+        default: true
+      promo:
+        description: "Promotional offer newyear2027"
+        type: boolean
+        default: true
+      code:
+        description: "Offer code NEWYEAR2027 и custom code"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: appstore-offers
+  cancel-in-progress: false
+
+jobs:
+  offers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install
+        run: pip install -r tools/appstore/requirements.txt
+
+      - name: Check or create offers
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          APP_BUNDLE_ID: ${{ vars.APP_BUNDLE_ID || 'com.baturinigor.zenhab' }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          STEP_INTRO: ${{ inputs.intro }}
+          STEP_PROMO: ${{ inputs.promo }}
+          STEP_CODE: ${{ inputs.code }}
+        run: |
+          steps=prices
+          [ "$STEP_INTRO" = "true" ] && steps="$steps,intro"
+          [ "$STEP_PROMO" = "true" ] && steps="$steps,promo"
+          [ "$STEP_CODE" = "true" ] && steps="$steps,code"
+          if [ "$DRY_RUN" = "true" ]; then
+            python3 tools/appstore/asc_offers.py --dry-run --steps "$steps"
+          else
+            python3 tools/appstore/asc_offers.py --apply --steps "$steps"
+          fi
