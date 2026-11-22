@@ -89,6 +89,17 @@ Workflow `Weekly report` (понедельник 05:00 UTC и вручную) с
 Finance или Admin) и `ASC_VENDOR_NUMBER` (секрет или переменная). Без них workflow падает с понятной ошибкой
 (`Не заданы секреты: ...`), секреты в лог не печатаются.
 
+### Отдельный ключ для отчёта о продажах
+
+Основной ключ App Store Connect (`ASC_KEY_*`) нужен сборкам и загрузке и не имеет доступа к финансам. Без доступа отчёт всё равно
+уходит в Telegram, но вместо установок и дохода пишет «Продажи: нет доступа». Чтобы были цифры (владелец):
+
+1. https://appstoreconnect.apple.com/access/integrations/api → «Team Keys» → «+» → имя `ZenHab weekly report`, доступ **Finance** → Generate.
+2. Скачать .p8 (дают один раз), запомнить Key ID.
+3. Секреты GitHub `ASC_REPORT_KEY_ID` (Key ID) и `ASC_REPORT_KEY_P8` (содержимое .p8):
+   `gh secret set ASC_REPORT_KEY_ID --body "<Key ID>"` и `gh secret set ASC_REPORT_KEY_P8 < ~/Downloads/AuthKey_<Key ID>.p8`.
+   Issuer ID тот же (`ASC_ISSUER_ID`). Workflow сам возьмёт отдельный ключ, если он задан.
+
 ### Пейволл по источнику (KAN-123)
 
 Если заданы `GA4_PROPERTY_ID` (секрет или переменная, число из «Администратор → Сведения о ресурсе») и

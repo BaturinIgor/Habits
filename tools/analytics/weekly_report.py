@@ -392,11 +392,12 @@ def main():
     else:
         short = [f"ZenHab, неделя {period}"]
         if SALES_DENIED:
-            short.append("Продажи: нет доступа (ключу App Store Connect нужна роль Sales/Finance)")
-        short += [
-                 f"Установки: {sales['downloads']}{delta(sales['downloads'], prev_sales['downloads'])}",
-                 f"Покупки: {sales['iap_units']}{delta(sales['iap_units'], prev_sales['iap_units'])}",
-                 f"Доход: {proceeds}"]
+            short.append("Продажи: нет доступа (ключу App Store Connect нужна роль Finance, см. ASC_REPORT_KEY_* в README)")
+        else:
+            short += [
+                f"Установки: {sales['downloads']}{delta(sales['downloads'], prev_sales['downloads'])}",
+                f"Покупки: {sales['iap_units']}{delta(sales['iap_units'], prev_sales['iap_units'])}",
+                f"Доход: {proceeds}"]
         trials = sum(v for k, v in events.items() if "Introductory" in k or "Free Trial" in k)
         if trials:
             short.append(f"Пробные периоды и переходы из них: {trials}")
