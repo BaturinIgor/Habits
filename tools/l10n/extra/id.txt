@@ -826,3 +826,15 @@ To link a habit, open it and choose Apple Health → Check off by.||Untuk menghu
 Open the Health app||Buka app Kesehatan
 You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Kamu bisa mengizinkan atau menolak akses ke setiap jenis data di Pengaturan → Privasi & Keamanan → Kesehatan → ZenHab.
 Apple Health: %@||Apple Health: %@
+Coral||Koral
+Tangerine||Jeruk
+Sunflower||Bunga matahari
+Mint||Mint
+Turquoise||Toska
+Sky blue||Biru langit
+Blue||Biru
+Indigo||Nila
+Purple||Ungu
+Pink||Merah muda
+Raspberry||Raspberi
+Graphite||Grafit

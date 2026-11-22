@@ -17,6 +17,13 @@ enum Weekdays {
         guard (1...symbols.count).contains(weekday) else { return "" }
         return symbols[weekday - 1].replacingOccurrences(of: ".", with: "").capitalizedFirst
     }
+
+    /// Полное название дня («Понедельник»): для VoiceOver.
+    static func full(_ weekday: Int) -> String {
+        let symbols = Calendar.app.standaloneWeekdaySymbols
+        guard (1...symbols.count).contains(weekday) else { return "" }
+        return symbols[weekday - 1].capitalizedFirst
+    }
 }
 
 // MARK: - Форматирование по языку системы

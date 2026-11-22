@@ -100,6 +100,7 @@
 "Best streak" = "En iyi seri";
 "Best, days" = "Rekor, gün";
 "Better than nothing" = "Hiç yoktan iyidir";
+"Blue" = "Mavi";
 "Break bad habits" = "Kötü alışkanlıkları bırak";
 "Breathing exercise" = "Nefes egzersizi";
 "Bring back %@ in a row for sparks." = "Kıvılcımlarla art arda %@ geri kazan.";
@@ -162,6 +163,7 @@
 "Copy address" = "Adresi kopyala";
 "Copy message" = "Mesajı kopyala";
 "Copy message and address" = "Mesajı ve adresi kopyala";
+"Coral" = "Mercan";
 "Couldn't create an invitation link. Try again later." = "Davet bağlantısı oluşturulamadı. Daha sonra tekrar deneyin.";
 "Couldn't read the file" = "Dosya okunamadı";
 "Couldn't send the message" = "Mesaj gönderilemedi";
@@ -284,6 +286,7 @@
 "Goal" = "Hedef";
 "Gold" = "Altın";
 "Good" = "İyi";
+"Graphite" = "Grafit";
 "Great" = "Harika";
 "Great job, keep it up" = "Harika, böyle devam";
 "Group" = "Grup";
@@ -334,6 +337,7 @@
 "Import data" = "Verileri içe aktar";
 "In progress: %lld" = "Öğreniliyor: %lld";
 "Include technical info" = "Teknik bilgileri ekle";
+"Indigo" = "Çivit";
 "Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept." = "Günlük işaretler yerine kaç gündür onsuz olduğunu görürsün. Bozarsan sayım baştan başlar ama rekorun kalır.";
 "Intermediate" = "Orta";
 "Interval" = "Aralık";
@@ -404,6 +408,7 @@
 "Mindfulness" = "Farkındalık";
 "Minimum" = "Minimum";
 "Minimum version, for example 5 squats" = "Minimum sürüm, örneğin 5 squat";
+"Mint" = "Nane";
 "Minus one" = "Bir eksilt";
 "Missed" = "Kaçırıldı";
 "Missed a day and the streak broke? The next day you can bring it back for sparks." = "Bir gün kaçırdın ve seri bozuldu mu? Ertesi gün kıvılcımlarla geri alabilirsin.";
@@ -528,6 +533,7 @@
 "Pet name" = "Evcil hayvanın adı";
 "Phoenix" = "Anka kuşu";
 "Pick a template or create your own." = "Bir şablon seç ya da kendininkini oluştur.";
+"Pink" = "Pembe";
 "Plan the day" = "Günü planla";
 "Practice an instrument" = "Enstrüman çal";
 "Privacy Policy" = "Gizlilik Politikası";
@@ -541,12 +547,14 @@
 "Profile section" = "Profil bölümü";
 "Purchase failed" = "Satın alma başarısız";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Satın almalar yalnızca App Store sürümünde çalışır. Bu sürümde Pro, test için Ayarlar'dan açılabilir.";
+"Purple" = "Mor";
 "Push-ups" = "Şınav";
 "Put money aside" = "Para biriktir";
 "Put the habit in a group to share it with your family." = "Ailenizle paylaşmak için alışkanlığı bir gruba koyun.";
 "Quit a bad habit" = "Kötü bir alışkanlığı bırak";
 "Quitting" = "Bırakıyorum";
 "Quitting: %@" = "Onsuz: %@";
+"Raspberry" = "Ahududu";
 "Rate the app" = "Uygulamayı değerlendir";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "Bugün ekranının altında tek dokunuşla gününü puanla ve birkaç kelime ekle. Pro ile tüm geçmişi, aylık grafiği ve ruh hâlini iyileştiren alışkanlıkları gör.";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "Ruh hâlini günde bir kez Bugün ekranında işaretle. Birkaç hafta sonra hangi alışkanlıkların onu iyileştirdiğini göreceksin.";
@@ -620,6 +628,7 @@
 "Skin care" = "Cilt bakımı";
 "Skip" = "Atla";
 "Skipped" = "Atlandı";
+"Sky blue" = "Gök mavisi";
 "Sleeping" = "Uyuyor";
 "Small steps add up." = "Küçük adımlar birikir.";
 "Small steps every day" = "Her gün küçük adımlar";
@@ -655,6 +664,7 @@
 "Subscribe" = "Abone ol";
 "Subscriptions renew automatically until cancelled. Cancel anytime in Settings, Apple Account, Subscriptions, at least 24 hours before the period ends." = "Abonelikler iptal edilene kadar otomatik yenilenir. Dönem bitmeden en az 24 saat önce Ayarlar, Apple Hesabı, Abonelikler bölümünden istediğin zaman iptal et.";
 "Suggest an idea" = "Fikir öner";
+"Sunflower" = "Ayçiçeği";
 "Sunrise club" = "Gün doğumu kulübü";
 "Sunset" = "Gün batımı";
 "Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro." = "Gün batımı, Orman, Pembe, Altın, Gece yarısı ve Açık. Pro ile Ayarlar'dan seç.";
@@ -665,6 +675,7 @@
 "System" = "Sistem";
 "Take a break for a trip or illness without losing your streak." = "Seyahat veya hastalık için serini kaybetmeden mola ver.";
 "Take vitamins" = "Vitamin al";
+"Tangerine" = "Mandalina";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "İşaretlemek için bir güne dokun. Atlamak veya not eklemek için basılı tut.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "İşaretlemek için daireye dokun veya sağa kaydır. Atlamak, not eklemek veya düzenlemek için sola kaydır. Sıralamak için basılı tut.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Zamanlayıcıyı başlatmak için daireye dokun. Kilit ekranında geri sayar ve süre bitince alışkanlığı işaretler.";
@@ -719,6 +730,7 @@
 "Try it" = "Dene";
 "Turn on the lock" = "Kilidi etkinleştir";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "Bir alışkanlıkta “Bu alışkanlığı bırakıyorum”u aç; kaç gündür onsuz olduğunu, rekorunu ve sonraki hedefi gör. Pro ile biriken parayı da.";
+"Turquoise" = "Turkuaz";
 "Turtle" = "Kaplumbağa";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Ayda iki kaçırma serini bozmaz, zor günlerde minimum sürüm de sayılır.";
 "Two weeks" = "İki hafta";

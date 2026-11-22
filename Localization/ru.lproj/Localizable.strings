@@ -100,6 +100,7 @@
 "Best streak" = "Лучшая серия";
 "Best, days" = "Рекорд, дней";
 "Better than nothing" = "Лучше, чем ничего";
+"Blue" = "Синий";
 "Break bad habits" = "Отказ от вредного";
 "Breathing exercise" = "Дыхательная практика";
 "Bring back %@ in a row for sparks." = "Верни серию за искры: %@ подряд.";
@@ -162,6 +163,7 @@
 "Copy address" = "Скопировать адрес";
 "Copy message" = "Скопировать сообщение";
 "Copy message and address" = "Скопировать сообщение и адрес";
+"Coral" = "Коралловый";
 "Couldn't create an invitation link. Try again later." = "Не удалось создать ссылку-приглашение. Попробуй позже.";
 "Couldn't read the file" = "Не удалось прочитать файл";
 "Couldn't send the message" = "Не удалось отправить сообщение";
@@ -284,6 +286,7 @@
 "Goal" = "Цель";
 "Gold" = "Золото";
 "Good" = "Хорошо";
+"Graphite" = "Графит";
 "Great" = "Отлично";
 "Great job, keep it up" = "Отличная работа, так держать";
 "Group" = "Группа";
@@ -334,6 +337,7 @@
 "Import data" = "Загрузить данные";
 "In progress: %lld" = "Учу: %lld";
 "Include technical info" = "Добавить техническую информацию";
+"Indigo" = "Индиго";
 "Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept." = "Вместо ежедневных отметок будет счётчик дней без неё. Если сорвёшься, счёт начнётся заново, но рекорд сохранится.";
 "Intermediate" = "Средний";
 "Interval" = "Интервал";
@@ -404,6 +408,7 @@
 "Mindfulness" = "Осознанность";
 "Minimum" = "Минимум";
 "Minimum version, for example 5 squats" = "Минимальная версия, например 5 приседаний";
+"Mint" = "Мятный";
 "Minus one" = "Минус один";
 "Missed" = "Не сделано";
 "Missed a day and the streak broke? The next day you can bring it back for sparks." = "Пропустил день, и серия прервалась? На следующий день её можно вернуть за искры.";
@@ -528,6 +533,7 @@
 "Pet name" = "Имя питомца";
 "Phoenix" = "Феникс";
 "Pick a template or create your own." = "Выбери шаблон или создай свою.";
+"Pink" = "Розовый";
 "Plan the day" = "Спланировать день";
 "Practice an instrument" = "Играть на инструменте";
 "Privacy Policy" = "Конфиденциальность";
@@ -541,12 +547,14 @@
 "Profile section" = "Раздел профиля";
 "Purchase failed" = "Покупка не удалась";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Покупки работают только в версии из App Store. В этой сборке Pro можно включить для теста в настройках.";
+"Purple" = "Фиолетовый";
 "Push-ups" = "Отжимания";
 "Put money aside" = "Откладывать деньги";
 "Put the habit in a group to share it with your family." = "Чтобы поделиться привычкой с семьёй, положи её в группу.";
 "Quit a bad habit" = "Брось вредную привычку";
 "Quitting" = "Бросаю";
 "Quitting: %@" = "Бросаю: %@";
+"Raspberry" = "Малиновый";
 "Rate the app" = "Оценить приложение";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "Оцени день одним касанием внизу экрана «Сегодня» и добавь пару слов. С Pro видна вся история, график за месяц и привычки, которые поднимают настроение.";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "Отмечай настроение на экране «Сегодня» раз в день. Через пару недель станет видно, какие привычки его поднимают.";
@@ -620,6 +628,7 @@
 "Skin care" = "Уход за кожей";
 "Skip" = "Пропустить";
 "Skipped" = "Пропущено";
+"Sky blue" = "Небесный";
 "Sleeping" = "Спит";
 "Small steps add up." = "Маленькие шаги складываются в большие.";
 "Small steps every day" = "Маленькие шаги каждый день";
@@ -655,6 +664,7 @@
 "Subscribe" = "Оформить подписку";
 "Subscriptions renew automatically until cancelled. Cancel anytime in Settings, Apple Account, Subscriptions, at least 24 hours before the period ends." = "Подписка продлевается автоматически, пока её не отменить. Отменить можно в любой момент в Настройках, раздел Apple Account, Подписки, не позднее чем за 24 часа до конца периода.";
 "Suggest an idea" = "Предложить идею";
+"Sunflower" = "Подсолнух";
 "Sunrise club" = "Клуб рассвета";
 "Sunset" = "Закат";
 "Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro." = "Закат, Лес, Роза, Золото, Полночь и Светлая. Выбери в Настройках с Pro.";
@@ -665,6 +675,7 @@
 "System" = "Как в системе";
 "Take a break for a trip or illness without losing your streak." = "Перерыв на отпуск или болезнь без потери серии.";
 "Take vitamins" = "Принять витамины";
+"Tangerine" = "Мандариновый";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Нажми на день, чтобы отметить. Удерживай, чтобы пропустить или добавить заметку.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Нажми на кружок или смахни вправо, чтобы отметить. Смахни влево, чтобы пропустить, добавить заметку или изменить. Удерживай, чтобы поменять порядок.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Нажми на кружок, чтобы запустить таймер. Он идёт на экране блокировки и отметит привычку, когда время выйдет.";
@@ -719,6 +730,7 @@
 "Try it" = "Попробовать";
 "Turn on the lock" = "Включить блокировку";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "Включи «Бросаю эту привычку» в привычке, и увидишь, сколько дней ты без неё, рекорд и следующую веху. С Pro ещё и сэкономленные деньги.";
+"Turquoise" = "Бирюзовый";
 "Turtle" = "Черепаха";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Два пропуска в месяц не обнулят серию, а в тяжёлый день засчитается и минимальная версия.";
 "Two weeks" = "Две недели";

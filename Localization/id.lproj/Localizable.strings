@@ -100,6 +100,7 @@
 "Best streak" = "Rentetan terbaik";
 "Best, days" = "Rekor, hari";
 "Better than nothing" = "Lebih baik daripada tidak";
+"Blue" = "Biru";
 "Break bad habits" = "Hentikan kebiasaan buruk";
 "Breathing exercise" = "Latihan pernapasan";
 "Bring back %@ in a row for sparks." = "Kembalikan %@ berturut-turut dengan percikan.";
@@ -162,6 +163,7 @@
 "Copy address" = "Salin alamat";
 "Copy message" = "Salin pesan";
 "Copy message and address" = "Salin pesan dan alamat";
+"Coral" = "Koral";
 "Couldn't create an invitation link. Try again later." = "Tidak bisa membuat tautan undangan. Coba lagi nanti.";
 "Couldn't read the file" = "Tidak dapat membaca file";
 "Couldn't send the message" = "Pesan tidak dapat dikirim";
@@ -284,6 +286,7 @@
 "Goal" = "Target";
 "Gold" = "Emas";
 "Good" = "Baik";
+"Graphite" = "Grafit";
 "Great" = "Hebat";
 "Great job, keep it up" = "Bagus sekali, pertahankan";
 "Group" = "Grup";
@@ -334,6 +337,7 @@
 "Import data" = "Impor data";
 "In progress: %lld" = "Sedang dipelajari: %lld";
 "Include technical info" = "Sertakan info teknis";
+"Indigo" = "Nila";
 "Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept." = "Alih-alih centang harian, kamu akan melihat sudah berapa hari tanpanya. Kalau tergelincir, hitungan mulai lagi, tapi rekormu tetap tersimpan.";
 "Intermediate" = "Menengah";
 "Interval" = "Jeda";
@@ -404,6 +408,7 @@
 "Mindfulness" = "Kesadaran diri";
 "Minimum" = "Minimum";
 "Minimum version, for example 5 squats" = "Versi minimum, misalnya 5 squat";
+"Mint" = "Mint";
 "Minus one" = "Kurangi satu";
 "Missed" = "Terlewat";
 "Missed a day and the streak broke? The next day you can bring it back for sparks." = "Melewatkan sehari dan rentetan terputus? Keesokan harinya kamu bisa mengembalikannya dengan percikan.";
@@ -528,6 +533,7 @@
 "Pet name" = "Nama hewan peliharaan";
 "Phoenix" = "Phoenix";
 "Pick a template or create your own." = "Pilih templat atau buat sendiri.";
+"Pink" = "Merah muda";
 "Plan the day" = "Rencanakan hari";
 "Practice an instrument" = "Latihan alat musik";
 "Privacy Policy" = "Kebijakan Privasi";
@@ -541,12 +547,14 @@
 "Profile section" = "Bagian profil";
 "Purchase failed" = "Pembelian gagal";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "Pembelian hanya berfungsi di versi App Store. Di versi ini, Pro bisa dinyalakan untuk pengujian di Pengaturan.";
+"Purple" = "Ungu";
 "Push-ups" = "Push-up";
 "Put money aside" = "Menabung";
 "Put the habit in a group to share it with your family." = "Masukkan kebiasaan ke grup untuk membagikannya dengan keluarga.";
 "Quit a bad habit" = "Hentikan kebiasaan buruk";
 "Quitting" = "Sedang berhenti";
 "Quitting: %@" = "Tanpanya: %@";
+"Raspberry" = "Raspberi";
 "Rate the app" = "Beri nilai aplikasi";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "Nilai harimu dengan satu ketukan di bawah Hari Ini dan tambahkan beberapa kata. Dengan Pro, lihat seluruh riwayat, grafik bulanan, dan kebiasaan yang memperbaiki suasana hati.";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "Nilai suasana hatimu sekali sehari di layar Hari Ini. Setelah beberapa minggu kamu akan melihat kebiasaan mana yang memperbaikinya.";
@@ -620,6 +628,7 @@
 "Skin care" = "Perawatan kulit";
 "Skip" = "Lewati";
 "Skipped" = "Dilewati";
+"Sky blue" = "Biru langit";
 "Sleeping" = "Tidur";
 "Small steps add up." = "Langkah kecil akan bertambah.";
 "Small steps every day" = "Langkah kecil setiap hari";
@@ -655,6 +664,7 @@
 "Subscribe" = "Berlangganan";
 "Subscriptions renew automatically until cancelled. Cancel anytime in Settings, Apple Account, Subscriptions, at least 24 hours before the period ends." = "Langganan diperpanjang otomatis sampai dibatalkan. Batalkan kapan saja di Pengaturan, Akun Apple, Langganan, paling lambat 24 jam sebelum periode berakhir.";
 "Suggest an idea" = "Usulkan ide";
+"Sunflower" = "Bunga matahari";
 "Sunrise club" = "Klub matahari terbit";
 "Sunset" = "Senja";
 "Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro." = "Senja, Hutan, Mawar, Emas, Tengah malam, dan Terang. Pilih di Pengaturan dengan Pro.";
@@ -665,6 +675,7 @@
 "System" = "Sistem";
 "Take a break for a trip or illness without losing your streak." = "Istirahat saat bepergian atau sakit tanpa kehilangan rentetan.";
 "Take vitamins" = "Minum vitamin";
+"Tangerine" = "Jeruk";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Ketuk hari untuk mencentangnya. Tekan lama untuk melewati atau menambah catatan.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Ketuk lingkaran atau geser ke kanan untuk mencentang. Geser ke kiri untuk melewati, menambah catatan, atau mengubah. Tekan lama untuk mengubah urutan.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Ketuk lingkaran untuk memulai pengatur waktu. Hitung mundur tampil di Layar Terkunci dan kebiasaan tercentang saat waktu habis.";
@@ -719,6 +730,7 @@
 "Try it" = "Coba";
 "Turn on the lock" = "Aktifkan kunci";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "Nyalakan “Aku sedang berhenti” di sebuah kebiasaan untuk melihat sudah berapa hari tanpanya, rekormu, dan target berikutnya. Dengan Pro, juga uang yang dihemat.";
+"Turquoise" = "Toska";
 "Turtle" = "Kura-kura";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Dua kali terlewat sebulan tidak memutus rentetan, dan versi minimum tetap dihitung di hari sulit.";
 "Two weeks" = "Dua minggu";
