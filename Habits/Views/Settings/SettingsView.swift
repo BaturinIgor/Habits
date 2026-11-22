@@ -226,10 +226,10 @@ struct SettingsView: View {
             .appBackground()
             .navigationTitle("Settings")
             .sheet(isPresented: $showingPaywall) {
-                PaywallView()
+                PaywallView(source: .settings)
             }
             .sheet(item: $paywallFeature) { feature in
-                PaywallView(highlight: feature)
+                PaywallView(highlight: feature, source: feature == .unlimited ? .limit : .feature)
             }
             .sheet(isPresented: $showingProfile) {
                 ProfileView()
@@ -582,7 +582,7 @@ struct BackupSettingsView: View {
         .onAppear(perform: prepareExport)
         .onChange(of: store.data.isPro) { _, _ in prepareExport() }
         .sheet(isPresented: $showingPaywall) {
-            PaywallView(highlight: .csv)
+            PaywallView(highlight: .csv, source: .feature)
         }
         .task { await checkCloud() }
         .alert("Restore from iCloud?", isPresented: $confirmRestore, presenting: cloudCopy) { copy in

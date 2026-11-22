@@ -234,7 +234,7 @@ struct HabitEditorView: View {
                 if original == nil { nameFocused = true }
             }
             .sheet(item: $paywallFeature) { feature in
-                PaywallView(highlight: feature)
+                PaywallView(highlight: feature, source: feature == .unlimited ? .limit : .feature)
             }
             .sheet(isPresented: $showingVoice) {
                 VoiceHabitSheet { apply($0) }

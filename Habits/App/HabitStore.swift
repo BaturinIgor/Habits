@@ -490,6 +490,7 @@ final class HabitStore {
         var last: [String: WatchMark] = [:]
         for mark in applied { last[mark.key] = mark }
         for mark in last.values { Analytics.shared.action(mark.done ? .checkFromWatch : .uncheckFromWatch) }
+        if last.values.contains(where: \.done) { Analytics.shared.habitChecked() }
         for mark in last.values where mark.done {
             Task { await NotificationPlanner.clearDelivered(habitID: mark.habitID, day: mark.day) }
             if let date = DayKey.date(mark.day) { notifyChain(after: mark.habitID, day: date) }
@@ -509,6 +510,7 @@ final class HabitStore {
 
     private func trackCheck(_ action: AnalyticsAction, day: String) {
         Analytics.shared.action(action)
+        if action == .check || action == .minimum { Analytics.shared.habitChecked() }
         if day != DayKey.make(Date()) { Analytics.shared.action(.checkPastDay) }
     }
 
@@ -667,6 +669,7 @@ final class HabitStore {
         guard data.habits.contains(where: { $0.id == habitID }) else { return }
         data.setStatus(action == NotificationPlanner.doneAction ? .done : .skipped, habitID: habitID, day: day)
         Analytics.shared.action(action == NotificationPlanner.doneAction ? .checkFromNotification : .skipFromNotification)
+        if action == NotificationPlanner.doneAction { Analytics.shared.habitChecked() }
         revision += 1
         DataFile.save(data)
         WidgetCenter.shared.reloadAllTimelines()

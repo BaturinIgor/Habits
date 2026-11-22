@@ -332,32 +332,52 @@ struct MailComposer: UIViewControllerRepresentable {
     }
 }
 
-/// Просьба оценить приложение сразу после хорошего момента: весь день выполнен
-/// или питомец вырос. Не раньше 2 дней использования и 5 отметок, не чаще раза в 120 дней.
-/// Система сама решает, показывать ли окно (не больше трёх раз в год).
+/// Просьба оценить приложение (KAN-171): после 3 дней подряд с отметкой, не чаще раза на версию,
+/// не во время онбординга и не поверх пейволла. Система сама решает, показывать ли окно (не больше трёх раз в год).
 enum RatingPrompt {
-    private static let lastKey = "ratingPromptLast"
-    /// Когда питомец вырос в последний раз. Запоминаем: рост сохраняет данные,
-    /// и задача, которая его заметила, тут же отменяется и запускается заново.
-    @MainActor private static var petGrewAt: Date?
+    /// Версия приложения, в которой уже просили оценку.
+    static let versionKey = "ratingPromptVersion"
+    /// Сколько дней подряд с отметкой нужно для просьбы.
+    static let streakDays = 3
 
     @MainActor
-    static func maybeAsk(data: AppData, facts: AchievementFacts, petGrew: Bool, requestReview: RequestReviewAction) async {
-        if petGrew { petGrewAt = Date() }
+    static func maybeAsk(data: AppData, requestReview: RequestReviewAction) async {
         if TestMode.isUITest { return }
         let defaults = UserDefaults.standard
-        let firstUse = data.habits.map(\.createdAt).min() ?? Date()
-        guard Date().timeIntervalSince(firstUse) > 2 * 86400, facts.totalDone >= 5 else { return }
-        if let last = defaults.object(forKey: lastKey) as? Date, Date().timeIntervalSince(last) < 120 * 86400 { return }
-        let today = Stats.day(Date(), in: data)
-        let perfectDay = today.total > 0 && today.done >= today.total
-        let recentPet = petGrewAt.map { Date().timeIntervalSince($0) < 10 * 60 } ?? false
-        guard perfectDay || recentPet else { return }
+        let analytics = Analytics.shared
+        let streak = checkStreak(data, today: Date())
+        guard shouldAsk(streak: streak, onboardingDone: data.settings.onboardingDone,
+                        blockingScreenShown: analytics.isShowing(.paywall) || analytics.isShowing(.onboarding),
+                        askedVersion: defaults.string(forKey: versionKey), version: appVersion) else { return }
         // Сначала конфетти и поздравление, потом просьба.
         try? await Task.sleep(for: .seconds(2))
-        guard !Task.isCancelled else { return }
-        defaults.set(Date(), forKey: lastKey)
-        Analytics.shared.send(.ratingPromptShown)
+        // За две секунды могли открыть пейволл.
+        guard !Task.isCancelled, !analytics.isShowing(.paywall) else { return }
+        defaults.set(appVersion, forKey: versionKey)
+        analytics.send(.reviewPromptShown(streakDays: streak))
         requestReview()
+    }
+
+    /// Условие показа без побочных эффектов (его проверяет юнит-тест).
+    static func shouldAsk(streak: Int, onboardingDone: Bool, blockingScreenShown: Bool,
+                          askedVersion: String?, version: String) -> Bool {
+        streak >= streakDays && onboardingDone && !blockingScreenShown && askedVersion != version
+    }
+
+    /// Сколько дней подряд, включая сегодня, выполнена хотя бы одна привычка (не больше limit).
+    /// Без отметки сегодня - 0: просим сразу после отметки, а не на следующий день.
+    static func checkStreak(_ data: AppData, today: Date, limit: Int = streakDays) -> Int {
+        var streak = 0
+        for offset in 0..<limit {
+            guard let date = Calendar.app.date(byAdding: .day, value: -offset, to: today) else { break }
+            let day = DayKey.make(date)
+            guard data.habits.contains(where: { data.status($0.id, day: day) == .done }) else { break }
+            streak += 1
+        }
+        return streak
+    }
+
+    private static var appVersion: String {
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0"
     }
 }
