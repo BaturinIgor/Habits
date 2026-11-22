@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / yıl";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@ fiyatı %lld kıvılcım, sende %lld var. %lld eksik. Kazanmak için alışkanlık işaretle.";
 "%@ costs %lld sparks. You have %lld." = "%@ fiyatı %lld kıvılcım. Sende %lld var.";
+"%@ for the first year" = "İlk yıl %@";
 "%@ free, then %@. Cancel anytime." = "%1$@ ücretsiz, sonra %2$@. İstediğin zaman iptal et.";
 "%@ is already done today." = "%@ bugün zaten yapıldı.";
 "%@: the streak broke" = "%@: seri bozuldu";
@@ -55,6 +56,7 @@
 "Adopt a pet" = "Evcil hayvan sahiplen";
 "Advanced" = "İleri";
 "After habit" = "Şu alışkanlıktan sonra";
+"After the first year, Pro renews at the regular price. Cancel anytime." = "İlk yıldan sonra Pro normal fiyattan yenilenir. İstediğin zaman iptal et.";
 "After: %@" = "Sonra: %@";
 "Afternoon" = "Öğleden sonra";
 "All" = "Tümü";
@@ -152,6 +154,7 @@
 "Clear your inbox" = "Gelen kutusunu temizle";
 "Clearer Pro" = "Daha anlaşılır Pro";
 "Close" = "Kapat";
+"Code: %@" = "Kod: %@";
 "Collector" = "Koleksiyoncu";
 "Come back after a miss 10 times" = "Kaçırdıktan sonra 10 kez geri dön";
 "Comeback" = "Geri dönüş";
@@ -166,6 +169,7 @@
 "Control Center" = "Denetim Merkezi";
 "Copied" = "Kopyalandı";
 "Copy address" = "Adresi kopyala";
+"Copy code" = "Kodu kopyala";
 "Copy message" = "Mesajı kopyala";
 "Copy message and address" = "Mesajı ve adresi kopyala";
 "Coral" = "Mercan";
@@ -271,6 +275,7 @@
 "First check-in done!" = "İlk işaret tamam!";
 "First step" = "İlk adım";
 "First time" = "İlk kez";
+"First year of Pro %@ off" = "Pro'nun ilk yılı %@ indirimli";
 "Fitness" = "Spor";
 "Focus" = "Odak";
 "Focus for an hour" = "Bir saat odaklan";
@@ -290,6 +295,7 @@
 "Full mood journal" = "Tam ruh hâli günlüğü";
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Apple Watch'ta zamanlayıcıyı kullanmak için iPhone'unda Pro'ya geç.";
 "Get a pet" = "Bir evcil hayvan edin";
+"Get the discount" = "İndirimi al";
 "Go to bed on time" = "Zamanında yat";
 "Goal" = "Hedef";
 "Gold" = "Altın";
@@ -454,6 +460,7 @@
 "N times a week" = "Haftada N kez";
 "Name" = "Ad";
 "Never" = "Hiç";
+"New Year offer" = "Yılbaşı fırsatı";
 "New achievement!" = "Yeni başarı!";
 "New app icons" = "Yeni uygulama simgeleri";
 "New group" = "Yeni grup";
@@ -702,6 +709,7 @@
 "Take vitamins" = "Vitamin al";
 "Tangerine" = "Mandalina";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "İşaretlemek için bir güne dokun. Atlamak veya not eklemek için basılı tut.";
+"Tap the button and paste the code in the App Store window. You'll see the final price before you pay." = "Düğmeye dokun ve kodu App Store penceresine yapıştır. Ödemeden önce son fiyatı göreceksin.";
 "Tap the circle next to a habit to check it off. One is enough for today." = "İşaretlemek için alışkanlığın yanındaki daireye dokun. Bugün için bir tane yeter.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "İşaretlemek için daireye dokun veya sağa kaydır. Atlamak, not eklemek veya düzenlemek için sola kaydır. Sıralamak için basılı tut.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Zamanlayıcıyı başlatmak için daireye dokun. Kilit ekranında geri sayar ve süre bitince alışkanlığı işaretler.";
@@ -781,6 +789,7 @@
 "Unlock: %@" = "Nasıl açılır: %@";
 "Unstoppable" = "Durdurulamaz";
 "Until" = "Bitiş";
+"Until %@" = "%@ tarihine kadar";
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "Alışkanlık işaretlenene kadar hatırlatma tekrarlanır: %@. Bildirimdeki \"Bitti\" ve \"Atla\" o günün tekrarlarını durdurur.";
 "Version" = "Sürüm";
 "Veteran" = "Kıdemli";

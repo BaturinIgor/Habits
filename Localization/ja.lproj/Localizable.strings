@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / 年";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@：価格 ✨ %lld、所持：✨ %lld。あと ✨ %lld 必要です。習慣をチェックして集めよう。";
 "%@ costs %lld sparks. You have %lld." = "%@：価格 ✨ %lld。所持：✨ %lld。";
+"%@ for the first year" = "最初の1年 %@";
 "%@ free, then %@. Cancel anytime." = "%1$@無料、その後%2$@。いつでも解約できます。";
 "%@ is already done today." = "%@は今日もう完了しています。";
 "%@: the streak broke" = "%@：連続記録が途切れました";
@@ -55,6 +56,7 @@
 "Adopt a pet" = "ペットを迎えよう";
 "Advanced" = "上級";
 "After habit" = "この習慣の後";
+"After the first year, Pro renews at the regular price. Cancel anytime." = "最初の1年が過ぎると、Pro は通常価格で更新されます。いつでも解約できます。";
 "After: %@" = "次の後：%@";
 "Afternoon" = "午後";
 "All" = "すべて";
@@ -152,6 +154,7 @@
 "Clear your inbox" = "受信トレイを片付ける";
 "Clearer Pro" = "わかりやすくなったPro";
 "Close" = "閉じる";
+"Code: %@" = "コード：%@";
 "Collector" = "コレクター";
 "Come back after a miss 10 times" = "休んだ後に10回復帰";
 "Comeback" = "カムバック";
@@ -166,6 +169,7 @@
 "Control Center" = "コントロールセンター";
 "Copied" = "コピーしました";
 "Copy address" = "アドレスをコピー";
+"Copy code" = "コードをコピー";
 "Copy message" = "メッセージをコピー";
 "Copy message and address" = "メッセージとアドレスをコピー";
 "Coral" = "コーラル";
@@ -271,6 +275,7 @@
 "First check-in done!" = "初めてのチェック完了！";
 "First step" = "最初の一歩";
 "First time" = "初回";
+"First year of Pro %@ off" = "Pro の最初の1年が %@ オフ";
 "Fitness" = "運動";
 "Focus" = "集中";
 "Focus for an hour" = "1時間集中する";
@@ -290,6 +295,7 @@
 "Full mood journal" = "気分日記のすべて";
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Apple Watchでタイマーを使うには、iPhoneでProに登録してください。";
 "Get a pet" = "ペットを迎える";
+"Get the discount" = "割引を受け取る";
 "Go to bed on time" = "時間通りに寝る";
 "Goal" = "目標";
 "Gold" = "ゴールド";
@@ -454,6 +460,7 @@
 "N times a week" = "週N回";
 "Name" = "名前";
 "Never" = "なし";
+"New Year offer" = "新年キャンペーン";
 "New achievement!" = "新しい実績！";
 "New app icons" = "新しいアプリアイコン";
 "New group" = "新しいグループ";
@@ -702,6 +709,7 @@
 "Take vitamins" = "ビタミンを飲む";
 "Tangerine" = "タンジェリン";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "日付をタップでチェック、長押しでスキップやメモ追加。";
+"Tap the button and paste the code in the App Store window. You'll see the final price before you pay." = "ボタンをタップして、App Store の画面にコードを貼り付けてね。支払い前に最終価格が表示されます。";
 "Tap the circle next to a habit to check it off. One is enough for today." = "習慣の横の丸をタップしてチェックしよう。今日は1つで十分です。";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "丸をタップか右スワイプでチェック。左スワイプでスキップ、メモ、編集。長押しで並べ替え。";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "丸をタップするとタイマーが始まります。ロック画面でカウントダウンし、終わると習慣がチェックされます。";
@@ -781,6 +789,7 @@
 "Unlock: %@" = "解放条件：%@";
 "Unstoppable" = "止まらない";
 "Until" = "終了日";
+"Until %@" = "%@まで";
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "チェックするまでリマインダーが繰り返されます：%@。通知の「完了」か「スキップ」でその日の繰り返しを止められます。";
 "Version" = "バージョン";
 "Veteran" = "ベテラン";

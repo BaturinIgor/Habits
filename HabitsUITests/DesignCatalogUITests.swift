@@ -105,6 +105,10 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "onb-09-habits-large", screen: "onboardingHabits", flags: ["-uitest-empty"] + largeText),
         Shot(name: "onb-10-today-first-check-large", screen: "today", flags: ["-uitest-firstday"] + largeText),
         Shot(name: "onb-11-today-celebrate-large", screen: "today", flags: ["-uitest-firstday-checked"] + largeText),
+        // 1.7, KAN-125: новогоднее предложение (акция включается флагом в любой день)
+        Shot(name: "offer-01-today", screen: "today", flags: ["-uitest-free", "-uitest-offer"]),
+        Shot(name: "offer-02-settings", screen: "settings", flags: ["-uitest-free", "-uitest-offer"]),
+        Shot(name: "offer-03-paywall", screen: "offerPaywall", flags: ["-uitest-free", "-uitest-offer"]),
     ]
 
     /// Крупный шрифт (Универсальный доступ) для макетов.

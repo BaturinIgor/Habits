@@ -85,6 +85,11 @@ struct PaywallView: View {
                         }
                     }
 
+                    // KAN-125: новогодняя скидка — отдельным блоком над списком функций.
+                    if source == .newYearOffer && !store.data.isPro {
+                        NewYearOfferCard(product: shop.products.first { $0.id == NewYearOffer.productID })
+                    }
+
                     VStack(alignment: .leading, spacing: 18) {
                         ForEach(features) { feature in
                             featureRow(feature, highlighted: feature == highlight)

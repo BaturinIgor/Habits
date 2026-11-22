@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / 年";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@：价格 ✨ %lld，你有：✨ %lld。还差 ✨ %lld。完成习惯即可获得。";
 "%@ costs %lld sparks. You have %lld." = "%@：价格 ✨ %lld。你有：✨ %lld。";
+"%@ for the first year" = "首年 %@";
 "%@ free, then %@. Cancel anytime." = "免费 %1$@，之后 %2$@。可随时取消。";
 "%@ is already done today." = "%@ 今天已完成。";
 "%@: the streak broke" = "%@：连续记录中断了";
@@ -55,6 +56,7 @@
 "Adopt a pet" = "领养一只宠物";
 "Advanced" = "高级";
 "After habit" = "在此习惯之后";
+"After the first year, Pro renews at the regular price. Cancel anytime." = "首年结束后，Pro 将按原价续订。可随时取消。";
 "After: %@" = "之后：%@";
 "Afternoon" = "下午";
 "All" = "全部";
@@ -152,6 +154,7 @@
 "Clear your inbox" = "清空收件箱";
 "Clearer Pro" = "更清晰的 Pro";
 "Close" = "关闭";
+"Code: %@" = "优惠码：%@";
 "Collector" = "收藏家";
 "Come back after a miss 10 times" = "中断后重新开始 10 次";
 "Comeback" = "重新出发";
@@ -166,6 +169,7 @@
 "Control Center" = "控制中心";
 "Copied" = "已复制";
 "Copy address" = "复制地址";
+"Copy code" = "复制优惠码";
 "Copy message" = "复制内容";
 "Copy message and address" = "复制消息和地址";
 "Coral" = "珊瑚色";
@@ -271,6 +275,7 @@
 "First check-in done!" = "完成第一次打卡！";
 "First step" = "第一步";
 "First time" = "首次";
+"First year of Pro %@ off" = "Pro 首年立减 %@";
 "Fitness" = "运动";
 "Focus" = "专注";
 "Focus for an hour" = "专注一小时";
@@ -290,6 +295,7 @@
 "Full mood journal" = "完整心情日记";
 "Get Pro on your iPhone to use the timer on Apple Watch." = "在 iPhone 上开通 Pro，即可在 Apple Watch 上使用计时器。";
 "Get a pet" = "领养宠物";
+"Get the discount" = "领取优惠";
 "Go to bed on time" = "按时睡觉";
 "Goal" = "目标";
 "Gold" = "金色";
@@ -454,6 +460,7 @@
 "N times a week" = "每周 N 次";
 "Name" = "名称";
 "Never" = "从未";
+"New Year offer" = "新年优惠";
 "New achievement!" = "新成就！";
 "New app icons" = "新的应用图标";
 "New group" = "新分组";
@@ -702,6 +709,7 @@
 "Take vitamins" = "吃维生素";
 "Tangerine" = "橘色";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "点按某天即可打卡，长按可跳过或添加备注。";
+"Tap the button and paste the code in the App Store window. You'll see the final price before you pay." = "点按按钮，在 App Store 窗口中粘贴优惠码。付款前会显示最终价格。";
 "Tap the circle next to a habit to check it off. One is enough for today." = "点一下习惯旁边的圆圈即可打卡。今天打一个就够了。";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "点圆圈或向右滑动即可打卡。向左滑动可跳过、写备注或编辑。长按可调整顺序。";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "点按圆圈启动计时器。它会在锁定屏幕上倒计时，时间到后自动打卡。";
@@ -781,6 +789,7 @@
 "Unlock: %@" = "解锁条件：%@";
 "Unstoppable" = "势不可挡";
 "Until" = "截止";
+"Until %@" = "截至 %@";
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "习惯未打卡时，提醒会重复：%@。点击通知中的“完成”或“跳过”可停止当天的重复。";
 "Version" = "版本";
 "Veteran" = "老将";

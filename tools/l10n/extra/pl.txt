@@ -877,3 +877,12 @@ That's how a streak starts. Come back tomorrow to keep it going.||Tak zaczyna si
 Turn on reminders||Włącz przypomnienia
 Not now||Nie teraz
 Got it||Jasne
+New Year offer||Oferta noworoczna
+First year of Pro %@ off||Pierwszy rok Pro taniej o %@
+Until %@||Do %@
+Get the discount||Odbierz zniżkę
+Code: %@||Kod: %@
+Copy code||Kopiuj kod
+Tap the button and paste the code in the App Store window. You'll see the final price before you pay.||Stuknij przycisk i wklej kod w oknie App Store. Ostateczną cenę zobaczysz przed zapłatą.
+%@ for the first year||%@ za pierwszy rok
+After the first year, Pro renews at the regular price. Cancel anytime.||Po pierwszym roku Pro odnawia się w zwykłej cenie. Anuluj w dowolnej chwili.

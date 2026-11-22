@@ -877,3 +877,12 @@ That's how a streak starts. Come back tomorrow to keep it going.||Seri böyle ba
 Turn on reminders||Hatırlatıcıları aç
 Not now||Şimdi değil
 Got it||Anladım
+New Year offer||Yılbaşı fırsatı
+First year of Pro %@ off||Pro'nun ilk yılı %@ indirimli
+Until %@||%@ tarihine kadar
+Get the discount||İndirimi al
+Code: %@||Kod: %@
+Copy code||Kodu kopyala
+Tap the button and paste the code in the App Store window. You'll see the final price before you pay.||Düğmeye dokun ve kodu App Store penceresine yapıştır. Ödemeden önce son fiyatı göreceksin.
+%@ for the first year||İlk yıl %@
+After the first year, Pro renews at the regular price. Cancel anytime.||İlk yıldan sonra Pro normal fiyattan yenilenir. İstediğin zaman iptal et.

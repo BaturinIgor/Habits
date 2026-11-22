@@ -46,6 +46,9 @@ struct TodayView: View {
     @AppStorage("monthlyRecapDismissed") private var monthRecapDismissed = ""
     @AppStorage("yearlyRecapDismissed") private var yearRecapDismissed = ""
     @State private var showingPaywall = false
+    /// KAN-125: новогоднее предложение. Крестик прячет карточку до конца акции (ключ с кодом акции).
+    @State private var showingOfferPaywall = false
+    @AppStorage("newYearOfferDismissed") private var offerDismissed = ""
     @State private var editingHabit: Habit?
     @State private var templateHabit: Habit?
     @State private var noteTarget: NoteTarget?
@@ -173,6 +176,17 @@ struct TodayView: View {
                 DayProgressCard(progress: progress, isFuture: isFuture, celebrate: isToday)
                     .plainRow(top: 6, bottom: 6)
 
+                // Пока активна карточка первого дня (KAN-169), предложение не показываем: первый день важнее.
+                if isToday && offerDismissed != NewYearOffer.code && OnboardingPlan.firstDay(store.data) == nil
+                    && NewYearOffer.isShown(isPro: store.data.isPro) {
+                    NewYearOfferBanner {
+                        showingOfferPaywall = true
+                    } onClose: {
+                        withAnimation { offerDismissed = NewYearOffer.code }
+                    }
+                    .plainRow(top: 4, bottom: 6)
+                }
+
                 if store.data.wallet.pet != nil && isToday {
                     PetCard { showingPet = true }
                         .plainRow(top: 4, bottom: 6)
@@ -293,6 +307,9 @@ struct TodayView: View {
             }
             .sheet(isPresented: $showingPaywall) {
                 PaywallView(highlight: .unlimited, source: .limit)
+            }
+            .sheet(isPresented: $showingOfferPaywall) {
+                PaywallView(source: .newYearOffer)
             }
             .sheet(isPresented: $showingProfile) {
                 ProfileView()

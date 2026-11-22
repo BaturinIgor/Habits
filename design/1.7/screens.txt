@@ -15,3 +15,7 @@ onb-06-today-first-check
 onb-07-today-celebrate
 onb-10-today-first-check-large
 onb-11-today-celebrate-large
+# KAN-125: новогоднее предложение
+offer-01-today      # KAN-125
+offer-02-settings   # KAN-125
+offer-03-paywall    # KAN-125

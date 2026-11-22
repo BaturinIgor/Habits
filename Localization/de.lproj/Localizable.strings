@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / Jahr";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: Preis ✨ %lld, du hast: ✨ %lld. Es fehlen ✨ %lld. Hake Gewohnheiten ab, um sie zu verdienen.";
 "%@ costs %lld sparks. You have %lld." = "%@: Preis ✨ %lld. Du hast: ✨ %lld.";
+"%@ for the first year" = "%@ im ersten Jahr";
 "%@ free, then %@. Cancel anytime." = "%1$@ gratis, danach %2$@. Jederzeit kündbar.";
 "%@ is already done today." = "%@ ist heute schon erledigt.";
 "%@: the streak broke" = "%@: Serie gerissen";
@@ -55,6 +56,7 @@
 "Adopt a pet" = "Hol dir ein Haustier";
 "Advanced" = "Fortgeschritten";
 "After habit" = "Nach Gewohnheit";
+"After the first year, Pro renews at the regular price. Cancel anytime." = "Nach dem ersten Jahr verlängert sich Pro zum regulären Preis. Jederzeit kündbar.";
 "After: %@" = "Nach: %@";
 "Afternoon" = "Nachmittag";
 "All" = "Alle";
@@ -152,6 +154,7 @@
 "Clear your inbox" = "Posteingang leeren";
 "Clearer Pro" = "Klareres Pro";
 "Close" = "Schließen";
+"Code: %@" = "Code: %@";
 "Collector" = "Sammler";
 "Come back after a miss 10 times" = "Komm 10-mal nach einer Lücke zurück";
 "Comeback" = "Comeback";
@@ -166,6 +169,7 @@
 "Control Center" = "Kontrollzentrum";
 "Copied" = "Kopiert";
 "Copy address" = "Adresse kopieren";
+"Copy code" = "Code kopieren";
 "Copy message" = "Nachricht kopieren";
 "Copy message and address" = "Nachricht und Adresse kopieren";
 "Coral" = "Koralle";
@@ -271,6 +275,7 @@
 "First check-in done!" = "Das erste Häkchen ist gesetzt!";
 "First step" = "Erster Schritt";
 "First time" = "Erstes Mal";
+"First year of Pro %@ off" = "Erstes Jahr Pro mit %@ Rabatt";
 "Fitness" = "Fitness";
 "Focus" = "Fokus";
 "Focus for an hour" = "Eine Stunde konzentriert arbeiten";
@@ -290,6 +295,7 @@
 "Full mood journal" = "Volles Stimmungstagebuch";
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Hol dir Pro auf deinem iPhone, um den Timer auf der Apple Watch zu nutzen.";
 "Get a pet" = "Haustier holen";
+"Get the discount" = "Rabatt holen";
 "Go to bed on time" = "Pünktlich ins Bett";
 "Goal" = "Ziel";
 "Gold" = "Gold";
@@ -454,6 +460,7 @@
 "N times a week" = "N-mal pro Woche";
 "Name" = "Name";
 "Never" = "Nie";
+"New Year offer" = "Neujahrsangebot";
 "New achievement!" = "Neuer Erfolg!";
 "New app icons" = "Neue App-Symbole";
 "New group" = "Neue Gruppe";
@@ -702,6 +709,7 @@
 "Take vitamins" = "Vitamine nehmen";
 "Tangerine" = "Mandarine";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Tippe auf einen Tag, um ihn abzuhaken. Halte gedrückt, um ihn zu überspringen oder eine Notiz hinzuzufügen.";
+"Tap the button and paste the code in the App Store window. You'll see the final price before you pay." = "Tippe auf die Taste und füge den Code im App Store-Fenster ein. Den Endpreis siehst du vor dem Bezahlen.";
 "Tap the circle next to a habit to check it off. One is enough for today." = "Tippe auf den Kreis neben einer Gewohnheit, um sie abzuhaken. Eine reicht für heute.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Tippe auf den Kreis oder wische nach rechts zum Abhaken. Wische nach links zum Überspringen, für Notizen oder zum Bearbeiten. Halte gedrückt zum Verschieben.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Tippe auf den Kreis, um den Timer zu starten. Er läuft auf dem Sperrbildschirm und hakt die Gewohnheit ab, wenn die Zeit um ist.";
@@ -781,6 +789,7 @@
 "Unlock: %@" = "Freischalten: %@";
 "Unstoppable" = "Unaufhaltsam";
 "Until" = "Bis";
+"Until %@" = "Bis %@";
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "Bis eine Gewohnheit abgehakt ist, wird ihre Erinnerung wiederholt: %@. „Fertig\" und „Überspringen\" in der Mitteilung stoppen die Wiederholungen für diesen Tag.";
 "Version" = "Version";
 "Veteran" = "Veteran";
