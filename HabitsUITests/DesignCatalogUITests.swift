@@ -86,6 +86,10 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "health-03-health-settings-free", screen: "healthSettings", flags: ["-uitest-free"]),
         Shot(name: "health-04-editor", screen: "editorHealth"),
         Shot(name: "health-05-editor-free", screen: "editorHealth", flags: ["-uitest-free"]),
+        // 1.7, KAN-135: умное время напоминаний
+        Shot(name: "smart-01-suggestion", screen: "smartSuggestion"),
+        Shot(name: "smart-02-editor-on", screen: "smartEditor"),
+        Shot(name: "smart-03-editor-off", screen: "smartEditorOff"),
         // Обратная связь
         Shot(name: "50-feedback", screen: "feedback"),
         Shot(name: "51-feedback-send-options", screen: "feedback", alert: "sendOptions"),

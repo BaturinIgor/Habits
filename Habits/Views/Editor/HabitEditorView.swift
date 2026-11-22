@@ -43,6 +43,8 @@ struct HabitEditorView: View {
     /// Таймер (Pro).
     @State private var hasTimer: Bool
     @State private var timerMinutes: Int
+    /// Умное время (KAN-135): напоминание само подстраивается под обычное время отметки.
+    @State private var smartTime: Bool
     @FocusState private var nameFocused: Bool
 
     private enum Frequency: Hashable {
@@ -58,6 +60,8 @@ struct HabitEditorView: View {
     private let calendar = Calendar.app
     /// Макеты: сразу прокрутить к разделу Apple Health.
     private var scrollToHealth = false
+    /// Макеты: сразу прокрутить к разделу напоминания (умное время, KAN-135).
+    private var scrollToReminder = false
 
     init(habit: Habit?) {
         self.init(original: habit, base: habit)
@@ -114,6 +118,7 @@ struct HabitEditorView: View {
         _healthGoal = State(initialValue: base.health?.goal ?? HealthLink.Metric.steps.defaultGoal)
         _hasTimer = State(initialValue: (base.timerMinutes ?? 0) > 0)
         _timerMinutes = State(initialValue: base.timerMinutes ?? 10)
+        _smartTime = State(initialValue: base.smartTime == true)
         _isPaused = State(initialValue: pauseActive)
         _pauseWasActive = State(initialValue: pauseActive)
         _pausedUntil = State(initialValue: pauseActive ? (base.pausedUntil ?? today)
@@ -140,6 +145,22 @@ struct HabitEditorView: View {
         return String(localized: "If not checked off: \(repeats). Done in the notification stops the repeats.")
     }
 
+    /// «Умное время» есть, когда время отметки ставит сам человек: у Здоровья и слов отметка ставится сама.
+    private var canUseSmartTime: Bool { !draft.isWords && healthMetric == nil }
+
+    /// Что сделает умное время с выбранным временем: по отметкам этой привычки.
+    private var smartTimeFooter: String {
+        guard original != nil else { return String(localized: "The reminder moves closer to when you usually check off the habit.") }
+        let samples = SmartTime.samples(for: draft, in: store.data)
+        if let suggestion = SmartTime.suggestion(current: ReminderTime(date: reminderDate), samples: samples) {
+            return String(localized: "You usually check it off around \(suggestion.typical.text). The reminder will move to \(suggestion.suggested.text).")
+        }
+        if SmartTime.typicalMinutes(samples) == nil {
+            return String(localized: "The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins.")
+        }
+        return String(localized: "The reminder already matches when you usually check off the habit.")
+    }
+
     var body: some View {
         analyticsBody.analyticsScreen(.editor)
     }
@@ -158,7 +179,7 @@ struct HabitEditorView: View {
                 appearanceSection
                 if !isQuit {
                     scheduleSection
-                    reminderSection
+                    reminderSection.id("reminder")
                     if !draft.isWords {
                         // Apple Health выше цели и таймера: интеграция должна быть заметна (App Review 2.5.1).
                         if HealthSync.isAvailable {
@@ -178,8 +199,9 @@ struct HabitEditorView: View {
                 }
             }
             .onAppear {
-                guard scrollToHealth else { return }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { proxy.scrollTo("health", anchor: .center) }
+                guard scrollToHealth || scrollToReminder else { return }
+                let target = scrollToHealth ? "health" : "reminder"
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { proxy.scrollTo(target, anchor: .center) }
             }
             }
             .scrollDismissesKeyboard(.interactively)
@@ -387,6 +409,12 @@ struct HabitEditorView: View {
             }
             if hasReminder {
                 DatePicker("Time", selection: $reminderDate, displayedComponents: .hourAndMinute)
+                if canUseSmartTime {
+                    Toggle(isOn: $smartTime.animation(.snappy)) {
+                        Label("Smart time", systemImage: "clock.arrow.circlepath")
+                    }
+                    .accessibilityIdentifier("editor.smartTime")
+                }
                 if store.data.isPro {
                     Toggle(isOn: $customRepeat.animation(.snappy)) {
                         HStack(spacing: 8) {
@@ -412,7 +440,11 @@ struct HabitEditorView: View {
             Text("Notification")
         } footer: {
             if hasReminder {
-                Text(repeatFooter)
+                if canUseSmartTime && smartTime {
+                    Text(smartTimeFooter + "\n" + repeatFooter)
+                } else {
+                    Text(repeatFooter)
+                }
             }
         }
     }
@@ -749,6 +781,7 @@ struct HabitEditorView: View {
             habit.schedule.endDate = nil
         }
         habit.reminder = hasReminder ? ReminderTime(date: reminderDate) : nil
+        habit.smartTime = hasReminder && smartTime && !habit.isWords && habit.health == nil ? true : nil
         if store.data.isPro {
             habit.repeatCount = customRepeat ? repeatCount : nil
             habit.repeatInterval = customRepeat ? repeatInterval : nil
@@ -792,6 +825,7 @@ extension HabitEditorView {
         habit.minimumVersion = nil
         habit.health = nil
         habit.timerMinutes = nil
+        habit.smartTime = nil
         store.upsert(habit, source: .editor)
         dismiss()
     }
@@ -904,6 +938,13 @@ extension HabitEditorView {
     func scrollingToHealth() -> Self {
         var copy = self
         copy.scrollToHealth = true
+        return copy
+    }
+
+    /// Макеты (DesignGallery): открыть редактор сразу на разделе напоминания.
+    func scrollingToReminder() -> Self {
+        var copy = self
+        copy.scrollToReminder = true
         return copy
     }
 }

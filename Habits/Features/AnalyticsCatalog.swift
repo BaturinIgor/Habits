@@ -141,6 +141,11 @@ enum AnalyticsEvent {
     case familyGroupJoined
     case feedbackSent(channel: String)
     case backupRestored
+    /// Умное время (KAN-135): shiftMinutes - на сколько сдвигается напоминание, плюс - позже.
+    case smartTimeSuggested(shiftMinutes: Int)
+    case smartTimeAccepted(shiftMinutes: Int)
+    case smartTimeDismissed(shiftMinutes: Int)
+    case smartTimeAutoShifted(shiftMinutes: Int)
 
     var type: String {
         switch self {
@@ -163,6 +168,10 @@ enum AnalyticsEvent {
         case .familyGroupJoined: "Family.groupJoined"
         case .feedbackSent: "Feedback.sent"
         case .backupRestored: "Backup.restored"
+        case .smartTimeSuggested: "SmartTime.suggested"
+        case .smartTimeAccepted: "SmartTime.accepted"
+        case .smartTimeDismissed: "SmartTime.dismissed"
+        case .smartTimeAutoShifted: "SmartTime.autoShifted"
         }
     }
 
@@ -220,6 +229,9 @@ enum AnalyticsEvent {
             return ["Feedback.channel": channel]
         case .ratingPromptShown, .familyGroupCreated, .familyGroupJoined, .backupRestored:
             return [:]
+        case .smartTimeSuggested(let shift), .smartTimeAccepted(let shift),
+             .smartTimeDismissed(let shift), .smartTimeAutoShifted(let shift):
+            return ["SmartTime.shiftMinutes": shift]
         }
     }
 }

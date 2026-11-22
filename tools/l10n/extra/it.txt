@@ -826,3 +826,12 @@ To link a habit, open it and choose Apple Health → Check off by.||Per collegar
 Open the Health app||Apri l'app Salute
 You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Puoi consentire o negare l'accesso a ogni tipo di dato in Impostazioni → Privacy e sicurezza → Salute → ZenHab.
 Apple Health: %@||Apple Health: %@
+Smart time||Orario intelligente
+The reminder moves closer to when you usually check off the habit.||Il promemoria si avvicina all'ora in cui di solito segni l'abitudine.
+You usually check it off around %@. The reminder will move to %@.||Di solito la segni verso le %@. Il promemoria passerà alle %@.
+The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins.||Il promemoria si avvicina all'ora in cui di solito segni l'abitudine. Servono circa due settimane di registrazioni.
+The reminder already matches when you usually check off the habit.||Il promemoria coincide già con l'ora in cui di solito segni l'abitudine.
+You usually check it off around %@||Di solito la segni verso le %@
+The reminder comes at %@. Move it to %@?||Il promemoria arriva alle %@. Spostarlo alle %@?
+Move to %@||Sposta alle %@
+Not now||Non ora

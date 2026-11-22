@@ -426,6 +426,7 @@
 "Morning" = "सुबह";
 "Morning exercises" = "सुबह की कसरत";
 "Most steady: %@, %lld of %lld" = "सबसे नियमित: %@, %lld में से %lld";
+"Move to %@" = "%@ पर करें";
 "Move to archive" = "संग्रह में भेजें";
 "My month" = "मेरा महीना";
 "My week" = "मेरा हफ़्ता";
@@ -468,6 +469,7 @@
 "Not available" = "उपलब्ध नहीं";
 "Not checked off yet: %@" = "अभी बाकी: %@";
 "Not enough sparks" = "पर्याप्त चिंगारियाँ नहीं";
+"Not now" = "अभी नहीं";
 "Not set up" = "सेट नहीं";
 "Not yet" = "अभी नहीं";
 "Note" = "नोट";
@@ -623,6 +625,7 @@
 "Sleeping" = "सो रहा है";
 "Small steps add up." = "छोटे कदम मिलकर बड़े बनते हैं।";
 "Small steps every day" = "हर दिन छोटे कदम";
+"Smart time" = "स्मार्ट समय";
 "Some days" = "कुछ दिन";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "सेटिंग्स में \"आज\" स्क्रीन को समूहों के अनुसार सजाएँ, और एक समूह दिखाने के लिए \"आज\" विजेट को दबाकर रखें।";
 "Sparks" = "चिंगारियाँ";
@@ -686,6 +689,10 @@
 "The mood card at the bottom of the list lets you rate your day with one tap." = "सूची के नीचे मूड कार्ड से एक टैप में अपने दिन को रेट करें।";
 "The new language will apply after you close the app and open it again." = "ऐप बंद करके फिर खोलने पर नई भाषा लागू होगी।";
 "The purchase could not be verified." = "खरीद की पुष्टि नहीं हो सकी।";
+"The reminder already matches when you usually check off the habit." = "रिमाइंडर पहले से उस समय से मेल खाता है जब आप आमतौर पर आदत पूरी करते हैं।";
+"The reminder comes at %@. Move it to %@?" = "रिमाइंडर %@ पर आता है। क्या इसे %@ पर कर दें?";
+"The reminder moves closer to when you usually check off the habit." = "रिमाइंडर उस समय के करीब आ जाता है जब आप आमतौर पर आदत पूरी करते हैं।";
+"The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins." = "रिमाइंडर उस समय के करीब आ जाता है जब आप आमतौर पर आदत पूरी करते हैं। इसके लिए करीब दो हफ़्ते के रिकॉर्ड चाहिए।";
 "The streak broke" = "लगातार गिनती टूट गई";
 "The widget will update after unlocking." = "अनलॉक करने के बाद विजेट अपडेट होगा।";
 "There are no purchases yet: this switch turns Pro features on for testing." = "अभी खरीदारी नहीं है: यह स्विच टेस्ट के लिए Pro सुविधाएँ चालू करता है।";
@@ -788,6 +795,8 @@
 "Yesterday" = "बीता कल";
 "Yoga" = "योग";
 "You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "हर तरह के डेटा की अनुमति सेटिंग्ज़ → गोपनीयता और सुरक्षा → स्वास्थ्य → ZenHab में दी या हटाई जा सकती है।";
+"You usually check it off around %@" = "आप आमतौर पर इसे %@ के आसपास पूरा करते हैं";
+"You usually check it off around %@. The reminder will move to %@." = "आप आमतौर पर इसे %@ के आसपास पूरा करते हैं। रिमाइंडर %@ पर चला जाएगा।";
 "You're doing great!" = "आप बहुत अच्छा कर रहे हैं!";
 "You've gone through the whole dictionary" = "आपने पूरा शब्दकोश पूरा कर लिया";
 "Young" = "किशोर";

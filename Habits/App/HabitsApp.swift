@@ -29,6 +29,8 @@ struct HabitsApp: App {
             switch phase {
             case .active:
                 store.reloadFromDisk()
+                // Умное время: напоминания подстраиваются под обычное время отметки (KAN-135).
+                store.applySmartTimes()
                 Analytics.shared.appBecameActive()
                 Task { await AppLock.shared.unlockIfNeeded() }
                 Task {

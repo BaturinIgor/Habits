@@ -1,2 +1,6 @@
 # Habits 1.7: снимки только новых и изменённых экранов (см. design/README.md).
 # Остальные экраны — из design/1.6/screens.
+# KAN-135: умное время напоминаний
+smart-01-suggestion
+smart-02-editor-on
+smart-03-editor-off

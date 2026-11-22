@@ -426,6 +426,7 @@
 "Morning" = "朝";
 "Morning exercises" = "朝の体操";
 "Most steady: %@, %lld of %lld" = "いちばん安定：%@、%lld/%lld";
+"Move to %@" = "%@ に移す";
 "Move to archive" = "アーカイブへ移動";
 "My month" = "私の1か月";
 "My week" = "私の1週間";
@@ -468,6 +469,7 @@
 "Not available" = "利用不可";
 "Not checked off yet: %@" = "まだチェックしていません：%@";
 "Not enough sparks" = "スパークが足りません";
+"Not now" = "今はしない";
 "Not set up" = "未設定";
 "Not yet" = "まだ";
 "Note" = "メモ";
@@ -623,6 +625,7 @@
 "Sleeping" = "おやすみ中";
 "Small steps add up." = "小さな一歩が積み重なる。";
 "Small steps every day" = "毎日の小さな一歩";
+"Smart time" = "スマート時刻";
 "Some days" = "曜日指定";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "設定で「今日」画面をグループ別に並べられます。「今日」ウィジェットを長押しすると1つのグループを表示できます。";
 "Sparks" = "スパーク";
@@ -686,6 +689,10 @@
 "The mood card at the bottom of the list lets you rate your day with one tap." = "リストの下にある気分カードで、ワンタップで一日を評価できます。";
 "The new language will apply after you close the app and open it again." = "アプリを閉じて開き直すと新しい言語になります。";
 "The purchase could not be verified." = "購入を確認できませんでした。";
+"The reminder already matches when you usually check off the habit." = "リマインダーはすでに、いつもチェックする時刻に合っています。";
+"The reminder comes at %@. Move it to %@?" = "リマインダーは %@ に届きます。%@ に移しますか？";
+"The reminder moves closer to when you usually check off the habit." = "リマインダーが、いつも習慣をチェックする時刻に近づきます。";
+"The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins." = "リマインダーが、いつも習慣をチェックする時刻に近づきます。約2週間分のチェックが必要です。";
 "The streak broke" = "連続記録が途切れました";
 "The widget will update after unlocking." = "ロック解除後にウィジェットが更新されます。";
 "There are no purchases yet: this switch turns Pro features on for testing." = "まだ購入機能はありません。このスイッチでPro機能をテストできます。";
@@ -788,6 +795,8 @@
 "Yesterday" = "昨日";
 "Yoga" = "ヨガ";
 "You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "各データへのアクセスは「設定」→「プライバシーとセキュリティ」→「ヘルスケア」→ ZenHab で許可または拒否できます。";
+"You usually check it off around %@" = "いつもは %@ ごろにチェック";
+"You usually check it off around %@. The reminder will move to %@." = "いつもは %@ ごろにチェックしています。リマインダーは %@ に移ります。";
 "You're doing great!" = "すごくいい調子！";
 "You've gone through the whole dictionary" = "辞書の単語をすべて学びました";
 "Young" = "子ども";

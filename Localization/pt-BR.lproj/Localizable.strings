@@ -426,6 +426,7 @@
 "Morning" = "Manhã";
 "Morning exercises" = "Exercícios matinais";
 "Most steady: %@, %lld of %lld" = "A mais constante: %@, %lld de %lld";
+"Move to %@" = "Passar para %@";
 "Move to archive" = "Mover para o arquivo";
 "My month" = "Meu mês";
 "My week" = "Minha semana";
@@ -468,6 +469,7 @@
 "Not available" = "Indisponível";
 "Not checked off yet: %@" = "Ainda não marcado: %@";
 "Not enough sparks" = "Faíscas insuficientes";
+"Not now" = "Agora não";
 "Not set up" = "Não configurado";
 "Not yet" = "Ainda não";
 "Note" = "Nota";
@@ -623,6 +625,7 @@
 "Sleeping" = "Dormindo";
 "Small steps add up." = "Pequenos passos fazem diferença.";
 "Small steps every day" = "Pequenos passos todos os dias";
+"Smart time" = "Horário inteligente";
 "Some days" = "Alguns dias";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Organize a tela Hoje por grupos em Ajustes e toque e segure o widget Hoje para mostrar um grupo.";
 "Sparks" = "Faíscas";
@@ -686,6 +689,10 @@
 "The mood card at the bottom of the list lets you rate your day with one tap." = "O cartão de humor no fim da lista permite avaliar seu dia com um toque.";
 "The new language will apply after you close the app and open it again." = "O novo idioma será aplicado depois que você fechar e abrir o app de novo.";
 "The purchase could not be verified." = "Não foi possível verificar a compra.";
+"The reminder already matches when you usually check off the habit." = "O lembrete já coincide com o horário em que você costuma marcar o hábito.";
+"The reminder comes at %@. Move it to %@?" = "O lembrete chega às %@. Passar para %@?";
+"The reminder moves closer to when you usually check off the habit." = "O lembrete se aproxima do horário em que você costuma marcar o hábito.";
+"The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins." = "O lembrete se aproxima do horário em que você costuma marcar o hábito. São necessárias cerca de duas semanas de registros.";
 "The streak broke" = "A sequência foi interrompida";
 "The widget will update after unlocking." = "O widget será atualizado após o desbloqueio.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "Ainda não há compras: este botão ativa os recursos Pro para teste.";
@@ -788,6 +795,8 @@
 "Yesterday" = "Ontem";
 "Yoga" = "Ioga";
 "You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "Você pode permitir ou negar o acesso a cada tipo de dado em Ajustes → Privacidade e Segurança → Saúde → ZenHab.";
+"You usually check it off around %@" = "Você costuma marcar por volta das %@";
+"You usually check it off around %@. The reminder will move to %@." = "Você costuma marcar por volta das %@. O lembrete vai passar para %@.";
 "You're doing great!" = "Você está indo muito bem!";
 "You've gone through the whole dictionary" = "Você passou por todo o dicionário";
 "Young" = "Jovem";
