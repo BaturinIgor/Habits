@@ -39,9 +39,9 @@ final class OnboardingUITests: XCTestCase {
         // «Сегодня» с привычками программы и подсказкой первого дня.
         XCTAssertTrue(app.tabBars.firstMatch.waitForExistence(timeout: 10))
         XCTAssertTrue(element(app, "today.firstDay.hint").waitForExistence(timeout: 5))
-        // Карточка привычки объединяет подписи в одну: ищем по вхождению названия.
-        let water = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS %@", "Drink water")).firstMatch
-        XCTAssertTrue(water.exists)
+        // Карточки созданных привычек (список ленивый: нижние могут быть ещё не построены).
+        let toggles = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH %@", "habit.toggle."))
+        XCTAssertGreaterThan(toggles.count, 0)
     }
 
     /// Пропуск: сразу «Сегодня», без пейволла.

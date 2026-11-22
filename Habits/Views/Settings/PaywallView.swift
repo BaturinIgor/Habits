@@ -114,9 +114,11 @@ struct PaywallView: View {
                             .padding(.vertical, 6)
                     }
                     .glassButtonStyle(prominent: false)
+                    .accessibilityIdentifier("paywall.continueFree")
                     .padding(.horizontal, 20)
                     .padding(.vertical, 10)
-                    .accessibilityIdentifier("paywall.continueFree")
+                    .frame(maxWidth: .infinity)
+                    .background(.bar)
                 }
             }
             .background(AppBackground())

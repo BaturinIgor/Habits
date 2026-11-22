@@ -655,7 +655,9 @@ struct FirstDayCard: View {
         .card(padding: 16, cornerRadius: 22)
         .task(id: state) {
             guard state == .celebrate else { return }
-            canAskNotifications = await NotificationPlanner.authorizationStatus() == .notDetermined
+            // В макетах — вариант с вопросом о напоминаниях, даже если симулятор уже дал разрешение.
+            let status = await NotificationPlanner.authorizationStatus()
+            canAskNotifications = TestMode.has("-design") || status == .notDetermined
             UIAccessibility.post(notification: .announcement, argument: String(localized: "First check-in done!"))
         }
         .sensoryFeedback(.success, trigger: state == .celebrate)
