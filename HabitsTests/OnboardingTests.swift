@@ -70,6 +70,15 @@ final class OnboardingTests: XCTestCase {
         XCTAssertFalse(OnboardingPlan.shouldShowOnboarding(data.settings) && OnboardingPlan.shouldShowPaywall(data))
     }
 
+    /// «Что нового» относится к текущей версии: иначе обновившиеся с 1.6 увидят старые карточки или не увидят ничего.
+    func testWhatsNewMatchesAppVersion() throws {
+        let version = try XCTUnwrap(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String)
+        XCTAssertTrue(version == WhatsNewView.version || version.hasPrefix(WhatsNewView.version + "."),
+                      "WhatsNewView.version \(WhatsNewView.version), app \(version)")
+        // Обновившийся с 1.6 видел «Что нового» 1.6: новые карточки ему покажут.
+        XCTAssertNotEqual(WhatsNewView.version, "1.6")
+    }
+
     /// Новый пользователь видит онбординг и пейволл один раз; с Pro пейволла нет.
     func testFreshInstallShowsOnboardingAndPaywallOnce() throws {
         var data = AppData()
