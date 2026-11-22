@@ -6,7 +6,7 @@ import UIKit
 
 /// Настройки обратной связи. Адрес задаётся здесь один раз.
 enum AppInfo {
-    static let supportEmail = "zdrgvretrsyhtrse@mail.ru"
+    static let supportEmail = "dawnwell.app+zenhab@gmail.com"
     /// Числовой Apple ID приложения из App Store Connect.
     static let appStoreID = "6831041474"
     static let privacyURL = URL(string: "https://baturinigor.github.io/Habits/privacy.html")!
@@ -19,6 +19,18 @@ enum AppInfo {
         let short = info?["CFBundleShortVersionString"] as? String ?? "1.0"
         let build = info?["CFBundleVersion"] as? String ?? "1"
         return "\(short) (\(build))"
+    }
+
+    /// Ссылка mailto на адрес поддержки с темой и текстом письма.
+    static func mailtoURL(subject: String, body: String) -> URL? {
+        var components = URLComponents()
+        components.scheme = "mailto"
+        // URLComponents не кодирует «+», а почтовые клиенты читают его как пробел:
+        // без %2B письмо на dawnwell.app+zenhab@ уйдёт не туда. То же в теме и тексте.
+        components.percentEncodedPath = supportEmail.replacingOccurrences(of: "+", with: "%2B")
+        components.queryItems = [URLQueryItem(name: "subject", value: subject), URLQueryItem(name: "body", value: body)]
+        components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+        return components.url
     }
 }
 
@@ -271,13 +283,7 @@ struct FeedbackView: View {
     }
 
     private func openMailApp() {
-        var components = URLComponents()
-        components.scheme = "mailto"
-        components.path = AppInfo.supportEmail
-        components.queryItems = [URLQueryItem(name: "subject", value: subject), URLQueryItem(name: "body", value: body_)]
-        // URLComponents не кодирует «+», а почтовые клиенты читают его как пробел.
-        components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
-        if let url = components.url {
+        if let url = AppInfo.mailtoURL(subject: subject, body: body_) {
             openURL(url) { accepted in
                 if accepted { dismiss() } else { showingNoMail = true }
             }

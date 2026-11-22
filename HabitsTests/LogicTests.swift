@@ -920,4 +920,21 @@ final class LogicTests: XCTestCase {
         XCTAssertEqual(params.count, 25)
         XCTAssertEqual(Analytics.firebaseParameters(["Flag.on": true])["flag_on"] as? Int, 1)
     }
+
+    // MARK: Почта обратной связи (1.7)
+
+    func testMailtoEncodesPlusInSupportEmail() throws {
+        XCTAssertEqual(AppInfo.supportEmail, "dawnwell.app+zenhab@gmail.com")
+        let url = try XCTUnwrap(AppInfo.mailtoURL(subject: "Habits 1.7 + idea", body: "a+b & c"))
+        // «+» закодирован и в адресе, и в теме/тексте: клиенты не прочитают его как пробел.
+        XCTAssertTrue(url.absoluteString.hasPrefix("mailto:dawnwell.app%2Bzenhab@gmail.com?"), url.absoluteString)
+        XCTAssertFalse(url.absoluteString.contains("+"), url.absoluteString)
+
+        let components = try XCTUnwrap(URLComponents(url: url, resolvingAgainstBaseURL: false))
+        XCTAssertEqual(components.path, AppInfo.supportEmail)
+        XCTAssertEqual(components.path.removingPercentEncoding, AppInfo.supportEmail)
+        let items = Dictionary(uniqueKeysWithValues: (components.queryItems ?? []).map { ($0.name, $0.value) })
+        XCTAssertEqual(items["subject"], "Habits 1.7 + idea")
+        XCTAssertEqual(items["body"], "a+b & c")
+    }
 }
