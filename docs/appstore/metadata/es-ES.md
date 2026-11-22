@@ -51,11 +51,9 @@ Condiciones de uso: https://www.apple.com/legal/internet-services/itunes/dev/std
 Privacidad: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab en el Apple Watch: los hábitos de hoy en tu muñeca, marcados con un toque (en los hábitos con contador, cada toque suma uno). Funciona sin conexión y se sincroniza con tu iPhone.
-• Complicaciones para la esfera: circular, de esquina, rectangular y en línea. Ve tu progreso del día de un vistazo.
-• Temporizador de hábitos en el Apple Watch (Pro): cuando acaba el tiempo, el reloj te da un toque en la muñeca y marca el hábito.
-• Resumen mensual y Resumen anual: en Estadísticas o en Hoy al empezar el mes, y puedes compartirlos como imagen.
-• Las imágenes que compartes ahora llevan un código QR y se envían junto con un enlace a ZenHab en el App Store.
-• Hemos redibujado las 11 mascotas: más suaves y con volumen, 4 etapas, emociones y animaciones tranquilas. Respiran, parpadean, algunas mueven la cola y todas dan un salto cuando marcas un hábito.
-• Estadísticas de uso anónimas para saber qué mejorar. Nunca incluyen nada de lo que escribes, y puedes desactivarlas en Ajustes.
-• Las tarjetas de resumen se ven mejor con texto grande, y la pantalla de la mascota ya está traducida del todo.
+• Empieza con una meta: elige qué quieres cambiar y ZenHab te propone hábitos listos para usar.
+• Recordatorios inteligentes: se adaptan a la hora en que de verdad marcas tus hábitos.
+• Ánimo y hábitos: descubre qué hábitos van de la mano con tu mejor estado de ánimo.
+• Más Siri y Atajos: registra tu estado de ánimo o inicia un temporizador con la voz, y encuentra tus hábitos en Spotlight.
+• Oferta de Año Nuevo en ZenHab Pro, por tiempo limitado.
+• Mejor con texto grande y VoiceOver.

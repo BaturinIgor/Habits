@@ -49,11 +49,9 @@ Warunki korzystania: https://www.apple.com/legal/internet-services/itunes/dev/st
 Prywatność: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab na Apple Watch: dzisiejsze nawyki na nadgarstku, odhaczane jednym dotknięciem (przy nawykach z licznikiem każde dotknięcie dodaje jeden). Działa offline i synchronizuje się z iPhone'em.
-• Komplikacje na tarczę: okrągła, narożna, prostokątna i w linii. Postęp dnia widać od razu.
-• Minutnik nawyku na Apple Watch (Pro): gdy czas minie, zegarek stuknie cię w nadgarstek i odhaczy nawyk.
-• Podsumowanie miesiąca i Podsumowanie roku: w Statystykach albo na ekranie Dziś na początku miesiąca, do udostępnienia jako obrazek.
-• Udostępniane obrazki mają teraz kod QR, a razem z obrazkiem wysyłany jest link do ZenHab w App Store.
-• Wszystkie 11 zwierzaków narysowaliśmy od nowa: miękka, przestrzenna grafika, 4 etapy, emocje i spokojne animacje. Oddychają, mrugają, niektóre machają ogonem, a wszystkie podskakują, gdy odhaczasz nawyk.
-• Anonimowe statystyki użycia pomagają nam zobaczyć, co poprawić. Nigdy nie trafia do nich nic, co wpisujesz, a wyłączysz je w Ustawieniach.
-• Karty podsumowań lepiej wyglądają przy dużym tekście, a ekran zwierzaka jest już w pełni przetłumaczony.
+• Zacznij od celu: wybierz, co chcesz zmienić, a ZenHab zaproponuje gotowy zestaw nawyków.
+• Inteligentne przypomnienia: dopasowują się do pory, o której naprawdę odhaczasz nawyki.
+• Nastrój i nawyki: zobacz, które nawyki idą w parze z twoim najlepszym nastrojem.
+• Więcej Siri i Skrótów: zapisz nastrój lub włącz minutnik głosem, a nawyki znajdziesz w Spotlight.
+• Noworoczna oferta na ZenHab Pro, przez ograniczony czas.
+• Wygodniej z dużą czcionką i VoiceOver.

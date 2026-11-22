@@ -49,11 +49,9 @@ Termini d'uso: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacy: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab su Apple Watch: le abitudini di oggi al polso, da spuntare con un tocco (per quelle con un conteggio, ogni tocco aggiunge uno). Funziona anche offline e si sincronizza con l'iPhone.
-• Complicazioni per il quadrante: circolare, angolare, rettangolare e in linea. Vedi a colpo d'occhio come va la giornata.
-• Timer delle abitudini su Apple Watch (Pro): allo scadere, l'orologio ti dà un colpetto al polso e spunta l'abitudine.
-• Riepilogo del mese e Riepilogo dell'anno: in Statistiche o in Oggi a inizio mese, da condividere come immagine.
-• Le immagini che condividi ora hanno un codice QR e partono insieme a un link a ZenHab sull'App Store.
-• Tutti gli 11 cuccioli sono stati ridisegnati: un nuovo stile morbido, 4 fasi di crescita, emozioni e animazioni delicate. Respirano, sbattono le palpebre, alcuni muovono la coda e tutti fanno un salto quando spunti un'abitudine.
-• Statistiche d'uso anonime per capire cosa migliorare. Non contengono mai nulla di ciò che scrivi, e puoi disattivarle in Impostazioni.
-• Le schede di riepilogo si leggono meglio con il testo grande, e la schermata del cucciolo ora è tutta tradotta.
+• Parti da un obiettivo: scegli cosa vuoi cambiare e ZenHab ti propone abitudini già pronte.
+• Promemoria intelligenti: si adattano all'ora in cui spunti davvero le abitudini.
+• Umore e abitudini: scopri quali abitudini vanno di pari passo con il tuo umore migliore.
+• Più Siri e Comandi Rapidi: registra l'umore o avvia un timer con la voce e trova le abitudini in Spotlight.
+• Offerta di Capodanno su ZenHab Pro, per un periodo limitato.
+• Va meglio con il testo grande e VoiceOver.
