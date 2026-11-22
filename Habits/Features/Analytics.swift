@@ -182,6 +182,11 @@ final class Analytics {
         log(event.type, payload)
     }
 
+    /// Показан шаг онбординга: событие onboarding_step с параметром step (1.7, KAN-168).
+    func onboardingStep(_ step: Int) {
+        send(.onboardingStep(step: step))
+    }
+
     // MARK: Отправка
 
     private func logScreen(_ screen: AnalyticsScreen) {

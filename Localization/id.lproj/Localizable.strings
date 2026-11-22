@@ -24,6 +24,7 @@
 "1 spark for each check-in, up to %lld a day" = "1 percikan untuk setiap centang, hingga %lld per hari";
 "30 perfect days in a row" = "30 hari sempurna berturut-turut";
 "7 perfect days in a row" = "7 hari sempurna berturut-turut";
+"A calm evening and a steady routine" = "Malam yang tenang dan rutinitas teratur";
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "Salinan kebiasaan dan riwayatmu tersimpan otomatis ke iCloud saat kamu keluar dari aplikasi, jadi tidak ada yang hilang saat ganti ponsel.";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "Hitung mundur di Layar Terkunci dan Dynamic Island yang mencentang kebiasaan saat waktunya habis.";
 "A grown pet brings up to +5 a day" = "Hewan yang sudah besar memberi hingga +5 per hari";
@@ -88,6 +89,7 @@
 "Avatars" = "Avatar";
 "Awful" = "Buruk sekali";
 "Baby" = "Bayi";
+"Back" = "Kembali";
 "Back up now" = "Cadangkan sekarang";
 "Back up to iCloud" = "Cadangkan ke iCloud";
 "Background" = "Latar";
@@ -99,6 +101,7 @@
 "Best current streak" = "Rentetan terbaik saat ini";
 "Best streak" = "Rentetan terbaik";
 "Best, days" = "Rekor, hari";
+"Better sleep" = "Tidur lebih baik";
 "Better than nothing" = "Lebih baik daripada tidak";
 "Break bad habits" = "Hentikan kebiasaan buruk";
 "Breathing exercise" = "Latihan pernapasan";
@@ -114,6 +117,7 @@
 "By habit" = "Per kebiasaan";
 "By time" = "Menurut jam";
 "Call family" = "Telepon keluarga";
+"Calm" = "Tenang";
 "Cancel" = "Batal";
 "Cat" = "Kucing";
 "Chain reaction" = "Reaksi berantai";
@@ -157,6 +161,7 @@
 "Completion" = "Penyelesaian";
 "Consistency" = "Konsistensi";
 "Continue" = "Lanjut";
+"Continue for free" = "Lanjutkan gratis";
 "Control Center" = "Pusat Kontrol";
 "Copied" = "Disalin";
 "Copy address" = "Salin alamat";
@@ -224,6 +229,7 @@
 "End" = "Akhir";
 "End date" = "Tanggal akhir";
 "Ended" = "Berakhir";
+"Energy" = "Energi";
 "Evening" = "Malam";
 "Evening summary" = "Ringkasan malam";
 "Every" = "Setiap";
@@ -260,9 +266,11 @@
 "Fifty" = "Lima puluh";
 "Finance" = "Keuangan";
 "Finish and check off" = "Selesai dan centang";
+"First check-in done!" = "Centang pertama selesai!";
 "First step" = "Langkah pertama";
 "First time" = "Pertama kali";
 "Fitness" = "Olahraga";
+"Focus" = "Fokus";
 "Focus for an hour" = "Fokus satu jam";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "Untuk kebiasaan buruk: merokok, manis, alkohol, scrolling.";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "Misalnya 8 gelas air. Setiap ketukan pada lingkaran menambah satu.";
@@ -284,6 +292,7 @@
 "Goal" = "Target";
 "Gold" = "Emas";
 "Good" = "Baik";
+"Got it" = "Oke";
 "Great" = "Hebat";
 "Great job, keep it up" = "Bagus sekali, pertahankan";
 "Group" = "Grup";
@@ -315,6 +324,7 @@
 "Hide keyboard" = "Sembunyikan papan ketik";
 "Hours of sleep" = "Jam tidur";
 "How are you today?" = "Bagaimana kabarmu hari ini?";
+"How it works" = "Cara kerjanya";
 "How many habits are done today." = "Berapa kebiasaan yang selesai hari ini.";
 "How often" = "Seberapa sering";
 "How to earn" = "Cara mendapatkan";
@@ -372,12 +382,14 @@
 "Learn words" = "Belajar kata";
 "Learned: %lld of %lld" = "Dipelajari: %lld dari %lld";
 "Learning" = "Belajar";
+"Learning and languages" = "Belajar dan bahasa";
 "Leave group" = "Keluar dari grup";
 "Leave group?" = "Keluar dari grup?";
 "Left for today: %@." = "Tersisa hari ini: %@.";
 "Legend" = "Legenda";
 "Less" = "Sedikit";
 "Less social media" = "Kurangi media sosial";
+"Less stress, more balance" = "Lebih sedikit stres, lebih seimbang";
 "Let's go" = "Ayo";
 "Let's keep the streak going!" = "Ayo jaga rentetannya!";
 "Let's start with your first habit" = "Mari mulai dengan kebiasaan pertamamu";
@@ -468,6 +480,7 @@
 "Not available" = "Tidak tersedia";
 "Not checked off yet: %@" = "Belum dicentang: %@";
 "Not enough sparks" = "Percikan tidak cukup";
+"Not now" = "Nanti saja";
 "Not set up" = "Belum diatur";
 "Not yet" = "Belum";
 "Note" = "Catatan";
@@ -527,8 +540,10 @@
 "Pet gifts" = "Hadiah hewan";
 "Pet name" = "Nama hewan peliharaan";
 "Phoenix" = "Phoenix";
+"Pick a goal and we'll set up your first habits. You can change everything later." = "Pilih tujuan dan kami siapkan kebiasaan pertamamu. Semuanya bisa diubah nanti.";
 "Pick a template or create your own." = "Pilih templat atau buat sendiri.";
 "Plan the day" = "Rencanakan hari";
+"Plan the day and get things done" = "Rencanakan hari dan selesaikan tugas";
 "Practice an instrument" = "Latihan alat musik";
 "Privacy Policy" = "Kebijakan Privasi";
 "Pro gifts" = "Hadiah Pro";
@@ -554,6 +569,7 @@
 "Reach a weekly goal 4 times" = "Capai target mingguan 4 kali";
 "Read" = "Membaca";
 "Reading" = "Membaca";
+"Reading, study and new words" = "Membaca, belajar, dan kata baru";
 "Reflective" = "Reflektif";
 "Refresh widgets" = "Segarkan widget";
 "Regular" = "Pelanggan setia";
@@ -638,9 +654,11 @@
 "Start over" = "Mulai dari awal";
 "Start the count again?" = "Mulai hitungan lagi?";
 "Start timer" = "Mulai timer";
+"Start with one check-in today. Small steps count." = "Mulai dengan satu centang hari ini. Langkah kecil pun berarti.";
 "Statistics" = "Statistik";
 "Statistics will appear once you start checking off habits." = "Statistik akan muncul setelah kamu mulai mencentang kebiasaan.";
 "Status" = "Status";
+"Step %lld of 3" = "Langkah %lld dari 3";
 "Steps" = "Langkah";
 "Steps to reproduce help a lot." = "Langkah untuk mengulangi masalah sangat membantu.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Langkah untuk mengulang masalah sangat membantu. Kamu bisa melampirkan tangkapan layar di email.";
@@ -666,6 +684,7 @@
 "Take a break for a trip or illness without losing your streak." = "Istirahat saat bepergian atau sakit tanpa kehilangan rentetan.";
 "Take vitamins" = "Minum vitamin";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Ketuk hari untuk mencentangnya. Tekan lama untuk melewati atau menambah catatan.";
+"Tap the circle next to a habit to check it off. One is enough for today." = "Ketuk lingkaran di samping kebiasaan untuk mencentangnya. Satu saja cukup untuk hari ini.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Ketuk lingkaran atau geser ke kanan untuk mencentang. Geser ke kiri untuk melewati, menambah catatan, atau mengubah. Tekan lama untuk mengubah urutan.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Ketuk lingkaran untuk memulai pengatur waktu. Hitung mundur tampil di Layar Terkunci dan kebiasaan tercentang saat waktu habis.";
 "Tap the days when the habit should be done" = "Ketuk hari saat kebiasaan harus dilakukan";
@@ -675,6 +694,8 @@
 "Tell us what you think" = "Ceritakan pendapatmu";
 "Terms of Use" = "Ketentuan Penggunaan";
 "Thank you!" = "Terima kasih!";
+"That's how a streak starts. Come back tomorrow to keep it going." = "Begitulah rentetan dimulai. Kembali besok untuk melanjutkannya.";
+"That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "Begitulah rentetan dimulai. Mau pengingat supaya besok tidak lupa?";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Layar Pro kini menampilkan semua isinya dan terbuka di fitur yang kamu ketuk.";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "Cadangan di iCloud: %@, %@, kebiasaan: %lld. Diperbarui otomatis saat kamu keluar dari aplikasi. Foto avatar dan latar tidak termasuk.";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "Versi gratis sudah mencapai batas kebiasaan. Buka ZenHab untuk mendapatkan Pro.";
@@ -715,14 +736,17 @@
 "Track expenses" = "Catat pengeluaran";
 "Track habits, get gentle reminders and watch your streaks grow." = "Lacak kebiasaan, dapatkan pengingat yang lembut, dan lihat rentetanmu bertambah.";
 "Track your habits with ZenHab" = "Pantau kebiasaanmu dengan ZenHab";
+"Try Pro free for %@" = "Coba Pro gratis selama %@";
 "Try again" = "Coba lagi";
 "Try it" = "Coba";
+"Turn on reminders" = "Nyalakan pengingat";
 "Turn on the lock" = "Aktifkan kunci";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "Nyalakan “Aku sedang berhenti” di sebuah kebiasaan untuk melihat sudah berapa hari tanpanya, rekormu, dan target berikutnya. Dengan Pro, juga uang yang dihemat.";
 "Turtle" = "Kura-kura";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Dua kali terlewat sebulan tidak memutus rentetan, dan versi minimum tetap dihitung di hari sulit.";
 "Two weeks" = "Dua minggu";
 "Uncheck" = "Batalkan centang";
+"Uncheck what you don't need. You can add more from the catalog later." = "Hapus centang yang tidak kamu perlukan. Kamu bisa menambah lagi dari katalog nanti.";
 "Undo skip" = "Batalkan lewati";
 "Unicorn" = "Unicorn";
 "Unit" = "Satuan";
@@ -747,6 +771,7 @@
 "Warming up" = "Pemanasan";
 "Watch face complications" = "Komplikasi tampilan jam";
 "Water, liters" = "Air, liter";
+"Water, movement and fresh air" = "Air, gerak, dan udara segar";
 "Week" = "Minggu";
 "Week in review" = "Ringkasan minggu";
 "Weekdays" = "Hari kerja";
@@ -757,6 +782,7 @@
 "Welcome to Habit Tracker" = "Selamat datang di Pelacak Kebiasaan";
 "What %@ gives you" = "Yang diberikan %@";
 "What ZenHab reads" = "Data yang dibaca ZenHab";
+"What do you want to work on?" = "Apa yang ingin kamu perbaiki?";
 "What happened and what did you expect?" = "Apa yang terjadi dan apa yang kamu harapkan?";
 "What happened today? What helped?" = "Apa yang terjadi hari ini? Apa yang membantu?";
 "What lifts your mood" = "Apa yang memperbaiki suasana hatimu";
@@ -779,6 +805,7 @@
 "Work, travel and conversation" = "Kerja, perjalanan, dan percakapan";
 "Workout" = "Olahraga";
 "Workouts" = "Latihan";
+"Workouts and an active day" = "Olahraga dan hari yang aktif";
 "Write 10 notes" = "Tulis 10 catatan";
 "Write 50 notes" = "Tulis 50 catatan";
 "Write down 3 good things" = "Tulis 3 hal baik";
@@ -792,6 +819,8 @@
 "You've gone through the whole dictionary" = "Kamu sudah menyelesaikan seluruh kamus";
 "Young" = "Remaja";
 "Your days and the habits that lift your mood" = "Hari-harimu dan kebiasaan yang memperbaiki suasana hati";
+"Your first habits" = "Kebiasaan pertamamu";
+"Your first step" = "Langkah pertamamu";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Kebiasaan dan riwayatmu tersimpan otomatis di iCloud. Di iPhone baru, ZenHab akan menawarkan untuk memulihkan semuanya.";
 "Your habits stay on your iPhone and in your own iCloud." = "Kebiasaanmu tetap di iPhone dan iCloud-mu.";
 "Your habits stay only on your iPhone." = "Kebiasaanmu hanya tersimpan di iPhone-mu.";
@@ -802,6 +831,7 @@
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Hewan peliharaanmu tumbuh setiap kali kamu mencentang kebiasaan dan sedih kalau kamu menghilang beberapa hari.";
 "Your pet's mood and feeding right from the Home Screen." = "Suasana hati dan makan hewanmu langsung dari Layar Utama.";
 "Your photo" = "Fotomu";
+"Your plan is ready" = "Rencanamu sudah siap";
 "Your week in review" = "Ringkasan minggumu";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "Seluruh riwayat suasana hati, grafik bulanan, dan kebiasaan yang memperbaikinya.";
 "Your year in review" = "Ringkasan tahunmu";

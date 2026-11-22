@@ -826,3 +826,33 @@ To link a habit, open it and choose Apple Health → Check off by.||Para vincula
 Open the Health app||Abrir o app Saúde
 You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Você pode permitir ou negar o acesso a cada tipo de dado em Ajustes → Privacidade e Segurança → Saúde → ZenHab.
 Apple Health: %@||Apple Health: %@
+Energy||Energia
+Calm||Calma
+Learning and languages||Estudos e idiomas
+Better sleep||Dormir melhor
+Focus||Foco
+Water, movement and fresh air||Água, movimento e ar livre
+Less stress, more balance||Menos estresse, mais equilíbrio
+Workouts and an active day||Treinos e um dia ativo
+Reading, study and new words||Leitura, estudos e palavras novas
+A calm evening and a steady routine||Uma noite tranquila e uma rotina estável
+Plan the day and get things done||Planeje o dia e conclua suas tarefas
+Back||Voltar
+Step %lld of 3||Etapa %lld de 3
+What do you want to work on?||No que você quer trabalhar?
+Pick a goal and we'll set up your first habits. You can change everything later.||Escolha um objetivo e vamos preparar seus primeiros hábitos. Você pode mudar tudo depois.
+Your first habits||Seus primeiros hábitos
+Uncheck what you don't need. You can add more from the catalog later.||Desmarque o que não precisar. Você pode adicionar mais pelo catálogo depois.
+Your plan is ready||Seu plano está pronto
+Start with one check-in today. Small steps count.||Comece com uma marcação hoje. Pequenos passos contam.
+How it works||Como funciona
+Try Pro free for %@||Experimente o Pro grátis por %@
+Continue for free||Continuar grátis
+Your first step||Seu primeiro passo
+Tap the circle next to a habit to check it off. One is enough for today.||Toque no círculo ao lado de um hábito para marcá-lo. Um já basta por hoje.
+First check-in done!||Primeira marcação feita!
+That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?||É assim que uma sequência começa. Quer um lembrete para não esquecer amanhã?
+That's how a streak starts. Come back tomorrow to keep it going.||É assim que uma sequência começa. Volte amanhã para continuar.
+Turn on reminders||Ativar lembretes
+Not now||Agora não
+Got it||Entendi

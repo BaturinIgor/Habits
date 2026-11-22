@@ -20,7 +20,7 @@ struct RootView: View {
     @State private var showingNewHabit = false
 
     private var onboardingBinding: Binding<Bool> {
-        Binding(get: { !store.data.settings.onboardingDone },
+        Binding(get: { OnboardingPlan.shouldShowOnboarding(store.data.settings) },
                 set: { if !$0 { store.updateSettings { $0.onboardingDone = true } } })
     }
 

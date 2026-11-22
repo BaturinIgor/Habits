@@ -24,6 +24,7 @@
 "1 spark for each check-in, up to %lld a day" = "Her işaretleme için 1 kıvılcım, günde en fazla %lld";
 "30 perfect days in a row" = "Üst üste 30 kusursuz gün";
 "7 perfect days in a row" = "Üst üste 7 kusursuz gün";
+"A calm evening and a steady routine" = "Sakin bir akşam ve düzenli bir rutin";
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "Uygulamadan çıktığında alışkanlıklarının ve geçmişinin bir kopyası iCloud'una kendiliğinden kaydedilir. Telefon değiştirince hiçbir şey kaybolmaz.";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "Kilit Ekranı'nda ve Dynamic Island'da geri sayım; süre dolunca alışkanlık kendiliğinden işaretlenir.";
 "A grown pet brings up to +5 a day" = "Büyümüş evcil hayvan günde +5'e kadar getirir";
@@ -88,6 +89,7 @@
 "Avatars" = "Avatarlar";
 "Awful" = "Berbat";
 "Baby" = "Bebek";
+"Back" = "Geri";
 "Back up now" = "Şimdi yedekle";
 "Back up to iCloud" = "iCloud'a yedekle";
 "Background" = "Arka plan";
@@ -99,6 +101,7 @@
 "Best current streak" = "Şu anki en iyi seri";
 "Best streak" = "En iyi seri";
 "Best, days" = "Rekor, gün";
+"Better sleep" = "Daha iyi uyku";
 "Better than nothing" = "Hiç yoktan iyidir";
 "Break bad habits" = "Kötü alışkanlıkları bırak";
 "Breathing exercise" = "Nefes egzersizi";
@@ -114,6 +117,7 @@
 "By habit" = "Alışkanlığa göre";
 "By time" = "Saate göre";
 "Call family" = "Aileni ara";
+"Calm" = "Huzur";
 "Cancel" = "Vazgeç";
 "Cat" = "Kedi";
 "Chain reaction" = "Zincirleme tepki";
@@ -157,6 +161,7 @@
 "Completion" = "Tamamlanma";
 "Consistency" = "İstikrar";
 "Continue" = "Devam";
+"Continue for free" = "Ücretsiz devam et";
 "Control Center" = "Denetim Merkezi";
 "Copied" = "Kopyalandı";
 "Copy address" = "Adresi kopyala";
@@ -224,6 +229,7 @@
 "End" = "Bitiş";
 "End date" = "Bitiş tarihi";
 "Ended" = "Sona erdi";
+"Energy" = "Enerji";
 "Evening" = "Akşam";
 "Evening summary" = "Akşam özeti";
 "Every" = "Her";
@@ -260,9 +266,11 @@
 "Fifty" = "Elli";
 "Finance" = "Finans";
 "Finish and check off" = "Bitir ve işaretle";
+"First check-in done!" = "İlk işaret tamam!";
 "First step" = "İlk adım";
 "First time" = "İlk kez";
 "Fitness" = "Spor";
+"Focus" = "Odak";
 "Focus for an hour" = "Bir saat odaklan";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "Kötü alışkanlıklar için: sigara, tatlı, alkol, ekranda gezinme.";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "Örneğin 8 bardak su. Daireye her dokunuş bir ekler.";
@@ -284,6 +292,7 @@
 "Goal" = "Hedef";
 "Gold" = "Altın";
 "Good" = "İyi";
+"Got it" = "Anladım";
 "Great" = "Harika";
 "Great job, keep it up" = "Harika, böyle devam";
 "Group" = "Grup";
@@ -315,6 +324,7 @@
 "Hide keyboard" = "Klavyeyi gizle";
 "Hours of sleep" = "Uyku saati";
 "How are you today?" = "Bugün nasılsın?";
+"How it works" = "Nasıl çalışır";
 "How many habits are done today." = "Bugün kaç alışkanlık yapıldı.";
 "How often" = "Sıklık";
 "How to earn" = "Nasıl kazanılır";
@@ -372,12 +382,14 @@
 "Learn words" = "Kelime öğren";
 "Learned: %lld of %lld" = "Öğrenilen: %lld / %lld";
 "Learning" = "Öğrenme";
+"Learning and languages" = "Ders ve diller";
 "Leave group" = "Gruptan ayrıl";
 "Leave group?" = "Gruptan ayrılsın mı?";
 "Left for today: %@." = "Bugün kalan: %@.";
 "Legend" = "Efsane";
 "Less" = "Az";
 "Less social media" = "Daha az sosyal medya";
+"Less stress, more balance" = "Daha az stres, daha çok denge";
 "Let's go" = "Haydi";
 "Let's keep the streak going!" = "Seriyi sürdürelim!";
 "Let's start with your first habit" = "İlk alışkanlığınla başlayalım";
@@ -468,6 +480,7 @@
 "Not available" = "Erişilemiyor";
 "Not checked off yet: %@" = "Henüz işaretlenmedi: %@";
 "Not enough sparks" = "Yeterli kıvılcım yok";
+"Not now" = "Şimdi değil";
 "Not set up" = "Ayarlanmadı";
 "Not yet" = "Henüz değil";
 "Note" = "Not";
@@ -527,8 +540,10 @@
 "Pet gifts" = "Evcil hayvan hediyeleri";
 "Pet name" = "Evcil hayvanın adı";
 "Phoenix" = "Anka kuşu";
+"Pick a goal and we'll set up your first habits. You can change everything later." = "Bir hedef seç, ilk alışkanlıklarını hazırlayalım. Her şeyi sonra değiştirebilirsin.";
 "Pick a template or create your own." = "Bir şablon seç ya da kendininkini oluştur.";
 "Plan the day" = "Günü planla";
+"Plan the day and get things done" = "Gününü planla ve işlerini bitir";
 "Practice an instrument" = "Enstrüman çal";
 "Privacy Policy" = "Gizlilik Politikası";
 "Pro gifts" = "Pro hediyeleri";
@@ -554,6 +569,7 @@
 "Reach a weekly goal 4 times" = "Haftalık hedefe 4 kez ulaş";
 "Read" = "Oku";
 "Reading" = "Okuma";
+"Reading, study and new words" = "Okuma, ders ve yeni kelimeler";
 "Reflective" = "Düşünceli";
 "Refresh widgets" = "Widget'ları yenile";
 "Regular" = "Müdavim";
@@ -638,9 +654,11 @@
 "Start over" = "Baştan başla";
 "Start the count again?" = "Sayım baştan başlasın mı?";
 "Start timer" = "Zamanlayıcıyı başlat";
+"Start with one check-in today. Small steps count." = "Bugün tek bir işaretle başla. Küçük adımlar da önemli.";
 "Statistics" = "İstatistikler";
 "Statistics will appear once you start checking off habits." = "Alışkanlıkları işaretlemeye başladığında istatistikler görünecek.";
 "Status" = "Durum";
+"Step %lld of 3" = "Adım %lld / 3";
 "Steps" = "Adım";
 "Steps to reproduce help a lot." = "Tekrarlama adımları çok yardımcı olur.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Tekrarlama adımları çok yardımcı olur. E-postaya ekran görüntüsü ekleyebilirsin.";
@@ -666,6 +684,7 @@
 "Take a break for a trip or illness without losing your streak." = "Seyahat veya hastalık için serini kaybetmeden mola ver.";
 "Take vitamins" = "Vitamin al";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "İşaretlemek için bir güne dokun. Atlamak veya not eklemek için basılı tut.";
+"Tap the circle next to a habit to check it off. One is enough for today." = "İşaretlemek için alışkanlığın yanındaki daireye dokun. Bugün için bir tane yeter.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "İşaretlemek için daireye dokun veya sağa kaydır. Atlamak, not eklemek veya düzenlemek için sola kaydır. Sıralamak için basılı tut.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Zamanlayıcıyı başlatmak için daireye dokun. Kilit ekranında geri sayar ve süre bitince alışkanlığı işaretler.";
 "Tap the days when the habit should be done" = "Alışkanlığın yapılacağı günlere dokun";
@@ -675,6 +694,8 @@
 "Tell us what you think" = "Ne düşündüğünü söyle";
 "Terms of Use" = "Kullanım Koşulları";
 "Thank you!" = "Teşekkürler!";
+"That's how a streak starts. Come back tomorrow to keep it going." = "Seri böyle başlar. Devam ettirmek için yarın yine gel.";
+"That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "Seri böyle başlar. Yarın unutmaman için hatırlatıcı ister misin?";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Pro ekranı artık içerdiği her şeyi gösteriyor ve dokunduğun özellikle açılıyor.";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "iCloud'daki yedek: %@, %@, alışkanlık: %lld. Uygulamadan çıktığında kendiliğinden güncellenir. Avatar ve arka plan fotoğrafları dahil değildir.";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "Ücretsiz sürüm alışkanlık sınırına ulaştı. Pro için ZenHab'ı açın.";
@@ -715,14 +736,17 @@
 "Track expenses" = "Harcamaları kaydet";
 "Track habits, get gentle reminders and watch your streaks grow." = "Alışkanlıklarını takip et, nazik hatırlatmalar al ve serilerinin büyüdüğünü izle.";
 "Track your habits with ZenHab" = "Alışkanlıklarını ZenHab ile takip et";
+"Try Pro free for %@" = "Pro'yu %@ ücretsiz dene";
 "Try again" = "Tekrar dene";
 "Try it" = "Dene";
+"Turn on reminders" = "Hatırlatıcıları aç";
 "Turn on the lock" = "Kilidi etkinleştir";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "Bir alışkanlıkta “Bu alışkanlığı bırakıyorum”u aç; kaç gündür onsuz olduğunu, rekorunu ve sonraki hedefi gör. Pro ile biriken parayı da.";
 "Turtle" = "Kaplumbağa";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Ayda iki kaçırma serini bozmaz, zor günlerde minimum sürüm de sayılır.";
 "Two weeks" = "İki hafta";
 "Uncheck" = "İşareti kaldır";
+"Uncheck what you don't need. You can add more from the catalog later." = "İhtiyacın olmayanların işaretini kaldır. Daha fazlasını sonra katalogdan ekleyebilirsin.";
 "Undo skip" = "Atlamayı geri al";
 "Unicorn" = "Tek boynuzlu at";
 "Unit" = "Birim";
@@ -747,6 +771,7 @@
 "Warming up" = "Isınma";
 "Watch face complications" = "Saat kadranı komplikasyonları";
 "Water, liters" = "Su, litre";
+"Water, movement and fresh air" = "Su, hareket ve temiz hava";
 "Week" = "Hafta";
 "Week in review" = "Hafta özeti";
 "Weekdays" = "Hafta içi";
@@ -757,6 +782,7 @@
 "Welcome to Habit Tracker" = "Alışkanlık Takibi'ne hoş geldin";
 "What %@ gives you" = "%@ sana ne verir";
 "What ZenHab reads" = "ZenHab'in okuduğu veriler";
+"What do you want to work on?" = "Neyin üzerinde çalışmak istersin?";
 "What happened and what did you expect?" = "Ne oldu ve ne bekliyordun?";
 "What happened today? What helped?" = "Bugün ne oldu? Ne iyi geldi?";
 "What lifts your mood" = "Ruh hâlini ne iyileştiriyor";
@@ -779,6 +805,7 @@
 "Work, travel and conversation" = "İş, seyahat ve sohbet";
 "Workout" = "Antrenman";
 "Workouts" = "Antrenmanlar";
+"Workouts and an active day" = "Antrenmanlar ve hareketli bir gün";
 "Write 10 notes" = "10 not yaz";
 "Write 50 notes" = "50 not yaz";
 "Write down 3 good things" = "3 güzel şey yaz";
@@ -792,6 +819,8 @@
 "You've gone through the whole dictionary" = "Tüm sözlüğü bitirdin";
 "Young" = "Genç";
 "Your days and the habits that lift your mood" = "Günlerin ve ruh hâlini iyileştiren alışkanlıklar";
+"Your first habits" = "İlk alışkanlıkların";
+"Your first step" = "İlk adımın";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Alışkanlıkların ve geçmişin iCloud'una kendiliğinden kaydedilir. Yeni bir iPhone'da ZenHab her şeyi geri getirmeyi önerir.";
 "Your habits stay on your iPhone and in your own iCloud." = "Alışkanlıkların iPhone'unda ve iCloud'unda kalır.";
 "Your habits stay only on your iPhone." = "Alışkanlıkların yalnızca iPhone'unda kalır.";
@@ -802,6 +831,7 @@
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Evcil hayvanın işaretlediğin her alışkanlıkla büyür, birkaç gün ortadan kaybolursan üzülür.";
 "Your pet's mood and feeding right from the Home Screen." = "Evcil hayvanının ruh hali ve beslenmesi Ana Ekran'da.";
 "Your photo" = "Fotoğrafın";
+"Your plan is ready" = "Planın hazır";
 "Your week in review" = "Haftanın özeti";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "Tüm ruh hâli geçmişin, aylık grafik ve onu iyileştiren alışkanlıklar.";
 "Your year in review" = "Yılının özeti";

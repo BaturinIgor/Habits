@@ -826,3 +826,33 @@ To link a habit, open it and choose Apple Health → Check off by.||Untuk menghu
 Open the Health app||Buka app Kesehatan
 You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Kamu bisa mengizinkan atau menolak akses ke setiap jenis data di Pengaturan → Privasi & Keamanan → Kesehatan → ZenHab.
 Apple Health: %@||Apple Health: %@
+Energy||Energi
+Calm||Tenang
+Learning and languages||Belajar dan bahasa
+Better sleep||Tidur lebih baik
+Focus||Fokus
+Water, movement and fresh air||Air, gerak, dan udara segar
+Less stress, more balance||Lebih sedikit stres, lebih seimbang
+Workouts and an active day||Olahraga dan hari yang aktif
+Reading, study and new words||Membaca, belajar, dan kata baru
+A calm evening and a steady routine||Malam yang tenang dan rutinitas teratur
+Plan the day and get things done||Rencanakan hari dan selesaikan tugas
+Back||Kembali
+Step %lld of 3||Langkah %lld dari 3
+What do you want to work on?||Apa yang ingin kamu perbaiki?
+Pick a goal and we'll set up your first habits. You can change everything later.||Pilih tujuan dan kami siapkan kebiasaan pertamamu. Semuanya bisa diubah nanti.
+Your first habits||Kebiasaan pertamamu
+Uncheck what you don't need. You can add more from the catalog later.||Hapus centang yang tidak kamu perlukan. Kamu bisa menambah lagi dari katalog nanti.
+Your plan is ready||Rencanamu sudah siap
+Start with one check-in today. Small steps count.||Mulai dengan satu centang hari ini. Langkah kecil pun berarti.
+How it works||Cara kerjanya
+Try Pro free for %@||Coba Pro gratis selama %@
+Continue for free||Lanjutkan gratis
+Your first step||Langkah pertamamu
+Tap the circle next to a habit to check it off. One is enough for today.||Ketuk lingkaran di samping kebiasaan untuk mencentangnya. Satu saja cukup untuk hari ini.
+First check-in done!||Centang pertama selesai!
+That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?||Begitulah rentetan dimulai. Mau pengingat supaya besok tidak lupa?
+That's how a streak starts. Come back tomorrow to keep it going.||Begitulah rentetan dimulai. Kembali besok untuk melanjutkannya.
+Turn on reminders||Nyalakan pengingat
+Not now||Nanti saja
+Got it||Oke

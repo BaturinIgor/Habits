@@ -24,6 +24,7 @@
 "1 spark for each check-in, up to %lld a day" = "हर पूरी आदत पर 1 चिंगारी, दिन में अधिकतम %lld";
 "30 perfect days in a row" = "लगातार 30 परफ़ेक्ट दिन";
 "7 perfect days in a row" = "लगातार 7 परफ़ेक्ट दिन";
+"A calm evening and a steady routine" = "शांत शाम और नियमित दिनचर्या";
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "ऐप से बाहर जाने पर आपकी आदतों और इतिहास की कॉपी अपने आप आपके iCloud में सेव हो जाती है, ताकि फ़ोन बदलने पर कुछ न खोए।";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "लॉक स्क्रीन और Dynamic Island पर उलटी गिनती, जो समय पूरा होने पर आदत पर निशान लगा देती है।";
 "A grown pet brings up to +5 a day" = "बड़ा पालतू रोज़ +5 तक लाता है";
@@ -88,6 +89,7 @@
 "Avatars" = "अवतार";
 "Awful" = "बहुत बुरा";
 "Baby" = "बच्चा";
+"Back" = "वापस";
 "Back up now" = "अभी बैकअप लें";
 "Back up to iCloud" = "iCloud में बैकअप";
 "Background" = "पृष्ठभूमि";
@@ -99,6 +101,7 @@
 "Best current streak" = "अभी की सबसे लंबी लगातार";
 "Best streak" = "सबसे लंबी लगातार";
 "Best, days" = "सबसे अच्छा, दिन";
+"Better sleep" = "बेहतर नींद";
 "Better than nothing" = "कुछ न करने से बेहतर";
 "Break bad habits" = "बुरी आदतें छोड़ें";
 "Breathing exercise" = "साँस का अभ्यास";
@@ -114,6 +117,7 @@
 "By habit" = "आदत के अनुसार";
 "By time" = "समय के अनुसार";
 "Call family" = "परिवार को फ़ोन करें";
+"Calm" = "शांति";
 "Cancel" = "रद्द करें";
 "Cat" = "बिल्ली";
 "Chain reaction" = "चेन रिएक्शन";
@@ -157,6 +161,7 @@
 "Completion" = "पूरा होने की दर";
 "Consistency" = "निरंतरता";
 "Continue" = "आगे";
+"Continue for free" = "मुफ़्त में जारी रखें";
 "Control Center" = "कंट्रोल सेंटर";
 "Copied" = "कॉपी हो गया";
 "Copy address" = "पता कॉपी करें";
@@ -224,6 +229,7 @@
 "End" = "अंत";
 "End date" = "अंतिम तारीख़";
 "Ended" = "समाप्त";
+"Energy" = "ऊर्जा";
 "Evening" = "शाम";
 "Evening summary" = "शाम का सारांश";
 "Every" = "हर";
@@ -260,9 +266,11 @@
 "Fifty" = "पचास";
 "Finance" = "पैसा";
 "Finish and check off" = "खत्म करें और पूरा करें";
+"First check-in done!" = "पहला निशान लग गया!";
 "First step" = "पहला कदम";
 "First time" = "पहली बार";
 "Fitness" = "फ़िटनेस";
+"Focus" = "फ़ोकस";
 "Focus for an hour" = "एक घंटा ध्यान से काम";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "बुरी आदतों के लिए: धूम्रपान, मिठाई, शराब, स्क्रॉलिंग।";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "जैसे, 8 गिलास पानी। गोले पर हर टैप से एक जुड़ता है।";
@@ -284,6 +292,7 @@
 "Goal" = "लक्ष्य";
 "Gold" = "सुनहरा";
 "Good" = "अच्छा";
+"Got it" = "ठीक है";
 "Great" = "बहुत अच्छा";
 "Great job, keep it up" = "बहुत बढ़िया, ऐसे ही जारी रखें";
 "Group" = "समूह";
@@ -315,6 +324,7 @@
 "Hide keyboard" = "कीबोर्ड छिपाएँ";
 "Hours of sleep" = "नींद के घंटे";
 "How are you today?" = "आज आप कैसे हैं?";
+"How it works" = "यह कैसे काम करता है";
 "How many habits are done today." = "आज कितनी आदतें पूरी हुईं।";
 "How often" = "कितनी बार";
 "How to earn" = "कैसे कमाएँ";
@@ -372,12 +382,14 @@
 "Learn words" = "शब्द सीखें";
 "Learned: %lld of %lld" = "सीखे गए: %lld में से %lld";
 "Learning" = "सीखना";
+"Learning and languages" = "पढ़ाई और भाषाएँ";
 "Leave group" = "समूह छोड़ें";
 "Leave group?" = "समूह छोड़ें?";
 "Left for today: %@." = "आज के लिए बाकी: %@।";
 "Legend" = "दिग्गज";
 "Less" = "कम";
 "Less social media" = "सोशल मीडिया कम";
+"Less stress, more balance" = "कम तनाव, ज़्यादा संतुलन";
 "Let's go" = "शुरू करें";
 "Let's keep the streak going!" = "चलो श्रृंखला जारी रखें!";
 "Let's start with your first habit" = "चलिए पहली आदत से शुरू करें";
@@ -468,6 +480,7 @@
 "Not available" = "उपलब्ध नहीं";
 "Not checked off yet: %@" = "अभी बाकी: %@";
 "Not enough sparks" = "पर्याप्त चिंगारियाँ नहीं";
+"Not now" = "अभी नहीं";
 "Not set up" = "सेट नहीं";
 "Not yet" = "अभी नहीं";
 "Note" = "नोट";
@@ -527,8 +540,10 @@
 "Pet gifts" = "पालतू के उपहार";
 "Pet name" = "पालतू का नाम";
 "Phoenix" = "फ़ीनिक्स";
+"Pick a goal and we'll set up your first habits. You can change everything later." = "एक लक्ष्य चुनें, हम आपकी पहली आदतें तैयार कर देंगे। बाद में सब बदला जा सकता है।";
 "Pick a template or create your own." = "टेम्पलेट चुनें या अपनी बनाएँ।";
 "Plan the day" = "दिन की योजना बनाएँ";
+"Plan the day and get things done" = "दिन की योजना बनाएँ और काम पूरे करें";
 "Practice an instrument" = "वाद्य का अभ्यास";
 "Privacy Policy" = "गोपनीयता नीति";
 "Pro gifts" = "Pro उपहार";
@@ -554,6 +569,7 @@
 "Reach a weekly goal 4 times" = "4 बार साप्ताहिक लक्ष्य पूरा करें";
 "Read" = "पढ़ना";
 "Reading" = "पढ़ना";
+"Reading, study and new words" = "पढ़ना, पढ़ाई और नए शब्द";
 "Reflective" = "चिंतनशील";
 "Refresh widgets" = "विजेट रीफ़्रेश करें";
 "Regular" = "नियमित";
@@ -638,9 +654,11 @@
 "Start over" = "नए सिरे से शुरू करें";
 "Start the count again?" = "गिनती फिर से शुरू करें?";
 "Start timer" = "टाइमर शुरू करें";
+"Start with one check-in today. Small steps count." = "आज एक निशान से शुरू करें। छोटे कदम भी मायने रखते हैं।";
 "Statistics" = "आँकड़े";
 "Statistics will appear once you start checking off habits." = "आदतें पूरी करना शुरू करते ही आँकड़े दिखेंगे।";
 "Status" = "स्थिति";
+"Step %lld of 3" = "चरण %lld / 3";
 "Steps" = "कदम";
 "Steps to reproduce help a lot." = "दोहराने के चरण बहुत मदद करते हैं।";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "दोहराने के चरण बहुत मदद करते हैं। ईमेल में स्क्रीनशॉट जोड़ सकते हैं।";
@@ -666,6 +684,7 @@
 "Take a break for a trip or illness without losing your streak." = "यात्रा या बीमारी में लगातार गिनती खोए बिना विराम लें।";
 "Take vitamins" = "विटामिन लें";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "दिन पर टैप करके पूरा करें। छोड़ने या नोट जोड़ने के लिए दबाकर रखें।";
+"Tap the circle next to a habit to check it off. One is enough for today." = "आदत के पास वाले गोले पर टैप करके उसे पूरा करें। आज के लिए एक ही काफ़ी है।";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "पूरा करने के लिए गोले पर टैप करें या दाएँ स्वाइप करें। छोड़ने, नोट या बदलाव के लिए बाएँ स्वाइप करें। क्रम बदलने के लिए दबाकर रखें।";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "टाइमर शुरू करने के लिए गोले पर टैप करें। यह लॉक स्क्रीन पर चलता है और समय पूरा होने पर आदत पूरी कर देता है।";
 "Tap the days when the habit should be done" = "जिन दिनों आदत करनी है, उन पर टैप करें";
@@ -675,6 +694,8 @@
 "Tell us what you think" = "अपनी राय बताएँ";
 "Terms of Use" = "उपयोग की शर्तें";
 "Thank you!" = "धन्यवाद!";
+"That's how a streak starts. Come back tomorrow to keep it going." = "ऐसे ही लगातार सिलसिला शुरू होता है। इसे जारी रखने के लिए कल फिर आएँ।";
+"That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "ऐसे ही लगातार सिलसिला शुरू होता है। कल न भूलें, इसके लिए रिमाइंडर चाहिए?";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Pro स्क्रीन अब इसमें शामिल सब कुछ दिखाती है और उसी फ़ीचर पर खुलती है जिसे आपने टैप किया।";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "iCloud में बैकअप: %@, %@, आदतें: %lld। ऐप से बाहर जाने पर यह अपने आप अपडेट होता है। अवतार और बैकग्राउंड की फ़ोटो इसमें नहीं हैं।";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "मुफ़्त संस्करण में आदतों की सीमा पूरी हो गई। Pro के लिए ZenHab खोलें।";
@@ -715,14 +736,17 @@
 "Track expenses" = "ख़र्च लिखें";
 "Track habits, get gentle reminders and watch your streaks grow." = "आदतें दर्ज करें, हल्के रिमाइंडर पाएँ और अपनी लगातार गिनती बढ़ते देखें।";
 "Track your habits with ZenHab" = "ZenHab के साथ अपनी आदतें ट्रैक करें";
+"Try Pro free for %@" = "Pro को %@ मुफ़्त आज़माएँ";
 "Try again" = "फिर से कोशिश करें";
 "Try it" = "आज़माएँ";
+"Turn on reminders" = "रिमाइंडर चालू करें";
 "Turn on the lock" = "लॉक चालू करें";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "किसी आदत में “मैं यह आदत छोड़ रहा हूँ” चालू करें और देखें कि आप कितने दिन से इसके बिना हैं, आपका रिकॉर्ड और अगला पड़ाव। Pro में बचाए पैसे भी।";
 "Turtle" = "कछुआ";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "महीने में दो चूक से लगातार गिनती नहीं टूटेगी, और मुश्किल दिन न्यूनतम रूप भी गिना जाएगा।";
 "Two weeks" = "दो हफ़्ते";
 "Uncheck" = "निशान हटाएँ";
+"Uncheck what you don't need. You can add more from the catalog later." = "जो ज़रूरी नहीं, उसका निशान हटा दें। बाद में कैटलॉग से और जोड़ सकते हैं।";
 "Undo skip" = "छोड़ना रद्द करें";
 "Unicorn" = "यूनिकॉर्न";
 "Unit" = "इकाई";
@@ -747,6 +771,7 @@
 "Warming up" = "वार्म-अप";
 "Watch face complications" = "वॉच फ़ेस कॉम्प्लिकेशन";
 "Water, liters" = "पानी, लीटर";
+"Water, movement and fresh air" = "पानी, हलचल और ताज़ी हवा";
 "Week" = "हफ़्ता";
 "Week in review" = "हफ़्ते का सार";
 "Weekdays" = "कार्यदिवस";
@@ -757,6 +782,7 @@
 "Welcome to Habit Tracker" = "आदत ट्रैकर में आपका स्वागत है";
 "What %@ gives you" = "%@ आपको क्या देता है";
 "What ZenHab reads" = "ZenHab क्या पढ़ता है";
+"What do you want to work on?" = "आप किस पर काम करना चाहते हैं?";
 "What happened and what did you expect?" = "क्या हुआ और आपने क्या उम्मीद की थी?";
 "What happened today? What helped?" = "आज क्या हुआ? किस चीज़ ने मदद की?";
 "What lifts your mood" = "आपका मूड क्या बेहतर करता है";
@@ -779,6 +805,7 @@
 "Work, travel and conversation" = "काम, यात्रा और बातचीत";
 "Workout" = "कसरत";
 "Workouts" = "वर्कआउट";
+"Workouts and an active day" = "वर्कआउट और सक्रिय दिन";
 "Write 10 notes" = "10 नोट लिखें";
 "Write 50 notes" = "50 नोट लिखें";
 "Write down 3 good things" = "3 अच्छी बातें लिखें";
@@ -792,6 +819,8 @@
 "You've gone through the whole dictionary" = "आपने पूरा शब्दकोश पूरा कर लिया";
 "Young" = "किशोर";
 "Your days and the habits that lift your mood" = "आपके दिन और मूड बेहतर करने वाली आदतें";
+"Your first habits" = "आपकी पहली आदतें";
+"Your first step" = "आपका पहला कदम";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "आपकी आदतें और इतिहास अपने आप iCloud में सेव होते हैं। नए iPhone पर ZenHab सब कुछ वापस लाने का विकल्प देगा।";
 "Your habits stay on your iPhone and in your own iCloud." = "आपकी आदतें सिर्फ़ आपके iPhone और आपके iCloud में रहती हैं।";
 "Your habits stay only on your iPhone." = "आपकी आदतें सिर्फ़ आपके iPhone पर रहती हैं।";
@@ -802,6 +831,7 @@
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "हर पूरी की गई आदत के साथ आपका पालतू बढ़ता है और कुछ दिन गायब रहने पर उदास हो जाता है।";
 "Your pet's mood and feeding right from the Home Screen." = "होम स्क्रीन से ही पालतू का मूड देखें और उसे खिलाएँ।";
 "Your photo" = "आपकी फ़ोटो";
+"Your plan is ready" = "आपकी योजना तैयार है";
 "Your week in review" = "आपके हफ़्ते का सार";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "पूरा मूड इतिहास, मासिक चार्ट और मूड बेहतर करने वाली आदतें।";
 "Your year in review" = "आपके साल का सार";

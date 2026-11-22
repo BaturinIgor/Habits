@@ -124,6 +124,12 @@ enum HabitSource: String {
 enum AnalyticsEvent {
     case appInstalled(isUpdate: Bool)
     case onboardingCompleted(seconds: Int, restoredFromCloud: Bool)
+    /// Показан шаг онбординга (1.7, KAN-168): onboarding_step с номером шага, из них строится воронка.
+    case onboardingStep(step: Int)
+    /// Выбрана цель и созданы привычки программы (1.7, KAN-121).
+    case onboardingGoal(goal: String, habits: Int)
+    /// Онбординг пропущен на шаге step.
+    case onboardingSkipped(step: Int)
     case habitCreated(Habit, source: HabitSource)
     case habitDeleted(ageDays: Int, isQuit: Bool)
     case paywallShown(source: String)
@@ -146,6 +152,9 @@ enum AnalyticsEvent {
         switch self {
         case .appInstalled: "App.installed"
         case .onboardingCompleted: "Onboarding.completed"
+        case .onboardingStep: "Onboarding.step"
+        case .onboardingGoal: "Onboarding.goal"
+        case .onboardingSkipped: "Onboarding.skipped"
         case .habitCreated: "Habit.created"
         case .habitDeleted: "Habit.deleted"
         case .paywallShown: "Paywall.shown"
@@ -180,6 +189,12 @@ enum AnalyticsEvent {
             return ["App.isUpdate": isUpdate]
         case .onboardingCompleted(let seconds, let restored):
             return ["Onboarding.seconds": seconds, "Onboarding.restoredFromCloud": restored]
+        case .onboardingStep(let step):
+            return ["step": step]
+        case .onboardingGoal(let goal, let habits):
+            return ["Onboarding.goal": goal, "Onboarding.habits": habits]
+        case .onboardingSkipped(let step):
+            return ["step": step]
         case .habitCreated(let habit, let source):
             var iconKind = "other"
             if case .symbol = habit.icon { iconKind = "symbol" }

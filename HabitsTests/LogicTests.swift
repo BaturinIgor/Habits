@@ -892,6 +892,7 @@ final class LogicTests: XCTestCase {
             .purchaseFailed(product: "pro", source: "settings"), .restoreFinished(found: false), .proChanged(active: true),
             .petAdopted(species: "cat"), .petStageReached(stage: 1), .achievementUnlocked(id: "first"),
             .ratingPromptShown, .familyGroupCreated, .familyGroupJoined, .feedbackSent(channel: "email"), .backupRestored,
+            .onboardingStep(step: 1), .onboardingGoal(goal: "energy", habits: 4), .onboardingSkipped(step: 2),
         ]
         for event in events {
             check(event.type)

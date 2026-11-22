@@ -93,7 +93,22 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "53-feedback-failed", screen: "feedback", alert: "sendFailed"),
         Shot(name: "54-feedback-no-mail", screen: "feedback", alert: "noMail"),
         Shot(name: "55-feedback-copied", screen: "feedback", alert: "copied"),
+        // 1.7, KAN-121/KAN-122/KAN-169: онбординг с целями, пейволл в конце, первый день на «Сегодня»
+        Shot(name: "onb-01-goal", screen: "today", flags: ["-uitest-onboarding"]),
+        Shot(name: "onb-02-goal-selected", screen: "onboardingGoal", flags: ["-uitest-empty"]),
+        Shot(name: "onb-03-habits", screen: "onboardingHabits", flags: ["-uitest-empty"]),
+        Shot(name: "onb-04-summary", screen: "onboardingSummary", flags: ["-uitest-empty"]),
+        Shot(name: "onb-05-paywall", screen: "onboardingPaywall", flags: ["-uitest-empty", "-uitest-free"]),
+        Shot(name: "onb-06-today-first-check", screen: "today", flags: ["-uitest-firstday"]),
+        Shot(name: "onb-07-today-celebrate", screen: "today", flags: ["-uitest-firstday-checked"]),
+        Shot(name: "onb-08-goal-large", screen: "onboardingGoal", flags: ["-uitest-empty"] + largeText),
+        Shot(name: "onb-09-habits-large", screen: "onboardingHabits", flags: ["-uitest-empty"] + largeText),
+        Shot(name: "onb-10-today-first-check-large", screen: "today", flags: ["-uitest-firstday"] + largeText),
+        Shot(name: "onb-11-today-celebrate-large", screen: "today", flags: ["-uitest-firstday-checked"] + largeText),
     ]
+
+    /// Крупный шрифт (Универсальный доступ) для макетов.
+    private static let largeText = ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityL"]
 
     private static var outputDir: URL? {
         guard let path = ProcessInfo.processInfo.environment["DESIGN_DIR"], !path.isEmpty else { return nil }

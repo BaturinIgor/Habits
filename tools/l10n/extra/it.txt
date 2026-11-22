@@ -826,3 +826,33 @@ To link a habit, open it and choose Apple Health → Check off by.||Per collegar
 Open the Health app||Apri l'app Salute
 You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Puoi consentire o negare l'accesso a ogni tipo di dato in Impostazioni → Privacy e sicurezza → Salute → ZenHab.
 Apple Health: %@||Apple Health: %@
+Energy||Energia
+Calm||Calma
+Learning and languages||Studio e lingue
+Better sleep||Dormire meglio
+Focus||Concentrazione
+Water, movement and fresh air||Acqua, movimento e aria aperta
+Less stress, more balance||Meno stress, più equilibrio
+Workouts and an active day||Allenamenti e una giornata attiva
+Reading, study and new words||Lettura, studio e parole nuove
+A calm evening and a steady routine||Una serata tranquilla e una routine regolare
+Plan the day and get things done||Pianifica la giornata e porta a termine le cose
+Back||Indietro
+Step %lld of 3||Passo %lld di 3
+What do you want to work on?||Su cosa vuoi lavorare?
+Pick a goal and we'll set up your first habits. You can change everything later.||Scegli un obiettivo e prepareremo le tue prime abitudini. Potrai cambiare tutto in seguito.
+Your first habits||Le tue prime abitudini
+Uncheck what you don't need. You can add more from the catalog later.||Togli la spunta a ciò che non ti serve. Potrai aggiungerne altre dal catalogo in seguito.
+Your plan is ready||Il tuo piano è pronto
+Start with one check-in today. Small steps count.||Inizia oggi con una sola spunta. Anche i piccoli passi contano.
+How it works||Come funziona
+Try Pro free for %@||Prova Pro gratis per %@
+Continue for free||Continua gratis
+Your first step||Il tuo primo passo
+Tap the circle next to a habit to check it off. One is enough for today.||Tocca il cerchio accanto a un'abitudine per spuntarla. Per oggi ne basta una.
+First check-in done!||Prima spunta fatta!
+That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?||Ecco come inizia una serie. Vuoi un promemoria per non dimenticarti domani?
+That's how a streak starts. Come back tomorrow to keep it going.||Ecco come inizia una serie. Torna domani per continuarla.
+Turn on reminders||Attiva i promemoria
+Not now||Non ora
+Got it||Ok

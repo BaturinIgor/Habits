@@ -15,6 +15,8 @@ enum DesignScreen: String, CaseIterable, Identifiable {
     case editorHealth, profile, sparks, pet, petSwitched, petNaming, petSpecies, paywall, paywallFeature, feedback, voice, note, whatsNew
     // Во весь экран
     case onboarding, words
+    // 1.7, KAN-121/KAN-122: шаги онбординга с выбранной целью «Энергия»
+    case onboardingGoal, onboardingHabits, onboardingSummary, onboardingPaywall
 
     var id: String { rawValue }
 
@@ -27,7 +29,7 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .stats: .tab(.stats)
         case .settings: .tab(.settings)
         case .habitDetail, .quitDetail, .notifications, .todayScreen, .groups, .groupDetail, .appIcon, .backup, .healthSettings: .push
-        case .onboarding, .words: .cover
+        case .onboarding, .words, .onboardingGoal, .onboardingHabits, .onboardingSummary, .onboardingPaywall: .cover
         default: .sheet
         }
     }
@@ -78,6 +80,10 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .note: NoteEditorView(target: NoteTarget(habitID: UITestSupport.id(1), day: DayKey.make(Date())))
         case .whatsNew: WhatsNewView {}
         case .onboarding: OnboardingView()
+        case .onboardingGoal: OnboardingView(step: .goal, goal: .energy)
+        case .onboardingHabits: OnboardingView(step: .habits, goal: .energy)
+        case .onboardingSummary: OnboardingView(step: .summary, goal: .energy)
+        case .onboardingPaywall: OnboardingView(step: .paywall, goal: .energy)
         case .words: WordsSessionView(habitID: UITestSupport.id(8))
         case .today, .habits, .stats, .settings: EmptyView()
         }
