@@ -14,6 +14,7 @@
 | App Store provisioning | `asc_provision_watch.py` | Проверяет и создаёт bundle ID, App Groups и профили для Apple Watch (секреты не пишет) |
 | App Store screenshots | `asc_screenshots.py` | Загружает скриншоты по всем языкам |
 | App Store submit | `asc_submit.py` | Проверяет версию и отправляет на ревью |
+| App Store offers | `asc_offers.py` | Бесплатная неделя, новогодние promotional offer и offer code для Pro Yearly, сводка цен |
 
 Порядок выпуска версии: App Store -> App Store texts (с номером сборки) -> App Store screenshots ->
 вручную App Privacy (если менялось) -> App Store submit с `confirm=yes`.
@@ -146,6 +147,26 @@ python3 tools/appstore/asc_provision_watch.py --out ~/Desktop/watch-profiles --s
 и отправляет. Незавершённая отправка берётся, только если в ней нет других версий; если там,
 например, 1.5, скрипт останавливается и просит убрать её из отправки. Без `confirm=yes` только
 проверяет и завершается с ошибкой.
+
+## App Store offers
+
+Скрипт `asc_offers.py` (KAN-170, KAN-124), всё идемпотентно, `dry_run` включён по умолчанию.
+Входы `intro`, `promo`, `code` включают шаги; сводка цен печатается всегда.
+
+- **Цены:** у monthly, yearly и lifetime сравнивает территории продажи (availability) с территориями,
+  где задана текущая цена, и пишет, где цены нет.
+- **intro:** бесплатная неделя (`FREE_TRIAL`, `ONE_WEEK`) для Pro Yearly в каждой территории продажи,
+  где её ещё нет. Вводное предложение по правилам Apple получают только новые подписчики группы.
+  Если в территории уже другое вводное предложение, скрипт его не трогает и предупреждает.
+- **promo:** promotional offer `newyear2027` («New Year 2027 price»), `PAY_UP_FRONT`, `ONE_YEAR`.
+  Приложение только читает его цену (`NewYearOffer.priceOfferID`).
+- **code:** offer code `NEWYEAR2027` с теми же условиями, для new, existing и expired,
+  `STACK_WITH_INTRO_OFFERS`, и custom code `NEWYEAR2027` на 10000 погашений до 2027-01-10.
+
+Цена со скидкой в каждой территории: ближайшая price point не выше половины текущей цены yearly.
+Уже заведённые предложения (по `offerCode`, имени offer code и custom code) пропускаются, поэтому
+после успешного запуска следующий `dry_run` пишет «план пустой». Условия задаются константами в
+начале скрипта и должны совпадать с `Habits/Features/NewYearOffer.swift` и `HabitsTests/Habits.storekit`.
 
 ## Что остаётся вручную
 
