@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "Версия, например 1.6"
-        required: true
-        default: "1.6"
+        description: "Версия, например 1.7 (пусто — MARKETING_VERSION из project.yml)"
+        required: false
+        default: ""
   pull_request:
     paths:
       - "tools/appstore/asc_audit.py"
@@ -36,5 +36,12 @@ jobs:
           ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
           ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
           APP_BUNDLE_ID: ${{ vars.APP_BUNDLE_ID || 'com.baturinigor.zenhab' }}
-          VERSION: ${{ inputs.version || '1.6' }}
-        run: python3 tools/appstore/asc_audit.py --version "$VERSION"
+          VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          # Без явной версии сверяем ту, что сейчас в project.yml (как в design.yml).
+          if [ -z "${VERSION:-}" ]; then
+            VERSION=$(grep -m1 'MARKETING_VERSION' project.yml | sed 's/.*: *//; s/"//g')
+          fi
+          echo "Версия: $VERSION"
+          python3 tools/appstore/asc_audit.py --version "$VERSION"
