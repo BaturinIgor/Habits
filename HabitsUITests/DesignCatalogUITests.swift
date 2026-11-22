@@ -4,6 +4,10 @@ import XCTest
 /// Каждый снимок — отдельный запуск приложения с `-design-screen` (см. DesignGallery.swift),
 /// в светлой и тёмной теме. Запускается только когда задан DESIGN_DIR (workflow Design screens),
 /// в обычном прогоне тестов пропускается.
+///
+/// Какие снимки делать, задаёт DESIGN_SCREENS: имена снимков через запятую (`10-onboarding,36-paywall`, `health-*` — по префиксу)
+/// или `all` для полного каталога. Без списка не снимается ничего: макеты версии — только новые
+/// и изменённые экраны, остальные берутся из прошлых версий (design/README.md).
 @MainActor
 final class DesignCatalogUITests: XCTestCase {
     private struct Shot {
@@ -106,17 +110,40 @@ final class DesignCatalogUITests: XCTestCase {
         try run(dark: true)
     }
 
+    /// Снимки из DESIGN_SCREENS. Неизвестные имена — ошибка, чтобы опечатка в screens.txt не прошла молча.
+    private static func selectedShots(_ list: String?) -> (shots: [Shot], unknown: [String]) {
+        // Строки файла screens.txt: всё после «#» — комментарий; имена через запятую или пробел.
+        let names = (list ?? "")
+            .split(separator: "\n", omittingEmptySubsequences: false)
+            .flatMap { line in
+                line.split(separator: "#", maxSplits: 1, omittingEmptySubsequences: false).first
+                    .map { $0.split(whereSeparator: { $0 == "," || $0 == " " || $0 == "\t" }) } ?? []
+            }
+            .map { String($0) }
+        if names == ["all"] { return (shots, []) }
+        // «health-*» — все снимки с этим префиксом.
+        func matches(_ shot: Shot, _ name: String) -> Bool {
+            name.hasSuffix("*") ? shot.name.hasPrefix(String(name.dropLast())) : shot.name == name
+        }
+        return (shots.filter { shot in names.contains { matches(shot, $0) } },
+                names.filter { name in !shots.contains { matches($0, name) } })
+    }
+
     private func run(dark: Bool) throws {
         guard let dir = Self.outputDir else {
             throw XCTSkip("DESIGN_DIR is not set: design screenshots are taken only by the Design screens workflow")
+        }
+        let selection = Self.selectedShots(ProcessInfo.processInfo.environment["DESIGN_SCREENS"])
+        print("==== DESIGN screens: \(selection.shots.map(\.name).joined(separator: ", "))")
+        XCTAssertTrue(selection.unknown.isEmpty, "Unknown design screens: \(selection.unknown.joined(separator: ", "))")
+        guard !selection.shots.isEmpty else {
+            throw XCTSkip("DESIGN_SCREENS is empty: list the new and changed screens in design/<version>/screens.txt or pass all")
         }
         continueAfterFailure = true
         let language = ProcessInfo.processInfo.environment["DESIGN_LANG"] ?? "ru"
         let locale = language == "ru" ? "ru_RU" : "en_US"
         var missing: [String] = []
-        // DESIGN_ONLY=<префикс>: снять только часть экранов (например, pet-names).
-        let only = ProcessInfo.processInfo.environment["DESIGN_ONLY"] ?? ""
-        for shot in Self.shots where only.isEmpty || shot.name.hasPrefix(only) {
+        for shot in selection.shots {
             let app = XCUIApplication()
             var args = ["-uitest", "-design", "-design-screen", shot.screen,
                         "-AppleLanguages", "(\(language))", "-AppleLocale", locale]

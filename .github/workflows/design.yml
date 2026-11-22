@@ -4,6 +4,10 @@ name: Design screens
 # в светлой и тёмной теме, на демо-данных. Снимки делает HabitsUITests/DesignCatalogUITests
 # через каталог экранов Habits/App/DesignGallery.swift.
 # PNG лежат в артефакте design-screens и коммитятся в ветку в design/<версия>/screens.
+#
+# Снимаются только экраны из списка: вход `screens` (имена через запятую, `all` — весь каталог),
+# а в PR — файл design/<версия>/screens.txt. Макеты версии — только новые и изменённые экраны,
+# остальные берутся из прошлых версий (design/README.md).
 
 on:
   workflow_dispatch:
@@ -11,11 +15,15 @@ on:
       language:
         description: "Язык интерфейса (ru или en)"
         default: "ru"
+      screens:
+        description: "Снимки через запятую (например 10-onboarding,36-paywall) или all. Пусто — из design/<версия>/screens.txt"
+        default: ""
   pull_request:
     paths:
       - "Habits/App/DesignGallery.swift"
       - "HabitsUITests/DesignCatalogUITests.swift"
       - ".github/workflows/design.yml"
+      - "design/*/screens.txt"
 
 permissions:
   contents: write
@@ -67,8 +75,30 @@ jobs:
           xcrun simctl status_bar "$UDID" override --time 9:41 --dataNetwork wifi --wifiMode active --wifiBars 3 --cellularMode active --cellularBars 4 --batteryState charged --batteryLevel 100
           echo "udid=$UDID" >> "$GITHUB_OUTPUT"
 
-      - name: Take design screenshots
+      - name: Pick screens
+        id: pick
         env:
+          SCREENS_INPUT: ${{ inputs.screens }}
+        run: |
+          set -euo pipefail
+          VERSION=$(grep -m1 'MARKETING_VERSION' project.yml | sed 's/.*: *//; s/"//g')
+          LIST="$SCREENS_INPUT"
+          if [ -z "$LIST" ] && [ -f "design/$VERSION/screens.txt" ]; then
+            # Комментарии после «#» и пустые строки отбрасываются.
+            LIST=$(sed 's/#.*//' "design/$VERSION/screens.txt" | tr ',\t ' '\n\n\n' | grep -v '^$' | paste -sd, - || true)
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "screens=$LIST" >> "$GITHUB_OUTPUT"
+          if [ -z "$LIST" ]; then
+            echo "::notice::No screens listed in design/$VERSION/screens.txt, nothing to shoot"
+          else
+            echo "Screens: $LIST" | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Take design screenshots
+        if: steps.pick.outputs.screens != ''
+        env:
+          TEST_RUNNER_DESIGN_SCREENS: ${{ steps.pick.outputs.screens }}
           TEST_RUNNER_DESIGN_DIR: ${{ github.workspace }}/design-screens
           TEST_RUNNER_DESIGN_LANG: ${{ inputs.language || 'ru' }}
         run: |
@@ -97,11 +127,14 @@ jobs:
           if-no-files-found: ignore
 
       - name: Commit screenshots to design/<version>/screens
+        if: steps.pick.outputs.screens != ''
         run: |
           set -euo pipefail
-          VERSION=$(grep -m1 'MARKETING_VERSION' project.yml | sed 's/.*: *//; s/"//g')
+          VERSION="${{ steps.pick.outputs.version }}"
           DEST="design/$VERSION/screens"
-          rm -rf "$DEST" && mkdir -p "$DEST"
+          # Снимаются не все экраны, поэтому старые файлы не удаляем, а перезаписываем снятые.
+          mkdir -p "$DEST"
+          ls design-screens/*.png > /dev/null 2>&1 || { echo "::error::No screenshots were taken"; exit 1; }
           cp design-screens/*.png "$DEST"/
           cp design-screens/report-*.txt "$DEST"/ || true
           git config user.name "github-actions[bot]"
