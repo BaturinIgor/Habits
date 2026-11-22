@@ -6,3 +6,7 @@
 "New habit in ${applicationName}" = "${applicationName}新习惯";
 "What's left in ${applicationName}" = "${applicationName}还剩什么";
 "What's left today in ${applicationName}" = "${applicationName}今天还剩什么";
+"Log my mood in ${applicationName}" = "在${applicationName}中记录心情";
+"Mood check-in in ${applicationName}" = "${applicationName}心情打卡";
+"Start a timer for ${habit} in ${applicationName}" = "在${applicationName}中开始${habit}计时";
+"Start a habit timer in ${applicationName}" = "在${applicationName}中开始习惯计时";

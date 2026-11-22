@@ -6,3 +6,7 @@
 "New habit in ${applicationName}" = "${applicationName}で新しい習慣";
 "What's left in ${applicationName}" = "${applicationName}で残りは";
 "What's left today in ${applicationName}" = "${applicationName}で今日の残りは";
+"Log my mood in ${applicationName}" = "${applicationName}で気分を記録";
+"Mood check-in in ${applicationName}" = "${applicationName}で気分チェック";
+"Start a timer for ${habit} in ${applicationName}" = "${applicationName}で${habit}のタイマーを開始";
+"Start a habit timer in ${applicationName}" = "${applicationName}で習慣タイマーを開始";

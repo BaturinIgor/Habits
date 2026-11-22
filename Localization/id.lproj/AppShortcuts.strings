@@ -1,0 +1,12 @@
+"Check off ${habit} in ${applicationName}" = "Tandai ${habit} di ${applicationName}";
+"Mark ${habit} in ${applicationName}" = "Selesaikan ${habit} di ${applicationName}";
+"Check off a habit in ${applicationName}" = "Tandai kebiasaan di ${applicationName}";
+"Add a habit in ${applicationName}" = "Tambah kebiasaan di ${applicationName}";
+"Add a reminder in ${applicationName}" = "Tambah pengingat di ${applicationName}";
+"New habit in ${applicationName}" = "Kebiasaan baru di ${applicationName}";
+"What's left in ${applicationName}" = "Apa yang tersisa di ${applicationName}";
+"What's left today in ${applicationName}" = "Apa yang tersisa hari ini di ${applicationName}";
+"Log my mood in ${applicationName}" = "Catat suasana hatiku di ${applicationName}";
+"Mood check-in in ${applicationName}" = "Cek suasana hati di ${applicationName}";
+"Start a timer for ${habit} in ${applicationName}" = "Mulai timer ${habit} di ${applicationName}";
+"Start a habit timer in ${applicationName}" = "Mulai timer kebiasaan di ${applicationName}";

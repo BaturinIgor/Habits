@@ -6,3 +6,7 @@
 "New habit in ${applicationName}" = "Novo hábito no ${applicationName}";
 "What's left in ${applicationName}" = "O que falta no ${applicationName}";
 "What's left today in ${applicationName}" = "O que falta hoje no ${applicationName}";
+"Log my mood in ${applicationName}" = "Registre meu humor no ${applicationName}";
+"Mood check-in in ${applicationName}" = "Meu humor no ${applicationName}";
+"Start a timer for ${habit} in ${applicationName}" = "Inicie o timer de ${habit} no ${applicationName}";
+"Start a habit timer in ${applicationName}" = "Inicie um timer de hábito no ${applicationName}";

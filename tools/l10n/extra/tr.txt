@@ -826,3 +826,12 @@ To link a habit, open it and choose Apple Health → Check off by.||Bir alışka
 Open the Health app||Sağlık uygulamasını aç
 You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Her veri türüne erişimi Ayarlar → Gizlilik ve Güvenlik → Sağlık → ZenHab bölümünden açıp kapatabilirsin.
 Apple Health: %@||Apple Health: %@
+Log mood||Ruh hâlini kaydet
+Saves how you feel today in the mood journal.||Bugün nasıl hissettiğini ruh hâli günlüğüne kaydeder.
+How are you feeling?||Nasıl hissediyorsun?
+Mood saved: %@||Ruh hâli kaydedildi: %@
+Start a habit timer||Alışkanlık zamanlayıcısını başlat
+Starts a countdown with a Live Activity. When time's up, the habit is checked off.||Canlı Etkinlik ile geri sayım başlatır. Süre dolunca alışkanlık işaretlenir.
+Minutes||Dakika
+The habit timer is part of Pro. Open ZenHab to get Pro.||Alışkanlık zamanlayıcısı Pro'ya dahil. Pro almak için ZenHab'ı aç.
+Timer started: %@, %lld min.||Zamanlayıcı başladı: %@, %lld dk.

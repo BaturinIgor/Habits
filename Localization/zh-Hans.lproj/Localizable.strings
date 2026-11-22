@@ -314,6 +314,7 @@
 "Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood." = "帮助改进 ZenHab：仅统计使用了哪些页面和按钮，绝不包含你的习惯、备注或心情。";
 "Hide keyboard" = "隐藏键盘";
 "Hours of sleep" = "睡眠小时数";
+"How are you feeling?" = "你感觉怎么样？";
 "How are you today?" = "今天感觉怎么样？";
 "How many habits are done today." = "今天完成了多少习惯。";
 "How often" = "频率";
@@ -392,6 +393,7 @@
 "Lists the habits that aren't checked off today." = "列出今天还没打卡的习惯。";
 "Lock with %@" = "使用%@锁定";
 "Lock with Face ID" = "面容 ID 锁定";
+"Log mood" = "记录心情";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "这台 iPhone 未设置“邮件”。请打开其他邮件应用，或复制消息发送到 %@。";
 "Make the bed" = "整理床铺";
 "Mark as done" = "标记为完成";
@@ -405,6 +407,7 @@
 "Minimum" = "最低版";
 "Minimum version, for example 5 squats" = "最低版本，例如 5 个深蹲";
 "Minus one" = "减一";
+"Minutes" = "分钟";
 "Missed" = "未完成";
 "Missed a day and the streak broke? The next day you can bring it back for sparks." = "错过一天导致连续记录中断？第二天可以用火花找回。";
 "Misses are okay" = "偶尔错过也没关系";
@@ -419,6 +422,7 @@
 "Mood is higher on days you do it" = "做了这件事的日子心情更好";
 "Mood is lower on days you do it" = "做了这件事的日子心情较差";
 "Mood journal" = "心情日记";
+"Mood saved: %@" = "心情已记录：%@";
 "More" = "多";
 "More freedom for the habits that matter." = "为重要的习惯提供更多自由。";
 "More species are available for sparks and with Pro." = "更多种类可用火花或 Pro 获得。";
@@ -587,6 +591,7 @@
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "将副本保存到“文件”或 iCloud 云盘。导入会替换当前所有数据。";
 "Save a streak with a freeze" = "用冻结保住连续记录";
 "Saved: %@" = "已省下：%@";
+"Saves how you feel today in the mood journal." = "把你今天的心情记到心情日记里。";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "说“在ZenHab中打卡习惯”、“在ZenHab中添加习惯”或“ZenHab还剩什么”。";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "说出习惯名称，例如“喝水”。";
 "Scan to get ZenHab" = "扫码获取 ZenHab";
@@ -634,10 +639,12 @@
 "Spend time outdoors" = "户外活动";
 "Spent a day" = "每天花费";
 "Start" = "开始";
+"Start a habit timer" = "开始习惯计时";
 "Start free trial" = "开始免费试用";
 "Start over" = "重新开始";
 "Start the count again?" = "重新开始计数？";
 "Start timer" = "开始计时";
+"Starts a countdown with a Live Activity. When time's up, the habit is checked off." = "开始倒计时并显示实时活动。时间到后，习惯自动打卡。";
 "Statistics" = "统计";
 "Statistics will appear once you start checking off habits." = "开始打卡后就会显示统计。";
 "Status" = "状态";
@@ -682,6 +689,7 @@
 "The group wasn't found." = "未找到该分组。";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "分组的习惯和打卡通过 iCloud 共享。拥有邀请链接的人都可以加入并打卡。每个人都会收到自己的提醒。";
 "The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "当“健康”App 中的数据达到目标时，习惯会自动打卡：步数、睡眠、饮水、锻炼或正念分钟数。";
+"The habit timer is part of Pro. Open ZenHab to get Pro." = "习惯计时是 Pro 功能。打开 ZenHab 获取 Pro。";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "最低版本也算完成，并保持连续记录。链中的习惯会在你完成上一个后立即提醒。";
 "The mood card at the bottom of the list lets you rate your day with one tap." = "列表底部的心情卡片，一点即可为这一天打分。";
 "The new language will apply after you close the app and open it again." = "关闭并重新打开应用后，新语言才会生效。";
@@ -699,6 +707,7 @@
 "Timer" = "计时器";
 "Timer on the Lock Screen" = "锁定屏幕计时器";
 "Timer on your wrist" = "手腕上的计时器";
+"Timer started: %@, %lld min." = "计时已开始：%@，%lld 分钟。";
 "To link a habit, open it and choose Apple Health → Check off by." = "要关联习惯，请打开它并选择 Apple Health → 自动打卡依据。";
 "Today" = "今天";
 "Today is a good day." = "今天是美好的一天。";
