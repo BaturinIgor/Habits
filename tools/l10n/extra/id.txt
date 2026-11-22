@@ -900,3 +900,11 @@ This is a pattern in your entries, not proof that the habit is the cause.||Ini p
 Rate your mood for %@ more to see which habits go with your better days.||Catat suasana hatimu %@ lagi untuk melihat kebiasaan mana yang menyertai hari-hari baikmu.
 No habit stands out yet: your mood is about the same on days with and without them.||Belum ada kebiasaan yang menonjol: suasana hatimu kurang lebih sama pada hari dengan dan tanpa kebiasaan itu.
 See which habits go with your better days||Lihat kebiasaan mana yang menyertai hari-hari baikmu
+Smart reminder time||Waktu pengingat pintar
+Turn on Smart time next to a reminder, and it moves closer to when you usually check the habit off. It's free for everyone.||Nyalakan "Waktu pintar" pada pengingat, dan pengingat akan bergeser mendekati waktu kamu biasa mencentang kebiasaan. Gratis untuk semua.
+Siri and Shortcuts||Siri dan Pintasan
+Ask Siri to check off a habit, log your mood or tell you what's left today. With Pro, Siri also starts a habit timer. All actions are in the Shortcuts app.||Minta Siri mencentang kebiasaan, mencatat suasana hati, atau memberi tahu apa yang tersisa hari ini. Dengan Pro, Siri juga memulai timer kebiasaan. Semua tindakan ada di app Pintasan.
+Mood insights||Wawasan suasana hati
+With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today.||Dengan Pro, jurnal suasana hati menunjukkan kebiasaan mana yang menyertai hari-hari terbaikmu. Buka dari Statistik atau kartu suasana hati di "Hari Ini".
+Large text||Teks besar
+Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly.||Layar kini lebih pas dengan ukuran teks terbesar, dan VoiceOver membacakan tombol dengan lebih jelas.

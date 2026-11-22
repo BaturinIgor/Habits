@@ -900,3 +900,11 @@ This is a pattern in your entries, not proof that the habit is the cause.||È un
 Rate your mood for %@ more to see which habits go with your better days.||Registra il tuo umore per altri %@ per vedere quali abitudini accompagnano le tue giornate migliori.
 No habit stands out yet: your mood is about the same on days with and without them.||Nessuna abitudine spicca ancora: il tuo umore è simile nei giorni con e senza.
 See which habits go with your better days||Scopri quali abitudini accompagnano le tue giornate migliori
+Smart reminder time||Orario intelligente dei promemoria
+Turn on Smart time next to a reminder, and it moves closer to when you usually check the habit off. It's free for everyone.||Attiva «Orario intelligente» in un promemoria e si sposterà verso l'ora in cui di solito spunti l'abitudine. Gratis per tutti.
+Siri and Shortcuts||Siri e Comandi rapidi
+Ask Siri to check off a habit, log your mood or tell you what's left today. With Pro, Siri also starts a habit timer. All actions are in the Shortcuts app.||Chiedi a Siri di spuntare un'abitudine, registrare l'umore o dirti cosa resta per oggi. Con Pro, Siri avvia anche il timer di un'abitudine. Tutte le azioni sono nell'app Comandi.
+Mood insights||Umore e abitudini
+With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today.||Con Pro, il diario dell'umore mostra quali abitudini accompagnano le tue giornate migliori. Aprilo da Statistiche o dalla scheda dell'umore in «Oggi».
+Large text||Testo grande
+Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly.||Le schermate si adattano meglio alle dimensioni di testo più grandi e VoiceOver legge i pulsanti in modo più chiaro.

@@ -82,6 +82,7 @@
 "Archive" = "归档";
 "Archive (%lld)" = "归档 (%lld)";
 "Archived" = "已归档";
+"Ask Siri to check off a habit, log your mood or tell you what's left today. With Pro, Siri also starts a habit timer. All actions are in the Shortcuts app." = "让 Siri 帮你打卡习惯、记录心情，或告诉你今天还剩什么。开通 Pro 后，Siri 还能开始习惯计时。所有操作都在“快捷指令”App 中。";
 "At the start of each week, see how the last one went and share it as a picture." = "每周开始时，查看上周的表现，并以图片形式分享。";
 "Attach a screenshot" = "附上截图";
 "Automatic iCloud backup" = "自动 iCloud 备份";
@@ -382,6 +383,7 @@
 "Language" = "语言";
 "Language to learn" = "要学的语言";
 "Languages" = "语言";
+"Large text" = "大字体";
 "Last 12 weeks" = "最近 12 周";
 "Last 30 days" = "最近 30 天";
 "Last 7 days" = "最近 7 天";
@@ -442,6 +444,7 @@
 "Mood" = "心情";
 "Mood (1-5)" = "心情 (1-5)";
 "Mood card" = "心情卡片";
+"Mood insights" = "心情洞察";
 "Mood is higher on days you do it" = "做了这件事的日子心情更好";
 "Mood is lower on days you do it" = "做了这件事的日子心情较差";
 "Mood journal" = "心情日记";
@@ -632,6 +635,7 @@
 "Scan to get ZenHab" = "扫码获取 ZenHab";
 "Schedule" = "计划";
 "Scheduled notifications" = "已安排的通知";
+"Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly." = "界面能更好地适应最大的文字尺寸，VoiceOver 也能更清楚地朗读按钮。";
 "See how many habits are done today." = "查看今天完成了多少个习惯。";
 "See how much money you save by quitting a habit." = "看看戒掉一个习惯能省下多少钱。";
 "See how much you've saved with Pro" = "Pro 可显示你省下了多少钱";
@@ -657,6 +661,7 @@
 "Simple gestures" = "简单手势";
 "Since %@" = "自 %@";
 "Siri" = "Siri";
+"Siri and Shortcuts" = "Siri 与快捷指令";
 "Six new icons for your Home Screen." = "六款新图标装点主屏幕。";
 "Skin care" = "护肤";
 "Skip" = "跳过";
@@ -665,6 +670,7 @@
 "Sleeping" = "在睡觉";
 "Small steps add up." = "小步积累成大进步。";
 "Small steps every day" = "每天一小步";
+"Smart reminder time" = "智能提醒时间";
 "Smart time" = "智能时间";
 "Some days" = "指定日";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "在设置中按分组排列“今天”页面；长按“今天”小组件可只显示一个分组。";
@@ -778,6 +784,7 @@
 "Try Pro free for %@" = "免费试用 Pro %@";
 "Try again" = "重试";
 "Try it" = "试一试";
+"Turn on Smart time next to a reminder, and it moves closer to when you usually check the habit off. It's free for everyone." = "为提醒打开“智能时间”，提醒会移到你通常打卡的时间附近。所有人免费使用。";
 "Turn on reminders" = "开启提醒";
 "Turn on the lock" = "开启锁定";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "在习惯中打开“我要戒掉这个习惯”，即可查看已戒天数、最长纪录和下一个里程碑。Pro 还会显示省下的钱。";
@@ -841,6 +848,7 @@
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "开通 Pro 后，可为习惯设定时长。倒计时显示在锁定屏幕和灵动岛上，时间到后自动打卡。";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "开通 Pro 后，可将习惯与步数、睡眠、饮水、体能训练或正念分钟数关联，达到目标即自动打卡。";
 "With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off." = "开通 Pro 后，可在 Apple Watch 上开始习惯计时。时间到时，手表会轻触手腕并自动打卡。";
+"With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today." = "开通 Pro 后，心情日记会显示哪些习惯伴随你的好日子。可从“统计”或“今天”页的心情卡片打开。";
 "Without it since" = "戒除开始于";
 "Words" = "单词";
 "Words for today are done" = "今天的单词完成了";

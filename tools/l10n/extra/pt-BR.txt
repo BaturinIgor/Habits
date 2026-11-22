@@ -900,3 +900,11 @@ This is a pattern in your entries, not proof that the habit is the cause.||É um
 Rate your mood for %@ more to see which habits go with your better days.||Registre seu humor por mais %@ para ver quais hábitos acompanham seus melhores dias.
 No habit stands out yet: your mood is about the same on days with and without them.||Nenhum hábito se destaca ainda: seu humor é parecido nos dias com e sem eles.
 See which habits go with your better days||Veja quais hábitos acompanham seus melhores dias
+Smart reminder time||Horário inteligente dos lembretes
+Turn on Smart time next to a reminder, and it moves closer to when you usually check the habit off. It's free for everyone.||Ative "Horário inteligente" em um lembrete e ele vai se aproximar da hora em que você costuma marcar o hábito. Grátis para todos.
+Siri and Shortcuts||Siri e Atalhos
+Ask Siri to check off a habit, log your mood or tell you what's left today. With Pro, Siri also starts a habit timer. All actions are in the Shortcuts app.||Peça à Siri para marcar um hábito, registrar seu humor ou dizer o que falta hoje. Com o Pro, a Siri também inicia o timer de um hábito. Todas as ações estão no app Atalhos.
+Mood insights||Humor e hábitos
+With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today.||Com o Pro, o diário de humor mostra quais hábitos acompanham seus melhores dias. Abra pelas Estatísticas ou pelo cartão de humor em "Hoje".
+Large text||Texto grande
+Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly.||As telas se adaptam melhor aos maiores tamanhos de texto, e o VoiceOver lê os botões com mais clareza.

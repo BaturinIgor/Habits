@@ -82,6 +82,7 @@
 "Archive" = "Archiver";
 "Archive (%lld)" = "Archives (%lld)";
 "Archived" = "Archivée";
+"Ask Siri to check off a habit, log your mood or tell you what's left today. With Pro, Siri also starts a habit timer. All actions are in the Shortcuts app." = "Demande à Siri de cocher une habitude, de noter ton humeur ou de te dire ce qu'il reste aujourd'hui. Avec Pro, Siri lance aussi le minuteur d'une habitude. Toutes les actions sont dans l'app Raccourcis.";
 "At the start of each week, see how the last one went and share it as a picture." = "Au début de chaque semaine, vois comment s'est passée la précédente et partage-la en image.";
 "Attach a screenshot" = "Joindre une capture";
 "Automatic iCloud backup" = "Sauvegarde iCloud automatique";
@@ -382,6 +383,7 @@
 "Language" = "Langue";
 "Language to learn" = "Langue à apprendre";
 "Languages" = "Langues";
+"Large text" = "Grand texte";
 "Last 12 weeks" = "12 dernières semaines";
 "Last 30 days" = "30 derniers jours";
 "Last 7 days" = "7 derniers jours";
@@ -442,6 +444,7 @@
 "Mood" = "Humeur";
 "Mood (1-5)" = "Humeur (1-5)";
 "Mood card" = "Carte d'humeur";
+"Mood insights" = "Analyses de l'humeur";
 "Mood is higher on days you do it" = "L'humeur est meilleure les jours où tu le fais";
 "Mood is lower on days you do it" = "L'humeur est moins bonne les jours où tu le fais";
 "Mood journal" = "Journal d'humeur";
@@ -632,6 +635,7 @@
 "Scan to get ZenHab" = "Scanne pour obtenir ZenHab";
 "Schedule" = "Planning";
 "Scheduled notifications" = "Notifications planifiées";
+"Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly." = "Les écrans s'adaptent mieux aux plus grandes tailles de texte, et VoiceOver lit plus clairement les boutons.";
 "See how many habits are done today." = "Combien d'habitudes sont faites aujourd'hui.";
 "See how much money you save by quitting a habit." = "Vois combien tu économises en arrêtant une habitude.";
 "See how much you've saved with Pro" = "Vois combien tu as économisé avec Pro";
@@ -657,6 +661,7 @@
 "Simple gestures" = "Gestes simples";
 "Since %@" = "Depuis %@";
 "Siri" = "Siri";
+"Siri and Shortcuts" = "Siri et Raccourcis";
 "Six new icons for your Home Screen." = "Six nouvelles icônes pour ton écran d'accueil.";
 "Skin care" = "Soin de la peau";
 "Skip" = "Passer";
@@ -665,6 +670,7 @@
 "Sleeping" = "Dort";
 "Small steps add up." = "Les petits pas s'additionnent.";
 "Small steps every day" = "Des petits pas chaque jour";
+"Smart reminder time" = "Heure de rappel intelligente";
 "Smart time" = "Heure intelligente";
 "Some days" = "Certains jours";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Trie l'écran Aujourd'hui par groupes dans Réglages, et maintiens le widget Aujourd'hui pour afficher un seul groupe.";
@@ -778,6 +784,7 @@
 "Try Pro free for %@" = "Essaie Pro gratuitement pendant %@";
 "Try again" = "Réessayer";
 "Try it" = "Essayer";
+"Turn on Smart time next to a reminder, and it moves closer to when you usually check the habit off. It's free for everyone." = "Active « Heure intelligente » sur un rappel : il se rapproche de l'heure à laquelle tu coches généralement cette habitude. Gratuit pour tous.";
 "Turn on reminders" = "Activer les rappels";
 "Turn on the lock" = "Activer le verrouillage";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "Active « J'arrête cette habitude » dans une habitude pour voir depuis combien de jours tu t'en passes, ton record et le prochain palier. Avec Pro, l'argent économisé aussi.";
@@ -841,6 +848,7 @@
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "Avec Pro, donne une durée à une habitude. Le compte à rebours s'affiche sur l'écran verrouillé et dans la Dynamic Island, et coche l'habitude à la fin.";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "Avec Pro, relie une habitude aux pas, au sommeil, à l'eau, aux séances ou à la pleine conscience : elle se coche toute seule quand tu atteins l'objectif.";
 "With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off." = "Avec Pro, lance le minuteur d'une habitude sur l'Apple Watch. À la fin, la montre tapote ton poignet et coche l'habitude.";
+"With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today." = "Avec Pro, le journal d'humeur montre quelles habitudes vont avec tes meilleurs jours. Ouvre-le depuis Statistiques ou la carte d'humeur sur « Aujourd'hui ».";
 "Without it since" = "Sans depuis";
 "Words" = "Mots";
 "Words for today are done" = "Les mots du jour sont faits";

@@ -82,6 +82,7 @@
 "Archive" = "В архив";
 "Archive (%lld)" = "Архив (%lld)";
 "Archived" = "В архиве";
+"Ask Siri to check off a habit, log your mood or tell you what's left today. With Pro, Siri also starts a habit timer. All actions are in the Shortcuts app." = "Попроси Siri отметить привычку, записать настроение или сказать, что осталось на сегодня. С Pro Siri запустит и таймер привычки. Все действия есть в приложении «Команды».";
 "At the start of each week, see how the last one went and share it as a picture." = "В начале каждой недели смотри, как прошла прошлая, и делись итогами картинкой.";
 "Attach a screenshot" = "Приложить скриншот";
 "Automatic iCloud backup" = "Автокопия в iCloud";
@@ -382,6 +383,7 @@
 "Language" = "Язык";
 "Language to learn" = "Язык для изучения";
 "Languages" = "Языки";
+"Large text" = "Крупный шрифт";
 "Last 12 weeks" = "Последние 12 недель";
 "Last 30 days" = "За 30 дней";
 "Last 7 days" = "Последние 7 дней";
@@ -442,6 +444,7 @@
 "Mood" = "Настроение";
 "Mood (1-5)" = "Настроение (1-5)";
 "Mood card" = "Карточка настроения";
+"Mood insights" = "Инсайты настроения";
 "Mood is higher on days you do it" = "В дни с этой привычкой настроение выше";
 "Mood is lower on days you do it" = "В дни с этой привычкой настроение ниже";
 "Mood journal" = "Дневник настроения";
@@ -632,6 +635,7 @@
 "Scan to get ZenHab" = "Наведи камеру, чтобы скачать ZenHab";
 "Schedule" = "Расписание";
 "Scheduled notifications" = "Запланировано уведомлений";
+"Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly." = "Экраны лучше подстраиваются под самый крупный шрифт, а VoiceOver понятнее озвучивает кнопки.";
 "See how many habits are done today." = "Сколько привычек выполнено сегодня.";
 "See how much money you save by quitting a habit." = "Сколько денег ты экономишь, бросив привычку.";
 "See how much you've saved with Pro" = "Сколько сэкономлено, покажет Pro";
@@ -657,6 +661,7 @@
 "Simple gestures" = "Простые жесты";
 "Since %@" = "С %@";
 "Siri" = "Siri";
+"Siri and Shortcuts" = "Siri и Команды";
 "Six new icons for your Home Screen." = "Шесть новых иконок для экрана «Домой».";
 "Skin care" = "Уход за кожей";
 "Skip" = "Пропустить";
@@ -665,6 +670,7 @@
 "Sleeping" = "Спит";
 "Small steps add up." = "Маленькие шаги складываются в большие.";
 "Small steps every day" = "Маленькие шаги каждый день";
+"Smart reminder time" = "Умное время напоминаний";
 "Smart time" = "Умное время";
 "Some days" = "По дням";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Разложи экран «Сегодня» по группам в Настройках, а виджет «Сегодня» зажми, чтобы выбрать одну группу.";
@@ -778,6 +784,7 @@
 "Try Pro free for %@" = "Попробуй Pro бесплатно %@";
 "Try again" = "Попробовать ещё раз";
 "Try it" = "Попробовать";
+"Turn on Smart time next to a reminder, and it moves closer to when you usually check the habit off. It's free for everyone." = "Включи «Умное время» у напоминания, и оно сдвинется ближе к тому, когда ты обычно отмечаешь привычку. Это бесплатно для всех.";
 "Turn on reminders" = "Включить напоминания";
 "Turn on the lock" = "Включить блокировку";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "Включи «Бросаю эту привычку» в привычке, и увидишь, сколько дней ты без неё, рекорд и следующую веху. С Pro ещё и сэкономленные деньги.";
@@ -841,6 +848,7 @@
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "С Pro у привычки может быть длительность. Обратный отсчёт идёт на экране блокировки и в Dynamic Island, а когда время выйдет, привычка отметится.";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "С Pro привычку можно связать с шагами, сном, водой, тренировками или минутами осознанности. Она отметится сама, когда ты достигнешь цели.";
 "With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off." = "С Pro таймер привычки можно запустить на Apple Watch. Когда время выйдет, часы коснутся запястья и отметят привычку.";
+"With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today." = "С Pro дневник настроения показывает, какие привычки идут вместе с хорошими днями. Открой его из Статистики или из карточки настроения на «Сегодня».";
 "Without it since" = "Без неё с";
 "Words" = "Слова";
 "Words for today are done" = "Слова на сегодня пройдены";

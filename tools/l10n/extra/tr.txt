@@ -900,3 +900,11 @@ This is a pattern in your entries, not proof that the habit is the cause.||Bu, k
 Rate your mood for %@ more to see which habits go with your better days.||İyi günlerinle birlikte gelen alışkanlıkları görmek için ruh halini %@ daha kaydet.
 No habit stands out yet: your mood is about the same on days with and without them.||Henüz öne çıkan bir alışkanlık yok: onların olduğu ve olmadığı günlerde ruh halin aşağı yukarı aynı.
 See which habits go with your better days||İyi günlerinle birlikte gelen alışkanlıkları gör
+Smart reminder time||Akıllı hatırlatma saati
+Turn on Smart time next to a reminder, and it moves closer to when you usually check the habit off. It's free for everyone.||Bir hatırlatıcıda "Akıllı saat"i aç, alışkanlığı genelde işaretlediğin saate yaklaşsın. Herkes için ücretsiz.
+Siri and Shortcuts||Siri ve Kestirmeler
+Ask Siri to check off a habit, log your mood or tell you what's left today. With Pro, Siri also starts a habit timer. All actions are in the Shortcuts app.||Siri'den bir alışkanlığı işaretlemesini, ruh hâlini kaydetmesini ya da bugün ne kaldığını söylemesini iste. Pro ile Siri alışkanlık zamanlayıcısını da başlatır. Tüm eylemler Kestirmeler uygulamasında.
+Mood insights||Ruh hâli içgörüleri
+With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today.||Pro ile ruh hâli günlüğü, hangi alışkanlıkların iyi günlerine eşlik ettiğini gösterir. İstatistikler'den ya da "Bugün" ekranındaki ruh hâli kartından aç.
+Large text||Büyük yazı
+Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly.||Ekranlar en büyük yazı boyutlarına daha iyi uyuyor, VoiceOver da düğmeleri daha anlaşılır okuyor.
