@@ -894,3 +894,9 @@ The reminder already matches when you usually check off the habit.||O lembrete j
 You usually check it off around %@||Você costuma marcar por volta das %@
 The reminder comes at %@. Move it to %@?||O lembrete chega às %@. Passar para %@?
 Move to %@||Passar para %@
+What goes with a better mood||O que acompanha um humor melhor
+On days with this habit, your mood is higher on average||Nos dias com este hábito, seu humor fica mais alto em média
+This is a pattern in your entries, not proof that the habit is the cause.||É um padrão nos seus registros, não prova de que o hábito seja a causa.
+Rate your mood for %@ more to see which habits go with your better days.||Registre seu humor por mais %@ para ver quais hábitos acompanham seus melhores dias.
+No habit stands out yet: your mood is about the same on days with and without them.||Nenhum hábito se destaca ainda: seu humor é parecido nos dias com e sem eles.
+See which habits go with your better days||Veja quais hábitos acompanham seus melhores dias

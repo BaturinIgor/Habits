@@ -11,7 +11,7 @@ enum DesignScreen: String, CaseIterable, Identifiable {
     // Экраны внутри навигации
     case habitDetail, quitDetail, smartSuggestion, notifications, todayScreen, groups, groupDetail, appIcon, backup, healthSettings
     // Шиты
-    case catalog, editorNew, editorEdit, editorTemplate, iconPicker, timer, recap, moodJournal, moodEntry
+    case catalog, editorNew, editorEdit, editorTemplate, iconPicker, timer, recap, moodJournal, moodEntry, moodInsights, moodInsightsFew
     case editorHealth, smartEditor, smartEditorOff, profile, sparks, pet, petSwitched, petNaming, petSpecies, paywall, paywallFeature, feedback, voice, note, whatsNew
     // 1.7, KAN-125: новогоднее предложение
     case offerPaywall
@@ -71,6 +71,8 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .timer: DesignGallery.TimerSheet()
         case .recap: DesignGallery.RecapScreen()
         case .moodJournal: MoodJournalView()
+        // 1.7, KAN-137: инсайты настроения в дневнике.
+        case .moodInsights, .moodInsightsFew: MoodJournalView()
         case .moodEntry: MoodEntryEditor(dayKey: DayKey.make(Date()))
         case .profile: ProfileView()
         case .sparks: SparksView()
@@ -146,6 +148,17 @@ enum DesignGallery {
             }
             if DesignScreen.requested == .smartEditor, let index = data.habits.firstIndex(where: { $0.id == UITestSupport.id(1) }) {
                 data.habits[index].smartTime = true
+            }
+        }
+
+        // 1.7, KAN-137: месяц настроения, в дни медитации и чтения оно заметно выше, в дни воды - чуть выше.
+        // Для состояния «мало данных» - только четыре последних дня.
+        if [.moodInsights, .moodInsightsFew].contains(DesignScreen.requested) {
+            data.moods = [:]
+            let range = DesignScreen.requested == .moodInsights ? -30 ... -1 : -4 ... -1
+            for offset in range {
+                let level = 2 + (offset % 3 != 0 ? 2 : 0) + (offset % 4 != 0 ? 1 : 0)
+                data.moods[DayKey.make(day(offset))] = MoodEntry(level: level, note: notes[(-offset) % 4], updatedAt: day(offset))
             }
         }
 

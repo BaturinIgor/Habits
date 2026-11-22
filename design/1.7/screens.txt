@@ -23,3 +23,7 @@ offer-03-paywall    # KAN-125
 smart-01-suggestion
 smart-02-editor-on
 smart-03-editor-off
+# KAN-137: инсайты настроения
+insights-01-top
+insights-02-few-days
+insights-03-free

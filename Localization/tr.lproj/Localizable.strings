@@ -482,6 +482,7 @@
 "No entries yet" = "Henüz kayıt yok";
 "No fast food" = "Fast food yok";
 "No group" = "Grup yok";
+"No habit stands out yet: your mood is about the same on days with and without them." = "Henüz öne çıkan bir alışkanlık yok: onların olduğu ve olmadığı günlerde ruh halin aşağı yukarı aynı.";
 "No habits" = "Alışkanlık yok";
 "No habits are linked yet." = "Henüz bağlı alışkanlık yok.";
 "No habits are planned for this day." = "Bu gün için planlanmış alışkanlık yok.";
@@ -515,6 +516,7 @@
 "Okay" = "İdare eder";
 "Older entries: %lld. Your full history is in Pro." = "Eski kayıtlar: %lld. Tüm geçmiş Pro'da.";
 "On" = "Açık";
+"On days with this habit, your mood is higher on average" = "Bu alışkanlığın olduğu günlerde ruh halin ortalamada daha iyi";
 "On target" = "Tam isabet";
 "On weekdays" = "Hafta içi";
 "On weekends" = "Hafta sonu";
@@ -584,6 +586,7 @@
 "Raspberry" = "Ahududu";
 "Rate the app" = "Uygulamayı değerlendir";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "Bugün ekranının altında tek dokunuşla gününü puanla ve birkaç kelime ekle. Pro ile tüm geçmişi, aylık grafiği ve ruh hâlini iyileştiren alışkanlıkları gör.";
+"Rate your mood for %@ more to see which habits go with your better days." = "İyi günlerinle birlikte gelen alışkanlıkları görmek için ruh halini %@ daha kaydet.";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "Ruh hâlini günde bir kez Bugün ekranında işaretle. Birkaç hafta sonra hangi alışkanlıkların onu iyileştirdiğini göreceksin.";
 "Reach a daily goal 20 times" = "Günlük hedefe 20 kez ulaş";
 "Reach a weekly goal 4 times" = "Haftalık hedefe 4 kez ulaş";
@@ -633,6 +636,7 @@
 "See how much money you save by quitting a habit." = "Bir alışkanlığı bırakarak ne kadar para biriktirdiğini gör.";
 "See how much you've saved with Pro" = "Ne kadar biriktirdiğini Pro ile gör";
 "See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "Bugünün alışkanlıkları artık bileğinde, tek dokunuşla işaretle. Her şey iPhone'unla eşitlenir. ZenHab saatinde görünmediyse iPhone'daki Watch uygulamasından yükle.";
+"See which habits go with your better days" = "İyi günlerinle birlikte gelen alışkanlıkları gör";
 "See which habits make your days better" = "Hangi alışkanlıkların günlerini güzelleştirdiğini gör";
 "Send" = "Gönder";
 "Send by email" = "E-postayla gönder";
@@ -745,6 +749,7 @@
 "There are no purchases yet: this switch turns Pro features on for testing." = "Henüz satın alma yok: bu anahtar Pro özelliklerini test için açar.";
 "There's a backup in your iCloud from %@. Habits in it: %lld." = "iCloud'unda %@ tarihli bir yedek var. İçindeki alışkanlık: %lld.";
 "This group and its habits will be removed from this iPhone." = "Bu grup ve alışkanlıkları bu iPhone'dan kaldırılacak.";
+"This is a pattern in your entries, not proof that the habit is the cause." = "Bu, kayıtlarındaki bir eğilim; sebebin alışkanlık olduğunun kanıtı değil.";
 "Tidy up for 10 minutes" = "10 dakika topla";
 "Time" = "Saat";
 "Time for your habit" = "Alışkanlık zamanı";
@@ -819,6 +824,7 @@
 "What %@ gives you" = "%@ sana ne verir";
 "What ZenHab reads" = "ZenHab'in okuduğu veriler";
 "What do you want to work on?" = "Neyin üzerinde çalışmak istersin?";
+"What goes with a better mood" = "Daha iyi ruh haliyle birlikte gelenler";
 "What happened and what did you expect?" = "Ne oldu ve ne bekliyordun?";
 "What happened today? What helped?" = "Bugün ne oldu? Ne iyi geldi?";
 "What lifts your mood" = "Ruh hâlini ne iyileştiriyor";

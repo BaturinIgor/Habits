@@ -90,6 +90,10 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "smart-01-suggestion", screen: "smartSuggestion"),
         Shot(name: "smart-02-editor-on", screen: "smartEditor"),
         Shot(name: "smart-03-editor-off", screen: "smartEditorOff"),
+        // 1.7, KAN-137: инсайты настроения (Pro), мало данных и бесплатная версия
+        Shot(name: "insights-01-top", screen: "moodInsights"),
+        Shot(name: "insights-02-few-days", screen: "moodInsightsFew"),
+        Shot(name: "insights-03-free", screen: "moodInsights", flags: ["-uitest-free"]),
         // Обратная связь
         Shot(name: "50-feedback", screen: "feedback"),
         Shot(name: "51-feedback-send-options", screen: "feedback", alert: "sendOptions"),

@@ -894,3 +894,9 @@ The reminder already matches when you usually check off the habit.||Pengingat su
 You usually check it off around %@||Kamu biasanya mencentangnya sekitar %@
 The reminder comes at %@. Move it to %@?||Pengingat datang pukul %@. Pindahkan ke %@?
 Move to %@||Pindahkan ke %@
+What goes with a better mood||Yang menyertai suasana hati lebih baik
+On days with this habit, your mood is higher on average||Pada hari dengan kebiasaan ini, suasana hatimu rata-rata lebih baik
+This is a pattern in your entries, not proof that the habit is the cause.||Ini pola dalam catatanmu, bukan bukti bahwa kebiasaan itu penyebabnya.
+Rate your mood for %@ more to see which habits go with your better days.||Catat suasana hatimu %@ lagi untuk melihat kebiasaan mana yang menyertai hari-hari baikmu.
+No habit stands out yet: your mood is about the same on days with and without them.||Belum ada kebiasaan yang menonjol: suasana hatimu kurang lebih sama pada hari dengan dan tanpa kebiasaan itu.
+See which habits go with your better days||Lihat kebiasaan mana yang menyertai hari-hari baikmu

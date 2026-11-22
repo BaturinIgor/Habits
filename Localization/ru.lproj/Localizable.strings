@@ -482,6 +482,7 @@
 "No entries yet" = "Записей пока нет";
 "No fast food" = "Без фастфуда";
 "No group" = "Без группы";
+"No habit stands out yet: your mood is about the same on days with and without them." = "Пока ни одна привычка не выделяется: настроение примерно одинаковое в дни с ними и без них.";
 "No habits" = "Привычек нет";
 "No habits are linked yet." = "Пока нет связанных привычек.";
 "No habits are planned for this day." = "На этот день привычек не запланировано.";
@@ -515,6 +516,7 @@
 "Okay" = "Нормально";
 "Older entries: %lld. Your full history is in Pro." = "Старых записей: %lld. Вся история доступна в Pro.";
 "On" = "Включены";
+"On days with this habit, your mood is higher on average" = "В дни с этой привычкой настроение в среднем выше";
 "On target" = "В цель";
 "On weekdays" = "По будням";
 "On weekends" = "По выходным";
@@ -584,6 +586,7 @@
 "Raspberry" = "Малиновый";
 "Rate the app" = "Оценить приложение";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "Оцени день одним касанием внизу экрана «Сегодня» и добавь пару слов. С Pro видна вся история, график за месяц и привычки, которые поднимают настроение.";
+"Rate your mood for %@ more to see which habits go with your better days." = "Отмечай настроение ещё %@, и увидишь, какие привычки идут вместе с хорошими днями.";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "Отмечай настроение на экране «Сегодня» раз в день. Через пару недель станет видно, какие привычки его поднимают.";
 "Reach a daily goal 20 times" = "Выполни дневную цель 20 раз";
 "Reach a weekly goal 4 times" = "Выполни недельную цель 4 раза";
@@ -633,6 +636,7 @@
 "See how much money you save by quitting a habit." = "Сколько денег ты экономишь, бросив привычку.";
 "See how much you've saved with Pro" = "Сколько сэкономлено, покажет Pro";
 "See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "Привычки на сегодня теперь на запястье, отмечай их одним касанием. Всё синхронизируется с iPhone. Если ZenHab не появился на часах, установи его в приложении Watch на iPhone.";
+"See which habits go with your better days" = "Узнай, какие привычки идут вместе с хорошими днями";
 "See which habits make your days better" = "Узнай, какие привычки делают дни лучше";
 "Send" = "Отправить";
 "Send by email" = "Отправить письмом";
@@ -745,6 +749,7 @@
 "There are no purchases yet: this switch turns Pro features on for testing." = "Покупок пока нет: этот переключатель включает функции Pro для проверки.";
 "There's a backup in your iCloud from %@. Habits in it: %lld." = "В твоём iCloud есть копия от %@. Привычек в ней: %lld.";
 "This group and its habits will be removed from this iPhone." = "Группа и её привычки будут удалены с этого iPhone.";
+"This is a pattern in your entries, not proof that the habit is the cause." = "Это закономерность в твоих записях, а не доказательство, что дело в привычке.";
 "Tidy up for 10 minutes" = "Убраться 10 минут";
 "Time" = "Время";
 "Time for your habit" = "Пора выполнить привычку";
@@ -819,6 +824,7 @@
 "What %@ gives you" = "Что даёт %@";
 "What ZenHab reads" = "Что читает ZenHab";
 "What do you want to work on?" = "Над чем хочешь поработать?";
+"What goes with a better mood" = "Что идёт вместе с хорошим настроением";
 "What happened and what did you expect?" = "Что произошло и что ты ожидал увидеть?";
 "What happened today? What helped?" = "Что сегодня было? Что помогло?";
 "What lifts your mood" = "Что поднимает настроение";

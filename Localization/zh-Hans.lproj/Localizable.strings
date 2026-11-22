@@ -482,6 +482,7 @@
 "No entries yet" = "还没有记录";
 "No fast food" = "不吃快餐";
 "No group" = "未分组";
+"No habit stands out yet: your mood is about the same on days with and without them." = "暂时没有突出的习惯：有没有这些习惯，你的心情都差不多。";
 "No habits" = "没有习惯";
 "No habits are linked yet." = "还没有关联的习惯。";
 "No habits are planned for this day." = "这一天没有计划的习惯。";
@@ -515,6 +516,7 @@
 "Okay" = "一般";
 "Older entries: %lld. Your full history is in Pro." = "更早的记录：%lld 条。完整历史在 Pro 中。";
 "On" = "已开启";
+"On days with this habit, your mood is higher on average" = "有这个习惯的日子，你的心情平均更好";
 "On target" = "命中目标";
 "On weekdays" = "工作日";
 "On weekends" = "周末";
@@ -584,6 +586,7 @@
 "Raspberry" = "覆盆子红";
 "Rate the app" = "给应用评分";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "在“今天”底部轻点一下为这一天打分，再写几句话。开通 Pro 可查看完整历史、月度图表以及哪些习惯让你心情更好。";
+"Rate your mood for %@ more to see which habits go with your better days." = "再记录 %@ 心情，就能看到哪些习惯伴随你的好日子。";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "每天在“今天”页面记录一次心情。几周后就能看到哪些习惯让你心情更好。";
 "Reach a daily goal 20 times" = "完成每日目标 20 次";
 "Reach a weekly goal 4 times" = "完成 4 次每周目标";
@@ -633,6 +636,7 @@
 "See how much money you save by quitting a habit." = "看看戒掉一个习惯能省下多少钱。";
 "See how much you've saved with Pro" = "Pro 可显示你省下了多少钱";
 "See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "在手腕上查看今天的习惯，轻点一下即可打卡。所有数据与 iPhone 同步。如果手表上还没有 ZenHab，请在 iPhone 的 Watch App 中安装。";
+"See which habits go with your better days" = "看看哪些习惯伴随你的好日子";
 "See which habits make your days better" = "看看哪些习惯让你的日子更好";
 "Send" = "发送";
 "Send by email" = "通过邮件发送";
@@ -745,6 +749,7 @@
 "There are no purchases yet: this switch turns Pro features on for testing." = "暂无购买功能：此开关用于测试 Pro 功能。";
 "There's a backup in your iCloud from %@. Habits in it: %lld." = "你的 iCloud 中有一份 %@ 的备份，包含 %lld 个习惯。";
 "This group and its habits will be removed from this iPhone." = "该分组及其习惯将从此 iPhone 移除。";
+"This is a pattern in your entries, not proof that the habit is the cause." = "这是你记录中的规律，并不能证明是这个习惯带来的。";
 "Tidy up for 10 minutes" = "整理 10 分钟";
 "Time" = "时间";
 "Time for your habit" = "该完成习惯了";
@@ -819,6 +824,7 @@
 "What %@ gives you" = "%@ 能带给你什么";
 "What ZenHab reads" = "ZenHab 读取的数据";
 "What do you want to work on?" = "你想改善哪方面？";
+"What goes with a better mood" = "哪些习惯伴随更好的心情";
 "What happened and what did you expect?" = "发生了什么？你原本期望什么？";
 "What happened today? What helped?" = "今天发生了什么？什么帮到了你？";
 "What lifts your mood" = "什么让你心情变好";

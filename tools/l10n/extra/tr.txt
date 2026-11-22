@@ -894,3 +894,9 @@ The reminder already matches when you usually check off the habit.||Hatırlatıc
 You usually check it off around %@||Genelde %@ civarında işaretliyorsun
 The reminder comes at %@. Move it to %@?||Hatırlatıcı %@ saatinde geliyor. %@ saatine taşınsın mı?
 Move to %@||%@ saatine taşı
+What goes with a better mood||Daha iyi ruh haliyle birlikte gelenler
+On days with this habit, your mood is higher on average||Bu alışkanlığın olduğu günlerde ruh halin ortalamada daha iyi
+This is a pattern in your entries, not proof that the habit is the cause.||Bu, kayıtlarındaki bir eğilim; sebebin alışkanlık olduğunun kanıtı değil.
+Rate your mood for %@ more to see which habits go with your better days.||İyi günlerinle birlikte gelen alışkanlıkları görmek için ruh halini %@ daha kaydet.
+No habit stands out yet: your mood is about the same on days with and without them.||Henüz öne çıkan bir alışkanlık yok: onların olduğu ve olmadığı günlerde ruh halin aşağı yukarı aynı.
+See which habits go with your better days||İyi günlerinle birlikte gelen alışkanlıkları gör

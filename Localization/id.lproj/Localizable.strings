@@ -482,6 +482,7 @@
 "No entries yet" = "Belum ada catatan";
 "No fast food" = "Tanpa makanan cepat saji";
 "No group" = "Tanpa grup";
+"No habit stands out yet: your mood is about the same on days with and without them." = "Belum ada kebiasaan yang menonjol: suasana hatimu kurang lebih sama pada hari dengan dan tanpa kebiasaan itu.";
 "No habits" = "Tidak ada kebiasaan";
 "No habits are linked yet." = "Belum ada kebiasaan yang terhubung.";
 "No habits are planned for this day." = "Tidak ada kebiasaan yang direncanakan untuk hari ini.";
@@ -515,6 +516,7 @@
 "Okay" = "Biasa";
 "Older entries: %lld. Your full history is in Pro." = "Catatan lama: %lld. Seluruh riwayat ada di Pro.";
 "On" = "Nyala";
+"On days with this habit, your mood is higher on average" = "Pada hari dengan kebiasaan ini, suasana hatimu rata-rata lebih baik";
 "On target" = "Tepat sasaran";
 "On weekdays" = "Di hari kerja";
 "On weekends" = "Di akhir pekan";
@@ -584,6 +586,7 @@
 "Raspberry" = "Raspberi";
 "Rate the app" = "Beri nilai aplikasi";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "Nilai harimu dengan satu ketukan di bawah Hari Ini dan tambahkan beberapa kata. Dengan Pro, lihat seluruh riwayat, grafik bulanan, dan kebiasaan yang memperbaiki suasana hati.";
+"Rate your mood for %@ more to see which habits go with your better days." = "Catat suasana hatimu %@ lagi untuk melihat kebiasaan mana yang menyertai hari-hari baikmu.";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "Nilai suasana hatimu sekali sehari di layar Hari Ini. Setelah beberapa minggu kamu akan melihat kebiasaan mana yang memperbaikinya.";
 "Reach a daily goal 20 times" = "Capai target harian 20 kali";
 "Reach a weekly goal 4 times" = "Capai target mingguan 4 kali";
@@ -633,6 +636,7 @@
 "See how much money you save by quitting a habit." = "Lihat berapa banyak uang yang kamu hemat dengan berhenti dari suatu kebiasaan.";
 "See how much you've saved with Pro" = "Lihat berapa yang kamu hemat dengan Pro";
 "See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "Lihat kebiasaan hari ini di pergelangan tangan dan centang dengan sekali ketuk. Semuanya tersinkron dengan iPhone. Jika ZenHab belum muncul di jam, pasang dari app Watch di iPhone.";
+"See which habits go with your better days" = "Lihat kebiasaan mana yang menyertai hari-hari baikmu";
 "See which habits make your days better" = "Lihat kebiasaan mana yang membuat harimu lebih baik";
 "Send" = "Kirim";
 "Send by email" = "Kirim lewat email";
@@ -745,6 +749,7 @@
 "There are no purchases yet: this switch turns Pro features on for testing." = "Belum ada pembelian: sakelar ini menyalakan fitur Pro untuk pengujian.";
 "There's a backup in your iCloud from %@. Habits in it: %lld." = "Ada cadangan di iCloud-mu dari %@. Kebiasaan di dalamnya: %lld.";
 "This group and its habits will be removed from this iPhone." = "Grup ini dan kebiasaannya akan dihapus dari iPhone ini.";
+"This is a pattern in your entries, not proof that the habit is the cause." = "Ini pola dalam catatanmu, bukan bukti bahwa kebiasaan itu penyebabnya.";
 "Tidy up for 10 minutes" = "Beres-beres 10 menit";
 "Time" = "Jam";
 "Time for your habit" = "Waktunya kebiasaanmu";
@@ -819,6 +824,7 @@
 "What %@ gives you" = "Yang diberikan %@";
 "What ZenHab reads" = "Data yang dibaca ZenHab";
 "What do you want to work on?" = "Apa yang ingin kamu perbaiki?";
+"What goes with a better mood" = "Yang menyertai suasana hati lebih baik";
 "What happened and what did you expect?" = "Apa yang terjadi dan apa yang kamu harapkan?";
 "What happened today? What helped?" = "Apa yang terjadi hari ini? Apa yang membantu?";
 "What lifts your mood" = "Apa yang memperbaiki suasana hatimu";
