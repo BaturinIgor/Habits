@@ -826,6 +826,15 @@ To link a habit, open it and choose Apple Health → Check off by.||Per collegar
 Open the Health app||Apri l'app Salute
 You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Puoi consentire o negare l'accesso a ogni tipo di dato in Impostazioni → Privacy e sicurezza → Salute → ZenHab.
 Apple Health: %@||Apple Health: %@
+Log mood||Registra l'umore
+Saves how you feel today in the mood journal.||Registra nel diario dell'umore come ti senti oggi.
+How are you feeling?||Come ti senti?
+Mood saved: %@||Umore registrato: %@
+Start a habit timer||Avvia il timer di un'abitudine
+Starts a countdown with a Live Activity. When time's up, the habit is checked off.||Avvia un conto alla rovescia con un'attività in tempo reale. Allo scadere, l'abitudine viene spuntata.
+Minutes||Minuti
+The habit timer is part of Pro. Open ZenHab to get Pro.||Il timer delle abitudini fa parte di Pro. Apri ZenHab per avere Pro.
+Timer started: %@, %lld min.||Timer avviato: %@, %lld min.
 Coral||Corallo
 Tangerine||Mandarino
 Sunflower||Girasole

@@ -317,6 +317,7 @@
 "Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood." = "Aide à améliorer ZenHab : seulement les écrans et boutons utilisés. Jamais tes habitudes, notes ou humeur.";
 "Hide keyboard" = "Masquer le clavier";
 "Hours of sleep" = "Heures de sommeil";
+"How are you feeling?" = "Comment tu te sens ?";
 "How are you today?" = "Comment ça va aujourd'hui ?";
 "How many habits are done today." = "Combien d'habitudes sont faites aujourd'hui.";
 "How often" = "Fréquence";
@@ -396,6 +397,7 @@
 "Lists the habits that aren't checked off today." = "Liste les habitudes pas encore cochées aujourd'hui.";
 "Lock with %@" = "Verrouiller avec %@";
 "Lock with Face ID" = "Verrouillage avec Face ID";
+"Log mood" = "Noter l'humeur";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Mail n'est pas configuré sur cet iPhone. Ouvre une autre app de mail ou copie le message et envoie-le à %@.";
 "Make the bed" = "Faire son lit";
 "Mark as done" = "Marquer comme fait";
@@ -410,6 +412,7 @@
 "Minimum version, for example 5 squats" = "Version minimale, par exemple 5 squats";
 "Mint" = "Menthe";
 "Minus one" = "Moins un";
+"Minutes" = "Minutes";
 "Missed" = "Manqué";
 "Missed a day and the streak broke? The next day you can bring it back for sparks." = "Un jour manqué a cassé ta série ? Le lendemain, tu peux la récupérer contre des étincelles.";
 "Misses are okay" = "Rater, c'est normal";
@@ -424,6 +427,7 @@
 "Mood is higher on days you do it" = "L'humeur est meilleure les jours où tu le fais";
 "Mood is lower on days you do it" = "L'humeur est moins bonne les jours où tu le fais";
 "Mood journal" = "Journal d'humeur";
+"Mood saved: %@" = "Humeur notée : %@";
 "More" = "Plus";
 "More freedom for the habits that matter." = "Plus de liberté pour les habitudes qui comptent.";
 "More species are available for sparks and with Pro." = "D'autres espèces sont disponibles contre des étincelles et avec Pro.";
@@ -595,6 +599,7 @@
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "Enregistre une copie dans Fichiers ou iCloud Drive. L'import remplace toutes les données actuelles.";
 "Save a streak with a freeze" = "Sauve une série avec un gel";
 "Saved: %@" = "Économisé : %@";
+"Saves how you feel today in the mood journal." = "Note dans le journal comment tu te sens aujourd'hui.";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Dis « Coche une habitude dans ZenHab », « Ajoute une habitude dans ZenHab » ou « Qu'est-ce qui reste dans ZenHab ».";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Dis le nom de l'habitude, par exemple « Boire de l'eau ».";
 "Scan to get ZenHab" = "Scanne pour obtenir ZenHab";
@@ -643,10 +648,12 @@
 "Spend time outdoors" = "Passer du temps dehors";
 "Spent a day" = "Dépensé par jour";
 "Start" = "Début";
+"Start a habit timer" = "Lancer le minuteur d'une habitude";
 "Start free trial" = "Essayer gratuitement";
 "Start over" = "Recommencer";
 "Start the count again?" = "Recommencer le compteur ?";
 "Start timer" = "Lancer le minuteur";
+"Starts a countdown with a Live Activity. When time's up, the habit is checked off." = "Lance un compte à rebours avec une activité en direct. À la fin, l'habitude est cochée.";
 "Statistics" = "Statistiques";
 "Statistics will appear once you start checking off habits." = "Les statistiques apparaîtront dès que tu valideras des habitudes.";
 "Status" = "Statut";
@@ -693,6 +700,7 @@
 "The group wasn't found." = "Groupe introuvable.";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "Les habitudes du groupe et les coches sont partagées via iCloud. Toute personne ayant le lien d'invitation peut rejoindre et cocher. Chacun reçoit ses rappels.";
 "The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "L'habitude se coche toute seule quand l'objectif est atteint dans Santé : pas, sommeil, eau, exercice ou pleine conscience.";
+"The habit timer is part of Pro. Open ZenHab to get Pro." = "Le minuteur d'habitude fait partie de Pro. Ouvre ZenHab pour passer à Pro.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "La version minimale compte comme faite et garde ta série. Une habitude enchaînée te le rappelle juste après la précédente.";
 "The mood card at the bottom of the list lets you rate your day with one tap." = "La carte d'humeur en bas de la liste permet de noter ta journée d'un geste.";
 "The new language will apply after you close the app and open it again." = "La nouvelle langue s'appliquera quand tu fermeras et rouvriras l'app.";
@@ -710,6 +718,7 @@
 "Timer" = "Minuteur";
 "Timer on the Lock Screen" = "Minuteur sur l'écran verrouillé";
 "Timer on your wrist" = "Minuteur au poignet";
+"Timer started: %@, %lld min." = "Minuteur lancé : %@, %lld min.";
 "To link a habit, open it and choose Apple Health → Check off by." = "Pour associer une habitude, ouvre-la et choisis Apple Health → Cocher selon.";
 "Today" = "Aujourd'hui";
 "Today is a good day." = "Aujourd'hui est une bonne journée.";

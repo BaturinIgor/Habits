@@ -6,3 +6,7 @@
 "New habit in ${applicationName}" = "Новая привычка в ${applicationName}";
 "What's left in ${applicationName}" = "Что осталось в ${applicationName}";
 "What's left today in ${applicationName}" = "Что осталось на сегодня в ${applicationName}";
+"Log my mood in ${applicationName}" = "Запиши настроение в ${applicationName}";
+"Mood check-in in ${applicationName}" = "Отметь настроение в ${applicationName}";
+"Start a timer for ${habit} in ${applicationName}" = "Запусти таймер ${habit} в ${applicationName}";
+"Start a habit timer in ${applicationName}" = "Запусти таймер привычки в ${applicationName}";

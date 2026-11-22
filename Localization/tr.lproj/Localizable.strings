@@ -317,6 +317,7 @@
 "Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood." = "ZenHab'ı geliştirmeye yardımcı olur: yalnızca hangi ekranların ve düğmelerin kullanıldığı. Alışkanlıkların, notların veya ruh halin asla.";
 "Hide keyboard" = "Klavyeyi gizle";
 "Hours of sleep" = "Uyku saati";
+"How are you feeling?" = "Nasıl hissediyorsun?";
 "How are you today?" = "Bugün nasılsın?";
 "How many habits are done today." = "Bugün kaç alışkanlık yapıldı.";
 "How often" = "Sıklık";
@@ -396,6 +397,7 @@
 "Lists the habits that aren't checked off today." = "Bugün henüz işaretlenmemiş alışkanlıkları sayar.";
 "Lock with %@" = "%@ ile kilitle";
 "Lock with Face ID" = "Face ID ile kilit";
+"Log mood" = "Ruh hâlini kaydet";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Bu iPhone'da Mail kurulu değil. Başka bir e-posta uygulaması aç ya da mesajı kopyalayıp %@ adresine gönder.";
 "Make the bed" = "Yatağını topla";
 "Mark as done" = "Yapıldı olarak işaretle";
@@ -410,6 +412,7 @@
 "Minimum version, for example 5 squats" = "Minimum sürüm, örneğin 5 squat";
 "Mint" = "Nane";
 "Minus one" = "Bir eksilt";
+"Minutes" = "Dakika";
 "Missed" = "Kaçırıldı";
 "Missed a day and the streak broke? The next day you can bring it back for sparks." = "Bir gün kaçırdın ve seri bozuldu mu? Ertesi gün kıvılcımlarla geri alabilirsin.";
 "Misses are okay" = "Kaçırmak sorun değil";
@@ -424,6 +427,7 @@
 "Mood is higher on days you do it" = "Bunu yaptığın günlerde ruh hâlin daha iyi";
 "Mood is lower on days you do it" = "Bunu yaptığın günlerde ruh hâlin daha düşük";
 "Mood journal" = "Ruh hâli günlüğü";
+"Mood saved: %@" = "Ruh hâli kaydedildi: %@";
 "More" = "Çok";
 "More freedom for the habits that matter." = "Önemli alışkanlıklar için daha fazla özgürlük.";
 "More species are available for sparks and with Pro." = "Kıvılcımla ve Pro ile daha fazla tür açılır.";
@@ -595,6 +599,7 @@
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "Dosyalar'a veya iCloud Drive'a bir kopya kaydet. İçe aktarma mevcut tüm verilerin yerine geçer.";
 "Save a streak with a freeze" = "Bir seriyi dondurmayla kurtar";
 "Saved: %@" = "Biriken: %@";
+"Saves how you feel today in the mood journal." = "Bugün nasıl hissettiğini ruh hâli günlüğüne kaydeder.";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "“ZenHab içinde alışkanlık işaretle”, “ZenHab içine alışkanlık ekle” ya da “ZenHab'da ne kaldı” deyin.";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Alışkanlığın adını söyleyin, örneğin “Su içmek”.";
 "Scan to get ZenHab" = "ZenHab'i indirmek için tara";
@@ -643,10 +648,12 @@
 "Spend time outdoors" = "Dışarıda vakit geçir";
 "Spent a day" = "Günlük harcama";
 "Start" = "Başlangıç";
+"Start a habit timer" = "Alışkanlık zamanlayıcısını başlat";
 "Start free trial" = "Ücretsiz denemeyi başlat";
 "Start over" = "Baştan başla";
 "Start the count again?" = "Sayım baştan başlasın mı?";
 "Start timer" = "Zamanlayıcıyı başlat";
+"Starts a countdown with a Live Activity. When time's up, the habit is checked off." = "Canlı Etkinlik ile geri sayım başlatır. Süre dolunca alışkanlık işaretlenir.";
 "Statistics" = "İstatistikler";
 "Statistics will appear once you start checking off habits." = "Alışkanlıkları işaretlemeye başladığında istatistikler görünecek.";
 "Status" = "Durum";
@@ -693,6 +700,7 @@
 "The group wasn't found." = "Grup bulunamadı.";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "Grubun alışkanlıkları ve işaretleri iCloud ile paylaşılır. Davet bağlantısı olan herkes katılıp işaretleyebilir. Herkes kendi hatırlatmalarını alır.";
 "The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "Sağlık uygulamasında hedefe ulaşıldığında alışkanlık kendiliğinden işaretlenir: adım, uyku, su, egzersiz veya farkındalık.";
+"The habit timer is part of Pro. Open ZenHab to get Pro." = "Alışkanlık zamanlayıcısı Pro'ya dahil. Pro almak için ZenHab'ı aç.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Minimum sürüm yapılmış sayılır ve serini korur. Zincirli alışkanlık, öncekini işaretlediğin anda sana hatırlatılır.";
 "The mood card at the bottom of the list lets you rate your day with one tap." = "Listenin altındaki ruh hâli kartıyla gününü tek dokunuşla puanla.";
 "The new language will apply after you close the app and open it again." = "Yeni dil, uygulamayı kapatıp yeniden açtıktan sonra uygulanacak.";
@@ -710,6 +718,7 @@
 "Timer" = "Zamanlayıcı";
 "Timer on the Lock Screen" = "Kilit Ekranı'nda zamanlayıcı";
 "Timer on your wrist" = "Bileğinde zamanlayıcı";
+"Timer started: %@, %lld min." = "Zamanlayıcı başladı: %@, %lld dk.";
 "To link a habit, open it and choose Apple Health → Check off by." = "Bir alışkanlığı bağlamak için onu aç ve Apple Health → Şuna göre işaretle'yi seç.";
 "Today" = "Bugün";
 "Today is a good day." = "Bugün güzel bir gün.";

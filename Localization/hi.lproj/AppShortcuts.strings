@@ -1,0 +1,12 @@
+"Check off ${habit} in ${applicationName}" = "${applicationName} में ${habit} पूरी करें";
+"Mark ${habit} in ${applicationName}" = "${applicationName} में ${habit} मार्क करें";
+"Check off a habit in ${applicationName}" = "${applicationName} में आदत पूरी करें";
+"Add a habit in ${applicationName}" = "${applicationName} में आदत जोड़ें";
+"Add a reminder in ${applicationName}" = "${applicationName} में रिमाइंडर जोड़ें";
+"New habit in ${applicationName}" = "${applicationName} में नई आदत";
+"What's left in ${applicationName}" = "${applicationName} में क्या बाकी है";
+"What's left today in ${applicationName}" = "${applicationName} में आज क्या बाकी है";
+"Log my mood in ${applicationName}" = "${applicationName} में मेरा मूड दर्ज करें";
+"Mood check-in in ${applicationName}" = "${applicationName} में मूड चेक-इन";
+"Start a timer for ${habit} in ${applicationName}" = "${applicationName} में ${habit} का टाइमर शुरू करें";
+"Start a habit timer in ${applicationName}" = "${applicationName} में आदत का टाइमर शुरू करें";

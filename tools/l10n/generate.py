@@ -279,6 +279,60 @@ SHORTCUTS = {
         '${applicationName}에서 뭐가 남았어', '${applicationName}에서 오늘 뭐가 남았어'],
 }
 
+# 1.7, KAN-136: настроение и таймер. Новые фразы дописываются в конец, в том же порядке, что в HabitsShortcuts.
+SHORTCUT_KEYS += [
+ 'Log my mood in ${applicationName}',
+ 'Mood check-in in ${applicationName}',
+ 'Start a timer for ${habit} in ${applicationName}',
+ 'Start a habit timer in ${applicationName}',
+]
+for _lang, _phrases in {
+ 'ru': ['Запиши настроение в ${applicationName}', 'Отметь настроение в ${applicationName}',
+        'Запусти таймер ${habit} в ${applicationName}', 'Запусти таймер привычки в ${applicationName}'],
+ 'de': ['Trage meine Stimmung in ${applicationName} ein', 'Stimmung in ${applicationName} eintragen',
+        'Starte den Timer für ${habit} in ${applicationName}', 'Starte einen Gewohnheits-Timer in ${applicationName}'],
+ 'fr': ['Note mon humeur dans ${applicationName}', 'Mon humeur dans ${applicationName}',
+        'Lance le minuteur pour ${habit} dans ${applicationName}', "Lance un minuteur d'habitude dans ${applicationName}"],
+ 'es': ['Registra mi ánimo en ${applicationName}', 'Mi ánimo en ${applicationName}',
+        'Inicia el temporizador de ${habit} en ${applicationName}', 'Inicia un temporizador de hábito en ${applicationName}'],
+ 'pt-BR': ['Registre meu humor no ${applicationName}', 'Meu humor no ${applicationName}',
+           'Inicie o timer de ${habit} no ${applicationName}', 'Inicie um timer de hábito no ${applicationName}'],
+ 'it': ['Registra il mio umore in ${applicationName}', 'Il mio umore in ${applicationName}',
+        'Avvia il timer per ${habit} in ${applicationName}', 'Avvia un timer abitudine in ${applicationName}'],
+ 'tr': ['${applicationName} içinde ruh hâlimi kaydet', '${applicationName} ruh hâli kaydı',
+        '${applicationName} içinde ${habit} zamanlayıcısını başlat', '${applicationName} içinde alışkanlık zamanlayıcısı başlat'],
+ 'zh-Hans': ['在${applicationName}中记录心情', '${applicationName}心情打卡',
+             '在${applicationName}中开始${habit}计时', '在${applicationName}中开始习惯计时'],
+ 'ja': ['${applicationName}で気分を記録', '${applicationName}で気分チェック',
+        '${applicationName}で${habit}のタイマーを開始', '${applicationName}で習慣タイマーを開始'],
+ 'ko': ['${applicationName}에서 기분 기록', '${applicationName} 기분 체크',
+        '${applicationName}에서 ${habit} 타이머 시작', '${applicationName}에서 습관 타이머 시작'],
+}.items():
+    SHORTCUTS[_lang] += _phrases
+# Хинди, польский и индонезийский: раньше фраз не было, теперь все 14 языков.
+SHORTCUTS.update({
+ 'hi': ['${applicationName} में ${habit} पूरी करें', '${applicationName} में ${habit} मार्क करें', '${applicationName} में आदत पूरी करें',
+        '${applicationName} में आदत जोड़ें', '${applicationName} में रिमाइंडर जोड़ें', '${applicationName} में नई आदत',
+        '${applicationName} में क्या बाकी है', '${applicationName} में आज क्या बाकी है',
+        '${applicationName} में मेरा मूड दर्ज करें', '${applicationName} में मूड चेक-इन',
+        '${applicationName} में ${habit} का टाइमर शुरू करें', '${applicationName} में आदत का टाइमर शुरू करें'],
+ 'pl': ['Odhacz ${habit} w ${applicationName}', 'Zaznacz ${habit} w ${applicationName}', 'Odhacz nawyk w ${applicationName}',
+        'Dodaj nawyk w ${applicationName}', 'Dodaj przypomnienie w ${applicationName}', 'Nowy nawyk w ${applicationName}',
+        'Co zostało w ${applicationName}', 'Co zostało na dziś w ${applicationName}',
+        'Zapisz mój nastrój w ${applicationName}', 'Mój nastrój w ${applicationName}',
+        'Uruchom minutnik ${habit} w ${applicationName}', 'Uruchom minutnik nawyku w ${applicationName}'],
+ 'id': ['Tandai ${habit} di ${applicationName}', 'Selesaikan ${habit} di ${applicationName}', 'Tandai kebiasaan di ${applicationName}',
+        'Tambah kebiasaan di ${applicationName}', 'Tambah pengingat di ${applicationName}', 'Kebiasaan baru di ${applicationName}',
+        'Apa yang tersisa di ${applicationName}', 'Apa yang tersisa hari ini di ${applicationName}',
+        'Catat suasana hatiku di ${applicationName}', 'Cek suasana hati di ${applicationName}',
+        'Mulai timer ${habit} di ${applicationName}', 'Mulai timer kebiasaan di ${applicationName}'],
+})
+for _lang, _phrases in SHORTCUTS.items():
+    assert len(_phrases) == len(SHORTCUT_KEYS), ('shortcuts', _lang, len(_phrases))
+    for _key, _value in zip(SHORTCUT_KEYS, _phrases):
+        for _token in ('${applicationName}', '${habit}'):
+            assert (_token in _key) == (_token in _value), ('shortcut token', _lang, _key)
+
 def esc(s):
     return s.replace('\\', '\\\\').replace('"', '\\"')
 

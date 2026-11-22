@@ -21,6 +21,7 @@ final class HabitStore {
         }
         #endif
         data = DataFile.load()
+        HabitSpotlight.update(data)
     }
 
     #if DEBUG
@@ -62,6 +63,7 @@ final class HabitStore {
         Task { await NotificationPlanner.reschedule(data: snapshot) }
         // Siri узнаёт новые названия привычек для фраз вроде «Отметь Зарядку».
         HabitsShortcuts.updateAppShortcutParameters()
+        HabitSpotlight.update(data)
         if syncFamily {
             FamilySync.shared.scheduleSync()
         }
@@ -562,6 +564,7 @@ final class HabitStore {
         Analytics.shared.action(.moodSet)
         // Без перепланирования уведомлений и семейной синхронизации: дневник личный.
         revision += 1
+        guard !inMemory else { return }
         DataFile.save(data)
     }
 

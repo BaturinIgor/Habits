@@ -826,6 +826,15 @@ To link a habit, open it and choose Apple Health → Check off by.||Untuk menghu
 Open the Health app||Buka app Kesehatan
 You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Kamu bisa mengizinkan atau menolak akses ke setiap jenis data di Pengaturan → Privasi & Keamanan → Kesehatan → ZenHab.
 Apple Health: %@||Apple Health: %@
+Log mood||Catat suasana hati
+Saves how you feel today in the mood journal.||Mencatat perasaanmu hari ini di jurnal suasana hati.
+How are you feeling?||Bagaimana perasaanmu?
+Mood saved: %@||Suasana hati dicatat: %@
+Start a habit timer||Mulai timer kebiasaan
+Starts a countdown with a Live Activity. When time's up, the habit is checked off.||Memulai hitung mundur dengan Aktivitas Langsung. Saat waktu habis, kebiasaan ditandai selesai.
+Minutes||Menit
+The habit timer is part of Pro. Open ZenHab to get Pro.||Timer kebiasaan ada di Pro. Buka ZenHab untuk mendapatkan Pro.
+Timer started: %@, %lld min.||Timer dimulai: %@, %lld mnt.
 Coral||Koral
 Tangerine||Jeruk
 Sunflower||Bunga matahari

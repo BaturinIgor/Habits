@@ -6,3 +6,7 @@
 "New habit in ${applicationName}" = "${applicationName} 새 습관";
 "What's left in ${applicationName}" = "${applicationName}에서 뭐가 남았어";
 "What's left today in ${applicationName}" = "${applicationName}에서 오늘 뭐가 남았어";
+"Log my mood in ${applicationName}" = "${applicationName}에서 기분 기록";
+"Mood check-in in ${applicationName}" = "${applicationName} 기분 체크";
+"Start a timer for ${habit} in ${applicationName}" = "${applicationName}에서 ${habit} 타이머 시작";
+"Start a habit timer in ${applicationName}" = "${applicationName}에서 습관 타이머 시작";

@@ -6,3 +6,7 @@
 "New habit in ${applicationName}" = "${applicationName} yeni alışkanlık";
 "What's left in ${applicationName}" = "${applicationName}'da ne kaldı";
 "What's left today in ${applicationName}" = "${applicationName}'da bugün ne kaldı";
+"Log my mood in ${applicationName}" = "${applicationName} içinde ruh hâlimi kaydet";
+"Mood check-in in ${applicationName}" = "${applicationName} ruh hâli kaydı";
+"Start a timer for ${habit} in ${applicationName}" = "${applicationName} içinde ${habit} zamanlayıcısını başlat";
+"Start a habit timer in ${applicationName}" = "${applicationName} içinde alışkanlık zamanlayıcısı başlat";

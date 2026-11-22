@@ -317,6 +317,7 @@
 "Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood." = "ZenHab 개선에 도움이 돼요. 어떤 화면과 버튼을 쓰는지만 보내고, 습관·메모·기분은 절대 보내지 않아요.";
 "Hide keyboard" = "키보드 숨기기";
 "Hours of sleep" = "수면 시간";
+"How are you feeling?" = "기분이 어때요?";
 "How are you today?" = "오늘 기분은 어때요?";
 "How many habits are done today." = "오늘 완료한 습관 수.";
 "How often" = "빈도";
@@ -396,6 +397,7 @@
 "Lists the habits that aren't checked off today." = "오늘 아직 체크하지 않은 습관을 알려 줘요.";
 "Lock with %@" = "%@(으)로 잠금";
 "Lock with Face ID" = "Face ID 잠금";
+"Log mood" = "기분 기록";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "이 iPhone에 메일이 설정되어 있지 않아요. 다른 메일 앱을 열거나 메시지를 복사해 %@ 으로 보내세요.";
 "Make the bed" = "침대 정리하기";
 "Mark as done" = "완료로 표시";
@@ -410,6 +412,7 @@
 "Minimum version, for example 5 squats" = "최소 버전, 예: 스쿼트 5회";
 "Mint" = "민트";
 "Minus one" = "하나 빼기";
+"Minutes" = "분";
 "Missed" = "놓침";
 "Missed a day and the streak broke? The next day you can bring it back for sparks." = "하루를 놓쳐 연속 기록이 끊겼나요? 다음 날 스파크로 되찾을 수 있어요.";
 "Misses are okay" = "놓쳐도 괜찮아요";
@@ -424,6 +427,7 @@
 "Mood is higher on days you do it" = "이 습관을 한 날 기분이 더 좋아요";
 "Mood is lower on days you do it" = "이 습관을 한 날 기분이 더 낮아요";
 "Mood journal" = "기분 일기";
+"Mood saved: %@" = "기분 기록 완료: %@";
 "More" = "많음";
 "More freedom for the habits that matter." = "중요한 습관을 더 자유롭게.";
 "More species are available for sparks and with Pro." = "다른 종류는 스파크나 Pro로 얻을 수 있어요.";
@@ -595,6 +599,7 @@
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "파일 앱이나 iCloud Drive에 사본을 저장하세요. 가져오면 현재 데이터가 모두 바뀌어요.";
 "Save a streak with a freeze" = "프리즈로 연속 기록 지키기";
 "Saved: %@" = "아낀 돈: %@";
+"Saves how you feel today in the mood journal." = "오늘의 기분을 기분 일기에 기록해요.";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "\"ZenHab에서 습관 체크\", \"ZenHab에서 습관 추가\", \"ZenHab에서 뭐가 남았어\"라고 말해 보세요.";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "습관 이름을 말하세요. 예: '물 마시기'";
 "Scan to get ZenHab" = "스캔해서 ZenHab 받기";
@@ -643,10 +648,12 @@
 "Spend time outdoors" = "야외에서 시간 보내기";
 "Spent a day" = "하루 지출";
 "Start" = "시작";
+"Start a habit timer" = "습관 타이머 시작";
 "Start free trial" = "무료 체험 시작";
 "Start over" = "새로 시작";
 "Start the count again?" = "다시 셀까요?";
 "Start timer" = "타이머 시작";
+"Starts a countdown with a Live Activity. When time's up, the habit is checked off." = "실시간 현황과 함께 카운트다운을 시작해요. 시간이 끝나면 습관이 체크돼요.";
 "Statistics" = "통계";
 "Statistics will appear once you start checking off habits." = "습관을 체크하기 시작하면 통계가 표시돼요.";
 "Status" = "상태";
@@ -693,6 +700,7 @@
 "The group wasn't found." = "그룹을 찾을 수 없어요.";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "그룹의 습관과 체크는 iCloud로 공유돼요. 초대 링크가 있는 사람은 누구나 참여해 체크할 수 있어요. 알림은 각자에게 와요.";
 "The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "건강 앱에서 목표에 도달하면 습관이 자동으로 체크돼요: 걸음 수, 수면, 물, 운동, 마음챙김.";
+"The habit timer is part of Pro. Open ZenHab to get Pro." = "습관 타이머는 Pro 기능이에요. ZenHab을 열어 Pro를 받아 보세요.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "최소 버전도 완료로 인정돼 연속 기록이 유지돼요. 연결된 습관은 앞 습관을 체크하면 바로 알려 드려요.";
 "The mood card at the bottom of the list lets you rate your day with one tap." = "목록 아래 기분 카드에서 한 번 탭으로 하루를 평가할 수 있어요.";
 "The new language will apply after you close the app and open it again." = "앱을 닫았다가 다시 열면 새 언어가 적용돼요.";
@@ -710,6 +718,7 @@
 "Timer" = "타이머";
 "Timer on the Lock Screen" = "잠금 화면 타이머";
 "Timer on your wrist" = "손목 위의 타이머";
+"Timer started: %@, %lld min." = "타이머 시작: %@, %lld분.";
 "To link a habit, open it and choose Apple Health → Check off by." = "습관을 연결하려면 습관을 열고 Apple Health → 자동 체크 기준을 선택하세요.";
 "Today" = "오늘";
 "Today is a good day." = "오늘은 좋은 날이에요.";

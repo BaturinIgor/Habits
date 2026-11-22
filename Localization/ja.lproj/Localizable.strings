@@ -317,6 +317,7 @@
 "Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood." = "ZenHab の改善に役立ちます。使われた画面とボタンだけで、習慣・メモ・気分は送信しません。";
 "Hide keyboard" = "キーボードを隠す";
 "Hours of sleep" = "睡眠時間";
+"How are you feeling?" = "気分はどうですか？";
 "How are you today?" = "今日の気分は？";
 "How many habits are done today." = "今日完了した習慣の数。";
 "How often" = "頻度";
@@ -396,6 +397,7 @@
 "Lists the habits that aren't checked off today." = "今日まだチェックしていない習慣を読み上げます。";
 "Lock with %@" = "%@でロック";
 "Lock with Face ID" = "Face IDでロック";
+"Log mood" = "気分を記録";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "このiPhoneではメールが設定されていません。別のメールアプリを開くか、メッセージをコピーして %@ に送ってください。";
 "Make the bed" = "ベッドを整える";
 "Mark as done" = "完了にする";
@@ -410,6 +412,7 @@
 "Minimum version, for example 5 squats" = "ミニマム版（例：スクワット5回）";
 "Mint" = "ミント";
 "Minus one" = "1つ減らす";
+"Minutes" = "分";
 "Missed" = "未達成";
 "Missed a day and the streak broke? The next day you can bring it back for sparks." = "1日休んで連続記録が途切れた？翌日ならスパークで取り戻せます。";
 "Misses are okay" = "休んでも大丈夫";
@@ -424,6 +427,7 @@
 "Mood is higher on days you do it" = "これをした日は気分が良い";
 "Mood is lower on days you do it" = "これをした日は気分が低め";
 "Mood journal" = "気分日記";
+"Mood saved: %@" = "気分を記録しました：%@";
 "More" = "多";
 "More freedom for the habits that matter." = "大切な習慣をもっと自由に。";
 "More species are available for sparks and with Pro." = "ほかの種類はスパークや Pro で手に入ります。";
@@ -595,6 +599,7 @@
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "コピーを「ファイル」やiCloud Driveに保存できます。読み込むと現在のデータはすべて置き換わります。";
 "Save a streak with a freeze" = "フリーズで連続記録を守る";
 "Saved: %@" = "節約：%@";
+"Saves how you feel today in the mood journal." = "今日の気分を気分日記に記録します。";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "「ZenHabで習慣をチェック」「ZenHabで習慣を追加」「ZenHabで残りは」と話しかけてください。";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "習慣の名前を話してください。例：「水を飲む」";
 "Scan to get ZenHab" = "スキャンしてZenHabを入手";
@@ -643,10 +648,12 @@
 "Spend time outdoors" = "外で過ごす";
 "Spent a day" = "1日の出費";
 "Start" = "開始";
+"Start a habit timer" = "習慣のタイマーを開始";
 "Start free trial" = "無料で試す";
 "Start over" = "最初から始める";
 "Start the count again?" = "数え直しますか？";
 "Start timer" = "タイマー開始";
+"Starts a countdown with a Live Activity. When time's up, the habit is checked off." = "ライブアクティビティ付きでカウントダウンを開始します。時間になると習慣がチェックされます。";
 "Statistics" = "統計";
 "Statistics will appear once you start checking off habits." = "習慣をチェックし始めると統計が表示されます。";
 "Status" = "状態";
@@ -693,6 +700,7 @@
 "The group wasn't found." = "グループが見つかりません。";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "グループの習慣とチェックはiCloudで共有されます。招待リンクを持つ人は誰でも参加してチェックできます。リマインダーは各自に届きます。";
 "The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "「ヘルスケア」で目標に達すると自動でチェックされます：歩数、睡眠、水分、エクササイズ、マインドフルネス。";
+"The habit timer is part of Pro. Open ZenHab to get Pro." = "習慣タイマーは Pro の機能です。ZenHab を開いて Pro にしましょう。";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "ミニマム版も達成扱いで連続記録が続きます。連鎖した習慣は前の習慣をチェックした直後に通知します。";
 "The mood card at the bottom of the list lets you rate your day with one tap." = "リストの下にある気分カードで、ワンタップで一日を評価できます。";
 "The new language will apply after you close the app and open it again." = "アプリを閉じて開き直すと新しい言語になります。";
@@ -710,6 +718,7 @@
 "Timer" = "タイマー";
 "Timer on the Lock Screen" = "ロック画面のタイマー";
 "Timer on your wrist" = "手首でタイマー";
+"Timer started: %@, %lld min." = "タイマー開始：%@、%lld分。";
 "To link a habit, open it and choose Apple Health → Check off by." = "習慣を連携するには、習慣を開いて Apple Health → 自動チェックの基準 を選びます。";
 "Today" = "今日";
 "Today is a good day." = "今日はいい日だね。";

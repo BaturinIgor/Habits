@@ -317,6 +317,7 @@
 "Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood." = "Membantu meningkatkan ZenHab: hanya layar dan tombol yang dipakai. Tidak pernah kebiasaan, catatan, atau suasana hatimu.";
 "Hide keyboard" = "Sembunyikan papan ketik";
 "Hours of sleep" = "Jam tidur";
+"How are you feeling?" = "Bagaimana perasaanmu?";
 "How are you today?" = "Bagaimana kabarmu hari ini?";
 "How many habits are done today." = "Berapa kebiasaan yang selesai hari ini.";
 "How often" = "Seberapa sering";
@@ -396,6 +397,7 @@
 "Lists the habits that aren't checked off today." = "Menyebutkan kebiasaan yang belum dicentang hari ini.";
 "Lock with %@" = "Kunci dengan %@";
 "Lock with Face ID" = "Kunci dengan Face ID";
+"Log mood" = "Catat suasana hati";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "Mail belum diatur di iPhone ini. Buka aplikasi email lain, atau salin pesan dan kirim ke %@.";
 "Make the bed" = "Rapikan tempat tidur";
 "Mark as done" = "Tandai selesai";
@@ -410,6 +412,7 @@
 "Minimum version, for example 5 squats" = "Versi minimum, misalnya 5 squat";
 "Mint" = "Mint";
 "Minus one" = "Kurangi satu";
+"Minutes" = "Menit";
 "Missed" = "Terlewat";
 "Missed a day and the streak broke? The next day you can bring it back for sparks." = "Melewatkan sehari dan rentetan terputus? Keesokan harinya kamu bisa mengembalikannya dengan percikan.";
 "Misses are okay" = "Terlewat itu wajar";
@@ -424,6 +427,7 @@
 "Mood is higher on days you do it" = "Suasana hati lebih baik di hari kamu melakukannya";
 "Mood is lower on days you do it" = "Suasana hati lebih rendah di hari kamu melakukannya";
 "Mood journal" = "Jurnal suasana hati";
+"Mood saved: %@" = "Suasana hati dicatat: %@";
 "More" = "Banyak";
 "More freedom for the habits that matter." = "Lebih banyak kebebasan untuk kebiasaan yang penting.";
 "More species are available for sparks and with Pro." = "Jenis lain tersedia dengan percikan dan Pro.";
@@ -595,6 +599,7 @@
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "Simpan salinan ke File atau iCloud Drive. Impor akan mengganti semua data saat ini.";
 "Save a streak with a freeze" = "Selamatkan rentetan dengan pembekuan";
 "Saved: %@" = "Dihemat: %@";
+"Saves how you feel today in the mood journal." = "Mencatat perasaanmu hari ini di jurnal suasana hati.";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Ucapkan ke Siri: “Check off a habit in ZenHab”, “Add a habit in ZenHab”, atau “What's left in ZenHab”.";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "Ucapkan nama kebiasaan, misalnya “Minum air”.";
 "Scan to get ZenHab" = "Pindai untuk mendapatkan ZenHab";
@@ -643,10 +648,12 @@
 "Spend time outdoors" = "Habiskan waktu di luar";
 "Spent a day" = "Pengeluaran per hari";
 "Start" = "Mulai";
+"Start a habit timer" = "Mulai timer kebiasaan";
 "Start free trial" = "Mulai uji coba gratis";
 "Start over" = "Mulai dari awal";
 "Start the count again?" = "Mulai hitungan lagi?";
 "Start timer" = "Mulai timer";
+"Starts a countdown with a Live Activity. When time's up, the habit is checked off." = "Memulai hitung mundur dengan Aktivitas Langsung. Saat waktu habis, kebiasaan ditandai selesai.";
 "Statistics" = "Statistik";
 "Statistics will appear once you start checking off habits." = "Statistik akan muncul setelah kamu mulai mencentang kebiasaan.";
 "Status" = "Status";
@@ -693,6 +700,7 @@
 "The group wasn't found." = "Grup tidak ditemukan.";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "Kebiasaan grup dan centangnya dibagikan lewat iCloud. Siapa pun dengan tautan undangan bisa bergabung dan mencentang. Setiap orang mendapat pengingatnya sendiri.";
 "The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "Kebiasaan tercentang otomatis saat target di app Kesehatan tercapai: langkah, tidur, air, olahraga, atau menit kesadaran.";
+"The habit timer is part of Pro. Open ZenHab to get Pro." = "Timer kebiasaan ada di Pro. Buka ZenHab untuk mendapatkan Pro.";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "Versi minimum dihitung selesai dan menjaga rentetan. Kebiasaan berantai mengingatkanmu tepat setelah kamu mencentang yang sebelumnya.";
 "The mood card at the bottom of the list lets you rate your day with one tap." = "Kartu suasana hati di bawah daftar memungkinkanmu menilai hari dengan satu ketukan.";
 "The new language will apply after you close the app and open it again." = "Bahasa baru akan berlaku setelah kamu menutup dan membuka lagi aplikasi.";
@@ -710,6 +718,7 @@
 "Timer" = "Pengatur waktu";
 "Timer on the Lock Screen" = "Timer di Layar Terkunci";
 "Timer on your wrist" = "Timer di pergelangan tangan";
+"Timer started: %@, %lld min." = "Timer dimulai: %@, %lld mnt.";
 "To link a habit, open it and choose Apple Health → Check off by." = "Untuk menghubungkan kebiasaan, buka kebiasaan itu dan pilih Apple Health → Centang berdasarkan.";
 "Today" = "Hari Ini";
 "Today is a good day." = "Hari ini hari yang baik.";

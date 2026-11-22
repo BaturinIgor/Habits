@@ -317,6 +317,7 @@
 "Helps improve ZenHab: only which screens and buttons are used. Never your habits, notes or mood." = "ZenHab को बेहतर बनाने में मदद करता है: सिर्फ़ कौन-सी स्क्रीन और बटन इस्तेमाल हुए। आपकी आदतें, नोट्स या मूड कभी नहीं।";
 "Hide keyboard" = "कीबोर्ड छिपाएँ";
 "Hours of sleep" = "नींद के घंटे";
+"How are you feeling?" = "आप कैसा महसूस कर रहे हैं?";
 "How are you today?" = "आज आप कैसे हैं?";
 "How many habits are done today." = "आज कितनी आदतें पूरी हुईं।";
 "How often" = "कितनी बार";
@@ -396,6 +397,7 @@
 "Lists the habits that aren't checked off today." = "आज जो आदतें अभी पूरी नहीं हुईं, उन्हें बताता है।";
 "Lock with %@" = "%@ से लॉक करें";
 "Lock with Face ID" = "Face ID से लॉक";
+"Log mood" = "मूड दर्ज करें";
 "Mail isn't set up on this iPhone. Open another mail app, or copy the message and send it to %@." = "इस iPhone पर Mail सेट नहीं है। कोई दूसरा मेल ऐप खोलें या संदेश कॉपी करके %@ पर भेजें।";
 "Make the bed" = "बिस्तर ठीक करें";
 "Mark as done" = "पूरा करें";
@@ -410,6 +412,7 @@
 "Minimum version, for example 5 squats" = "न्यूनतम रूप, जैसे 5 स्क्वॉट";
 "Mint" = "पुदीना";
 "Minus one" = "एक कम";
+"Minutes" = "मिनट";
 "Missed" = "छूटा";
 "Missed a day and the streak broke? The next day you can bring it back for sparks." = "एक दिन चूक गए और गिनती टूट गई? अगले दिन आप उसे स्पार्क देकर वापस पा सकते हैं।";
 "Misses are okay" = "चूक जाना ठीक है";
@@ -424,6 +427,7 @@
 "Mood is higher on days you do it" = "जिन दिनों आप इसे करते हैं, मूड बेहतर रहता है";
 "Mood is lower on days you do it" = "जिन दिनों आप इसे करते हैं, मूड कम रहता है";
 "Mood journal" = "मूड डायरी";
+"Mood saved: %@" = "मूड दर्ज हुआ: %@";
 "More" = "ज़्यादा";
 "More freedom for the habits that matter." = "ज़रूरी आदतों के लिए ज़्यादा आज़ादी।";
 "More species are available for sparks and with Pro." = "और प्रजातियाँ चिंगारियों और Pro से मिलती हैं।";
@@ -595,6 +599,7 @@
 "Save a copy to Files or iCloud Drive. Importing replaces all current data." = "एक कॉपी Files या iCloud Drive में सहेजें। आयात करने से मौजूदा सारा डेटा बदल जाता है।";
 "Save a streak with a freeze" = "फ़्रीज़ से लगातार गिनती बचाएँ";
 "Saved: %@" = "बचत: %@";
+"Saves how you feel today in the mood journal." = "आज आप कैसा महसूस कर रहे हैं, यह मूड डायरी में दर्ज करता है।";
 "Say “Check off a habit in ZenHab”, “Add a habit in ZenHab” or “What's left in ZenHab”." = "Siri से कहें: “Check off a habit in ZenHab”, “Add a habit in ZenHab” या “What's left in ZenHab”।";
 "Say, for example: “Dog pills once a month on the 15th at 9 am” or “Read every other day in the evening”." = "आदत का नाम बोलें, जैसे “पानी पीना”।";
 "Scan to get ZenHab" = "ZenHab पाने के लिए स्कैन करें";
@@ -643,10 +648,12 @@
 "Spend time outdoors" = "बाहर समय बिताएँ";
 "Spent a day" = "रोज़ का खर्च";
 "Start" = "शुरुआत";
+"Start a habit timer" = "आदत का टाइमर शुरू करें";
 "Start free trial" = "मुफ़्त ट्रायल शुरू करें";
 "Start over" = "नए सिरे से शुरू करें";
 "Start the count again?" = "गिनती फिर से शुरू करें?";
 "Start timer" = "टाइमर शुरू करें";
+"Starts a countdown with a Live Activity. When time's up, the habit is checked off." = "लाइव ऐक्टिविटी के साथ उलटी गिनती शुरू करता है। समय पूरा होने पर आदत पूरी हो जाती है।";
 "Statistics" = "आँकड़े";
 "Statistics will appear once you start checking off habits." = "आदतें पूरी करना शुरू करते ही आँकड़े दिखेंगे।";
 "Status" = "स्थिति";
@@ -693,6 +700,7 @@
 "The group wasn't found." = "समूह नहीं मिला।";
 "The group's habits and check-ins are shared through iCloud. Anyone with the invitation link can join and check off habits. Everyone gets their own reminders." = "समूह की आदतें और चेक-इन iCloud से साझा होते हैं। आमंत्रण लिंक वाला कोई भी जुड़कर आदतें मार्क कर सकता है। सबको अपने रिमाइंडर मिलते हैं।";
 "The habit is checked off by itself when the goal is reached in the Health app: steps, sleep, water, exercise or mindful minutes." = "Health ऐप में लक्ष्य पूरा होते ही आदत अपने आप पूरी हो जाती है: कदम, नींद, पानी, व्यायाम या माइंडफ़ुल मिनट।";
+"The habit timer is part of Pro. Open ZenHab to get Pro." = "आदत टाइमर Pro में है। Pro पाने के लिए ZenHab खोलें।";
 "The minimum version counts as done and keeps your streak. A chained habit reminds you right after you check off the one before it." = "न्यूनतम रूप भी पूरा माना जाता है और लगातार गिनती बचाता है। जुड़ी आदत पिछली पूरी होते ही याद दिलाती है।";
 "The mood card at the bottom of the list lets you rate your day with one tap." = "सूची के नीचे मूड कार्ड से एक टैप में अपने दिन को रेट करें।";
 "The new language will apply after you close the app and open it again." = "ऐप बंद करके फिर खोलने पर नई भाषा लागू होगी।";
@@ -710,6 +718,7 @@
 "Timer" = "टाइमर";
 "Timer on the Lock Screen" = "लॉक स्क्रीन पर टाइमर";
 "Timer on your wrist" = "कलाई पर टाइमर";
+"Timer started: %@, %lld min." = "टाइमर शुरू: %@, %lld मिनट।";
 "To link a habit, open it and choose Apple Health → Check off by." = "किसी आदत को जोड़ने के लिए उसे खोलें और Apple Health → इसके आधार पर पूरा करें चुनें।";
 "Today" = "आज";
 "Today is a good day." = "आज अच्छा दिन है।";

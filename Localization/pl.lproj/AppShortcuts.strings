@@ -1,0 +1,12 @@
+"Check off ${habit} in ${applicationName}" = "Odhacz ${habit} w ${applicationName}";
+"Mark ${habit} in ${applicationName}" = "Zaznacz ${habit} w ${applicationName}";
+"Check off a habit in ${applicationName}" = "Odhacz nawyk w ${applicationName}";
+"Add a habit in ${applicationName}" = "Dodaj nawyk w ${applicationName}";
+"Add a reminder in ${applicationName}" = "Dodaj przypomnienie w ${applicationName}";
+"New habit in ${applicationName}" = "Nowy nawyk w ${applicationName}";
+"What's left in ${applicationName}" = "Co zostało w ${applicationName}";
+"What's left today in ${applicationName}" = "Co zostało na dziś w ${applicationName}";
+"Log my mood in ${applicationName}" = "Zapisz mój nastrój w ${applicationName}";
+"Mood check-in in ${applicationName}" = "Mój nastrój w ${applicationName}";
+"Start a timer for ${habit} in ${applicationName}" = "Uruchom minutnik ${habit} w ${applicationName}";
+"Start a habit timer in ${applicationName}" = "Uruchom minutnik nawyku w ${applicationName}";
