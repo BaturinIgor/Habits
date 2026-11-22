@@ -826,3 +826,12 @@ To link a habit, open it and choose Apple Health → Check off by.||Para vincula
 Open the Health app||Abrir o app Saúde
 You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Você pode permitir ou negar o acesso a cada tipo de dado em Ajustes → Privacidade e Segurança → Saúde → ZenHab.
 Apple Health: %@||Apple Health: %@
+New Year offer||Oferta de Ano Novo
+First year of Pro %@ off||Primeiro ano do Pro com %@ de desconto
+Until %@||Até %@
+Get the discount||Pegar o desconto
+Code: %@||Código: %@
+Copy code||Copiar código
+Tap the button and paste the code in the App Store window. You'll see the final price before you pay.||Toque no botão e cole o código na janela da App Store. Você verá o preço final antes de pagar.
+%@ for the first year||%@ no primeiro ano
+After the first year, Pro renews at the regular price. Cancel anytime.||Depois do primeiro ano, o Pro renova pelo preço normal. Cancele quando quiser.

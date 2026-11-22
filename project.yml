@@ -229,6 +229,11 @@ targets:
     platform: iOS
     sources:
       - path: HabitsTests
+        excludes:
+          - Habits.storekit
+      # StoreKit-конфиг (KAN-125): товары Pro, пробная неделя, новогодние предложения. Нужен тестам в бандле.
+      - path: HabitsTests/Habits.storekit
+        buildPhase: resources
     dependencies:
       - target: Habits
     settings:
@@ -259,6 +264,8 @@ schemes:
         HabitsWidget: all
     run:
       config: Debug
+      # Покупки в симуляторе и макетах — из локального StoreKit-конфига, без App Store Connect.
+      storeKitConfiguration: HabitsTests/Habits.storekit
     test:
       config: Debug
       gatherCoverageData: false

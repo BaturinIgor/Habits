@@ -2,6 +2,7 @@
 "%@ / year" = "%@ в год";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: цена ✨ %lld, у тебя: ✨ %lld. Не хватает ✨ %lld. Отмечай привычки, чтобы заработать.";
 "%@ costs %lld sparks. You have %lld." = "%@: цена ✨ %lld. У тебя: ✨ %lld.";
+"%@ for the first year" = "%@ за первый год";
 "%@ free, then %@. Cancel anytime." = "%1$@ бесплатно, затем %2$@. Отмена в любой момент.";
 "%@ is already done today." = "%@ уже выполнено сегодня.";
 "%@: the streak broke" = "%@: серия прервалась";
@@ -54,6 +55,7 @@
 "Adopt a pet" = "Заведи питомца";
 "Advanced" = "Продвинутый";
 "After habit" = "После привычки";
+"After the first year, Pro renews at the regular price. Cancel anytime." = "После первого года Pro продлевается по обычной цене. Отменить можно в любой момент.";
 "After: %@" = "После: %@";
 "Afternoon" = "День";
 "All" = "Все";
@@ -147,6 +149,7 @@
 "Clear your inbox" = "Разобрать почту";
 "Clearer Pro" = "Понятный Pro";
 "Close" = "Закрыть";
+"Code: %@" = "Код: %@";
 "Collector" = "Коллекционер";
 "Come back after a miss 10 times" = "Вернись после пропуска 10 раз";
 "Comeback" = "Возвращение";
@@ -160,6 +163,7 @@
 "Control Center" = "Пункт управления";
 "Copied" = "Скопировано";
 "Copy address" = "Скопировать адрес";
+"Copy code" = "Скопировать код";
 "Copy message" = "Скопировать сообщение";
 "Copy message and address" = "Скопировать сообщение и адрес";
 "Couldn't create an invitation link. Try again later." = "Не удалось создать ссылку-приглашение. Попробуй позже.";
@@ -262,6 +266,7 @@
 "Finish and check off" = "Закончить и отметить";
 "First step" = "Первый шаг";
 "First time" = "Первый раз";
+"First year of Pro %@ off" = "Первый год Pro со скидкой %@";
 "Fitness" = "Спорт";
 "Focus for an hour" = "Час без отвлечений";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "Для вредных привычек: курение, сладкое, алкоголь, соцсети.";
@@ -280,6 +285,7 @@
 "Full mood journal" = "Полный дневник настроения";
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Подключи Pro на iPhone, чтобы пользоваться таймером на Apple Watch.";
 "Get a pet" = "Завести питомца";
+"Get the discount" = "Получить скидку";
 "Go to bed on time" = "Лечь спать вовремя";
 "Goal" = "Цель";
 "Gold" = "Золото";
@@ -433,6 +439,7 @@
 "N times a week" = "N раз в неделю";
 "Name" = "Название";
 "Never" = "Никогда";
+"New Year offer" = "Новогоднее предложение";
 "New achievement!" = "Новая ачивка!";
 "New app icons" = "Новые иконки приложения";
 "New group" = "Новая группа";
@@ -666,6 +673,7 @@
 "Take a break for a trip or illness without losing your streak." = "Перерыв на отпуск или болезнь без потери серии.";
 "Take vitamins" = "Принять витамины";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Нажми на день, чтобы отметить. Удерживай, чтобы пропустить или добавить заметку.";
+"Tap the button and paste the code in the App Store window. You'll see the final price before you pay." = "Нажми кнопку и вставь код в окне App Store. Итоговую цену увидишь до оплаты.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Нажми на кружок или смахни вправо, чтобы отметить. Смахни влево, чтобы пропустить, добавить заметку или изменить. Удерживай, чтобы поменять порядок.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Нажми на кружок, чтобы запустить таймер. Он идёт на экране блокировки и отметит привычку, когда время выйдет.";
 "Tap the days when the habit should be done" = "Нажми на дни, в которые нужно выполнять привычку";
@@ -736,6 +744,7 @@
 "Unlock: %@" = "Как открыть: %@";
 "Unstoppable" = "Неудержимый";
 "Until" = "До";
+"Until %@" = "До %@";
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "Пока привычка не отмечена, напоминание повторяется: %@. Кнопки \"Готово\" и \"Пропустить\" в уведомлении останавливают повторы на этот день.";
 "Version" = "Версия";
 "Veteran" = "Ветеран";

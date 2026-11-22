@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / वर्ष";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: कीमत ✨ %lld, आपके पास: ✨ %lld। ✨ %lld और चाहिए। कमाने के लिए आदतें पूरी करें।";
 "%@ costs %lld sparks. You have %lld." = "%@: कीमत ✨ %lld। आपके पास: ✨ %lld।";
+"%@ for the first year" = "पहले साल %@";
 "%@ free, then %@. Cancel anytime." = "%1$@ मुफ़्त, फिर %2$@। कभी भी रद्द करें।";
 "%@ is already done today." = "%@ आज पहले ही पूरा हो चुका है।";
 "%@: the streak broke" = "%@: लगातार गिनती टूटी";
@@ -54,6 +55,7 @@
 "Adopt a pet" = "एक पालतू अपनाएँ";
 "Advanced" = "उन्नत";
 "After habit" = "इस आदत के बाद";
+"After the first year, Pro renews at the regular price. Cancel anytime." = "पहले साल के बाद Pro सामान्य कीमत पर रिन्यू होता है। कभी भी रद्द करें।";
 "After: %@" = "इसके बाद: %@";
 "Afternoon" = "दोपहर";
 "All" = "सभी";
@@ -147,6 +149,7 @@
 "Clear your inbox" = "इनबॉक्स ख़ाली करें";
 "Clearer Pro" = "साफ़-सुथरा Pro";
 "Close" = "बंद करें";
+"Code: %@" = "कोड: %@";
 "Collector" = "संग्रहकर्ता";
 "Come back after a miss 10 times" = "चूकने के बाद 10 बार लौटें";
 "Comeback" = "वापसी";
@@ -160,6 +163,7 @@
 "Control Center" = "कंट्रोल सेंटर";
 "Copied" = "कॉपी हो गया";
 "Copy address" = "पता कॉपी करें";
+"Copy code" = "कोड कॉपी करें";
 "Copy message" = "संदेश कॉपी करें";
 "Copy message and address" = "संदेश और पता कॉपी करें";
 "Couldn't create an invitation link. Try again later." = "आमंत्रण लिंक नहीं बन सका। बाद में फिर कोशिश करें।";
@@ -262,6 +266,7 @@
 "Finish and check off" = "खत्म करें और पूरा करें";
 "First step" = "पहला कदम";
 "First time" = "पहली बार";
+"First year of Pro %@ off" = "Pro का पहला साल %@ छूट पर";
 "Fitness" = "फ़िटनेस";
 "Focus for an hour" = "एक घंटा ध्यान से काम";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "बुरी आदतों के लिए: धूम्रपान, मिठाई, शराब, स्क्रॉलिंग।";
@@ -280,6 +285,7 @@
 "Full mood journal" = "पूरी मूड डायरी";
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Apple Watch पर टाइमर इस्तेमाल करने के लिए अपने iPhone पर Pro लें।";
 "Get a pet" = "पालतू पाएँ";
+"Get the discount" = "छूट पाएँ";
 "Go to bed on time" = "समय पर सोएँ";
 "Goal" = "लक्ष्य";
 "Gold" = "सुनहरा";
@@ -433,6 +439,7 @@
 "N times a week" = "हफ़्ते में N बार";
 "Name" = "नाम";
 "Never" = "कभी नहीं";
+"New Year offer" = "नए साल का ऑफ़र";
 "New achievement!" = "नई उपलब्धि!";
 "New app icons" = "नए ऐप आइकन";
 "New group" = "नया समूह";
@@ -666,6 +673,7 @@
 "Take a break for a trip or illness without losing your streak." = "यात्रा या बीमारी में लगातार गिनती खोए बिना विराम लें।";
 "Take vitamins" = "विटामिन लें";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "दिन पर टैप करके पूरा करें। छोड़ने या नोट जोड़ने के लिए दबाकर रखें।";
+"Tap the button and paste the code in the App Store window. You'll see the final price before you pay." = "बटन दबाएँ और App Store की विंडो में कोड पेस्ट करें। भुगतान से पहले अंतिम कीमत दिखेगी।";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "पूरा करने के लिए गोले पर टैप करें या दाएँ स्वाइप करें। छोड़ने, नोट या बदलाव के लिए बाएँ स्वाइप करें। क्रम बदलने के लिए दबाकर रखें।";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "टाइमर शुरू करने के लिए गोले पर टैप करें। यह लॉक स्क्रीन पर चलता है और समय पूरा होने पर आदत पूरी कर देता है।";
 "Tap the days when the habit should be done" = "जिन दिनों आदत करनी है, उन पर टैप करें";
@@ -736,6 +744,7 @@
 "Unlock: %@" = "खोलने के लिए: %@";
 "Unstoppable" = "अजेय";
 "Until" = "तक";
+"Until %@" = "%@ तक";
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "आदत पूरी होने तक रिमाइंडर दोहराया जाता है: %@। सूचना में 'हो गया' या 'छोड़ें' दबाने से उस दिन का दोहराव रुक जाता है।";
 "Version" = "संस्करण";
 "Veteran" = "अनुभवी";

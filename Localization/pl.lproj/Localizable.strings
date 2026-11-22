@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / rok";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@ kosztuje %lld iskier, masz %lld. Brakuje %lld. Odhaczaj nawyki, aby je zdobyć.";
 "%@ costs %lld sparks. You have %lld." = "%@ kosztuje %lld iskier. Masz %lld.";
+"%@ for the first year" = "%@ za pierwszy rok";
 "%@ free, then %@. Cancel anytime." = "%1$@ za darmo, potem %2$@. Anuluj w każdej chwili.";
 "%@ is already done today." = "%@ jest już dziś zrobione.";
 "%@: the streak broke" = "%@: seria przerwana";
@@ -54,6 +55,7 @@
 "Adopt a pet" = "Adoptuj zwierzaka";
 "Advanced" = "Zaawansowany";
 "After habit" = "Po nawyku";
+"After the first year, Pro renews at the regular price. Cancel anytime." = "Po pierwszym roku Pro odnawia się w zwykłej cenie. Anuluj w dowolnej chwili.";
 "After: %@" = "Po: %@";
 "Afternoon" = "Popołudnie";
 "All" = "Wszystkie";
@@ -147,6 +149,7 @@
 "Clear your inbox" = "Opróżnić skrzynkę";
 "Clearer Pro" = "Czytelniejsze Pro";
 "Close" = "Zamknij";
+"Code: %@" = "Kod: %@";
 "Collector" = "Kolekcjoner";
 "Come back after a miss 10 times" = "Wróć po pominięciu 10 razy";
 "Comeback" = "Powrót";
@@ -160,6 +163,7 @@
 "Control Center" = "Centrum sterowania";
 "Copied" = "Skopiowano";
 "Copy address" = "Kopiuj adres";
+"Copy code" = "Kopiuj kod";
 "Copy message" = "Kopiuj wiadomość";
 "Copy message and address" = "Kopiuj wiadomość i adres";
 "Couldn't create an invitation link. Try again later." = "Nie udało się utworzyć linku zaproszenia. Spróbuj później.";
@@ -262,6 +266,7 @@
 "Finish and check off" = "Zakończ i odhacz";
 "First step" = "Pierwszy krok";
 "First time" = "Pierwszy raz";
+"First year of Pro %@ off" = "Pierwszy rok Pro taniej o %@";
 "Fitness" = "Sport";
 "Focus for an hour" = "Godzina skupienia";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "Dla złych nawyków: palenie, słodycze, alkohol, scrollowanie.";
@@ -280,6 +285,7 @@
 "Full mood journal" = "Pełny dziennik nastroju";
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Włącz Pro na iPhonie, aby korzystać z minutnika na Apple Watch.";
 "Get a pet" = "Zdobądź zwierzaka";
+"Get the discount" = "Odbierz zniżkę";
 "Go to bed on time" = "Iść spać o czasie";
 "Goal" = "Cel";
 "Gold" = "Złoto";
@@ -433,6 +439,7 @@
 "N times a week" = "N razy w tygodniu";
 "Name" = "Nazwa";
 "Never" = "Nigdy";
+"New Year offer" = "Oferta noworoczna";
 "New achievement!" = "Nowe osiągnięcie!";
 "New app icons" = "Nowe ikony aplikacji";
 "New group" = "Nowa grupa";
@@ -666,6 +673,7 @@
 "Take a break for a trip or illness without losing your streak." = "Zrób przerwę na wyjazd lub chorobę bez utraty serii.";
 "Take vitamins" = "Wziąć witaminy";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Stuknij dzień, aby go odhaczyć. Przytrzymaj, aby go pominąć lub dodać notatkę.";
+"Tap the button and paste the code in the App Store window. You'll see the final price before you pay." = "Stuknij przycisk i wklej kod w oknie App Store. Ostateczną cenę zobaczysz przed zapłatą.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Stuknij kółko lub przesuń w prawo, aby odhaczyć. Przesuń w lewo, aby pominąć, dodać notatkę lub edytować. Przytrzymaj, aby zmienić kolejność.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Dotknij kółka, aby włączyć minutnik. Odlicza na ekranie blokady i odhacza nawyk, gdy czas minie.";
 "Tap the days when the habit should be done" = "Stuknij dni, w które nawyk ma być wykonany";
@@ -736,6 +744,7 @@
 "Unlock: %@" = "Jak odblokować: %@";
 "Unstoppable" = "Nie do zatrzymania";
 "Until" = "Do";
+"Until %@" = "Do %@";
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "Dopóki nawyk nie jest odhaczony, przypomnienie się powtarza: %@. „Gotowe” i „Pomiń” w powiadomieniu zatrzymują powtórzenia na ten dzień.";
 "Version" = "Wersja";
 "Veteran" = "Weteran";

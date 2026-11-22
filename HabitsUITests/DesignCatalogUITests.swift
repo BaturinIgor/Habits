@@ -93,6 +93,10 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "53-feedback-failed", screen: "feedback", alert: "sendFailed"),
         Shot(name: "54-feedback-no-mail", screen: "feedback", alert: "noMail"),
         Shot(name: "55-feedback-copied", screen: "feedback", alert: "copied"),
+        // 1.7, KAN-125: новогоднее предложение (акция включается флагом в любой день)
+        Shot(name: "offer-01-today", screen: "today", flags: ["-uitest-free", "-uitest-offer"]),
+        Shot(name: "offer-02-settings", screen: "settings", flags: ["-uitest-free", "-uitest-offer"]),
+        Shot(name: "offer-03-paywall", screen: "offerPaywall", flags: ["-uitest-free", "-uitest-offer"]),
     ]
 
     private static var outputDir: URL? {

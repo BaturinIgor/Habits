@@ -66,6 +66,11 @@ struct PaywallView: View {
                             .multilineTextAlignment(.center)
                     }
 
+                    // KAN-125: новогодняя скидка — отдельным блоком над списком функций.
+                    if source == .newYearOffer && !store.data.isPro {
+                        NewYearOfferCard(product: shop.products.first { $0.id == NewYearOffer.productID })
+                    }
+
                     VStack(alignment: .leading, spacing: 18) {
                         ForEach(features) { feature in
                             featureRow(feature, highlighted: feature == highlight)
@@ -116,7 +121,10 @@ struct PaywallView: View {
 
 extension PaywallView {
     /// Откуда открыли экран Pro: функция, ради которой его показали, или раздел настроек.
-    var analyticsSource: String { highlight?.rawValue ?? "settings" }
+    var analyticsSource: String {
+        if source == .newYearOffer { return source.rawValue }
+        return highlight?.rawValue ?? "settings"
+    }
 
     @ViewBuilder
     var purchaseSection: some View {

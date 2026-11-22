@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / ano";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@ custa %lld faíscas, você tem %lld. Faltam %lld. Marque hábitos para ganhá-las.";
 "%@ costs %lld sparks. You have %lld." = "%@ custa %lld faíscas. Você tem %lld.";
+"%@ for the first year" = "%@ no primeiro ano";
 "%@ free, then %@. Cancel anytime." = "%1$@ grátis, depois %2$@. Cancele quando quiser.";
 "%@ is already done today." = "%@ já foi feito hoje.";
 "%@: the streak broke" = "%@: sequência interrompida";
@@ -54,6 +55,7 @@
 "Adopt a pet" = "Adotar um bichinho";
 "Advanced" = "Avançado";
 "After habit" = "Depois do hábito";
+"After the first year, Pro renews at the regular price. Cancel anytime." = "Depois do primeiro ano, o Pro renova pelo preço normal. Cancele quando quiser.";
 "After: %@" = "Depois de: %@";
 "Afternoon" = "Tarde";
 "All" = "Todos";
@@ -147,6 +149,7 @@
 "Clear your inbox" = "Zerar a caixa de entrada";
 "Clearer Pro" = "Pro mais claro";
 "Close" = "Fechar";
+"Code: %@" = "Código: %@";
 "Collector" = "Colecionador";
 "Come back after a miss 10 times" = "Volte depois de uma falha 10 vezes";
 "Comeback" = "Volta por cima";
@@ -160,6 +163,7 @@
 "Control Center" = "Central de Controle";
 "Copied" = "Copiado";
 "Copy address" = "Copiar endereço";
+"Copy code" = "Copiar código";
 "Copy message" = "Copiar mensagem";
 "Copy message and address" = "Copiar mensagem e endereço";
 "Couldn't create an invitation link. Try again later." = "Não foi possível criar o link de convite. Tente mais tarde.";
@@ -262,6 +266,7 @@
 "Finish and check off" = "Encerrar e marcar";
 "First step" = "Primeiro passo";
 "First time" = "Primeira vez";
+"First year of Pro %@ off" = "Primeiro ano do Pro com %@ de desconto";
 "Fitness" = "Exercícios";
 "Focus for an hour" = "Uma hora de foco";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "Para maus hábitos: cigarro, doces, álcool, rolar o feed.";
@@ -280,6 +285,7 @@
 "Full mood journal" = "Diário de humor completo";
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Assine o Pro no iPhone para usar o timer no Apple Watch.";
 "Get a pet" = "Ter um bichinho";
+"Get the discount" = "Pegar o desconto";
 "Go to bed on time" = "Dormir na hora certa";
 "Goal" = "Meta";
 "Gold" = "Dourado";
@@ -433,6 +439,7 @@
 "N times a week" = "N vezes por semana";
 "Name" = "Nome";
 "Never" = "Nunca";
+"New Year offer" = "Oferta de Ano Novo";
 "New achievement!" = "Nova conquista!";
 "New app icons" = "Novos ícones do app";
 "New group" = "Novo grupo";
@@ -666,6 +673,7 @@
 "Take a break for a trip or illness without losing your streak." = "Faça uma pausa por viagem ou doença sem perder a sequência.";
 "Take vitamins" = "Tomar vitaminas";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Toque em um dia para marcá-lo. Toque e segure para pular ou adicionar uma nota.";
+"Tap the button and paste the code in the App Store window. You'll see the final price before you pay." = "Toque no botão e cole o código na janela da App Store. Você verá o preço final antes de pagar.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Toque no círculo ou deslize para a direita para marcar. Deslize para a esquerda para pular, adicionar uma nota ou editar. Toque e segure para reordenar.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Toque no círculo para iniciar o timer. Ele corre na Tela Bloqueada e marca o hábito quando o tempo acaba.";
 "Tap the days when the habit should be done" = "Toque nos dias em que o hábito deve ser feito";
@@ -736,6 +744,7 @@
 "Unlock: %@" = "Como desbloquear: %@";
 "Unstoppable" = "Imparável";
 "Until" = "Até";
+"Until %@" = "Até %@";
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "Até o hábito ser marcado, o lembrete se repete: %@. \"Feito\" e \"Pular\" na notificação interrompem as repetições naquele dia.";
 "Version" = "Versão";
 "Veteran" = "Veterano";

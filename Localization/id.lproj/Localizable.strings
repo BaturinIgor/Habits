@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / tahun";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "Harga %@ %lld percikan, kamu punya %lld. Kurang %lld. Centang kebiasaan untuk mendapatkannya.";
 "%@ costs %lld sparks. You have %lld." = "Harga %@ %lld percikan. Kamu punya %lld.";
+"%@ for the first year" = "%@ untuk tahun pertama";
 "%@ free, then %@. Cancel anytime." = "Gratis %1$@, lalu %2$@. Batalkan kapan saja.";
 "%@ is already done today." = "%@ sudah selesai hari ini.";
 "%@: the streak broke" = "%@: rentetan terputus";
@@ -54,6 +55,7 @@
 "Adopt a pet" = "Adopsi hewan";
 "Advanced" = "Mahir";
 "After habit" = "Setelah kebiasaan";
+"After the first year, Pro renews at the regular price. Cancel anytime." = "Setelah tahun pertama, Pro diperpanjang dengan harga normal. Batalkan kapan saja.";
 "After: %@" = "Setelah: %@";
 "Afternoon" = "Siang";
 "All" = "Semua";
@@ -147,6 +149,7 @@
 "Clear your inbox" = "Kosongkan kotak masuk";
 "Clearer Pro" = "Pro lebih jelas";
 "Close" = "Tutup";
+"Code: %@" = "Kode: %@";
 "Collector" = "Kolektor";
 "Come back after a miss 10 times" = "Kembali setelah terlewat 10 kali";
 "Comeback" = "Bangkit lagi";
@@ -160,6 +163,7 @@
 "Control Center" = "Pusat Kontrol";
 "Copied" = "Disalin";
 "Copy address" = "Salin alamat";
+"Copy code" = "Salin kode";
 "Copy message" = "Salin pesan";
 "Copy message and address" = "Salin pesan dan alamat";
 "Couldn't create an invitation link. Try again later." = "Tidak bisa membuat tautan undangan. Coba lagi nanti.";
@@ -262,6 +266,7 @@
 "Finish and check off" = "Selesai dan centang";
 "First step" = "Langkah pertama";
 "First time" = "Pertama kali";
+"First year of Pro %@ off" = "Tahun pertama Pro diskon %@";
 "Fitness" = "Olahraga";
 "Focus for an hour" = "Fokus satu jam";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "Untuk kebiasaan buruk: merokok, manis, alkohol, scrolling.";
@@ -280,6 +285,7 @@
 "Full mood journal" = "Jurnal suasana hati lengkap";
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Aktifkan Pro di iPhone untuk memakai timer di Apple Watch.";
 "Get a pet" = "Pelihara hewan";
+"Get the discount" = "Ambil diskon";
 "Go to bed on time" = "Tidur tepat waktu";
 "Goal" = "Target";
 "Gold" = "Emas";
@@ -433,6 +439,7 @@
 "N times a week" = "N kali seminggu";
 "Name" = "Nama";
 "Never" = "Belum pernah";
+"New Year offer" = "Penawaran Tahun Baru";
 "New achievement!" = "Pencapaian baru!";
 "New app icons" = "Ikon aplikasi baru";
 "New group" = "Grup baru";
@@ -666,6 +673,7 @@
 "Take a break for a trip or illness without losing your streak." = "Istirahat saat bepergian atau sakit tanpa kehilangan rentetan.";
 "Take vitamins" = "Minum vitamin";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Ketuk hari untuk mencentangnya. Tekan lama untuk melewati atau menambah catatan.";
+"Tap the button and paste the code in the App Store window. You'll see the final price before you pay." = "Ketuk tombol dan tempel kode di jendela App Store. Kamu akan melihat harga akhir sebelum membayar.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Ketuk lingkaran atau geser ke kanan untuk mencentang. Geser ke kiri untuk melewati, menambah catatan, atau mengubah. Tekan lama untuk mengubah urutan.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Ketuk lingkaran untuk memulai pengatur waktu. Hitung mundur tampil di Layar Terkunci dan kebiasaan tercentang saat waktu habis.";
 "Tap the days when the habit should be done" = "Ketuk hari saat kebiasaan harus dilakukan";
@@ -736,6 +744,7 @@
 "Unlock: %@" = "Cara membuka: %@";
 "Unstoppable" = "Tak terhentikan";
 "Until" = "Hingga";
+"Until %@" = "Hingga %@";
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "Selama kebiasaan belum dicentang, pengingat diulang: %@. \"Selesai\" dan \"Lewati\" di notifikasi menghentikan pengulangan untuk hari itu.";
 "Version" = "Versi";
 "Veteran" = "Veteran";

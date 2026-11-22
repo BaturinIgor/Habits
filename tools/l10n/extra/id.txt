@@ -826,3 +826,12 @@ To link a habit, open it and choose Apple Health → Check off by.||Untuk menghu
 Open the Health app||Buka app Kesehatan
 You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Kamu bisa mengizinkan atau menolak akses ke setiap jenis data di Pengaturan → Privasi & Keamanan → Kesehatan → ZenHab.
 Apple Health: %@||Apple Health: %@
+New Year offer||Penawaran Tahun Baru
+First year of Pro %@ off||Tahun pertama Pro diskon %@
+Until %@||Hingga %@
+Get the discount||Ambil diskon
+Code: %@||Kode: %@
+Copy code||Salin kode
+Tap the button and paste the code in the App Store window. You'll see the final price before you pay.||Ketuk tombol dan tempel kode di jendela App Store. Kamu akan melihat harga akhir sebelum membayar.
+%@ for the first year||%@ untuk tahun pertama
+After the first year, Pro renews at the regular price. Cancel anytime.||Setelah tahun pertama, Pro diperpanjang dengan harga normal. Batalkan kapan saja.

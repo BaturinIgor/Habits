@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / anno";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@ costa %lld scintille, ne hai %lld. Te ne mancano %lld. Segna abitudini per guadagnarle.";
 "%@ costs %lld sparks. You have %lld." = "%@ costa %lld scintille. Ne hai %lld.";
+"%@ for the first year" = "%@ il primo anno";
 "%@ free, then %@. Cancel anytime." = "%1$@ gratis, poi %2$@. Disdici quando vuoi.";
 "%@ is already done today." = "%@ è già fatto oggi.";
 "%@: the streak broke" = "%@: serie interrotta";
@@ -54,6 +55,7 @@
 "Adopt a pet" = "Adotta un cucciolo";
 "Advanced" = "Avanzato";
 "After habit" = "Dopo l'abitudine";
+"After the first year, Pro renews at the regular price. Cancel anytime." = "Dopo il primo anno, Pro si rinnova al prezzo normale. Annulla quando vuoi.";
 "After: %@" = "Dopo: %@";
 "Afternoon" = "Pomeriggio";
 "All" = "Tutte";
@@ -147,6 +149,7 @@
 "Clear your inbox" = "Svuotare la posta in arrivo";
 "Clearer Pro" = "Pro più chiaro";
 "Close" = "Chiudi";
+"Code: %@" = "Codice: %@";
 "Collector" = "Collezionista";
 "Come back after a miss 10 times" = "Riprendi dopo un salto 10 volte";
 "Comeback" = "Ritorno";
@@ -160,6 +163,7 @@
 "Control Center" = "Centro di Controllo";
 "Copied" = "Copiato";
 "Copy address" = "Copia indirizzo";
+"Copy code" = "Copia codice";
 "Copy message" = "Copia messaggio";
 "Copy message and address" = "Copia messaggio e indirizzo";
 "Couldn't create an invitation link. Try again later." = "Impossibile creare il link di invito. Riprova più tardi.";
@@ -262,6 +266,7 @@
 "Finish and check off" = "Termina e spunta";
 "First step" = "Primo passo";
 "First time" = "Prima volta";
+"First year of Pro %@ off" = "Il primo anno di Pro scontato del %@";
 "Fitness" = "Sport";
 "Focus for an hour" = "Un'ora di concentrazione";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "Per le cattive abitudini: fumo, dolci, alcol, scrolling.";
@@ -280,6 +285,7 @@
 "Full mood journal" = "Diario dell'umore completo";
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Passa a Pro sull'iPhone per usare il timer su Apple Watch.";
 "Get a pet" = "Prendi un cucciolo";
+"Get the discount" = "Ottieni lo sconto";
 "Go to bed on time" = "Andare a letto in orario";
 "Goal" = "Obiettivo";
 "Gold" = "Oro";
@@ -433,6 +439,7 @@
 "N times a week" = "N volte a settimana";
 "Name" = "Nome";
 "Never" = "Mai";
+"New Year offer" = "Offerta di Capodanno";
 "New achievement!" = "Nuovo traguardo!";
 "New app icons" = "Nuove icone dell'app";
 "New group" = "Nuovo gruppo";
@@ -666,6 +673,7 @@
 "Take a break for a trip or illness without losing your streak." = "Prenditi una pausa per un viaggio o una malattia senza perdere la serie.";
 "Take vitamins" = "Prendere le vitamine";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Tocca un giorno per segnarlo. Tieni premuto per saltarlo o aggiungere una nota.";
+"Tap the button and paste the code in the App Store window. You'll see the final price before you pay." = "Tocca il pulsante e incolla il codice nella finestra dell'App Store. Vedrai il prezzo finale prima di pagare.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Tocca il cerchio o scorri a destra per segnare. Scorri a sinistra per saltare, aggiungere una nota o modificare. Tieni premuto per riordinare.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Tocca il cerchio per avviare il timer. Scorre sulla schermata di blocco e spunta l'abitudine allo scadere.";
 "Tap the days when the habit should be done" = "Tocca i giorni in cui fare l'abitudine";
@@ -736,6 +744,7 @@
 "Unlock: %@" = "Come sbloccare: %@";
 "Unstoppable" = "Inarrestabile";
 "Until" = "Fino al";
+"Until %@" = "Fino al %@";
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "Finché l'abitudine non è segnata, il promemoria si ripete: %@. \"Fatto\" e \"Salta\" nella notifica fermano le ripetizioni per quel giorno.";
 "Version" = "Versione";
 "Veteran" = "Veterano";
