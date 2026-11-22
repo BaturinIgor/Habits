@@ -453,6 +453,7 @@
 "No entries yet" = "아직 기록이 없어요";
 "No fast food" = "패스트푸드 끊기";
 "No group" = "그룹 없음";
+"No habit stands out yet: your mood is about the same on days with and without them." = "아직 눈에 띄는 습관이 없어요. 습관이 있는 날과 없는 날의 기분이 비슷해요.";
 "No habits" = "습관 없음";
 "No habits are linked yet." = "아직 연결된 습관이 없어요.";
 "No habits are planned for this day." = "이날 예정된 습관이 없어요.";
@@ -485,6 +486,7 @@
 "Okay" = "보통";
 "Older entries: %lld. Your full history is in Pro." = "이전 기록: %lld개. 전체 기록은 Pro에서 볼 수 있어요.";
 "On" = "켜짐";
+"On days with this habit, your mood is higher on average" = "이 습관을 한 날은 평균적으로 기분이 더 좋아요";
 "On target" = "목표 명중";
 "On weekdays" = "평일";
 "On weekends" = "주말";
@@ -549,6 +551,7 @@
 "Quitting: %@" = "끊은 지 %@";
 "Rate the app" = "앱 평가하기";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "'오늘' 아래에서 한 번 탭해 하루를 평가하고 몇 마디 남겨 보세요. Pro에서는 전체 기록, 월간 그래프, 기분을 올려 주는 습관을 볼 수 있어요.";
+"Rate your mood for %@ more to see which habits go with your better days." = "%@ 더 기분을 기록하면 좋은 날과 함께하는 습관을 볼 수 있어요.";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "하루에 한 번 '오늘' 화면에서 기분을 기록하세요. 몇 주 뒤에는 어떤 습관이 기분을 올려 주는지 보여요.";
 "Reach a daily goal 20 times" = "일일 목표 20번 달성";
 "Reach a weekly goal 4 times" = "주간 목표 4번 달성";
@@ -596,6 +599,7 @@
 "See how much money you save by quitting a habit." = "습관을 끊어서 아낀 돈을 확인하세요.";
 "See how much you've saved with Pro" = "Pro로 아낀 돈을 확인하세요";
 "See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "오늘의 습관을 손목에서 보고 한 번의 탭으로 체크하세요. 모든 내용은 iPhone과 동기화돼요. 워치에 ZenHab이 보이지 않으면 iPhone의 Watch 앱에서 설치하세요.";
+"See which habits go with your better days" = "좋은 날과 함께하는 습관 보기";
 "See which habits make your days better" = "어떤 습관이 하루를 더 좋게 만드는지 확인하세요";
 "Send" = "보내기";
 "Send by email" = "메일로 보내기";
@@ -691,6 +695,7 @@
 "There are no purchases yet: this switch turns Pro features on for testing." = "아직 구매 기능이 없어요. 이 스위치로 Pro 기능을 테스트할 수 있어요.";
 "There's a backup in your iCloud from %@. Habits in it: %lld." = "iCloud에 %@ 백업이 있어요. 습관: %lld개.";
 "This group and its habits will be removed from this iPhone." = "이 그룹과 습관이 이 iPhone에서 삭제돼요.";
+"This is a pattern in your entries, not proof that the habit is the cause." = "기록에서 보이는 경향일 뿐, 습관 때문이라는 증거는 아니에요.";
 "Tidy up for 10 minutes" = "10분 정리하기";
 "Time" = "시간";
 "Time for your habit" = "습관을 실천할 시간이에요";
@@ -757,6 +762,7 @@
 "Welcome to Habit Tracker" = "습관 트래커에 오신 걸 환영해요";
 "What %@ gives you" = "%@이(가) 주는 것";
 "What ZenHab reads" = "ZenHab이 읽는 데이터";
+"What goes with a better mood" = "기분 좋은 날과 함께하는 습관";
 "What happened and what did you expect?" = "무슨 일이 있었고 어떻게 되길 기대했나요?";
 "What happened today? What helped?" = "오늘 무슨 일이 있었나요? 무엇이 도움이 됐나요?";
 "What lifts your mood" = "기분을 올려 주는 것";

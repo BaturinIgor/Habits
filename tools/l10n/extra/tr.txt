@@ -826,3 +826,9 @@ To link a habit, open it and choose Apple Health → Check off by.||Bir alışka
 Open the Health app||Sağlık uygulamasını aç
 You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Her veri türüne erişimi Ayarlar → Gizlilik ve Güvenlik → Sağlık → ZenHab bölümünden açıp kapatabilirsin.
 Apple Health: %@||Apple Health: %@
+What goes with a better mood||Daha iyi ruh haliyle birlikte gelenler
+On days with this habit, your mood is higher on average||Bu alışkanlığın olduğu günlerde ruh halin ortalamada daha iyi
+This is a pattern in your entries, not proof that the habit is the cause.||Bu, kayıtlarındaki bir eğilim; sebebin alışkanlık olduğunun kanıtı değil.
+Rate your mood for %@ more to see which habits go with your better days.||İyi günlerinle birlikte gelen alışkanlıkları görmek için ruh halini %@ daha kaydet.
+No habit stands out yet: your mood is about the same on days with and without them.||Henüz öne çıkan bir alışkanlık yok: onların olduğu ve olmadığı günlerde ruh halin aşağı yukarı aynı.
+See which habits go with your better days||İyi günlerinle birlikte gelen alışkanlıkları gör

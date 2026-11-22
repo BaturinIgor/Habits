@@ -1,2 +1,6 @@
 # Habits 1.7: снимки только новых и изменённых экранов (см. design/README.md).
 # Остальные экраны — из design/1.6/screens.
+# KAN-137: инсайты настроения
+insights-01-top
+insights-02-few-days
+insights-03-free

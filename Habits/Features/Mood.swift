@@ -54,7 +54,7 @@ enum MoodJournal {
         var level: MoodLevel { MoodLevel(clamping: entry.level) }
     }
 
-    /// Привычка и насколько настроение выше (или ниже) в дни, когда она выполнена.
+    /// Привычка и насколько настроение выше в дни, когда она выполнена.
     struct Impact: Identifiable, Hashable {
         let habit: Habit
         /// Разница средних оценок: в дни с выполненной привычкой минус в остальные дни, когда она была по плану.
@@ -90,14 +90,39 @@ enum MoodJournal {
         return Double(levels.reduce(0, +)) / Double(levels.count)
     }
 
-    /// Привычки, сильнее всего связанные с настроением. Нужно хотя бы `minDays` дней
-    /// с выполненной привычкой и столько же дней без неё, иначе вывод был бы случайным.
-    static func impacts(in data: AppData, minDays: Int = 3, limit: Int = 3, calendar: Calendar = .app) -> [Impact] {
+    /// Инсайты настроения (KAN-137): сколько дней нужно с каждой стороны - с выполненной привычкой и без неё.
+    static let insightMinDays = 7
+    /// Разница средних, начиная с которой привычку показываем.
+    static let insightMinDelta = 0.3
+    /// Сколько последних дней истории учитывается.
+    static let insightWindowDays = 90
+
+    /// Что показать в карточке инсайтов.
+    enum Insights: Equatable {
+        /// Привычки с самым большим плюсом, не больше трёх.
+        case ready([Impact])
+        /// Данных мало: примерно столько ещё дней отмечать настроение.
+        case needMoreDays(Int)
+        /// Данных хватает, но ни одна привычка не выделяется.
+        case noLift
+    }
+
+    /// Сравнивает среднее настроение в дни, когда привычка выполнена, и в дни по плану, когда нет.
+    /// Учитываются только привычки, у которых не меньше `minDays` таких дней с каждой стороны,
+    /// иначе вывод был бы случайным. Сегодняшний день не учитывается: привычку ещё могут отметить.
+    /// Это связь, а не причина: тексты в карточке говорят «в дни с привычкой настроение выше».
+    static func insights(in data: AppData, now: Date = Date(), calendar: Calendar = .app,
+                         minDays: Int = insightMinDays, limit: Int = 3) -> Insights {
+        let today = calendar.startOfDay(for: now)
+        let windowStart = calendar.date(byAdding: .day, value: -insightWindowDays, to: today) ?? today
         let entries = data.moods.compactMap { key, entry -> (String, Date, Int)? in
-            DayKey.date(key, calendar: calendar).map { (key, $0, entry.level) }
+            guard let date = DayKey.date(key, calendar: calendar), date >= windowStart, date < today else { return nil }
+            return (key, date, entry.level)
         }
-        guard entries.count >= minDays * 2 else { return [] }
-        var result: [Impact] = []
+        var lifts: [Impact] = []
+        var anyQualified = false
+        // Меньше всего дней, которых не хватает какой-нибудь привычке.
+        var fewestMissing: Int?
         for habit in data.activeHabits where habit.quit == nil {
             var done: [Int] = []
             var missed: [Int] = []
@@ -108,12 +133,26 @@ enum MoodJournal {
                     missed.append(level)
                 }
             }
-            guard done.count >= minDays, missed.count >= minDays else { continue }
+            let missing = max(0, minDays - done.count) + max(0, minDays - missed.count)
+            guard missing == 0 else {
+                fewestMissing = min(fewestMissing ?? missing, missing)
+                continue
+            }
+            anyQualified = true
             let delta = mean(done) - mean(missed)
-            guard abs(delta) >= 0.3 else { continue }
-            result.append(Impact(habit: habit, delta: delta, doneDays: done.count))
+            guard delta >= insightMinDelta else { continue }
+            lifts.append(Impact(habit: habit, delta: delta, doneDays: done.count))
         }
-        return Array(result.sorted { abs($0.delta) > abs($1.delta) }.prefix(limit))
+        if !lifts.isEmpty {
+            // Сравниваем с точностью до сотых: на экране одна цифра после запятой, а почти равные
+            // привычки пусть идут в порядке списка, а не по шуму округления.
+            func rank(_ impact: Impact) -> Int { Int((impact.delta * 100).rounded()) }
+            let sorted = lifts.sorted { rank($0) != rank($1) ? rank($0) > rank($1) : Habit.manualOrder($0.habit, $1.habit) }
+            return .ready(Array(sorted.prefix(limit)))
+        }
+        // Подходящих привычек нет совсем: подсказывать «сколько ещё дней» не о чем.
+        guard !anyQualified, let fewestMissing else { return .noLift }
+        return .needMoreDays(max(1, fewestMissing))
     }
 
     private static func mean(_ values: [Int]) -> Double {

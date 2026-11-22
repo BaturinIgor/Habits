@@ -826,3 +826,9 @@ To link a habit, open it and choose Apple Health → Check off by.||Aby połącz
 Open the Health app||Otwórz aplikację Zdrowie
 You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab.||Dostęp do każdego rodzaju danych możesz zezwolić lub zablokować w Ustawienia → Prywatność i ochrona → Zdrowie → ZenHab.
 Apple Health: %@||Apple Health: %@
+What goes with a better mood||Co idzie w parze z lepszym nastrojem
+On days with this habit, your mood is higher on average||W dni z tym nawykiem twój nastrój jest średnio lepszy
+This is a pattern in your entries, not proof that the habit is the cause.||To prawidłowość w twoich wpisach, a nie dowód, że przyczyną jest nawyk.
+Rate your mood for %@ more to see which habits go with your better days.||Oceniaj nastrój jeszcze przez %@, a zobaczysz, które nawyki idą w parze z lepszymi dniami.
+No habit stands out yet: your mood is about the same on days with and without them.||Żaden nawyk jeszcze się nie wyróżnia: nastrój jest podobny w dni z nimi i bez nich.
+See which habits go with your better days||Zobacz, które nawyki idą w parze z lepszymi dniami

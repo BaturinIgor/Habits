@@ -453,6 +453,7 @@
 "No entries yet" = "まだ記録がありません";
 "No fast food" = "ファストフードなし";
 "No group" = "グループなし";
+"No habit stands out yet: your mood is about the same on days with and without them." = "まだ目立つ習慣はありません。習慣がある日もない日も、気分はほぼ同じです。";
 "No habits" = "習慣なし";
 "No habits are linked yet." = "まだ連携している習慣はありません。";
 "No habits are planned for this day." = "この日に予定された習慣はありません。";
@@ -485,6 +486,7 @@
 "Okay" = "ふつう";
 "Older entries: %lld. Your full history is in Pro." = "以前の記録：%lld件。すべての履歴はProで見られます。";
 "On" = "オン";
+"On days with this habit, your mood is higher on average" = "この習慣がある日は、気分が平均して高めです";
 "On target" = "目標達成";
 "On weekdays" = "平日";
 "On weekends" = "週末";
@@ -549,6 +551,7 @@
 "Quitting: %@" = "やめて %@";
 "Rate the app" = "アプリを評価";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "「今日」の下でワンタップで一日を評価し、ひとことメモを残せます。Proなら全履歴、月間グラフ、気分を上げる習慣がわかります。";
+"Rate your mood for %@ more to see which habits go with your better days." = "あと%@気分を記録すると、いい日に多い習慣がわかります。";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "1日1回「今日」画面で気分を記録しましょう。数週間でどの習慣が気分を上げるかわかります。";
 "Reach a daily goal 20 times" = "1日の目標を20回達成";
 "Reach a weekly goal 4 times" = "週の目標を4回達成";
@@ -596,6 +599,7 @@
 "See how much money you save by quitting a habit." = "習慣をやめて節約できたお金がわかります。";
 "See how much you've saved with Pro" = "Pro で節約額を表示";
 "See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "今日の習慣を手首で確認し、ワンタップでチェック。すべてiPhoneと同期されます。ウォッチにZenHabが表示されない場合は、iPhoneのWatchアプリからインストールしてください。";
+"See which habits go with your better days" = "いい日に多い習慣を見る";
 "See which habits make your days better" = "どの習慣が毎日を良くしているか見てみよう";
 "Send" = "送信";
 "Send by email" = "メールで送信";
@@ -691,6 +695,7 @@
 "There are no purchases yet: this switch turns Pro features on for testing." = "まだ購入機能はありません。このスイッチでPro機能をテストできます。";
 "There's a backup in your iCloud from %@. Habits in it: %lld." = "iCloud に %@ のバックアップがあります。習慣：%lld。";
 "This group and its habits will be removed from this iPhone." = "このグループと習慣はこのiPhoneから削除されます。";
+"This is a pattern in your entries, not proof that the habit is the cause." = "これは記録に見られる傾向で、習慣が原因だという証拠ではありません。";
 "Tidy up for 10 minutes" = "10分片付ける";
 "Time" = "時刻";
 "Time for your habit" = "習慣の時間です";
@@ -757,6 +762,7 @@
 "Welcome to Habit Tracker" = "習慣トラッカーへようこそ";
 "What %@ gives you" = "%@ がくれるもの";
 "What ZenHab reads" = "ZenHabが読み取るデータ";
+"What goes with a better mood" = "気分がいい日に多い習慣";
 "What happened and what did you expect?" = "何が起きて、どうなるはずでしたか？";
 "What happened today? What helped?" = "今日は何があった？何が助けになった？";
 "What lifts your mood" = "気分を上げるもの";

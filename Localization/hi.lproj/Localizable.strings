@@ -453,6 +453,7 @@
 "No entries yet" = "अभी कोई प्रविष्टि नहीं";
 "No fast food" = "फ़ास्ट फ़ूड नहीं";
 "No group" = "बिना समूह";
+"No habit stands out yet: your mood is about the same on days with and without them." = "अभी कोई आदत अलग नहीं दिखती: उनके साथ और बिना, दोनों दिनों में मूड लगभग एक जैसा है।";
 "No habits" = "कोई आदत नहीं";
 "No habits are linked yet." = "अभी कोई आदत जुड़ी नहीं है।";
 "No habits are planned for this day." = "इस दिन के लिए कोई आदत तय नहीं है।";
@@ -485,6 +486,7 @@
 "Okay" = "ठीक";
 "Older entries: %lld. Your full history is in Pro." = "पुरानी प्रविष्टियाँ: %lld। पूरा इतिहास Pro में है।";
 "On" = "चालू";
+"On days with this habit, your mood is higher on average" = "इस आदत वाले दिनों में आपका मूड औसतन बेहतर रहता है";
 "On target" = "निशाने पर";
 "On weekdays" = "कार्यदिवसों में";
 "On weekends" = "सप्ताहांत में";
@@ -549,6 +551,7 @@
 "Quitting: %@" = "छोड़े हुए: %@";
 "Rate the app" = "ऐप को रेटिंग दें";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "“आज” के नीचे एक टैप में अपने दिन को रेट करें और कुछ शब्द जोड़ें। Pro के साथ पूरा इतिहास, मासिक चार्ट और मूड बेहतर करने वाली आदतें देखें।";
+"Rate your mood for %@ more to see which habits go with your better days." = "%@ और मूड दर्ज करें, फिर दिखेगा कि आपके अच्छे दिनों के साथ कौन-सी आदतें जुड़ी हैं।";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "दिन में एक बार “आज” स्क्रीन पर मूड रेट करें। कुछ हफ़्तों में दिखेगा कि कौन-सी आदतें इसे बेहतर करती हैं।";
 "Reach a daily goal 20 times" = "दैनिक लक्ष्य 20 बार पूरा करें";
 "Reach a weekly goal 4 times" = "4 बार साप्ताहिक लक्ष्य पूरा करें";
@@ -596,6 +599,7 @@
 "See how much money you save by quitting a habit." = "देखें कि आदत छोड़कर आप कितने पैसे बचाते हैं।";
 "See how much you've saved with Pro" = "Pro से देखें कि कितनी बचत हुई";
 "See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "आज की आदतें अपनी कलाई पर देखें और एक टैप में मार्क करें। सब कुछ आपके iPhone से सिंक होता है। अगर ZenHab घड़ी पर नहीं दिखा, तो iPhone की Watch ऐप से इंस्टॉल करें।";
+"See which habits go with your better days" = "देखें कि आपके अच्छे दिनों के साथ कौन-सी आदतें जुड़ी हैं";
 "See which habits make your days better" = "देखें कौन-सी आदतें आपके दिन बेहतर बनाती हैं";
 "Send" = "भेजें";
 "Send by email" = "ईमेल से भेजें";
@@ -691,6 +695,7 @@
 "There are no purchases yet: this switch turns Pro features on for testing." = "अभी खरीदारी नहीं है: यह स्विच टेस्ट के लिए Pro सुविधाएँ चालू करता है।";
 "There's a backup in your iCloud from %@. Habits in it: %lld." = "आपके iCloud में %@ का बैकअप है। इसमें आदतें: %lld।";
 "This group and its habits will be removed from this iPhone." = "यह समूह और इसकी आदतें इस iPhone से हटा दी जाएँगी।";
+"This is a pattern in your entries, not proof that the habit is the cause." = "यह आपकी एंट्री में दिखा एक पैटर्न है, इस बात का सबूत नहीं कि वजह यही आदत है।";
 "Tidy up for 10 minutes" = "10 मिनट सफ़ाई";
 "Time" = "समय";
 "Time for your habit" = "आपकी आदत का समय";
@@ -757,6 +762,7 @@
 "Welcome to Habit Tracker" = "आदत ट्रैकर में आपका स्वागत है";
 "What %@ gives you" = "%@ आपको क्या देता है";
 "What ZenHab reads" = "ZenHab क्या पढ़ता है";
+"What goes with a better mood" = "बेहतर मूड के साथ क्या जुड़ा है";
 "What happened and what did you expect?" = "क्या हुआ और आपने क्या उम्मीद की थी?";
 "What happened today? What helped?" = "आज क्या हुआ? किस चीज़ ने मदद की?";
 "What lifts your mood" = "आपका मूड क्या बेहतर करता है";

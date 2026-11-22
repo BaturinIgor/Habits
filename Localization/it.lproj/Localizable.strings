@@ -453,6 +453,7 @@
 "No entries yet" = "Ancora nessuna voce";
 "No fast food" = "Niente fast food";
 "No group" = "Nessun gruppo";
+"No habit stands out yet: your mood is about the same on days with and without them." = "Nessuna abitudine spicca ancora: il tuo umore è simile nei giorni con e senza.";
 "No habits" = "Nessuna abitudine";
 "No habits are linked yet." = "Nessuna abitudine collegata.";
 "No habits are planned for this day." = "Nessuna abitudine prevista per questo giorno.";
@@ -485,6 +486,7 @@
 "Okay" = "Così così";
 "Older entries: %lld. Your full history is in Pro." = "Voci precedenti: %lld. Tutta la cronologia è in Pro.";
 "On" = "Sì";
+"On days with this habit, your mood is higher on average" = "Nei giorni con questa abitudine il tuo umore è in media più alto";
 "On target" = "Centrato";
 "On weekdays" = "Nei giorni feriali";
 "On weekends" = "Nel fine settimana";
@@ -549,6 +551,7 @@
 "Quitting: %@" = "Senza: %@";
 "Rate the app" = "Valuta l'app";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "Valuta la giornata con un tocco in fondo a Oggi e aggiungi qualche parola. Con Pro vedi tutta la cronologia, un grafico mensile e le abitudini che migliorano l'umore.";
+"Rate your mood for %@ more to see which habits go with your better days." = "Registra il tuo umore per altri %@ per vedere quali abitudini accompagnano le tue giornate migliori.";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "Valuta l'umore nella schermata Oggi una volta al giorno. Dopo un paio di settimane vedrai quali abitudini lo migliorano.";
 "Reach a daily goal 20 times" = "Raggiungi un obiettivo giornaliero 20 volte";
 "Reach a weekly goal 4 times" = "Raggiungi un obiettivo settimanale 4 volte";
@@ -596,6 +599,7 @@
 "See how much money you save by quitting a habit." = "Scopri quanti soldi risparmi smettendo un'abitudine.";
 "See how much you've saved with Pro" = "Scopri quanto hai risparmiato con Pro";
 "See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "Le abitudini di oggi al polso, da spuntare con un tocco. Tutto si sincronizza con l'iPhone. Se ZenHab non compare sull'orologio, installalo dall'app Watch sull'iPhone.";
+"See which habits go with your better days" = "Scopri quali abitudini accompagnano le tue giornate migliori";
 "See which habits make your days better" = "Scopri quali abitudini migliorano le tue giornate";
 "Send" = "Invia";
 "Send by email" = "Invia via e-mail";
@@ -691,6 +695,7 @@
 "There are no purchases yet: this switch turns Pro features on for testing." = "Non ci sono ancora acquisti: questo interruttore attiva le funzioni Pro per i test.";
 "There's a backup in your iCloud from %@. Habits in it: %lld." = "Nel tuo iCloud c'è un backup del %@. Abitudini: %lld.";
 "This group and its habits will be removed from this iPhone." = "Il gruppo e le sue abitudini verranno rimossi da questo iPhone.";
+"This is a pattern in your entries, not proof that the habit is the cause." = "È una tendenza nelle tue registrazioni, non la prova che l'abitudine ne sia la causa.";
 "Tidy up for 10 minutes" = "Riordinare per 10 minuti";
 "Time" = "Ora";
 "Time for your habit" = "È l'ora della tua abitudine";
@@ -757,6 +762,7 @@
 "Welcome to Habit Tracker" = "Benvenuto in Tracker di Abitudini";
 "What %@ gives you" = "Cosa ti dà %@";
 "What ZenHab reads" = "Cosa legge ZenHab";
+"What goes with a better mood" = "Cosa accompagna un umore migliore";
 "What happened and what did you expect?" = "Cosa è successo e cosa ti aspettavi?";
 "What happened today? What helped?" = "Cos'è successo oggi? Cosa ti ha aiutato?";
 "What lifts your mood" = "Cosa migliora il tuo umore";

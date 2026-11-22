@@ -299,56 +299,71 @@ struct MoodJournalView: View {
         .reversed()
     }
 
+    /// Инсайты (KAN-137, Pro): топ-3 привычки, в дни с которыми настроение в среднем выше.
+    /// Без Pro - заголовок и замок, как и раньше: остальной дневник частично бесплатный.
     @ViewBuilder
     private func insightsCard(isPro: Bool) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(spacing: 8) {
-                Text("What lifts your mood")
+                Text("What goes with a better mood")
                     .font(.headline)
                 if !isPro { ProBadge() }
             }
             if isPro {
-                let impacts = MoodJournal.impacts(in: store.data)
-                if impacts.isEmpty {
-                    Text("Keep rating your mood. When there are enough days with and without each habit, you'll see how they relate.")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                } else {
+                switch MoodJournal.insights(in: store.data) {
+                case .ready(let impacts):
                     ForEach(impacts) { impact in
                         HStack(spacing: 12) {
                             HabitIconView(icon: impact.habit.icon, color: Palette.color(impact.habit.colorIndex), size: 34)
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(impact.habit.name)
                                     .font(.subheadline.weight(.semibold))
-                                Text(impactText(impact))
+                                Text("On days with this habit, your mood is higher on average")
                                     .font(.caption)
                                     .foregroundStyle(.secondary)
+                                    .fixedSize(horizontal: false, vertical: true)
                             }
                             Spacer(minLength: 0)
                             Text(impact.delta, format: .number.precision(.fractionLength(1)).sign(strategy: .always()))
                                 .font(.subheadline.weight(.bold))
                                 .monospacedDigit()
-                                .foregroundStyle(impact.delta > 0 ? .green : .orange)
+                                .foregroundStyle(.green)
                         }
+                        .accessibilityElement(children: .combine)
                     }
+                    Text("This is a pattern in your entries, not proof that the habit is the cause.")
+                        .font(.caption2)
+                        .foregroundStyle(.tertiary)
+                        .fixedSize(horizontal: false, vertical: true)
+                case .needMoreDays(let days):
+                    Label {
+                        Text("Rate your mood for \(Fmt.days(days)) more to see which habits go with your better days.")
+                            .fixedSize(horizontal: false, vertical: true)
+                    } icon: {
+                        Image(systemName: "hourglass")
+                    }
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .accessibilityIdentifier("mood.insights.needMore")
+                case .noLift:
+                    Text("No habit stands out yet: your mood is about the same on days with and without them.")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
             } else {
                 Button {
                     showingPaywall = true
                 } label: {
-                    Label("See which habits make your days better", systemImage: "lock.fill")
+                    Label("See which habits go with your better days", systemImage: "lock.fill")
                         .font(.subheadline)
+                        .multilineTextAlignment(.leading)
                 }
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .card(padding: 16, cornerRadius: 22)
-    }
-
-    private func impactText(_ impact: MoodJournal.Impact) -> String {
-        impact.delta > 0
-            ? String(localized: "Mood is higher on days you do it")
-            : String(localized: "Mood is lower on days you do it")
+        .accessibilityIdentifier("mood.insights")
     }
 
     private func entriesCard(_ items: [MoodJournal.Item], isPro: Bool) -> some View {

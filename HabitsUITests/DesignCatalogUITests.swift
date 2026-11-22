@@ -86,6 +86,10 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "health-03-health-settings-free", screen: "healthSettings", flags: ["-uitest-free"]),
         Shot(name: "health-04-editor", screen: "editorHealth"),
         Shot(name: "health-05-editor-free", screen: "editorHealth", flags: ["-uitest-free"]),
+        // 1.7, KAN-137: инсайты настроения (Pro), мало данных и бесплатная версия
+        Shot(name: "insights-01-top", screen: "moodInsights"),
+        Shot(name: "insights-02-few-days", screen: "moodInsightsFew"),
+        Shot(name: "insights-03-free", screen: "moodInsights", flags: ["-uitest-free"]),
         // Обратная связь
         Shot(name: "50-feedback", screen: "feedback"),
         Shot(name: "51-feedback-send-options", screen: "feedback", alert: "sendOptions"),
