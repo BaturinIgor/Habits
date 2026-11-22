@@ -112,6 +112,8 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "onb-03-habits", screen: "onboardingHabits", flags: ["-uitest-empty"]),
         Shot(name: "onb-04-summary", screen: "onboardingSummary", flags: ["-uitest-empty"]),
         Shot(name: "onb-05-paywall", screen: "onboardingPaywall", flags: ["-uitest-empty", "-uitest-free"]),
+        // Низ пейволла онбординга: планы с ценами из StoreKit-конфига и текст о пробной неделе.
+        Shot(name: "onb-12-paywall-plans", screen: "onboardingPaywall", flags: ["-uitest-empty", "-uitest-free"], swipes: 3),
         Shot(name: "onb-06-today-first-check", screen: "today", flags: ["-uitest-firstday"]),
         Shot(name: "onb-07-today-celebrate", screen: "today", flags: ["-uitest-firstday-checked"]),
         Shot(name: "onb-08-goal-large", screen: "onboardingGoal", flags: ["-uitest-empty"] + largeText),
@@ -122,6 +124,7 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "offer-01-today", screen: "today", flags: ["-uitest-free", "-uitest-offer"]),
         Shot(name: "offer-02-settings", screen: "settings", flags: ["-uitest-free", "-uitest-offer"]),
         Shot(name: "offer-03-paywall", screen: "offerPaywall", flags: ["-uitest-free", "-uitest-offer"]),
+        Shot(name: "offer-04-paywall-plans", screen: "offerPaywall", flags: ["-uitest-free", "-uitest-offer"], swipes: 3),
         // 1.7, KAN-114 и KAN-116: крупный шрифт (Accessibility XL) и дни недели в тепловой карте
         Shot(name: "a11y-01-stats-xl", screen: "stats", flags: xl),
         Shot(name: "a11y-02-stats-scrolled-xl", screen: "stats", flags: xl, swipes: 2),
@@ -205,6 +208,13 @@ final class DesignCatalogUITests: XCTestCase {
                     || app.descendants(matching: .any).matching(identifier: "screen.onboarding").firstMatch.exists
             }
             if !ready { missing.append(shot.name) }
+            // Пейволл: ждём планы с ценами из StoreKit-конфига, иначе на снимке крутится индикатор загрузки.
+            if shot.screen.lowercased().contains("paywall") {
+                let plan = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH %@", "paywall.plan."))
+                if !plan.firstMatch.waitForExistence(timeout: 20) { missing.append("\(shot.name) (no prices)") }
+                // Плашка пробной недели появляется после проверки права на пробный период (без Pro).
+                _ = app.descendants(matching: .any).matching(identifier: "paywall.trial").firstMatch.waitForExistence(timeout: 8)
+            }
             for _ in 0..<shot.swipes { app.swipeUp() }
             // Даём анимациям закончиться.
             sleep(2)

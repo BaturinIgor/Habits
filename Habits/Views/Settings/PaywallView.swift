@@ -261,6 +261,8 @@ extension PaywallView {
             )
         }
         .buttonStyle(.plain)
+        // Макеты ждут, пока StoreKit отдаст планы с ценами (DesignCatalogUITests).
+        .accessibilityIdentifier("paywall.plan.\(product.id)")
     }
 
     private func featureRow(_ feature: ProFeature, highlighted: Bool) -> some View {
@@ -329,8 +331,12 @@ extension PaywallView {
     private func loadTrialEligibility() async {
         var eligible: Set<String> = []
         for product in shop.products {
-            if let sub = product.subscription, sub.introductoryOffer?.paymentMode == .freeTrial,
-               await sub.isEligibleForIntroOffer {
+            // В макетах — состояние новой установки: право на пробную неделю в локальном StoreKit
+            // после тестовых покупок то есть, то нет, и снимки выходили разными.
+            guard let sub = product.subscription, sub.introductoryOffer?.paymentMode == .freeTrial else { continue }
+            if TestMode.has("-design") {
+                eligible.insert(product.id)
+            } else if await sub.isEligibleForIntroOffer {
                 eligible.insert(product.id)
             }
         }
