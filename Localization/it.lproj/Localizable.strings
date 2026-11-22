@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / anno";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@ costa %lld scintille, ne hai %lld. Te ne mancano %lld. Segna abitudini per guadagnarle.";
 "%@ costs %lld sparks. You have %lld." = "%@ costa %lld scintille. Ne hai %lld.";
+"%@ for the first year" = "%@ il primo anno";
 "%@ free, then %@. Cancel anytime." = "%1$@ gratis, poi %2$@. Disdici quando vuoi.";
 "%@ is already done today." = "%@ è già fatto oggi.";
 "%@: the streak broke" = "%@: serie interrotta";
@@ -24,6 +25,7 @@
 "1 spark for each check-in, up to %lld a day" = "1 scintilla per ogni spunta, fino a %lld al giorno";
 "30 perfect days in a row" = "30 giorni perfetti di fila";
 "7 perfect days in a row" = "7 giorni perfetti di fila";
+"A calm evening and a steady routine" = "Una serata tranquilla e una routine regolare";
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "Una copia delle tue abitudini e della cronologia viene salvata da sola nel tuo iCloud quando esci dall'app. Cambiando telefono non perdi nulla.";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "Un conto alla rovescia sulla schermata di blocco e nella Dynamic Island che spunta l'abitudine allo scadere del tempo.";
 "A grown pet brings up to +5 a day" = "Un cucciolo cresciuto porta fino a +5 al giorno";
@@ -54,6 +56,7 @@
 "Adopt a pet" = "Adotta un cucciolo";
 "Advanced" = "Avanzato";
 "After habit" = "Dopo l'abitudine";
+"After the first year, Pro renews at the regular price. Cancel anytime." = "Dopo il primo anno, Pro si rinnova al prezzo normale. Annulla quando vuoi.";
 "After: %@" = "Dopo: %@";
 "Afternoon" = "Pomeriggio";
 "All" = "Tutte";
@@ -88,6 +91,7 @@
 "Avatars" = "Avatar";
 "Awful" = "Pessimo";
 "Baby" = "Cucciolo";
+"Back" = "Indietro";
 "Back up now" = "Salva ora";
 "Back up to iCloud" = "Backup su iCloud";
 "Background" = "Sfondo";
@@ -99,6 +103,7 @@
 "Best current streak" = "Miglior serie attuale";
 "Best streak" = "Serie migliore";
 "Best, days" = "Record, giorni";
+"Better sleep" = "Dormire meglio";
 "Better than nothing" = "Meglio di niente";
 "Blue" = "Blu";
 "Break bad habits" = "Smettere le cattive abitudini";
@@ -115,6 +120,7 @@
 "By habit" = "Per abitudine";
 "By time" = "Per ora";
 "Call family" = "Chiamare la famiglia";
+"Calm" = "Calma";
 "Cancel" = "Annulla";
 "Cat" = "Gatto";
 "Chain reaction" = "Reazione a catena";
@@ -148,6 +154,7 @@
 "Clear your inbox" = "Svuotare la posta in arrivo";
 "Clearer Pro" = "Pro più chiaro";
 "Close" = "Chiudi";
+"Code: %@" = "Codice: %@";
 "Collector" = "Collezionista";
 "Come back after a miss 10 times" = "Riprendi dopo un salto 10 volte";
 "Comeback" = "Ritorno";
@@ -158,9 +165,11 @@
 "Completion" = "Completamento";
 "Consistency" = "Costanza";
 "Continue" = "Continua";
+"Continue for free" = "Continua gratis";
 "Control Center" = "Centro di Controllo";
 "Copied" = "Copiato";
 "Copy address" = "Copia indirizzo";
+"Copy code" = "Copia codice";
 "Copy message" = "Copia messaggio";
 "Copy message and address" = "Copia messaggio e indirizzo";
 "Coral" = "Corallo";
@@ -226,6 +235,7 @@
 "End" = "Fine";
 "End date" = "Data di fine";
 "Ended" = "Terminata";
+"Energy" = "Energia";
 "Evening" = "Sera";
 "Evening summary" = "Riepilogo serale";
 "Every" = "Ogni";
@@ -262,9 +272,12 @@
 "Fifty" = "Cinquanta";
 "Finance" = "Finanze";
 "Finish and check off" = "Termina e spunta";
+"First check-in done!" = "Prima spunta fatta!";
 "First step" = "Primo passo";
 "First time" = "Prima volta";
+"First year of Pro %@ off" = "Il primo anno di Pro scontato del %@";
 "Fitness" = "Sport";
+"Focus" = "Concentrazione";
 "Focus for an hour" = "Un'ora di concentrazione";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "Per le cattive abitudini: fumo, dolci, alcol, scrolling.";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "Per esempio, 8 bicchieri d'acqua. Ogni tocco sul cerchio aggiunge uno.";
@@ -282,10 +295,12 @@
 "Full mood journal" = "Diario dell'umore completo";
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Passa a Pro sull'iPhone per usare il timer su Apple Watch.";
 "Get a pet" = "Prendi un cucciolo";
+"Get the discount" = "Ottieni lo sconto";
 "Go to bed on time" = "Andare a letto in orario";
 "Goal" = "Obiettivo";
 "Gold" = "Oro";
 "Good" = "Bene";
+"Got it" = "Ok";
 "Graphite" = "Grafite";
 "Great" = "Benissimo";
 "Great job, keep it up" = "Ottimo lavoro, continua così";
@@ -319,6 +334,7 @@
 "Hours of sleep" = "Ore di sonno";
 "How are you feeling?" = "Come ti senti?";
 "How are you today?" = "Come stai oggi?";
+"How it works" = "Come funziona";
 "How many habits are done today." = "Quante abitudini sono state fatte oggi.";
 "How often" = "Frequenza";
 "How to earn" = "Come guadagnare";
@@ -377,12 +393,14 @@
 "Learn words" = "Imparare parole";
 "Learned: %lld of %lld" = "Imparate: %lld su %lld";
 "Learning" = "Apprendimento";
+"Learning and languages" = "Studio e lingue";
 "Leave group" = "Esci dal gruppo";
 "Leave group?" = "Uscire dal gruppo?";
 "Left for today: %@." = "Restano per oggi: %@.";
 "Legend" = "Leggenda";
 "Less" = "Meno";
 "Less social media" = "Meno social";
+"Less stress, more balance" = "Meno stress, più equilibrio";
 "Let's go" = "Andiamo";
 "Let's keep the streak going!" = "Teniamo viva la serie!";
 "Let's start with your first habit" = "Iniziamo dalla tua prima abitudine";
@@ -435,6 +453,7 @@
 "Morning" = "Mattina";
 "Morning exercises" = "Ginnastica mattutina";
 "Most steady: %@, %lld of %lld" = "La più costante: %@, %lld su %lld";
+"Move to %@" = "Sposta alle %@";
 "Move to archive" = "Sposta in archivio";
 "My month" = "Il mio mese";
 "My week" = "La mia settimana";
@@ -442,6 +461,7 @@
 "N times a week" = "N volte a settimana";
 "Name" = "Nome";
 "Never" = "Mai";
+"New Year offer" = "Offerta di Capodanno";
 "New achievement!" = "Nuovo traguardo!";
 "New app icons" = "Nuove icone dell'app";
 "New group" = "Nuovo gruppo";
@@ -462,6 +482,7 @@
 "No entries yet" = "Ancora nessuna voce";
 "No fast food" = "Niente fast food";
 "No group" = "Nessun gruppo";
+"No habit stands out yet: your mood is about the same on days with and without them." = "Nessuna abitudine spicca ancora: il tuo umore è simile nei giorni con e senza.";
 "No habits" = "Nessuna abitudine";
 "No habits are linked yet." = "Nessuna abitudine collegata.";
 "No habits are planned for this day." = "Nessuna abitudine prevista per questo giorno.";
@@ -477,6 +498,7 @@
 "Not available" = "Non disponibili";
 "Not checked off yet: %@" = "Non ancora segnate: %@";
 "Not enough sparks" = "Scintille insufficienti";
+"Not now" = "Non ora";
 "Not set up" = "Non configurate";
 "Not yet" = "Non ancora";
 "Note" = "Nota";
@@ -494,6 +516,7 @@
 "Okay" = "Così così";
 "Older entries: %lld. Your full history is in Pro." = "Voci precedenti: %lld. Tutta la cronologia è in Pro.";
 "On" = "Sì";
+"On days with this habit, your mood is higher on average" = "Nei giorni con questa abitudine il tuo umore è in media più alto";
 "On target" = "Centrato";
 "On weekdays" = "Nei giorni feriali";
 "On weekends" = "Nel fine settimana";
@@ -536,9 +559,11 @@
 "Pet gifts" = "Regali del cucciolo";
 "Pet name" = "Nome del cucciolo";
 "Phoenix" = "Fenice";
+"Pick a goal and we'll set up your first habits. You can change everything later." = "Scegli un obiettivo e prepareremo le tue prime abitudini. Potrai cambiare tutto in seguito.";
 "Pick a template or create your own." = "Scegli un modello o creane uno tuo.";
 "Pink" = "Rosa";
 "Plan the day" = "Pianificare la giornata";
+"Plan the day and get things done" = "Pianifica la giornata e porta a termine le cose";
 "Practice an instrument" = "Suonare uno strumento";
 "Privacy Policy" = "Informativa sulla privacy";
 "Pro gifts" = "Regali Pro";
@@ -561,11 +586,13 @@
 "Raspberry" = "Lampone";
 "Rate the app" = "Valuta l'app";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "Valuta la giornata con un tocco in fondo a Oggi e aggiungi qualche parola. Con Pro vedi tutta la cronologia, un grafico mensile e le abitudini che migliorano l'umore.";
+"Rate your mood for %@ more to see which habits go with your better days." = "Registra il tuo umore per altri %@ per vedere quali abitudini accompagnano le tue giornate migliori.";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "Valuta l'umore nella schermata Oggi una volta al giorno. Dopo un paio di settimane vedrai quali abitudini lo migliorano.";
 "Reach a daily goal 20 times" = "Raggiungi un obiettivo giornaliero 20 volte";
 "Reach a weekly goal 4 times" = "Raggiungi un obiettivo settimanale 4 volte";
 "Read" = "Leggere";
 "Reading" = "Lettura";
+"Reading, study and new words" = "Lettura, studio e parole nuove";
 "Reflective" = "Riflessivo";
 "Refresh widgets" = "Aggiorna i widget";
 "Regular" = "Habitué";
@@ -609,6 +636,7 @@
 "See how much money you save by quitting a habit." = "Scopri quanti soldi risparmi smettendo un'abitudine.";
 "See how much you've saved with Pro" = "Scopri quanto hai risparmiato con Pro";
 "See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "Le abitudini di oggi al polso, da spuntare con un tocco. Tutto si sincronizza con l'iPhone. Se ZenHab non compare sull'orologio, installalo dall'app Watch sull'iPhone.";
+"See which habits go with your better days" = "Scopri quali abitudini accompagnano le tue giornate migliori";
 "See which habits make your days better" = "Scopri quali abitudini migliorano le tue giornate";
 "Send" = "Invia";
 "Send by email" = "Invia via e-mail";
@@ -637,6 +665,7 @@
 "Sleeping" = "Dorme";
 "Small steps add up." = "I piccoli passi si sommano.";
 "Small steps every day" = "Piccoli passi ogni giorno";
+"Smart time" = "Orario intelligente";
 "Some days" = "Alcuni giorni";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Ordina la schermata Oggi per gruppi in Impostazioni e tieni premuto il widget Oggi per mostrare un gruppo.";
 "Sparks" = "Scintille";
@@ -653,10 +682,12 @@
 "Start over" = "Ricomincia";
 "Start the count again?" = "Ricominciare il conto?";
 "Start timer" = "Avvia timer";
+"Start with one check-in today. Small steps count." = "Inizia oggi con una sola spunta. Anche i piccoli passi contano.";
 "Starts a countdown with a Live Activity. When time's up, the habit is checked off." = "Avvia un conto alla rovescia con un'attività in tempo reale. Allo scadere, l'abitudine viene spuntata.";
 "Statistics" = "Statistiche";
 "Statistics will appear once you start checking off habits." = "Le statistiche compariranno quando inizierai a segnare le abitudini.";
 "Status" = "Stato";
+"Step %lld of 3" = "Passo %lld di 3";
 "Steps" = "Passi";
 "Steps to reproduce help a lot." = "I passaggi per riprodurlo aiutano molto.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "I passaggi per riprodurre aiutano molto. Puoi allegare uno screenshot nell'email.";
@@ -684,6 +715,8 @@
 "Take vitamins" = "Prendere le vitamine";
 "Tangerine" = "Mandarino";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Tocca un giorno per segnarlo. Tieni premuto per saltarlo o aggiungere una nota.";
+"Tap the button and paste the code in the App Store window. You'll see the final price before you pay." = "Tocca il pulsante e incolla il codice nella finestra dell'App Store. Vedrai il prezzo finale prima di pagare.";
+"Tap the circle next to a habit to check it off. One is enough for today." = "Tocca il cerchio accanto a un'abitudine per spuntarla. Per oggi ne basta una.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Tocca il cerchio o scorri a destra per segnare. Scorri a sinistra per saltare, aggiungere una nota o modificare. Tieni premuto per riordinare.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Tocca il cerchio per avviare il timer. Scorre sulla schermata di blocco e spunta l'abitudine allo scadere.";
 "Tap the days when the habit should be done" = "Tocca i giorni in cui fare l'abitudine";
@@ -693,6 +726,8 @@
 "Tell us what you think" = "Dicci cosa ne pensi";
 "Terms of Use" = "Condizioni d'uso";
 "Thank you!" = "Grazie!";
+"That's how a streak starts. Come back tomorrow to keep it going." = "Ecco come inizia una serie. Torna domani per continuarla.";
+"That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "Ecco come inizia una serie. Vuoi un promemoria per non dimenticarti domani?";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "La schermata Pro ora elenca tutto ciò che include e si apre sulla funzione toccata.";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "Backup su iCloud: %@, %@, abitudini: %lld. Si aggiorna da solo quando esci dall'app. Le foto di avatar e sfondo non sono incluse.";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "La versione gratuita ha raggiunto il limite di abitudini. Apri ZenHab per passare a Pro.";
@@ -705,11 +740,16 @@
 "The mood card at the bottom of the list lets you rate your day with one tap." = "La scheda dell'umore in fondo all'elenco ti fa valutare la giornata con un tocco.";
 "The new language will apply after you close the app and open it again." = "La nuova lingua verrà applicata dopo aver chiuso e riaperto l'app.";
 "The purchase could not be verified." = "Impossibile verificare l'acquisto.";
+"The reminder already matches when you usually check off the habit." = "Il promemoria coincide già con l'ora in cui di solito segni l'abitudine.";
+"The reminder comes at %@. Move it to %@?" = "Il promemoria arriva alle %@. Spostarlo alle %@?";
+"The reminder moves closer to when you usually check off the habit." = "Il promemoria si avvicina all'ora in cui di solito segni l'abitudine.";
+"The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins." = "Il promemoria si avvicina all'ora in cui di solito segni l'abitudine. Servono circa due settimane di registrazioni.";
 "The streak broke" = "La serie si è interrotta";
 "The widget will update after unlocking." = "Il widget si aggiornerà dopo lo sblocco.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "Non ci sono ancora acquisti: questo interruttore attiva le funzioni Pro per i test.";
 "There's a backup in your iCloud from %@. Habits in it: %lld." = "Nel tuo iCloud c'è un backup del %@. Abitudini: %lld.";
 "This group and its habits will be removed from this iPhone." = "Il gruppo e le sue abitudini verranno rimossi da questo iPhone.";
+"This is a pattern in your entries, not proof that the habit is the cause." = "È una tendenza nelle tue registrazioni, non la prova che l'abitudine ne sia la causa.";
 "Tidy up for 10 minutes" = "Riordinare per 10 minuti";
 "Time" = "Ora";
 "Time for your habit" = "È l'ora della tua abitudine";
@@ -735,8 +775,10 @@
 "Track expenses" = "Annotare le spese";
 "Track habits, get gentle reminders and watch your streaks grow." = "Segui le abitudini, ricevi promemoria gentili e guarda crescere le tue serie.";
 "Track your habits with ZenHab" = "Segui le tue abitudini con ZenHab";
+"Try Pro free for %@" = "Prova Pro gratis per %@";
 "Try again" = "Riprova";
 "Try it" = "Prova";
+"Turn on reminders" = "Attiva i promemoria";
 "Turn on the lock" = "Attiva il blocco";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "Attiva “Sto smettendo” in un'abitudine per vedere da quanti giorni ne fai a meno, il record e il prossimo traguardo. Con Pro, anche i soldi risparmiati.";
 "Turquoise" = "Turchese";
@@ -744,6 +786,7 @@
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Due salti al mese non interrompono la serie, e nei giorni difficili conta anche la versione minima.";
 "Two weeks" = "Due settimane";
 "Uncheck" = "Togli spunta";
+"Uncheck what you don't need. You can add more from the catalog later." = "Togli la spunta a ciò che non ti serve. Potrai aggiungerne altre dal catalogo in seguito.";
 "Undo skip" = "Annulla salto";
 "Unicorn" = "Unicorno";
 "Unit" = "Unità";
@@ -757,6 +800,7 @@
 "Unlock: %@" = "Come sbloccare: %@";
 "Unstoppable" = "Inarrestabile";
 "Until" = "Fino al";
+"Until %@" = "Fino al %@";
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "Finché l'abitudine non è segnata, il promemoria si ripete: %@. \"Fatto\" e \"Salta\" nella notifica fermano le ripetizioni per quel giorno.";
 "Version" = "Versione";
 "Veteran" = "Veterano";
@@ -768,6 +812,7 @@
 "Warming up" = "Riscaldamento";
 "Watch face complications" = "Complicazioni sul quadrante";
 "Water, liters" = "Acqua, litri";
+"Water, movement and fresh air" = "Acqua, movimento e aria aperta";
 "Week" = "Settimana";
 "Week in review" = "Riepilogo della settimana";
 "Weekdays" = "Feriali";
@@ -778,6 +823,8 @@
 "Welcome to Habit Tracker" = "Benvenuto in Tracker di Abitudini";
 "What %@ gives you" = "Cosa ti dà %@";
 "What ZenHab reads" = "Cosa legge ZenHab";
+"What do you want to work on?" = "Su cosa vuoi lavorare?";
+"What goes with a better mood" = "Cosa accompagna un umore migliore";
 "What happened and what did you expect?" = "Cosa è successo e cosa ti aspettavi?";
 "What happened today? What helped?" = "Cos'è successo oggi? Cosa ti ha aiutato?";
 "What lifts your mood" = "Cosa migliora il tuo umore";
@@ -800,6 +847,7 @@
 "Work, travel and conversation" = "Lavoro, viaggi e conversazione";
 "Workout" = "Allenamento";
 "Workouts" = "Allenamenti";
+"Workouts and an active day" = "Allenamenti e una giornata attiva";
 "Write 10 notes" = "Scrivi 10 note";
 "Write 50 notes" = "Scrivi 50 note";
 "Write down 3 good things" = "Scrivere 3 cose belle";
@@ -809,10 +857,14 @@
 "Yesterday" = "Ieri";
 "Yoga" = "Yoga";
 "You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "Puoi consentire o negare l'accesso a ogni tipo di dato in Impostazioni → Privacy e sicurezza → Salute → ZenHab.";
+"You usually check it off around %@" = "Di solito la segni verso le %@";
+"You usually check it off around %@. The reminder will move to %@." = "Di solito la segni verso le %@. Il promemoria passerà alle %@.";
 "You're doing great!" = "Stai andando alla grande!";
 "You've gone through the whole dictionary" = "Hai completato tutto il dizionario";
 "Young" = "Giovane";
 "Your days and the habits that lift your mood" = "Le tue giornate e le abitudini che migliorano l'umore";
+"Your first habits" = "Le tue prime abitudini";
+"Your first step" = "Il tuo primo passo";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Abitudini e cronologia vengono salvate da sole nel tuo iCloud. Su un nuovo iPhone, ZenHab ti propone di recuperare tutto.";
 "Your habits stay on your iPhone and in your own iCloud." = "Le tue abitudini restano sul tuo iPhone e nel tuo iCloud.";
 "Your habits stay only on your iPhone." = "Le tue abitudini restano solo sul tuo iPhone.";
@@ -823,6 +875,7 @@
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Il tuo cucciolo cresce con ogni abitudine segnata e si intristisce se sparisci per qualche giorno.";
 "Your pet's mood and feeding right from the Home Screen." = "L'umore del tuo cucciolo e il cibo direttamente dalla schermata Home.";
 "Your photo" = "La tua foto";
+"Your plan is ready" = "Il tuo piano è pronto";
 "Your week in review" = "Il riepilogo della tua settimana";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "Tutta la cronologia dell'umore, un grafico mensile e le abitudini che lo migliorano.";
 "Your year in review" = "Il riepilogo del tuo anno";

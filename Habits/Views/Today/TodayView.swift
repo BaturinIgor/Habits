@@ -1,6 +1,7 @@
 import Combine
 import SwiftUI
 import UIKit
+import UserNotifications
 
 extension View {
     /// Строка списка без фона и разделителей, с отступами как у карточек.
@@ -45,6 +46,9 @@ struct TodayView: View {
     @AppStorage("monthlyRecapDismissed") private var monthRecapDismissed = ""
     @AppStorage("yearlyRecapDismissed") private var yearRecapDismissed = ""
     @State private var showingPaywall = false
+    /// KAN-125: новогоднее предложение. Крестик прячет карточку до конца акции (ключ с кодом акции).
+    @State private var showingOfferPaywall = false
+    @AppStorage("newYearOfferDismissed") private var offerDismissed = ""
     @State private var editingHabit: Habit?
     @State private var templateHabit: Habit?
     @State private var noteTarget: NoteTarget?
@@ -172,6 +176,17 @@ struct TodayView: View {
                 DayProgressCard(progress: progress, isFuture: isFuture, celebrate: isToday)
                     .plainRow(top: 6, bottom: 6)
 
+                // Пока активна карточка первого дня (KAN-169), предложение не показываем: первый день важнее.
+                if isToday && offerDismissed != NewYearOffer.code && OnboardingPlan.firstDay(store.data) == nil
+                    && NewYearOffer.isShown(isPro: store.data.isPro) {
+                    NewYearOfferBanner {
+                        showingOfferPaywall = true
+                    } onClose: {
+                        withAnimation { offerDismissed = NewYearOffer.code }
+                    }
+                    .plainRow(top: 4, bottom: 6)
+                }
+
                 if store.data.wallet.pet != nil && isToday {
                     PetCard { showingPet = true }
                         .plainRow(top: 4, bottom: 6)
@@ -180,6 +195,13 @@ struct TodayView: View {
                 if !store.data.groups.isEmpty {
                     GroupFilterBar(selection: $groupFilter)
                         .plainRow(top: 4, bottom: 4, horizontal: 0)
+                }
+
+                // Первый день после онбординга (KAN-169): подсказка отметить первую привычку, потом поздравление.
+                if isToday, let firstDay = OnboardingPlan.firstDay(store.data), !store.data.habits.isEmpty {
+                    FirstDayCard(state: firstDay)
+                        .plainRow(top: 2, bottom: 4)
+                        .transition(.opacity.combined(with: .scale(scale: 0.96)))
                 }
 
                 if !store.data.settings.gestureHintShown && !visibleHabits.isEmpty && !isFuture {
@@ -285,6 +307,9 @@ struct TodayView: View {
             }
             .sheet(isPresented: $showingPaywall) {
                 PaywallView(highlight: .unlimited, source: .limit)
+            }
+            .sheet(isPresented: $showingOfferPaywall) {
+                PaywallView(source: .newYearOffer)
             }
             .sheet(isPresented: $showingProfile) {
                 ProfileView()
@@ -626,6 +651,122 @@ struct GestureHint: View {
     }
 }
 
+// MARK: - Первый день (1.7, KAN-169)
+
+/// Карточка первого дня на «Сегодня»: сначала подсказка отметить первую привычку, после отметки — поздравление
+/// и предложение включить напоминания (тут, а не на старте, спрашиваем разрешение на уведомления).
+struct FirstDayCard: View {
+    @Environment(HabitStore.self) private var store
+    @Environment(\.dynamicTypeSize) private var typeSize
+    let state: OnboardingPlan.FirstDay
+    /// Разрешение на уведомления ещё не спрашивали: показываем кнопку «Включить напоминания».
+    @State private var canAskNotifications = false
+
+    var body: some View {
+        Group {
+            switch state {
+            case .hint: hint
+            case .celebrate: celebration
+            }
+        }
+        .card(padding: 16, cornerRadius: 22)
+        .task(id: state) {
+            guard state == .celebrate else { return }
+            // В макетах — вариант с вопросом о напоминаниях, даже если симулятор уже дал разрешение.
+            let status = await NotificationPlanner.authorizationStatus()
+            canAskNotifications = TestMode.has("-design") || status == .notDetermined
+            UIAccessibility.post(notification: .announcement, argument: String(localized: "First check-in done!"))
+        }
+        .sensoryFeedback(.success, trigger: state == .celebrate)
+    }
+
+    private var hint: some View {
+        HStack(alignment: .top, spacing: 14) {
+            Image(systemName: "hand.tap.fill")
+                .font(.system(size: 20, weight: .semibold))
+                .foregroundStyle(.white)
+                .frame(width: 44, height: 44)
+                .background(Circle().fill(Color.accentColor.gradient))
+                .symbolEffect(.bounce, options: .repeat(2))
+                .accessibilityHidden(true)
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Your first step")
+                    .font(.headline)
+                Text("Tap the circle next to a habit to check it off. One is enough for today.")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            Spacer(minLength: 0)
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityIdentifier("today.firstDay.hint")
+    }
+
+    private var celebration: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(alignment: .top, spacing: 14) {
+                Image(systemName: "party.popper.fill")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundStyle(.white)
+                    .frame(width: 44, height: 44)
+                    .background(Circle().fill(LinearGradient(
+                        colors: [Color(red: 1, green: 0.62, blue: 0.26), Color(red: 0.92, green: 0.23, blue: 0.35)],
+                        startPoint: .topLeading, endPoint: .bottomTrailing
+                    )))
+                    .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("First check-in done!")
+                        .font(.headline)
+                    Text(canAskNotifications
+                         ? "That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?"
+                         : "That's how a streak starts. Come back tomorrow to keep it going.")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                Spacer(minLength: 0)
+            }
+            .accessibilityElement(children: .combine)
+            .accessibilityAddTraits(.isHeader)
+
+            let layout = typeSize.isAccessibilitySize
+                ? AnyLayout(VStackLayout(spacing: 8)) : AnyLayout(HStackLayout(spacing: 10))
+            layout {
+                if canAskNotifications {
+                    Button {
+                        Task {
+                            await NotificationPlanner.requestAuthorizationIfNeeded()
+                            await store.reschedule()
+                            close()
+                        }
+                    } label: {
+                        Text("Turn on reminders")
+                            .font(.subheadline.weight(.semibold))
+                            .frame(maxWidth: .infinity)
+                    }
+                    .glassButtonStyle(prominent: true)
+                    .accessibilityIdentifier("today.firstDay.reminders")
+                }
+                Button {
+                    close()
+                } label: {
+                    Text(canAskNotifications ? "Not now" : "Got it")
+                        .font(.subheadline.weight(.semibold))
+                        .frame(maxWidth: .infinity)
+                }
+                .glassButtonStyle()
+                .accessibilityIdentifier("today.firstDay.close")
+            }
+        }
+        .accessibilityIdentifier("today.firstDay.celebrate")
+    }
+
+    private func close() {
+        withAnimation { store.updateSettings { $0.firstDayGuide = false } }
+    }
+}
+
 // MARK: - Фильтр по группам
 
 struct GroupFilterBar: View {
@@ -753,6 +894,10 @@ struct DayProgressCard: View {
                         .font(.subheadline.weight(.bold))
                         .monospacedDigit()
                         .contentTransition(.numericText())
+                        // Кольцо фиксированного размера: при крупном шрифте «68%» обрезалось до «6…».
+                        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+                        .minimumScaleFactor(0.7)
+                        .lineLimit(1)
                 }
             }
             .frame(width: 72, height: 72)
@@ -826,6 +971,7 @@ struct ConfettiBurst: View {
 // MARK: - Карточка привычки
 
 struct HabitCard: View {
+    @Environment(\.dynamicTypeSize) private var typeSize
     enum TimerInfo: Equatable {
         case running(ClosedRange<Date>)
         case idle(Int)
@@ -906,7 +1052,11 @@ struct HabitCard: View {
 
     @ViewBuilder
     private var details: some View {
-        HStack(spacing: 10) {
+        // При крупном шрифте строка подробностей не влезала («8:…»): по одной в строке, с переносом.
+        let layout = typeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4))
+            : AnyLayout(HStackLayout(spacing: 10))
+        layout {
             if status == .skipped {
                 Text("Skipped")
             }
@@ -962,7 +1112,7 @@ struct HabitCard: View {
         .font(.caption.weight(.medium))
         .foregroundStyle(.secondary)
         .labelStyle(CompactLabelStyle())
-        .lineLimit(1)
+        .lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
     }
 
     private var amountText: String {

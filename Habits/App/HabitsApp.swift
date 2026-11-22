@@ -19,7 +19,8 @@ struct HabitsApp: App {
                     // Блокировка по Face ID при запуске.
                     AppLock.shared.lock()
                     await AppLock.shared.unlockIfNeeded()
-                    if store.data.settings.onboardingDone {
+                    // В первый день после онбординга разрешение спрашивает карточка после первой отметки (KAN-169).
+                    if store.data.settings.onboardingDone && !store.data.settings.firstDayGuide {
                         await NotificationPlanner.requestAuthorizationIfNeeded()
                     }
                     await store.reschedule()
@@ -29,6 +30,8 @@ struct HabitsApp: App {
             switch phase {
             case .active:
                 store.reloadFromDisk()
+                // Умное время: напоминания подстраиваются под обычное время отметки (KAN-135).
+                store.applySmartTimes()
                 Analytics.shared.appBecameActive()
                 Task { await AppLock.shared.unlockIfNeeded() }
                 Task {

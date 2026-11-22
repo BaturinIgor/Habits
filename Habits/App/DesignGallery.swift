@@ -9,12 +9,16 @@ enum DesignScreen: String, CaseIterable, Identifiable {
     // Вкладки
     case today, habits, stats, settings
     // Экраны внутри навигации
-    case habitDetail, quitDetail, notifications, todayScreen, groups, groupDetail, appIcon, backup, healthSettings
+    case habitDetail, quitDetail, smartSuggestion, notifications, todayScreen, groups, groupDetail, appIcon, backup, healthSettings
     // Шиты
-    case catalog, editorNew, editorEdit, editorTemplate, iconPicker, timer, recap, moodJournal, moodEntry
-    case editorHealth, profile, sparks, pet, petSwitched, petNaming, petSpecies, paywall, paywallFeature, feedback, voice, note, whatsNew
+    case catalog, editorNew, editorEdit, editorTemplate, iconPicker, timer, recap, moodJournal, moodEntry, moodInsights, moodInsightsFew
+    case editorHealth, smartEditor, smartEditorOff, profile, sparks, pet, petSwitched, petNaming, petSpecies, paywall, paywallFeature, feedback, voice, note, whatsNew
+    // 1.7, KAN-125: новогоднее предложение
+    case offerPaywall
     // Во весь экран
     case onboarding, words
+    // 1.7, KAN-121/KAN-122: шаги онбординга с выбранной целью «Энергия»
+    case onboardingGoal, onboardingHabits, onboardingSummary, onboardingPaywall
 
     var id: String { rawValue }
 
@@ -26,8 +30,8 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .habits: .tab(.habits)
         case .stats: .tab(.stats)
         case .settings: .tab(.settings)
-        case .habitDetail, .quitDetail, .notifications, .todayScreen, .groups, .groupDetail, .appIcon, .backup, .healthSettings: .push
-        case .onboarding, .words: .cover
+        case .habitDetail, .quitDetail, .smartSuggestion, .notifications, .todayScreen, .groups, .groupDetail, .appIcon, .backup, .healthSettings: .push
+        case .onboarding, .words, .onboardingGoal, .onboardingHabits, .onboardingSummary, .onboardingPaywall: .cover
         default: .sheet
         }
     }
@@ -56,6 +60,9 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         // 1.6, App Review 2.5.1: интеграция с Apple Health видна в интерфейсе.
         case .healthSettings: HealthSettingsView(scrollToLinked: true)
         case .editorHealth: DesignGallery.HealthEditor()
+        // 1.7, KAN-135: умное время напоминаний.
+        case .smartSuggestion: HabitDetailView(habitID: UITestSupport.id(1))
+        case .smartEditor, .smartEditorOff: DesignGallery.ReminderEditor(id: UITestSupport.id(1))
         case .catalog: HabitCatalogView()
         case .editorNew: HabitEditorView(habit: nil)
         case .editorEdit: DesignGallery.Editor(id: UITestSupport.id(1))
@@ -64,6 +71,8 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .timer: DesignGallery.TimerSheet()
         case .recap: DesignGallery.RecapScreen()
         case .moodJournal: MoodJournalView()
+        // 1.7, KAN-137: инсайты настроения в дневнике.
+        case .moodInsights, .moodInsightsFew: MoodJournalView()
         case .moodEntry: MoodEntryEditor(dayKey: DayKey.make(Date()))
         case .profile: ProfileView()
         case .sparks: SparksView()
@@ -73,11 +82,16 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .petSpecies: PetView(scrollToSpecies: true)
         case .paywall: PaywallView(source: .settings)
         case .paywallFeature: PaywallView(highlight: .health, source: .feature)
+        case .offerPaywall: PaywallView(source: .newYearOffer)
         case .feedback: FeedbackView()
         case .voice: VoiceHabitSheet { _ in }
         case .note: NoteEditorView(target: NoteTarget(habitID: UITestSupport.id(1), day: DayKey.make(Date())))
         case .whatsNew: WhatsNewView {}
         case .onboarding: OnboardingView()
+        case .onboardingGoal: OnboardingView(step: .goal, goal: .energy)
+        case .onboardingHabits: OnboardingView(step: .habits, goal: .energy)
+        case .onboardingSummary: OnboardingView(step: .summary, goal: .energy)
+        case .onboardingPaywall: OnboardingView(step: .paywall, goal: .energy)
         case .words: WordsSessionView(habitID: UITestSupport.id(8))
         case .today, .habits, .stats, .settings: EmptyView()
         }
@@ -120,6 +134,34 @@ enum DesignGallery {
         for offset in -20 ... -1 { pet.feeds[DayKey.make(day(offset))] = 2 }
         data.wallet.pet = pet
 
+        // 1.7, KAN-135: зарядку обычно отмечают около 8:40, а напоминание в 7:30 - предложение сдвинуть.
+        if [.smartSuggestion, .smartEditor, .smartEditorOff].contains(DesignScreen.requested) {
+            let calendar = Calendar.app
+            for offset in -21 ... -2 {
+                let key = DayKey.make(day(offset))
+                let minute = [35, 40, 45, 40, 50, 38, 42][(offset + 21) % 7]
+                guard var checkIn = data.checkIns[AppData.key(UITestSupport.id(1), key)],
+                      let time = calendar.date(bySettingHour: 8, minute: minute, second: 0, of: day(offset)) else { continue }
+                checkIn.updatedAt = time
+                checkIn.tz = TimeZone.current.secondsFromGMT(for: time)
+                data.checkIns[AppData.key(UITestSupport.id(1), key)] = checkIn
+            }
+            if DesignScreen.requested == .smartEditor, let index = data.habits.firstIndex(where: { $0.id == UITestSupport.id(1) }) {
+                data.habits[index].smartTime = true
+            }
+        }
+
+        // 1.7, KAN-137: месяц настроения, в дни медитации и чтения оно заметно выше, в дни воды - чуть выше.
+        // Для состояния «мало данных» - только четыре последних дня.
+        if [.moodInsights, .moodInsightsFew].contains(DesignScreen.requested) {
+            data.moods = [:]
+            let range = DesignScreen.requested == .moodInsights ? -30 ... -1 : -4 ... -1
+            for offset in range {
+                let level = 2 + (offset % 3 != 0 ? 2 : 0) + (offset % 4 != 0 ? 1 : 0)
+                data.moods[DayKey.make(day(offset))] = MoodEntry(level: level, note: notes[(-offset) % 4], updatedAt: day(offset))
+            }
+        }
+
         // 1.6, KAN-105: питомец уже был котиком, потом стал лисёнком со своим именем.
         let requested = DesignScreen.requested
         if [.petSwitched, .petNaming, .petSpecies].contains(requested) {
@@ -153,6 +195,15 @@ enum DesignGallery {
             if let habit = store.data.activeHabits.first(where: { $0.health != nil }) {
                 HabitEditorView(habit: habit).scrollingToHealth()
             }
+        }
+    }
+
+    /// Редактор привычки сразу на разделе напоминания (умное время).
+    struct ReminderEditor: View {
+        @Environment(HabitStore.self) private var store
+        let id: UUID
+        var body: some View {
+            if let habit = store.habit(id) { HabitEditorView(habit: habit).scrollingToReminder() }
         }
     }
 

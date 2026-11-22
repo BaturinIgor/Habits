@@ -847,3 +847,56 @@ Purple||Roxo
 Pink||Rosa
 Raspberry||Framboesa
 Graphite||Grafite
+Energy||Energia
+Calm||Calma
+Learning and languages||Estudos e idiomas
+Better sleep||Dormir melhor
+Focus||Foco
+Water, movement and fresh air||Água, movimento e ar livre
+Less stress, more balance||Menos estresse, mais equilíbrio
+Workouts and an active day||Treinos e um dia ativo
+Reading, study and new words||Leitura, estudos e palavras novas
+A calm evening and a steady routine||Uma noite tranquila e uma rotina estável
+Plan the day and get things done||Planeje o dia e conclua suas tarefas
+Back||Voltar
+Step %lld of 3||Etapa %lld de 3
+What do you want to work on?||No que você quer trabalhar?
+Pick a goal and we'll set up your first habits. You can change everything later.||Escolha um objetivo e vamos preparar seus primeiros hábitos. Você pode mudar tudo depois.
+Your first habits||Seus primeiros hábitos
+Uncheck what you don't need. You can add more from the catalog later.||Desmarque o que não precisar. Você pode adicionar mais pelo catálogo depois.
+Your plan is ready||Seu plano está pronto
+Start with one check-in today. Small steps count.||Comece com uma marcação hoje. Pequenos passos contam.
+How it works||Como funciona
+Try Pro free for %@||Experimente o Pro grátis por %@
+Continue for free||Continuar grátis
+Your first step||Seu primeiro passo
+Tap the circle next to a habit to check it off. One is enough for today.||Toque no círculo ao lado de um hábito para marcá-lo. Um já basta por hoje.
+First check-in done!||Primeira marcação feita!
+That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?||É assim que uma sequência começa. Quer um lembrete para não esquecer amanhã?
+That's how a streak starts. Come back tomorrow to keep it going.||É assim que uma sequência começa. Volte amanhã para continuar.
+Turn on reminders||Ativar lembretes
+Not now||Agora não
+Got it||Entendi
+New Year offer||Oferta de Ano Novo
+First year of Pro %@ off||Primeiro ano do Pro com %@ de desconto
+Until %@||Até %@
+Get the discount||Pegar o desconto
+Code: %@||Código: %@
+Copy code||Copiar código
+Tap the button and paste the code in the App Store window. You'll see the final price before you pay.||Toque no botão e cole o código na janela da App Store. Você verá o preço final antes de pagar.
+%@ for the first year||%@ no primeiro ano
+After the first year, Pro renews at the regular price. Cancel anytime.||Depois do primeiro ano, o Pro renova pelo preço normal. Cancele quando quiser.
+Smart time||Horário inteligente
+The reminder moves closer to when you usually check off the habit.||O lembrete se aproxima do horário em que você costuma marcar o hábito.
+You usually check it off around %@. The reminder will move to %@.||Você costuma marcar por volta das %@. O lembrete vai passar para %@.
+The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins.||O lembrete se aproxima do horário em que você costuma marcar o hábito. São necessárias cerca de duas semanas de registros.
+The reminder already matches when you usually check off the habit.||O lembrete já coincide com o horário em que você costuma marcar o hábito.
+You usually check it off around %@||Você costuma marcar por volta das %@
+The reminder comes at %@. Move it to %@?||O lembrete chega às %@. Passar para %@?
+Move to %@||Passar para %@
+What goes with a better mood||O que acompanha um humor melhor
+On days with this habit, your mood is higher on average||Nos dias com este hábito, seu humor fica mais alto em média
+This is a pattern in your entries, not proof that the habit is the cause.||É um padrão nos seus registros, não prova de que o hábito seja a causa.
+Rate your mood for %@ more to see which habits go with your better days.||Registre seu humor por mais %@ para ver quais hábitos acompanham seus melhores dias.
+No habit stands out yet: your mood is about the same on days with and without them.||Nenhum hábito se destaca ainda: seu humor é parecido nos dias com e sem eles.
+See which habits go with your better days||Veja quais hábitos acompanham seus melhores dias

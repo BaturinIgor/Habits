@@ -705,9 +705,9 @@ final class LogicTests: XCTestCase {
                 data.moods[key] = MoodEntry(level: 2)
             }
         }
-        let impacts = MoodJournal.impacts(in: data)
-        XCTAssertEqual(impacts.first?.habit.id, habit.id)
-        XCTAssertEqual(impacts.first?.delta ?? 0, 3, accuracy: 0.001)
+        // Сегодня не считается: 4 прошедших дня с привычкой и 5 без. Для инсайтов мало
+        // (нужно 7 с каждой стороны, KAN-137): не хватает 3 + 2 дней. Подробнее в MoodInsightsTests.
+        XCTAssertEqual(MoodJournal.insights(in: data), .needMoreDays(5))
         XCTAssertEqual(MoodJournal.average(in: data, days: 10, now: today) ?? 0, 3.5, accuracy: 0.001)
     }
 
@@ -720,7 +720,7 @@ final class LogicTests: XCTestCase {
             data.setStatus(.done, habitID: habit.id, day: key)
             data.moods[key] = MoodEntry(level: 5)
         }
-        XCTAssertTrue(MoodJournal.impacts(in: data).isEmpty)
+        guard case .needMoreDays = MoodJournal.insights(in: data) else { return XCTFail("мало данных") }
     }
 
     // MARK: CSV (1.5)
@@ -999,7 +999,7 @@ final class LogicTests: XCTestCase {
             .petAdopted(species: "cat"), .petStageReached(stage: 1), .achievementUnlocked(id: "first"),
             .reviewPromptShown(streakDays: 3), .familyGroupCreated, .familyGroupJoined, .feedbackSent(channel: "email"),
             .backupRestored, .onboardingStep(1), .notificationPermissionResult(granted: false),
-            .firstCheck(secondsSinceFirstOpen: 5),
+            .firstCheck(secondsSinceFirstOpen: 5), .onboardingGoal(goal: "energy", habits: 4), .onboardingSkipped(step: 2),
         ]
         for event in events {
             check(event.type)

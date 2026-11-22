@@ -847,3 +847,56 @@ Purple||Mor
 Pink||Pembe
 Raspberry||Ahududu
 Graphite||Grafit
+Energy||Enerji
+Calm||Huzur
+Learning and languages||Ders ve diller
+Better sleep||Daha iyi uyku
+Focus||Odak
+Water, movement and fresh air||Su, hareket ve temiz hava
+Less stress, more balance||Daha az stres, daha çok denge
+Workouts and an active day||Antrenmanlar ve hareketli bir gün
+Reading, study and new words||Okuma, ders ve yeni kelimeler
+A calm evening and a steady routine||Sakin bir akşam ve düzenli bir rutin
+Plan the day and get things done||Gününü planla ve işlerini bitir
+Back||Geri
+Step %lld of 3||Adım %lld / 3
+What do you want to work on?||Neyin üzerinde çalışmak istersin?
+Pick a goal and we'll set up your first habits. You can change everything later.||Bir hedef seç, ilk alışkanlıklarını hazırlayalım. Her şeyi sonra değiştirebilirsin.
+Your first habits||İlk alışkanlıkların
+Uncheck what you don't need. You can add more from the catalog later.||İhtiyacın olmayanların işaretini kaldır. Daha fazlasını sonra katalogdan ekleyebilirsin.
+Your plan is ready||Planın hazır
+Start with one check-in today. Small steps count.||Bugün tek bir işaretle başla. Küçük adımlar da önemli.
+How it works||Nasıl çalışır
+Try Pro free for %@||Pro'yu %@ ücretsiz dene
+Continue for free||Ücretsiz devam et
+Your first step||İlk adımın
+Tap the circle next to a habit to check it off. One is enough for today.||İşaretlemek için alışkanlığın yanındaki daireye dokun. Bugün için bir tane yeter.
+First check-in done!||İlk işaret tamam!
+That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?||Seri böyle başlar. Yarın unutmaman için hatırlatıcı ister misin?
+That's how a streak starts. Come back tomorrow to keep it going.||Seri böyle başlar. Devam ettirmek için yarın yine gel.
+Turn on reminders||Hatırlatıcıları aç
+Not now||Şimdi değil
+Got it||Anladım
+New Year offer||Yılbaşı fırsatı
+First year of Pro %@ off||Pro'nun ilk yılı %@ indirimli
+Until %@||%@ tarihine kadar
+Get the discount||İndirimi al
+Code: %@||Kod: %@
+Copy code||Kodu kopyala
+Tap the button and paste the code in the App Store window. You'll see the final price before you pay.||Düğmeye dokun ve kodu App Store penceresine yapıştır. Ödemeden önce son fiyatı göreceksin.
+%@ for the first year||İlk yıl %@
+After the first year, Pro renews at the regular price. Cancel anytime.||İlk yıldan sonra Pro normal fiyattan yenilenir. İstediğin zaman iptal et.
+Smart time||Akıllı saat
+The reminder moves closer to when you usually check off the habit.||Hatırlatıcı, alışkanlığı genelde işaretlediğin saate yaklaşır.
+You usually check it off around %@. The reminder will move to %@.||Genelde %@ civarında işaretliyorsun. Hatırlatıcı %@ saatine taşınacak.
+The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins.||Hatırlatıcı, alışkanlığı genelde işaretlediğin saate yaklaşır. Bunun için yaklaşık iki haftalık kayıt gerekir.
+The reminder already matches when you usually check off the habit.||Hatırlatıcı zaten alışkanlığı genelde işaretlediğin saatle uyumlu.
+You usually check it off around %@||Genelde %@ civarında işaretliyorsun
+The reminder comes at %@. Move it to %@?||Hatırlatıcı %@ saatinde geliyor. %@ saatine taşınsın mı?
+Move to %@||%@ saatine taşı
+What goes with a better mood||Daha iyi ruh haliyle birlikte gelenler
+On days with this habit, your mood is higher on average||Bu alışkanlığın olduğu günlerde ruh halin ortalamada daha iyi
+This is a pattern in your entries, not proof that the habit is the cause.||Bu, kayıtlarındaki bir eğilim; sebebin alışkanlık olduğunun kanıtı değil.
+Rate your mood for %@ more to see which habits go with your better days.||İyi günlerinle birlikte gelen alışkanlıkları görmek için ruh halini %@ daha kaydet.
+No habit stands out yet: your mood is about the same on days with and without them.||Henüz öne çıkan bir alışkanlık yok: onların olduğu ve olmadığı günlerde ruh halin aşağı yukarı aynı.
+See which habits go with your better days||İyi günlerinle birlikte gelen alışkanlıkları gör

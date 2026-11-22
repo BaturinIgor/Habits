@@ -124,6 +124,10 @@ enum HabitSource: String {
 enum AnalyticsEvent {
     case appInstalled(isUpdate: Bool)
     case onboardingCompleted(seconds: Int, restoredFromCloud: Bool)
+    /// Выбрана цель и созданы привычки программы (1.7, KAN-121).
+    case onboardingGoal(goal: String, habits: Int)
+    /// Онбординг пропущен на шаге step.
+    case onboardingSkipped(step: Int)
     case habitCreated(Habit, source: HabitSource)
     case habitDeleted(ageDays: Int, isQuit: Bool)
     /// Шаг онбординга, с 1 (KAN-168).
@@ -150,11 +154,18 @@ enum AnalyticsEvent {
     case familyGroupJoined
     case feedbackSent(channel: String)
     case backupRestored
+    /// Умное время (KAN-135): shiftMinutes - на сколько сдвигается напоминание, плюс - позже.
+    case smartTimeSuggested(shiftMinutes: Int)
+    case smartTimeAccepted(shiftMinutes: Int)
+    case smartTimeDismissed(shiftMinutes: Int)
+    case smartTimeAutoShifted(shiftMinutes: Int)
 
     var type: String {
         switch self {
         case .appInstalled: "App.installed"
         case .onboardingCompleted: "Onboarding.completed"
+        case .onboardingGoal: "Onboarding.goal"
+        case .onboardingSkipped: "Onboarding.skipped"
         case .habitCreated: "Habit.created"
         case .habitDeleted: "Habit.deleted"
         case .onboardingStep: "Onboarding.step"
@@ -175,6 +186,10 @@ enum AnalyticsEvent {
         case .familyGroupJoined: "Family.groupJoined"
         case .feedbackSent: "Feedback.sent"
         case .backupRestored: "Backup.restored"
+        case .smartTimeSuggested: "SmartTime.suggested"
+        case .smartTimeAccepted: "SmartTime.accepted"
+        case .smartTimeDismissed: "SmartTime.dismissed"
+        case .smartTimeAutoShifted: "SmartTime.autoShifted"
         }
     }
 
@@ -194,6 +209,10 @@ enum AnalyticsEvent {
             return ["App.isUpdate": isUpdate]
         case .onboardingCompleted(let seconds, let restored):
             return ["Onboarding.seconds": seconds, "Onboarding.restoredFromCloud": restored]
+        case .onboardingGoal(let goal, let habits):
+            return ["Onboarding.goal": goal, "Onboarding.habits": habits]
+        case .onboardingSkipped(let step):
+            return ["step": step]
         case .habitCreated(let habit, let source):
             var iconKind = "other"
             if case .symbol = habit.icon { iconKind = "symbol" }
@@ -245,6 +264,9 @@ enum AnalyticsEvent {
             return ["Review.streakDays": streak]
         case .familyGroupCreated, .familyGroupJoined, .backupRestored:
             return [:]
+        case .smartTimeSuggested(let shift), .smartTimeAccepted(let shift),
+             .smartTimeDismissed(let shift), .smartTimeAutoShifted(let shift):
+            return ["SmartTime.shiftMinutes": shift]
         }
     }
 }

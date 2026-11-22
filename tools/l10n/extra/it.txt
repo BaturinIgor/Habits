@@ -847,3 +847,56 @@ Purple||Viola
 Pink||Rosa
 Raspberry||Lampone
 Graphite||Grafite
+Energy||Energia
+Calm||Calma
+Learning and languages||Studio e lingue
+Better sleep||Dormire meglio
+Focus||Concentrazione
+Water, movement and fresh air||Acqua, movimento e aria aperta
+Less stress, more balance||Meno stress, più equilibrio
+Workouts and an active day||Allenamenti e una giornata attiva
+Reading, study and new words||Lettura, studio e parole nuove
+A calm evening and a steady routine||Una serata tranquilla e una routine regolare
+Plan the day and get things done||Pianifica la giornata e porta a termine le cose
+Back||Indietro
+Step %lld of 3||Passo %lld di 3
+What do you want to work on?||Su cosa vuoi lavorare?
+Pick a goal and we'll set up your first habits. You can change everything later.||Scegli un obiettivo e prepareremo le tue prime abitudini. Potrai cambiare tutto in seguito.
+Your first habits||Le tue prime abitudini
+Uncheck what you don't need. You can add more from the catalog later.||Togli la spunta a ciò che non ti serve. Potrai aggiungerne altre dal catalogo in seguito.
+Your plan is ready||Il tuo piano è pronto
+Start with one check-in today. Small steps count.||Inizia oggi con una sola spunta. Anche i piccoli passi contano.
+How it works||Come funziona
+Try Pro free for %@||Prova Pro gratis per %@
+Continue for free||Continua gratis
+Your first step||Il tuo primo passo
+Tap the circle next to a habit to check it off. One is enough for today.||Tocca il cerchio accanto a un'abitudine per spuntarla. Per oggi ne basta una.
+First check-in done!||Prima spunta fatta!
+That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?||Ecco come inizia una serie. Vuoi un promemoria per non dimenticarti domani?
+That's how a streak starts. Come back tomorrow to keep it going.||Ecco come inizia una serie. Torna domani per continuarla.
+Turn on reminders||Attiva i promemoria
+Not now||Non ora
+Got it||Ok
+New Year offer||Offerta di Capodanno
+First year of Pro %@ off||Il primo anno di Pro scontato del %@
+Until %@||Fino al %@
+Get the discount||Ottieni lo sconto
+Code: %@||Codice: %@
+Copy code||Copia codice
+Tap the button and paste the code in the App Store window. You'll see the final price before you pay.||Tocca il pulsante e incolla il codice nella finestra dell'App Store. Vedrai il prezzo finale prima di pagare.
+%@ for the first year||%@ il primo anno
+After the first year, Pro renews at the regular price. Cancel anytime.||Dopo il primo anno, Pro si rinnova al prezzo normale. Annulla quando vuoi.
+Smart time||Orario intelligente
+The reminder moves closer to when you usually check off the habit.||Il promemoria si avvicina all'ora in cui di solito segni l'abitudine.
+You usually check it off around %@. The reminder will move to %@.||Di solito la segni verso le %@. Il promemoria passerà alle %@.
+The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins.||Il promemoria si avvicina all'ora in cui di solito segni l'abitudine. Servono circa due settimane di registrazioni.
+The reminder already matches when you usually check off the habit.||Il promemoria coincide già con l'ora in cui di solito segni l'abitudine.
+You usually check it off around %@||Di solito la segni verso le %@
+The reminder comes at %@. Move it to %@?||Il promemoria arriva alle %@. Spostarlo alle %@?
+Move to %@||Sposta alle %@
+What goes with a better mood||Cosa accompagna un umore migliore
+On days with this habit, your mood is higher on average||Nei giorni con questa abitudine il tuo umore è in media più alto
+This is a pattern in your entries, not proof that the habit is the cause.||È una tendenza nelle tue registrazioni, non la prova che l'abitudine ne sia la causa.
+Rate your mood for %@ more to see which habits go with your better days.||Registra il tuo umore per altri %@ per vedere quali abitudini accompagnano le tue giornate migliori.
+No habit stands out yet: your mood is about the same on days with and without them.||Nessuna abitudine spicca ancora: il tuo umore è simile nei giorni con e senza.
+See which habits go with your better days||Scopri quali abitudini accompagnano le tue giornate migliori

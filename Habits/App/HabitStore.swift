@@ -74,6 +74,28 @@ final class HabitStore {
         await NotificationPlanner.reschedule(data: data)
     }
 
+    // MARK: Умное время (KAN-135)
+
+    /// Сдвигает напоминания привычек с включённым «Умным временем» к обычному времени отметки.
+    func applySmartTimes(now: Date = Date()) {
+        // Макеты показывают состояние «до сдвига».
+        guard !TestMode.has("-design") else { return }
+        let shifted = data.applySmartTimes(now: now)
+        guard !shifted.isEmpty else { return }
+        for item in shifted {
+            Analytics.shared.send(.smartTimeAutoShifted(shiftMinutes: item.shift))
+        }
+        commit()
+    }
+
+    /// Человек согласился перенести напоминание на предложенное время.
+    func acceptSmartTime(_ suggestion: SmartTime.Suggestion, for id: UUID) {
+        guard let index = data.habits.firstIndex(where: { $0.id == id }) else { return }
+        data.habits[index].reminder = suggestion.suggested
+        Analytics.shared.send(.smartTimeAccepted(shiftMinutes: suggestion.shiftMinutes))
+        commit()
+    }
+
     // MARK: Привычки
 
     func habit(_ id: UUID) -> Habit? {
@@ -622,6 +644,8 @@ final class HabitStore {
         after.whatsNewSeen = before.whatsNewSeen
         after.onboardingDone = before.onboardingDone
         after.gestureHintShown = before.gestureHintShown
+        after.onboardingPaywallSeen = before.onboardingPaywallSeen
+        after.firstDayGuide = before.firstDayGuide
         if after != before { Analytics.shared.action(.settingsChange) }
         commit()
     }

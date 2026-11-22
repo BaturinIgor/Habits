@@ -2,6 +2,7 @@
 "%@ / year" = "%@ / 年";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@：価格 ✨ %lld、所持：✨ %lld。あと ✨ %lld 必要です。習慣をチェックして集めよう。";
 "%@ costs %lld sparks. You have %lld." = "%@：価格 ✨ %lld。所持：✨ %lld。";
+"%@ for the first year" = "最初の1年 %@";
 "%@ free, then %@. Cancel anytime." = "%1$@無料、その後%2$@。いつでも解約できます。";
 "%@ is already done today." = "%@は今日もう完了しています。";
 "%@: the streak broke" = "%@：連続記録が途切れました";
@@ -24,6 +25,7 @@
 "1 spark for each check-in, up to %lld a day" = "チェックごとに1スパーク、1日最大%lld";
 "30 perfect days in a row" = "完璧な日を30日連続";
 "7 perfect days in a row" = "7日連続でパーフェクト";
+"A calm evening and a steady routine" = "穏やかな夜と規則正しい生活";
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "アプリを閉じると、習慣と履歴のコピーが自動で iCloud に保存されます。機種変更でもデータは失われません。";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "ロック画面とDynamic Islandでカウントダウンし、時間になると習慣を自動でチェックします。";
 "A grown pet brings up to +5 a day" = "育ったペットは1日最大 +5 くれます";
@@ -54,6 +56,7 @@
 "Adopt a pet" = "ペットを迎えよう";
 "Advanced" = "上級";
 "After habit" = "この習慣の後";
+"After the first year, Pro renews at the regular price. Cancel anytime." = "最初の1年が過ぎると、Pro は通常価格で更新されます。いつでも解約できます。";
 "After: %@" = "次の後：%@";
 "Afternoon" = "午後";
 "All" = "すべて";
@@ -88,6 +91,7 @@
 "Avatars" = "アバター";
 "Awful" = "最悪";
 "Baby" = "赤ちゃん";
+"Back" = "戻る";
 "Back up now" = "今すぐバックアップ";
 "Back up to iCloud" = "iCloud にバックアップ";
 "Background" = "背景";
@@ -99,6 +103,7 @@
 "Best current streak" = "現在の最長連続";
 "Best streak" = "最長連続";
 "Best, days" = "最長（日）";
+"Better sleep" = "よく眠る";
 "Better than nothing" = "何もしないよりいい";
 "Blue" = "ブルー";
 "Break bad habits" = "悪い習慣をやめる";
@@ -115,6 +120,7 @@
 "By habit" = "習慣別";
 "By time" = "時刻順";
 "Call family" = "家族に電話する";
+"Calm" = "心の落ち着き";
 "Cancel" = "キャンセル";
 "Cat" = "ネコ";
 "Chain reaction" = "連鎖反応";
@@ -148,6 +154,7 @@
 "Clear your inbox" = "受信トレイを片付ける";
 "Clearer Pro" = "わかりやすくなったPro";
 "Close" = "閉じる";
+"Code: %@" = "コード：%@";
 "Collector" = "コレクター";
 "Come back after a miss 10 times" = "休んだ後に10回復帰";
 "Comeback" = "カムバック";
@@ -158,9 +165,11 @@
 "Completion" = "達成率";
 "Consistency" = "継続は力";
 "Continue" = "次へ";
+"Continue for free" = "無料で続ける";
 "Control Center" = "コントロールセンター";
 "Copied" = "コピーしました";
 "Copy address" = "アドレスをコピー";
+"Copy code" = "コードをコピー";
 "Copy message" = "メッセージをコピー";
 "Copy message and address" = "メッセージとアドレスをコピー";
 "Coral" = "コーラル";
@@ -226,6 +235,7 @@
 "End" = "終了";
 "End date" = "終了日";
 "Ended" = "終了";
+"Energy" = "エネルギー";
 "Evening" = "夜";
 "Evening summary" = "夜のまとめ";
 "Every" = "間隔";
@@ -262,9 +272,12 @@
 "Fifty" = "50回";
 "Finance" = "お金";
 "Finish and check off" = "終了してチェック";
+"First check-in done!" = "初めてのチェック完了！";
 "First step" = "最初の一歩";
 "First time" = "初回";
+"First year of Pro %@ off" = "Pro の最初の1年が %@ オフ";
 "Fitness" = "運動";
+"Focus" = "集中";
 "Focus for an hour" = "1時間集中する";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "悪い習慣に：たばこ、甘いもの、お酒、SNS。";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "例：水8杯。丸をタップするたびに1つ増えます。";
@@ -282,10 +295,12 @@
 "Full mood journal" = "気分日記のすべて";
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Apple Watchでタイマーを使うには、iPhoneでProに登録してください。";
 "Get a pet" = "ペットを迎える";
+"Get the discount" = "割引を受け取る";
 "Go to bed on time" = "時間通りに寝る";
 "Goal" = "目標";
 "Gold" = "ゴールド";
 "Good" = "良い";
+"Got it" = "OK";
 "Graphite" = "グラファイト";
 "Great" = "最高";
 "Great job, keep it up" = "よくできました、この調子で";
@@ -319,6 +334,7 @@
 "Hours of sleep" = "睡眠時間";
 "How are you feeling?" = "気分はどうですか？";
 "How are you today?" = "今日の気分は？";
+"How it works" = "使い方";
 "How many habits are done today." = "今日完了した習慣の数。";
 "How often" = "頻度";
 "How to earn" = "集め方";
@@ -377,12 +393,14 @@
 "Learn words" = "単語を学ぶ";
 "Learned: %lld of %lld" = "覚えた単語：%lld / %lld";
 "Learning" = "学び";
+"Learning and languages" = "勉強と語学";
 "Leave group" = "グループから退出";
 "Leave group?" = "グループから退出しますか？";
 "Left for today: %@." = "今日の残り：%@。";
 "Legend" = "レジェンド";
 "Less" = "少";
 "Less social media" = "SNSを控える";
+"Less stress, more balance" = "ストレスを減らしてバランスよく";
 "Let's go" = "はじめる";
 "Let's keep the streak going!" = "連続記録を続けよう！";
 "Let's start with your first habit" = "最初の習慣から始めましょう";
@@ -435,6 +453,7 @@
 "Morning" = "朝";
 "Morning exercises" = "朝の体操";
 "Most steady: %@, %lld of %lld" = "いちばん安定：%@、%lld/%lld";
+"Move to %@" = "%@ に移す";
 "Move to archive" = "アーカイブへ移動";
 "My month" = "私の1か月";
 "My week" = "私の1週間";
@@ -442,6 +461,7 @@
 "N times a week" = "週N回";
 "Name" = "名前";
 "Never" = "なし";
+"New Year offer" = "新年キャンペーン";
 "New achievement!" = "新しい実績！";
 "New app icons" = "新しいアプリアイコン";
 "New group" = "新しいグループ";
@@ -462,6 +482,7 @@
 "No entries yet" = "まだ記録がありません";
 "No fast food" = "ファストフードなし";
 "No group" = "グループなし";
+"No habit stands out yet: your mood is about the same on days with and without them." = "まだ目立つ習慣はありません。習慣がある日もない日も、気分はほぼ同じです。";
 "No habits" = "習慣なし";
 "No habits are linked yet." = "まだ連携している習慣はありません。";
 "No habits are planned for this day." = "この日に予定された習慣はありません。";
@@ -477,6 +498,7 @@
 "Not available" = "利用不可";
 "Not checked off yet: %@" = "まだチェックしていません：%@";
 "Not enough sparks" = "スパークが足りません";
+"Not now" = "今はしない";
 "Not set up" = "未設定";
 "Not yet" = "まだ";
 "Note" = "メモ";
@@ -494,6 +516,7 @@
 "Okay" = "ふつう";
 "Older entries: %lld. Your full history is in Pro." = "以前の記録：%lld件。すべての履歴はProで見られます。";
 "On" = "オン";
+"On days with this habit, your mood is higher on average" = "この習慣がある日は、気分が平均して高めです";
 "On target" = "目標達成";
 "On weekdays" = "平日";
 "On weekends" = "週末";
@@ -536,9 +559,11 @@
 "Pet gifts" = "ペットのおくりもの";
 "Pet name" = "ペットの名前";
 "Phoenix" = "フェニックス";
+"Pick a goal and we'll set up your first habits. You can change everything later." = "目標を選ぶと、最初の習慣を用意します。あとから何でも変えられます。";
 "Pick a template or create your own." = "テンプレートを選ぶか、自分で作成しましょう。";
 "Pink" = "ピンク";
 "Plan the day" = "1日の計画を立てる";
+"Plan the day and get things done" = "一日を計画して、やることを片付ける";
 "Practice an instrument" = "楽器の練習";
 "Privacy Policy" = "プライバシー";
 "Pro gifts" = "Pro ギフト";
@@ -561,11 +586,13 @@
 "Raspberry" = "ラズベリー";
 "Rate the app" = "アプリを評価";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "「今日」の下でワンタップで一日を評価し、ひとことメモを残せます。Proなら全履歴、月間グラフ、気分を上げる習慣がわかります。";
+"Rate your mood for %@ more to see which habits go with your better days." = "あと%@気分を記録すると、いい日に多い習慣がわかります。";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "1日1回「今日」画面で気分を記録しましょう。数週間でどの習慣が気分を上げるかわかります。";
 "Reach a daily goal 20 times" = "1日の目標を20回達成";
 "Reach a weekly goal 4 times" = "週の目標を4回達成";
 "Read" = "読書";
 "Reading" = "読書";
+"Reading, study and new words" = "読書、勉強、新しい単語";
 "Reflective" = "内省家";
 "Refresh widgets" = "ウィジェットを更新";
 "Regular" = "常連";
@@ -609,6 +636,7 @@
 "See how much money you save by quitting a habit." = "習慣をやめて節約できたお金がわかります。";
 "See how much you've saved with Pro" = "Pro で節約額を表示";
 "See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "今日の習慣を手首で確認し、ワンタップでチェック。すべてiPhoneと同期されます。ウォッチにZenHabが表示されない場合は、iPhoneのWatchアプリからインストールしてください。";
+"See which habits go with your better days" = "いい日に多い習慣を見る";
 "See which habits make your days better" = "どの習慣が毎日を良くしているか見てみよう";
 "Send" = "送信";
 "Send by email" = "メールで送信";
@@ -637,6 +665,7 @@
 "Sleeping" = "おやすみ中";
 "Small steps add up." = "小さな一歩が積み重なる。";
 "Small steps every day" = "毎日の小さな一歩";
+"Smart time" = "スマート時刻";
 "Some days" = "曜日指定";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "設定で「今日」画面をグループ別に並べられます。「今日」ウィジェットを長押しすると1つのグループを表示できます。";
 "Sparks" = "スパーク";
@@ -653,10 +682,12 @@
 "Start over" = "最初から始める";
 "Start the count again?" = "数え直しますか？";
 "Start timer" = "タイマー開始";
+"Start with one check-in today. Small steps count." = "今日はまず1つチェックしよう。小さな一歩も大切です。";
 "Starts a countdown with a Live Activity. When time's up, the habit is checked off." = "ライブアクティビティ付きでカウントダウンを開始します。時間になると習慣がチェックされます。";
 "Statistics" = "統計";
 "Statistics will appear once you start checking off habits." = "習慣をチェックし始めると統計が表示されます。";
 "Status" = "状態";
+"Step %lld of 3" = "ステップ %lld/3";
 "Steps" = "歩数";
 "Steps to reproduce help a lot." = "再現手順があるととても助かります。";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "再現手順があるととても助かります。スクリーンショットはメールに添付できます。";
@@ -684,6 +715,8 @@
 "Take vitamins" = "ビタミンを飲む";
 "Tangerine" = "タンジェリン";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "日付をタップでチェック、長押しでスキップやメモ追加。";
+"Tap the button and paste the code in the App Store window. You'll see the final price before you pay." = "ボタンをタップして、App Store の画面にコードを貼り付けてね。支払い前に最終価格が表示されます。";
+"Tap the circle next to a habit to check it off. One is enough for today." = "習慣の横の丸をタップしてチェックしよう。今日は1つで十分です。";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "丸をタップか右スワイプでチェック。左スワイプでスキップ、メモ、編集。長押しで並べ替え。";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "丸をタップするとタイマーが始まります。ロック画面でカウントダウンし、終わると習慣がチェックされます。";
 "Tap the days when the habit should be done" = "習慣を行う曜日をタップ";
@@ -693,6 +726,8 @@
 "Tell us what you think" = "ご意見をお聞かせください";
 "Terms of Use" = "利用規約";
 "Thank you!" = "ありがとうございます！";
+"That's how a streak starts. Come back tomorrow to keep it going." = "こうして連続記録が始まります。明日も続けよう。";
+"That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "こうして連続記録が始まります。明日忘れないようにリマインダーを受け取る？";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Pro画面に含まれる機能がすべて表示され、タップした機能から開くようになりました。";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "iCloud のバックアップ：%@、%@、習慣：%lld。アプリを閉じると自動で更新されます。アバターと背景の写真は含まれません。";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "無料版の習慣数の上限に達しました。ZenHabを開いてProにしてください。";
@@ -705,11 +740,16 @@
 "The mood card at the bottom of the list lets you rate your day with one tap." = "リストの下にある気分カードで、ワンタップで一日を評価できます。";
 "The new language will apply after you close the app and open it again." = "アプリを閉じて開き直すと新しい言語になります。";
 "The purchase could not be verified." = "購入を確認できませんでした。";
+"The reminder already matches when you usually check off the habit." = "リマインダーはすでに、いつもチェックする時刻に合っています。";
+"The reminder comes at %@. Move it to %@?" = "リマインダーは %@ に届きます。%@ に移しますか？";
+"The reminder moves closer to when you usually check off the habit." = "リマインダーが、いつも習慣をチェックする時刻に近づきます。";
+"The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins." = "リマインダーが、いつも習慣をチェックする時刻に近づきます。約2週間分のチェックが必要です。";
 "The streak broke" = "連続記録が途切れました";
 "The widget will update after unlocking." = "ロック解除後にウィジェットが更新されます。";
 "There are no purchases yet: this switch turns Pro features on for testing." = "まだ購入機能はありません。このスイッチでPro機能をテストできます。";
 "There's a backup in your iCloud from %@. Habits in it: %lld." = "iCloud に %@ のバックアップがあります。習慣：%lld。";
 "This group and its habits will be removed from this iPhone." = "このグループと習慣はこのiPhoneから削除されます。";
+"This is a pattern in your entries, not proof that the habit is the cause." = "これは記録に見られる傾向で、習慣が原因だという証拠ではありません。";
 "Tidy up for 10 minutes" = "10分片付ける";
 "Time" = "時刻";
 "Time for your habit" = "習慣の時間です";
@@ -735,8 +775,10 @@
 "Track expenses" = "支出を記録する";
 "Track habits, get gentle reminders and watch your streaks grow." = "習慣を記録し、やさしい通知を受け取り、連続記録を伸ばしましょう。";
 "Track your habits with ZenHab" = "ZenHabで習慣を記録しよう";
+"Try Pro free for %@" = "Pro を%@無料で試す";
 "Try again" = "再試行";
 "Try it" = "試してみる";
+"Turn on reminders" = "リマインダーをオン";
 "Turn on the lock" = "ロックをオンにする";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "習慣で「この習慣をやめる」をオンにすると、やめてからの日数、最長記録、次の節目が表示されます。Pro なら節約額も。";
 "Turquoise" = "ターコイズ";
@@ -744,6 +786,7 @@
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "月2回までは休んでも連続記録は途切れず、つらい日はミニマム版でもOK。";
 "Two weeks" = "2週間";
 "Uncheck" = "チェックを外す";
+"Uncheck what you don't need. You can add more from the catalog later." = "不要なものはチェックを外してね。あとでカタログから追加できます。";
 "Undo skip" = "スキップを取り消す";
 "Unicorn" = "ユニコーン";
 "Unit" = "単位";
@@ -757,6 +800,7 @@
 "Unlock: %@" = "解放条件：%@";
 "Unstoppable" = "止まらない";
 "Until" = "終了日";
+"Until %@" = "%@まで";
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "チェックするまでリマインダーが繰り返されます：%@。通知の「完了」か「スキップ」でその日の繰り返しを止められます。";
 "Version" = "バージョン";
 "Veteran" = "ベテラン";
@@ -768,6 +812,7 @@
 "Warming up" = "ウォームアップ";
 "Watch face complications" = "文字盤のコンプリケーション";
 "Water, liters" = "水分（リットル）";
+"Water, movement and fresh air" = "水分補給、運動、外の空気";
 "Week" = "週";
 "Week in review" = "先週のふり返り";
 "Weekdays" = "平日";
@@ -778,6 +823,8 @@
 "Welcome to Habit Tracker" = "習慣トラッカーへようこそ";
 "What %@ gives you" = "%@ がくれるもの";
 "What ZenHab reads" = "ZenHabが読み取るデータ";
+"What do you want to work on?" = "何に取り組みたい？";
+"What goes with a better mood" = "気分がいい日に多い習慣";
 "What happened and what did you expect?" = "何が起きて、どうなるはずでしたか？";
 "What happened today? What helped?" = "今日は何があった？何が助けになった？";
 "What lifts your mood" = "気分を上げるもの";
@@ -800,6 +847,7 @@
 "Work, travel and conversation" = "仕事、旅行、会話";
 "Workout" = "運動";
 "Workouts" = "ワークアウト";
+"Workouts and an active day" = "トレーニングとアクティブな一日";
 "Write 10 notes" = "メモを10件書く";
 "Write 50 notes" = "メモを50件書く";
 "Write down 3 good things" = "良かったことを3つ書く";
@@ -809,10 +857,14 @@
 "Yesterday" = "昨日";
 "Yoga" = "ヨガ";
 "You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "各データへのアクセスは「設定」→「プライバシーとセキュリティ」→「ヘルスケア」→ ZenHab で許可または拒否できます。";
+"You usually check it off around %@" = "いつもは %@ ごろにチェック";
+"You usually check it off around %@. The reminder will move to %@." = "いつもは %@ ごろにチェックしています。リマインダーは %@ に移ります。";
 "You're doing great!" = "すごくいい調子！";
 "You've gone through the whole dictionary" = "辞書の単語をすべて学びました";
 "Young" = "子ども";
 "Your days and the habits that lift your mood" = "毎日の記録と、気分を上げる習慣";
+"Your first habits" = "最初の習慣";
+"Your first step" = "最初の一歩";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "習慣と履歴は自動で iCloud に保存されます。新しい iPhone では ZenHab がすべての復元を提案します。";
 "Your habits stay on your iPhone and in your own iCloud." = "習慣のデータはiPhoneとあなたのiCloudにだけ保存されます。";
 "Your habits stay only on your iPhone." = "習慣のデータはこのiPhoneにだけ保存されます。";
@@ -823,6 +875,7 @@
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "習慣をチェックするたびにペットは成長し、数日いなくなると寂しがります。";
 "Your pet's mood and feeding right from the Home Screen." = "ホーム画面でペットの様子を見てごはんをあげられます。";
 "Your photo" = "自分の写真";
+"Your plan is ready" = "プランの準備ができました";
 "Your week in review" = "あなたの1週間";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "気分の全履歴、月間グラフ、気分を上げる習慣。";
 "Your year in review" = "あなたの1年";

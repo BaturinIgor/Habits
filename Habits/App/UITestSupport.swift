@@ -33,6 +33,24 @@ enum UITestSupport {
         data.settings.seenAchievements = Achievements.all.map(\.id)
         // Пустое приложение: макеты пустых состояний.
         if TestMode.has("-uitest-empty") { return data }
+        // Первый день после онбординга (KAN-169): привычки программы «Энергия», отметок ещё нет
+        // или (-uitest-firstday-checked) первая отметка только что сделана.
+        if TestMode.has("-uitest-firstday") || TestMode.has("-uitest-firstday-checked") {
+            data.settings.firstDayGuide = true
+            data.settings.proUnlocked = false
+            data.habits = OnboardingPlan.habits(for: .energy, isPro: false).enumerated().map { index, habit in
+                var habit = habit
+                habit.id = id(index + 1)
+                habit.sortOrder = index
+                habit.createdAt = today
+                habit.schedule.startDate = today
+                return habit
+            }
+            if TestMode.has("-uitest-firstday-checked"), let first = data.habits.first {
+                data.setStatus(.done, habitID: first.id, day: DayKey.make(today))
+            }
+            return data
+        }
 
         func habit(_ n: Int, _ en: String, _ ruName: String, icon: String, color: Int,
                    schedule: HabitSchedule = HabitSchedule(startDate: start),

@@ -1,2 +1,41 @@
 # Habits 1.7: снимки только новых и изменённых экранов (см. design/README.md).
 # Остальные экраны — из design/1.6/screens.
+# KAN-121: онбординг с целями (10-onboarding теперь первый шаг нового онбординга)
+10-onboarding
+onb-01-goal
+onb-02-goal-selected
+onb-03-habits
+onb-04-summary
+onb-08-goal-large
+onb-09-habits-large
+# KAN-122, KAN-170: пейволл в конце онбординга, «Продолжить бесплатно», текст о пробном периоде
+onb-05-paywall
+onb-12-paywall-plans   # низ пейволла: планы и цены
+# KAN-169: первый день на «Сегодня»: подсказка, поздравление, крупный шрифт
+onb-06-today-first-check
+onb-07-today-celebrate
+onb-10-today-first-check-large
+onb-11-today-celebrate-large
+# KAN-125: новогоднее предложение
+offer-01-today      # KAN-125
+offer-02-settings   # KAN-125
+offer-03-paywall    # KAN-125
+offer-04-paywall-plans   # KAN-125
+# KAN-135: умное время напоминаний
+smart-01-suggestion
+smart-02-editor-on
+smart-03-editor-off
+# KAN-137: инсайты настроения
+insights-01-top
+insights-02-few-days
+insights-03-free
+
+# KAN-114: окно «Как назовёшь?» при крупном шрифте
+a11y-04-pet-naming-xl
+# KAN-116: подписи при крупном шрифте, дни недели в тепловой карте
+a11y-01-stats-xl
+a11y-02-stats-scrolled-xl
+a11y-03-today-xl
+a11y-05-pet-species-xl
+a11y-06-heatmap
+a11y-07-today-habits-xl

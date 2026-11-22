@@ -68,7 +68,11 @@ struct PetView: View {
     /// Для макетов: сразу прокрутить к выбору вида.
     var scrollToSpecies = false
 
-    private let grid = [GridItem(.adaptive(minimum: 76), spacing: 12)]
+    @Environment(\.dynamicTypeSize) private var typeSize
+    /// При крупном шрифте плитки шире (по две в ряд), иначе названия видов обрезаются.
+    private var grid: [GridItem] {
+        [GridItem(.adaptive(minimum: typeSize.isAccessibilitySize ? 150 : 76), spacing: 12)]
+    }
 
     var body: some View {
         analyticsBody.analyticsScreen(.pet)
@@ -312,7 +316,10 @@ struct PetView: View {
                 } else {
                     Text(species.baby).font(.system(size: 38))
                 }
-                Text(species.title).font(.caption.weight(.medium)).lineLimit(1)
+                Text(species.title).font(.caption.weight(.medium))
+                    .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
+                    .multilineTextAlignment(.center)
+                    .minimumScaleFactor(0.8)
                 if owned, let petName {
                     Text(petName)
                         .font(.caption2)
@@ -385,10 +392,24 @@ struct PetView: View {
 struct PetNamingSheet: View {
     @Environment(HabitStore.self) private var store
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var text = ""
     @FocusState private var focused: Bool
 
     var body: some View {
+        // При крупном шрифте окно не влезает в половину экрана: прокрутка и сразу полная высота.
+        ScrollView {
+            content
+        }
+        .scrollBounceBehavior(.basedOnSize)
+        .presentationDetents(typeSize.isAccessibilitySize ? [.large] : [.medium, .large])
+        // Непрозрачный фон: сквозь стеклянный шит просвечивала кнопка «Покормить».
+        .presentationBackground { AppBackground() }
+        .interactiveDismissDisabled()
+        .onAppear { text = store.data.wallet.pet?.name ?? "" }
+    }
+
+    private var content: some View {
         VStack(spacing: 16) {
             if let pet = store.data.wallet.pet {
                 PetAvatar(pet: pet, stage: Pets.stage(pet, data: store.data), mood: .happy, size: 120, reaction: 0)
@@ -398,6 +419,7 @@ struct PetNamingSheet: View {
                 Text("What will you call them?")
                     .font(.title2.weight(.bold))
                     .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
                 Text("Each pet keeps its own name. Growth and mood stay shared.")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
@@ -423,11 +445,6 @@ struct PetNamingSheet: View {
             .foregroundStyle(.secondary)
         }
         .padding(20)
-        .presentationDetents([.medium, .large])
-        // Непрозрачный фон: сквозь стеклянный шит просвечивала кнопка «Покормить».
-        .presentationBackground { AppBackground() }
-        .interactiveDismissDisabled()
-        .onAppear { text = store.data.wallet.pet?.name ?? "" }
     }
 
     private func save() {

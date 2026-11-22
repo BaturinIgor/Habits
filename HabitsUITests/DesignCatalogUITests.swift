@@ -15,7 +15,12 @@ final class DesignCatalogUITests: XCTestCase {
         let screen: String
         var alert: String? = nil
         var flags: [String] = []
+        /// Сколько раз пролистать экран вверх перед снимком.
+        var swipes = 0
     }
+
+    /// Крупный шрифт Accessibility XL на всё приложение, включая шиты, панель вкладок и навигацию.
+    private static let xl = ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXL"]
 
     private static let shots: [Shot] = [
         // Вкладки
@@ -86,6 +91,14 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "health-03-health-settings-free", screen: "healthSettings", flags: ["-uitest-free"]),
         Shot(name: "health-04-editor", screen: "editorHealth"),
         Shot(name: "health-05-editor-free", screen: "editorHealth", flags: ["-uitest-free"]),
+        // 1.7, KAN-135: умное время напоминаний
+        Shot(name: "smart-01-suggestion", screen: "smartSuggestion"),
+        Shot(name: "smart-02-editor-on", screen: "smartEditor"),
+        Shot(name: "smart-03-editor-off", screen: "smartEditorOff"),
+        // 1.7, KAN-137: инсайты настроения (Pro), мало данных и бесплатная версия
+        Shot(name: "insights-01-top", screen: "moodInsights"),
+        Shot(name: "insights-02-few-days", screen: "moodInsightsFew"),
+        Shot(name: "insights-03-free", screen: "moodInsights", flags: ["-uitest-free"]),
         // Обратная связь
         Shot(name: "50-feedback", screen: "feedback"),
         Shot(name: "51-feedback-send-options", screen: "feedback", alert: "sendOptions"),
@@ -93,7 +106,37 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "53-feedback-failed", screen: "feedback", alert: "sendFailed"),
         Shot(name: "54-feedback-no-mail", screen: "feedback", alert: "noMail"),
         Shot(name: "55-feedback-copied", screen: "feedback", alert: "copied"),
+        // 1.7, KAN-121/KAN-122/KAN-169: онбординг с целями, пейволл в конце, первый день на «Сегодня»
+        Shot(name: "onb-01-goal", screen: "today", flags: ["-uitest-onboarding"]),
+        Shot(name: "onb-02-goal-selected", screen: "onboardingGoal", flags: ["-uitest-empty"]),
+        Shot(name: "onb-03-habits", screen: "onboardingHabits", flags: ["-uitest-empty"]),
+        Shot(name: "onb-04-summary", screen: "onboardingSummary", flags: ["-uitest-empty"]),
+        Shot(name: "onb-05-paywall", screen: "onboardingPaywall", flags: ["-uitest-empty", "-uitest-free"]),
+        // Низ пейволла онбординга: планы с ценами из StoreKit-конфига и текст о пробной неделе.
+        Shot(name: "onb-12-paywall-plans", screen: "onboardingPaywall", flags: ["-uitest-empty", "-uitest-free"], swipes: 3),
+        Shot(name: "onb-06-today-first-check", screen: "today", flags: ["-uitest-firstday"]),
+        Shot(name: "onb-07-today-celebrate", screen: "today", flags: ["-uitest-firstday-checked"]),
+        Shot(name: "onb-08-goal-large", screen: "onboardingGoal", flags: ["-uitest-empty"] + largeText),
+        Shot(name: "onb-09-habits-large", screen: "onboardingHabits", flags: ["-uitest-empty"] + largeText),
+        Shot(name: "onb-10-today-first-check-large", screen: "today", flags: ["-uitest-firstday"] + largeText),
+        Shot(name: "onb-11-today-celebrate-large", screen: "today", flags: ["-uitest-firstday-checked"] + largeText),
+        // 1.7, KAN-125: новогоднее предложение (акция включается флагом в любой день)
+        Shot(name: "offer-01-today", screen: "today", flags: ["-uitest-free", "-uitest-offer"]),
+        Shot(name: "offer-02-settings", screen: "settings", flags: ["-uitest-free", "-uitest-offer"]),
+        Shot(name: "offer-03-paywall", screen: "offerPaywall", flags: ["-uitest-free", "-uitest-offer"]),
+        Shot(name: "offer-04-paywall-plans", screen: "offerPaywall", flags: ["-uitest-free", "-uitest-offer"], swipes: 3),
+        // 1.7, KAN-114 и KAN-116: крупный шрифт (Accessibility XL) и дни недели в тепловой карте
+        Shot(name: "a11y-01-stats-xl", screen: "stats", flags: xl),
+        Shot(name: "a11y-02-stats-scrolled-xl", screen: "stats", flags: xl, swipes: 2),
+        Shot(name: "a11y-03-today-xl", screen: "today", flags: xl),
+        Shot(name: "a11y-04-pet-naming-xl", screen: "petNaming", flags: ["-design-alert", "petNaming"] + xl),
+        Shot(name: "a11y-05-pet-species-xl", screen: "petSpecies", flags: xl),
+        Shot(name: "a11y-06-heatmap", screen: "stats", swipes: 1),
+        Shot(name: "a11y-07-today-habits-xl", screen: "today", flags: xl, swipes: 2),
     ]
+
+    /// Крупный шрифт (Универсальный доступ) для макетов.
+    private static let largeText = ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityL"]
 
     private static var outputDir: URL? {
         guard let path = ProcessInfo.processInfo.environment["DESIGN_DIR"], !path.isEmpty else { return nil }
@@ -165,6 +208,14 @@ final class DesignCatalogUITests: XCTestCase {
                     || app.descendants(matching: .any).matching(identifier: "screen.onboarding").firstMatch.exists
             }
             if !ready { missing.append(shot.name) }
+            // Пейволл: ждём планы с ценами из StoreKit-конфига, иначе на снимке крутится индикатор загрузки.
+            if shot.screen.lowercased().contains("paywall") {
+                let plan = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH %@", "paywall.plan."))
+                if !plan.firstMatch.waitForExistence(timeout: 20) { missing.append("\(shot.name) (no prices)") }
+                // Плашка пробной недели появляется после проверки права на пробный период (без Pro).
+                _ = app.descendants(matching: .any).matching(identifier: "paywall.trial").firstMatch.waitForExistence(timeout: 8)
+            }
+            for _ in 0..<shot.swipes { app.swipeUp() }
             // Даём анимациям закончиться.
             sleep(2)
             let theme = dark ? "dark" : "light"

@@ -32,10 +32,19 @@ struct PaywallView: View {
 
     @State private var trialEligible: Set<String> = []
 
+    /// Пейволл внутри онбординга (1.7, KAN-122): внизу сразу видна «Продолжить бесплатно» (без таймера, правило 3.1.2),
+    /// а закрытие, эта кнопка и покупка вызывают замыкание вместо dismiss.
+    let onContinueFree: (() -> Void)?
+
     /// source обязателен: так у каждого показа в аналитике есть источник (KAN-123).
-    init(highlight: ProFeature? = nil, source: PaywallSource) {
+    init(highlight: ProFeature? = nil, source: PaywallSource, onContinueFree: (() -> Void)? = nil) {
         self.highlight = highlight
         self.source = source
+        self.onContinueFree = onContinueFree
+    }
+
+    private func close() {
+        if let onContinueFree { onContinueFree() } else { dismiss() }
     }
 
     private var features: [ProFeature] {
@@ -65,6 +74,20 @@ struct PaywallView: View {
                             .font(.body)
                             .foregroundStyle(.secondary)
                             .multilineTextAlignment(.center)
+                        if let days = yearlyTrialDays, !store.data.isPro {
+                            Label(String(localized: "Try Pro free for \(Fmt.days(days))"), systemImage: "gift.fill")
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(Color.accentColor)
+                                .padding(.horizontal, 12).padding(.vertical, 6)
+                                .background(Capsule().fill(Color.accentColor.opacity(0.12)))
+                                .padding(.top, 6)
+                                .accessibilityIdentifier("paywall.trial")
+                        }
+                    }
+
+                    // KAN-125: новогодняя скидка — отдельным блоком над списком функций.
+                    if source == .newYearOffer && !store.data.isPro {
+                        NewYearOfferCard(product: shop.products.first { $0.id == NewYearOffer.productID })
                     }
 
                     VStack(alignment: .leading, spacing: 18) {
@@ -85,13 +108,32 @@ struct PaywallView: View {
                 }
                 .padding(20)
             }
+            .safeAreaInset(edge: .bottom) {
+                if onContinueFree != nil {
+                    Button {
+                        Analytics.shared.action(.paywallClose)
+                        close()
+                    } label: {
+                        Text("Continue for free")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 6)
+                    }
+                    .glassButtonStyle(prominent: false)
+                    .accessibilityIdentifier("paywall.continueFree")
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
+                    .frame(maxWidth: .infinity)
+                    .background(.bar)
+                }
+            }
             .background(AppBackground())
             .analyticsScreen(.paywall)
             .onAppear { Analytics.shared.send(.paywallShown(source: source, feature: highlight)) }
-            .task {
-                await shop.loadProducts()
-                await loadTrialEligibility()
-            }
+            .task { await shop.loadProducts() }
+            // Товары могли грузиться ещё с запуска (loadProducts тогда сразу выходит): право на пробный период
+            // проверяем, когда они пришли, иначе плашка пробной недели не появлялась.
+            .task(id: shop.products.map(\.id)) { await loadTrialEligibility() }
             .alert(
                 "Purchase failed",
                 isPresented: Binding(get: { shop.errorMessage != nil }, set: { if !$0 { shop.errorMessage = nil } })
@@ -104,7 +146,7 @@ struct PaywallView: View {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
                         Analytics.shared.action(.paywallClose)
-                        dismiss()
+                        close()
                     } label: {
                         Image(systemName: "xmark")
                     }
@@ -137,7 +179,7 @@ extension PaywallView {
             Button {
                 guard let product = shop.products.first(where: { $0.id == selectedID }) else { return }
                 Task {
-                    if await shop.purchase(product, source: source) { dismiss() }
+                    if await shop.purchase(product, source: source) { close() }
                 }
             } label: {
                 Group {
@@ -219,6 +261,8 @@ extension PaywallView {
             )
         }
         .buttonStyle(.plain)
+        // Макеты ждут, пока StoreKit отдаст планы с ценами (DesignCatalogUITests).
+        .accessibilityIdentifier("paywall.plan.\(product.id)")
     }
 
     private func featureRow(_ feature: ProFeature, highlighted: Bool) -> some View {
@@ -254,6 +298,15 @@ extension PaywallView {
         .padding(.vertical, highlighted ? 6 : 0)
     }
 
+    /// Пробный период годовой подписки из StoreKit (introductoryOffer), если он пользователю ещё доступен (KAN-170).
+    private var yearlyTrialDays: Int? {
+        guard let yearly = shop.products.first(where: { $0.id == ProStore.yearlyID }),
+              trialEligible.contains(yearly.id),
+              let offer = yearly.subscription?.introductoryOffer, offer.paymentMode == .freeTrial
+        else { return nil }
+        return trialDays(offer.period)
+    }
+
     /// Пробный период выбранного плана, если он есть и пользователю ещё доступен.
     private var selectedTrialDays: Int? {
         guard let product = shop.products.first(where: { $0.id == selectedID }),
@@ -278,8 +331,12 @@ extension PaywallView {
     private func loadTrialEligibility() async {
         var eligible: Set<String> = []
         for product in shop.products {
-            if let sub = product.subscription, sub.introductoryOffer?.paymentMode == .freeTrial,
-               await sub.isEligibleForIntroOffer {
+            // В макетах — состояние новой установки: право на пробную неделю в локальном StoreKit
+            // после тестовых покупок то есть, то нет, и снимки выходили разными.
+            guard let sub = product.subscription, sub.introductoryOffer?.paymentMode == .freeTrial else { continue }
+            if TestMode.has("-design") {
+                eligible.insert(product.id)
+            } else if await sub.isEligibleForIntroOffer {
                 eligible.insert(product.id)
             }
         }

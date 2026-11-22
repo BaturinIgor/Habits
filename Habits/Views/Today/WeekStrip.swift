@@ -53,6 +53,7 @@ struct WeekStrip: View {
 }
 
 struct DayChip: View {
+    @Environment(\.dynamicTypeSize) private var typeSize
     let day: Date
     let isSelected: Bool
     let isToday: Bool
@@ -70,7 +71,8 @@ struct DayChip: View {
 
     var body: some View {
         VStack(spacing: 6) {
-            Text(Fmt.weekdayShort(day))
+            // При крупном шрифте «Ср»/«Wed» не влезали в плашку: одна буква.
+            Text(typeSize.isAccessibilitySize ? Fmt.weekdayVeryShort(day) : Fmt.weekdayShort(day))
                 .font(.caption2.weight(.semibold))
                 .foregroundStyle(isSelected ? Color.white.opacity(0.85) : Color.secondary)
             ZStack {
@@ -87,6 +89,8 @@ struct DayChip: View {
             .frame(width: 36, height: 36)
         }
         .frame(width: 50, height: 74)
+        // Плашка фиксированного размера: дальше xxxLarge число дня и буква не влезают и обрезаются.
+        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
         .background {
             RoundedRectangle(cornerRadius: 18, style: .continuous)
                 .fill(isSelected

@@ -14,6 +14,8 @@ struct HabitDetailView: View {
     @State private var showingWords = false
     /// Подсказку Siri показываем, пока человек её не закроет.
     @AppStorage("siriTipHabitDetail") private var showSiriTip = true
+    /// Карточку умного времени закрыли или приняли на этом экране.
+    @State private var smartTimeClosed = false
 
     var body: some View {
         analyticsBody.analyticsScreen(.detail)
@@ -76,6 +78,11 @@ struct HabitDetailView: View {
             StreakRepairCard(habit: habit, repair: repair)
         }
 
+        if let suggestion = smartTimeSuggestion(habit) {
+            SmartTimeCard(habit: habit, suggestion: suggestion) { smartTimeClosed = true }
+                .transition(.opacity.combined(with: .scale(scale: 0.95)))
+        }
+
         if showSiriTip && !habit.isArchived {
             SiriTipView(intent: MarkHabitDoneIntent(habit: HabitEntity(habit)), isVisible: $showSiriTip)
         }
@@ -106,6 +113,13 @@ struct HabitDetailView: View {
         NotesCard(habit: habit, data: store.data) { day in
             noteTarget = NoteTarget(habitID: habit.id, day: day)
         }
+    }
+
+    /// Предложение умного времени: только когда автосдвиг выключен и человек недавно не отказывался.
+    private func smartTimeSuggestion(_ habit: Habit) -> SmartTime.Suggestion? {
+        guard habit.smartTime != true, !smartTimeClosed, !habit.isArchived else { return nil }
+        if !TestMode.has("-design"), SmartTimeDismissals.isDismissed(habit.id) { return nil }
+        return SmartTime.suggestion(for: habit, in: store.data)
     }
 
     private func freezesThisMonth(_ stats: HabitStats) -> Int {

@@ -847,3 +847,56 @@ Purple||Fioletowy
 Pink||Różowy
 Raspberry||Malinowy
 Graphite||Grafitowy
+Energy||Energia
+Calm||Spokój
+Learning and languages||Nauka i języki
+Better sleep||Lepszy sen
+Focus||Skupienie
+Water, movement and fresh air||Woda, ruch i świeże powietrze
+Less stress, more balance||Mniej stresu, więcej równowagi
+Workouts and an active day||Treningi i aktywny dzień
+Reading, study and new words||Czytanie, nauka i nowe słowa
+A calm evening and a steady routine||Spokojny wieczór i stały rytm dnia
+Plan the day and get things done||Zaplanuj dzień i kończ zadania
+Back||Wstecz
+Step %lld of 3||Krok %lld z 3
+What do you want to work on?||Nad czym chcesz popracować?
+Pick a goal and we'll set up your first habits. You can change everything later.||Wybierz cel, a przygotujemy twoje pierwsze nawyki. Wszystko możesz później zmienić.
+Your first habits||Twoje pierwsze nawyki
+Uncheck what you don't need. You can add more from the catalog later.||Odznacz to, czego nie potrzebujesz. Więcej dodasz później z katalogu.
+Your plan is ready||Twój plan jest gotowy
+Start with one check-in today. Small steps count.||Zacznij dziś od jednego odhaczenia. Małe kroki też się liczą.
+How it works||Jak to działa
+Try Pro free for %@||Wypróbuj Pro za darmo przez %@
+Continue for free||Kontynuuj za darmo
+Your first step||Twój pierwszy krok
+Tap the circle next to a habit to check it off. One is enough for today.||Dotknij kółka obok nawyku, aby go odhaczyć. Na dziś wystarczy jeden.
+First check-in done!||Pierwsze odhaczenie zrobione!
+That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?||Tak zaczyna się seria. Chcesz przypomnienie, żeby jutro nie zapomnieć?
+That's how a streak starts. Come back tomorrow to keep it going.||Tak zaczyna się seria. Wróć jutro, aby ją kontynuować.
+Turn on reminders||Włącz przypomnienia
+Not now||Nie teraz
+Got it||Jasne
+New Year offer||Oferta noworoczna
+First year of Pro %@ off||Pierwszy rok Pro taniej o %@
+Until %@||Do %@
+Get the discount||Odbierz zniżkę
+Code: %@||Kod: %@
+Copy code||Kopiuj kod
+Tap the button and paste the code in the App Store window. You'll see the final price before you pay.||Stuknij przycisk i wklej kod w oknie App Store. Ostateczną cenę zobaczysz przed zapłatą.
+%@ for the first year||%@ za pierwszy rok
+After the first year, Pro renews at the regular price. Cancel anytime.||Po pierwszym roku Pro odnawia się w zwykłej cenie. Anuluj w dowolnej chwili.
+Smart time||Inteligentna godzina
+The reminder moves closer to when you usually check off the habit.||Przypomnienie przesuwa się bliżej godziny, o której zwykle odhaczasz nawyk.
+You usually check it off around %@. The reminder will move to %@.||Zwykle odhaczasz go około %@. Przypomnienie przesunie się na %@.
+The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins.||Przypomnienie przesuwa się bliżej godziny, o której zwykle odhaczasz nawyk. Potrzeba około dwóch tygodni wpisów.
+The reminder already matches when you usually check off the habit.||Przypomnienie już pasuje do godziny, o której zwykle odhaczasz nawyk.
+You usually check it off around %@||Zwykle odhaczasz go około %@
+The reminder comes at %@. Move it to %@?||Przypomnienie przychodzi o %@. Przesunąć na %@?
+Move to %@||Przesuń na %@
+What goes with a better mood||Co idzie w parze z lepszym nastrojem
+On days with this habit, your mood is higher on average||W dni z tym nawykiem twój nastrój jest średnio lepszy
+This is a pattern in your entries, not proof that the habit is the cause.||To prawidłowość w twoich wpisach, a nie dowód, że przyczyną jest nawyk.
+Rate your mood for %@ more to see which habits go with your better days.||Oceniaj nastrój jeszcze przez %@, a zobaczysz, które nawyki idą w parze z lepszymi dniami.
+No habit stands out yet: your mood is about the same on days with and without them.||Żaden nawyk jeszcze się nie wyróżnia: nastrój jest podobny w dni z nimi i bez nich.
+See which habits go with your better days||Zobacz, które nawyki idą w parze z lepszymi dniami

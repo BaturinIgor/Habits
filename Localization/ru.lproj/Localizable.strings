@@ -2,6 +2,7 @@
 "%@ / year" = "%@ в год";
 "%@ costs %lld sparks, you have %lld. You need %lld more. Check off habits to earn them." = "%@: цена ✨ %lld, у тебя: ✨ %lld. Не хватает ✨ %lld. Отмечай привычки, чтобы заработать.";
 "%@ costs %lld sparks. You have %lld." = "%@: цена ✨ %lld. У тебя: ✨ %lld.";
+"%@ for the first year" = "%@ за первый год";
 "%@ free, then %@. Cancel anytime." = "%1$@ бесплатно, затем %2$@. Отмена в любой момент.";
 "%@ is already done today." = "%@ уже выполнено сегодня.";
 "%@: the streak broke" = "%@: серия прервалась";
@@ -24,6 +25,7 @@
 "1 spark for each check-in, up to %lld a day" = "1 искра за каждую отметку, до %lld в день";
 "30 perfect days in a row" = "30 идеальных дней подряд";
 "7 perfect days in a row" = "7 идеальных дней подряд";
+"A calm evening and a steady routine" = "Спокойный вечер и ровный режим";
 "A copy of your habits and history is saved to your iCloud by itself when you leave the app, so nothing is lost when you change phones." = "Копия привычек и истории сама сохраняется в твой iCloud, когда ты выходишь из приложения. При смене телефона ничего не потеряется.";
 "A countdown on the Lock Screen and Dynamic Island that checks the habit off when time is up." = "Обратный отсчёт на экране блокировки и в Dynamic Island, а когда время выйдет, привычка отметится сама.";
 "A grown pet brings up to +5 a day" = "Подросший питомец приносит до +5 в день";
@@ -54,6 +56,7 @@
 "Adopt a pet" = "Заведи питомца";
 "Advanced" = "Продвинутый";
 "After habit" = "После привычки";
+"After the first year, Pro renews at the regular price. Cancel anytime." = "После первого года Pro продлевается по обычной цене. Отменить можно в любой момент.";
 "After: %@" = "После: %@";
 "Afternoon" = "День";
 "All" = "Все";
@@ -88,6 +91,7 @@
 "Avatars" = "Аватарки";
 "Awful" = "Ужасно";
 "Baby" = "Малыш";
+"Back" = "Назад";
 "Back up now" = "Сохранить сейчас";
 "Back up to iCloud" = "Копия в iCloud";
 "Background" = "Фон";
@@ -99,6 +103,7 @@
 "Best current streak" = "Лучшая серия сейчас";
 "Best streak" = "Лучшая серия";
 "Best, days" = "Рекорд, дней";
+"Better sleep" = "Хороший сон";
 "Better than nothing" = "Лучше, чем ничего";
 "Blue" = "Синий";
 "Break bad habits" = "Отказ от вредного";
@@ -115,6 +120,7 @@
 "By habit" = "По привычкам";
 "By time" = "По времени";
 "Call family" = "Позвонить родным";
+"Calm" = "Спокойствие";
 "Cancel" = "Отмена";
 "Cat" = "Котик";
 "Chain reaction" = "Цепная реакция";
@@ -148,6 +154,7 @@
 "Clear your inbox" = "Разобрать почту";
 "Clearer Pro" = "Понятный Pro";
 "Close" = "Закрыть";
+"Code: %@" = "Код: %@";
 "Collector" = "Коллекционер";
 "Come back after a miss 10 times" = "Вернись после пропуска 10 раз";
 "Comeback" = "Возвращение";
@@ -158,9 +165,11 @@
 "Completion" = "Выполнение";
 "Consistency" = "Постоянство";
 "Continue" = "Дальше";
+"Continue for free" = "Продолжить бесплатно";
 "Control Center" = "Пункт управления";
 "Copied" = "Скопировано";
 "Copy address" = "Скопировать адрес";
+"Copy code" = "Скопировать код";
 "Copy message" = "Скопировать сообщение";
 "Copy message and address" = "Скопировать сообщение и адрес";
 "Coral" = "Коралловый";
@@ -226,6 +235,7 @@
 "End" = "Окончание";
 "End date" = "Дата окончания";
 "Ended" = "Завершена";
+"Energy" = "Энергия";
 "Evening" = "Вечер";
 "Evening summary" = "Вечерняя сводка";
 "Every" = "Раз в";
@@ -262,9 +272,12 @@
 "Fifty" = "Полсотни";
 "Finance" = "Финансы";
 "Finish and check off" = "Закончить и отметить";
+"First check-in done!" = "Первая отметка есть!";
 "First step" = "Первый шаг";
 "First time" = "Первый раз";
+"First year of Pro %@ off" = "Первый год Pro со скидкой %@";
 "Fitness" = "Спорт";
+"Focus" = "Фокус";
 "Focus for an hour" = "Час без отвлечений";
 "For bad habits: smoking, sweets, alcohol, scrolling." = "Для вредных привычек: курение, сладкое, алкоголь, соцсети.";
 "For example, 8 glasses of water. Each tap on the circle adds one." = "Например, 8 стаканов воды. Каждое нажатие на кружок добавляет один.";
@@ -282,10 +295,12 @@
 "Full mood journal" = "Полный дневник настроения";
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Подключи Pro на iPhone, чтобы пользоваться таймером на Apple Watch.";
 "Get a pet" = "Завести питомца";
+"Get the discount" = "Получить скидку";
 "Go to bed on time" = "Лечь спать вовремя";
 "Goal" = "Цель";
 "Gold" = "Золото";
 "Good" = "Хорошо";
+"Got it" = "Понятно";
 "Graphite" = "Графит";
 "Great" = "Отлично";
 "Great job, keep it up" = "Отличная работа, так держать";
@@ -319,6 +334,7 @@
 "Hours of sleep" = "Часы сна";
 "How are you feeling?" = "Как ты себя чувствуешь?";
 "How are you today?" = "Как ты сегодня?";
+"How it works" = "Как это работает";
 "How many habits are done today." = "Сколько привычек выполнено сегодня.";
 "How often" = "Как часто";
 "How to earn" = "Как заработать";
@@ -377,12 +393,14 @@
 "Learn words" = "Учить слова";
 "Learned: %lld of %lld" = "Выучено: %lld из %lld";
 "Learning" = "Обучение";
+"Learning and languages" = "Учёба и языки";
 "Leave group" = "Выйти из группы";
 "Leave group?" = "Выйти из группы?";
 "Left for today: %@." = "На сегодня осталось: %@.";
 "Legend" = "Легенда";
 "Less" = "Меньше";
 "Less social media" = "Меньше соцсетей";
+"Less stress, more balance" = "Меньше стресса, больше равновесия";
 "Let's go" = "Начать";
 "Let's keep the streak going!" = "Давай не прерывать серию!";
 "Let's start with your first habit" = "Начнём с первой привычки";
@@ -435,6 +453,7 @@
 "Morning" = "Утро";
 "Morning exercises" = "Зарядка";
 "Most steady: %@, %lld of %lld" = "Самая стабильная: %@, %lld из %lld";
+"Move to %@" = "Перенести на %@";
 "Move to archive" = "Переместить в архив";
 "My month" = "Мой месяц";
 "My week" = "Моя неделя";
@@ -442,6 +461,7 @@
 "N times a week" = "N раз в неделю";
 "Name" = "Название";
 "Never" = "Никогда";
+"New Year offer" = "Новогоднее предложение";
 "New achievement!" = "Новая ачивка!";
 "New app icons" = "Новые иконки приложения";
 "New group" = "Новая группа";
@@ -462,6 +482,7 @@
 "No entries yet" = "Записей пока нет";
 "No fast food" = "Без фастфуда";
 "No group" = "Без группы";
+"No habit stands out yet: your mood is about the same on days with and without them." = "Пока ни одна привычка не выделяется: настроение примерно одинаковое в дни с ними и без них.";
 "No habits" = "Привычек нет";
 "No habits are linked yet." = "Пока нет связанных привычек.";
 "No habits are planned for this day." = "На этот день привычек не запланировано.";
@@ -477,6 +498,7 @@
 "Not available" = "Недоступны";
 "Not checked off yet: %@" = "Ещё не отмечено: %@";
 "Not enough sparks" = "Не хватает искр";
+"Not now" = "Не сейчас";
 "Not set up" = "Не настроены";
 "Not yet" = "Ещё нет";
 "Note" = "Заметка";
@@ -494,6 +516,7 @@
 "Okay" = "Нормально";
 "Older entries: %lld. Your full history is in Pro." = "Старых записей: %lld. Вся история доступна в Pro.";
 "On" = "Включены";
+"On days with this habit, your mood is higher on average" = "В дни с этой привычкой настроение в среднем выше";
 "On target" = "В цель";
 "On weekdays" = "По будням";
 "On weekends" = "По выходным";
@@ -536,9 +559,11 @@
 "Pet gifts" = "Подарки питомца";
 "Pet name" = "Имя питомца";
 "Phoenix" = "Феникс";
+"Pick a goal and we'll set up your first habits. You can change everything later." = "Выбери цель, и мы подберём первые привычки. Всё можно поменять потом.";
 "Pick a template or create your own." = "Выбери шаблон или создай свою.";
 "Pink" = "Розовый";
 "Plan the day" = "Спланировать день";
+"Plan the day and get things done" = "Планируй день и доводи дела до конца";
 "Practice an instrument" = "Играть на инструменте";
 "Privacy Policy" = "Конфиденциальность";
 "Pro gifts" = "Подарки Pro";
@@ -561,11 +586,13 @@
 "Raspberry" = "Малиновый";
 "Rate the app" = "Оценить приложение";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "Оцени день одним касанием внизу экрана «Сегодня» и добавь пару слов. С Pro видна вся история, график за месяц и привычки, которые поднимают настроение.";
+"Rate your mood for %@ more to see which habits go with your better days." = "Отмечай настроение ещё %@, и увидишь, какие привычки идут вместе с хорошими днями.";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "Отмечай настроение на экране «Сегодня» раз в день. Через пару недель станет видно, какие привычки его поднимают.";
 "Reach a daily goal 20 times" = "Выполни дневную цель 20 раз";
 "Reach a weekly goal 4 times" = "Выполни недельную цель 4 раза";
 "Read" = "Чтение";
 "Reading" = "Чтение";
+"Reading, study and new words" = "Чтение, учёба и новые слова";
 "Reflective" = "Вдумчивый";
 "Refresh widgets" = "Обновить виджеты";
 "Regular" = "Завсегдатай";
@@ -609,6 +636,7 @@
 "See how much money you save by quitting a habit." = "Сколько денег ты экономишь, бросив привычку.";
 "See how much you've saved with Pro" = "Сколько сэкономлено, покажет Pro";
 "See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch." = "Привычки на сегодня теперь на запястье, отмечай их одним касанием. Всё синхронизируется с iPhone. Если ZenHab не появился на часах, установи его в приложении Watch на iPhone.";
+"See which habits go with your better days" = "Узнай, какие привычки идут вместе с хорошими днями";
 "See which habits make your days better" = "Узнай, какие привычки делают дни лучше";
 "Send" = "Отправить";
 "Send by email" = "Отправить письмом";
@@ -637,6 +665,7 @@
 "Sleeping" = "Спит";
 "Small steps add up." = "Маленькие шаги складываются в большие.";
 "Small steps every day" = "Маленькие шаги каждый день";
+"Smart time" = "Умное время";
 "Some days" = "По дням";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Разложи экран «Сегодня» по группам в Настройках, а виджет «Сегодня» зажми, чтобы выбрать одну группу.";
 "Sparks" = "Искры";
@@ -653,10 +682,12 @@
 "Start over" = "Начать заново";
 "Start the count again?" = "Начать счёт заново?";
 "Start timer" = "Запустить таймер";
+"Start with one check-in today. Small steps count." = "Начни с одной отметки сегодня. Маленькие шаги тоже считаются.";
 "Starts a countdown with a Live Activity. When time's up, the habit is checked off." = "Запускает обратный отсчёт с Live Activity. Когда время выйдет, привычка отметится.";
 "Statistics" = "Статистика";
 "Statistics will appear once you start checking off habits." = "Статистика появится, когда ты начнёшь отмечать привычки.";
 "Status" = "Статус";
+"Step %lld of 3" = "Шаг %lld из 3";
 "Steps" = "Шаги";
 "Steps to reproduce help a lot." = "Шаги, как повторить ошибку, очень помогают.";
 "Steps to reproduce help a lot. You can attach a screenshot in the email." = "Шаги, как повторить ошибку, очень помогают. Скриншот можно приложить в письме.";
@@ -684,6 +715,8 @@
 "Take vitamins" = "Принять витамины";
 "Tangerine" = "Мандариновый";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "Нажми на день, чтобы отметить. Удерживай, чтобы пропустить или добавить заметку.";
+"Tap the button and paste the code in the App Store window. You'll see the final price before you pay." = "Нажми кнопку и вставь код в окне App Store. Итоговую цену увидишь до оплаты.";
+"Tap the circle next to a habit to check it off. One is enough for today." = "Нажми на кружок рядом с привычкой, чтобы отметить её. На сегодня хватит и одной.";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "Нажми на кружок или смахни вправо, чтобы отметить. Смахни влево, чтобы пропустить, добавить заметку или изменить. Удерживай, чтобы поменять порядок.";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "Нажми на кружок, чтобы запустить таймер. Он идёт на экране блокировки и отметит привычку, когда время выйдет.";
 "Tap the days when the habit should be done" = "Нажми на дни, в которые нужно выполнять привычку";
@@ -693,6 +726,8 @@
 "Tell us what you think" = "Расскажи, что думаешь";
 "Terms of Use" = "Условия";
 "Thank you!" = "Спасибо!";
+"That's how a streak starts. Come back tomorrow to keep it going." = "Так и начинается серия. Возвращайся завтра, чтобы её продолжить.";
+"That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "Так и начинается серия. Напомнить завтра, чтобы не забыть?";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "На экране Pro теперь видно всё, что в него входит, и он открывается на той функции, которую ты нажал.";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "Копия в iCloud: %@, %@, привычек: %lld. Она обновляется сама, когда ты выходишь из приложения. Фото для аватарки и фона в неё не входят.";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "В бесплатной версии больше нет места для привычек. Открой ZenHab, чтобы подключить Pro.";
@@ -705,11 +740,16 @@
 "The mood card at the bottom of the list lets you rate your day with one tap." = "Карточка внизу списка, чтобы оценить день одним касанием.";
 "The new language will apply after you close the app and open it again." = "Новый язык включится, когда ты закроешь приложение и откроешь его снова.";
 "The purchase could not be verified." = "Не удалось проверить покупку.";
+"The reminder already matches when you usually check off the habit." = "Напоминание уже совпадает с тем, когда ты обычно отмечаешь привычку.";
+"The reminder comes at %@. Move it to %@?" = "Напоминание приходит в %@. Перенести на %@?";
+"The reminder moves closer to when you usually check off the habit." = "Напоминание само подстраивается под время, когда ты обычно отмечаешь привычку.";
+"The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins." = "Напоминание само подстраивается под время, когда ты обычно отмечаешь привычку. Для этого нужно около двух недель отметок.";
 "The streak broke" = "Серия прервалась";
 "The widget will update after unlocking." = "Виджет обновится после разблокировки.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "Покупок пока нет: этот переключатель включает функции Pro для проверки.";
 "There's a backup in your iCloud from %@. Habits in it: %lld." = "В твоём iCloud есть копия от %@. Привычек в ней: %lld.";
 "This group and its habits will be removed from this iPhone." = "Группа и её привычки будут удалены с этого iPhone.";
+"This is a pattern in your entries, not proof that the habit is the cause." = "Это закономерность в твоих записях, а не доказательство, что дело в привычке.";
 "Tidy up for 10 minutes" = "Убраться 10 минут";
 "Time" = "Время";
 "Time for your habit" = "Пора выполнить привычку";
@@ -735,8 +775,10 @@
 "Track expenses" = "Записать расходы";
 "Track habits, get gentle reminders and watch your streaks grow." = "Отмечай привычки, получай мягкие напоминания и смотри, как растут серии.";
 "Track your habits with ZenHab" = "Отслеживай привычки в ZenHab";
+"Try Pro free for %@" = "Попробуй Pro бесплатно %@";
 "Try again" = "Попробовать ещё раз";
 "Try it" = "Попробовать";
+"Turn on reminders" = "Включить напоминания";
 "Turn on the lock" = "Включить блокировку";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "Включи «Бросаю эту привычку» в привычке, и увидишь, сколько дней ты без неё, рекорд и следующую веху. С Pro ещё и сэкономленные деньги.";
 "Turquoise" = "Бирюзовый";
@@ -744,6 +786,7 @@
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "Два пропуска в месяц не обнулят серию, а в тяжёлый день засчитается и минимальная версия.";
 "Two weeks" = "Две недели";
 "Uncheck" = "Снять отметку";
+"Uncheck what you don't need. You can add more from the catalog later." = "Сними галочку с лишнего. Другие привычки можно добавить из каталога позже.";
 "Undo skip" = "Отменить пропуск";
 "Unicorn" = "Единорог";
 "Unit" = "Единица";
@@ -757,6 +800,7 @@
 "Unlock: %@" = "Как открыть: %@";
 "Unstoppable" = "Неудержимый";
 "Until" = "До";
+"Until %@" = "До %@";
 "Until a habit is checked off, its reminder repeats: %@. Done and Skip in the notification stop the repeats for that day." = "Пока привычка не отмечена, напоминание повторяется: %@. Кнопки \"Готово\" и \"Пропустить\" в уведомлении останавливают повторы на этот день.";
 "Version" = "Версия";
 "Veteran" = "Ветеран";
@@ -768,6 +812,7 @@
 "Warming up" = "Разминка";
 "Watch face complications" = "Компликации на циферблате";
 "Water, liters" = "Вода, литры";
+"Water, movement and fresh air" = "Вода, движение и свежий воздух";
 "Week" = "Неделя";
 "Week in review" = "Итоги недели";
 "Weekdays" = "Будни";
@@ -778,6 +823,8 @@
 "Welcome to Habit Tracker" = "Добро пожаловать в Трекер привычек";
 "What %@ gives you" = "Что даёт %@";
 "What ZenHab reads" = "Что читает ZenHab";
+"What do you want to work on?" = "Над чем хочешь поработать?";
+"What goes with a better mood" = "Что идёт вместе с хорошим настроением";
 "What happened and what did you expect?" = "Что произошло и что ты ожидал увидеть?";
 "What happened today? What helped?" = "Что сегодня было? Что помогло?";
 "What lifts your mood" = "Что поднимает настроение";
@@ -800,6 +847,7 @@
 "Work, travel and conversation" = "Работа, путешествия и разговоры";
 "Workout" = "Тренировка";
 "Workouts" = "Тренировки";
+"Workouts and an active day" = "Тренировки и активный день";
 "Write 10 notes" = "Напиши 10 заметок";
 "Write 50 notes" = "Напиши 50 заметок";
 "Write down 3 good things" = "Записать 3 хороших события";
@@ -809,10 +857,14 @@
 "Yesterday" = "Вчера";
 "Yoga" = "Йога";
 "You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "Доступ к каждому типу данных можно разрешить или запретить в Настройки → Конфиденциальность и безопасность → Здоровье → ZenHab.";
+"You usually check it off around %@" = "Обычно ты отмечаешь её около %@";
+"You usually check it off around %@. The reminder will move to %@." = "Обычно ты отмечаешь её около %@. Напоминание переедет на %@.";
 "You're doing great!" = "У тебя отлично получается!";
 "You've gone through the whole dictionary" = "Ты прошёл весь словарь";
 "Young" = "Подросток";
 "Your days and the habits that lift your mood" = "Твои дни и привычки, которые поднимают настроение";
+"Your first habits" = "Твои первые привычки";
+"Your first step" = "Твой первый шаг";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Привычки и история сами сохраняются в твой iCloud. На новом iPhone ZenHab предложит всё вернуть.";
 "Your habits stay on your iPhone and in your own iCloud." = "Привычки хранятся на твоём iPhone и в твоём iCloud.";
 "Your habits stay only on your iPhone." = "Привычки хранятся только на твоём iPhone.";
@@ -823,6 +875,7 @@
 "Your pet grows with every habit you check off and gets sad when you disappear for a few days." = "Питомец растёт с каждой отмеченной привычкой и грустит, если ты пропадаешь на несколько дней.";
 "Your pet's mood and feeding right from the Home Screen." = "Настроение питомца и кормление прямо с главного экрана.";
 "Your photo" = "Своё фото";
+"Your plan is ready" = "Твой план готов";
 "Your week in review" = "Итоги твоей недели";
 "Your whole mood history, a monthly chart and which habits lift your mood." = "Вся история настроения, график за месяц и привычки, которые его поднимают.";
 "Your year in review" = "Итоги твоего года";

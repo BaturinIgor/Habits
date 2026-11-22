@@ -847,3 +847,56 @@ Purple||Ungu
 Pink||Merah muda
 Raspberry||Raspberi
 Graphite||Grafit
+Energy||Energi
+Calm||Tenang
+Learning and languages||Belajar dan bahasa
+Better sleep||Tidur lebih baik
+Focus||Fokus
+Water, movement and fresh air||Air, gerak, dan udara segar
+Less stress, more balance||Lebih sedikit stres, lebih seimbang
+Workouts and an active day||Olahraga dan hari yang aktif
+Reading, study and new words||Membaca, belajar, dan kata baru
+A calm evening and a steady routine||Malam yang tenang dan rutinitas teratur
+Plan the day and get things done||Rencanakan hari dan selesaikan tugas
+Back||Kembali
+Step %lld of 3||Langkah %lld dari 3
+What do you want to work on?||Apa yang ingin kamu perbaiki?
+Pick a goal and we'll set up your first habits. You can change everything later.||Pilih tujuan dan kami siapkan kebiasaan pertamamu. Semuanya bisa diubah nanti.
+Your first habits||Kebiasaan pertamamu
+Uncheck what you don't need. You can add more from the catalog later.||Hapus centang yang tidak kamu perlukan. Kamu bisa menambah lagi dari katalog nanti.
+Your plan is ready||Rencanamu sudah siap
+Start with one check-in today. Small steps count.||Mulai dengan satu centang hari ini. Langkah kecil pun berarti.
+How it works||Cara kerjanya
+Try Pro free for %@||Coba Pro gratis selama %@
+Continue for free||Lanjutkan gratis
+Your first step||Langkah pertamamu
+Tap the circle next to a habit to check it off. One is enough for today.||Ketuk lingkaran di samping kebiasaan untuk mencentangnya. Satu saja cukup untuk hari ini.
+First check-in done!||Centang pertama selesai!
+That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?||Begitulah rentetan dimulai. Mau pengingat supaya besok tidak lupa?
+That's how a streak starts. Come back tomorrow to keep it going.||Begitulah rentetan dimulai. Kembali besok untuk melanjutkannya.
+Turn on reminders||Nyalakan pengingat
+Not now||Nanti saja
+Got it||Oke
+New Year offer||Penawaran Tahun Baru
+First year of Pro %@ off||Tahun pertama Pro diskon %@
+Until %@||Hingga %@
+Get the discount||Ambil diskon
+Code: %@||Kode: %@
+Copy code||Salin kode
+Tap the button and paste the code in the App Store window. You'll see the final price before you pay.||Ketuk tombol dan tempel kode di jendela App Store. Kamu akan melihat harga akhir sebelum membayar.
+%@ for the first year||%@ untuk tahun pertama
+After the first year, Pro renews at the regular price. Cancel anytime.||Setelah tahun pertama, Pro diperpanjang dengan harga normal. Batalkan kapan saja.
+Smart time||Waktu pintar
+The reminder moves closer to when you usually check off the habit.||Pengingat bergeser mendekati waktu kamu biasa mencentang kebiasaan.
+You usually check it off around %@. The reminder will move to %@.||Kamu biasanya mencentangnya sekitar %@. Pengingat akan pindah ke %@.
+The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins.||Pengingat bergeser mendekati waktu kamu biasa mencentang kebiasaan. Perlu sekitar dua minggu catatan.
+The reminder already matches when you usually check off the habit.||Pengingat sudah sesuai dengan waktu kamu biasa mencentang kebiasaan.
+You usually check it off around %@||Kamu biasanya mencentangnya sekitar %@
+The reminder comes at %@. Move it to %@?||Pengingat datang pukul %@. Pindahkan ke %@?
+Move to %@||Pindahkan ke %@
+What goes with a better mood||Yang menyertai suasana hati lebih baik
+On days with this habit, your mood is higher on average||Pada hari dengan kebiasaan ini, suasana hatimu rata-rata lebih baik
+This is a pattern in your entries, not proof that the habit is the cause.||Ini pola dalam catatanmu, bukan bukti bahwa kebiasaan itu penyebabnya.
+Rate your mood for %@ more to see which habits go with your better days.||Catat suasana hatimu %@ lagi untuk melihat kebiasaan mana yang menyertai hari-hari baikmu.
+No habit stands out yet: your mood is about the same on days with and without them.||Belum ada kebiasaan yang menonjol: suasana hatimu kurang lebih sama pada hari dengan dan tanpa kebiasaan itu.
+See which habits go with your better days||Lihat kebiasaan mana yang menyertai hari-hari baikmu

@@ -18,6 +18,7 @@ struct SettingsView: View {
     @Environment(\.openURL) private var openURL
     @State private var showingPaywall = false
     @State private var paywallFeature: ProFeature?
+    @State private var showingOfferPaywall = false
     @State private var showingRestartHint = false
     @State private var showingProfile = false
     @State private var showingFeedback = false
@@ -90,6 +91,10 @@ struct SettingsView: View {
                                 Image(systemName: "crown.fill").foregroundStyle(.orange)
                             }
                         }
+                    }
+                    // KAN-125: новогоднее предложение, только в дни акции и без Pro.
+                    if NewYearOffer.isShown(isPro: store.data.isPro) {
+                        NewYearOfferRow { showingOfferPaywall = true }
                     }
                     #if SIDELOAD
                     Toggle("Pro test mode", isOn: store.settingBinding(\.proUnlocked))
@@ -230,6 +235,9 @@ struct SettingsView: View {
             }
             .sheet(item: $paywallFeature) { feature in
                 PaywallView(highlight: feature, source: feature == .unlimited ? .limit : .feature)
+            }
+            .sheet(isPresented: $showingOfferPaywall) {
+                PaywallView(source: .newYearOffer)
             }
             .sheet(isPresented: $showingProfile) {
                 ProfileView()
