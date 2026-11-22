@@ -49,11 +49,9 @@ Nutzungsbedingungen: https://www.apple.com/legal/internet-services/itunes/dev/st
 Datenschutz: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab auf der Apple Watch: deine Gewohnheiten für heute am Handgelenk, mit einem Tippen abgehakt (bei Gewohnheiten mit Zähler zählt jedes Tippen eins hoch). Funktioniert auch offline und synchronisiert sich mit deinem iPhone.
-• Komplikationen fürs Zifferblatt: rund, Ecke, rechteckig und als Zeile. So siehst du deinen Tagesfortschritt auf einen Blick.
-• Gewohnheits-Timer auf der Apple Watch (Pro): Ist die Zeit um, tippt dir die Uhr ans Handgelenk und hakt die Gewohnheit ab.
-• Monatsrückblick und Jahresrückblick: in der Statistik oder zum Monatsanfang auf „Heute“, als Bild zum Teilen.
-• Geteilte Bilder haben jetzt einen QR-Code, und mit dem Bild geht ein Link zu ZenHab im App Store mit.
-• Alle 11 Haustiere sind neu gezeichnet: weicher, plastischer Look, 4 Wachstumsstufen, Gefühle und sanfte Animationen. Sie atmen, blinzeln, manche wedeln mit dem Schwanz, und alle hüpfen, wenn du eine Gewohnheit abhakst.
-• Anonyme Nutzungsstatistiken zeigen uns, was wir verbessern können. Sie enthalten nie etwas, das du eintippst, und du kannst sie in den Einstellungen ausschalten.
-• Die Rückblick-Karten sehen mit großer Schrift besser aus, und der Haustier-Bildschirm ist jetzt komplett übersetzt.
+• Starte mit einem Ziel: Wähl aus, was du ändern willst, und ZenHab stellt dir passende Gewohnheiten zusammen.
+• Smarte Erinnerungen: Sie passen sich an die Zeit an, zu der du deine Gewohnheiten wirklich abhakst.
+• Stimmungs-Einblicke: Sieh, welche Gewohnheiten mit deiner besten Laune zusammenhängen.
+• Mehr Siri und Kurzbefehle: Stimmung eintragen oder Timer starten per Sprache, Gewohnheiten direkt in Spotlight finden.
+• Neujahrsangebot für ZenHab Pro, nur für kurze Zeit.
+• Besser mit großer Schrift und VoiceOver.

@@ -49,11 +49,9 @@ Ketentuan Penggunaan: https://www.apple.com/legal/internet-services/itunes/dev/s
 Privasi: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• ZenHab di Apple Watch: kebiasaan hari ini di pergelangan tangan, dicentang dengan sekali ketuk (untuk kebiasaan dengan hitungan, setiap ketukan menambah satu). Tetap jalan tanpa internet dan tersinkron dengan iPhone.
-• Komplikasi tampilan jam: bulat, sudut, persegi panjang, dan sebaris. Lihat kemajuan hari ini sekilas.
-• Timer kebiasaan di Apple Watch (Pro): saat waktu habis, jam mengetuk pergelangan tanganmu dan mencentang kebiasaan.
-• Ringkasan bulan dan Ringkasan tahun: ada di Statistik atau di Hari Ini saat awal bulan, dan bisa dibagikan sebagai gambar.
-• Gambar yang kamu bagikan kini punya kode QR dan dikirim bersama tautan ke ZenHab di App Store.
-• Ke-11 hewan peliharaan digambar ulang: gaya baru yang lembut dan bervolume, 4 tahap, emosi, dan animasi halus. Mereka bernapas, berkedip, sebagian mengibaskan ekor, dan semuanya melompat saat kamu mencentang kebiasaan.
-• Statistik penggunaan anonim membantu kami tahu apa yang perlu diperbaiki. Statistik ini tidak pernah memuat apa pun yang kamu ketik, dan kamu bisa mematikannya di Pengaturan.
-• Kartu ringkasan tampil lebih baik dengan teks besar, dan layar hewan peliharaan kini sepenuhnya diterjemahkan.
+• Mulai dari tujuan: pilih apa yang ingin kamu ubah, dan ZenHab menyiapkan kebiasaan yang siap dipakai.
+• Pengingat pintar: menyesuaikan diri dengan jam saat kamu benar-benar mencentang kebiasaan.
+• Wawasan suasana hati: lihat kebiasaan mana yang berkaitan dengan suasana hati terbaikmu.
+• Lebih banyak Siri dan Pintasan: catat suasana hati atau mulai timer dengan suara, dan temukan kebiasaan di Spotlight.
+• Penawaran Tahun Baru untuk ZenHab Pro, waktu terbatas.
+• Lebih nyaman dengan teks besar dan VoiceOver.

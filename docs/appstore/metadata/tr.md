@@ -49,11 +49,9 @@ Kullanım Koşulları: https://www.apple.com/legal/internet-services/itunes/dev/
 Gizlilik: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Apple Watch'ta ZenHab: bugünün alışkanlıkları bileğinde, tek dokunuşla işaretle (sayılı alışkanlıklarda her dokunuş bir ekler). iPhone yanında olmasa da çalışır, sonra eşitlenir.
-• Saat kadranı komplikasyonları: dairesel, köşe, dikdörtgen ve satır içi. Günün ilerlemesini bir bakışta gör.
-• Apple Watch'ta alışkanlık zamanlayıcısı (Pro): süre dolunca saat bileğine hafifçe dokunur ve alışkanlığı işaretler.
-• Ay özeti ve Yıl özeti: İstatistikler'de ya da ay başında Bugün ekranında. Resim olarak paylaşabilirsin.
-• Paylaştığın resimlerde artık bir QR kod var ve resimle birlikte ZenHab'ın App Store bağlantısı da gidiyor.
-• 11 evcil hayvanın hepsi yeniden çizildi: yumuşak, hacimli yeni çizimler, 4 büyüme evresi, duygular ve sakin animasyonlar. Nefes alıyor, göz kırpıyor, bazıları kuyruk sallıyor ve bir alışkanlığı işaretlediğinde hepsi zıplıyor.
-• Anonim kullanım istatistikleri neyi iyileştireceğimizi görmemize yardım eder. Yazdığın hiçbir şey bu istatistiklere girmez ve Ayarlar'dan kapatabilirsin.
-• Özet kartları büyük yazıda daha iyi görünüyor ve evcil hayvan ekranı artık tamamen çevrildi.
+• Bir hedefle başla: neyi değiştirmek istediğini seç, ZenHab sana hazır alışkanlıklar önersin.
+• Akıllı hatırlatıcılar: alışkanlıkları gerçekten işaretlediğin saate göre kendini ayarlar.
+• Ruh hali içgörüleri: hangi alışkanlıkların en iyi ruh halinle bağlantılı olduğunu gör.
+• Daha fazla Siri ve Kestirmeler: sesinle ruh halini kaydet veya zamanlayıcı başlat, alışkanlıklarını Spotlight'ta bul.
+• ZenHab Pro'da yılbaşı teklifi, sınırlı süre için.
+• Büyük metin ve VoiceOver ile daha rahat.

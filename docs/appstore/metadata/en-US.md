@@ -3,19 +3,21 @@
 Primary language of the listing. Copy each block into the field with the same name in App Store Connect.
 
 ## Name
-ZenHab: Habit Tracker
+ZenHab: Daily Habit Tracker
 
 ## Subtitle
-Daily routine, streaks, goals
+Routine Planner, Streaks & Pet
 
 ## Promotional text
 Build habits that stick, now on Apple Watch too: check off from your wrist, see your month and year in review, and grow a pet along the way. No account needed.
 
 ## Keywords
-habits,routine,planner,daily,goals,reminder,streak,self care,widget,productivity,water,watch,journal
+goal,widget,self,care,mood,reminder,checklist,adhd,quit,bad,builder,timer,journal,water,watch,health
 
 ## Description
-ZenHab helps you build good habits and keep them, one calm day at a time.
+ZenHab is a daily habit tracker and routine planner: build good habits, keep your streaks and reach your goals, one calm day at a time.
+
+Pick a goal and start with a ready-made set of habits. Reminders learn when you actually check off, and mood insights show which habits make your days better.
 
 Add a habit in seconds, choose the days and a reminder time, and check it off right from the notification or a Home Screen widget. Your streaks, calendar and charts show how far you've come.
 
@@ -30,6 +32,7 @@ HABITS YOUR WAY
 
 REMINDERS THAT WORK
 • A reminder at the time you pick
+• Smart reminders that move to the time you usually check a habit off
 • If you haven't checked a habit off, the reminder repeats every 15 minutes
 • Done and Skip buttons right in the notification stop the repeats
 
@@ -37,6 +40,7 @@ SEE YOUR PROGRESS
 • Current and best streaks, completion rate
 • Calendar, charts and an activity heatmap
 • Achievements for streaks, perfect days and weeks
+• Mood journal: see which habits go with your best mood
 • Week, month and year in review cards, shared as a picture
 
 STAY MOTIVATED
@@ -53,7 +57,7 @@ WIDGETS
 • Home Screen widgets: check off habits without opening the app
 • Lock Screen widgets with today's progress
 • Check off a habit from Control Center, the Lock Screen or the Action button (iOS 18)
-• Siri and Shortcuts
+• Siri and Shortcuts: check off, log your mood or start a timer by voice; habits in Spotlight
 
 APPLE WATCH
 • Today's habits on your wrist, checked off with one tap
@@ -85,11 +89,9 @@ Privacy Policy: https://baturinigor.github.io/Habits/privacy.html
 The app is available in 14 languages: English, Russian, German, French, Spanish, Portuguese, Italian, Turkish, Polish, Indonesian, Chinese, Japanese, Korean and Hindi.
 
 ## What's New
-• ZenHab on Apple Watch: today's habits on your wrist, checked off with one tap (habits with a count go up by one with each tap). Works offline and syncs with your iPhone.
-• Watch face complications: circular, corner, rectangular and inline, so you see today's progress at a glance.
-• Habit timer on Apple Watch (Pro): when time is up, the watch taps your wrist and checks the habit off.
-• Month in review and Year in review: find them in Statistics, or on Today at the start of a month, and share them as a picture.
-• Shared pictures now include a QR code and come with a link to ZenHab on the App Store.
-• All 11 pets are redrawn: soft new art, 4 growth stages, emotions and gentle animations. They breathe, blink, some wag their tails, and all of them jump when you check off a habit.
-• Anonymous usage statistics help us see what to improve. They never include anything you type, and you can turn them off in Settings.
-• Review cards look better with large text, and the pet screen is now fully translated.
+• Start with a goal: pick what you want to change, and ZenHab sets up a ready-made set of habits for you.
+• Smart reminders: they learn when you actually check habits off and move to that time.
+• Mood insights: see which habits go together with your best mood.
+• More Siri and Shortcuts: log your mood or start a timer by voice, and find your habits in Spotlight.
+• New Year offer on ZenHab Pro, for a limited time.
+• Better with large text and VoiceOver.
