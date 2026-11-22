@@ -560,6 +560,11 @@ struct AppSettings: Codable, Hashable {
     var appLock: Bool = false
     /// Карточка настроения на экране «Сегодня».
     var moodCard: Bool = true
+    /// Пейволл в конце онбординга уже показан (1.7, KAN-122): второй раз не показываем.
+    var onboardingPaywallSeen: Bool = false
+    /// Подсказки первого дня на «Сегодня» после онбординга (1.7, KAN-169): подсказка отметить первую привычку,
+    /// потом поздравление. Выключается, когда поздравление закрыли.
+    var firstDayGuide: Bool = false
 
     init() {}
 
@@ -567,6 +572,7 @@ struct AppSettings: Codable, Hashable {
         case proUnlocked, remindersEnabled, homeLayout, doneToBottom, summaryEnabled, summaryTime
         case onboardingDone, gestureHintShown, backgroundID, avatarID, seenAchievements, badgeEnabled, whatsNewSeen
         case appLock, moodCard
+        case onboardingPaywallSeen, firstDayGuide
     }
 
     init(from decoder: Decoder) throws {
@@ -586,6 +592,8 @@ struct AppSettings: Codable, Hashable {
         whatsNewSeen = try c.decodeIfPresent(String.self, forKey: .whatsNewSeen) ?? ""
         appLock = try c.decodeIfPresent(Bool.self, forKey: .appLock) ?? false
         moodCard = try c.decodeIfPresent(Bool.self, forKey: .moodCard) ?? true
+        onboardingPaywallSeen = try c.decodeIfPresent(Bool.self, forKey: .onboardingPaywallSeen) ?? false
+        firstDayGuide = try c.decodeIfPresent(Bool.self, forKey: .firstDayGuide) ?? false
     }
 }
 

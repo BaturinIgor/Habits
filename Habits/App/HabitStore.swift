@@ -622,6 +622,8 @@ final class HabitStore {
         after.whatsNewSeen = before.whatsNewSeen
         after.onboardingDone = before.onboardingDone
         after.gestureHintShown = before.gestureHintShown
+        after.onboardingPaywallSeen = before.onboardingPaywallSeen
+        after.firstDayGuide = before.firstDayGuide
         if after != before { Analytics.shared.action(.settingsChange) }
         commit()
     }

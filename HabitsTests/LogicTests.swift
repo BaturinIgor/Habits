@@ -999,7 +999,7 @@ final class LogicTests: XCTestCase {
             .petAdopted(species: "cat"), .petStageReached(stage: 1), .achievementUnlocked(id: "first"),
             .reviewPromptShown(streakDays: 3), .familyGroupCreated, .familyGroupJoined, .feedbackSent(channel: "email"),
             .backupRestored, .onboardingStep(1), .notificationPermissionResult(granted: false),
-            .firstCheck(secondsSinceFirstOpen: 5),
+            .firstCheck(secondsSinceFirstOpen: 5), .onboardingGoal(goal: "energy", habits: 4), .onboardingSkipped(step: 2),
         ]
         for event in events {
             check(event.type)

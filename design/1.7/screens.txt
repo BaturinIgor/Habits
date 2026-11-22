@@ -1,2 +1,17 @@
 # Habits 1.7: снимки только новых и изменённых экранов (см. design/README.md).
 # Остальные экраны — из design/1.6/screens.
+# KAN-121: онбординг с целями (10-onboarding теперь первый шаг нового онбординга)
+10-onboarding
+onb-01-goal
+onb-02-goal-selected
+onb-03-habits
+onb-04-summary
+onb-08-goal-large
+onb-09-habits-large
+# KAN-122, KAN-170: пейволл в конце онбординга, «Продолжить бесплатно», текст о пробном периоде
+onb-05-paywall
+# KAN-169: первый день на «Сегодня»: подсказка, поздравление, крупный шрифт
+onb-06-today-first-check
+onb-07-today-celebrate
+onb-10-today-first-check-large
+onb-11-today-celebrate-large

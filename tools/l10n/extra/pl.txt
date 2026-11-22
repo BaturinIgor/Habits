@@ -847,3 +847,33 @@ Purple||Fioletowy
 Pink||Różowy
 Raspberry||Malinowy
 Graphite||Grafitowy
+Energy||Energia
+Calm||Spokój
+Learning and languages||Nauka i języki
+Better sleep||Lepszy sen
+Focus||Skupienie
+Water, movement and fresh air||Woda, ruch i świeże powietrze
+Less stress, more balance||Mniej stresu, więcej równowagi
+Workouts and an active day||Treningi i aktywny dzień
+Reading, study and new words||Czytanie, nauka i nowe słowa
+A calm evening and a steady routine||Spokojny wieczór i stały rytm dnia
+Plan the day and get things done||Zaplanuj dzień i kończ zadania
+Back||Wstecz
+Step %lld of 3||Krok %lld z 3
+What do you want to work on?||Nad czym chcesz popracować?
+Pick a goal and we'll set up your first habits. You can change everything later.||Wybierz cel, a przygotujemy twoje pierwsze nawyki. Wszystko możesz później zmienić.
+Your first habits||Twoje pierwsze nawyki
+Uncheck what you don't need. You can add more from the catalog later.||Odznacz to, czego nie potrzebujesz. Więcej dodasz później z katalogu.
+Your plan is ready||Twój plan jest gotowy
+Start with one check-in today. Small steps count.||Zacznij dziś od jednego odhaczenia. Małe kroki też się liczą.
+How it works||Jak to działa
+Try Pro free for %@||Wypróbuj Pro za darmo przez %@
+Continue for free||Kontynuuj za darmo
+Your first step||Twój pierwszy krok
+Tap the circle next to a habit to check it off. One is enough for today.||Dotknij kółka obok nawyku, aby go odhaczyć. Na dziś wystarczy jeden.
+First check-in done!||Pierwsze odhaczenie zrobione!
+That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?||Tak zaczyna się seria. Chcesz przypomnienie, żeby jutro nie zapomnieć?
+That's how a streak starts. Come back tomorrow to keep it going.||Tak zaczyna się seria. Wróć jutro, aby ją kontynuować.
+Turn on reminders||Włącz przypomnienia
+Not now||Nie teraz
+Got it||Jasne

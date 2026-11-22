@@ -847,3 +847,33 @@ Purple||Mor
 Pink||Pembe
 Raspberry||Ahududu
 Graphite||Grafit
+Energy||Enerji
+Calm||Huzur
+Learning and languages||Ders ve diller
+Better sleep||Daha iyi uyku
+Focus||Odak
+Water, movement and fresh air||Su, hareket ve temiz hava
+Less stress, more balance||Daha az stres, daha çok denge
+Workouts and an active day||Antrenmanlar ve hareketli bir gün
+Reading, study and new words||Okuma, ders ve yeni kelimeler
+A calm evening and a steady routine||Sakin bir akşam ve düzenli bir rutin
+Plan the day and get things done||Gününü planla ve işlerini bitir
+Back||Geri
+Step %lld of 3||Adım %lld / 3
+What do you want to work on?||Neyin üzerinde çalışmak istersin?
+Pick a goal and we'll set up your first habits. You can change everything later.||Bir hedef seç, ilk alışkanlıklarını hazırlayalım. Her şeyi sonra değiştirebilirsin.
+Your first habits||İlk alışkanlıkların
+Uncheck what you don't need. You can add more from the catalog later.||İhtiyacın olmayanların işaretini kaldır. Daha fazlasını sonra katalogdan ekleyebilirsin.
+Your plan is ready||Planın hazır
+Start with one check-in today. Small steps count.||Bugün tek bir işaretle başla. Küçük adımlar da önemli.
+How it works||Nasıl çalışır
+Try Pro free for %@||Pro'yu %@ ücretsiz dene
+Continue for free||Ücretsiz devam et
+Your first step||İlk adımın
+Tap the circle next to a habit to check it off. One is enough for today.||İşaretlemek için alışkanlığın yanındaki daireye dokun. Bugün için bir tane yeter.
+First check-in done!||İlk işaret tamam!
+That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?||Seri böyle başlar. Yarın unutmaman için hatırlatıcı ister misin?
+That's how a streak starts. Come back tomorrow to keep it going.||Seri böyle başlar. Devam ettirmek için yarın yine gel.
+Turn on reminders||Hatırlatıcıları aç
+Not now||Şimdi değil
+Got it||Anladım
