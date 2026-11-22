@@ -95,6 +95,26 @@ jobs:
             echo "Screens: $LIST" | tee -a "$GITHUB_STEP_SUMMARY"
           fi
 
+      # StoreKit-конфиг из run-действия схемы к xcodebuild test не применяется. Его ставит SKTestSession
+      # в NewYearOfferTests для приложения на этом симуляторе, и после этого пейволл на макетах видит цены.
+      # Первый прогон на свежей установке падает (товары ещё пустые), второй проходит.
+      - name: Prepare StoreKit for paywall screenshots
+        if: steps.pick.outputs.screens != ''
+        run: |
+          for attempt in 1 2; do
+            xcodebuild test \
+              -project Habits.xcodeproj \
+              -scheme Habits \
+              -destination "id=${{ steps.sim.outputs.udid }}" \
+              -only-testing:HabitsTests/NewYearOfferTests \
+              -derivedDataPath build \
+              CODE_SIGNING_ALLOWED=YES \
+              CODE_SIGNING_REQUIRED=NO \
+              CODE_SIGN_IDENTITY=- \
+              > storekit-$attempt.log 2>&1 && break || true
+          done
+          grep -E "Executed" storekit-*.log | tail -2 || true
+
       - name: Take design screenshots
         if: steps.pick.outputs.screens != ''
         env:
