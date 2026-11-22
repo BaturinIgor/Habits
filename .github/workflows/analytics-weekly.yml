@@ -4,7 +4,9 @@ name: Weekly report
 # Запускается сам по понедельникам в 05:00 UTC и вручную: Actions -> Weekly report -> Run workflow.
 # Репозиторий публичный, поэтому отчёт не коммитится, не печатается в лог и не сохраняется артефактом:
 # сводка уходит только в Telegram (FEEDBACK_BOT_TOKEN, FEEDBACK_CHAT_ID). Без них запуск успешен, но отчёт не отправлен.
-# Нужны секреты ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8 (ключ с ролью Sales, Finance или Admin)
+# Нужны секреты ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8 (ключ с ролью Sales, Finance или Admin).
+# Если заданы ASC_REPORT_KEY_ID и ASC_REPORT_KEY_P8 (отдельный ключ с ролью Finance), отчёт берёт их,
+# а основной ключ для сборок и загрузки остаётся без доступа к финансам.
 # и ASC_VENDOR_NUMBER (секрет или переменная).
 
 on:
@@ -31,9 +33,9 @@ jobs:
         run: pip install pyjwt==2.10.1 cryptography==44.0.2 requests==2.32.3
       - name: Build report
         env:
-          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_KEY_ID: ${{ secrets.ASC_REPORT_KEY_ID || secrets.ASC_KEY_ID }}
           ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
-          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          ASC_KEY_P8: ${{ secrets.ASC_REPORT_KEY_P8 || secrets.ASC_KEY_P8 }}
           ASC_VENDOR_NUMBER: ${{ secrets.ASC_VENDOR_NUMBER || vars.ASC_VENDOR_NUMBER }}
           FEEDBACK_BOT_TOKEN: ${{ secrets.FEEDBACK_BOT_TOKEN }}
           FEEDBACK_CHAT_ID: ${{ secrets.FEEDBACK_CHAT_ID }}

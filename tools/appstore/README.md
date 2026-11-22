@@ -161,7 +161,10 @@ python3 tools/appstore/asc_provision_watch.py --out ~/Desktop/watch-profiles --s
 - **promo:** promotional offer `newyear2027` («New Year 2027 price»), `PAY_UP_FRONT`, `ONE_YEAR`.
   Приложение только читает его цену (`NewYearOffer.priceOfferID`).
 - **code:** offer code `NEWYEAR2027` с теми же условиями, для new, existing и expired,
-  `STACK_WITH_INTRO_OFFERS`, и custom code `NEWYEAR2027` на 10000 погашений до 2027-01-10.
+  `STACK_WITH_INTRO_OFFERS`, и custom code `NEWYEAR2027` на 10000 погашений до 2027-01-11
+  (Apple гасит код в 00:00 PT в день expirationDate, поэтому 10.01 код работает весь день).
+  Дату у custom code поменять нельзя: API принимает в PATCH только `active`. Если у активной партии
+  другая дата, скрипт заводит новую партию с той же строкой и деактивирует старую.
 
 Цена со скидкой в каждой территории: ближайшая price point не выше половины текущей цены yearly.
 Уже заведённые предложения (по `offerCode`, имени offer code и custom code) пропускаются, поэтому

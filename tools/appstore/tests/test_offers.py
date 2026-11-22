@@ -20,6 +20,11 @@ def price(terr, point, start=None, end=None, plan=None):
         "territory": {"data": {"id": terr}}, "subscriptionPricePoint": {"data": {"id": point}}}}
 
 
+def custom(cid, expires, active=True, code="NEWYEAR2027"):
+    return {"id": cid, "attributes": {"customCode": code, "expirationDate": expires, "active": active,
+                                      "numberOfCodes": 10000}}
+
+
 def nothing():
     return {"intro": {}, "promo": [], "codes": [], "custom": {}}
 
@@ -68,11 +73,40 @@ class Plan(unittest.TestCase):
             "intro": {t: dict(offers.INTRO) for t in self.terr},
             "promo": [{"id": "PR1", "attributes": dict(offers.PROMO)}],
             "codes": [{"id": "OC1", "attributes": dict(offers.CODE)}],
-            "custom": {"OC1": [{"id": "CC1", "attributes": {"customCode": "NEWYEAR2027"}}]},
+            "custom": {"OC1": [custom("CC1", "2027-01-11")]},
         }
         todo = offers.plan(self.terr, self.yearly, None, existing)
-        self.assertEqual((todo["intro"], todo["promo"], todo["code"], todo["custom"]), ([], None, None, None))
+        self.assertEqual((todo["intro"], todo["promo"], todo["code"], todo["custom"], todo["deactivate"]),
+                         ([], None, None, None, []))
         self.assertEqual(todo["warnings"], [])
+
+    def coded(self, *customs):
+        existing = nothing()
+        existing["codes"] = [{"id": "OC1", "attributes": dict(offers.CODE)}]
+        existing["custom"] = {"OC1": list(customs)}
+        return offers.plan(self.terr, self.yearly, None, existing)
+
+    def test_old_expiration_is_replaced(self):
+        # Дату у custom code поменять нельзя: новая партия до 11.01, старая (10.01) деактивируется.
+        todo = self.coded(custom("666364", "2027-01-10T00:00:00-08:00"))
+        self.assertEqual((todo["custom"], todo["deactivate"]), ("OC1", ["666364"]))
+
+    def test_replaced_batch_after_partial_run(self):
+        # Новая партия уже есть, старая ещё активна: только деактивировать.
+        todo = self.coded(custom("666364", "2027-01-10"), custom("CC2", "2027-01-11"))
+        self.assertEqual((todo["custom"], todo["deactivate"]), (None, ["666364"]))
+
+    def test_replaced_batch_is_idempotent(self):
+        todo = self.coded(custom("666364", "2027-01-10", active=False), custom("CC2", "2027-01-11"))
+        self.assertEqual((todo["custom"], todo["deactivate"]), (None, []))
+
+    def test_inactive_current_batch_is_recreated(self):
+        todo = self.coded(custom("CC2", "2027-01-11", active=False))
+        self.assertEqual((todo["custom"], todo["deactivate"]), ("OC1", []))
+
+    def test_expiration_is_after_promo_end(self):
+        # Акция в приложении идёт до 10.01 включительно, код истекает в 00:00 PT в день expirationDate.
+        self.assertEqual(offers.CUSTOM_CODE["expirationDate"], "2027-01-11")
 
     def test_partial_intro_and_code_without_custom(self):
         existing = nothing()
@@ -103,6 +137,15 @@ class Payloads(unittest.TestCase):
         self.assertEqual([r["id"] for r in data["relationships"]["prices"]["data"]], ["${p0}", "${p1}"])
         self.assertEqual(body["included"][0]["relationships"]["territory"]["data"]["id"], "RUS")
         self.assertEqual(body["included"][1]["relationships"]["subscriptionPricePoint"]["data"]["id"], "p2")
+
+    def test_deactivate_only_active_flag(self):
+        self.assertEqual(offers.deactivate_payload("666364"), {"data": {
+            "type": "subscriptionOfferCodeCustomCodes", "id": "666364", "attributes": {"active": False}}})
+
+    def test_custom_code_new_expiration(self):
+        attrs = offers.custom_code_payload("OC1")["data"]["attributes"]
+        self.assertEqual(attrs, {"customCode": "NEWYEAR2027", "numberOfCodes": 10000,
+                                 "expirationDate": "2027-01-11"})
 
     def test_values_match_app(self):
         root = os.path.join(os.path.dirname(__file__), "..", "..", "..")
