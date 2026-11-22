@@ -130,10 +130,10 @@ struct PaywallView: View {
             .background(AppBackground())
             .analyticsScreen(.paywall)
             .onAppear { Analytics.shared.send(.paywallShown(source: source, feature: highlight)) }
-            .task {
-                await shop.loadProducts()
-                await loadTrialEligibility()
-            }
+            .task { await shop.loadProducts() }
+            // Товары могли грузиться ещё с запуска (loadProducts тогда сразу выходит): право на пробный период
+            // проверяем, когда они пришли, иначе плашка пробной недели не появлялась.
+            .task(id: shop.products.map(\.id)) { await loadTrialEligibility() }
             .alert(
                 "Purchase failed",
                 isPresented: Binding(get: { shop.errorMessage != nil }, set: { if !$0 { shop.errorMessage = nil } })
