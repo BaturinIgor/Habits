@@ -2,6 +2,20 @@ import SwiftUI
 
 import StoreKit
 
+/// Откуда открыли пейволл: параметр `source` в аналитике показов и покупок (KAN-123).
+enum PaywallSource: String, CaseIterable, Sendable {
+    case onboarding
+    case settings
+    /// Платная функция (иконки, CSV, здоровье, питомцы…): какая именно — в `highlight`.
+    case feature
+    case limit
+    case pet
+    case timer
+    case recap
+    case mood
+    case newYearOffer = "new_year_offer"
+}
+
 /// Экран Pro с покупками через StoreKit 2. В сборке для SideStore покупки недоступны.
 struct PaywallView: View {
     @Environment(HabitStore.self) private var store
@@ -13,10 +27,14 @@ struct PaywallView: View {
     /// Функция, ради которой открыли экран: её показываем первой и выделяем.
     let highlight: ProFeature?
 
+    /// Откуда открыли экран (аналитика). Без явного значения: функция → `.feature`, иначе `.settings`.
+    let source: PaywallSource
+
     @State private var trialEligible: Set<String> = []
 
-    init(highlight: ProFeature? = nil) {
+    init(highlight: ProFeature? = nil, source: PaywallSource? = nil) {
         self.highlight = highlight
+        self.source = source ?? (highlight == nil ? .settings : .feature)
     }
 
     private var features: [ProFeature] {
