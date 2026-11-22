@@ -100,6 +100,7 @@
 "Best streak" = "最長連続";
 "Best, days" = "最長（日）";
 "Better than nothing" = "何もしないよりいい";
+"Blue" = "ブルー";
 "Break bad habits" = "悪い習慣をやめる";
 "Breathing exercise" = "呼吸法";
 "Bring back %@ in a row for sparks." = "スパークで連続 %@ を取り戻せます。";
@@ -162,6 +163,7 @@
 "Copy address" = "アドレスをコピー";
 "Copy message" = "メッセージをコピー";
 "Copy message and address" = "メッセージとアドレスをコピー";
+"Coral" = "コーラル";
 "Couldn't create an invitation link. Try again later." = "招待リンクを作成できませんでした。後でもう一度お試しください。";
 "Couldn't read the file" = "ファイルを読み込めませんでした";
 "Couldn't send the message" = "メッセージを送信できませんでした";
@@ -284,6 +286,7 @@
 "Goal" = "目標";
 "Gold" = "ゴールド";
 "Good" = "良い";
+"Graphite" = "グラファイト";
 "Great" = "最高";
 "Great job, keep it up" = "よくできました、この調子で";
 "Group" = "グループ";
@@ -334,6 +337,7 @@
 "Import data" = "データを読み込む";
 "In progress: %lld" = "学習中：%lld";
 "Include technical info" = "技術情報を含める";
+"Indigo" = "インディゴ";
 "Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept." = "毎日のチェックの代わりに、やめてから何日経ったかを表示します。やってしまったら数え直しですが、最長記録は残ります。";
 "Intermediate" = "中級";
 "Interval" = "間隔";
@@ -404,6 +408,7 @@
 "Mindfulness" = "マインドフルネス";
 "Minimum" = "ミニマム";
 "Minimum version, for example 5 squats" = "ミニマム版（例：スクワット5回）";
+"Mint" = "ミント";
 "Minus one" = "1つ減らす";
 "Missed" = "未達成";
 "Missed a day and the streak broke? The next day you can bring it back for sparks." = "1日休んで連続記録が途切れた？翌日ならスパークで取り戻せます。";
@@ -528,6 +533,7 @@
 "Pet name" = "ペットの名前";
 "Phoenix" = "フェニックス";
 "Pick a template or create your own." = "テンプレートを選ぶか、自分で作成しましょう。";
+"Pink" = "ピンク";
 "Plan the day" = "1日の計画を立てる";
 "Practice an instrument" = "楽器の練習";
 "Privacy Policy" = "プライバシー";
@@ -541,12 +547,14 @@
 "Profile section" = "プロフィールのセクション";
 "Purchase failed" = "購入できませんでした";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "購入は App Store 版でのみ利用できます。このビルドでは設定でテスト用に Pro をオンにできます。";
+"Purple" = "パープル";
 "Push-ups" = "腕立て伏せ";
 "Put money aside" = "貯金する";
 "Put the habit in a group to share it with your family." = "家族と共有するには、習慣をグループに入れてください。";
 "Quit a bad habit" = "悪い習慣をやめる";
 "Quitting" = "やめている習慣";
 "Quitting: %@" = "やめて %@";
+"Raspberry" = "ラズベリー";
 "Rate the app" = "アプリを評価";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "「今日」の下でワンタップで一日を評価し、ひとことメモを残せます。Proなら全履歴、月間グラフ、気分を上げる習慣がわかります。";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "1日1回「今日」画面で気分を記録しましょう。数週間でどの習慣が気分を上げるかわかります。";
@@ -620,6 +628,7 @@
 "Skin care" = "スキンケア";
 "Skip" = "スキップ";
 "Skipped" = "スキップ済み";
+"Sky blue" = "スカイブルー";
 "Sleeping" = "おやすみ中";
 "Small steps add up." = "小さな一歩が積み重なる。";
 "Small steps every day" = "毎日の小さな一歩";
@@ -655,6 +664,7 @@
 "Subscribe" = "登録する";
 "Subscriptions renew automatically until cancelled. Cancel anytime in Settings, Apple Account, Subscriptions, at least 24 hours before the period ends." = "サブスクリプションは解約するまで自動更新されます。期間終了の24時間前までに、設定 > Apple アカウント > サブスクリプションでいつでも解約できます。";
 "Suggest an idea" = "アイデアを提案";
+"Sunflower" = "ひまわり色";
 "Sunrise club" = "日の出クラブ";
 "Sunset" = "サンセット";
 "Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro." = "サンセット、フォレスト、ローズ、ゴールド、ミッドナイト、ライト。Proなら設定で選べます。";
@@ -665,6 +675,7 @@
 "System" = "システム";
 "Take a break for a trip or illness without losing your streak." = "旅行や体調不良の時も連続記録を失わずに休めます。";
 "Take vitamins" = "ビタミンを飲む";
+"Tangerine" = "タンジェリン";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "日付をタップでチェック、長押しでスキップやメモ追加。";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "丸をタップか右スワイプでチェック。左スワイプでスキップ、メモ、編集。長押しで並べ替え。";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "丸をタップするとタイマーが始まります。ロック画面でカウントダウンし、終わると習慣がチェックされます。";
@@ -719,6 +730,7 @@
 "Try it" = "試してみる";
 "Turn on the lock" = "ロックをオンにする";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "習慣で「この習慣をやめる」をオンにすると、やめてからの日数、最長記録、次の節目が表示されます。Pro なら節約額も。";
+"Turquoise" = "ターコイズ";
 "Turtle" = "カメ";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "月2回までは休んでも連続記録は途切れず、つらい日はミニマム版でもOK。";
 "Two weeks" = "2週間";

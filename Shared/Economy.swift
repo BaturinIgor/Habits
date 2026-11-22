@@ -293,9 +293,16 @@ struct PetAvatar: View {
     var motion: PetMotion = .automatic
     @State private var bounce = false
 
+    /// Подпись VoiceOver: «Whiskers, Котик, Подросток, Ждёт тебя». Имя по умолчанию совпадает с видом, его не повторяем.
+    static func accessibilityText(name: String, species: PetSpecies, stage: PetStage, mood: PetMood) -> String {
+        let title = String(localized: species.title)
+        let name = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        let parts = (name.isEmpty || name == title ? [] : [name]) + [title, stage.title, mood.title]
+        return parts.joined(separator: ", ")
+    }
+
     private var accessibilityText: String {
-        let species = Pets.species(pet.species)
-        return "\(String(localized: species.title)), \(stage.title), \(mood.title)"
+        Self.accessibilityText(name: pet.name, species: Pets.species(pet.species), stage: stage, mood: mood)
     }
 
     var body: some View {

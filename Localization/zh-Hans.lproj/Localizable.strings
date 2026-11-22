@@ -100,6 +100,7 @@
 "Best streak" = "最佳连续";
 "Best, days" = "最长，天";
 "Better than nothing" = "聊胜于无";
+"Blue" = "蓝色";
 "Break bad habits" = "戒掉坏习惯";
 "Breathing exercise" = "呼吸练习";
 "Bring back %@ in a row for sparks." = "用火花找回连续 %@。";
@@ -162,6 +163,7 @@
 "Copy address" = "复制地址";
 "Copy message" = "复制内容";
 "Copy message and address" = "复制消息和地址";
+"Coral" = "珊瑚色";
 "Couldn't create an invitation link. Try again later." = "无法创建邀请链接，请稍后再试。";
 "Couldn't read the file" = "无法读取文件";
 "Couldn't send the message" = "无法发送消息";
@@ -284,6 +286,7 @@
 "Goal" = "目标";
 "Gold" = "金色";
 "Good" = "不错";
+"Graphite" = "石墨灰";
 "Great" = "超棒";
 "Great job, keep it up" = "干得好，继续保持";
 "Group" = "分组";
@@ -334,6 +337,7 @@
 "Import data" = "导入数据";
 "In progress: %lld" = "学习中：%lld";
 "Include technical info" = "附带技术信息";
+"Indigo" = "靛蓝色";
 "Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept." = "不用每天打卡，而是显示你已经戒了多少天。破戒后重新计数，但最长纪录会保留。";
 "Intermediate" = "中级";
 "Interval" = "间隔";
@@ -404,6 +408,7 @@
 "Mindfulness" = "正念";
 "Minimum" = "最低版";
 "Minimum version, for example 5 squats" = "最低版本，例如 5 个深蹲";
+"Mint" = "薄荷绿";
 "Minus one" = "减一";
 "Missed" = "未完成";
 "Missed a day and the streak broke? The next day you can bring it back for sparks." = "错过一天导致连续记录中断？第二天可以用火花找回。";
@@ -528,6 +533,7 @@
 "Pet name" = "宠物名字";
 "Phoenix" = "凤凰";
 "Pick a template or create your own." = "选择模板或自己创建。";
+"Pink" = "粉色";
 "Plan the day" = "规划一天";
 "Practice an instrument" = "练习乐器";
 "Privacy Policy" = "隐私政策";
@@ -541,12 +547,14 @@
 "Profile section" = "个人资料分区";
 "Purchase failed" = "购买失败";
 "Purchases work only in the App Store version. In this build, Pro can be turned on for testing in Settings." = "仅 App Store 版本支持购买。此版本可在设置中开启 Pro 进行测试。";
+"Purple" = "紫色";
 "Push-ups" = "俯卧撑";
 "Put money aside" = "存钱";
 "Put the habit in a group to share it with your family." = "把习惯放进分组，就能与家人共享。";
 "Quit a bad habit" = "戒掉坏习惯";
 "Quitting" = "戒除中";
 "Quitting: %@" = "已戒：%@";
+"Raspberry" = "覆盆子红";
 "Rate the app" = "给应用评分";
 "Rate your day with one tap at the bottom of Today and add a few words. With Pro, see your full history, a monthly chart and which habits lift your mood." = "在“今天”底部轻点一下为这一天打分，再写几句话。开通 Pro 可查看完整历史、月度图表以及哪些习惯让你心情更好。";
 "Rate your mood on the Today screen once a day. After a couple of weeks you'll see which habits lift it." = "每天在“今天”页面记录一次心情。几周后就能看到哪些习惯让你心情更好。";
@@ -620,6 +628,7 @@
 "Skin care" = "护肤";
 "Skip" = "跳过";
 "Skipped" = "已跳过";
+"Sky blue" = "天蓝色";
 "Sleeping" = "在睡觉";
 "Small steps add up." = "小步积累成大进步。";
 "Small steps every day" = "每天一小步";
@@ -655,6 +664,7 @@
 "Subscribe" = "订阅";
 "Subscriptions renew automatically until cancelled. Cancel anytime in Settings, Apple Account, Subscriptions, at least 24 hours before the period ends." = "订阅会自动续期，直到取消。可随时在“设置”>“Apple 账户”>“订阅”中取消，需在当期结束前至少 24 小时操作。";
 "Suggest an idea" = "提个建议";
+"Sunflower" = "向日葵黄";
 "Sunrise club" = "日出俱乐部";
 "Sunset" = "日落";
 "Sunset, Forest, Rose, Gold, Midnight and Light. Pick one in Settings with Pro." = "日落、森林、玫瑰、金色、午夜和浅色。开通 Pro 后在设置中选择。";
@@ -665,6 +675,7 @@
 "System" = "跟随系统";
 "Take a break for a trip or illness without losing your streak." = "旅行或生病时暂停，不会中断连续记录。";
 "Take vitamins" = "吃维生素";
+"Tangerine" = "橘色";
 "Tap a day to check it off. Press and hold to skip it or add a note." = "点按某天即可打卡，长按可跳过或添加备注。";
 "Tap the circle or swipe right to check off. Swipe left to skip, add a note or edit. Press and hold to reorder." = "点圆圈或向右滑动即可打卡。向左滑动可跳过、写备注或编辑。长按可调整顺序。";
 "Tap the circle to start the timer. It counts down on the Lock Screen and checks the habit off when time is up." = "点按圆圈启动计时器。它会在锁定屏幕上倒计时，时间到后自动打卡。";
@@ -719,6 +730,7 @@
 "Try it" = "试一试";
 "Turn on the lock" = "开启锁定";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "在习惯中打开“我要戒掉这个习惯”，即可查看已戒天数、最长纪录和下一个里程碑。Pro 还会显示省下的钱。";
+"Turquoise" = "青绿色";
 "Turtle" = "乌龟";
 "Two misses a month won't break your streak, and a minimum version still counts on hard days." = "每月两次错过不会中断连续记录，艰难的日子里最低版本也算数。";
 "Two weeks" = "两周";
