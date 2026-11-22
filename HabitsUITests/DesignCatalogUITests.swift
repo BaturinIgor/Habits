@@ -15,7 +15,12 @@ final class DesignCatalogUITests: XCTestCase {
         let screen: String
         var alert: String? = nil
         var flags: [String] = []
+        /// Сколько раз пролистать экран вверх перед снимком.
+        var swipes = 0
     }
+
+    /// Крупный шрифт Accessibility XL на всё приложение, включая шиты, панель вкладок и навигацию.
+    private static let xl = ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXL"]
 
     private static let shots: [Shot] = [
         // Вкладки
@@ -93,6 +98,14 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "53-feedback-failed", screen: "feedback", alert: "sendFailed"),
         Shot(name: "54-feedback-no-mail", screen: "feedback", alert: "noMail"),
         Shot(name: "55-feedback-copied", screen: "feedback", alert: "copied"),
+        // 1.7, KAN-114 и KAN-116: крупный шрифт (Accessibility XL) и дни недели в тепловой карте
+        Shot(name: "a11y-01-stats-xl", screen: "stats", flags: xl),
+        Shot(name: "a11y-02-stats-scrolled-xl", screen: "stats", flags: xl, swipes: 2),
+        Shot(name: "a11y-03-today-xl", screen: "today", flags: xl),
+        Shot(name: "a11y-04-pet-naming-xl", screen: "petNaming", flags: ["-design-alert", "petNaming"] + xl),
+        Shot(name: "a11y-05-pet-species-xl", screen: "petSpecies", flags: xl),
+        Shot(name: "a11y-06-heatmap", screen: "stats", swipes: 1),
+        Shot(name: "a11y-07-today-habits-xl", screen: "today", flags: xl, swipes: 2),
     ]
 
     private static var outputDir: URL? {
@@ -165,6 +178,7 @@ final class DesignCatalogUITests: XCTestCase {
                     || app.descendants(matching: .any).matching(identifier: "screen.onboarding").firstMatch.exists
             }
             if !ready { missing.append(shot.name) }
+            for _ in 0..<shot.swipes { app.swipeUp() }
             // Даём анимациям закончиться.
             sleep(2)
             let theme = dark ? "dark" : "light"

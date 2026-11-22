@@ -753,6 +753,10 @@ struct DayProgressCard: View {
                         .font(.subheadline.weight(.bold))
                         .monospacedDigit()
                         .contentTransition(.numericText())
+                        // Кольцо фиксированного размера: при крупном шрифте «68%» обрезалось до «6…».
+                        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+                        .minimumScaleFactor(0.7)
+                        .lineLimit(1)
                 }
             }
             .frame(width: 72, height: 72)
@@ -826,6 +830,7 @@ struct ConfettiBurst: View {
 // MARK: - Карточка привычки
 
 struct HabitCard: View {
+    @Environment(\.dynamicTypeSize) private var typeSize
     enum TimerInfo: Equatable {
         case running(ClosedRange<Date>)
         case idle(Int)
@@ -906,7 +911,11 @@ struct HabitCard: View {
 
     @ViewBuilder
     private var details: some View {
-        HStack(spacing: 10) {
+        // При крупном шрифте строка подробностей не влезала («8:…»): по одной в строке, с переносом.
+        let layout = typeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4))
+            : AnyLayout(HStackLayout(spacing: 10))
+        layout {
             if status == .skipped {
                 Text("Skipped")
             }
@@ -962,7 +971,7 @@ struct HabitCard: View {
         .font(.caption.weight(.medium))
         .foregroundStyle(.secondary)
         .labelStyle(CompactLabelStyle())
-        .lineLimit(1)
+        .lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
     }
 
     private var amountText: String {

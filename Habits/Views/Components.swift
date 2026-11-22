@@ -63,6 +63,7 @@ struct CompactLabelStyle: LabelStyle {
 // MARK: - Плитка статистики
 
 struct StatTile: View {
+    @Environment(\.dynamicTypeSize) private var typeSize
     let title: LocalizedStringKey
     let value: String
     let systemImage: String
@@ -84,7 +85,8 @@ struct StatTile: View {
                 Text(title)
                     .font(.footnote.weight(.medium))
                     .foregroundStyle(.secondary)
-                    .lineLimit(1)
+                    // При крупном шрифте подпись переносится, а не обрезается.
+                    .lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)

@@ -17,6 +17,13 @@ enum Weekdays {
         guard (1...symbols.count).contains(weekday) else { return "" }
         return symbols[weekday - 1].replacingOccurrences(of: ".", with: "").capitalizedFirst
     }
+
+    /// Одна буква («П», «M»): где места мало — тепловая карта, неделя при крупном шрифте.
+    static func veryShort(_ weekday: Int) -> String {
+        let symbols = Calendar.app.veryShortStandaloneWeekdaySymbols
+        guard (1...symbols.count).contains(weekday) else { return "" }
+        return symbols[weekday - 1].capitalizedFirst
+    }
 }
 
 // MARK: - Форматирование по языку системы
@@ -56,6 +63,10 @@ enum Fmt {
 
     static func weekdayShort(_ date: Date) -> String {
         Weekdays.short(Calendar.app.component(.weekday, from: date))
+    }
+
+    static func weekdayVeryShort(_ date: Date) -> String {
+        Weekdays.veryShort(Calendar.app.component(.weekday, from: date))
     }
 
     static func time(_ time: ReminderTime) -> String {
