@@ -97,12 +97,13 @@ jobs:
 
       # StoreKit-конфиг из run-действия схемы к xcodebuild test не применяется. Его ставит SKTestSession
       # в NewYearOfferTests для приложения на этом симуляторе, и после этого пейволл на макетах видит цены.
-      # Первый прогон на свежей установке падает (товары ещё пустые), второй проходит.
+      # На свежей установке конфиг начинает действовать со следующего запуска (первый прогон пропускает
+      # StoreKit-тесты), поэтому прогонов два.
       - name: Prepare StoreKit for paywall screenshots
         if: steps.pick.outputs.screens != ''
         run: |
-          for attempt in 1 2; do
-            xcodebuild test \
+          for action in test test-without-building; do
+            xcodebuild $action \
               -project Habits.xcodeproj \
               -scheme Habits \
               -destination "id=${{ steps.sim.outputs.udid }}" \
@@ -111,7 +112,7 @@ jobs:
               CODE_SIGNING_ALLOWED=YES \
               CODE_SIGNING_REQUIRED=NO \
               CODE_SIGN_IDENTITY=- \
-              > storekit-$attempt.log 2>&1 && break || true
+              > storekit-$action.log 2>&1 || true
           done
           grep -E "Executed" storekit-*.log | tail -2 || true
 
@@ -155,6 +156,11 @@ jobs:
           # Снимаются не все экраны, поэтому старые файлы не удаляем, а перезаписываем снятые.
           mkdir -p "$DEST"
           ls design-screens/*.png > /dev/null 2>&1 || { echo "::error::No screenshots were taken"; exit 1; }
+          # Неподтверждённые снимки (например, пейволл без цен) не коммитим: иначе они затрут снятые вручную.
+          if grep -q "not confirmed" design-screens/report-*.txt 2>/dev/null; then
+            echo "::error::Some screens were not confirmed, screenshots are not committed: $(cat design-screens/report-*.txt)"
+            exit 1
+          fi
           cp design-screens/*.png "$DEST"/
           cp design-screens/report-*.txt "$DEST"/ || true
           git config user.name "github-actions[bot]"

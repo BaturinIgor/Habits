@@ -381,15 +381,22 @@ final class ScreensUITests: XCTestCase {
         }
     }
 
-    private func collect(_ snap: XCUIElementSnapshot, into items: inout [Item]) {
+    /// clip — видимая область ближайшего ScrollView: то, что прокручено за его край (например, под кнопку
+    /// внизу экрана онбординга), обрезано и наездом не считается.
+    private func collect(_ snap: XCUIElementSnapshot, into items: inout [Item], clip: CGRect = .infinite) {
         if Self.barTypes.contains(snap.elementType) { return }
         if snap.identifier == "uitest.hangs" { return }
+        var clip = clip
+        if snap.elementType == .scrollView { clip = clip.intersection(snap.frame) }
         if Self.checkedTypes.contains(snap.elementType) {
             let label = snap.label.isEmpty ? (snap.identifier.isEmpty ? "\(snap.elementType)" : snap.identifier) : snap.label
-            items.append(Item(type: snap.elementType, label: String(label.prefix(60)), frame: snap.frame))
+            let visible = snap.frame.intersection(clip)
+            if !visible.isNull {
+                items.append(Item(type: snap.elementType, label: String(label.prefix(60)), frame: visible))
+            }
         }
         for child in snap.children {
-            collect(child, into: &items)
+            collect(child, into: &items, clip: clip)
         }
     }
 }
