@@ -453,6 +453,7 @@
 "Morning" = "Sabah";
 "Morning exercises" = "Sabah egzersizi";
 "Most steady: %@, %lld of %lld" = "En istikrarlı: %@, %lld/%lld";
+"Move to %@" = "%@ saatine taşı";
 "Move to archive" = "Arşive taşı";
 "My month" = "Ayım";
 "My week" = "Haftam";
@@ -660,6 +661,7 @@
 "Sleeping" = "Uyuyor";
 "Small steps add up." = "Küçük adımlar birikir.";
 "Small steps every day" = "Her gün küçük adımlar";
+"Smart time" = "Akıllı saat";
 "Some days" = "Bazı günler";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Ayarlar'da Bugün ekranını gruplara göre sıralayın, tek bir grup göstermek için Bugün widget'ına basılı tutun.";
 "Sparks" = "Kıvılcımlar";
@@ -734,6 +736,10 @@
 "The mood card at the bottom of the list lets you rate your day with one tap." = "Listenin altındaki ruh hâli kartıyla gününü tek dokunuşla puanla.";
 "The new language will apply after you close the app and open it again." = "Yeni dil, uygulamayı kapatıp yeniden açtıktan sonra uygulanacak.";
 "The purchase could not be verified." = "Satın alma doğrulanamadı.";
+"The reminder already matches when you usually check off the habit." = "Hatırlatıcı zaten alışkanlığı genelde işaretlediğin saatle uyumlu.";
+"The reminder comes at %@. Move it to %@?" = "Hatırlatıcı %@ saatinde geliyor. %@ saatine taşınsın mı?";
+"The reminder moves closer to when you usually check off the habit." = "Hatırlatıcı, alışkanlığı genelde işaretlediğin saate yaklaşır.";
+"The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins." = "Hatırlatıcı, alışkanlığı genelde işaretlediğin saate yaklaşır. Bunun için yaklaşık iki haftalık kayıt gerekir.";
 "The streak broke" = "Seri bozuldu";
 "The widget will update after unlocking." = "Widget kilit açıldıktan sonra güncellenecek.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "Henüz satın alma yok: bu anahtar Pro özelliklerini test için açar.";
@@ -845,6 +851,8 @@
 "Yesterday" = "Dün";
 "Yoga" = "Yoga";
 "You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "Her veri türüne erişimi Ayarlar → Gizlilik ve Güvenlik → Sağlık → ZenHab bölümünden açıp kapatabilirsin.";
+"You usually check it off around %@" = "Genelde %@ civarında işaretliyorsun";
+"You usually check it off around %@. The reminder will move to %@." = "Genelde %@ civarında işaretliyorsun. Hatırlatıcı %@ saatine taşınacak.";
 "You're doing great!" = "Harika gidiyorsun!";
 "You've gone through the whole dictionary" = "Tüm sözlüğü bitirdin";
 "Young" = "Genç";

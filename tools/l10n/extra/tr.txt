@@ -886,3 +886,11 @@ Copy code||Kodu kopyala
 Tap the button and paste the code in the App Store window. You'll see the final price before you pay.||Düğmeye dokun ve kodu App Store penceresine yapıştır. Ödemeden önce son fiyatı göreceksin.
 %@ for the first year||İlk yıl %@
 After the first year, Pro renews at the regular price. Cancel anytime.||İlk yıldan sonra Pro normal fiyattan yenilenir. İstediğin zaman iptal et.
+Smart time||Akıllı saat
+The reminder moves closer to when you usually check off the habit.||Hatırlatıcı, alışkanlığı genelde işaretlediğin saate yaklaşır.
+You usually check it off around %@. The reminder will move to %@.||Genelde %@ civarında işaretliyorsun. Hatırlatıcı %@ saatine taşınacak.
+The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins.||Hatırlatıcı, alışkanlığı genelde işaretlediğin saate yaklaşır. Bunun için yaklaşık iki haftalık kayıt gerekir.
+The reminder already matches when you usually check off the habit.||Hatırlatıcı zaten alışkanlığı genelde işaretlediğin saatle uyumlu.
+You usually check it off around %@||Genelde %@ civarında işaretliyorsun
+The reminder comes at %@. Move it to %@?||Hatırlatıcı %@ saatinde geliyor. %@ saatine taşınsın mı?
+Move to %@||%@ saatine taşı

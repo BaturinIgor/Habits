@@ -886,3 +886,11 @@ Copy code||Kopiuj kod
 Tap the button and paste the code in the App Store window. You'll see the final price before you pay.||Stuknij przycisk i wklej kod w oknie App Store. Ostateczną cenę zobaczysz przed zapłatą.
 %@ for the first year||%@ za pierwszy rok
 After the first year, Pro renews at the regular price. Cancel anytime.||Po pierwszym roku Pro odnawia się w zwykłej cenie. Anuluj w dowolnej chwili.
+Smart time||Inteligentna godzina
+The reminder moves closer to when you usually check off the habit.||Przypomnienie przesuwa się bliżej godziny, o której zwykle odhaczasz nawyk.
+You usually check it off around %@. The reminder will move to %@.||Zwykle odhaczasz go około %@. Przypomnienie przesunie się na %@.
+The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins.||Przypomnienie przesuwa się bliżej godziny, o której zwykle odhaczasz nawyk. Potrzeba około dwóch tygodni wpisów.
+The reminder already matches when you usually check off the habit.||Przypomnienie już pasuje do godziny, o której zwykle odhaczasz nawyk.
+You usually check it off around %@||Zwykle odhaczasz go około %@
+The reminder comes at %@. Move it to %@?||Przypomnienie przychodzi o %@. Przesunąć na %@?
+Move to %@||Przesuń na %@

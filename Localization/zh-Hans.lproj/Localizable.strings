@@ -453,6 +453,7 @@
 "Morning" = "早上";
 "Morning exercises" = "晨练";
 "Most steady: %@, %lld of %lld" = "最稳定：%@，%lld/%lld";
+"Move to %@" = "改到 %@";
 "Move to archive" = "移至归档";
 "My month" = "我的一个月";
 "My week" = "我的一周";
@@ -660,6 +661,7 @@
 "Sleeping" = "在睡觉";
 "Small steps add up." = "小步积累成大进步。";
 "Small steps every day" = "每天一小步";
+"Smart time" = "智能时间";
 "Some days" = "指定日";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "在设置中按分组排列“今天”页面；长按“今天”小组件可只显示一个分组。";
 "Sparks" = "火花";
@@ -734,6 +736,10 @@
 "The mood card at the bottom of the list lets you rate your day with one tap." = "列表底部的心情卡片，一点即可为这一天打分。";
 "The new language will apply after you close the app and open it again." = "关闭并重新打开应用后，新语言才会生效。";
 "The purchase could not be verified." = "无法验证此次购买。";
+"The reminder already matches when you usually check off the habit." = "提醒时间已经和你通常打卡的时间一致。";
+"The reminder comes at %@. Move it to %@?" = "提醒在 %@ 发出。改到 %@ 吗？";
+"The reminder moves closer to when you usually check off the habit." = "提醒会自动靠近你通常打卡这个习惯的时间。";
+"The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins." = "提醒会自动靠近你通常打卡这个习惯的时间。需要大约两周的打卡记录。";
 "The streak broke" = "连续记录中断了";
 "The widget will update after unlocking." = "解锁后小组件会更新。";
 "There are no purchases yet: this switch turns Pro features on for testing." = "暂无购买功能：此开关用于测试 Pro 功能。";
@@ -845,6 +851,8 @@
 "Yesterday" = "昨天";
 "Yoga" = "瑜伽";
 "You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "你可以在“设置”→“隐私与安全性”→“健康”→ZenHab 中允许或拒绝访问每种数据。";
+"You usually check it off around %@" = "你通常在 %@ 左右打卡";
+"You usually check it off around %@. The reminder will move to %@." = "你通常在 %@ 左右打卡。提醒将改到 %@。";
 "You're doing great!" = "你做得很棒！";
 "You've gone through the whole dictionary" = "你已学完整个词库";
 "Young" = "少年";

@@ -19,3 +19,7 @@ onb-11-today-celebrate-large
 offer-01-today      # KAN-125
 offer-02-settings   # KAN-125
 offer-03-paywall    # KAN-125
+# KAN-135: умное время напоминаний
+smart-01-suggestion
+smart-02-editor-on
+smart-03-editor-off

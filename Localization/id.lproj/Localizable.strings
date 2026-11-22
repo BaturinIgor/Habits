@@ -453,6 +453,7 @@
 "Morning" = "Pagi";
 "Morning exercises" = "Senam pagi";
 "Most steady: %@, %lld of %lld" = "Paling konsisten: %@, %lld dari %lld";
+"Move to %@" = "Pindahkan ke %@";
 "Move to archive" = "Pindahkan ke arsip";
 "My month" = "Bulanku";
 "My week" = "Mingguku";
@@ -660,6 +661,7 @@
 "Sleeping" = "Tidur";
 "Small steps add up." = "Langkah kecil akan bertambah.";
 "Small steps every day" = "Langkah kecil setiap hari";
+"Smart time" = "Waktu pintar";
 "Some days" = "Beberapa hari";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Urutkan layar Hari Ini per grup di Pengaturan, dan tahan widget Hari Ini untuk menampilkan satu grup.";
 "Sparks" = "Percikan";
@@ -734,6 +736,10 @@
 "The mood card at the bottom of the list lets you rate your day with one tap." = "Kartu suasana hati di bawah daftar memungkinkanmu menilai hari dengan satu ketukan.";
 "The new language will apply after you close the app and open it again." = "Bahasa baru akan berlaku setelah kamu menutup dan membuka lagi aplikasi.";
 "The purchase could not be verified." = "Pembelian tidak dapat diverifikasi.";
+"The reminder already matches when you usually check off the habit." = "Pengingat sudah sesuai dengan waktu kamu biasa mencentang kebiasaan.";
+"The reminder comes at %@. Move it to %@?" = "Pengingat datang pukul %@. Pindahkan ke %@?";
+"The reminder moves closer to when you usually check off the habit." = "Pengingat bergeser mendekati waktu kamu biasa mencentang kebiasaan.";
+"The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins." = "Pengingat bergeser mendekati waktu kamu biasa mencentang kebiasaan. Perlu sekitar dua minggu catatan.";
 "The streak broke" = "Rentetan terputus";
 "The widget will update after unlocking." = "Widget akan diperbarui setelah kunci dibuka.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "Belum ada pembelian: sakelar ini menyalakan fitur Pro untuk pengujian.";
@@ -845,6 +851,8 @@
 "Yesterday" = "Kemarin";
 "Yoga" = "Yoga";
 "You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "Kamu bisa mengizinkan atau menolak akses ke setiap jenis data di Pengaturan → Privasi & Keamanan → Kesehatan → ZenHab.";
+"You usually check it off around %@" = "Kamu biasanya mencentangnya sekitar %@";
+"You usually check it off around %@. The reminder will move to %@." = "Kamu biasanya mencentangnya sekitar %@. Pengingat akan pindah ke %@.";
 "You're doing great!" = "Kamu hebat!";
 "You've gone through the whole dictionary" = "Kamu sudah menyelesaikan seluruh kamus";
 "Young" = "Remaja";

@@ -453,6 +453,7 @@
 "Morning" = "아침";
 "Morning exercises" = "아침 체조";
 "Most steady: %@, %lld of %lld" = "가장 꾸준한 습관: %@, %lld/%lld";
+"Move to %@" = "%@(으)로 옮기기";
 "Move to archive" = "보관함으로 이동";
 "My month" = "나의 한 달";
 "My week" = "나의 한 주";
@@ -660,6 +661,7 @@
 "Sleeping" = "자는 중";
 "Small steps add up." = "작은 걸음이 모여요.";
 "Small steps every day" = "매일 작은 한 걸음";
+"Smart time" = "스마트 시간";
 "Some days" = "요일 선택";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "설정에서 '오늘' 화면을 그룹별로 정렬하고, '오늘' 위젯을 길게 눌러 그룹 하나만 표시하세요.";
 "Sparks" = "스파크";
@@ -734,6 +736,10 @@
 "The mood card at the bottom of the list lets you rate your day with one tap." = "목록 아래 기분 카드에서 한 번 탭으로 하루를 평가할 수 있어요.";
 "The new language will apply after you close the app and open it again." = "앱을 닫았다가 다시 열면 새 언어가 적용돼요.";
 "The purchase could not be verified." = "구매를 확인할 수 없어요.";
+"The reminder already matches when you usually check off the habit." = "알림이 이미 평소 체크하는 시간과 맞아요.";
+"The reminder comes at %@. Move it to %@?" = "알림이 %@에 와요. %@(으)로 옮길까요?";
+"The reminder moves closer to when you usually check off the habit." = "알림이 평소 습관을 체크하는 시간에 맞춰 옮겨져요.";
+"The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins." = "알림이 평소 습관을 체크하는 시간에 맞춰 옮겨져요. 2주 정도의 기록이 필요해요.";
 "The streak broke" = "연속 기록이 끊겼어요";
 "The widget will update after unlocking." = "잠금 해제 후 위젯이 업데이트돼요.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "아직 구매 기능이 없어요. 이 스위치로 Pro 기능을 테스트할 수 있어요.";
@@ -845,6 +851,8 @@
 "Yesterday" = "어제";
 "Yoga" = "요가";
 "You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "데이터 종류별 접근은 설정 → 개인정보 보호 및 보안 → 건강 → ZenHab에서 허용하거나 거부할 수 있어요.";
+"You usually check it off around %@" = "보통 %@쯤 체크해요";
+"You usually check it off around %@. The reminder will move to %@." = "보통 %@쯤 체크해요. 알림이 %@(으)로 옮겨져요.";
 "You're doing great!" = "정말 잘하고 있어요!";
 "You've gone through the whole dictionary" = "사전의 모든 단어를 학습했어요";
 "Young" = "청소년";

@@ -453,6 +453,7 @@
 "Morning" = "Mañana";
 "Morning exercises" = "Ejercicios matutinos";
 "Most steady: %@, %lld of %lld" = "La más constante: %@, %lld de %lld";
+"Move to %@" = "Pasar a las %@";
 "Move to archive" = "Archivar";
 "My month" = "Mi mes";
 "My week" = "Mi semana";
@@ -660,6 +661,7 @@
 "Sleeping" = "Duerme";
 "Small steps add up." = "Los pequeños pasos suman.";
 "Small steps every day" = "Pequeños pasos cada día";
+"Smart time" = "Hora inteligente";
 "Some days" = "Algunos días";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Ordena la pantalla Hoy por grupos en Ajustes y mantén pulsado el widget Hoy para mostrar un grupo.";
 "Sparks" = "Chispas";
@@ -734,6 +736,10 @@
 "The mood card at the bottom of the list lets you rate your day with one tap." = "La tarjeta de ánimo al final de la lista te permite valorar tu día con un toque.";
 "The new language will apply after you close the app and open it again." = "El nuevo idioma se aplicará cuando cierres la app y la vuelvas a abrir.";
 "The purchase could not be verified." = "No se pudo verificar la compra.";
+"The reminder already matches when you usually check off the habit." = "El recordatorio ya coincide con la hora en que sueles marcar el hábito.";
+"The reminder comes at %@. Move it to %@?" = "El recordatorio llega a las %@. ¿Pasarlo a las %@?";
+"The reminder moves closer to when you usually check off the habit." = "El recordatorio se acerca a la hora en que sueles marcar el hábito.";
+"The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins." = "El recordatorio se acerca a la hora en que sueles marcar el hábito. Hacen falta unas dos semanas de registros.";
 "The streak broke" = "La racha se rompió";
 "The widget will update after unlocking." = "El widget se actualizará al desbloquear.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "Aún no hay compras: este interruptor activa las funciones Pro para probarlas.";
@@ -845,6 +851,8 @@
 "Yesterday" = "Ayer";
 "Yoga" = "Yoga";
 "You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "Puedes permitir o denegar el acceso a cada tipo de dato en Ajustes → Privacidad y seguridad → Salud → ZenHab.";
+"You usually check it off around %@" = "Sueles marcarlo hacia las %@";
+"You usually check it off around %@. The reminder will move to %@." = "Sueles marcarlo hacia las %@. El recordatorio pasará a las %@.";
 "You're doing great!" = "¡Lo estás haciendo genial!";
 "You've gone through the whole dictionary" = "Has recorrido todo el diccionario";
 "Young" = "Joven";

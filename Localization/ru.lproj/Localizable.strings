@@ -453,6 +453,7 @@
 "Morning" = "Утро";
 "Morning exercises" = "Зарядка";
 "Most steady: %@, %lld of %lld" = "Самая стабильная: %@, %lld из %lld";
+"Move to %@" = "Перенести на %@";
 "Move to archive" = "Переместить в архив";
 "My month" = "Мой месяц";
 "My week" = "Моя неделя";
@@ -660,6 +661,7 @@
 "Sleeping" = "Спит";
 "Small steps add up." = "Маленькие шаги складываются в большие.";
 "Small steps every day" = "Маленькие шаги каждый день";
+"Smart time" = "Умное время";
 "Some days" = "По дням";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Разложи экран «Сегодня» по группам в Настройках, а виджет «Сегодня» зажми, чтобы выбрать одну группу.";
 "Sparks" = "Искры";
@@ -734,6 +736,10 @@
 "The mood card at the bottom of the list lets you rate your day with one tap." = "Карточка внизу списка, чтобы оценить день одним касанием.";
 "The new language will apply after you close the app and open it again." = "Новый язык включится, когда ты закроешь приложение и откроешь его снова.";
 "The purchase could not be verified." = "Не удалось проверить покупку.";
+"The reminder already matches when you usually check off the habit." = "Напоминание уже совпадает с тем, когда ты обычно отмечаешь привычку.";
+"The reminder comes at %@. Move it to %@?" = "Напоминание приходит в %@. Перенести на %@?";
+"The reminder moves closer to when you usually check off the habit." = "Напоминание само подстраивается под время, когда ты обычно отмечаешь привычку.";
+"The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins." = "Напоминание само подстраивается под время, когда ты обычно отмечаешь привычку. Для этого нужно около двух недель отметок.";
 "The streak broke" = "Серия прервалась";
 "The widget will update after unlocking." = "Виджет обновится после разблокировки.";
 "There are no purchases yet: this switch turns Pro features on for testing." = "Покупок пока нет: этот переключатель включает функции Pro для проверки.";
@@ -845,6 +851,8 @@
 "Yesterday" = "Вчера";
 "Yoga" = "Йога";
 "You can allow or deny access to each type of data in Settings → Privacy & Security → Health → ZenHab." = "Доступ к каждому типу данных можно разрешить или запретить в Настройки → Конфиденциальность и безопасность → Здоровье → ZenHab.";
+"You usually check it off around %@" = "Обычно ты отмечаешь её около %@";
+"You usually check it off around %@. The reminder will move to %@." = "Обычно ты отмечаешь её около %@. Напоминание переедет на %@.";
 "You're doing great!" = "У тебя отлично получается!";
 "You've gone through the whole dictionary" = "Ты прошёл весь словарь";
 "Young" = "Подросток";

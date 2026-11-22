@@ -886,3 +886,11 @@ Copy code||Salin kode
 Tap the button and paste the code in the App Store window. You'll see the final price before you pay.||Ketuk tombol dan tempel kode di jendela App Store. Kamu akan melihat harga akhir sebelum membayar.
 %@ for the first year||%@ untuk tahun pertama
 After the first year, Pro renews at the regular price. Cancel anytime.||Setelah tahun pertama, Pro diperpanjang dengan harga normal. Batalkan kapan saja.
+Smart time||Waktu pintar
+The reminder moves closer to when you usually check off the habit.||Pengingat bergeser mendekati waktu kamu biasa mencentang kebiasaan.
+You usually check it off around %@. The reminder will move to %@.||Kamu biasanya mencentangnya sekitar %@. Pengingat akan pindah ke %@.
+The reminder moves closer to when you usually check off the habit. It needs about two weeks of check-ins.||Pengingat bergeser mendekati waktu kamu biasa mencentang kebiasaan. Perlu sekitar dua minggu catatan.
+The reminder already matches when you usually check off the habit.||Pengingat sudah sesuai dengan waktu kamu biasa mencentang kebiasaan.
+You usually check it off around %@||Kamu biasanya mencentangnya sekitar %@
+The reminder comes at %@. Move it to %@?||Pengingat datang pukul %@. Pindahkan ke %@?
+Move to %@||Pindahkan ke %@

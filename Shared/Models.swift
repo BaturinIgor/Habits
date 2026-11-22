@@ -205,6 +205,8 @@ struct Habit: Identifiable, Hashable, Codable {
     var health: HealthLink?
     /// Таймер (Pro): привычка на время, например «Медитация 10 мин».
     var timerMinutes: Int?
+    /// Умное время (KAN-135): напоминание само сдвигается к обычному времени отметки. nil - выключено.
+    var smartTime: Bool?
 
     init(id: UUID = UUID(),
          name: String = "",
@@ -245,7 +247,7 @@ struct Habit: Identifiable, Hashable, Codable {
     enum CodingKeys: String, CodingKey {
         case id, name, details, icon, colorIndex, groupID, schedule, reminder, createdAt, isArchived, sortOrder
         case repeatCount, repeatInterval, partOfDay, pausedFrom, pausedUntil, target, unit, minimumVersion, chainAfter
-        case wordsLanguage, wordsPerDay, wordsLevel, quit, health, timerMinutes
+        case wordsLanguage, wordsPerDay, wordsLevel, quit, health, timerMinutes, smartTime
     }
 
     init(from decoder: Decoder) throws {
@@ -276,6 +278,7 @@ struct Habit: Identifiable, Hashable, Codable {
         quit = try? c.decodeIfPresent(QuitInfo.self, forKey: .quit)
         health = try? c.decodeIfPresent(HealthLink.self, forKey: .health)
         timerMinutes = try c.decodeIfPresent(Int.self, forKey: .timerMinutes)
+        smartTime = try? c.decodeIfPresent(Bool.self, forKey: .smartTime)
     }
 
     /// Бросаю: счётчик дней без привычки вместо ежедневных отметок.
@@ -513,6 +516,9 @@ struct CheckIn: Codable, Hashable {
     var count: Int?
     /// Выполнена минимальная версия.
     var isMinimum: Bool?
+    /// Смещение часового пояса (секунды от GMT) в момент отметки: умное время считает время отметки
+    /// по местным часам того дня, даже если потом человек переехал в другой пояс. У старых отметок нет.
+    var tz: Int?
 }
 
 struct NoteEntry: Identifiable, Hashable {
@@ -709,6 +715,7 @@ extension AppData {
         entry.isMinimum = nil
         if status == nil { entry.count = nil }
         entry.updatedAt = Date()
+        entry.tz = TimeZone.current.secondsFromGMT()
         store(entry, key: k)
     }
 
@@ -741,6 +748,7 @@ extension AppData {
             entry.status = next >= target ? .done : nil
         }
         entry.updatedAt = Date()
+        entry.tz = TimeZone.current.secondsFromGMT()
         store(entry, key: k)
     }
 
@@ -751,6 +759,7 @@ extension AppData {
         entry.status = .done
         entry.isMinimum = true
         entry.updatedAt = Date()
+        entry.tz = TimeZone.current.secondsFromGMT()
         store(entry, key: k)
     }
 
