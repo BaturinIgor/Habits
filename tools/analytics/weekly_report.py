@@ -114,8 +114,12 @@ def fetch(report_type, sub_type, day, versions):
         if r.status_code == 400 and "version" in body.lower():
             continue
         if r.status_code in (401, 403):
-            print(f"::error::Нет доступа к отчётам продаж (HTTP {r.status_code}). Ключу API нужна роль Sales, Finance или Admin.")
-            sys.exit(1)
+            # Без роли Sales/Finance/Admin отчёт всё равно строится: разделы App Store помечаются, GA4 и Telegram работают.
+            global SALES_DENIED
+            if not SALES_DENIED:
+                print(f"::warning::Нет доступа к отчётам продаж (HTTP {r.status_code}). Ключу API нужна роль Sales, Finance или Admin.")
+            SALES_DENIED = True
+            return None
         print(f"::warning::{report_type}/{sub_type} {day}: HTTP {r.status_code}")
         return None
     print(f"::warning::{report_type}/{sub_type}: ни одна версия отчёта не подошла ({versions})")
@@ -305,6 +309,9 @@ def delta(now, before):
     return f" ({'+' if change >= 0 else ''}{change:.0f}% к прошлой неделе)"
 
 
+SALES_DENIED = False
+
+
 def main():
     global VENDOR
     missing = [name for name in REQUIRED if not os.environ.get(name, "").strip()]
@@ -332,6 +339,9 @@ def main():
     period = f"{week[0].isoformat()} — {week[-1].isoformat()}"
     lines = [f"# ZenHab: неделя {period}", ""]
     lines += ["## App Store", ""]
+    if SALES_DENIED:
+        lines.append("- **Нет доступа к отчётам продаж**: ключу App Store Connect (ASC_KEY_*) нужна роль Sales, Finance или Admin. "
+                     "Цифры ниже нулевые не потому, что продаж не было.")
     lines.append(f"- Установки: **{sales['downloads']}**{delta(sales['downloads'], prev_sales['downloads'])}")
     lines.append(f"- Повторные загрузки: {sales['redownloads']}")
     lines.append(f"- Обновления: {sales['updates']}")
@@ -380,7 +390,10 @@ def main():
     if not (bot and chat):
         print("Telegram not configured, report not sent (нужны FEEDBACK_BOT_TOKEN и FEEDBACK_CHAT_ID).")
     else:
-        short = [f"ZenHab, неделя {period}",
+        short = [f"ZenHab, неделя {period}"]
+        if SALES_DENIED:
+            short.append("Продажи: нет доступа (ключу App Store Connect нужна роль Sales/Finance)")
+        short += [
                  f"Установки: {sales['downloads']}{delta(sales['downloads'], prev_sales['downloads'])}",
                  f"Покупки: {sales['iap_units']}{delta(sales['iap_units'], prev_sales['iap_units'])}",
                  f"Доход: {proceeds}"]
