@@ -82,6 +82,7 @@
 "Archive" = "संग्रहित करें";
 "Archive (%lld)" = "संग्रह (%lld)";
 "Archived" = "संग्रहित";
+"Ask Siri to check off a habit, log your mood or tell you what's left today. With Pro, Siri also starts a habit timer. All actions are in the Shortcuts app." = "Siri से आदत मार्क करने, मूड दर्ज करने या आज क्या बाकी है बताने को कहें। Pro के साथ Siri आदत का टाइमर भी शुरू करती है। सभी ऐक्शन शॉर्टकट्स ऐप में हैं।";
 "At the start of each week, see how the last one went and share it as a picture." = "हर हफ़्ते की शुरुआत में देखें कि पिछला हफ़्ता कैसा रहा, और उसे तस्वीर के रूप में शेयर करें।";
 "Attach a screenshot" = "स्क्रीनशॉट जोड़ें";
 "Automatic iCloud backup" = "अपने आप iCloud बैकअप";
@@ -382,6 +383,7 @@
 "Language" = "भाषा";
 "Language to learn" = "सीखने की भाषा";
 "Languages" = "भाषाएँ";
+"Large text" = "बड़ा टेक्स्ट";
 "Last 12 weeks" = "पिछले 12 हफ़्ते";
 "Last 30 days" = "पिछले 30 दिन";
 "Last 7 days" = "पिछले 7 दिन";
@@ -442,6 +444,7 @@
 "Mood" = "मूड";
 "Mood (1-5)" = "मूड (1-5)";
 "Mood card" = "मूड कार्ड";
+"Mood insights" = "मूड इनसाइट्स";
 "Mood is higher on days you do it" = "जिन दिनों आप इसे करते हैं, मूड बेहतर रहता है";
 "Mood is lower on days you do it" = "जिन दिनों आप इसे करते हैं, मूड कम रहता है";
 "Mood journal" = "मूड डायरी";
@@ -632,6 +635,7 @@
 "Scan to get ZenHab" = "ZenHab पाने के लिए स्कैन करें";
 "Schedule" = "समय-सारिणी";
 "Scheduled notifications" = "तय सूचनाएँ";
+"Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly." = "स्क्रीन अब सबसे बड़े टेक्स्ट आकार में बेहतर दिखती हैं, और VoiceOver बटन ज़्यादा साफ़ पढ़ता है।";
 "See how many habits are done today." = "आज कितनी आदतें पूरी हुईं, यह देखें।";
 "See how much money you save by quitting a habit." = "देखें कि आदत छोड़कर आप कितने पैसे बचाते हैं।";
 "See how much you've saved with Pro" = "Pro से देखें कि कितनी बचत हुई";
@@ -657,6 +661,7 @@
 "Simple gestures" = "आसान इशारे";
 "Since %@" = "%@ से";
 "Siri" = "Siri";
+"Siri and Shortcuts" = "Siri और शॉर्टकट्स";
 "Six new icons for your Home Screen." = "आपकी होम स्क्रीन के लिए छह नए आइकन।";
 "Skin care" = "त्वचा की देखभाल";
 "Skip" = "छोड़ें";
@@ -665,6 +670,7 @@
 "Sleeping" = "सो रहा है";
 "Small steps add up." = "छोटे कदम मिलकर बड़े बनते हैं।";
 "Small steps every day" = "हर दिन छोटे कदम";
+"Smart reminder time" = "स्मार्ट रिमाइंडर समय";
 "Smart time" = "स्मार्ट समय";
 "Some days" = "कुछ दिन";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "सेटिंग्स में \"आज\" स्क्रीन को समूहों के अनुसार सजाएँ, और एक समूह दिखाने के लिए \"आज\" विजेट को दबाकर रखें।";
@@ -778,6 +784,7 @@
 "Try Pro free for %@" = "Pro को %@ मुफ़्त आज़माएँ";
 "Try again" = "फिर से कोशिश करें";
 "Try it" = "आज़माएँ";
+"Turn on Smart time next to a reminder, and it moves closer to when you usually check the habit off. It's free for everyone." = "रिमाइंडर में \"स्मार्ट समय\" चालू करें, और वह उस समय के करीब आ जाएगा जब आप आमतौर पर आदत मार्क करते हैं। यह सभी के लिए मुफ़्त है।";
 "Turn on reminders" = "रिमाइंडर चालू करें";
 "Turn on the lock" = "लॉक चालू करें";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "किसी आदत में “मैं यह आदत छोड़ रहा हूँ” चालू करें और देखें कि आप कितने दिन से इसके बिना हैं, आपका रिकॉर्ड और अगला पड़ाव। Pro में बचाए पैसे भी।";
@@ -841,6 +848,7 @@
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "Pro के साथ आदत की अवधि तय करें। उलटी गिनती लॉक स्क्रीन और Dynamic Island पर चलती है और समय पूरा होने पर आदत पूरी हो जाती है।";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "Pro के साथ आदत को कदम, नींद, पानी, वर्कआउट या माइंडफ़ुल मिनट से जोड़ें, और लक्ष्य पूरा होते ही वह अपने आप पूरी हो जाएगी।";
 "With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off." = "Pro के साथ Apple Watch पर आदत का टाइमर शुरू करें। समय पूरा होने पर घड़ी कलाई पर टैप करेगी और आदत मार्क कर देगी।";
+"With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today." = "Pro के साथ मूड डायरी दिखाती है कि कौन-सी आदतें आपके अच्छे दिनों के साथ आती हैं। इसे आँकड़े या 'आज' पर मूड कार्ड से खोलें।";
 "Without it since" = "इसके बिना कब से";
 "Words" = "शब्द";
 "Words for today are done" = "आज के शब्द पूरे हो गए";

@@ -50,8 +50,8 @@ Prywatność: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
 • Zacznij od celu: wybierz, co chcesz zmienić, a ZenHab zaproponuje gotowy zestaw nawyków.
-• Inteligentne przypomnienia: dopasowują się do pory, o której naprawdę odhaczasz nawyki.
-• Nastrój i nawyki: zobacz, które nawyki idą w parze z twoim najlepszym nastrojem.
-• Więcej Siri i Skrótów: zapisz nastrój lub włącz minutnik głosem, a nawyki znajdziesz w Spotlight.
-• Noworoczna oferta na ZenHab Pro, przez ograniczony czas.
+• Inteligentna godzina przypomnień: włącz ją, a przypomnienie przesunie się na porę, o której zwykle odhaczasz nawyk. Za darmo dla wszystkich.
+• Nastrój i nawyki w ZenHab Pro: zobacz, które nawyki idą w parze z twoim najlepszym nastrojem.
+• Więcej Siri i Skrótów: zapisz nastrój lub włącz minutnik nawyku (Pro) głosem, a nawyki znajdziesz w Spotlight.
+• Oferta noworoczna: od 20 grudnia do 10 stycznia pierwszy rok ZenHab Pro taniej o 50%.
 • Wygodniej z dużą czcionką i VoiceOver.

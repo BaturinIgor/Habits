@@ -50,8 +50,8 @@ Privacy: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
 • Parti da un obiettivo: scegli cosa vuoi cambiare e ZenHab ti propone abitudini già pronte.
-• Promemoria intelligenti: si adattano all'ora in cui spunti davvero le abitudini.
-• Umore e abitudini: scopri quali abitudini vanno di pari passo con il tuo umore migliore.
-• Più Siri e Comandi Rapidi: registra l'umore o avvia un timer con la voce e trova le abitudini in Spotlight.
-• Offerta di Capodanno su ZenHab Pro, per un periodo limitato.
+• Orario intelligente dei promemoria: attivalo e il promemoria si sposta all'ora in cui di solito spunti l'abitudine. Gratis per tutti.
+• Umore e abitudini con ZenHab Pro: scopri quali abitudini vanno di pari passo con il tuo umore migliore.
+• Più Siri e Comandi Rapidi: registra l'umore o avvia il timer di un'abitudine (Pro) con la voce e trova le abitudini in Spotlight.
+• Offerta di Capodanno: dal 20 dicembre al 10 gennaio, il primo anno di ZenHab Pro costa il 50% in meno.
 • Va meglio con il testo grande e VoiceOver.

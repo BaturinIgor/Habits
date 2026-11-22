@@ -900,3 +900,11 @@ This is a pattern in your entries, not proof that the habit is the cause.||To pr
 Rate your mood for %@ more to see which habits go with your better days.||Oceniaj nastrój jeszcze przez %@, a zobaczysz, które nawyki idą w parze z lepszymi dniami.
 No habit stands out yet: your mood is about the same on days with and without them.||Żaden nawyk jeszcze się nie wyróżnia: nastrój jest podobny w dni z nimi i bez nich.
 See which habits go with your better days||Zobacz, które nawyki idą w parze z lepszymi dniami
+Smart reminder time||Inteligentna godzina przypomnień
+Turn on Smart time next to a reminder, and it moves closer to when you usually check the habit off. It's free for everyone.||Włącz opcję „Inteligentna godzina” przy przypomnieniu, a przesunie się ono bliżej pory, o której zwykle odhaczasz nawyk. Za darmo dla wszystkich.
+Siri and Shortcuts||Siri i Skróty
+Ask Siri to check off a habit, log your mood or tell you what's left today. With Pro, Siri also starts a habit timer. All actions are in the Shortcuts app.||Poproś Siri, żeby odhaczyła nawyk, zapisała nastrój albo powiedziała, co zostało na dziś. Z Pro Siri uruchomi też minutnik nawyku. Wszystkie czynności znajdziesz w aplikacji Skróty.
+Mood insights||Nastrój i nawyki
+With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today.||Z Pro dziennik nastroju pokazuje, które nawyki idą w parze z lepszymi dniami. Otwórz go ze Statystyk albo z karty nastroju na ekranie „Dziś”.
+Large text||Duży tekst
+Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly.||Ekrany lepiej dopasowują się do największych rozmiarów tekstu, a VoiceOver wyraźniej odczytuje przyciski.

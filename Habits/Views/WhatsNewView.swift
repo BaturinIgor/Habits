@@ -4,7 +4,7 @@ import SwiftUI
 /// Что нового в версии: показывается один раз после обновления.
 struct WhatsNewView: View {
     /// Меняется, когда появляются новые карточки.
-    static let version = "1.6"
+    static let version = "1.7"
 
     /// Открыть окно новой привычки, чтобы попробовать новое.
     let onTryVoice: () -> Void
@@ -23,28 +23,37 @@ struct WhatsNewView: View {
                         .padding(.bottom, 4)
 
                     card(
-                        icon: "applewatch",
-                        color: .indigo,
-                        title: "ZenHab on Apple Watch",
-                        text: "See today's habits on your wrist and check them off with one tap. Everything syncs with your iPhone. Install ZenHab from the Watch app on your iPhone if it hasn't appeared on your watch."
+                        icon: "clock.arrow.circlepath",
+                        color: .blue,
+                        title: "Smart reminder time",
+                        text: "Turn on Smart time next to a reminder, and it moves closer to when you usually check the habit off. It's free for everyone."
                     ) {
                         EmptyView()
                     }
 
                     card(
-                        icon: "watch.analog",
-                        color: .green,
-                        title: "Watch face complications",
-                        text: "Add ZenHab to your watch face or Smart Stack to see how many habits are done today."
+                        icon: "mic.fill",
+                        color: .pink,
+                        title: "Siri and Shortcuts",
+                        text: "Ask Siri to check off a habit, log your mood or tell you what's left today. With Pro, Siri also starts a habit timer. All actions are in the Shortcuts app."
                     ) {
                         EmptyView()
                     }
 
                     card(
-                        icon: "timer",
+                        icon: "face.smiling",
                         color: .orange,
-                        title: "Timer on your wrist",
-                        text: "With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off."
+                        title: "Mood insights",
+                        text: "With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today."
+                    ) {
+                        EmptyView()
+                    }
+
+                    card(
+                        icon: "textformat.size",
+                        color: .green,
+                        title: "Large text",
+                        text: "Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly."
                     ) {
                         EmptyView()
                     }

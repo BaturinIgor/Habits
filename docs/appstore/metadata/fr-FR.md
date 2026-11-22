@@ -50,8 +50,8 @@ Confidentialité : https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
 • Commence par un objectif : choisis ce que tu veux changer, et ZenHab te propose des habitudes toutes prêtes.
-• Rappels intelligents : ils s'adaptent à l'heure à laquelle tu coches vraiment tes habitudes.
-• Humeur et habitudes : découvre quelles habitudes vont de pair avec ta meilleure humeur.
-• Plus de Siri et de Raccourcis : note ton humeur ou lance un minuteur à la voix, et retrouve tes habitudes dans Spotlight.
-• Offre du Nouvel An sur ZenHab Pro, pour une durée limitée.
+• Heure de rappel intelligente : active-la, et le rappel se cale sur l'heure à laquelle tu coches généralement l'habitude. Gratuit pour tous.
+• Humeur et habitudes avec ZenHab Pro : découvre quelles habitudes vont de pair avec ta meilleure humeur.
+• Plus de Siri et de Raccourcis : note ton humeur ou lance le minuteur d'une habitude (Pro) à la voix, et retrouve tes habitudes dans Spotlight.
+• Offre du Nouvel An : du 20 décembre au 10 janvier, la première année de ZenHab Pro est à −50 %.
 • Plus agréable avec les grandes tailles de texte et VoiceOver.

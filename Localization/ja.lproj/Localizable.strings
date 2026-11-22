@@ -82,6 +82,7 @@
 "Archive" = "アーカイブ";
 "Archive (%lld)" = "アーカイブ (%lld)";
 "Archived" = "アーカイブ済み";
+"Ask Siri to check off a habit, log your mood or tell you what's left today. With Pro, Siri also starts a habit timer. All actions are in the Shortcuts app." = "Siriに習慣のチェック、気分の記録、今日残っていることの確認を頼めます。ProならSiriで習慣のタイマーも開始できます。すべてのアクションはショートカットアプリにあります。";
 "At the start of each week, see how the last one went and share it as a picture." = "毎週のはじめに先週の結果を確認し、画像でシェアできます。";
 "Attach a screenshot" = "スクリーンショットを添付";
 "Automatic iCloud backup" = "iCloud 自動バックアップ";
@@ -382,6 +383,7 @@
 "Language" = "言語";
 "Language to learn" = "学ぶ言語";
 "Languages" = "言語";
+"Large text" = "大きな文字";
 "Last 12 weeks" = "過去12週間";
 "Last 30 days" = "過去30日間";
 "Last 7 days" = "過去7日間";
@@ -442,6 +444,7 @@
 "Mood" = "気分";
 "Mood (1-5)" = "気分 (1-5)";
 "Mood card" = "気分カード";
+"Mood insights" = "気分のインサイト";
 "Mood is higher on days you do it" = "これをした日は気分が良い";
 "Mood is lower on days you do it" = "これをした日は気分が低め";
 "Mood journal" = "気分日記";
@@ -632,6 +635,7 @@
 "Scan to get ZenHab" = "スキャンしてZenHabを入手";
 "Schedule" = "スケジュール";
 "Scheduled notifications" = "予定された通知";
+"Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly." = "最大の文字サイズでも画面が見やすくなり、VoiceOverがボタンをよりわかりやすく読み上げます。";
 "See how many habits are done today." = "今日いくつの習慣を達成したかを表示します。";
 "See how much money you save by quitting a habit." = "習慣をやめて節約できたお金がわかります。";
 "See how much you've saved with Pro" = "Pro で節約額を表示";
@@ -657,6 +661,7 @@
 "Simple gestures" = "かんたん操作";
 "Since %@" = "%@ から";
 "Siri" = "Siri";
+"Siri and Shortcuts" = "Siriとショートカット";
 "Six new icons for your Home Screen." = "ホーム画面用の新しいアイコン6種類。";
 "Skin care" = "スキンケア";
 "Skip" = "スキップ";
@@ -665,6 +670,7 @@
 "Sleeping" = "おやすみ中";
 "Small steps add up." = "小さな一歩が積み重なる。";
 "Small steps every day" = "毎日の小さな一歩";
+"Smart reminder time" = "スマートなリマインダー時刻";
 "Smart time" = "スマート時刻";
 "Some days" = "曜日指定";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "設定で「今日」画面をグループ別に並べられます。「今日」ウィジェットを長押しすると1つのグループを表示できます。";
@@ -778,6 +784,7 @@
 "Try Pro free for %@" = "Pro を%@無料で試す";
 "Try again" = "再試行";
 "Try it" = "試してみる";
+"Turn on Smart time next to a reminder, and it moves closer to when you usually check the habit off. It's free for everyone." = "リマインダーの「スマート時刻」をオンにすると、いつも習慣をチェックする時間に近づきます。誰でも無料です。";
 "Turn on reminders" = "リマインダーをオン";
 "Turn on the lock" = "ロックをオンにする";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "習慣で「この習慣をやめる」をオンにすると、やめてからの日数、最長記録、次の節目が表示されます。Pro なら節約額も。";
@@ -841,6 +848,7 @@
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "Proなら習慣に時間を設定できます。カウントダウンはロック画面とDynamic Islandに表示され、終わると習慣がチェックされます。";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "Proなら、習慣を歩数・睡眠・水分・ワークアウト・マインドフルネスと連携でき、目標に達すると自動でチェックされます。";
 "With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off." = "Proなら、Apple Watchで習慣のタイマーを開始できます。時間になるとウォッチが手首をタップして習慣をチェックします。";
+"With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today." = "Proなら、気分日記でいい日に多い習慣がわかります。「統計」または「今日」の気分カードから開けます。";
 "Without it since" = "やめた日時";
 "Words" = "単語";
 "Words for today are done" = "今日の単語は終わりです";

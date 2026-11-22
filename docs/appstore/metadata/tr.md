@@ -50,8 +50,8 @@ Gizlilik: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
 • Bir hedefle başla: neyi değiştirmek istediğini seç, ZenHab sana hazır alışkanlıklar önersin.
-• Akıllı hatırlatıcılar: alışkanlıkları gerçekten işaretlediğin saate göre kendini ayarlar.
-• Ruh hali içgörüleri: hangi alışkanlıkların en iyi ruh halinle bağlantılı olduğunu gör.
-• Daha fazla Siri ve Kestirmeler: sesinle ruh halini kaydet veya zamanlayıcı başlat, alışkanlıklarını Spotlight'ta bul.
-• ZenHab Pro'da yılbaşı teklifi, sınırlı süre için.
+• Akıllı hatırlatma saati: aç, hatırlatıcı alışkanlığı genelde işaretlediğin saate kaysın. Herkes için ücretsiz.
+• ZenHab Pro'da ruh hali içgörüleri: hangi alışkanlıkların en iyi ruh halinle bağlantılı olduğunu gör.
+• Daha fazla Siri ve Kestirmeler: sesinle ruh halini kaydet veya alışkanlık zamanlayıcısını (Pro) başlat, alışkanlıklarını Spotlight'ta bul.
+• Yılbaşı teklifi: 20 Aralık'tan 10 Ocak'a kadar ZenHab Pro'nun ilk yılı %50 indirimli.
 • Büyük metin ve VoiceOver ile daha rahat.

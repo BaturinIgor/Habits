@@ -82,6 +82,7 @@
 "Archive" = "Arsipkan";
 "Archive (%lld)" = "Arsip (%lld)";
 "Archived" = "Diarsipkan";
+"Ask Siri to check off a habit, log your mood or tell you what's left today. With Pro, Siri also starts a habit timer. All actions are in the Shortcuts app." = "Minta Siri mencentang kebiasaan, mencatat suasana hati, atau memberi tahu apa yang tersisa hari ini. Dengan Pro, Siri juga memulai timer kebiasaan. Semua tindakan ada di app Pintasan.";
 "At the start of each week, see how the last one went and share it as a picture." = "Di awal setiap minggu, lihat bagaimana minggu lalu dan bagikan sebagai gambar.";
 "Attach a screenshot" = "Lampirkan tangkapan layar";
 "Automatic iCloud backup" = "Cadangan iCloud otomatis";
@@ -382,6 +383,7 @@
 "Language" = "Bahasa";
 "Language to learn" = "Bahasa yang dipelajari";
 "Languages" = "Bahasa";
+"Large text" = "Teks besar";
 "Last 12 weeks" = "12 minggu terakhir";
 "Last 30 days" = "30 hari terakhir";
 "Last 7 days" = "7 hari terakhir";
@@ -442,6 +444,7 @@
 "Mood" = "Suasana hati";
 "Mood (1-5)" = "Suasana hati (1-5)";
 "Mood card" = "Kartu suasana hati";
+"Mood insights" = "Wawasan suasana hati";
 "Mood is higher on days you do it" = "Suasana hati lebih baik di hari kamu melakukannya";
 "Mood is lower on days you do it" = "Suasana hati lebih rendah di hari kamu melakukannya";
 "Mood journal" = "Jurnal suasana hati";
@@ -632,6 +635,7 @@
 "Scan to get ZenHab" = "Pindai untuk mendapatkan ZenHab";
 "Schedule" = "Jadwal";
 "Scheduled notifications" = "Notifikasi terjadwal";
+"Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly." = "Layar kini lebih pas dengan ukuran teks terbesar, dan VoiceOver membacakan tombol dengan lebih jelas.";
 "See how many habits are done today." = "Lihat berapa kebiasaan yang sudah selesai hari ini.";
 "See how much money you save by quitting a habit." = "Lihat berapa banyak uang yang kamu hemat dengan berhenti dari suatu kebiasaan.";
 "See how much you've saved with Pro" = "Lihat berapa yang kamu hemat dengan Pro";
@@ -657,6 +661,7 @@
 "Simple gestures" = "Gerakan sederhana";
 "Since %@" = "Sejak %@";
 "Siri" = "Siri";
+"Siri and Shortcuts" = "Siri dan Pintasan";
 "Six new icons for your Home Screen." = "Enam ikon baru untuk Layar Utama.";
 "Skin care" = "Perawatan kulit";
 "Skip" = "Lewati";
@@ -665,6 +670,7 @@
 "Sleeping" = "Tidur";
 "Small steps add up." = "Langkah kecil akan bertambah.";
 "Small steps every day" = "Langkah kecil setiap hari";
+"Smart reminder time" = "Waktu pengingat pintar";
 "Smart time" = "Waktu pintar";
 "Some days" = "Beberapa hari";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Urutkan layar Hari Ini per grup di Pengaturan, dan tahan widget Hari Ini untuk menampilkan satu grup.";
@@ -778,6 +784,7 @@
 "Try Pro free for %@" = "Coba Pro gratis selama %@";
 "Try again" = "Coba lagi";
 "Try it" = "Coba";
+"Turn on Smart time next to a reminder, and it moves closer to when you usually check the habit off. It's free for everyone." = "Nyalakan \"Waktu pintar\" pada pengingat, dan pengingat akan bergeser mendekati waktu kamu biasa mencentang kebiasaan. Gratis untuk semua.";
 "Turn on reminders" = "Nyalakan pengingat";
 "Turn on the lock" = "Aktifkan kunci";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "Nyalakan “Aku sedang berhenti” di sebuah kebiasaan untuk melihat sudah berapa hari tanpanya, rekormu, dan target berikutnya. Dengan Pro, juga uang yang dihemat.";
@@ -841,6 +848,7 @@
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "Dengan Pro, beri durasi pada kebiasaan. Hitung mundur tampil di Layar Terkunci dan Dynamic Island, lalu kebiasaan tercentang saat waktu habis.";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "Dengan Pro, hubungkan kebiasaan ke langkah, tidur, air, latihan, atau menit kesadaran, dan kebiasaan tercentang otomatis saat target tercapai.";
 "With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off." = "Dengan Pro, mulai timer kebiasaan di Apple Watch. Saat waktu habis, jam akan mengetuk pergelangan tanganmu dan mencentang kebiasaan.";
+"With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today." = "Dengan Pro, jurnal suasana hati menunjukkan kebiasaan mana yang menyertai hari-hari terbaikmu. Buka dari Statistik atau kartu suasana hati di \"Hari Ini\".";
 "Without it since" = "Tanpanya sejak";
 "Words" = "Kata";
 "Words for today are done" = "Kata hari ini selesai";

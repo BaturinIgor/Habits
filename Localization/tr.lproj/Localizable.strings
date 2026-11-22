@@ -82,6 +82,7 @@
 "Archive" = "Arşivle";
 "Archive (%lld)" = "Arşiv (%lld)";
 "Archived" = "Arşivde";
+"Ask Siri to check off a habit, log your mood or tell you what's left today. With Pro, Siri also starts a habit timer. All actions are in the Shortcuts app." = "Siri'den bir alışkanlığı işaretlemesini, ruh hâlini kaydetmesini ya da bugün ne kaldığını söylemesini iste. Pro ile Siri alışkanlık zamanlayıcısını da başlatır. Tüm eylemler Kestirmeler uygulamasında.";
 "At the start of each week, see how the last one went and share it as a picture." = "Her haftanın başında geçen haftanın nasıl geçtiğini gör ve resim olarak paylaş.";
 "Attach a screenshot" = "Ekran görüntüsü ekle";
 "Automatic iCloud backup" = "Otomatik iCloud yedeği";
@@ -382,6 +383,7 @@
 "Language" = "Dil";
 "Language to learn" = "Öğrenilecek dil";
 "Languages" = "Diller";
+"Large text" = "Büyük yazı";
 "Last 12 weeks" = "Son 12 hafta";
 "Last 30 days" = "Son 30 gün";
 "Last 7 days" = "Son 7 gün";
@@ -442,6 +444,7 @@
 "Mood" = "Ruh hâli";
 "Mood (1-5)" = "Ruh hâli (1-5)";
 "Mood card" = "Ruh hâli kartı";
+"Mood insights" = "Ruh hâli içgörüleri";
 "Mood is higher on days you do it" = "Bunu yaptığın günlerde ruh hâlin daha iyi";
 "Mood is lower on days you do it" = "Bunu yaptığın günlerde ruh hâlin daha düşük";
 "Mood journal" = "Ruh hâli günlüğü";
@@ -632,6 +635,7 @@
 "Scan to get ZenHab" = "ZenHab'i indirmek için tara";
 "Schedule" = "Plan";
 "Scheduled notifications" = "Planlanan bildirimler";
+"Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly." = "Ekranlar en büyük yazı boyutlarına daha iyi uyuyor, VoiceOver da düğmeleri daha anlaşılır okuyor.";
 "See how many habits are done today." = "Bugün kaç alışkanlığı tamamladığını gör.";
 "See how much money you save by quitting a habit." = "Bir alışkanlığı bırakarak ne kadar para biriktirdiğini gör.";
 "See how much you've saved with Pro" = "Ne kadar biriktirdiğini Pro ile gör";
@@ -657,6 +661,7 @@
 "Simple gestures" = "Basit hareketler";
 "Since %@" = "%@ itibarıyla";
 "Siri" = "Siri";
+"Siri and Shortcuts" = "Siri ve Kestirmeler";
 "Six new icons for your Home Screen." = "Ana ekranın için altı yeni simge.";
 "Skin care" = "Cilt bakımı";
 "Skip" = "Atla";
@@ -665,6 +670,7 @@
 "Sleeping" = "Uyuyor";
 "Small steps add up." = "Küçük adımlar birikir.";
 "Small steps every day" = "Her gün küçük adımlar";
+"Smart reminder time" = "Akıllı hatırlatma saati";
 "Smart time" = "Akıllı saat";
 "Some days" = "Bazı günler";
 "Sort the Today screen by groups in Settings, and hold the Today widget to show one group." = "Ayarlar'da Bugün ekranını gruplara göre sıralayın, tek bir grup göstermek için Bugün widget'ına basılı tutun.";
@@ -778,6 +784,7 @@
 "Try Pro free for %@" = "Pro'yu %@ ücretsiz dene";
 "Try again" = "Tekrar dene";
 "Try it" = "Dene";
+"Turn on Smart time next to a reminder, and it moves closer to when you usually check the habit off. It's free for everyone." = "Bir hatırlatıcıda \"Akıllı saat\"i aç, alışkanlığı genelde işaretlediğin saate yaklaşsın. Herkes için ücretsiz.";
 "Turn on reminders" = "Hatırlatıcıları aç";
 "Turn on the lock" = "Kilidi etkinleştir";
 "Turn on “I'm quitting this habit” in a habit to see how many days you've been without it, your record and next milestone. With Pro, also the money saved." = "Bir alışkanlıkta “Bu alışkanlığı bırakıyorum”u aç; kaç gündür onsuz olduğunu, rekorunu ve sonraki hedefi gör. Pro ile biriken parayı da.";
@@ -841,6 +848,7 @@
 "With Pro, give a habit a duration. The countdown runs on the Lock Screen and in the Dynamic Island and checks the habit off when time is up." = "Pro ile bir alışkanlığa süre ver. Geri sayım Kilit Ekranı'nda ve Dynamic Island'da görünür, süre bitince alışkanlık işaretlenir.";
 "With Pro, link a habit to steps, sleep, water, workouts or mindful minutes, and it's checked off by itself when you reach the goal." = "Pro ile bir alışkanlığı adım, uyku, su, antrenman veya farkındalık dakikalarına bağla; hedefe ulaştığında kendiliğinden işaretlenir.";
 "With Pro, start a habit timer on Apple Watch. When time is up, the watch taps your wrist and checks the habit off." = "Pro ile Apple Watch'ta alışkanlık zamanlayıcısını başlat. Süre dolunca saat bileğine dokunur ve alışkanlığı işaretler.";
+"With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today." = "Pro ile ruh hâli günlüğü, hangi alışkanlıkların iyi günlerine eşlik ettiğini gösterir. İstatistikler'den ya da \"Bugün\" ekranındaki ruh hâli kartından aç.";
 "Without it since" = "Şu tarihten beri onsuz";
 "Words" = "Kelimeler";
 "Words for today are done" = "Bugünün kelimeleri tamam";
