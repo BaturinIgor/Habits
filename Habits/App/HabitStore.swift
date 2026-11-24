@@ -355,7 +355,8 @@ final class HabitStore {
     }
 
     /// Запоминает, когда питомец впервые дошёл до каждой стадии: от этого
-    /// дня начинаются подарки и бонусные заморозки. Возвращает новую стадию, если она появилась.
+    /// дня начинаются подарки и бонусные заморозки. Возвращает новую стадию только при настоящем
+    /// переходе на одну стадию; догоняющее заполнение нескольких сразу (обновление, импорт, восстановление) даёт nil.
     @discardableResult
     func syncPetStage() -> PetStage? {
         guard var pet = data.wallet.pet else { return nil }
@@ -374,7 +375,7 @@ final class HabitStore {
         if newStages == 1 { Analytics.shared.send(.petStageReached(stage: reached.rawValue)) }
         data.wallet.pet = pet
         commit()
-        return reached
+        return newStages == 1 ? reached : nil
     }
 
     /// Сменить вид питомца; платный вид сначала покупается.

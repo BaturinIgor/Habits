@@ -99,14 +99,16 @@ struct RootView: View {
             }
         }
         .task(id: store.revision) {
-            if checkAchievements() { happyMomentPending = true }
+            if checkAchievements() == 1 { happyMomentPending = true }
             store.claimProGift()
             if store.syncPetStage() != nil { happyMomentPending = true }
             store.syncEarnedSnapshot()
             showSparkGain()
             if store.data.settings.onboardingDone {
-                await RatingPrompt.maybeAsk(data: store.data, happyMoment: happyMomentPending,
-                                            requestReview: requestReview)
+                if await RatingPrompt.maybeAsk(data: store.data, happyMoment: happyMomentPending,
+                                               requestReview: requestReview) {
+                    happyMomentPending = false
+                }
             }
         }
     }
@@ -129,14 +131,15 @@ struct RootView: View {
     }
 
     /// Показывает баннер, если появились новые ачивки.
-    /// true, если открылось новое достижение (повод попросить оценку).
+    /// Сколько достижений открылось сейчас. Ровно одно - повод попросить оценку; несколько сразу
+    /// обычно догоняющее открытие после обновления или восстановления.
     @discardableResult
-    private func checkAchievements() -> Bool {
-        guard store.data.settings.onboardingDone else { return false }
+    private func checkAchievements() -> Int {
+        guard store.data.settings.onboardingDone else { return 0 }
         let unlocked = store.unlockedAchievementIDs
         let seen = Set(store.data.settings.seenAchievements)
         let fresh = Achievements.all.filter { unlocked.contains($0.id) && !seen.contains($0.id) }
-        guard let first = fresh.first else { return false }
+        guard let first = fresh.first else { return 0 }
         store.updateSettings { $0.seenAchievements = Array(seen.union(unlocked)).sorted() }
         for achievement in fresh { Analytics.shared.send(.achievementUnlocked(id: achievement.id)) }
         withAnimation(.spring(response: 0.45, dampingFraction: 0.8)) {
@@ -148,6 +151,6 @@ struct RootView: View {
             guard !Task.isCancelled else { return }
             withAnimation { banner = nil }
         }
-        return true
+        return fresh.count
     }
 }

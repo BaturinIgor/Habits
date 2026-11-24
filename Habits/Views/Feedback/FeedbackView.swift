@@ -340,23 +340,25 @@ enum RatingPrompt {
     /// Сколько дней подряд с отметкой нужно для просьбы.
     static let streakDays = 3
 
-    @MainActor
     /// Счастливый момент (KAN-226): новая стадия питомца или новое достижение. Тогда хватает и одного дня с отметкой.
-    static func maybeAsk(data: AppData, happyMoment: Bool = false, requestReview: RequestReviewAction) async {
-        if TestMode.isUITest { return }
+    /// Возвращает true, если просьба показана.
+    @MainActor @discardableResult
+    static func maybeAsk(data: AppData, happyMoment: Bool = false, requestReview: RequestReviewAction) async -> Bool {
+        if TestMode.isUITest { return false }
         let defaults = UserDefaults.standard
         let analytics = Analytics.shared
         let streak = checkStreak(data, today: Date())
         guard shouldAsk(streak: streak, happyMoment: happyMoment, onboardingDone: data.settings.onboardingDone,
                         blockingScreenShown: analytics.isShowing(.paywall) || analytics.isShowing(.onboarding),
-                        askedVersion: defaults.string(forKey: versionKey), version: appVersion) else { return }
+                        askedVersion: defaults.string(forKey: versionKey), version: appVersion) else { return false }
         // Сначала конфетти и поздравление, потом просьба.
         try? await Task.sleep(for: .seconds(2))
         // За две секунды могли открыть пейволл.
-        guard !Task.isCancelled, !analytics.isShowing(.paywall) else { return }
+        guard !Task.isCancelled, !analytics.isShowing(.paywall) else { return false }
         defaults.set(appVersion, forKey: versionKey)
-        analytics.send(.reviewPromptShown(streakDays: streak, trigger: streak >= streakDays ? "streak" : "moment"))
+        analytics.send(.reviewPromptShown(streakDays: streak, trigger: happyMoment ? "moment" : "streak"))
         requestReview()
+        return true
     }
 
     /// Условие показа без побочных эффектов (его проверяет юнит-тест).
