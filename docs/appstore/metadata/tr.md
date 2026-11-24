@@ -4,13 +4,13 @@
 ZenHab: Alışkanlık Takibi
 
 ## Subtitle
-Rutin, seri ve hedefler
+Rutin, seri ve evcil hayvan
 
 ## Promotional text
-Kalıcı alışkanlıklar, artık Apple Watch'ta da: bileğinden işaretle, ay ve yıl özetini gör, evcil hayvanın seninle birlikte büyüsün. Hesap gerekmez.
+Yeni yıl, yeni alışkanlıklar. Bir hedef seç, ilk gün planını al ve her seriyle evcil hayvanını büyüt. Siri ve Apple Watch ile. Hesap gerekmez.
 
 ## Keywords
-alışkanlık,rutin,planlayıcı,günlük,hedef,hatırlatıcı,seri,widget,verimlilik,su,ajanda,saat
+planlayıcı,günlük,hedef,hatırlatıcı,widget,ruh hali,zamanlayıcı,su,ajanda,saat,bırakmak,sağlık,liste
 
 ## Description
 ZenHab iyi alışkanlıklar edinmene ve onları sürdürmene yardım eder, sakin sakin, gün be gün.
@@ -49,9 +49,5 @@ Kullanım Koşulları: https://www.apple.com/legal/internet-services/itunes/dev/
 Gizlilik: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Bir hedefle başla: neyi değiştirmek istediğini seç, ZenHab sana hazır alışkanlıklar önersin.
-• Akıllı hatırlatma saati: aç, hatırlatıcı alışkanlığı genelde işaretlediğin saate kaysın. Herkes için ücretsiz.
-• ZenHab Pro'da ruh hali içgörüleri: hangi alışkanlıkların en iyi ruh halinle bağlantılı olduğunu gör.
-• Daha fazla Siri ve Kestirmeler: sesinle ruh halini kaydet veya alışkanlık zamanlayıcısını (Pro) başlat, alışkanlıklarını Spotlight'ta bul.
 • Yılbaşı teklifi: 20 Aralık'tan 10 Ocak'a kadar ZenHab Pro'nun ilk yılı %50 indirimli.
-• Büyük metin ve VoiceOver ile daha rahat.
+• Küçük iyileştirmeler ve hata düzeltmeleri.

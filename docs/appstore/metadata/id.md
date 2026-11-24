@@ -4,13 +4,13 @@
 ZenHab: Pelacak Kebiasaan
 
 ## Subtitle
-Rutinitas, streak, dan target
+Rutinitas, streak & peliharaan
 
 ## Promotional text
-Kebiasaan yang bertahan, kini juga di Apple Watch: centang dari pergelangan tangan, lihat ringkasan bulan dan tahun, dan hewan peliharaan tumbuh bersamamu. Tanpa akun.
+Tahun baru, kebiasaan baru. Pilih target, dapatkan rencana hari pertama, dan besarkan hewan peliharaanmu di setiap streak. Dengan Siri dan Apple Watch. Tanpa akun.
 
 ## Keywords
-kebiasaan,rutinitas,planner,harian,target,pengingat,streak,widget,produktivitas,air,jurnal
+planner,harian,target,pengingat,widget,mood,timer,air,jurnal,berhenti,sehat,checklist,jam,hewan
 
 ## Description
 ZenHab membantumu membangun kebiasaan baik dan mempertahankannya, dengan tenang, hari demi hari.
@@ -49,9 +49,5 @@ Ketentuan Penggunaan: https://www.apple.com/legal/internet-services/itunes/dev/s
 Privasi: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Mulai dari tujuan: pilih apa yang ingin kamu ubah, dan ZenHab menyiapkan kebiasaan yang siap dipakai.
-• Waktu pengingat pintar: nyalakan, dan pengingat pindah ke jam kamu biasa mencentang kebiasaan. Gratis untuk semua.
-• Wawasan suasana hati di ZenHab Pro: lihat kebiasaan mana yang berkaitan dengan suasana hati terbaikmu.
-• Lebih banyak Siri dan Pintasan: catat suasana hati atau mulai timer kebiasaan (Pro) dengan suara, dan temukan kebiasaan di Spotlight.
 • Penawaran Tahun Baru: 20 Desember sampai 10 Januari, tahun pertama ZenHab Pro diskon 50%.
-• Lebih nyaman dengan teks besar dan VoiceOver.
+• Peningkatan kecil dan perbaikan.

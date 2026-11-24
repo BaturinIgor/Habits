@@ -9,7 +9,7 @@ ZenHab: Daily Habit Tracker
 Routine Planner, Streaks & Pet
 
 ## Promotional text
-Build habits that stick, now on Apple Watch too: check off from your wrist, see your month and year in review, and grow a pet along the way. No account needed.
+New year, new habits. Pick a goal, get a first-day plan and grow a pet with every streak. Smart reminders, Siri and Apple Watch. No account needed.
 
 ## Keywords
 goal,widget,self,care,mood,reminder,checklist,adhd,quit,bad,builder,timer,journal,water,watch,health
@@ -89,9 +89,5 @@ Privacy Policy: https://baturinigor.github.io/Habits/privacy.html
 Available in 14 languages: English, Russian, German, French, Spanish, Portuguese, Italian, Turkish, Polish, Indonesian, Chinese, Japanese, Korean and Hindi.
 
 ## What's New
-• Start with a goal: pick what you want to change, and ZenHab sets up a ready-made set of habits for you.
-• Smart reminder time: turn it on for a reminder, and it moves to when you usually check the habit off. Free for everyone.
-• Mood insights in ZenHab Pro: see which habits go together with your best mood.
-• More Siri and Shortcuts: log your mood or start a habit timer (Pro) by voice, and find your habits in Spotlight.
 • New Year offer: from December 20 to January 10, your first year of ZenHab Pro is 50% off.
-• Better with large text and VoiceOver.
+• Small improvements and fixes.

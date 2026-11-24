@@ -149,7 +149,7 @@ enum AnalyticsEvent {
     case petStageReached(stage: Int)
     case achievementUnlocked(id: String)
     /// Показан системный запрос оценки (KAN-171): серия дней подряд с отметкой.
-    case reviewPromptShown(streakDays: Int)
+    case reviewPromptShown(streakDays: Int, trigger: String)
     case familyGroupCreated
     case familyGroupJoined
     case feedbackSent(channel: String)
@@ -260,8 +260,8 @@ enum AnalyticsEvent {
             return ["Achievement.id": id]
         case .feedbackSent(let channel):
             return ["Feedback.channel": channel]
-        case .reviewPromptShown(let streak):
-            return ["Review.streakDays": streak]
+        case .reviewPromptShown(let streak, let trigger):
+            return ["Review.streakDays": streak, "Review.trigger": trigger]
         case .familyGroupCreated, .familyGroupJoined, .backupRestored:
             return [:]
         case .smartTimeSuggested(let shift), .smartTimeAccepted(let shift),

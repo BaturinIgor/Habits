@@ -767,7 +767,7 @@ final class LogicTests: XCTestCase {
             .paywallShown(source: .settings, feature: nil), .purchaseStarted(product: "pro", source: .settings),
             .purchaseCompleted(product: "pro", source: .limit, price: 9.99, currency: "USD"),
             .restoreFinished(found: false), .proChanged(active: true), .petAdopted(species: "cat"),
-            .petStageReached(stage: 1), .achievementUnlocked(id: "first"), .reviewPromptShown(streakDays: 3),
+            .petStageReached(stage: 1), .achievementUnlocked(id: "first"), .reviewPromptShown(streakDays: 3, trigger: "streak"),
             .familyGroupCreated, .familyGroupJoined, .feedbackSent(channel: "email"), .backupRestored,
             .onboardingStep(2), .notificationPermissionResult(granted: true), .firstCheck(secondsSinceFirstOpen: 60),
         ]
@@ -868,7 +868,7 @@ final class LogicTests: XCTestCase {
         XCTAssertEqual(name(.firstCheck(secondsSinceFirstOpen: 1)), "first_check")
         XCTAssertEqual(name(.paywallShown(source: .settings, feature: nil)), "paywall_view")
         XCTAssertEqual(name(.purchaseCompleted(product: "pro", source: .settings)), "purchase")
-        XCTAssertEqual(name(.reviewPromptShown(streakDays: 3)), "review_prompt_shown")
+        XCTAssertEqual(name(.reviewPromptShown(streakDays: 3, trigger: "streak")), "review_prompt_shown")
 
         let view = Analytics.firebaseParameters(AnalyticsEvent.paywallShown(source: .newYearOffer, feature: .health).payload)
         XCTAssertEqual(view["paywall_source"] as? String, "new_year_offer")
@@ -951,8 +951,9 @@ final class LogicTests: XCTestCase {
 
     /// Просим только после 3 дней подряд, после онбординга, не поверх пейволла и раз на версию.
     func testRatingPromptCondition() {
-        func ask(streak: Int = 3, onboardingDone: Bool = true, blocking: Bool = false, asked: String? = nil) -> Bool {
-            RatingPrompt.shouldAsk(streak: streak, onboardingDone: onboardingDone, blockingScreenShown: blocking,
+        func ask(streak: Int = 3, moment: Bool = false, onboardingDone: Bool = true, blocking: Bool = false,
+                 asked: String? = nil) -> Bool {
+            RatingPrompt.shouldAsk(streak: streak, happyMoment: moment, onboardingDone: onboardingDone, blockingScreenShown: blocking,
                                    askedVersion: asked, version: "1.7")
         }
         XCTAssertTrue(ask())
@@ -961,6 +962,10 @@ final class LogicTests: XCTestCase {
         XCTAssertFalse(ask(onboardingDone: false))
         XCTAssertFalse(ask(blocking: true))
         XCTAssertFalse(ask(asked: "1.7"))
+        XCTAssertTrue(ask(streak: 1, moment: true), "новая стадия питомца или достижение: хватает отметки сегодня")
+        XCTAssertFalse(ask(streak: 0, moment: true), "без отметки сегодня не просим")
+        XCTAssertFalse(ask(streak: 1, moment: true, blocking: true))
+        XCTAssertFalse(ask(streak: 1, moment: true, asked: "1.7"))
     }
 
     /// Неизвестные типы значений не превращаются в текст.
@@ -997,7 +1002,7 @@ final class LogicTests: XCTestCase {
             .purchaseCancelled(product: "pro", source: .settings),
             .purchaseFailed(product: "pro", source: .settings), .restoreFinished(found: false), .proChanged(active: true),
             .petAdopted(species: "cat"), .petStageReached(stage: 1), .achievementUnlocked(id: "first"),
-            .reviewPromptShown(streakDays: 3), .familyGroupCreated, .familyGroupJoined, .feedbackSent(channel: "email"),
+            .reviewPromptShown(streakDays: 3, trigger: "streak"), .familyGroupCreated, .familyGroupJoined, .feedbackSent(channel: "email"),
             .backupRestored, .onboardingStep(1), .notificationPermissionResult(granted: false),
             .firstCheck(secondsSinceFirstOpen: 5), .onboardingGoal(goal: "energy", habits: 4), .onboardingSkipped(step: 2),
         ]

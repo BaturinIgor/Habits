@@ -18,6 +18,9 @@ struct RootView: View {
     @State private var sparkGain: (id: Int, amount: Int)?
     @State private var showingWhatsNew = false
     @State private var showingNewHabit = false
+    /// Новая стадия питомца или достижение в этой сессии. Флаг живёт до конца сессии: задача ниже перезапускается
+    /// при каждой правке данных (отметка «просмотрено» тоже правка), и без флага повод терялся бы до просьбы.
+    @State private var happyMomentPending = false
 
     private var onboardingBinding: Binding<Bool> {
         Binding(get: { OnboardingPlan.shouldShowOnboarding(store.data.settings) },
@@ -96,13 +99,16 @@ struct RootView: View {
             }
         }
         .task(id: store.revision) {
-            checkAchievements()
+            if checkAchievements() == 1 { happyMomentPending = true }
             store.claimProGift()
-            store.syncPetStage()
+            if store.syncPetStage() != nil { happyMomentPending = true }
             store.syncEarnedSnapshot()
             showSparkGain()
             if store.data.settings.onboardingDone {
-                await RatingPrompt.maybeAsk(data: store.data, requestReview: requestReview)
+                if await RatingPrompt.maybeAsk(data: store.data, happyMoment: happyMomentPending,
+                                               requestReview: requestReview) {
+                    happyMomentPending = false
+                }
             }
         }
     }
@@ -125,12 +131,15 @@ struct RootView: View {
     }
 
     /// Показывает баннер, если появились новые ачивки.
-    private func checkAchievements() {
-        guard store.data.settings.onboardingDone else { return }
+    /// Сколько достижений открылось сейчас. Ровно одно - повод попросить оценку; несколько сразу
+    /// обычно догоняющее открытие после обновления или восстановления.
+    @discardableResult
+    private func checkAchievements() -> Int {
+        guard store.data.settings.onboardingDone else { return 0 }
         let unlocked = store.unlockedAchievementIDs
         let seen = Set(store.data.settings.seenAchievements)
         let fresh = Achievements.all.filter { unlocked.contains($0.id) && !seen.contains($0.id) }
-        guard let first = fresh.first else { return }
+        guard let first = fresh.first else { return 0 }
         store.updateSettings { $0.seenAchievements = Array(seen.union(unlocked)).sorted() }
         for achievement in fresh { Analytics.shared.send(.achievementUnlocked(id: achievement.id)) }
         withAnimation(.spring(response: 0.45, dampingFraction: 0.8)) {
@@ -142,5 +151,6 @@ struct RootView: View {
             guard !Task.isCancelled else { return }
             withAnimation { banner = nil }
         }
+        return fresh.count
     }
 }

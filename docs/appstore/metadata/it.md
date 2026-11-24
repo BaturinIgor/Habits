@@ -4,13 +4,13 @@
 ZenHab: tracker abitudini
 
 ## Subtitle
-Routine, serie e obiettivi
+Routine, serie e cucciolo
 
 ## Promotional text
-Abitudini che restano, ora anche su Apple Watch: spunta dal polso, guarda il riepilogo del mese e dell'anno, con un cucciolo che cresce con te. Nessun account.
+Anno nuovo, abitudini nuove. Scegli un obiettivo, ricevi un piano per il primo giorno e fai crescere il tuo cucciolo a ogni serie. Con Siri e Apple Watch. Senza account.
 
 ## Keywords
-abitudini,routine,planner,quotidiano,obiettivi,promemoria,serie,widget,produttività,acqua,diario
+abitudine,planner,quotidiano,obiettivi,promemoria,widget,umore,timer,acqua,diario,smettere,salute
 
 ## Description
 ZenHab ti aiuta a costruire buone abitudini e a mantenerle, con calma, giorno dopo giorno.
@@ -49,9 +49,5 @@ Termini d'uso: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 Privacy: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Parti da un obiettivo: scegli cosa vuoi cambiare e ZenHab ti propone abitudini già pronte.
-• Orario intelligente dei promemoria: attivalo e il promemoria si sposta all'ora in cui di solito spunti l'abitudine. Gratis per tutti.
-• Umore e abitudini con ZenHab Pro: scopri quali abitudini vanno di pari passo con il tuo umore migliore.
-• Più Siri e Comandi Rapidi: registra l'umore o avvia il timer di un'abitudine (Pro) con la voce e trova le abitudini in Spotlight.
 • Offerta di Capodanno: dal 20 dicembre al 10 gennaio, il primo anno di ZenHab Pro costa il 50% in meno.
-• Va meglio con il testo grande e VoiceOver.
+• Piccoli miglioramenti e correzioni.

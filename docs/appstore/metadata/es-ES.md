@@ -6,13 +6,13 @@ El mismo texto sirve para Español (México) — es-MX, si añades esa localizac
 ZenHab: hábitos y rutinas
 
 ## Subtitle
-Rachas, metas y recordatorios
+Rachas, metas y tu mascota
 
 ## Promotional text
-Hábitos que se quedan, ahora también en el Apple Watch: márcalos desde la muñeca, mira tu resumen del mes y del año y haz crecer a tu mascota. Sin cuenta.
+Año nuevo, hábitos nuevos. Elige una meta, recibe un plan para el primer día y haz crecer a tu mascota con cada racha. Con Siri y Apple Watch. Sin cuenta.
 
 ## Keywords
-habito,seguimiento,tracker,planificador,diario,metas,recordatorio,widget,productividad,agua,racha
+habito,tracker,planificador,diario,recordatorio,widget,animo,temporizador,agua,dejar,salud,reloj
 
 ## Description
 ZenHab te ayuda a crear buenos hábitos y mantenerlos, con calma, día a día.
@@ -51,9 +51,5 @@ Condiciones de uso: https://www.apple.com/legal/internet-services/itunes/dev/std
 Privacidad: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Empieza con una meta: elige qué quieres cambiar y ZenHab te propone hábitos listos para usar.
-• Hora de recordatorio inteligente: actívala y el recordatorio se moverá a la hora en que sueles marcar el hábito. Gratis para todos.
-• Ánimo y hábitos con ZenHab Pro: descubre qué hábitos van de la mano con tu mejor estado de ánimo.
-• Más Siri y Atajos: registra tu estado de ánimo o inicia el temporizador de un hábito (Pro) con la voz, y encuentra tus hábitos en Spotlight.
 • Oferta de Año Nuevo: del 20 de diciembre al 10 de enero, el primer año de ZenHab Pro tiene un 50 % de descuento.
-• Mejor con texto grande y VoiceOver.
+• Pequeñas mejoras y correcciones.
