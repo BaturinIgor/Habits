@@ -341,12 +341,13 @@ enum RatingPrompt {
     static let streakDays = 3
 
     @MainActor
-    static func maybeAsk(data: AppData, requestReview: RequestReviewAction) async {
+    /// Счастливый момент (KAN-226): новая стадия питомца или новое достижение. Тогда хватает и одного дня с отметкой.
+    static func maybeAsk(data: AppData, happyMoment: Bool = false, requestReview: RequestReviewAction) async {
         if TestMode.isUITest { return }
         let defaults = UserDefaults.standard
         let analytics = Analytics.shared
         let streak = checkStreak(data, today: Date())
-        guard shouldAsk(streak: streak, onboardingDone: data.settings.onboardingDone,
+        guard shouldAsk(streak: streak, happyMoment: happyMoment, onboardingDone: data.settings.onboardingDone,
                         blockingScreenShown: analytics.isShowing(.paywall) || analytics.isShowing(.onboarding),
                         askedVersion: defaults.string(forKey: versionKey), version: appVersion) else { return }
         // Сначала конфетти и поздравление, потом просьба.
@@ -354,14 +355,14 @@ enum RatingPrompt {
         // За две секунды могли открыть пейволл.
         guard !Task.isCancelled, !analytics.isShowing(.paywall) else { return }
         defaults.set(appVersion, forKey: versionKey)
-        analytics.send(.reviewPromptShown(streakDays: streak))
+        analytics.send(.reviewPromptShown(streakDays: streak, trigger: streak >= streakDays ? "streak" : "moment"))
         requestReview()
     }
 
     /// Условие показа без побочных эффектов (его проверяет юнит-тест).
-    static func shouldAsk(streak: Int, onboardingDone: Bool, blockingScreenShown: Bool,
+    static func shouldAsk(streak: Int, happyMoment: Bool = false, onboardingDone: Bool, blockingScreenShown: Bool,
                           askedVersion: String?, version: String) -> Bool {
-        streak >= streakDays && onboardingDone && !blockingScreenShown && askedVersion != version
+        (streak >= streakDays || (happyMoment && streak >= 1)) && onboardingDone && !blockingScreenShown && askedVersion != version
     }
 
     /// Сколько дней подряд, включая сегодня, выполнена хотя бы одна привычка (не больше limit).

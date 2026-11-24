@@ -6,16 +6,18 @@
 - **Contact Information**: имя, фамилия, телефон с кодом страны, email. Это видит только Apple.
 - **Notes**: текст ниже, на английском.
 
-Текст для 1.7. Загрузка: Actions -> App Store texts с `overwrite`, скрипт берёт первый блок кода из этого файла (до 4000 символов).
+Текст для 1.7.1. Загрузка: Actions -> App Store texts с `overwrite`, скрипт берёт первый блок кода из этого файла (до 4000 символов).
 
 Перед загрузкой:
 - названия кнопок и разделов в кавычках («Continue for free», где в Статистике инсайты настроения, список интентов Siri) сверить с английскими строками в сборке 1.7;
 - если что-то из списка «New in 1.7» не вошло в сборку, убрать пункт (иначе 2.3.1).
 
 ```
-ZenHab is a habit tracker. No account, no own server. Habits are stored on the device (app group shared with widgets) and in the user's own iCloud (CloudKit private database for backup, shared database for family groups).
+ZenHab is a habit tracker. No account, no own server. Habits are stored on the device (shared with widgets) and in the user's own iCloud (CloudKit private database for backup, shared database for family groups).
 
-New in 1.7:
+1.7.1: minor fixes only, no new screens or purchases. The features below are from 1.7.
+
+Added in 1.7:
 1. Onboarding with goal programs (first launch; reinstall the app to see it again). The user picks a goal and gets a ready-made set of habits, which can be edited or removed later.
 2. Paywall at the end of onboarding. "Continue for free" is visible right away, without scrolling or waiting, and opens the app with the chosen habits. Everything except Pro works without a purchase. The paywall shows prices, period, auto-renewal terms, "Restore purchases", Terms of Use and Privacy Policy.
 3. Pro offers, all on the Pro Yearly subscription and set up in App Store Connect:
@@ -24,8 +26,7 @@ New in 1.7:
 To see it now: iOS Settings > General > Date & Time, turn off "Set Automatically", pick Dec 20 - Jan 10, relaunch ZenHab, open Settings > "New Year offer" (also a card on Today). The Pro screen shows the yearly price crossed out, the first-year price and "Get the discount", which copies the code and opens the redemption sheet. If codes can't be redeemed in review, the regular yearly purchase there works in sandbox.
 4. Smart reminder time (free): habit editor > reminder > "Smart time" moves the reminder closer to the usual check-off time; with it off, the habit screen may suggest it. Local notifications, computed on the device.
 5. Mood insights (Pro): Statistics > "Mood journal" > "What goes with a better mood": habits that go with a better mood, from mood entries and check-offs. Without Pro it shows a lock. Computed on the device.
-6. Siri and Shortcuts (App Intents): "Check off a habit", "Add a habit", "What's left today", "Log mood", "Start a habit timer" (Pro). Example: "Log my mood in ZenHab". Habits are indexed in Spotlight (on-device only). Try: Shortcuts app > ZenHab.
-7. Better layouts with large Dynamic Type sizes and VoiceOver labels.
+6. Siri and Shortcuts (App Intents): "Check off a habit", "Add a habit", "What's left today", "Log mood", "Start a habit timer" (Pro). Example: "Log my mood in ZenHab". Habits are indexed in Spotlight (on-device only).
 
 Apple Health (HealthKit, read-only): Settings > "Apple Health" (visible to all) lists the data ZenHab reads (steps, exercise and mindful minutes, sleep, water, workouts). To link a habit (Pro): habit > "Apple Health" > "Check off by" > metric and goal; iOS asks for read access. When the goal is reached, the habit is checked off and its Today row shows progress with a heart icon. ZenHab never writes to Health; Health data is not stored or sent.
 

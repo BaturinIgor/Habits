@@ -4,13 +4,13 @@
 ZenHab: tracker nawyków
 
 ## Subtitle
-Rutyna, serie i cele
+Rutyna, serie i zwierzak
 
 ## Promotional text
-Nawyki, które zostają, teraz także na Apple Watch: odhaczaj z nadgarstka, oglądaj podsumowanie miesiąca i roku, a zwierzak rośnie razem z tobą. Bez konta.
+Nowy rok, nowe nawyki. Wybierz cel, dostań plan na pierwszy dzień, a zwierzak urośnie z każdą serią. Z Siri i Apple Watch. Bez konta.
 
 ## Keywords
-nawyki,rutyna,planer,codzienne,cele,przypomnienie,seria,widżet,produktywność,woda,dziennik,zegarek
+nawyk,planer,codzienne,cele,przypomnienie,widżet,nastrój,timer,woda,dziennik,zegarek,rzucić,zdrowie
 
 ## Description
 ZenHab pomaga budować dobre nawyki i ich nie porzucać, spokojnie, dzień po dniu.
@@ -49,9 +49,5 @@ Warunki korzystania: https://www.apple.com/legal/internet-services/itunes/dev/st
 Prywatność: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Zacznij od celu: wybierz, co chcesz zmienić, a ZenHab zaproponuje gotowy zestaw nawyków.
-• Inteligentna godzina przypomnień: włącz ją, a przypomnienie przesunie się na porę, o której zwykle odhaczasz nawyk. Za darmo dla wszystkich.
-• Nastrój i nawyki w ZenHab Pro: zobacz, które nawyki idą w parze z twoim najlepszym nastrojem.
-• Więcej Siri i Skrótów: zapisz nastrój lub włącz minutnik nawyku (Pro) głosem, a nawyki znajdziesz w Spotlight.
 • Oferta noworoczna: od 20 grudnia do 10 stycznia pierwszy rok ZenHab Pro taniej o 50%.
-• Wygodniej z dużą czcionką i VoiceOver.
+• Drobne usprawnienia i poprawki.

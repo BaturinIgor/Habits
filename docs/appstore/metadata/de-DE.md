@@ -4,13 +4,13 @@
 ZenHab: Gewohnheitstracker
 
 ## Subtitle
-Routinen, Serien und Ziele
+Routine, Serien & Haustier
 
 ## Promotional text
-Gewohnheiten, die bleiben, jetzt auch auf der Apple Watch: am Handgelenk abhaken, Monats- und Jahresrückblick ansehen, dein Haustier wächst mit. Ohne Konto.
+Neues Jahr, neue Gewohnheiten. Wähle ein Ziel, hol dir einen Plan für den ersten Tag und lass dein Haustier mit jeder Serie wachsen. Mit Siri und Apple Watch. Ohne Konto.
 
 ## Keywords
-gewohnheiten,routine,planer,täglich,ziele,erinnerung,serie,widget,produktivität,wasser,tagebuch
+gewohnheit,planer,täglich,ziele,erinnerung,stimmung,timer,wasser,tagebuch,aufhören,gesundheit,uhr
 
 ## Description
 ZenHab hilft dir, gute Gewohnheiten aufzubauen und dranzubleiben, ganz entspannt, Tag für Tag.
@@ -49,9 +49,5 @@ Nutzungsbedingungen: https://www.apple.com/legal/internet-services/itunes/dev/st
 Datenschutz: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
-• Starte mit einem Ziel: Wähl aus, was du ändern willst, und ZenHab stellt dir passende Gewohnheiten zusammen.
-• Smarte Erinnerungszeit: Schalte sie ein, und die Erinnerung rückt zu der Zeit, zu der du die Gewohnheit meist abhakst. Kostenlos für alle.
-• Stimmungs-Einblicke in ZenHab Pro: Sieh, welche Gewohnheiten mit deiner besten Laune zusammenhängen.
-• Mehr Siri und Kurzbefehle: Stimmung eintragen oder Gewohnheits-Timer (Pro) per Sprache starten, Gewohnheiten direkt in Spotlight finden.
 • Neujahrsangebot: Vom 20. Dezember bis 10. Januar kostet das erste Jahr ZenHab Pro 50 % weniger.
-• Besser mit großer Schrift und VoiceOver.
+• Kleine Verbesserungen und Fehlerbehebungen.
