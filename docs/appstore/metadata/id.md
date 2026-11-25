@@ -50,4 +50,5 @@ Privasi: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
 • Penawaran Tahun Baru: 20 Desember sampai 10 Januari, tahun pertama ZenHab Pro diskon 50%.
+• Undang teman: hadiahkan sebulan ZenHab Pro lewat kode. Pengaturan → “Undang teman”.
 • Peningkatan kecil dan perbaikan.

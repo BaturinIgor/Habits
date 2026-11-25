@@ -22,6 +22,7 @@ struct SettingsView: View {
     @State private var showingRestartHint = false
     @State private var showingProfile = false
     @State private var showingFeedback = false
+    @State private var showingInvite = false
     @AppStorage("appLanguage") private var appLanguage = "system"
     @AppStorage(Analytics.optOutKey) private var analyticsOptOut = !Analytics.enabledByDefault
 
@@ -188,6 +189,8 @@ struct SettingsView: View {
                     } label: {
                         Label("Write to the developer", systemImage: "envelope.fill")
                     }
+                    // KAN-228: месяц Pro другу по коду предложения.
+                    InviteFriendRow { showingInvite = true }
                     if let url = AppInfo.reviewURL {
                         Button {
                             openURL(url)
@@ -244,6 +247,9 @@ struct SettingsView: View {
             }
             .sheet(isPresented: $showingFeedback) {
                 FeedbackView()
+            }
+            .sheet(isPresented: $showingInvite) {
+                InviteFriendView()
             }
             .designAlert("restartHint", $showingRestartHint)
             .alert("Restart the app", isPresented: $showingRestartHint) {

@@ -57,6 +57,8 @@
 "Advanced" = "İleri";
 "After habit" = "Şu alışkanlıktan sonra";
 "After the first year, Pro renews at the regular price. Cancel anytime." = "İlk yıldan sonra Pro normal fiyattan yenilenir. İstediğin zaman iptal et.";
+"After the free month the subscription renews automatically. Cancel anytime." = "Ücretsiz aydan sonra abonelik otomatik olarak yenilenir. İstediğin zaman iptal et.";
+"After the free month: %@. Cancel anytime." = "Ücretsiz aydan sonra: %@. İstediğin zaman iptal et.";
 "After: %@" = "Sonra: %@";
 "Afternoon" = "Öğleden sonra";
 "All" = "Tümü";
@@ -155,6 +157,7 @@
 "Clear your inbox" = "Gelen kutusunu temizle";
 "Clearer Pro" = "Daha anlaşılır Pro";
 "Close" = "Kapat";
+"Code copied" = "Kod kopyalandı";
 "Code: %@" = "Kod: %@";
 "Collector" = "Koleksiyoncu";
 "Come back after a miss 10 times" = "Kaçırdıktan sonra 10 kez geri dön";
@@ -297,6 +300,7 @@
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Apple Watch'ta zamanlayıcıyı kullanmak için iPhone'unda Pro'ya geç.";
 "Get a pet" = "Bir evcil hayvan edin";
 "Get the discount" = "İndirimi al";
+"Give a friend a month of Pro" = "Bir arkadaşına bir ay Pro hediye et";
 "Go to bed on time" = "Zamanında yat";
 "Goal" = "Hedef";
 "Gold" = "Altın";
@@ -345,6 +349,7 @@
 "I believe in you!" = "Sana inanıyorum!";
 "I know it" = "Biliyorum";
 "I slipped" = "Bozdum";
+"I track my habits with ZenHab. Try it: a month of Pro is free with this link: %@" = "Alışkanlıklarımı ZenHab ile takip ediyorum. Dene: bu bağlantıyla bir ay Pro ücretsiz: %@";
 "I'm proud of you!" = "Seninle gurur duyuyorum!";
 "I'm quitting this habit" = "Bu alışkanlığı bırakıyorum";
 "Ice cold" = "Buz gibi";
@@ -359,6 +364,7 @@
 "Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept." = "Günlük işaretler yerine kaç gündür onsuz olduğunu görürsün. Bozarsan sayım baştan başlar ama rekorun kalır.";
 "Intermediate" = "Orta";
 "Interval" = "Aralık";
+"Invite a friend" = "Arkadaşını davet et";
 "Invite family" = "Aileyi davet et";
 "Iron will" = "Demir irade";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "Fiyatı %lld kıvılcım, sende %lld var. Daha fazla kazanmak için alışkanlık işaretle.";
@@ -644,6 +650,7 @@
 "See which habits make your days better" = "Hangi alışkanlıkların günlerini güzelleştirdiğini gör";
 "Send" = "Gönder";
 "Send by email" = "E-postayla gönder";
+"Send invite" = "Davet gönder";
 "Send the message" = "Mesajı gönder";
 "Set up Mail on this iPhone or send your message to %@." = "Bu iPhone'da Mail'i ayarla veya mesajını %@ adresine gönder.";
 "Settings" = "Ayarlar";
@@ -736,6 +743,7 @@
 "That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "Seri böyle başlar. Yarın unutmaman için hatırlatıcı ister misin?";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Pro ekranı artık içerdiği her şeyi gösteriyor ve dokunduğun özellikle açılıyor.";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "iCloud'daki yedek: %@, %@, alışkanlık: %lld. Uygulamadan çıktığında kendiliğinden güncellenir. Avatar ve arka plan fotoğrafları dahil değildir.";
+"The code won't work if your friend already has Pro." = "Arkadaşında zaten Pro varsa kod çalışmaz.";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "Ücretsiz sürüm alışkanlık sınırına ulaştı. Pro için ZenHab'ı açın.";
 "The free version has up to 5 active habits." = "Ücretsiz sürümde en fazla 5 etkin alışkanlık olabilir.";
 "The group wasn't found." = "Grup bulunamadı.";
@@ -873,6 +881,7 @@
 "Your days and the habits that lift your mood" = "Günlerin ve ruh hâlini iyileştiren alışkanlıklar";
 "Your first habits" = "İlk alışkanlıkların";
 "Your first step" = "İlk adımın";
+"Your friend gets ZenHab Pro free for a month with this code. Each Apple ID can use it once." = "Bu kodla arkadaşın ZenHab Pro'yu bir ay ücretsiz kullanır. Her Apple Kimliği bir kez kullanabilir.";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Alışkanlıkların ve geçmişin iCloud'una kendiliğinden kaydedilir. Yeni bir iPhone'da ZenHab her şeyi geri getirmeyi önerir.";
 "Your habits stay on your iPhone and in your own iCloud." = "Alışkanlıkların iPhone'unda ve iCloud'unda kalır.";
 "Your habits stay only on your iPhone." = "Alışkanlıkların yalnızca iPhone'unda kalır.";

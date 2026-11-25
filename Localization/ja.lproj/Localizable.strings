@@ -57,6 +57,8 @@
 "Advanced" = "上級";
 "After habit" = "この習慣の後";
 "After the first year, Pro renews at the regular price. Cancel anytime." = "最初の1年が過ぎると、Pro は通常価格で更新されます。いつでも解約できます。";
+"After the free month the subscription renews automatically. Cancel anytime." = "無料期間の終了後、自動更新されます。いつでも解約できます。";
+"After the free month: %@. Cancel anytime." = "無料期間終了後：%@。いつでも解約できます。";
 "After: %@" = "次の後：%@";
 "Afternoon" = "午後";
 "All" = "すべて";
@@ -155,6 +157,7 @@
 "Clear your inbox" = "受信トレイを片付ける";
 "Clearer Pro" = "わかりやすくなったPro";
 "Close" = "閉じる";
+"Code copied" = "コードをコピーしました";
 "Code: %@" = "コード：%@";
 "Collector" = "コレクター";
 "Come back after a miss 10 times" = "休んだ後に10回復帰";
@@ -297,6 +300,7 @@
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Apple Watchでタイマーを使うには、iPhoneでProに登録してください。";
 "Get a pet" = "ペットを迎える";
 "Get the discount" = "割引を受け取る";
+"Give a friend a month of Pro" = "友達にProを1か月プレゼント";
 "Go to bed on time" = "時間通りに寝る";
 "Goal" = "目標";
 "Gold" = "ゴールド";
@@ -345,6 +349,7 @@
 "I believe in you!" = "信じてるよ！";
 "I know it" = "知ってる";
 "I slipped" = "やってしまった";
+"I track my habits with ZenHab. Try it: a month of Pro is free with this link: %@" = "ZenHabで習慣を記録しています。このリンクからProが1か月無料：%@";
 "I'm proud of you!" = "誇りに思うよ！";
 "I'm quitting this habit" = "この習慣をやめる";
 "Ice cold" = "クール";
@@ -359,6 +364,7 @@
 "Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept." = "毎日のチェックの代わりに、やめてから何日経ったかを表示します。やってしまったら数え直しですが、最長記録は残ります。";
 "Intermediate" = "中級";
 "Interval" = "間隔";
+"Invite a friend" = "友達を招待";
 "Invite family" = "家族を招待";
 "Iron will" = "鉄の意志";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "価格：✨ %lld、所持：✨ %lld。習慣をチェックしてもっと集めよう。";
@@ -644,6 +650,7 @@
 "See which habits make your days better" = "どの習慣が毎日を良くしているか見てみよう";
 "Send" = "送信";
 "Send by email" = "メールで送信";
+"Send invite" = "招待を送る";
 "Send the message" = "メッセージを送信";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone でメールを設定するか、%@ に送信してください。";
 "Settings" = "設定";
@@ -736,6 +743,7 @@
 "That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "こうして連続記録が始まります。明日忘れないようにリマインダーを受け取る？";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Pro画面に含まれる機能がすべて表示され、タップした機能から開くようになりました。";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "iCloud のバックアップ：%@、%@、習慣：%lld。アプリを閉じると自動で更新されます。アバターと背景の写真は含まれません。";
+"The code won't work if your friend already has Pro." = "友達がすでにProの場合、コードは使えません。";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "無料版の習慣数の上限に達しました。ZenHabを開いてProにしてください。";
 "The free version has up to 5 active habits." = "無料版はアクティブな習慣が5つまでです。";
 "The group wasn't found." = "グループが見つかりません。";
@@ -873,6 +881,7 @@
 "Your days and the habits that lift your mood" = "毎日の記録と、気分を上げる習慣";
 "Your first habits" = "最初の習慣";
 "Your first step" = "最初の一歩";
+"Your friend gets ZenHab Pro free for a month with this code. Each Apple ID can use it once." = "このコードで、友達はZenHab Proを1か月無料で使えます。Apple IDごとに1回まで。";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "習慣と履歴は自動で iCloud に保存されます。新しい iPhone では ZenHab がすべての復元を提案します。";
 "Your habits stay on your iPhone and in your own iCloud." = "習慣のデータはiPhoneとあなたのiCloudにだけ保存されます。";
 "Your habits stay only on your iPhone." = "習慣のデータはこのiPhoneにだけ保存されます。";

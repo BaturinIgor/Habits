@@ -908,3 +908,12 @@ Mood insights||Nastrój i nawyki
 With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today.||Z Pro dziennik nastroju pokazuje, które nawyki idą w parze z lepszymi dniami. Otwórz go ze Statystyk albo z karty nastroju na ekranie „Dziś”.
 Large text||Duży tekst
 Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly.||Ekrany lepiej dopasowują się do największych rozmiarów tekstu, a VoiceOver wyraźniej odczytuje przyciski.
+Invite a friend||Zaproś znajomego
+Give a friend a month of Pro||Podaruj znajomemu miesiąc Pro
+Your friend gets ZenHab Pro free for a month with this code. Each Apple ID can use it once.||Z tym kodem znajomy dostaje ZenHab Pro za darmo na miesiąc. Każde Apple ID może go użyć raz.
+Code copied||Skopiowano kod
+Send invite||Wyślij zaproszenie
+I track my habits with ZenHab. Try it: a month of Pro is free with this link: %@||Śledzę swoje nawyki w ZenHab. Spróbuj: miesiąc Pro za darmo z tego linku: %@
+After the free month: %@. Cancel anytime.||Po darmowym miesiącu: %@. Możesz anulować w każdej chwili.
+After the free month the subscription renews automatically. Cancel anytime.||Po darmowym miesiącu subskrypcja odnawia się automatycznie. Możesz anulować w każdej chwili.
+The code won't work if your friend already has Pro.||Jeśli znajomy ma już Pro, kod nie zadziała.

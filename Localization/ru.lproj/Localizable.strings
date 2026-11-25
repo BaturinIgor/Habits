@@ -57,6 +57,8 @@
 "Advanced" = "Продвинутый";
 "After habit" = "После привычки";
 "After the first year, Pro renews at the regular price. Cancel anytime." = "После первого года Pro продлевается по обычной цене. Отменить можно в любой момент.";
+"After the free month the subscription renews automatically. Cancel anytime." = "После бесплатного месяца подписка продлевается автоматически. Отменить можно в любой момент.";
+"After the free month: %@. Cancel anytime." = "После бесплатного месяца: %@. Отменить можно в любой момент.";
 "After: %@" = "После: %@";
 "Afternoon" = "День";
 "All" = "Все";
@@ -155,6 +157,7 @@
 "Clear your inbox" = "Разобрать почту";
 "Clearer Pro" = "Понятный Pro";
 "Close" = "Закрыть";
+"Code copied" = "Код скопирован";
 "Code: %@" = "Код: %@";
 "Collector" = "Коллекционер";
 "Come back after a miss 10 times" = "Вернись после пропуска 10 раз";
@@ -297,6 +300,7 @@
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Подключи Pro на iPhone, чтобы пользоваться таймером на Apple Watch.";
 "Get a pet" = "Завести питомца";
 "Get the discount" = "Получить скидку";
+"Give a friend a month of Pro" = "Подари другу месяц Pro";
 "Go to bed on time" = "Лечь спать вовремя";
 "Goal" = "Цель";
 "Gold" = "Золото";
@@ -345,6 +349,7 @@
 "I believe in you!" = "Я в тебя верю!";
 "I know it" = "Знаю";
 "I slipped" = "Сорвался";
+"I track my habits with ZenHab. Try it: a month of Pro is free with this link: %@" = "Я отмечаю привычки в ZenHab. Попробуй: месяц Pro бесплатно по ссылке: %@";
 "I'm proud of you!" = "Я горжусь тобой!";
 "I'm quitting this habit" = "Бросаю эту привычку";
 "Ice cold" = "Хладнокровие";
@@ -359,6 +364,7 @@
 "Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept." = "Вместо ежедневных отметок будет счётчик дней без неё. Если сорвёшься, счёт начнётся заново, но рекорд сохранится.";
 "Intermediate" = "Средний";
 "Interval" = "Интервал";
+"Invite a friend" = "Пригласить друга";
 "Invite family" = "Пригласить родных";
 "Iron will" = "Железная воля";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "Цена: ✨ %lld, у тебя: ✨ %lld. Отмечай привычки, чтобы заработать ещё.";
@@ -644,6 +650,7 @@
 "See which habits make your days better" = "Узнай, какие привычки делают дни лучше";
 "Send" = "Отправить";
 "Send by email" = "Отправить письмом";
+"Send invite" = "Поделиться";
 "Send the message" = "Отправка сообщения";
 "Set up Mail on this iPhone or send your message to %@." = "Настрой Почту на iPhone или отправь сообщение на %@.";
 "Settings" = "Настройки";
@@ -736,6 +743,7 @@
 "That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "Так и начинается серия. Напомнить завтра, чтобы не забыть?";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "На экране Pro теперь видно всё, что в него входит, и он открывается на той функции, которую ты нажал.";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "Копия в iCloud: %@, %@, привычек: %lld. Она обновляется сама, когда ты выходишь из приложения. Фото для аватарки и фона в неё не входят.";
+"The code won't work if your friend already has Pro." = "Если у друга уже есть Pro, код не сработает.";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "В бесплатной версии больше нет места для привычек. Открой ZenHab, чтобы подключить Pro.";
 "The free version has up to 5 active habits." = "В бесплатной версии до 5 активных привычек.";
 "The group wasn't found." = "Группа не найдена.";
@@ -873,6 +881,7 @@
 "Your days and the habits that lift your mood" = "Твои дни и привычки, которые поднимают настроение";
 "Your first habits" = "Твои первые привычки";
 "Your first step" = "Твой первый шаг";
+"Your friend gets ZenHab Pro free for a month with this code. Each Apple ID can use it once." = "По этому коду друг получит месяц ZenHab Pro бесплатно. Один Apple ID — одна активация.";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Привычки и история сами сохраняются в твой iCloud. На новом iPhone ZenHab предложит всё вернуть.";
 "Your habits stay on your iPhone and in your own iCloud." = "Привычки хранятся на твоём iPhone и в твоём iCloud.";
 "Your habits stay only on your iPhone." = "Привычки хранятся только на твоём iPhone.";

@@ -125,6 +125,10 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "offer-02-settings", screen: "settings", flags: ["-uitest-free", "-uitest-offer"]),
         Shot(name: "offer-03-paywall", screen: "offerPaywall", flags: ["-uitest-free", "-uitest-offer"]),
         Shot(name: "offer-04-paywall-plans", screen: "offerPaywall", flags: ["-uitest-free", "-uitest-offer"], swipes: 3),
+        // 1.7.1, KAN-228: «Пригласи друга»
+        Shot(name: "invite-01-settings", screen: "settings", swipes: 2),
+        Shot(name: "invite-02-sheet", screen: "inviteFriend"),
+        Shot(name: "invite-03-sheet-large", screen: "inviteFriend", flags: xl),
         // 1.7, KAN-114 и KAN-116: крупный шрифт (Accessibility XL) и дни недели в тепловой карте
         Shot(name: "a11y-01-stats-xl", screen: "stats", flags: xl),
         Shot(name: "a11y-02-stats-scrolled-xl", screen: "stats", flags: xl, swipes: 2),

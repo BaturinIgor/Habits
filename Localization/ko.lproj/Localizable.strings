@@ -57,6 +57,8 @@
 "Advanced" = "고급";
 "After habit" = "다음 습관 뒤에";
 "After the first year, Pro renews at the regular price. Cancel anytime." = "첫 1년이 지나면 Pro는 정상 가격으로 갱신돼요. 언제든 해지할 수 있어요.";
+"After the free month the subscription renews automatically. Cancel anytime." = "무료 기간이 끝나면 자동으로 갱신돼요. 언제든 해지할 수 있어요.";
+"After the free month: %@. Cancel anytime." = "무료 기간 이후: %@. 언제든 해지할 수 있어요.";
 "After: %@" = "다음 뒤: %@";
 "Afternoon" = "오후";
 "All" = "전체";
@@ -155,6 +157,7 @@
 "Clear your inbox" = "받은편지함 정리";
 "Clearer Pro" = "더 알기 쉬운 Pro";
 "Close" = "닫기";
+"Code copied" = "코드를 복사했어요";
 "Code: %@" = "코드: %@";
 "Collector" = "수집가";
 "Come back after a miss 10 times" = "놓친 뒤 10번 복귀";
@@ -297,6 +300,7 @@
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Apple Watch에서 타이머를 쓰려면 iPhone에서 Pro를 이용하세요.";
 "Get a pet" = "펫 데려오기";
 "Get the discount" = "할인 받기";
+"Give a friend a month of Pro" = "친구에게 Pro 한 달 선물하기";
 "Go to bed on time" = "제시간에 자기";
 "Goal" = "목표";
 "Gold" = "골드";
@@ -345,6 +349,7 @@
 "I believe in you!" = "난 널 믿어요!";
 "I know it" = "알아요";
 "I slipped" = "실패했어요";
+"I track my habits with ZenHab. Try it: a month of Pro is free with this link: %@" = "ZenHab으로 습관을 기록하고 있어요. 이 링크로 Pro 한 달 무료: %@";
 "I'm proud of you!" = "자랑스러워요!";
 "I'm quitting this habit" = "이 습관을 끊는 중";
 "Ice cold" = "냉정함";
@@ -359,6 +364,7 @@
 "Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept." = "매일 체크 대신 끊은 지 며칠째인지 보여 줘요. 실패하면 다시 세지만 최고 기록은 남아요.";
 "Intermediate" = "중급";
 "Interval" = "간격";
+"Invite a friend" = "친구 초대";
 "Invite family" = "가족 초대";
 "Iron will" = "강철 의지";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "가격: ✨ %lld, 보유: ✨ %lld. 습관을 체크해서 더 모아요.";
@@ -644,6 +650,7 @@
 "See which habits make your days better" = "어떤 습관이 하루를 더 좋게 만드는지 확인하세요";
 "Send" = "보내기";
 "Send by email" = "메일로 보내기";
+"Send invite" = "초대 보내기";
 "Send the message" = "메시지 보내기";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone에서 메일을 설정하거나 %@(으)로 보내 주세요.";
 "Settings" = "설정";
@@ -736,6 +743,7 @@
 "That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "연속 기록은 이렇게 시작돼요. 내일 잊지 않도록 알림을 받아 볼까요?";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Pro 화면에 포함된 모든 기능이 표시되고, 누른 기능부터 열려요.";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "iCloud 백업: %@, %@, 습관: %lld. 앱을 나가면 자동으로 업데이트돼요. 아바타와 배경 사진은 포함되지 않아요.";
+"The code won't work if your friend already has Pro." = "친구가 이미 Pro라면 코드가 작동하지 않아요.";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "무료 버전의 습관 한도에 도달했어요. ZenHab을 열어 Pro를 이용하세요.";
 "The free version has up to 5 active habits." = "무료 버전은 활성 습관 5개까지예요.";
 "The group wasn't found." = "그룹을 찾을 수 없어요.";
@@ -873,6 +881,7 @@
 "Your days and the habits that lift your mood" = "나의 하루와 기분을 올려 주는 습관";
 "Your first habits" = "첫 습관";
 "Your first step" = "첫걸음";
+"Your friend gets ZenHab Pro free for a month with this code. Each Apple ID can use it once." = "이 코드로 친구가 ZenHab Pro를 한 달 무료로 쓸 수 있어요. Apple ID당 한 번만 사용할 수 있어요.";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "습관과 기록이 자동으로 iCloud에 저장돼요. 새 iPhone에서는 ZenHab이 모두 되돌려 드려요.";
 "Your habits stay on your iPhone and in your own iCloud." = "습관 데이터는 iPhone과 내 iCloud에만 저장돼요.";
 "Your habits stay only on your iPhone." = "습관 데이터는 이 iPhone에만 저장돼요.";

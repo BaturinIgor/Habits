@@ -50,4 +50,5 @@ Gizlilik: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
 • Yılbaşı teklifi: 20 Aralık'tan 10 Ocak'a kadar ZenHab Pro'nun ilk yılı %50 indirimli.
+• Arkadaşını davet et: bir kodla ona bir ay ZenHab Pro hediye et. Ayarlar → “Arkadaşını davet et”.
 • Küçük iyileştirmeler ve hata düzeltmeleri.
