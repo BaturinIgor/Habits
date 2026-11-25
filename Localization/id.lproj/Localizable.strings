@@ -57,6 +57,7 @@
 "Advanced" = "Mahir";
 "After habit" = "Setelah kebiasaan";
 "After the first year, Pro renews at the regular price. Cancel anytime." = "Setelah tahun pertama, Pro diperpanjang dengan harga normal. Batalkan kapan saja.";
+"After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro." = "Setelah bulan gratis, langganan diperpanjang dengan harga normal kecuali dibatalkan. Jika temanmu sudah punya Pro, kode tidak berlaku.";
 "After: %@" = "Setelah: %@";
 "Afternoon" = "Siang";
 "All" = "Semua";
@@ -155,6 +156,7 @@
 "Clear your inbox" = "Kosongkan kotak masuk";
 "Clearer Pro" = "Pro lebih jelas";
 "Close" = "Tutup";
+"Code copied" = "Kode disalin";
 "Code: %@" = "Kode: %@";
 "Collector" = "Kolektor";
 "Come back after a miss 10 times" = "Kembali setelah terlewat 10 kali";
@@ -297,6 +299,7 @@
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Aktifkan Pro di iPhone untuk memakai timer di Apple Watch.";
 "Get a pet" = "Pelihara hewan";
 "Get the discount" = "Ambil diskon";
+"Give a friend a month of Pro" = "Hadiahkan sebulan Pro untuk teman";
 "Go to bed on time" = "Tidur tepat waktu";
 "Goal" = "Target";
 "Gold" = "Emas";
@@ -345,6 +348,7 @@
 "I believe in you!" = "Aku percaya padamu!";
 "I know it" = "Sudah tahu";
 "I slipped" = "Aku tergelincir";
+"I track my habits with ZenHab. Try it: a month of Pro is free with this link: %@" = "Aku melacak kebiasaanku dengan ZenHab. Coba deh: sebulan Pro gratis lewat tautan ini: %@";
 "I'm proud of you!" = "Aku bangga padamu!";
 "I'm quitting this habit" = "Aku sedang berhenti";
 "Ice cold" = "Sedingin es";
@@ -359,6 +363,7 @@
 "Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept." = "Alih-alih centang harian, kamu akan melihat sudah berapa hari tanpanya. Kalau tergelincir, hitungan mulai lagi, tapi rekormu tetap tersimpan.";
 "Intermediate" = "Menengah";
 "Interval" = "Jeda";
+"Invite a friend" = "Undang teman";
 "Invite family" = "Undang keluarga";
 "Iron will" = "Tekad baja";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "Harganya %lld percikan, kamu punya %lld. Centang kebiasaan untuk mendapat lebih banyak.";
@@ -644,6 +649,7 @@
 "See which habits make your days better" = "Lihat kebiasaan mana yang membuat harimu lebih baik";
 "Send" = "Kirim";
 "Send by email" = "Kirim lewat email";
+"Send invite" = "Kirim undangan";
 "Send the message" = "Kirim pesan";
 "Set up Mail on this iPhone or send your message to %@." = "Atur Mail di iPhone ini atau kirim pesanmu ke %@.";
 "Settings" = "Pengaturan";
@@ -873,6 +879,7 @@
 "Your days and the habits that lift your mood" = "Hari-harimu dan kebiasaan yang memperbaiki suasana hati";
 "Your first habits" = "Kebiasaan pertamamu";
 "Your first step" = "Langkah pertamamu";
+"Your friend gets ZenHab Pro free for a month with this code. Each Apple ID can use it once." = "Dengan kode ini, temanmu bisa memakai ZenHab Pro gratis selama sebulan. Setiap Apple ID hanya bisa memakainya sekali.";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Kebiasaan dan riwayatmu tersimpan otomatis di iCloud. Di iPhone baru, ZenHab akan menawarkan untuk memulihkan semuanya.";
 "Your habits stay on your iPhone and in your own iCloud." = "Kebiasaanmu tetap di iPhone dan iCloud-mu.";
 "Your habits stay only on your iPhone." = "Kebiasaanmu hanya tersimpan di iPhone-mu.";

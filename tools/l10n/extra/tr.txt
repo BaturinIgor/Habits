@@ -908,3 +908,10 @@ Mood insights||Ruh hâli içgörüleri
 With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today.||Pro ile ruh hâli günlüğü, hangi alışkanlıkların iyi günlerine eşlik ettiğini gösterir. İstatistikler'den ya da "Bugün" ekranındaki ruh hâli kartından aç.
 Large text||Büyük yazı
 Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly.||Ekranlar en büyük yazı boyutlarına daha iyi uyuyor, VoiceOver da düğmeleri daha anlaşılır okuyor.
+Invite a friend||Arkadaşını davet et
+Give a friend a month of Pro||Bir arkadaşına bir ay Pro hediye et
+Your friend gets ZenHab Pro free for a month with this code. Each Apple ID can use it once.||Bu kodla arkadaşın ZenHab Pro'yu bir ay ücretsiz kullanır. Her Apple Kimliği bir kez kullanabilir.
+Code copied||Kod kopyalandı
+Send invite||Davet gönder
+I track my habits with ZenHab. Try it: a month of Pro is free with this link: %@||Alışkanlıklarımı ZenHab ile takip ediyorum. Dene: bu bağlantıyla bir ay Pro ücretsiz: %@
+After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro.||Ücretsiz ayın ardından abonelik iptal edilmezse normal fiyattan yenilenir. Arkadaşında zaten Pro varsa kod çalışmaz.

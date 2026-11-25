@@ -1,0 +1,6 @@
+# Habits 1.7.1: снимки только новых и изменённых экранов (см. design/README.md).
+# Остальные экраны — из design/1.7/screens и design/1.6/screens.
+# KAN-228: «Пригласи друга»
+invite-01-settings     # строка в Настройках, раздел «Обратная связь»
+invite-02-sheet
+invite-03-sheet-large  # Accessibility XL

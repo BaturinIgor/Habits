@@ -15,6 +15,8 @@ enum DesignScreen: String, CaseIterable, Identifiable {
     case editorHealth, smartEditor, smartEditorOff, profile, sparks, pet, petSwitched, petNaming, petSpecies, paywall, paywallFeature, feedback, voice, note, whatsNew
     // 1.7, KAN-125: новогоднее предложение
     case offerPaywall
+    // 1.7.1, KAN-228: «Пригласи друга»
+    case inviteFriend
     // Во весь экран
     case onboarding, words
     // 1.7, KAN-121/KAN-122: шаги онбординга с выбранной целью «Энергия»
@@ -84,6 +86,7 @@ enum DesignScreen: String, CaseIterable, Identifiable {
         case .paywallFeature: PaywallView(highlight: .health, source: .feature)
         case .offerPaywall: PaywallView(source: .newYearOffer)
         case .feedback: FeedbackView()
+        case .inviteFriend: InviteFriendView()
         case .voice: VoiceHabitSheet { _ in }
         case .note: NoteEditorView(target: NoteTarget(habitID: UITestSupport.id(1), day: DayKey.make(Date())))
         case .whatsNew: WhatsNewView {}

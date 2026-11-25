@@ -908,3 +908,10 @@ Mood insights||Wawasan suasana hati
 With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today.||Dengan Pro, jurnal suasana hati menunjukkan kebiasaan mana yang menyertai hari-hari terbaikmu. Buka dari Statistik atau kartu suasana hati di "Hari Ini".
 Large text||Teks besar
 Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly.||Layar kini lebih pas dengan ukuran teks terbesar, dan VoiceOver membacakan tombol dengan lebih jelas.
+Invite a friend||Undang teman
+Give a friend a month of Pro||Hadiahkan sebulan Pro untuk teman
+Your friend gets ZenHab Pro free for a month with this code. Each Apple ID can use it once.||Dengan kode ini, temanmu bisa memakai ZenHab Pro gratis selama sebulan. Setiap Apple ID hanya bisa memakainya sekali.
+Code copied||Kode disalin
+Send invite||Kirim undangan
+I track my habits with ZenHab. Try it: a month of Pro is free with this link: %@||Aku melacak kebiasaanku dengan ZenHab. Coba deh: sebulan Pro gratis lewat tautan ini: %@
+After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro.||Setelah bulan gratis, langganan diperpanjang dengan harga normal kecuali dibatalkan. Jika temanmu sudah punya Pro, kode tidak berlaku.

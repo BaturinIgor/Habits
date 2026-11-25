@@ -57,6 +57,7 @@
 "Advanced" = "उन्नत";
 "After habit" = "इस आदत के बाद";
 "After the first year, Pro renews at the regular price. Cancel anytime." = "पहले साल के बाद Pro सामान्य कीमत पर रिन्यू होता है। कभी भी रद्द करें।";
+"After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro." = "मुफ़्त महीने के बाद सदस्यता सामान्य कीमत पर अपने आप नवीनीकृत होती है, जब तक रद्द न की जाए। अगर दोस्त के पास पहले से Pro है, तो कोड काम नहीं करेगा।";
 "After: %@" = "इसके बाद: %@";
 "Afternoon" = "दोपहर";
 "All" = "सभी";
@@ -155,6 +156,7 @@
 "Clear your inbox" = "इनबॉक्स ख़ाली करें";
 "Clearer Pro" = "साफ़-सुथरा Pro";
 "Close" = "बंद करें";
+"Code copied" = "कोड कॉपी हो गया";
 "Code: %@" = "कोड: %@";
 "Collector" = "संग्रहकर्ता";
 "Come back after a miss 10 times" = "चूकने के बाद 10 बार लौटें";
@@ -297,6 +299,7 @@
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Apple Watch पर टाइमर इस्तेमाल करने के लिए अपने iPhone पर Pro लें।";
 "Get a pet" = "पालतू पाएँ";
 "Get the discount" = "छूट पाएँ";
+"Give a friend a month of Pro" = "दोस्त को Pro का एक महीना तोहफ़े में दें";
 "Go to bed on time" = "समय पर सोएँ";
 "Goal" = "लक्ष्य";
 "Gold" = "सुनहरा";
@@ -345,6 +348,7 @@
 "I believe in you!" = "मुझे आप पर भरोसा है!";
 "I know it" = "मुझे पता है";
 "I slipped" = "मुझसे चूक हुई";
+"I track my habits with ZenHab. Try it: a month of Pro is free with this link: %@" = "ZenHab से आदतें ट्रैक करना आसान है। आज़माएँ: इस लिंक से Pro एक महीने मुफ़्त: %@";
 "I'm proud of you!" = "मुझे आप पर गर्व है!";
 "I'm quitting this habit" = "मैं यह आदत छोड़ रहा हूँ";
 "Ice cold" = "बर्फ़ जैसा ठंडा";
@@ -359,6 +363,7 @@
 "Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept." = "रोज़ टिक करने की जगह दिखेगा कि आप कितने दिन से इसके बिना हैं। चूक होने पर गिनती फिर शुरू होगी, पर आपका रिकॉर्ड रहेगा।";
 "Intermediate" = "मध्यम";
 "Interval" = "अंतराल";
+"Invite a friend" = "दोस्त को आमंत्रित करें";
 "Invite family" = "परिवार को आमंत्रित करें";
 "Iron will" = "फ़ौलादी इरादा";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "कीमत: ✨ %lld, आपके पास: ✨ %lld। और कमाने के लिए आदतें पूरी करें।";
@@ -644,6 +649,7 @@
 "See which habits make your days better" = "देखें कौन-सी आदतें आपके दिन बेहतर बनाती हैं";
 "Send" = "भेजें";
 "Send by email" = "ईमेल से भेजें";
+"Send invite" = "आमंत्रण भेजें";
 "Send the message" = "संदेश भेजें";
 "Set up Mail on this iPhone or send your message to %@." = "iPhone पर मेल सेट करें या अपना संदेश %@ पर भेजें।";
 "Settings" = "सेटिंग्स";
@@ -873,6 +879,7 @@
 "Your days and the habits that lift your mood" = "आपके दिन और मूड बेहतर करने वाली आदतें";
 "Your first habits" = "आपकी पहली आदतें";
 "Your first step" = "आपका पहला कदम";
+"Your friend gets ZenHab Pro free for a month with this code. Each Apple ID can use it once." = "इस कोड से आपके दोस्त को ZenHab Pro एक महीने मुफ़्त मिलेगा। हर Apple ID पर एक बार।";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "आपकी आदतें और इतिहास अपने आप iCloud में सेव होते हैं। नए iPhone पर ZenHab सब कुछ वापस लाने का विकल्प देगा।";
 "Your habits stay on your iPhone and in your own iCloud." = "आपकी आदतें सिर्फ़ आपके iPhone और आपके iCloud में रहती हैं।";
 "Your habits stay only on your iPhone." = "आपकी आदतें सिर्फ़ आपके iPhone पर रहती हैं।";

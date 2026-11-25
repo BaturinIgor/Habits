@@ -908,3 +908,10 @@ Mood insights||Humor e hábitos
 With Pro, the mood journal shows which habits go with your better days. Open it from Statistics or the mood card on Today.||Com o Pro, o diário de humor mostra quais hábitos acompanham seus melhores dias. Abra pelas Estatísticas ou pelo cartão de humor em "Hoje".
 Large text||Texto grande
 Screens now fit the largest text sizes better, and VoiceOver reads more buttons clearly.||As telas se adaptam melhor aos maiores tamanhos de texto, e o VoiceOver lê os botões com mais clareza.
+Invite a friend||Convidar um amigo
+Give a friend a month of Pro||Dê um mês de Pro a um amigo
+Your friend gets ZenHab Pro free for a month with this code. Each Apple ID can use it once.||Com este código, seu amigo usa o ZenHab Pro grátis por um mês. Cada Apple ID pode usar uma vez.
+Code copied||Código copiado
+Send invite||Enviar convite
+I track my habits with ZenHab. Try it: a month of Pro is free with this link: %@||Acompanho meus hábitos com o ZenHab. Experimente: um mês de Pro grátis com este link: %@
+After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro.||Depois do mês grátis, a assinatura renova pelo preço normal, a menos que seja cancelada. Se seu amigo já tiver o Pro, o código não funciona.

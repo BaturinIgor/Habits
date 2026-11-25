@@ -57,6 +57,7 @@
 "Advanced" = "Fortgeschritten";
 "After habit" = "Nach Gewohnheit";
 "After the first year, Pro renews at the regular price. Cancel anytime." = "Nach dem ersten Jahr verlängert sich Pro zum regulären Preis. Jederzeit kündbar.";
+"After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro." = "Nach dem Gratismonat verlängert sich das Abo zum normalen Preis, wenn es nicht gekündigt wird. Hat dein Freund schon Pro, funktioniert der Code nicht.";
 "After: %@" = "Nach: %@";
 "Afternoon" = "Nachmittag";
 "All" = "Alle";
@@ -155,6 +156,7 @@
 "Clear your inbox" = "Posteingang leeren";
 "Clearer Pro" = "Klareres Pro";
 "Close" = "Schließen";
+"Code copied" = "Code kopiert";
 "Code: %@" = "Code: %@";
 "Collector" = "Sammler";
 "Come back after a miss 10 times" = "Komm 10-mal nach einer Lücke zurück";
@@ -297,6 +299,7 @@
 "Get Pro on your iPhone to use the timer on Apple Watch." = "Hol dir Pro auf deinem iPhone, um den Timer auf der Apple Watch zu nutzen.";
 "Get a pet" = "Haustier holen";
 "Get the discount" = "Rabatt holen";
+"Give a friend a month of Pro" = "Schenk einem Freund einen Monat Pro";
 "Go to bed on time" = "Pünktlich ins Bett";
 "Goal" = "Ziel";
 "Gold" = "Gold";
@@ -345,6 +348,7 @@
 "I believe in you!" = "Ich glaube an dich!";
 "I know it" = "Kenne ich";
 "I slipped" = "Rückfall";
+"I track my habits with ZenHab. Try it: a month of Pro is free with this link: %@" = "Ich tracke meine Gewohnheiten mit ZenHab. Probier's aus: ein Monat Pro gratis über diesen Link: %@";
 "I'm proud of you!" = "Ich bin stolz auf dich!";
 "I'm quitting this habit" = "Ich gewöhne mir das ab";
 "Ice cold" = "Eiskalt";
@@ -359,6 +363,7 @@
 "Instead of daily check-ins you'll see how many days you've been without it. If you slip, the count starts again, but your record is kept." = "Statt täglicher Häkchen siehst du, wie viele Tage du schon ohne bist. Bei einem Rückfall beginnt die Zählung neu, dein Rekord bleibt.";
 "Intermediate" = "Mittelstufe";
 "Interval" = "Intervall";
+"Invite a friend" = "Freund einladen";
 "Invite family" = "Familie einladen";
 "Iron will" = "Eiserner Wille";
 "It costs %lld sparks, you have %lld. Check off habits to earn more." = "Preis: ✨ %lld, du hast: ✨ %lld. Hake Gewohnheiten ab, um mehr zu verdienen.";
@@ -644,6 +649,7 @@
 "See which habits make your days better" = "Finde heraus, welche Gewohnheiten deine Tage besser machen";
 "Send" = "Senden";
 "Send by email" = "Per E-Mail senden";
+"Send invite" = "Einladung senden";
 "Send the message" = "Nachricht senden";
 "Set up Mail on this iPhone or send your message to %@." = "Richte Mail auf dem iPhone ein oder sende deine Nachricht an %@.";
 "Settings" = "Einstellungen";
@@ -873,6 +879,7 @@
 "Your days and the habits that lift your mood" = "Deine Tage und die Gewohnheiten, die deine Stimmung heben";
 "Your first habits" = "Deine ersten Gewohnheiten";
 "Your first step" = "Dein erster Schritt";
+"Your friend gets ZenHab Pro free for a month with this code. Each Apple ID can use it once." = "Mit diesem Code bekommt dein Freund ZenHab Pro einen Monat gratis. Jede Apple-ID kann ihn einmal nutzen.";
 "Your habits and history are saved to your iCloud by themselves. On a new iPhone, ZenHab offers to bring everything back." = "Gewohnheiten und Verlauf werden automatisch in deiner iCloud gesichert. Auf einem neuen iPhone bietet ZenHab an, alles zurückzuholen.";
 "Your habits stay on your iPhone and in your own iCloud." = "Deine Gewohnheiten bleiben auf deinem iPhone und in deiner iCloud.";
 "Your habits stay only on your iPhone." = "Deine Gewohnheiten bleiben nur auf deinem iPhone.";
