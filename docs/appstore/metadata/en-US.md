@@ -90,4 +90,5 @@ Available in 14 languages: English, Russian, German, French, Spanish, Portuguese
 
 ## What's New
 • New Year offer: from December 20 to January 10, your first year of ZenHab Pro is 50% off.
+• Invite a friend: give them a month of ZenHab Pro with a code. Settings → “Invite a friend”.
 • Small improvements and fixes.

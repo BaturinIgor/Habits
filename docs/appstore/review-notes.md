@@ -15,7 +15,7 @@
 ```
 ZenHab is a habit tracker. No account, no own server. Habits are stored on the device (shared with widgets) and in the user's own iCloud (CloudKit private database for backup, shared database for family groups).
 
-1.7.1: minor fixes only, no new screens or purchases. The features below are from 1.7.
+New in 1.7.1: Settings > "Invite a friend": offer code FRIEND2027 (Pro Monthly, 1 month free, new subscribers) and a share link to Apple's code redemption. Features below are from 1.7.
 
 Added in 1.7:
 1. Onboarding with goal programs (first launch; reinstall the app to see it again). The user picks a goal and gets a ready-made set of habits, which can be edited or removed later.
@@ -28,9 +28,9 @@ To see it now: iOS Settings > General > Date & Time, turn off "Set Automatically
 5. Mood insights (Pro): Statistics > "Mood journal" > "What goes with a better mood": habits that go with a better mood, from mood entries and check-offs. Without Pro it shows a lock. Computed on the device.
 6. Siri and Shortcuts (App Intents): "Check off a habit", "Add a habit", "What's left today", "Log mood", "Start a habit timer" (Pro). Example: "Log my mood in ZenHab". Habits are indexed in Spotlight (on-device only).
 
-Apple Health (HealthKit, read-only): Settings > "Apple Health" (visible to all) lists the data ZenHab reads (steps, exercise and mindful minutes, sleep, water, workouts). To link a habit (Pro): habit > "Apple Health" > "Check off by" > metric and goal; iOS asks for read access. When the goal is reached, the habit is checked off and its Today row shows progress with a heart icon. ZenHab never writes to Health; Health data is not stored or sent.
+Apple Health (HealthKit, read-only): Settings > "Apple Health" (visible to all) lists the data ZenHab reads. To link a habit (Pro): habit > "Apple Health" > "Check off by" > metric and goal; iOS asks for read access. When the goal is reached, the habit is checked off and its Today row shows progress with a heart icon. ZenHab never writes to Health; Health data is not stored or sent.
 
-Apple Watch app (since 1.6): a check-off on the watch appears on the iPhone and vice versa (WatchConnectivity). Complications: long-press the watch face > Edit > ZenHab.
+Apple Watch app (since 1.6): a check-off on the watch appears on the iPhone and vice versa (WatchConnectivity).
 
 Pro: Settings > "Habit Tracker Pro". Monthly and yearly auto-renewable subscriptions and a lifetime non-consumable purchase; the sandbox purchase unlocks Pro immediately. The free version allows up to 5 active habits.
 

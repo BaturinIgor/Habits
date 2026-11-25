@@ -52,4 +52,5 @@ Privacidad: https://baturinigor.github.io/Habits/privacy.html
 
 ## What's New
 • Oferta de Año Nuevo: del 20 de diciembre al 10 de enero, el primer año de ZenHab Pro tiene un 50 % de descuento.
+• Invita a un amigo: regálale un mes de ZenHab Pro con un código. Ajustes → «Invitar a un amigo».
 • Pequeñas mejoras y correcciones.
