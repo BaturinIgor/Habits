@@ -914,4 +914,6 @@ Your friend gets ZenHab Pro free for a month with this code. Each Apple ID can u
 Code copied||Skopiowano kod
 Send invite||Wyślij zaproszenie
 I track my habits with ZenHab. Try it: a month of Pro is free with this link: %@||Śledzę swoje nawyki w ZenHab. Spróbuj: miesiąc Pro za darmo z tego linku: %@
-After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro.||Po darmowym miesiącu subskrypcja odnawia się w zwykłej cenie, jeśli jej nie anulujesz. Jeśli znajomy ma już Pro, kod nie zadziała.
+After the free month: %@. Cancel anytime.||Po darmowym miesiącu: %@. Możesz anulować w każdej chwili.
+After the free month the subscription renews automatically. Cancel anytime.||Po darmowym miesiącu subskrypcja odnawia się automatycznie. Możesz anulować w każdej chwili.
+The code won't work if your friend already has Pro.||Jeśli znajomy ma już Pro, kod nie zadziała.

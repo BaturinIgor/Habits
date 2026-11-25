@@ -57,7 +57,8 @@
 "Advanced" = "Zaawansowany";
 "After habit" = "Po nawyku";
 "After the first year, Pro renews at the regular price. Cancel anytime." = "Po pierwszym roku Pro odnawia się w zwykłej cenie. Anuluj w dowolnej chwili.";
-"After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro." = "Po darmowym miesiącu subskrypcja odnawia się w zwykłej cenie, jeśli jej nie anulujesz. Jeśli znajomy ma już Pro, kod nie zadziała.";
+"After the free month the subscription renews automatically. Cancel anytime." = "Po darmowym miesiącu subskrypcja odnawia się automatycznie. Możesz anulować w każdej chwili.";
+"After the free month: %@. Cancel anytime." = "Po darmowym miesiącu: %@. Możesz anulować w każdej chwili.";
 "After: %@" = "Po: %@";
 "Afternoon" = "Popołudnie";
 "All" = "Wszystkie";
@@ -742,6 +743,7 @@
 "That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "Tak zaczyna się seria. Chcesz przypomnienie, żeby jutro nie zapomnieć?";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Ekran Pro pokazuje teraz wszystko, co zawiera, i otwiera się na funkcji, którą dotknąłeś.";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "Kopia w iCloud: %@, %@, nawyki: %lld. Aktualizuje się sama, gdy wychodzisz z aplikacji. Zdjęcia awatara i tła nie są w niej zapisywane.";
+"The code won't work if your friend already has Pro." = "Jeśli znajomy ma już Pro, kod nie zadziała.";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "Wersja darmowa osiągnęła limit nawyków. Otwórz ZenHab, aby przejść na Pro.";
 "The free version has up to 5 active habits." = "Wersja darmowa ma do 5 aktywnych nawyków.";
 "The group wasn't found." = "Nie znaleziono grupy.";

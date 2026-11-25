@@ -57,7 +57,8 @@
 "Advanced" = "उन्नत";
 "After habit" = "इस आदत के बाद";
 "After the first year, Pro renews at the regular price. Cancel anytime." = "पहले साल के बाद Pro सामान्य कीमत पर रिन्यू होता है। कभी भी रद्द करें।";
-"After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro." = "मुफ़्त महीने के बाद सदस्यता सामान्य कीमत पर अपने आप नवीनीकृत होती है, जब तक रद्द न की जाए। अगर दोस्त के पास पहले से Pro है, तो कोड काम नहीं करेगा।";
+"After the free month the subscription renews automatically. Cancel anytime." = "मुफ़्त महीने के बाद सदस्यता अपने आप नवीनीकृत होती है। कभी भी रद्द करें।";
+"After the free month: %@. Cancel anytime." = "मुफ़्त महीने के बाद: %@। कभी भी रद्द करें।";
 "After: %@" = "इसके बाद: %@";
 "Afternoon" = "दोपहर";
 "All" = "सभी";
@@ -742,6 +743,7 @@
 "That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "ऐसे ही लगातार सिलसिला शुरू होता है। कल न भूलें, इसके लिए रिमाइंडर चाहिए?";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Pro स्क्रीन अब इसमें शामिल सब कुछ दिखाती है और उसी फ़ीचर पर खुलती है जिसे आपने टैप किया।";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "iCloud में बैकअप: %@, %@, आदतें: %lld। ऐप से बाहर जाने पर यह अपने आप अपडेट होता है। अवतार और बैकग्राउंड की फ़ोटो इसमें नहीं हैं।";
+"The code won't work if your friend already has Pro." = "अगर दोस्त के पास पहले से Pro है, तो कोड काम नहीं करेगा।";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "मुफ़्त संस्करण में आदतों की सीमा पूरी हो गई। Pro के लिए ZenHab खोलें।";
 "The free version has up to 5 active habits." = "मुफ़्त संस्करण में 5 सक्रिय आदतें तक।";
 "The group wasn't found." = "समूह नहीं मिला।";

@@ -57,7 +57,8 @@
 "Advanced" = "高级";
 "After habit" = "在此习惯之后";
 "After the first year, Pro renews at the regular price. Cancel anytime." = "首年结束后，Pro 将按原价续订。可随时取消。";
-"After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro." = "免费月结束后，订阅将按正常价格自动续订，除非取消。如果好友已有 Pro，代码无效。";
+"After the free month the subscription renews automatically. Cancel anytime." = "免费月结束后，订阅将自动续订。可随时取消。";
+"After the free month: %@. Cancel anytime." = "免费月结束后：%@。可随时取消。";
 "After: %@" = "之后：%@";
 "Afternoon" = "下午";
 "All" = "全部";
@@ -742,6 +743,7 @@
 "That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "连续打卡就是这样开始的。要不要设置提醒，明天别忘了？";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Pro 页面现在列出全部内容，并直接定位到你点按的功能。";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "iCloud 中的备份：%@，%@，习惯：%lld。离开应用时会自动更新。不包含头像和背景照片。";
+"The code won't work if your friend already has Pro." = "如果好友已有 Pro，代码无效。";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "免费版的习惯数量已达上限。打开 ZenHab 获取 Pro。";
 "The free version has up to 5 active habits." = "免费版最多 5 个进行中的习惯。";
 "The group wasn't found." = "未找到该分组。";

@@ -57,7 +57,8 @@
 "Advanced" = "고급";
 "After habit" = "다음 습관 뒤에";
 "After the first year, Pro renews at the regular price. Cancel anytime." = "첫 1년이 지나면 Pro는 정상 가격으로 갱신돼요. 언제든 해지할 수 있어요.";
-"After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro." = "무료 기간이 끝나면 해지하지 않는 한 정상 가격으로 자동 갱신돼요. 친구가 이미 Pro라면 코드가 작동하지 않아요.";
+"After the free month the subscription renews automatically. Cancel anytime." = "무료 기간이 끝나면 자동으로 갱신돼요. 언제든 해지할 수 있어요.";
+"After the free month: %@. Cancel anytime." = "무료 기간 이후: %@. 언제든 해지할 수 있어요.";
 "After: %@" = "다음 뒤: %@";
 "Afternoon" = "오후";
 "All" = "전체";
@@ -742,6 +743,7 @@
 "That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "연속 기록은 이렇게 시작돼요. 내일 잊지 않도록 알림을 받아 볼까요?";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Pro 화면에 포함된 모든 기능이 표시되고, 누른 기능부터 열려요.";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "iCloud 백업: %@, %@, 습관: %lld. 앱을 나가면 자동으로 업데이트돼요. 아바타와 배경 사진은 포함되지 않아요.";
+"The code won't work if your friend already has Pro." = "친구가 이미 Pro라면 코드가 작동하지 않아요.";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "무료 버전의 습관 한도에 도달했어요. ZenHab을 열어 Pro를 이용하세요.";
 "The free version has up to 5 active habits." = "무료 버전은 활성 습관 5개까지예요.";
 "The group wasn't found." = "그룹을 찾을 수 없어요.";

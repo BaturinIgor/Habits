@@ -57,7 +57,8 @@
 "Advanced" = "上級";
 "After habit" = "この習慣の後";
 "After the first year, Pro renews at the regular price. Cancel anytime." = "最初の1年が過ぎると、Pro は通常価格で更新されます。いつでも解約できます。";
-"After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro." = "無料期間の終了後、解約しない限り通常料金で自動更新されます。友達がすでにProの場合、コードは使えません。";
+"After the free month the subscription renews automatically. Cancel anytime." = "無料期間の終了後、自動更新されます。いつでも解約できます。";
+"After the free month: %@. Cancel anytime." = "無料期間終了後：%@。いつでも解約できます。";
 "After: %@" = "次の後：%@";
 "Afternoon" = "午後";
 "All" = "すべて";
@@ -742,6 +743,7 @@
 "That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "こうして連続記録が始まります。明日忘れないようにリマインダーを受け取る？";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Pro画面に含まれる機能がすべて表示され、タップした機能から開くようになりました。";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "iCloud のバックアップ：%@、%@、習慣：%lld。アプリを閉じると自動で更新されます。アバターと背景の写真は含まれません。";
+"The code won't work if your friend already has Pro." = "友達がすでにProの場合、コードは使えません。";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "無料版の習慣数の上限に達しました。ZenHabを開いてProにしてください。";
 "The free version has up to 5 active habits." = "無料版はアクティブな習慣が5つまでです。";
 "The group wasn't found." = "グループが見つかりません。";

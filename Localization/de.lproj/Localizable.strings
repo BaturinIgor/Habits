@@ -57,7 +57,8 @@
 "Advanced" = "Fortgeschritten";
 "After habit" = "Nach Gewohnheit";
 "After the first year, Pro renews at the regular price. Cancel anytime." = "Nach dem ersten Jahr verlängert sich Pro zum regulären Preis. Jederzeit kündbar.";
-"After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro." = "Nach dem Gratismonat verlängert sich das Abo zum normalen Preis, wenn es nicht gekündigt wird. Hat dein Freund schon Pro, funktioniert der Code nicht.";
+"After the free month the subscription renews automatically. Cancel anytime." = "Nach dem Gratismonat verlängert sich das Abo automatisch. Jederzeit kündbar.";
+"After the free month: %@. Cancel anytime." = "Nach dem Gratismonat: %@. Jederzeit kündbar.";
 "After: %@" = "Nach: %@";
 "Afternoon" = "Nachmittag";
 "All" = "Alle";
@@ -742,6 +743,7 @@
 "That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "So beginnt eine Serie. Möchtest du eine sanfte Erinnerung, damit du es morgen nicht vergisst?";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Der Pro-Bildschirm zeigt jetzt alles, was dazugehört, und öffnet sich bei der Funktion, die du angetippt hast.";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "Sicherung in iCloud: %@, %@, Gewohnheiten: %lld. Sie wird automatisch aktualisiert, wenn du die App verlässt. Fotos für Avatar und Hintergrund sind nicht enthalten.";
+"The code won't work if your friend already has Pro." = "Hat dein Freund schon Pro, funktioniert der Code nicht.";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "Die kostenlose Version hat ihr Gewohnheitslimit erreicht. Öffne ZenHab, um Pro zu holen.";
 "The free version has up to 5 active habits." = "Die kostenlose Version erlaubt bis zu 5 aktive Gewohnheiten.";
 "The group wasn't found." = "Gruppe nicht gefunden.";

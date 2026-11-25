@@ -34,9 +34,18 @@ struct InviteFriendRow: View {
 }
 
 /// Шит с кодом и кнопкой «Отправить приглашение».
+/// Условия продления стоят сразу под кодом, до кнопки: друг видит их до того, как ему отправят ссылку (3.1.2).
 struct InviteFriendView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.dynamicTypeSize) private var typeSize
+    @State private var shop = ProStore.shared
     @State private var copied = false
+
+    /// Цена месячной подписки, на которую действует код, например «149 ₽ в месяц».
+    private var monthlyPrice: String? {
+        shop.products.first(where: { $0.id == ProStore.monthlyID })
+            .map { String(localized: "\($0.displayPrice) / month") }
+    }
 
     var body: some View {
         NavigationStack {
@@ -61,22 +70,26 @@ struct InviteFriendView: View {
                             .multilineTextAlignment(.center)
                     }
 
-                    codeCard
+                    VStack(spacing: 10) {
+                        codeCard
+                        terms
+                    }
 
                     ShareLink(item: FriendInvite.redeemURL,
                               message: Text("I track my habits with ZenHab. Try it: a month of Pro is free with this link: \(FriendInvite.redeemURL.absoluteString)")) {
-                        Label("Send invite", systemImage: "square.and.arrow.up")
-                            .font(.headline)
-                            .frame(maxWidth: .infinity, minHeight: 50)
+                        // При крупном шрифте без иконки: иначе подпись переносится, а иконка висит у первой строки.
+                        Group {
+                            if typeSize.isAccessibilitySize {
+                                Text("Send invite")
+                            } else {
+                                Label("Send invite", systemImage: "square.and.arrow.up")
+                            }
+                        }
+                        .font(.headline)
+                        .frame(maxWidth: .infinity, minHeight: 50)
                     }
                     .buttonStyle(.borderedProminent)
-                    .tint(.pink)
                     .accessibilityIdentifier("invite.send")
-
-                    Text("After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro.")
-                        .font(.footnote)
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.center)
                 }
                 .padding(.horizontal, 24)
                 .padding(.bottom, 24)
@@ -88,7 +101,23 @@ struct InviteFriendView: View {
                     Button("Done") { dismiss() }
                 }
             }
+            .task { await shop.loadProducts() }
         }
+    }
+
+    private var terms: some View {
+        VStack(spacing: 4) {
+            if let monthlyPrice {
+                Text("After the free month: \(monthlyPrice). Cancel anytime.")
+            } else {
+                Text("After the free month the subscription renews automatically. Cancel anytime.")
+            }
+            Text("The code won't work if your friend already has Pro.")
+        }
+        .font(.footnote)
+        .foregroundStyle(.secondary)
+        .multilineTextAlignment(.center)
+        .accessibilityIdentifier("invite.terms")
     }
 
     private var codeCard: some View {
@@ -96,6 +125,8 @@ struct InviteFriendView: View {
             Text(FriendInvite.code)
                 .font(.system(.title, design: .monospaced).weight(.bold))
                 .tracking(2)
+                .minimumScaleFactor(0.6)
+                .lineLimit(1)
                 .textSelection(.enabled)
             Button {
                 UIPasteboard.general.string = FriendInvite.code
@@ -106,13 +137,10 @@ struct InviteFriendView: View {
                     .font(.subheadline.weight(.semibold))
             }
             .buttonStyle(.bordered)
-            .tint(.pink)
             .accessibilityIdentifier("invite.copy")
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 20)
-        .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous)
-            .strokeBorder(Color.pink.opacity(0.35), style: StrokeStyle(lineWidth: 1.5, dash: [6, 4])))
+        .background(Color.accentColor.opacity(0.1), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
     }
 }

@@ -914,4 +914,6 @@ Your friend gets ZenHab Pro free for a month with this code. Each Apple ID can u
 Code copied||Kode disalin
 Send invite||Kirim undangan
 I track my habits with ZenHab. Try it: a month of Pro is free with this link: %@||Aku melacak kebiasaanku dengan ZenHab. Coba deh: sebulan Pro gratis lewat tautan ini: %@
-After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro.||Setelah bulan gratis, langganan diperpanjang dengan harga normal kecuali dibatalkan. Jika temanmu sudah punya Pro, kode tidak berlaku.
+After the free month: %@. Cancel anytime.||Setelah bulan gratis: %@. Batalkan kapan saja.
+After the free month the subscription renews automatically. Cancel anytime.||Setelah bulan gratis, langganan diperpanjang otomatis. Batalkan kapan saja.
+The code won't work if your friend already has Pro.||Kode tidak berlaku jika temanmu sudah punya Pro.

@@ -57,7 +57,8 @@
 "Advanced" = "Mahir";
 "After habit" = "Setelah kebiasaan";
 "After the first year, Pro renews at the regular price. Cancel anytime." = "Setelah tahun pertama, Pro diperpanjang dengan harga normal. Batalkan kapan saja.";
-"After the free month the subscription renews at the regular price unless cancelled. It doesn't work if your friend already has Pro." = "Setelah bulan gratis, langganan diperpanjang dengan harga normal kecuali dibatalkan. Jika temanmu sudah punya Pro, kode tidak berlaku.";
+"After the free month the subscription renews automatically. Cancel anytime." = "Setelah bulan gratis, langganan diperpanjang otomatis. Batalkan kapan saja.";
+"After the free month: %@. Cancel anytime." = "Setelah bulan gratis: %@. Batalkan kapan saja.";
 "After: %@" = "Setelah: %@";
 "Afternoon" = "Siang";
 "All" = "Semua";
@@ -742,6 +743,7 @@
 "That's how a streak starts. Want a gentle reminder so you don't forget tomorrow?" = "Begitulah rentetan dimulai. Mau pengingat supaya besok tidak lupa?";
 "The Pro screen now lists everything it includes, and opens on the feature you tapped." = "Layar Pro kini menampilkan semua isinya dan terbuka di fitur yang kamu ketuk.";
 "The backup in iCloud: %@, %@, habits: %lld. It updates by itself when you leave the app. Photos for the avatar and background aren't included." = "Cadangan di iCloud: %@, %@, kebiasaan: %lld. Diperbarui otomatis saat kamu keluar dari aplikasi. Foto avatar dan latar tidak termasuk.";
+"The code won't work if your friend already has Pro." = "Kode tidak berlaku jika temanmu sudah punya Pro.";
 "The free version has reached its habit limit. Open ZenHab to get Pro." = "Versi gratis sudah mencapai batas kebiasaan. Buka ZenHab untuk mendapatkan Pro.";
 "The free version has up to 5 active habits." = "Versi gratis memiliki hingga 5 kebiasaan aktif.";
 "The group wasn't found." = "Grup tidak ditemukan.";
