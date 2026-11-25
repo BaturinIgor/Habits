@@ -95,6 +95,10 @@ def main():
         try:
             r = client.call("POST", "/subscriptionOfferCodes", json=code_payload(mid, prices, False))
         except ApiError as e:
+            # Повторяем только при отказе по содержимому запроса. При 401/429/5xx код мог уже создаться,
+            # и повтор упал бы на дубликате имени; такой запуск честно падает, перезапуск найдёт код по имени.
+            if e.status not in (400, 409, 422):
+                raise
             print(f"  без price point не принято ({e}); повторяю с текущими ценами")
             r = client.call("POST", "/subscriptionOfferCodes", json=code_payload(mid, prices, True))
         code_id = r["data"]["id"]
