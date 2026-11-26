@@ -17,7 +17,15 @@ final class DesignCatalogUITests: XCTestCase {
         var flags: [String] = []
         /// Сколько раз пролистать экран вверх перед снимком.
         var swipes = 0
+        /// Идентификатор элемента, на который нажать перед снимком (например вход в итоги месяца).
+        var tap: String? = nil
     }
+
+    /// Язык интерфейса -> регион для -AppleLocale (даты и числа как у жителей этой страны).
+    private static let locales = [
+        "ru": "ru_RU", "en": "en_US", "de": "de_DE", "es": "es_ES", "fr": "fr_FR", "hi": "hi_IN", "id": "id_ID",
+        "it": "it_IT", "ja": "ja_JP", "ko": "ko_KR", "pl": "pl_PL", "pt-BR": "pt_BR", "tr": "tr_TR", "zh-Hans": "zh_CN",
+    ]
 
     /// Крупный шрифт Accessibility XL на всё приложение, включая шиты, панель вкладок и навигацию.
     private static let xl = ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXL"]
@@ -137,6 +145,16 @@ final class DesignCatalogUITests: XCTestCase {
         Shot(name: "a11y-05-pet-species-xl", screen: "petSpecies", flags: xl),
         Shot(name: "a11y-06-heatmap", screen: "stats", swipes: 1),
         Shot(name: "a11y-07-today-habits-xl", screen: "today", flags: xl, swipes: 2),
+        // 1.7.2, KAN-236: кадры для скриншотов App Store (номер = номер в captions.tsv; 04 и 06 — экран Домой,
+        // снимаются отдельно). -design-store: взрослый питомец и Настройки как в сборке для App Store.
+        Shot(name: "store-01-today", screen: "today", flags: ["-design-store"]),
+        Shot(name: "store-02-pet", screen: "pet", flags: ["-design-store"]),
+        Shot(name: "store-03-goal", screen: "onboardingGoal", flags: ["-uitest-empty", "-design-store"]),
+        Shot(name: "store-05-stats", screen: "stats", flags: ["-design-store"]),
+        Shot(name: "store-07-catalog", screen: "catalog", flags: ["-design-store"]),
+        Shot(name: "store-08-words", screen: "words", flags: ["-design-store"]),
+        Shot(name: "store-09-settings", screen: "settings", flags: ["-design-store"], swipes: 3),
+        Shot(name: "store-10-month", screen: "stats", flags: ["-design-store"], tap: "stats.recap.month"),
     ]
 
     /// Крупный шрифт (Универсальный доступ) для макетов.
@@ -188,7 +206,7 @@ final class DesignCatalogUITests: XCTestCase {
         }
         continueAfterFailure = true
         let language = ProcessInfo.processInfo.environment["DESIGN_LANG"] ?? "ru"
-        let locale = language == "ru" ? "ru_RU" : "en_US"
+        let locale = Self.locales[language] ?? "en_US"
         var missing: [String] = []
         for shot in selection.shots {
             let app = XCUIApplication()
@@ -218,6 +236,10 @@ final class DesignCatalogUITests: XCTestCase {
                 if !plan.firstMatch.waitForExistence(timeout: 20) { missing.append("\(shot.name) (no prices)") }
                 // Плашка пробной недели появляется после проверки права на пробный период (без Pro).
                 _ = app.descendants(matching: .any).matching(identifier: "paywall.trial").firstMatch.waitForExistence(timeout: 8)
+            }
+            if let id = shot.tap {
+                let target = app.descendants(matching: .any).matching(identifier: id).firstMatch
+                if target.waitForExistence(timeout: 10) { target.tap() } else { missing.append("\(shot.name) (no \(id))") }
             }
             for _ in 0..<shot.swipes { app.swipeUp() }
             // Даём анимациям закончиться.

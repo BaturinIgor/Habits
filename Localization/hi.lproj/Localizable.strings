@@ -8,7 +8,7 @@
 "%@: the streak broke" = "%@: लगातार गिनती टूटी";
 "%lld XP" = "%lld XP";
 "%lld min" = "%lld मिनट";
-"%lld more to %@" = "%@ तक %lld और";
+"%lld more to %@" = "%2$@ तक %1$lld और";
 "%lld of %lld" = "%2$lld में से %1$lld";
 "%lld of %lld done" = "%2$lld में से %1$lld पूरी";
 "%lld of %lld habits" = "%2$lld में से %1$lld आदतें";

@@ -210,7 +210,8 @@ struct SettingsView: View {
                 }
 
                 // Без Firebase (сборка для SideStore, отладка, автотесты) статистика не отправляется: выключатель не нужен.
-                if Analytics.isAvailable {
+                // -design-store: скриншот App Store показывает Настройки так, как в сборке для App Store.
+                if Analytics.isAvailable || TestMode.has("-design-store") {
                     Section {
                         Toggle(isOn: Binding(get: { !analyticsOptOut }, set: { Analytics.shared.setEnabled($0) })) {
                             Label("Share anonymous statistics", systemImage: "chart.line.uptrend.xyaxis")
@@ -224,7 +225,7 @@ struct SettingsView: View {
                     LabeledContent("Version", value: AppInfo.version)
                 } footer: {
                     // Где лежат привычки: в сборке для App Store ещё и в личном iCloud (копия, семейные группы).
-                    if CloudBackup.isAvailable {
+                    if CloudBackup.isAvailable || TestMode.has("-design-store") {
                         Text("Your habits stay on your iPhone and in your own iCloud.")
                     } else {
                         Text("Your habits stay only on your iPhone.")

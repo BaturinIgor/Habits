@@ -19,7 +19,9 @@ enum UITestSupport {
         let calendar = Calendar.app
         let today = calendar.startOfDay(for: now)
         func day(_ offset: Int) -> Date { calendar.date(byAdding: .day, value: offset, to: today) ?? today }
-        let start = day(-30)
+        // Скриншоты App Store (-design-store): история за два месяца, чтобы были итоги прошлого месяца.
+        let span = TestMode.has("-design-store") ? 60 : 30
+        let start = day(-span)
         let ru = isRussian
 
         var data = AppData()
@@ -55,7 +57,7 @@ enum UITestSupport {
         func habit(_ n: Int, _ en: String, _ ruName: String, icon: String, color: Int,
                    schedule: HabitSchedule = HabitSchedule(startDate: start),
                    reminder: ReminderTime? = nil, part: PartOfDay? = nil) -> Habit {
-            var h = Habit(id: id(n), name: ru ? ruName : en, icon: .symbol(icon), colorIndex: color,
+            var h = Habit(id: id(n), name: ru ? ruName : DemoText.t(en), icon: .symbol(icon), colorIndex: color,
                           schedule: schedule, reminder: reminder, createdAt: start, sortOrder: n, partOfDay: part)
             h.schedule.startDate = start
             return h
@@ -63,10 +65,10 @@ enum UITestSupport {
 
         var exercise = habit(1, "Morning exercises", "Утренняя зарядка", icon: "figure.run", color: 0,
                              reminder: ReminderTime(hour: 7, minute: 30))
-        exercise.minimumVersion = ru ? "Хотя бы 5 приседаний" : "At least 5 squats"
+        exercise.minimumVersion = ru ? "Хотя бы 5 приседаний" : DemoText.t("At least 5 squats")
         var water = habit(2, "Drink water", "Пить воду", icon: "drop.fill", color: 3, part: .anytime)
         water.target = 8
-        water.unit = ru ? "стаканов" : "glasses"
+        water.unit = ru ? "стаканов" : DemoText.t("glasses")
         var meditation = habit(3, "Meditation", "Медитация", icon: "brain.head.profile", color: 5,
                                reminder: ReminderTime(hour: 8, minute: 0))
         meditation.timerMinutes = 10
@@ -86,20 +88,20 @@ enum UITestSupport {
         data.habits = [exercise, water, meditation, reading, gym, steps, smoking]
 
         // История: зарядка до позавчера каждый день, вчера пропуск (карточка «Вернуть серию»).
-        for offset in -30 ... -2 {
+        for offset in -span ... -2 {
             data.setStatus(.done, habitID: exercise.id, day: DayKey.make(day(offset)))
         }
-        for offset in -30 ... -1 where offset % 4 != 0 {
+        for offset in -span ... -1 where offset % 4 != 0 {
             data.setStatus(.done, habitID: water.id, day: DayKey.make(day(offset)))
             data.setStatus(.done, habitID: steps.id, day: DayKey.make(day(offset)))
         }
-        for offset in -30 ... -1 where offset % 3 != 0 {
+        for offset in -span ... -1 where offset % 3 != 0 {
             data.setStatus(.done, habitID: meditation.id, day: DayKey.make(day(offset)))
             if reading.isScheduled(on: day(offset)) {
                 data.setStatus(.done, habitID: reading.id, day: DayKey.make(day(offset)))
             }
         }
-        for offset in stride(from: -29, through: -1, by: 2) {
+        for offset in stride(from: -span + 1, through: -1, by: 2) {
             data.setStatus(.done, habitID: gym.id, day: DayKey.make(day(offset)))
         }
         // Сегодня уже кое-что сделано.

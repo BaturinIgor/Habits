@@ -107,16 +107,16 @@ enum DesignGallery {
     /// Дополняет демо-данные всем, что нужно для макетов: настроение, группы, питомец, слова.
     static func enrich(_ data: inout AppData, day: (Int) -> Date, start: Date, ru: Bool) {
         // Группы, одна общая с семьёй.
-        let morning = HabitGroup(id: groupID, name: ru ? "Утро" : "Morning", sortOrder: 0)
-        var family = HabitGroup(id: UITestSupport.id(101), name: ru ? "Семья" : "Family", sortOrder: 1)
-        family.family = FamilyShare(zoneName: "design", ownerName: ru ? "Анна" : "Anna", isOwner: true, url: nil)
+        let morning = HabitGroup(id: groupID, name: ru ? "Утро" : DemoText.t("Morning"), sortOrder: 0)
+        var family = HabitGroup(id: UITestSupport.id(101), name: ru ? "Семья" : DemoText.t("Family"), sortOrder: 1)
+        family.family = FamilyShare(zoneName: "design", ownerName: ru ? "Анна" : DemoText.t("Anna"), isOwner: true, url: nil)
         data.groups = [morning, family]
         for index in data.habits.indices where [1, 3].contains(index + 1) {
             data.habits[index].groupID = groupID
         }
 
         // Изучение слов.
-        var words = HabitCatalog.words("es")
+        var words = HabitCatalog.words(DemoText.wordsLanguage)
         words.id = UITestSupport.id(8)
         words.createdAt = start
         words.schedule.startDate = start
@@ -126,16 +126,18 @@ enum DesignGallery {
         // Настроение за две недели с заметками.
         let notes = ru
             ? ["Отличная тренировка", "Плохо спал", "Встреча с друзьями", nil]
-            : ["Great workout", "Slept badly", "Dinner with friends", nil]
+            : [DemoText.t("Great workout"), DemoText.t("Slept badly"), DemoText.t("Dinner with friends"), nil]
         for offset in -14 ... -1 {
             let level = [4, 3, 5, 2, 4, 4, 3][(offset + 14) % 7]
             data.moods[DayKey.make(day(offset))] = MoodEntry(level: level, note: notes[(offset + 14) % 4], updatedAt: day(offset))
         }
 
         // Питомец.
-        var pet = PetState(species: "cat", name: ru ? "Барсик" : "Whiskers", adoptedAt: day(-20))
+        var pet = PetState(species: "cat", name: ru ? "Барсик" : DemoText.t("Whiskers"), adoptedAt: day(-20))
         for offset in -20 ... -1 { pet.feeds[DayKey.make(day(offset))] = 2 }
         data.wallet.pet = pet
+        // Скриншоты App Store (-design-store): питомец уже взрослый, как на наборах en-US и ru.
+        if TestMode.has("-design-store") { data.wallet.keptPetXP = 120 }
 
         // 1.7, KAN-135: зарядку обычно отмечают около 8:40, а напоминание в 7:30 - предложение сдвинуть.
         if [.smartSuggestion, .smartEditor, .smartEditorOff].contains(DesignScreen.requested) {
@@ -169,7 +171,7 @@ enum DesignGallery {
         let requested = DesignScreen.requested
         if [.petSwitched, .petNaming, .petSpecies].contains(requested) {
             data.wallet.ownedPets = ["bunny", "fox"]
-            pet.names = ["cat": pet.name, "fox": ru ? "Рыжик" : "Ginger"]
+            pet.names = ["cat": pet.name, "fox": ru ? "Рыжик" : DemoText.t("Ginger")]
             if requested == .petNaming {
                 // Только что выбран зайчик, его ещё не называли: имя по виду, шит спрашивает своё.
                 pet.species = "bunny"
