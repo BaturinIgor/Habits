@@ -6,7 +6,7 @@
 - **Contact Information**: имя, фамилия, телефон с кодом страны, email. Это видит только Apple.
 - **Notes**: текст ниже, на английском.
 
-Текст для 1.7.1. Загрузка: Actions -> App Store texts с `overwrite`, скрипт берёт первый блок кода из этого файла (до 4000 символов).
+Текст для 1.7.2. Загрузка: Actions -> App Store texts с `overwrite`, скрипт берёт первый блок кода из этого файла (до 4000 символов).
 
 Перед загрузкой:
 - названия кнопок и разделов в кавычках («Continue for free», где в Статистике инсайты настроения, список интентов Siri) сверить с английскими строками в сборке 1.7;
@@ -15,7 +15,7 @@
 ```
 ZenHab is a habit tracker. No account, no own server. Habits are stored on the device (shared with widgets) and in the user's own iCloud (CloudKit private database for backup, shared database for family groups).
 
-New in 1.7.1: Settings > "Invite a friend": offer code FRIEND2027 (Pro Monthly, 1 month free, new subscribers) and a share link to Apple's code redemption. Features below are from 1.7.
+1.7.2: same app as 1.7.1. From 1.7.1: Settings > "Invite a friend": offer code FRIEND2027 (Pro Monthly, 1 month free, new subscribers) and a share link to Apple's code redemption. Features below are from 1.7.
 
 Added in 1.7:
 1. Onboarding with goal programs (first launch; reinstall the app to see it again). The user picks a goal and gets a ready-made set of habits, which can be edited or removed later.

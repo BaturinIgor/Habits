@@ -41,29 +41,30 @@ def load_captions(lang):
     return {row['num']: row[lang] for row in table}
 
 
-def load_font(path, size, weight=None):
-    font = ImageFont.truetype(path, size)
+def load_font(path, size, weight=None, index=0):
+    # index — начертание внутри коллекции .ttc (например Bold в AppleSDGothicNeo.ttc).
+    font = ImageFont.truetype(path, size, index=index)
     if weight:
         # Шрифт с вариациями (например SFNSRounded.ttf): выбираем начертание по имени.
         font.set_variation_by_name(weight)
     return font
 
 
-def fit_font(path, text, max_width, size, weight=None):
+def fit_font(path, text, max_width, size, weight=None, index=0):
     while size > 40:
-        font = load_font(path, size, weight)
+        font = load_font(path, size, weight, index)
         if max(font.getlength(line) for line in text) <= max_width:
             return font
         size -= 4
-    return load_font(path, size, weight)
+    return load_font(path, size, weight, index)
 
 
-def compose(shot_path, caption, font_path, weight=None):
+def compose(shot_path, caption, font_path, weight=None, index=0):
     canvas = gradient()
     draw = ImageDraw.Draw(canvas)
 
     lines = [part.strip() for part in caption.split('|')]
-    font = fit_font(font_path, lines, W - 160, 112, weight)
+    font = fit_font(font_path, lines, W - 160, 112, weight, index)
     y = 170
     for line in lines:
         width = font.getlength(line)
@@ -96,6 +97,8 @@ def main():
     parser.add_argument('--out', required=True)
     parser.add_argument('--font', required=True, help='жирный TTF/OTF шрифт')
     parser.add_argument('--weight', help='начертание шрифта с вариациями, например Bold для SFNSRounded.ttf')
+    parser.add_argument('--font-index', type=int, default=0,
+                        help='номер начертания в коллекции .ttc (например 6 — Bold в AppleSDGothicNeo.ttc)')
     args = parser.parse_args()
 
     captions = load_captions(args.lang)
@@ -106,7 +109,7 @@ def main():
             src = os.path.join(args.input, f'{num}.{ext}')
             if os.path.exists(src):
                 out = os.path.join(args.out, f'{num}.png')
-                compose(src, caption, args.font, args.weight).save(out, optimize=True)
+                compose(src, caption, args.font, args.weight, args.font_index).save(out, optimize=True)
                 print(f'{src} -> {out}')
                 done += 1
                 break

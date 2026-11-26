@@ -204,6 +204,42 @@ final class LogicTests: XCTestCase {
         }
     }
 
+    /// Аргументы в переводах совпадают с ключом по позиции и типу: если поменять местами %lld и %@
+    /// без номеров позиций (%1$lld, %2$@), число читается как объект и приложение падает
+    /// (так падал экран питомца на hi и tr в 1.7.1 из-за «%lld more to %@»). KAN-236.
+    func testTranslationsKeepFormatArgumentsInOrder() throws {
+        let pattern = try NSRegularExpression(pattern: #"%(\d+\$)?[-+0]*\d*(?:\.\d+)?(?:ll|l|h|hh|z|q)?([@dDuUxXoOfeEgGcCsSpaAi])"#)
+        func arguments(_ text: String) -> [Int: Character] {
+            let clean = text.replacingOccurrences(of: "%%", with: "")
+            var result: [Int: Character] = [:]
+            var next = 1
+            for match in pattern.matches(in: clean, range: NSRange(clean.startIndex..., in: clean)) {
+                let position = Range(match.range(at: 1), in: clean).flatMap { Int(clean[$0].dropLast()) } ?? next
+                next += 1
+                let conversion = Range(match.range(at: 2), in: clean).map { clean[$0].first! } ?? "?"
+                result[position] = conversion == "@" ? "@" : ("dDuUxXoOi".contains(conversion) ? "d" : conversion)
+            }
+            return result
+        }
+        let languages = Bundle.main.localizations.filter { $0 != "Base" }
+        XCTAssertGreaterThanOrEqual(languages.count, 14, "\(languages)")
+        var checked = 0
+        for language in languages {
+            // У английского нет Localizable.strings: ключи и есть английский текст.
+            guard let path = Bundle.main.path(forResource: "Localizable", ofType: "strings", inDirectory: nil,
+                                              forLocalization: language) else { continue }
+            let table = try XCTUnwrap(NSDictionary(contentsOfFile: path) as? [String: String], language)
+            checked += 1
+            for (key, value) in table {
+                let expected = arguments(key)
+                for (position, conversion) in arguments(value) {
+                    XCTAssertEqual(expected[position], conversion, "\(language): «\(key)» = «\(value)»")
+                }
+            }
+        }
+        XCTAssertGreaterThanOrEqual(checked, 13)
+    }
+
     /// Слова в WordFlowLayout переносятся только целиком, а слишком длинное слово (например, имя привычки
     /// без пробелов) не обрезается, а переносится по буквам. KAN-101.
     @MainActor

@@ -8,7 +8,7 @@
 "%@: the streak broke" = "%@: seri bozuldu";
 "%lld XP" = "%lld XP";
 "%lld min" = "%lld dk";
-"%lld more to %@" = "\"%@\" için %lld kaldı";
+"%lld more to %@" = "\"%2$@\" için %1$lld kaldı";
 "%lld of %lld" = "%lld/%lld";
 "%lld of %lld done" = "%lld/%lld yapıldı";
 "%lld of %lld habits" = "%lld/%lld alışkanlık";

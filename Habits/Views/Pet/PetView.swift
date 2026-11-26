@@ -11,7 +11,7 @@ struct PetCard: View {
                 if let pet = store.data.wallet.pet {
                     let xp = Pets.xp(pet, data: store.data)
                     let stage = Pets.stage(pet, data: store.data)
-                    let mood = Pets.mood(pet, data: store.data)
+                    let mood = Pets.mood(pet, data: store.data, now: Pets.moodClock)
                     PetAvatar(pet: pet, stage: stage, mood: mood, size: 64, reaction: store.petCheers)
                     VStack(alignment: .leading, spacing: 3) {
                         // Имя, стадию и настроение VoiceOver уже прочитал в подписи аватара.
@@ -128,7 +128,7 @@ struct PetView: View {
     private func petSection(_ pet: PetState) -> some View {
         let xp = Pets.xp(pet, data: store.data)
         let stage = Pets.stage(pet, data: store.data)
-        let mood = Pets.mood(pet, data: store.data)
+        let mood = Pets.mood(pet, data: store.data, now: Pets.moodClock)
 
         VStack(spacing: 10) {
             ZStack(alignment: .top) {
@@ -490,5 +490,14 @@ private struct FloatingHeart: View {
             .onAppear {
                 withAnimation(.easeOut(duration: 1.2)) { up = true }
             }
+    }
+}
+
+extension Pets {
+    /// Время для настроения питомца. На скриншотах App Store (-design-store) всегда полдень:
+    /// ночью питомец спит, и кадры одного набора, снятые в разное время, были бы разными.
+    static var moodClock: Date {
+        guard TestMode.has("-design-store") else { return Date() }
+        return Calendar.app.date(bySettingHour: 12, minute: 0, second: 0, of: Date()) ?? Date()
     }
 }
