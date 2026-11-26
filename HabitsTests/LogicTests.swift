@@ -208,7 +208,7 @@ final class LogicTests: XCTestCase {
     /// без номеров позиций (%1$lld, %2$@), число читается как объект и приложение падает
     /// (так падал экран питомца на hi и tr в 1.7.1 из-за «%lld more to %@»). KAN-236.
     func testTranslationsKeepFormatArgumentsInOrder() throws {
-        let pattern = try NSRegularExpression(pattern: #"%(\d+\$)?[-+ #0]*\d*(?:\.\d+)?(?:ll|l|h|hh|z|q)?([@dDuUxXoOfeEgGcCsSpaAi])"#)
+        let pattern = try NSRegularExpression(pattern: #"%(\d+\$)?[-+0]*\d*(?:\.\d+)?(?:ll|l|h|hh|z|q)?([@dDuUxXoOfeEgGcCsSpaAi])"#)
         func arguments(_ text: String) -> [Int: Character] {
             let clean = text.replacingOccurrences(of: "%%", with: "")
             var result: [Int: Character] = [:]

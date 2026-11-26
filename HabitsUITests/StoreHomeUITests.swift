@@ -63,7 +63,7 @@ final class StoreHomeUITests: XCTestCase {
 
     private func shoot(_ dir: URL) throws {
         // Системные виджеты (Карты, Календарь) после смены языка перерисовываются не сразу.
-        sleep(8)
+        sleep(20)
         save("06-widgets.png", dir)
     }
 
