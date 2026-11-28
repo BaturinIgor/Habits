@@ -935,10 +935,12 @@ final class LogicTests: XCTestCase {
 
     /// Свои сборки не шлют статистику (KAN-167), build_type различает debug / testflight / appstore.
     func testAnalyticsBuildType() {
-        XCTAssertFalse(Analytics.sendsFrom(isDebug: true, isSimulator: false, forced: false))
-        XCTAssertFalse(Analytics.sendsFrom(isDebug: false, isSimulator: true, forced: false))
-        XCTAssertTrue(Analytics.sendsFrom(isDebug: true, isSimulator: true, forced: true))
-        XCTAssertTrue(Analytics.sendsFrom(isDebug: false, isSimulator: false, forced: false))
+        XCTAssertFalse(Analytics.sendsFrom(isDebug: true, isSimulator: false, isSandbox: false, forced: false))
+        XCTAssertFalse(Analytics.sendsFrom(isDebug: false, isSimulator: true, isSandbox: false, forced: false))
+        XCTAssertFalse(Analytics.sendsFrom(isDebug: false, isSimulator: false, isSandbox: true, forced: false),
+                       "TestFlight не отправляет")
+        XCTAssertTrue(Analytics.sendsFrom(isDebug: true, isSimulator: true, isSandbox: true, forced: true))
+        XCTAssertTrue(Analytics.sendsFrom(isDebug: false, isSimulator: false, isSandbox: false, forced: false))
         XCTAssertEqual(Analytics.BuildType.make(isDebug: true, isSimulator: false, isSandbox: false), .debug)
         XCTAssertEqual(Analytics.BuildType.make(isDebug: false, isSimulator: true, isSandbox: true), .debug)
         XCTAssertEqual(Analytics.BuildType.make(isDebug: false, isSimulator: false, isSandbox: true), .testflight)
