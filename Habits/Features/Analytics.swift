@@ -11,14 +11,15 @@ import UIKit
 /// - Каждое действие уходит своим событием (`habit_check` и т. д.): у Firebase нет лимита на число событий,
 ///   а отправляет он их пачками сам. Нажатия и свайпы только считаются и уходят одним событием `gestures`
 ///   за заход в приложение (KAN-167): по событию на нажатие забивало топ событий.
-/// - user property `build_type` (debug / testflight / appstore): в GA4 отчёты фильтруются по appstore.
+/// - Отправляют только сборки из App Store. TestFlight и установки из Xcode (песочница App Store) молчат,
+///   user property `build_type` остаётся на случай -AnalyticsDebug: там она debug / testflight.
 /// - Раз в день уходит `daily_state`: числа и флаги о состоянии приложения.
 ///
 /// Личные данные не отправляются никогда: ни названий привычек, ни заметок, ни текста настроения.
 /// Все имена событий и параметров берутся только из перечислений в AnalyticsCatalog.swift.
 /// IDFA не собирается (AdSupport не подключён, окна ATT нет), IDFV и рекламные сигналы выключены в Info.plist.
-/// Без GoogleService-Info.plist (сборка для SideStore, локальная сборка), в автотестах, в Debug и на симуляторе
-/// ничего не отправляется.
+/// Без GoogleService-Info.plist (сборка для SideStore, локальная сборка), в автотестах, в Debug, на симуляторе
+/// и в TestFlight ничего не отправляется.
 @MainActor
 final class Analytics {
     static let shared = Analytics()
@@ -34,6 +35,8 @@ final class Analytics {
 
     private let defaults = UserDefaults.standard
     private var configured = false
+    /// start() уже запустил проверку песочницы: повторный вызов не настраивает Firebase второй раз.
+    private var starting = false
     private var screenStack: [AnalyticsScreen] = []
 
     /// daily_state уже считается в фоне: не запускаем второй расчёт при быстрых повторных активациях.
@@ -62,14 +65,17 @@ final class Analytics {
     static var isAvailable: Bool {
         guard !TestMode.isUITest, !isRunningTests,
               Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil else { return false }
-        return sendsFrom(isDebug: isDebugBuild, isSimulator: isSimulator,
-                         forced: ProcessInfo.processInfo.arguments.contains("-AnalyticsDebug"))
+        // Песочница проверяется асинхронно в start(): здесь только то, что известно сразу.
+        return sendsFrom(isDebug: isDebugBuild, isSimulator: isSimulator, isSandbox: false, forced: isForced)
     }
 
-    /// Отправлять ли из этой сборки: свои Debug-сборки и симулятор (KAN-167) только по явному -AnalyticsDebug.
-    nonisolated static func sendsFrom(isDebug: Bool, isSimulator: Bool, forced: Bool) -> Bool {
-        forced || (!isDebug && !isSimulator)
+    /// Отправлять ли из этой сборки: только App Store. Debug, симулятор (KAN-167) и песочница App Store
+    /// (TestFlight, установка из Xcode) - только по явному -AnalyticsDebug.
+    nonisolated static func sendsFrom(isDebug: Bool, isSimulator: Bool, isSandbox: Bool, forced: Bool) -> Bool {
+        forced || (!isDebug && !isSimulator && !isSandbox)
     }
+
+    private static var isForced: Bool { ProcessInfo.processInfo.arguments.contains("-AnalyticsDebug") }
 
     nonisolated static var isDebugBuild: Bool {
         #if DEBUG
@@ -120,9 +126,25 @@ final class Analytics {
     /// Работает ли отправка: Firebase настроен и пользователь не выключил статистику.
     var isActive: Bool { configured && Self.isUserEnabled(defaults) }
 
-    /// Вызывается при запуске приложения.
+    /// Вызывается при запуске приложения. Firebase настраивается только после проверки, что сборка из App Store:
+    /// в TestFlight он не настраивается вовсе, и ни одно событие не уходит.
     func start() {
-        guard Self.isAvailable, !configured,
+        guard Self.isAvailable, !configured, !starting else { return }
+        starting = true
+        Task {
+            let sandbox = await Self.isSandbox()
+            guard Self.sendsFrom(isDebug: Self.isDebugBuild, isSimulator: Self.isSimulator,
+                                 isSandbox: sandbox, forced: Self.isForced) else { return }
+            configure()
+            // Приложение уже стало активным, пока шла проверка: установка и daily_state уходят сейчас, а не при следующем входе.
+            if UIApplication.shared.applicationState == .active { appBecameActive() }
+            // Первый экран показан до настройки Firebase и не ушёл: отправляем его сейчас.
+            if let screen = currentScreen { logScreen(screen) }
+        }
+    }
+
+    private func configure() {
+        guard !configured,
               let path = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist"),
               // Испорченный plist: FirebaseApp.configure() уронил бы приложение, а так просто нет статистики.
               let options = FirebaseOptions(contentsOfFile: path) else { return }
